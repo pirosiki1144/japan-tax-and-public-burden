@@ -27,6 +27,16 @@ body:
     validations:
       required: true
   - type: textarea
+    id: execution_plan
+    attributes:
+      label: 作業計画・役割分担
+      description: 主担当の作業と、独立した調査・検証が必要な場合の役割を記載してください。小規模な作業では主担当のみで構いません。
+  - type: textarea
+    id: stop_conditions
+    attributes:
+      label: 停止条件・追加承認
+      description: Issue範囲内で判断できない事項、権限変更、破壊的操作など、途中で追加承認が必要な条件を記載してください。
+  - type: textarea
     id: sources
     attributes:
       label: 根拠・参考資料
@@ -35,4 +45,4 @@ body:
     id: notes
     attributes:
       label: 補足・制約
-      description: 不確実な点、互換性、セキュリティ、運用上の注意を記載してください。
+      description: 不確実な点、互換性、セキュリティ、運用上の注意を記載してください。Issueの作成だけでは開発着手の承認にはならず、Issueを指定した実装依頼または `status:ready` ラベルが必要です。
