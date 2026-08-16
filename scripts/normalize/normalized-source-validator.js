@@ -9,7 +9,8 @@ export function validateNormalizedSource(normalized) {
     factIds.add(fact.fact_id);
     if (fact.raw === "") errors.push(`${fact.fact_id}.raw is required`);
     if (fact.value === undefined || (typeof fact.value === "number" && !Number.isFinite(fact.value))) errors.push(`${fact.fact_id}.value is invalid`);
-    if (!fact.target?.file || !fact.target?.record_id || !fact.target?.path) errors.push(`${fact.fact_id}.target is invalid`);
+    if (fact.target && (!fact.target.file || !fact.target.record_id || !fact.target.path)) errors.push(`${fact.fact_id}.target is invalid`);
+    if (!fact.target && fact.expected_value === undefined) errors.push(`${fact.fact_id} requires a target or expected_value`);
   }
   if (errors.length) throw new Error(`Normalized source is invalid: ${errors.join("; ")}`);
   return normalized;

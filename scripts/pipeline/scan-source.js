@@ -18,7 +18,8 @@ const dryRun = args.includes("--dry-run");
 async function fixtureFetch(url) {
   const path = join(fixtureDir, basename(new URL(url).pathname));
   const body = await readFile(path, "utf8");
-  return new Response(body, { status: 200, headers: { "content-type": "text/html; charset=UTF-8" } });
+  const contentType = body.trimStart().startsWith("{") ? "application/json" : "text/html; charset=UTF-8";
+  return new Response(body, { status: 200, headers: { "content-type": contentType } });
 }
 
 async function writeResult(path, result) {

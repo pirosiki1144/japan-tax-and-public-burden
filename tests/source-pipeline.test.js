@@ -7,13 +7,14 @@ import { loadEnabledSource } from "../scripts/fetch/source-registry.js";
 import { runAutomatedSources, runConfiguredSources, runSourcePipeline } from "../scripts/pipeline/source-pipeline.js";
 
 const root = fileURLToPath(new URL("..", import.meta.url));
-const fixtureRoot = join(root, "tests/fixtures/nta-consumption-tax-rates");
+const fixtureRoot = join(root, "tests/fixtures/source-scan");
 const now = () => new Date("2026-08-17T01:02:03+09:00");
 
 function fixtureFetch(transform = (body) => body) {
   return async (url) => {
     const body = transform(await readFile(join(fixtureRoot, basename(new URL(url).pathname)), "utf8"), url);
-    return new Response(body, { status: 200, headers: { "content-type": "text/html; charset=UTF-8" } });
+    const contentType = body.trimStart().startsWith("{") ? "application/json" : "text/html; charset=UTF-8";
+    return new Response(body, { status: 200, headers: { "content-type": contentType } });
   };
 }
 
@@ -41,7 +42,16 @@ test("a normalized value change creates a machine-readable candidate diff", asyn
 test("all configured automated sources run through one shared pipeline", async () => {
   const result = await runAutomatedSources({ root, fetchImpl: fixtureFetch(), now, dryRun: true });
   assert.equal(result.status, "no_change");
-  assert.deepEqual(result.results.map(({ source_id }) => source_id), ["nta-consumption-tax-rates"]);
+  assert.deepEqual(result.results.map(({ source_id }) => source_id), ["egov-laws", "nta-consumption-tax-rates"]);
+});
+
+test("e-Gov fixtures confirm the statutory consumption-tax rates", async () => {
+  const result = await runSourcePipeline({ root, sourceId: "egov-laws", fetchImpl: fixtureFetch(), now, dryRun: true });
+  assert.equal(result.status, "no_change");
+  assert.deepEqual(result.normalized.facts.map(({ fact_id, value }) => ({ fact_id, value })), [
+    { fact_id: "consumption-tax-act-standard-rate", value: "百分の七・八" },
+    { fact_id: "local-tax-act-local-consumption-ratio", value: "七十八分の二十二" }
+  ]);
 });
 
 test("one source failure does not starve later sources and makes the aggregate fail", async () => {

@@ -28,6 +28,10 @@ export async function detectCanonicalDiff(root, normalized) {
   const differences = [];
   const documents = new Map();
   for (const fact of normalized.facts) {
+    if (!fact.target) {
+      if (fact.value !== fact.expected_value) differences.push({ fact_id: fact.fact_id, target: null, current: fact.expected_value, candidate: fact.value, raw: fact.raw });
+      continue;
+    }
     const path = canonicalFile(root, fact.target.file);
     if (!documents.has(path)) documents.set(path, await readYaml(path));
     const current = readPath(selectRecord(documents.get(path), fact.target), fact.target.path);

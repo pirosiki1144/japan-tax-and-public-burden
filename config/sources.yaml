@@ -5,14 +5,47 @@
       "name": "e-Gov法令検索",
       "authority": "デジタル庁",
       "base_url": "https://laws.e-gov.go.jp/",
-      "entry_urls": ["https://laws.e-gov.go.jp/", "https://laws.e-gov.go.jp/api/2/swagger-ui"],
+      "entry_urls": ["https://laws.e-gov.go.jp/api/2/law_data/363AC0000000108", "https://laws.e-gov.go.jp/api/2/law_data/325AC0000000226"],
       "source_type": "law_api",
       "scope": "現行法令本文、法令ID、改正履歴",
       "jurisdiction": "Japan",
       "priority": 1,
       "cadence": "daily",
       "enabled": true,
-      "adapter": "egov_law_api_v2",
+      "automation_enabled": true,
+      "adapter": "egov_law_article_facts",
+      "accepted_content_types": ["application/json"],
+      "extraction": {
+        "expected_pages": 2,
+        "required_markers": [],
+        "expected_documents": [
+          {"page_index": 0, "law_id": "363AC0000000108", "law_title": "消費税法"},
+          {"page_index": 1, "law_id": "325AC0000000226", "law_title": "地方税法"}
+        ],
+        "facts": [
+          {
+            "fact_id": "consumption-tax-act-standard-rate",
+            "page_index": 0,
+            "article_num": "29",
+            "article_caption": "（税率）",
+            "item_num": "1",
+            "pattern": "(百分の.+)$",
+            "capture_group": 1,
+            "transform": "string",
+            "expected_value": "百分の七・八"
+          },
+          {
+            "fact_id": "local-tax-act-local-consumption-ratio",
+            "page_index": 1,
+            "article_num": "72_83",
+            "article_caption": "（地方消費税の税率）",
+            "pattern": "地方消費税の税率は、([^、。]+)とする",
+            "capture_group": 1,
+            "transform": "string",
+            "expected_value": "七十八分の二十二"
+          }
+        ]
+      },
       "rate_limit": "公式仕様およびrobots.txtに従う",
       "terms_url": "https://laws.e-gov.go.jp/terms/",
       "last_verified_at": "2026-08-16T12:20:19+09:00",

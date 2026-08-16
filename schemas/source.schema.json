@@ -27,6 +27,7 @@
         "enabled": {"type": "boolean"},
         "automation_enabled": {"type": "boolean"},
         "adapter": {"type": "string", "minLength": 1},
+        "accepted_content_types": {"type": "array", "minItems": 1, "uniqueItems": true, "items": {"type": "string", "minLength": 1}},
         "extraction": {"$ref": "#/$defs/extraction"},
         "rate_limit": {"type": "string", "minLength": 1},
         "terms_url": {"type": "string", "format": "uri", "pattern": "^https://"},
@@ -47,6 +48,7 @@
       "properties": {
         "expected_pages": {"type": "integer", "minimum": 1},
         "required_markers": {"type": "array", "items": {"$ref": "#/$defs/marker"}},
+        "expected_documents": {"type": "array", "items": {"$ref": "#/$defs/expectedDocument"}},
         "facts": {"type": "array", "minItems": 1, "items": {"$ref": "#/$defs/fact"}}
       }
     },
@@ -63,14 +65,32 @@
     "fact": {
       "type": "object",
       "additionalProperties": false,
-      "required": ["fact_id", "page_index", "pattern", "capture_group", "transform", "target"],
+      "required": ["fact_id", "page_index", "pattern", "capture_group", "transform"],
       "properties": {
         "fact_id": {"type": "string", "pattern": "^[a-z0-9]+(?:-[a-z0-9]+)*$"},
         "page_index": {"type": "integer", "minimum": 0},
         "pattern": {"type": "string", "minLength": 1},
         "capture_group": {"type": "integer", "minimum": 1},
         "transform": {"enum": ["string", "number", "japanese_date"]},
+        "article_num": {"type": "string", "minLength": 1},
+        "article_caption": {"type": "string", "minLength": 1},
+        "item_num": {"type": "string", "minLength": 1},
+        "expected_value": {"type": ["string", "number"]},
         "target": {"$ref": "#/$defs/target"}
+      },
+      "anyOf": [
+        {"properties": {"target": true}, "required": ["target"]},
+        {"properties": {"expected_value": true}, "required": ["expected_value"]}
+      ]
+    },
+    "expectedDocument": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["page_index", "law_id", "law_title"],
+      "properties": {
+        "page_index": {"type": "integer", "minimum": 0},
+        "law_id": {"type": "string", "minLength": 1},
+        "law_title": {"type": "string", "minLength": 1}
       }
     },
     "target": {
