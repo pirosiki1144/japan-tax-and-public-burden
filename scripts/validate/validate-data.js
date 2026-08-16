@@ -1,51 +1,48 @@
-import { readFile, readdir } from "node:fs/promises";
+import { readdir } from "node:fs/promises";
 import { extname, join } from "node:path";
 import { fileURLToPath } from "node:url";
+import { createValidators, readYaml, validateDocument } from "./schema-validator.js";
 
 const root = fileURLToPath(new URL("../..", import.meta.url));
 const errors = [];
+const schemaNames = ["burden", "change", "event", "phase", "source"];
+const schemaPaths = Object.fromEntries(schemaNames.map((name) => [name, join(root, `schemas/${name}.schema.json`)]));
+const validators = await createValidators(schemaPaths);
 
-async function readJson(path) {
+async function validateFile(path, validator, allowArray = true) {
   try {
-    return JSON.parse(await readFile(path, "utf8"));
+    const parsed = await readYaml(path);
+    const documents = allowArray && Array.isArray(parsed) ? parsed : [parsed];
+    documents.forEach((document, index) => {
+      const location = documents.length === 1 ? path : `${path}[${index}]`;
+      errors.push(...validateDocument(validator, document, location));
+    });
   } catch (error) {
     errors.push(`${path}: ${error.message}`);
-    return null;
   }
 }
 
-function checkUnique(items, key, location) {
-  const seen = new Set();
-  for (const item of items) {
-    if (!item || typeof item[key] !== "string" || item[key] === "") errors.push(`${location}: missing ${key}`);
-    else if (seen.has(item[key])) errors.push(`${location}: duplicate ${key} ${item[key]}`);
-    else seen.add(item[key]);
-  }
-}
+const argumentsMap = Object.fromEntries(process.argv.slice(2).reduce((pairs, value, index, values) => {
+  if (value.startsWith("--")) pairs.push([value.slice(2), values[index + 1]]);
+  return pairs;
+}, []));
 
-const config = await readJson(join(root, "config/sources.yaml"));
-if (config) {
-  if (!Array.isArray(config.sources)) errors.push("config/sources.yaml: sources must be an array");
-  else {
-    checkUnique(config.sources, "source_id", "config/sources.yaml");
-    for (const source of config.sources) {
-      if (!Array.isArray(source.entry_urls) || source.entry_urls.length === 0) errors.push(`${source.source_id}: entry_urls must not be empty`);
-      for (const url of [source.base_url, source.terms_url, ...(source.entry_urls ?? [])]) {
-        if (typeof url !== "string" || !url.startsWith("https://")) errors.push(`${source.source_id}: URL must use HTTPS: ${url}`);
+if (argumentsMap.file || argumentsMap.schema) {
+  if (!argumentsMap.file || !validators[argumentsMap.schema]) {
+    errors.push("Both --file and a valid --schema (burden, change, event, phase, source) are required.");
+  } else {
+    await validateFile(argumentsMap.file, validators[argumentsMap.schema], argumentsMap.schema !== "source");
+  }
+} else {
+  await validateFile(join(root, "config/sources.yaml"), validators.source, false);
+
+  for (const [directory, schemaName] of Object.entries({ burdens: "burden", changes: "change", events: "event", phases: "phase" })) {
+    const path = join(root, "data", directory);
+    for (const entry of await readdir(path, { withFileTypes: true })) {
+      if (entry.isFile() && [".json", ".yaml", ".yml"].includes(extname(entry.name))) {
+        await validateFile(join(path, entry.name), validators[schemaName]);
       }
     }
-  }
-}
-
-for (const schemaName of ["burden", "change", "event", "phase", "source"]) {
-  const schema = await readJson(join(root, `schemas/${schemaName}.schema.json`));
-  if (schema && schema.$schema !== "https://json-schema.org/draft/2020-12/schema") errors.push(`${schemaName}.schema.json: unexpected JSON Schema draft`);
-}
-
-for (const directory of ["burdens", "changes", "events", "phases"]) {
-  const path = join(root, "data", directory);
-  for (const entry of await readdir(path, { withFileTypes: true })) {
-    if (entry.isFile() && [".json", ".yaml"].includes(extname(entry.name))) await readJson(join(path, entry.name));
   }
 }
 
@@ -53,5 +50,5 @@ if (errors.length) {
   console.error(errors.join("\n"));
   process.exitCode = 1;
 } else {
-  console.log("Configuration, schemas, and data files are valid.");
+  console.log("All configuration and data files conform to their JSON Schemas.");
 }

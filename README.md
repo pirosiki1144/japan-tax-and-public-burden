@@ -32,14 +32,15 @@ reports/      生成レポート
 
 ## 検証
 
-Node.js 20以降で実行できます。外部パッケージは不要です。
+Node.js 20以降で実行できます。最初に検証用パッケージをインストールしてください。
 
 ```bash
+npm ci
 npm test
 npm run validate
 ```
 
-`config/sources.yaml` とデータ用の `.yaml` は、追加ライブラリなしで厳密に扱えるようJSON形式（JSONはYAML 1.2のサブセット）で記述します。
+`.yaml` ファイルはYAML 1.2として読み込みます。一般的なYAML記法とJSON互換記法のどちらも使用できます。`npm run validate` は各ファイルを対応するJSON Schemaへ照合し、必須項目、列挙値、日付形式、追加プロパティなどを検証します。
 
 ## コントリビューション
 
