@@ -107,6 +107,24 @@
       "terms_url": "https://www.mof.go.jp/about_mof/other/e-j/",
       "last_verified_at": "2026-08-16T12:20:19+09:00",
       "notes": "実績、実績見込み、見通しを区別する"
+    },
+    {
+      "source_id": "nta-consumption-tax-rates",
+      "name": "国税庁 消費税の基本的なしくみ・軽減税率制度",
+      "authority": "国税庁",
+      "base_url": "https://www.nta.go.jp/",
+      "entry_urls": ["https://www.nta.go.jp/taxes/shiraberu/taxanswer/shohi/6101.htm", "https://www.nta.go.jp/taxes/shiraberu/taxanswer/shohi/6102.htm"],
+      "source_type": "ministry",
+      "scope": "消費税の納税義務者・負担者、消費税および地方消費税の標準税率、軽減税率、適用対象、実施開始日",
+      "jurisdiction": "Japan",
+      "priority": 1,
+      "cadence": "annual",
+      "enabled": true,
+      "adapter": "manual",
+      "rate_limit": "サイトの利用条件に従う",
+      "terms_url": "https://www.nta.go.jp/chuijiko/copy.htm",
+      "last_verified_at": "2026-08-17T00:12:24+09:00",
+      "notes": "Phase 1の検証用サンプルに使用する"
     }
   ]
 }

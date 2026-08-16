@@ -1,0 +1,56 @@
+- phase_id: consumption-tax-standard-rate-2019
+  tax_id: consumption-tax
+  change_id: consumption-tax-2019-rate
+  phase_sequence: 1
+  subject_scope: 軽減税率の対象以外の課税資産の譲渡等
+  rate_or_amount: 7.8パーセント（地方消費税を含む標準税率は10パーセント）
+  value:
+    kind: rate
+    numeric_value: 7.8
+    unit: percent
+    raw: 標準税率10パーセントのうち消費税率7.8パーセント
+    value_status: confirmed
+    scope: 標準税率対象取引
+  application_start: 2019-10-01
+  application_start_raw: 令和元年10月1日
+  application_start_source_url: https://www.nta.go.jp/taxes/shiraberu/taxanswer/shohi/6102.htm
+  application_end: null
+  collection_start: null
+  collection_start_raw: 国税庁ページに徴収開始日の記載なし
+  collection_start_source_url: https://www.nta.go.jp/taxes/shiraberu/taxanswer/shohi/6102.htm
+  collection_end: null
+  transitional_rule: このサンプルでは経過措置の詳細を未登録
+  source_refs:
+    - nta-consumption-tax-rates
+  evidence_gaps:
+    - 徴収開始日は未確認
+    - 経過措置の詳細は未登録
+  verified_at: 2026-08-17T00:12:24+09:00
+- phase_id: consumption-tax-reduced-rate-2019
+  tax_id: consumption-tax
+  change_id: consumption-tax-2019-rate
+  phase_sequence: 2
+  subject_scope: 酒類・外食を除く飲食料品と、定期購読契約に基づき週2回以上発行される新聞の譲渡
+  rate_or_amount: 6.24パーセント（地方消費税を含む軽減税率は8パーセント）
+  value:
+    kind: rate
+    numeric_value: 6.24
+    unit: percent
+    raw: 軽減税率8パーセントのうち消費税率6.24パーセント
+    value_status: confirmed
+    scope: 軽減税率対象品目
+  application_start: 2019-10-01
+  application_start_raw: 令和元年10月1日
+  application_start_source_url: https://www.nta.go.jp/taxes/shiraberu/taxanswer/shohi/6102.htm
+  application_end: null
+  collection_start: null
+  collection_start_raw: 国税庁ページに徴収開始日の記載なし
+  collection_start_source_url: https://www.nta.go.jp/taxes/shiraberu/taxanswer/shohi/6102.htm
+  collection_end: null
+  transitional_rule: このサンプルでは経過措置の詳細を未登録
+  source_refs:
+    - nta-consumption-tax-rates
+  evidence_gaps:
+    - 徴収開始日は未確認
+    - 経過措置の詳細は未登録
+  verified_at: 2026-08-17T00:12:24+09:00

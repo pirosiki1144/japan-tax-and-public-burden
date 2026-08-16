@@ -1,26 +1,10 @@
-import { readdir } from "node:fs/promises";
-import { extname, join } from "node:path";
+import { join } from "node:path";
 import { fileURLToPath } from "node:url";
 import { createValidators, readYaml, validateDocument } from "./schema-validator.js";
+import { validateRepository } from "./repository-validator.js";
 
 const root = fileURLToPath(new URL("../..", import.meta.url));
-const errors = [];
-const schemaNames = ["burden", "change", "event", "phase", "source"];
-const schemaPaths = Object.fromEntries(schemaNames.map((name) => [name, join(root, `schemas/${name}.schema.json`)]));
-const validators = await createValidators(schemaPaths);
-
-async function validateFile(path, validator, allowArray = true) {
-  try {
-    const parsed = await readYaml(path);
-    const documents = allowArray && Array.isArray(parsed) ? parsed : [parsed];
-    documents.forEach((document, index) => {
-      const location = documents.length === 1 ? path : `${path}[${index}]`;
-      errors.push(...validateDocument(validator, document, location));
-    });
-  } catch (error) {
-    errors.push(`${path}: ${error.message}`);
-  }
-}
+let errors = [];
 
 const argumentsMap = Object.fromEntries(process.argv.slice(2).reduce((pairs, value, index, values) => {
   if (value.startsWith("--")) pairs.push([value.slice(2), values[index + 1]]);
@@ -28,22 +12,22 @@ const argumentsMap = Object.fromEntries(process.argv.slice(2).reduce((pairs, val
 }, []));
 
 if (argumentsMap.file || argumentsMap.schema) {
-  if (!argumentsMap.file || !validators[argumentsMap.schema]) {
-    errors.push("Both --file and a valid --schema (burden, change, event, phase, source) are required.");
+  const schemaName = argumentsMap.schema;
+  const schemaPath = schemaName ? join(root, `schemas/${schemaName}.schema.json`) : null;
+  if (!argumentsMap.file || !schemaPath) {
+    errors.push("Both --file and --schema are required.");
   } else {
-    await validateFile(argumentsMap.file, validators[argumentsMap.schema], argumentsMap.schema !== "source");
-  }
-} else {
-  await validateFile(join(root, "config/sources.yaml"), validators.source, false);
-
-  for (const [directory, schemaName] of Object.entries({ burdens: "burden", changes: "change", events: "event", phases: "phase" })) {
-    const path = join(root, "data", directory);
-    for (const entry of await readdir(path, { withFileTypes: true })) {
-      if (entry.isFile() && [".json", ".yaml", ".yml"].includes(extname(entry.name))) {
-        await validateFile(join(path, entry.name), validators[schemaName]);
-      }
+    try {
+      const validators = await createValidators({ [schemaName]: schemaPath });
+      const parsed = await readYaml(argumentsMap.file);
+      const documents = schemaName !== "source" && Array.isArray(parsed) ? parsed : [parsed];
+      documents.forEach((document, index) => errors.push(...validateDocument(validators[schemaName], document, `${argumentsMap.file}[${index}]`)));
+    } catch (error) {
+      errors.push(`${argumentsMap.file}: ${error.message}`);
     }
   }
+} else {
+  ({ errors } = await validateRepository(root));
 }
 
 if (errors.length) {

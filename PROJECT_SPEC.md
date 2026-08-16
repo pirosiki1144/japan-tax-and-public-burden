@@ -299,12 +299,15 @@ date_certainty の例:
 | change_id | 根拠となる変更ID |
 | subject_scope | 対象者・取引・所得・地域 |
 | rate_or_amount | 税率、料率、定額等 |
+| value | 値の種別、数値、単位、原文、確定区分、対象範囲、根拠不足理由 |
 | application_start | 適用開始 |
 | application_end | 適用終了 |
 | collection_start | 徴収開始 |
 | collection_end | 徴収終了 |
 | transitional_rule | 経過措置 |
 | source_refs | 条文・公表資料 |
+| evidence_gaps | 根拠不足や追加確認が必要な事項 |
+| verified_at | 最終確認日時 |
 
 ### 6.4 法律手続イベント
 
@@ -864,7 +867,10 @@ mapping_status:
 │   ├── change.schema.json
 │   ├── event.schema.json
 │   ├── phase.schema.json
-│   └── source.schema.json
+│   ├── source.schema.json
+│   ├── revenue.schema.json
+│   ├── national-burden-ratio.schema.json
+│   └── national-burden-mapping.schema.json
 ├── data/
 │   ├── burdens/
 │   ├── changes/
@@ -889,6 +895,8 @@ mapping_status:
 ~~~
 
 README.mdは一般利用者向け、PROJECT_SPEC.mdは設計根拠、AGENTS.mdはエージェントの行動規則に分ける。
+
+`config/sources.yaml` は情報源レジストリ、`data/` 配下の検証済み構造化データは正本とする。取得途中のHTML、PDF、API応答は `.cache/` 配下の一時データとしてGit管理しない。`reports/` と将来の `generated/` は正本から再生成する成果物とし、直接編集しない。履歴は追記型event、phaseとGit履歴で保持する。
 
 ## 17. 品質・検証ルール
 
