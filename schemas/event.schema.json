@@ -1,0 +1,24 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://github.com/pirosiki1144/japan-tax-and-public-burden/schemas/event.schema.json",
+  "title": "Legislative or administrative event",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["event_id", "change_id", "event_type", "event_date", "result", "source_url", "observed_at", "evidence_excerpt_or_summary", "confidence"],
+  "properties": {
+    "event_id": {"type": "string", "pattern": "^[a-z0-9]+(?:-[a-z0-9]+)*$"},
+    "change_id": {"type": "string", "minLength": 1},
+    "event_type": {"enum": ["concept_reported", "council_deliberation", "cabinet_decision", "bill_submitted", "committee_referred", "committee_explanation", "committee_question", "subcommittee_meeting", "committee_debate", "committee_vote", "plenary_vote", "sent_to_other_house", "returned_with_amendment", "conference_committee", "enacted", "promulgated", "enforcement_date_fixed", "enforced", "application_started", "collection_started", "rejected", "withdrawn", "session_expired", "continued"]},
+    "event_date": {"type": ["string", "null"], "format": "date"},
+    "chamber": {"type": ["string", "null"]},
+    "committee": {"type": ["string", "null"]},
+    "subcommittee": {"type": ["string", "null"]},
+    "meeting_name": {"type": ["string", "null"]},
+    "result": {"type": "string"},
+    "source_url": {"type": "string", "format": "uri"},
+    "source_published_at": {"type": ["string", "null"], "format": "date-time"},
+    "observed_at": {"type": "string", "format": "date-time"},
+    "evidence_excerpt_or_summary": {"type": "string", "minLength": 1},
+    "confidence": {"enum": ["confirmed", "probable", "reported"]}
+  }
+}
