@@ -1,0 +1,44 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://github.com/pirosiki1144/japan-tax-and-public-burden/schemas/revenue.schema.json",
+  "title": "Collected amount row",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["record_id", "tax_id", "fiscal_year", "period_start", "period_end", "amount_yen", "amount_raw", "amount_kind", "accounting_basis", "government_level", "collector", "account_or_fund", "gross_or_net", "refund_treatment", "consolidation_scope", "value_status", "evidence_gap_reason", "source_url", "source_page_or_table", "published_at", "verified_at", "notes"],
+  "properties": {
+    "record_id": {"type": "string", "pattern": "^[a-z0-9]+(?:-[a-z0-9]+)*$"},
+    "tax_id": {"type": "string", "pattern": "^[a-z0-9]+(?:-[a-z0-9]+)*$"},
+    "fiscal_year": {"type": "string", "pattern": "^[0-9]{4}$"},
+    "period_start": {"type": "string", "format": "date"},
+    "period_end": {"type": "string", "format": "date"},
+    "amount_yen": {"type": "string", "pattern": "^(?:|0|[1-9][0-9]*)$"},
+    "amount_raw": {"type": "string", "minLength": 1},
+    "amount_kind": {"enum": ["tax_revenue", "insurance_premium_revenue", "contribution_collected", "levy_collected", "charge_collected", "estimated_economic_burden"]},
+    "accounting_basis": {"enum": ["settlement", "provisional_settlement", "revised_budget", "initial_budget", "forecast", "estimate"]},
+    "government_level": {"type": "string", "minLength": 1},
+    "collector": {"type": "string", "minLength": 1},
+    "account_or_fund": {"type": "string", "minLength": 1},
+    "gross_or_net": {"enum": ["gross", "net"]},
+    "refund_treatment": {"type": "string", "minLength": 1},
+    "consolidation_scope": {"type": "string", "minLength": 1},
+    "value_status": {"enum": ["available", "zero", "not_yet_collected", "not_yet_compiled", "government_does_not_track", "unavailable", "included_in_parent_total", "partial"]},
+    "evidence_gap_reason": {"type": "string"},
+    "source_url": {"type": "string", "format": "uri"},
+    "source_page_or_table": {"type": "string", "minLength": 1},
+    "published_at": {"type": "string", "format": "date-time"},
+    "verified_at": {"type": "string", "format": "date-time"},
+    "notes": {"type": "string"}
+  },
+  "allOf": [
+    {
+      "if": {"properties": {"value_status": {"enum": ["not_yet_collected", "not_yet_compiled", "government_does_not_track", "unavailable"]}}, "required": ["value_status"]},
+      "then": {
+        "properties": {
+          "amount_yen": {"const": ""},
+          "evidence_gap_reason": {"type": "string", "minLength": 1}
+        }
+      },
+      "else": {"properties": {"amount_yen": {"type": "string", "pattern": "^(?:0|[1-9][0-9]*)$"}}}
+    }
+  ]
+}

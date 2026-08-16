@@ -1,0 +1,20 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://github.com/pirosiki1144/japan-tax-and-public-burden/schemas/national-burden-ratio.schema.json",
+  "title": "National burden ratio row",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["fiscal_year", "value_kind", "national_income_yen", "tax_burden_yen", "social_security_burden_yen", "national_burden_ratio", "source_url", "published_at", "verified_at", "notes"],
+  "properties": {
+    "fiscal_year": {"type": "string", "pattern": "^[0-9]{4}$"},
+    "value_kind": {"enum": ["actual", "actual_estimate", "forecast"]},
+    "national_income_yen": {"type": "string", "pattern": "^(?:0|[1-9][0-9]*)$"},
+    "tax_burden_yen": {"type": "string", "pattern": "^(?:0|[1-9][0-9]*)$"},
+    "social_security_burden_yen": {"type": "string", "pattern": "^(?:0|[1-9][0-9]*)$"},
+    "national_burden_ratio": {"type": "string", "pattern": "^(?:0|[1-9][0-9]*)(?:\\.[0-9]+)?$"},
+    "source_url": {"type": "string", "format": "uri"},
+    "published_at": {"type": "string", "format": "date-time"},
+    "verified_at": {"type": "string", "format": "date-time"},
+    "notes": {"type": "string"}
+  }
+}

@@ -6,7 +6,7 @@
   "required": ["sources"],
   "additionalProperties": false,
   "properties": {
-    "sources": {"type": "array", "items": {"$ref": "#/$defs/source"}}
+    "sources": {"type": "array", "minItems": 1, "items": {"$ref": "#/$defs/source"}}
   },
   "$defs": {
     "source": {

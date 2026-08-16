@@ -4,7 +4,7 @@
   "title": "Tax or public burden",
   "type": "object",
   "additionalProperties": false,
-  "required": ["tax_id", "official_name", "aliases", "burden_type", "legal_mandate_type", "jurisdiction", "liable_party", "economic_bearer", "collector", "purpose", "calculation_basis", "current_status", "legal_bases", "current_phases", "pending_changes", "source_refs", "coverage_status", "verified_at"],
+  "required": ["tax_id", "official_name", "aliases", "burden_type", "legal_mandate_type", "jurisdiction", "liable_party", "economic_bearer", "collector", "purpose", "calculation_basis", "current_status", "legal_bases", "current_phases", "pending_changes", "source_refs", "coverage_status", "evidence_gaps", "verified_at"],
   "properties": {
     "tax_id": {"type": "string", "pattern": "^[a-z0-9]+(?:-[a-z0-9]+)*$"},
     "official_name": {"type": "string", "minLength": 1},
@@ -20,15 +20,17 @@
     "calculation_basis": {"type": "string"},
     "current_status": {"enum": ["not_applied", "active", "active_with_pending_change", "ended"]},
     "legal_bases": {"type": "array", "items": {"$ref": "#/$defs/legalBase"}},
-    "current_phases": {"type": "array", "items": {"type": "string"}, "uniqueItems": true},
-    "pending_changes": {"type": "array", "items": {"type": "string"}, "uniqueItems": true},
-    "source_refs": {"type": "array", "minItems": 1, "items": {"type": "string"}, "uniqueItems": true},
+    "current_phases": {"type": "array", "items": {"type": "string", "pattern": "^[a-z0-9]+(?:-[a-z0-9]+)*$"}, "uniqueItems": true},
+    "pending_changes": {"type": "array", "items": {"type": "string", "pattern": "^[a-z0-9]+(?:-[a-z0-9]+)*$"}, "uniqueItems": true},
+    "source_refs": {"type": "array", "minItems": 1, "items": {"type": "string", "pattern": "^[a-z0-9]+(?:-[a-z0-9]+)*$"}, "uniqueItems": true},
     "coverage_status": {"enum": ["confirmed", "candidate", "needs_review", "excluded"]},
+    "evidence_gaps": {"type": "array", "items": {"type": "string", "minLength": 1}, "uniqueItems": true},
     "verified_at": {"type": "string", "format": "date-time"}
   },
   "$defs": {
     "legalBase": {
       "type": "object",
+      "additionalProperties": false,
       "required": ["name", "source_url"],
       "properties": {"law_id": {"type": ["string", "null"]}, "name": {"type": "string"}, "article": {"type": ["string", "null"]}, "source_url": {"type": "string", "format": "uri"}}
     }

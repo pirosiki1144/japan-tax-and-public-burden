@@ -1,0 +1,28 @@
+tax_id: consumption-tax
+official_name: 消費税
+aliases:
+  - 消費税等
+burden_type: national_tax
+legal_mandate_type: mandatory_by_law
+jurisdiction: Japan
+liable_party: 課税資産の譲渡等を行う事業者等
+economic_bearer: 消費者
+collector: 国税庁および税関
+beneficiary_or_fund: 国および地方公共団体
+purpose: 消費一般に広く負担を求める間接税
+calculation_basis: 課税資産の譲渡等の対価の額等
+current_status: active
+legal_bases:
+  - law_id: null
+    name: 消費税法等
+    article: 消法29等
+    source_url: https://www.nta.go.jp/taxes/shiraberu/taxanswer/shohi/6101.htm
+current_phases:
+  - consumption-tax-standard-rate-2019
+  - consumption-tax-reduced-rate-2019
+pending_changes: []
+source_refs:
+  - nta-consumption-tax-rates
+coverage_status: confirmed
+evidence_gaps: []
+verified_at: 2026-08-17T00:12:24+09:00
