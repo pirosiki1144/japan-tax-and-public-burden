@@ -1,0 +1,37 @@
+{
+  "law_info": {"law_id": "325AC0000000226"},
+  "revision_info": {"law_title": "地方税法"},
+  "law_full_text": {
+    "tag": "Law",
+    "attr": {},
+    "children": [
+      {
+        "tag": "MainProvision",
+        "attr": {},
+        "children": [
+          {
+            "tag": "Article",
+            "attr": {"Num": "72_83"},
+            "children": [
+              {"tag": "ArticleCaption", "attr": {}, "children": ["（地方消費税の税率）"]},
+              {"tag": "ArticleTitle", "attr": {}, "children": ["第七十二条の八十三"]},
+              {
+                "tag": "Paragraph",
+                "attr": {"Num": "1"},
+                "children": [
+                  {
+                    "tag": "ParagraphSentence",
+                    "attr": {},
+                    "children": [
+                      {"tag": "Sentence", "attr": {"Num": "1"}, "children": ["地方消費税の税率は、七十八分の二十二とする。"]}
+                    ]
+                  }
+                ]
+              }
+            ]
+          }
+        ]
+      }
+    ]
+  }
+}
