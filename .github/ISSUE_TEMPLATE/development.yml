@@ -1,0 +1,38 @@
+name: 開発作業
+description: 機能追加、改善、修正、保守作業を提案する
+title: ""
+labels: []
+body:
+  - type: textarea
+    id: background
+    attributes:
+      label: 背景・目的
+      description: 解決したい問題と、この作業が必要な理由を記載してください。
+    validations:
+      required: true
+  - type: textarea
+    id: scope
+    attributes:
+      label: 対象範囲
+      description: 変更するものと、今回変更しないものを記載してください。
+    validations:
+      required: true
+  - type: textarea
+    id: acceptance
+    attributes:
+      label: 受け入れ条件
+      description: 完了を確認できるチェック項目を記載してください。
+      value: |
+        - [ ]
+    validations:
+      required: true
+  - type: textarea
+    id: sources
+    attributes:
+      label: 根拠・参考資料
+      description: 関連する仕様、公式URL、Issue、PRなどを記載してください。
+  - type: textarea
+    id: notes
+    attributes:
+      label: 補足・制約
+      description: 不確実な点、互換性、セキュリティ、運用上の注意を記載してください。

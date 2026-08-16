@@ -44,7 +44,9 @@ npm run validate
 
 ## コントリビューション
 
-変更前に [AGENTS.md](AGENTS.md) と [PROJECT_SPEC.md](PROJECT_SPEC.md) を確認してください。新しい事実には一次情報のURLと確認日時を付け、推測値は登録しないでください。巡回先の追加・変更・停止もPull Requestでレビューします。
+このプロジェクトはIssue駆動で開発します。変更に着手する前に対応するIssueを確認し、Issueがなければ目的、対象範囲、受け入れ条件を記載したIssueを作成してください。Pull Requestには関連Issueを明記し、Issueの受け入れ条件に対する結果を記載します。ユーザーによるPR承認を、実装内容に対する確認として扱います。
+
+あわせて [AGENTS.md](AGENTS.md) と [PROJECT_SPEC.md](PROJECT_SPEC.md) を確認してください。新しい事実には一次情報のURLと確認日時を付け、推測値は登録しないでください。巡回先の追加・変更・停止もPull Requestでレビューします。
 
 ## ライセンス
 
