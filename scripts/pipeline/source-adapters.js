@@ -1,7 +1,7 @@
-import { normalizeNtaConsumptionTaxRates } from "../normalize/nta-consumption-tax-rates.js";
+import { normalizeHtmlRegexFacts } from "../normalize/html-regex-facts.js";
 
 const adapters = new Map([
-  ["nta_consumption_tax_rates", { normalize: normalizeNtaConsumptionTaxRates }]
+  ["html_regex_facts", { normalize: normalizeHtmlRegexFacts }]
 ]);
 
 export function getSourceAdapter(name) {

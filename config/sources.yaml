@@ -120,7 +120,42 @@
       "priority": 1,
       "cadence": "annual",
       "enabled": true,
-      "adapter": "nta_consumption_tax_rates",
+      "automation_enabled": true,
+      "adapter": "html_regex_facts",
+      "extraction": {
+        "expected_pages": 2,
+        "required_markers": [
+          {"page_index": 0, "label": "overview rate statement", "pattern": "標準税率10パーセント（うち2\\.2パーセントは地方消費税）"},
+          {"page_index": 1, "label": "reduced-rate food scope", "pattern": "飲食料品（酒類を除く）"},
+          {"page_index": 1, "label": "reduced-rate newspaper scope", "pattern": "週2回以上発行"}
+        ],
+        "facts": [
+          {
+            "fact_id": "application-start",
+            "page_index": 1,
+            "pattern": "(令和元年10月1日)から",
+            "capture_group": 1,
+            "transform": "japanese_date",
+            "target": {"file": "data/changes/consumption-tax-2019-rate.yaml", "record_id_field": "change_id", "record_id": "consumption-tax-2019-rate", "path": "application_start_dates.0.date_value"}
+          },
+          {
+            "fact_id": "standard-rate",
+            "page_index": 1,
+            "pattern": "標準税率は10パーセント（消費税率([0-9]+(?:\\.[0-9]+)?)パーセント、地方消費税率2\\.2パーセント）",
+            "capture_group": 1,
+            "transform": "number",
+            "target": {"file": "data/phases/consumption-tax.yaml", "record_id_field": "phase_id", "record_id": "consumption-tax-standard-rate-2019", "path": "value.numeric_value"}
+          },
+          {
+            "fact_id": "reduced-rate",
+            "page_index": 1,
+            "pattern": "軽減税率は8パーセント（消費税率([0-9]+(?:\\.[0-9]+)?)パーセント、地方消費税率1\\.76パーセント）",
+            "capture_group": 1,
+            "transform": "number",
+            "target": {"file": "data/phases/consumption-tax.yaml", "record_id_field": "phase_id", "record_id": "consumption-tax-reduced-rate-2019", "path": "value.numeric_value"}
+          }
+        ]
+      },
       "rate_limit": "サイトの利用条件に従う",
       "terms_url": "https://www.nta.go.jp/chuijiko/copy.htm",
       "last_verified_at": "2026-08-17T00:12:24+09:00",

@@ -53,10 +53,10 @@ npm run validate
 
 ## 公式情報の差分検出
 
-`config/sources.yaml` で有効化された国税庁adapterをdry-runで実行できます。
+`config/sources.yaml` で自動取得を有効化した全sourceを1回のdry-runで実行できます。税目ごとのJavaScriptやworkflowは作らず、共通のHTML抽出adapterに必須marker、値の抽出規則、正本内の照合先を設定します。
 
 ```bash
-npm run scan -- --source nta-consumption-tax-rates --dry-run --output .cache/source-scan-result.json
+npm run scan -- --all --dry-run --output .cache/source-scan-result.json
 ```
 
 パイプラインは取得、正規化、検証、正本との意味的差分検出を順に行い、`no_change`、`change_detected`、`error` の機械可読JSONを出力します。取得URL、取得日時、原文バイトのSHA-256も記録します。Phase 2のパイプラインは正本を書き換えず、候補差分はstdoutまたはGit管理外の`.cache/`にだけ出力します。取得失敗や必須構造の欠落時は非0で終了し、部分データは採用しません。

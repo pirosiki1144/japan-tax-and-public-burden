@@ -1,14 +1,15 @@
 export function validateNormalizedSource(normalized) {
   const errors = [];
   if (!normalized.source_id) errors.push("source_id is required");
-  if (!normalized.tax_id) errors.push("tax_id is required");
-  if (!/^\d{4}-\d{2}-\d{2}$/.test(normalized.application_start?.date_value ?? "")) errors.push("application_start.date_value must be an ISO date");
-  if (!normalized.application_start?.date_raw) errors.push("application_start.date_raw is required");
-  if (!Array.isArray(normalized.phases) || normalized.phases.length === 0) errors.push("at least one phase is required");
-  for (const phase of normalized.phases ?? []) {
-    if (!phase.phase_id) errors.push("phase_id is required");
-    if (!Number.isFinite(phase.numeric_value)) errors.push(`${phase.phase_id ?? "phase"}.numeric_value must be finite`);
-    if (!phase.unit) errors.push(`${phase.phase_id ?? "phase"}.unit is required`);
+  if (!Array.isArray(normalized.facts) || normalized.facts.length === 0) errors.push("at least one fact is required");
+  const factIds = new Set();
+  for (const fact of normalized.facts ?? []) {
+    if (!fact.fact_id) errors.push("fact_id is required");
+    if (factIds.has(fact.fact_id)) errors.push(`duplicate fact_id: ${fact.fact_id}`);
+    factIds.add(fact.fact_id);
+    if (fact.raw === "") errors.push(`${fact.fact_id}.raw is required`);
+    if (fact.value === undefined || (typeof fact.value === "number" && !Number.isFinite(fact.value))) errors.push(`${fact.fact_id}.value is invalid`);
+    if (!fact.target?.file || !fact.target?.record_id || !fact.target?.path) errors.push(`${fact.fact_id}.target is invalid`);
   }
   if (errors.length) throw new Error(`Normalized source is invalid: ${errors.join("; ")}`);
   return normalized;

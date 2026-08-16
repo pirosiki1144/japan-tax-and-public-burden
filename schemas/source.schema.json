@@ -25,11 +25,63 @@
         "priority": {"type": "integer", "minimum": 1},
         "cadence": {"type": "string", "minLength": 1},
         "enabled": {"type": "boolean"},
+        "automation_enabled": {"type": "boolean"},
         "adapter": {"type": "string", "minLength": 1},
+        "extraction": {"$ref": "#/$defs/extraction"},
         "rate_limit": {"type": "string", "minLength": 1},
         "terms_url": {"type": "string", "format": "uri", "pattern": "^https://"},
         "last_verified_at": {"type": "string", "format": "date-time"},
         "notes": {"type": "string"}
+      },
+      "allOf": [
+        {
+          "if": {"properties": {"automation_enabled": {"const": true}}, "required": ["automation_enabled"]},
+          "then": {"properties": {"extraction": true}, "required": ["extraction"]}
+        }
+      ]
+    },
+    "extraction": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["expected_pages", "required_markers", "facts"],
+      "properties": {
+        "expected_pages": {"type": "integer", "minimum": 1},
+        "required_markers": {"type": "array", "items": {"$ref": "#/$defs/marker"}},
+        "facts": {"type": "array", "minItems": 1, "items": {"$ref": "#/$defs/fact"}}
+      }
+    },
+    "marker": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["page_index", "label", "pattern"],
+      "properties": {
+        "page_index": {"type": "integer", "minimum": 0},
+        "label": {"type": "string", "minLength": 1},
+        "pattern": {"type": "string", "minLength": 1}
+      }
+    },
+    "fact": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["fact_id", "page_index", "pattern", "capture_group", "transform", "target"],
+      "properties": {
+        "fact_id": {"type": "string", "pattern": "^[a-z0-9]+(?:-[a-z0-9]+)*$"},
+        "page_index": {"type": "integer", "minimum": 0},
+        "pattern": {"type": "string", "minLength": 1},
+        "capture_group": {"type": "integer", "minimum": 1},
+        "transform": {"enum": ["string", "number", "japanese_date"]},
+        "target": {"$ref": "#/$defs/target"}
+      }
+    },
+    "target": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["file", "record_id_field", "record_id", "path"],
+      "properties": {
+        "file": {"type": "string", "pattern": "^data/[a-z0-9_./-]+\\.(?:yaml|yml|json)$"},
+        "record_id_field": {"type": "string", "pattern": "^[a-z_][a-z0-9_]*$"},
+        "record_id": {"type": "string", "pattern": "^[a-z0-9]+(?:-[a-z0-9]+)*$"},
+        "path": {"type": "string", "pattern": "^[a-z_][a-z0-9_]*(?:\\.(?:[a-z_][a-z0-9_]*|[0-9]+))*$"}
       }
     }
   }

@@ -898,8 +898,6 @@ README.mdは一般利用者向け、PROJECT_SPEC.mdは設計根拠、AGENTS.md�
 
 `config/sources.yaml` は情報源レジストリ、`data/` 配下の検証済み構造化データは正本とする。取得途中のHTML、PDF、API応答は `.cache/` 配下の一時データとしてGit管理しない。`reports/` と将来の `generated/` は正本から再生成する成果物とし、直接編集しない。履歴は追記型event、phaseとGit履歴で保持する。
 
-Phase 2の自動取得は、source registry読込み、HTTP取得、adapterによる正規化、正規化結果の検証、正本との意味的差分検出を分離する。取得ごとに `source_url`、取得日時、原文バイトのSHA-256を記録する。取得失敗、非HTML応答、想定外originへのredirect、必須構造の欠落、正規化後の検証失敗は実行全体を非成功とし、部分結果で正本を更新しない。Phase 2では正本更新機能を持たず、候補差分を機械可読JSONとしてstdoutまたは`.cache/`に出力する。
-
 ## 17. 品質・検証ルール
 
 ### 17.1 必須ルール

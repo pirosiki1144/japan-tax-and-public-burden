@@ -1,24 +1,38 @@
-import { join } from "node:path";
+import { resolve, sep } from "node:path";
 import { readYaml } from "../validate/schema-validator.js";
 
-export async function detectCanonicalDiff(root, normalized) {
-  const phases = await readYaml(join(root, "data/phases/consumption-tax.yaml"));
-  const changes = await readYaml(join(root, "data/changes/consumption-tax-2019-rate.yaml"));
-  const differences = [];
-  const applicationStart = changes.application_start_dates.find(({ date_value: value }) => value === normalized.application_start.date_value);
-  if (!applicationStart || applicationStart.date_raw !== normalized.application_start.date_raw) {
-    differences.push({ path: "change.application_start_dates", current: changes.application_start_dates, candidate: normalized.application_start });
+function canonicalFile(root, relativePath) {
+  const dataRoot = `${resolve(root, "data")}${sep}`;
+  const path = resolve(root, relativePath);
+  if (!path.startsWith(dataRoot)) throw new Error(`Canonical target must stay under data/: ${relativePath}`);
+  return path;
+}
+
+function selectRecord(document, target) {
+  const records = Array.isArray(document) ? document : [document];
+  const record = records.find((candidate) => candidate?.[target.record_id_field] === target.record_id);
+  if (!record) throw new Error(`Canonical record not found: ${target.record_id}`);
+  return record;
+}
+
+function readPath(record, path) {
+  let value = record;
+  for (const segment of path.split(".")) {
+    if (value === null || value === undefined || !Object.hasOwn(value, segment)) throw new Error(`Canonical path not found: ${path}`);
+    value = value[segment];
   }
-  for (const candidate of normalized.phases) {
-    const current = phases.find(({ phase_id: id }) => id === candidate.phase_id);
-    if (!current) {
-      differences.push({ path: `phases.${candidate.phase_id}`, current: null, candidate });
-      continue;
-    }
-    for (const field of ["numeric_value", "unit"]) {
-      if (current.value[field] !== candidate[field]) {
-        differences.push({ path: `phases.${candidate.phase_id}.value.${field}`, current: current.value[field], candidate: candidate[field] });
-      }
+  return value;
+}
+
+export async function detectCanonicalDiff(root, normalized) {
+  const differences = [];
+  const documents = new Map();
+  for (const fact of normalized.facts) {
+    const path = canonicalFile(root, fact.target.file);
+    if (!documents.has(path)) documents.set(path, await readYaml(path));
+    const current = readPath(selectRecord(documents.get(path), fact.target), fact.target.path);
+    if (current !== fact.value) {
+      differences.push({ fact_id: fact.fact_id, target: fact.target, current, candidate: fact.value, raw: fact.raw });
     }
   }
   return differences;

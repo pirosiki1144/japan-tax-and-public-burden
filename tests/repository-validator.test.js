@@ -31,6 +31,7 @@ test("source scan workflow is fixed, scheduled, and manually runnable", async ()
   assert.ok(commands.includes("npm test"));
   assert.ok(commands.includes("npm run validate"));
   assert.ok(commands.some((command) => command.includes("--dry-run")));
+  assert.ok(commands.some((command) => command.includes("--all")));
 });
 
 test("revenue schema distinguishes an unavailable amount from zero", async () => {
