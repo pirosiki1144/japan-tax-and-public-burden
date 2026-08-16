@@ -51,6 +51,18 @@ npm run validate
 
 `.yaml` ファイルはYAML 1.2として読み込みます。一般的なYAML記法とJSON互換記法のどちらも使用できます。`npm run validate` はYAML、JSON、CSVを対応するJSON Schemaへ照合し、必須項目、ID重複、参照整合性、URL、日付形式、追加プロパティなどを検証します。
 
+## 公式情報の差分検出
+
+`config/sources.yaml` で有効化された国税庁adapterをdry-runで実行できます。
+
+```bash
+npm run scan -- --source nta-consumption-tax-rates --dry-run --output .cache/source-scan-result.json
+```
+
+パイプラインは取得、正規化、検証、正本との意味的差分検出を順に行い、`no_change`、`change_detected`、`error` の機械可読JSONを出力します。取得URL、取得日時、原文バイトのSHA-256も記録します。Phase 2のパイプラインは正本を書き換えず、候補差分はstdoutまたはGit管理外の`.cache/`にだけ出力します。取得失敗や必須構造の欠落時は非0で終了し、部分データは採用しません。
+
+`.github/workflows/source-scan.yml` は毎週の定期実行と手動実行に対応し、結果JSONをartifactとして保存します。workflow自身や正本データは生成・commitしません。
+
 ## コントリビューション
 
 このプロジェクトはIssue駆動で開発します。変更に着手する前に対応するIssueを確認し、Issueがなければ目的、対象範囲、受け入れ条件を記載したIssueを作成してください。Pull Requestには関連Issueを明記し、Issueの受け入れ条件に対する結果を記載します。ユーザーによるPR承認を、実装内容に対する確認として扱います。

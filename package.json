@@ -6,7 +6,8 @@
   "type": "module",
   "scripts": {
     "test": "node --test",
-    "validate": "node scripts/validate/validate-data.js"
+    "validate": "node scripts/validate/validate-data.js",
+    "scan": "node scripts/pipeline/scan-source.js"
   },
   "devDependencies": {
     "ajv": "^8.17.1",

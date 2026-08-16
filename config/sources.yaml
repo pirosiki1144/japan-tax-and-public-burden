@@ -120,11 +120,11 @@
       "priority": 1,
       "cadence": "annual",
       "enabled": true,
-      "adapter": "manual",
+      "adapter": "nta_consumption_tax_rates",
       "rate_limit": "サイトの利用条件に従う",
       "terms_url": "https://www.nta.go.jp/chuijiko/copy.htm",
       "last_verified_at": "2026-08-17T00:12:24+09:00",
-      "notes": "Phase 1の検証用サンプルに使用する"
+      "notes": "Phase 1の検証用サンプルとPhase 2の自動取得adapterに使用する"
     }
   ]
 }

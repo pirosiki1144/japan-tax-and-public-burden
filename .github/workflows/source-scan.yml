@@ -1,0 +1,29 @@
+name: Scan official sources
+
+on:
+  workflow_dispatch:
+  schedule:
+    - cron: "23 18 * * 1"
+
+permissions:
+  contents: read
+
+jobs:
+  scan:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+          cache: npm
+      - run: npm ci
+      - run: npm test
+      - run: npm run validate
+      - run: npm run scan -- --source nta-consumption-tax-rates --dry-run --output .cache/source-scan-result.json
+      - if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: source-scan-result
+          path: .cache/source-scan-result.json
+          if-no-files-found: error

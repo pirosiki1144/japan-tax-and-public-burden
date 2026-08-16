@@ -21,6 +21,18 @@ test("validation workflow runs only for pull requests", async () => {
   assert.ok(!Object.hasOwn(workflow.on, "push"));
 });
 
+test("source scan workflow is fixed, scheduled, and manually runnable", async () => {
+  const workflow = parse(await readFile(new URL("../.github/workflows/source-scan.yml", import.meta.url), "utf8"));
+  assert.ok(Object.hasOwn(workflow.on, "workflow_dispatch"));
+  assert.ok(Object.hasOwn(workflow.on, "schedule"));
+  assert.ok(!Object.hasOwn(workflow.on, "push"));
+  assert.equal(workflow.permissions.contents, "read");
+  const commands = workflow.jobs.scan.steps.map(({ run }) => run).filter(Boolean);
+  assert.ok(commands.includes("npm test"));
+  assert.ok(commands.includes("npm run validate"));
+  assert.ok(commands.some((command) => command.includes("--dry-run")));
+});
+
 test("revenue schema distinguishes an unavailable amount from zero", async () => {
   const schemaPath = fileURLToPath(new URL("../schemas/revenue.schema.json", import.meta.url));
   const { revenue } = await createValidators({ revenue: schemaPath });
