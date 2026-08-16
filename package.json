@@ -1,0 +1,19 @@
+{
+  "name": "japan-tax-and-public-burden",
+  "version": "0.1.0",
+  "private": true,
+  "description": "Structured data for taxes and public burdens in Japan",
+  "type": "module",
+  "scripts": {
+    "test": "node --test",
+    "validate": "node scripts/validate/validate-data.js"
+  },
+  "devDependencies": {
+    "ajv": "^8.17.1",
+    "ajv-formats": "^3.0.1",
+    "yaml": "^2.8.1"
+  },
+  "engines": {
+    "node": ">=20"
+  }
+}

@@ -1,0 +1,39 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://github.com/pirosiki1144/japan-tax-and-public-burden/schemas/change.schema.json",
+  "title": "Burden change",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["change_id", "tax_ids", "title", "change_types", "proposal_origin", "current_stage", "stage_confidence", "bill_ids", "law_ids", "events", "application_start_dates", "collection_start_dates", "source_refs"],
+  "properties": {
+    "change_id": {"type": "string", "pattern": "^[a-z0-9]+(?:-[a-z0-9]+)*$"},
+    "tax_ids": {"type": "array", "minItems": 1, "items": {"type": "string"}, "uniqueItems": true},
+    "title": {"type": "string", "minLength": 1},
+    "change_types": {"type": "array", "minItems": 1, "items": {"enum": ["creation", "rate", "scope", "deduction", "exemption", "collection_method", "schedule", "termination", "other"]}},
+    "proposal_origin": {"type": "string", "minLength": 1},
+    "current_stage": {"type": "string", "minLength": 1},
+    "stage_confidence": {"enum": ["confirmed", "probable", "reported"]},
+    "bill_ids": {"type": "array", "items": {"type": "string"}, "uniqueItems": true},
+    "law_ids": {"type": "array", "items": {"type": "string"}, "uniqueItems": true},
+    "events": {"type": "array", "items": {"type": "string"}, "uniqueItems": true},
+    "promulgation_date": {"$ref": "#/$defs/evidencedDate"},
+    "enforcement_date": {"$ref": "#/$defs/evidencedDate"},
+    "application_start_dates": {"type": "array", "items": {"$ref": "#/$defs/evidencedDate"}},
+    "collection_start_dates": {"type": "array", "items": {"$ref": "#/$defs/evidencedDate"}},
+    "source_refs": {"type": "array", "minItems": 1, "items": {"type": "string"}, "uniqueItems": true}
+  },
+  "$defs": {
+    "evidencedDate": {
+      "type": "object",
+      "required": ["date_value", "date_raw", "date_precision", "date_certainty", "date_source_url", "verified_at"],
+      "properties": {
+        "date_value": {"type": ["string", "null"], "format": "date"},
+        "date_raw": {"type": "string", "minLength": 1},
+        "date_precision": {"enum": ["exact_date", "month", "calendar_year", "fiscal_year", "tax_year", "relative", "condition_based", "unknown"]},
+        "date_certainty": {"enum": ["news_report", "party_decision", "council_material", "bill_text", "enacted", "promulgated", "enforcement_order", "collector_notice", "observed_collection"]},
+        "date_source_url": {"type": "string", "format": "uri"},
+        "verified_at": {"type": "string", "format": "date-time"}
+      }
+    }
+  }
+}

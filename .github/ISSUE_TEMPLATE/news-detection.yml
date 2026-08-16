@@ -1,0 +1,43 @@
+name: ニュース・構想の検知
+description: 新設・変更・終了の可能性を一次情報の確認前に追跡する
+title: "[検知] "
+labels: ["source:news", "needs-verification"]
+body:
+  - type: textarea
+    id: summary
+    attributes:
+      label: 概要
+    validations:
+      required: true
+  - type: input
+    id: burden
+    attributes:
+      label: 対象となる税金等
+  - type: input
+    id: change_type
+    attributes:
+      label: 変更種別
+    validations:
+      required: true
+  - type: input
+    id: actor
+    attributes:
+      label: 提案主体
+  - type: input
+    id: period
+    attributes:
+      label: 想定される適用・徴収時期
+  - type: textarea
+    id: sources
+    attributes:
+      label: 一次情報・報道一覧
+      description: URLと確認日時を記載してください
+    validations:
+      required: true
+  - type: input
+    id: topic_key
+    attributes:
+      label: 重複判定キー
+      description: tax/name | change type | actor | scope | period | bill/policy id
+    validations:
+      required: true
