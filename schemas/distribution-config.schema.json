@@ -1,0 +1,13 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://github.com/pirosiki1144/japan-tax-and-public-burden/schemas/distribution-config.schema.json",
+  "title": "Distribution generation configuration",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["schema_version", "default_as_of", "output_directory"],
+  "properties": {
+    "schema_version": {"const": 1},
+    "default_as_of": {"type": "string", "format": "date"},
+    "output_directory": {"const": "generated"}
+  }
+}

@@ -19,6 +19,7 @@ test("validation workflow runs only for pull requests", async () => {
   const workflow = parse(await readFile(new URL("../.github/workflows/validate.yml", import.meta.url), "utf8"));
   assert.ok(Object.hasOwn(workflow.on, "pull_request"));
   assert.ok(!Object.hasOwn(workflow.on, "push"));
+  assert.ok(workflow.jobs.validate.steps.some(({ run }) => run === "npm run generate:check"));
 });
 
 test("source scan workflow is fixed, scheduled, and manually runnable", async () => {
@@ -40,10 +41,12 @@ test("source scan workflow is fixed, scheduled, and manually runnable", async ()
   const updateCommands = workflow.jobs["update-pr"].steps.map(({ run }) => run).filter(Boolean);
   assert.ok(scanCommands.includes("npm test"));
   assert.ok(scanCommands.includes("npm run validate"));
+  assert.ok(scanCommands.includes("npm run generate:check"));
   assert.ok(scanCommands.some((command) => command.includes("npm run audit")));
   assert.ok(scanCommands.some((command) => command.includes("--all")));
   assert.ok(scanCommands.some((command) => command.includes("npm run audit:scan")));
   assert.ok(updateCommands.some((command) => command.includes("npm run prepare-update")));
+  assert.ok(updateCommands.some((command) => command.includes("npm run generate") && command.includes("git add data generated")));
   assert.ok(updateCommands.some((command) => command.includes("gh pr list") && command.includes("gh pr edit") && command.includes("gh pr create")));
   assert.ok([...scanCommands, ...updateCommands].every((command) => !command.includes("gh pr merge")));
   const issueCommands = workflow.jobs["audit-issues"].steps.map(({ run }) => run).filter(Boolean);

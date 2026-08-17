@@ -1,0 +1,30 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://github.com/pirosiki1144/japan-tax-and-public-burden/schemas/distribution-current.schema.json",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["schema_version", "dataset", "as_of", "sources", "records"],
+  "properties": {
+    "schema_version": {"const": 1},
+    "dataset": {"const": "current"},
+    "as_of": {"type": "string", "format": "date"},
+    "sources": {"type": "array", "items": {"type": "object"}},
+    "records": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": ["tax_id", "current_status", "canonical_current_status", "burden", "active_phases", "pending_changes", "canonical_pending_changes"],
+        "properties": {
+          "tax_id": {"type": "string"},
+          "current_status": {"enum": ["not_applied", "active", "active_with_pending_change", "ended"]},
+          "canonical_current_status": {"enum": ["not_applied", "active", "active_with_pending_change", "ended"]},
+          "burden": {"type": "object"},
+          "active_phases": {"type": "array", "items": {"type": "object"}},
+          "pending_changes": {"type": "array", "items": {"type": "object"}},
+          "canonical_pending_changes": {"type": "array", "items": {"type": "object"}}
+        }
+      }
+    }
+  }
+}

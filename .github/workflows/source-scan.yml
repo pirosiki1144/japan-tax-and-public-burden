@@ -30,6 +30,7 @@ jobs:
       - run: npm ci
       - run: npm test
       - run: npm run validate
+      - run: npm run generate:check
       - run: npm run audit -- --output .cache/repository-audit.json
       - id: scan
         run: |
@@ -87,11 +88,13 @@ jobs:
             git switch --create "$UPDATE_BRANCH" origin/main
           fi
           npm run prepare-update -- --scan .cache/source-scan-result.json --report .cache/update-pr-body.md
+          npm run generate
           npm test
           npm run validate
+          npm run generate:check
           npm run audit -- --output .cache/repository-audit-after-update.json
           if ! git diff --quiet; then
-            git add data
+            git add data generated
             git commit -m "公式情報に基づくデータ更新候補"
           fi
           if git diff --quiet origin/main...HEAD; then
