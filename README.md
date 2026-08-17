@@ -72,3 +72,26 @@ npm run scan -- --all --dry-run --output .cache/source-scan-result.json
 定期巡回は既存の `source-scan.yml` だけで実行します。確定的な差分がある場合は固定ブランチ `automation/official-source-updates` から `main` 向けのPRを作成し、既存PRがあれば更新します。取得失敗、構造変更、対象不明、正本との競合ではデータをcommitせず停止します。変更がなければbranch、commit、PRを作成せず、自動マージも行いません。
 
 監査は `npm run audit -- --output .cache/repository-audit.json` で実行できます。制度日付、主状態と法律手続状態、phase期間、参照関係、金額の集計範囲を検査し、再生成可能なJSONレポートを `.cache/` に出力します。定期巡回で一時障害の再試行後も取得できない場合、参照元の構造が変わった場合、公式ソース間で値が一致しない場合、または正本へ対応付けられない場合は、正本を推測更新せず `[audit-topic:...]` を持つIssueを作成します。同じキーの未解決Issueは再利用し、解決後もIssueを削除せず根拠と関連PRを残してCloseします。
+
+## 配布用データの生成
+
+`data/` と `config/` を正本とし、`generated/` のCSV・JSONを一方向に生成します。通常は次のコマンドを使用します。
+
+```bash
+npm run generate
+npm run generate:check
+```
+
+基準日は `config/distribution.yaml` の `default_as_of` です。過去時点を再現する場合は、追跡対象を上書きせず `.cache/` へ出力します。
+
+```bash
+npm run generate -- --as-of 2019-10-01 --output-dir .cache/distribution-2019-10-01
+```
+
+- `current.json` / `current.csv`: 指定日時点で適用中のphaseと主状態
+- `history.json` / `history.csv`: burden、change、event、phase、税収・照合データの履歴
+- `summary.json` / `summary.csv`: 件数と、集計条件を分離した金額合計
+
+`included_in_parent_total` は合計から除外し、未集計・未徴収・非把握・部分値は0円と推測せず別一覧に残します。JSONは正本の全項目を保持し、履歴CSVは `payload_json` に元レコードを保持します。同じ正本と基準日からはbyte単位で同一の生成物が得られ、CIの `generate:check` が直接編集や更新漏れを検出します。
+
+現在はGitリポジトリ内の成果物として配布します。GitHub PagesやAPI公開は、公開URL、更新保証、キャッシュ、障害対応、費用と権限を決める必要があるため、このIssueには含めず別Issueで判断します。

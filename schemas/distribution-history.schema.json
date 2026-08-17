@@ -1,0 +1,20 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://github.com/pirosiki1144/japan-tax-and-public-burden/schemas/distribution-history.schema.json",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["schema_version", "dataset", "as_of", "sources", "burdens", "changes", "events", "phases", "revenue", "national_burden_ratios", "national_burden_mappings"],
+  "properties": {
+    "schema_version": {"const": 1},
+    "dataset": {"const": "history"},
+    "as_of": {"type": "string", "format": "date"},
+    "sources": {"type": "array", "items": {"type": "object"}},
+    "burdens": {"type": "array", "items": {"type": "object"}},
+    "changes": {"type": "array", "items": {"type": "object"}},
+    "events": {"type": "array", "items": {"type": "object"}},
+    "phases": {"type": "array", "items": {"type": "object"}},
+    "revenue": {"type": "array", "items": {"type": "object"}},
+    "national_burden_ratios": {"type": "array", "items": {"type": "object"}},
+    "national_burden_mappings": {"type": "array", "items": {"type": "object"}}
+  }
+}

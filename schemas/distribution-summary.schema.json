@@ -1,0 +1,48 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://github.com/pirosiki1144/japan-tax-and-public-burden/schemas/distribution-summary.schema.json",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["schema_version", "dataset", "as_of", "counts", "amount_groups"],
+  "properties": {
+    "schema_version": {"const": 1},
+    "dataset": {"const": "summary"},
+    "as_of": {"type": "string", "format": "date"},
+    "counts": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["sources", "burdens", "changes", "events", "phases", "revenue_records"],
+      "properties": {
+        "sources": {"type": "integer", "minimum": 0},
+        "burdens": {"type": "integer", "minimum": 0},
+        "changes": {"type": "integer", "minimum": 0},
+        "events": {"type": "integer", "minimum": 0},
+        "phases": {"type": "integer", "minimum": 0},
+        "revenue_records": {"type": "integer", "minimum": 0}
+      }
+    },
+    "amount_groups": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": ["tax_id", "fiscal_year", "amount_kind", "accounting_basis", "government_level", "account_or_fund", "gross_or_net", "refund_treatment", "consolidation_scope", "amount_yen", "included_record_ids", "excluded_inner_record_ids", "unavailable_record_ids"],
+        "properties": {
+          "tax_id": {"type": "string"},
+          "fiscal_year": {"type": "string"},
+          "amount_kind": {"type": "string"},
+          "accounting_basis": {"type": "string"},
+          "government_level": {"type": "string"},
+          "account_or_fund": {"type": "string"},
+          "gross_or_net": {"type": "string"},
+          "refund_treatment": {"type": "string"},
+          "consolidation_scope": {"type": "string"},
+          "amount_yen": {"type": "string", "pattern": "^(?:0|[1-9][0-9]*)$"},
+          "included_record_ids": {"type": "array", "items": {"type": "string"}},
+          "excluded_inner_record_ids": {"type": "array", "items": {"type": "string"}},
+          "unavailable_record_ids": {"type": "array", "items": {"type": "string"}}
+        }
+      }
+    }
+  }
+}

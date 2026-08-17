@@ -11,7 +11,9 @@
     "prepare-update": "node scripts/automation/prepare-update.js",
     "audit": "node scripts/audit/audit-repository.js",
     "audit:scan": "node scripts/audit/audit-source-scan.js",
-    "audit:issues": "node scripts/audit/publish-audit-issues.js"
+    "audit:issues": "node scripts/audit/publish-audit-issues.js",
+    "generate": "node scripts/generate/generate-distribution.js",
+    "generate:check": "node scripts/generate/generate-distribution.js --check"
   },
   "devDependencies": {
     "ajv": "^8.17.1",

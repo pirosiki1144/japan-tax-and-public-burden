@@ -1,0 +1,367 @@
+{
+  "schema_version": 1,
+  "dataset": "current",
+  "as_of": "2026-08-18",
+  "sources": [
+    {
+      "source_id": "egov-laws",
+      "name": "e-Gov法令検索",
+      "authority": "デジタル庁",
+      "base_url": "https://laws.e-gov.go.jp/",
+      "entry_urls": [
+        "https://laws.e-gov.go.jp/api/2/law_data/363AC0000000108",
+        "https://laws.e-gov.go.jp/api/2/law_data/325AC0000000226"
+      ],
+      "source_type": "law_api",
+      "scope": "現行法令本文、法令ID、改正履歴",
+      "jurisdiction": "Japan",
+      "priority": 1,
+      "cadence": "daily",
+      "enabled": true,
+      "automation_enabled": true,
+      "adapter": "egov_law_article_facts",
+      "accepted_content_types": [
+        "application/json"
+      ],
+      "extraction": {
+        "expected_pages": 2,
+        "required_markers": [],
+        "expected_documents": [
+          {
+            "page_index": 0,
+            "law_id": "363AC0000000108",
+            "law_title": "消費税法"
+          },
+          {
+            "page_index": 1,
+            "law_id": "325AC0000000226",
+            "law_title": "地方税法"
+          }
+        ],
+        "facts": [
+          {
+            "fact_id": "consumption-tax-act-standard-rate",
+            "page_index": 0,
+            "article_num": "29",
+            "article_caption": "（税率）",
+            "item_num": "1",
+            "pattern": "(百分の.+)$",
+            "capture_group": 1,
+            "transform": "string",
+            "expected_value": "百分の七・八"
+          },
+          {
+            "fact_id": "local-tax-act-local-consumption-ratio",
+            "page_index": 1,
+            "article_num": "72_83",
+            "article_caption": "（地方消費税の税率）",
+            "pattern": "地方消費税の税率は、([^、。]+)とする",
+            "capture_group": 1,
+            "transform": "string",
+            "expected_value": "七十八分の二十二"
+          }
+        ]
+      },
+      "rate_limit": "公式仕様およびrobots.txtに従う",
+      "terms_url": "https://laws.e-gov.go.jp/terms/",
+      "last_verified_at": "2026-08-16T12:20:19+09:00",
+      "notes": "法案審議の早期検知には国会情報を併用する"
+    },
+    {
+      "source_id": "kanpo",
+      "name": "官報発行サイト",
+      "authority": "国立印刷局",
+      "base_url": "https://www.kanpo.go.jp/",
+      "entry_urls": [
+        "https://www.kanpo.go.jp/"
+      ],
+      "source_type": "official_gazette",
+      "scope": "法律、政令、省令等の公布確認",
+      "jurisdiction": "Japan",
+      "priority": 1,
+      "cadence": "publication_days",
+      "enabled": true,
+      "adapter": "manual",
+      "rate_limit": "サイトの利用条件に従う",
+      "terms_url": "https://www.kanpo.go.jp/",
+      "last_verified_at": "2026-08-16T12:20:19+09:00",
+      "notes": ""
+    },
+    {
+      "source_id": "mof-national-burden",
+      "name": "財務省 国民負担率",
+      "authority": "財務省",
+      "base_url": "https://www.mof.go.jp/",
+      "entry_urls": [
+        "https://www.mof.go.jp/policy/budget/topics/futanritsu/"
+      ],
+      "source_type": "statistics",
+      "scope": "租税負担率、社会保障負担率、国民負担率",
+      "jurisdiction": "Japan",
+      "priority": 3,
+      "cadence": "annual",
+      "enabled": true,
+      "adapter": "manual",
+      "rate_limit": "サイトの利用条件に従う",
+      "terms_url": "https://www.mof.go.jp/about_mof/other/e-j/",
+      "last_verified_at": "2026-08-16T12:20:19+09:00",
+      "notes": "実績、実績見込み、見通しを区別する"
+    },
+    {
+      "source_id": "ndl-minutes-api",
+      "name": "国会会議録検索システムAPI",
+      "authority": "国立国会図書館",
+      "base_url": "https://kokkai.ndl.go.jp/",
+      "entry_urls": [
+        "https://kokkai.ndl.go.jp/api.html"
+      ],
+      "source_type": "parliamentary_minutes",
+      "scope": "本会議、委員会、小委員会等の会議・発言",
+      "jurisdiction": "Japan",
+      "priority": 2,
+      "cadence": "daily",
+      "enabled": true,
+      "adapter": "ndl_minutes_api",
+      "rate_limit": "多重リクエストを避け、取得後に数秒空ける",
+      "terms_url": "https://kokkai.ndl.go.jp/api.html",
+      "last_verified_at": "2026-08-16T12:20:19+09:00",
+      "notes": "公開までの時間差を考慮する"
+    },
+    {
+      "source_id": "nta-consumption-tax-rates",
+      "name": "国税庁 消費税の基本的なしくみ・軽減税率制度",
+      "authority": "国税庁",
+      "base_url": "https://www.nta.go.jp/",
+      "entry_urls": [
+        "https://www.nta.go.jp/taxes/shiraberu/taxanswer/shohi/6101.htm",
+        "https://www.nta.go.jp/taxes/shiraberu/taxanswer/shohi/6102.htm"
+      ],
+      "source_type": "ministry",
+      "scope": "消費税の納税義務者・負担者、消費税および地方消費税の標準税率、軽減税率、適用対象、実施開始日",
+      "jurisdiction": "Japan",
+      "priority": 1,
+      "cadence": "annual",
+      "enabled": true,
+      "automation_enabled": true,
+      "adapter": "html_regex_facts",
+      "extraction": {
+        "expected_pages": 2,
+        "required_markers": [
+          {
+            "page_index": 0,
+            "label": "overview rate statement",
+            "pattern": "標準税率10パーセント（うち2\\.2パーセントは地方消費税）"
+          },
+          {
+            "page_index": 1,
+            "label": "reduced-rate food scope",
+            "pattern": "飲食料品（酒類を除く）"
+          },
+          {
+            "page_index": 1,
+            "label": "reduced-rate newspaper scope",
+            "pattern": "週2回以上発行"
+          }
+        ],
+        "facts": [
+          {
+            "fact_id": "application-start",
+            "page_index": 1,
+            "pattern": "(令和元年10月1日)から",
+            "capture_group": 1,
+            "transform": "japanese_date",
+            "target": {
+              "file": "data/changes/consumption-tax-2019-rate.yaml",
+              "record_id_field": "change_id",
+              "record_id": "consumption-tax-2019-rate",
+              "path": "application_start_dates.0.date_value"
+            }
+          },
+          {
+            "fact_id": "standard-rate",
+            "page_index": 1,
+            "pattern": "標準税率は10パーセント（消費税率([0-9]+(?:\\.[0-9]+)?)パーセント、地方消費税率2\\.2パーセント）",
+            "capture_group": 1,
+            "transform": "number",
+            "target": {
+              "file": "data/phases/consumption-tax.yaml",
+              "record_id_field": "phase_id",
+              "record_id": "consumption-tax-standard-rate-2019",
+              "path": "value.numeric_value"
+            }
+          },
+          {
+            "fact_id": "reduced-rate",
+            "page_index": 1,
+            "pattern": "軽減税率は8パーセント（消費税率([0-9]+(?:\\.[0-9]+)?)パーセント、地方消費税率1\\.76パーセント）",
+            "capture_group": 1,
+            "transform": "number",
+            "target": {
+              "file": "data/phases/consumption-tax.yaml",
+              "record_id_field": "phase_id",
+              "record_id": "consumption-tax-reduced-rate-2019",
+              "path": "value.numeric_value"
+            }
+          }
+        ]
+      },
+      "rate_limit": "サイトの利用条件に従う",
+      "terms_url": "https://www.nta.go.jp/chuijiko/copy.htm",
+      "last_verified_at": "2026-08-17T00:12:24+09:00",
+      "notes": "Phase 1の検証用サンプルとPhase 2の自動取得adapterに使用する"
+    },
+    {
+      "source_id": "sangiin-bills",
+      "name": "参議院 議案情報",
+      "authority": "参議院",
+      "base_url": "https://www.sangiin.go.jp/",
+      "entry_urls": [
+        "https://www.sangiin.go.jp/japanese/joho1/kousei/gian/current/gian.htm"
+      ],
+      "source_type": "bill_index",
+      "scope": "法案、付託委員会、審議経過",
+      "jurisdiction": "Japan",
+      "priority": 2,
+      "cadence": "daily",
+      "enabled": true,
+      "adapter": "manual",
+      "rate_limit": "サイトの利用条件に従う",
+      "terms_url": "https://www.sangiin.go.jp/",
+      "last_verified_at": "2026-08-16T12:20:19+09:00",
+      "notes": ""
+    },
+    {
+      "source_id": "shugiin-bills",
+      "name": "衆議院 議案情報",
+      "authority": "衆議院",
+      "base_url": "https://www.shugiin.go.jp/",
+      "entry_urls": [
+        "https://www.shugiin.go.jp/Internet/itdb_gian.nsf/html/gian/menu.htm"
+      ],
+      "source_type": "bill_index",
+      "scope": "法案提出、審議状況、本文、経過",
+      "jurisdiction": "Japan",
+      "priority": 2,
+      "cadence": "daily",
+      "enabled": true,
+      "adapter": "manual",
+      "rate_limit": "サイトの利用条件に従う",
+      "terms_url": "https://www.shugiin.go.jp/",
+      "last_verified_at": "2026-08-16T12:20:19+09:00",
+      "notes": ""
+    }
+  ],
+  "records": [
+    {
+      "tax_id": "consumption-tax",
+      "current_status": "active",
+      "canonical_current_status": "active",
+      "burden": {
+        "tax_id": "consumption-tax",
+        "official_name": "消費税",
+        "aliases": [
+          "消費税等"
+        ],
+        "burden_type": "national_tax",
+        "legal_mandate_type": "mandatory_by_law",
+        "jurisdiction": "Japan",
+        "liable_party": "課税資産の譲渡等を行う事業者等",
+        "economic_bearer": "消費者",
+        "collector": "国税庁および税関",
+        "beneficiary_or_fund": "国および地方公共団体",
+        "purpose": "消費一般に広く負担を求める間接税",
+        "calculation_basis": "課税資産の譲渡等の対価の額等",
+        "current_status": "active",
+        "legal_bases": [
+          {
+            "law_id": null,
+            "name": "消費税法等",
+            "article": "消法29等",
+            "source_url": "https://www.nta.go.jp/taxes/shiraberu/taxanswer/shohi/6101.htm"
+          }
+        ],
+        "current_phases": [
+          "consumption-tax-standard-rate-2019",
+          "consumption-tax-reduced-rate-2019"
+        ],
+        "pending_changes": [],
+        "source_refs": [
+          "nta-consumption-tax-rates"
+        ],
+        "coverage_status": "confirmed",
+        "evidence_gaps": [],
+        "verified_at": "2026-08-17T00:12:24+09:00"
+      },
+      "active_phases": [
+        {
+          "phase_id": "consumption-tax-reduced-rate-2019",
+          "tax_id": "consumption-tax",
+          "change_id": "consumption-tax-2019-rate",
+          "phase_sequence": 2,
+          "subject_scope": "酒類・外食を除く飲食料品と、定期購読契約に基づき週2回以上発行される新聞の譲渡",
+          "rate_or_amount": "6.24パーセント（地方消費税を含む軽減税率は8パーセント）",
+          "value": {
+            "kind": "rate",
+            "numeric_value": 6.24,
+            "unit": "percent",
+            "raw": "軽減税率8パーセントのうち消費税率6.24パーセント",
+            "value_status": "confirmed",
+            "scope": "軽減税率対象品目"
+          },
+          "application_start": "2019-10-01",
+          "application_start_raw": "令和元年10月1日",
+          "application_start_source_url": "https://www.nta.go.jp/taxes/shiraberu/taxanswer/shohi/6102.htm",
+          "application_end": null,
+          "collection_start": null,
+          "collection_start_raw": "国税庁ページに徴収開始日の記載なし",
+          "collection_start_source_url": "https://www.nta.go.jp/taxes/shiraberu/taxanswer/shohi/6102.htm",
+          "collection_end": null,
+          "transitional_rule": "このサンプルでは経過措置の詳細を未登録",
+          "source_refs": [
+            "nta-consumption-tax-rates"
+          ],
+          "evidence_gaps": [
+            "徴収開始日は未確認",
+            "経過措置の詳細は未登録"
+          ],
+          "verified_at": "2026-08-17T00:12:24+09:00"
+        },
+        {
+          "phase_id": "consumption-tax-standard-rate-2019",
+          "tax_id": "consumption-tax",
+          "change_id": "consumption-tax-2019-rate",
+          "phase_sequence": 1,
+          "subject_scope": "軽減税率の対象以外の課税資産の譲渡等",
+          "rate_or_amount": "7.8パーセント（地方消費税を含む標準税率は10パーセント）",
+          "value": {
+            "kind": "rate",
+            "numeric_value": 7.8,
+            "unit": "percent",
+            "raw": "標準税率10パーセントのうち消費税率7.8パーセント",
+            "value_status": "confirmed",
+            "scope": "標準税率対象取引"
+          },
+          "application_start": "2019-10-01",
+          "application_start_raw": "令和元年10月1日",
+          "application_start_source_url": "https://www.nta.go.jp/taxes/shiraberu/taxanswer/shohi/6102.htm",
+          "application_end": null,
+          "collection_start": null,
+          "collection_start_raw": "国税庁ページに徴収開始日の記載なし",
+          "collection_start_source_url": "https://www.nta.go.jp/taxes/shiraberu/taxanswer/shohi/6102.htm",
+          "collection_end": null,
+          "transitional_rule": "このサンプルでは経過措置の詳細を未登録",
+          "source_refs": [
+            "nta-consumption-tax-rates"
+          ],
+          "evidence_gaps": [
+            "徴収開始日は未確認",
+            "経過措置の詳細は未登録"
+          ],
+          "verified_at": "2026-08-17T00:12:24+09:00"
+        }
+      ],
+      "pending_changes": [],
+      "canonical_pending_changes": []
+    }
+  ]
+}

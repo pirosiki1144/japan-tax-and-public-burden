@@ -1,0 +1,14 @@
+{
+  "schema_version": 1,
+  "dataset": "summary",
+  "as_of": "2026-08-18",
+  "counts": {
+    "sources": 7,
+    "burdens": 1,
+    "changes": 1,
+    "events": 1,
+    "phases": 2,
+    "revenue_records": 0
+  },
+  "amount_groups": []
+}
