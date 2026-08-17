@@ -94,4 +94,6 @@ npm run generate -- --as-of 2019-10-01 --output-dir .cache/distribution-2019-10-
 
 `included_in_parent_total` は合計から除外し、未集計・未徴収・非把握・部分値は0円と推測せず別一覧に残します。JSONは正本の全項目を保持し、履歴CSVは `payload_json` に元レコードを保持します。同じ正本と基準日からはbyte単位で同一の生成物が得られ、CIの `generate:check` が直接編集や更新漏れを検出します。
 
+`history.json` のSchema version 2では、財務省の固有指標「国民負担率」への対応表を `national_burden_ratio_mappings` と呼びます。version 1の `national_burden_mappings` から名称が変わっているため、利用側は `schema_version` を確認してください。
+
 現在はGitリポジトリ内の成果物として配布します。GitHub PagesやAPI公開は、公開URL、更新保証、キャッシュ、障害対応、費用と権限を決める必要があるため、このIssueには含めず別Issueで判断します。

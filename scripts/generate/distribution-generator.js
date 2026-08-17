@@ -65,7 +65,7 @@ function buildCurrent(collections, asOf) {
 
 function buildHistory(collections, asOf) {
   return {
-    schema_version: 1,
+    schema_version: 2,
     dataset: "history",
     as_of: asOf,
     sources: sortBy(collections.sources, "source_id"),
@@ -75,7 +75,7 @@ function buildHistory(collections, asOf) {
     phases: sortBy(collections.phases, "phase_id"),
     revenue: sortBy(collections.revenues, "record_id"),
     national_burden_ratios: [...collections.ratios].sort((a, b) => `${a.fiscal_year}|${a.value_kind}`.localeCompare(`${b.fiscal_year}|${b.value_kind}`, "en")),
-    national_burden_mappings: sortBy(collections.mappings, "mapping_id")
+    national_burden_ratio_mappings: sortBy(collections.mappings, "mapping_id")
   };
 }
 
@@ -184,7 +184,7 @@ function historyRows(history) {
   history.phases.forEach((record) => push("phase", record.phase_id, record, { tax_id: record.tax_id, change_id: record.change_id, type: `phase-${record.phase_sequence}`, effective: record.application_start, end: record.application_end, value_kind: record.value.kind, amount: record.value.numeric_value, unit: record.value.unit, value_status: record.value.value_status, scope: record.value.scope }));
   history.revenue.forEach((record) => push("revenue", record.record_id, record, { tax_id: record.tax_id, type: record.amount_kind, effective: record.period_start, end: record.period_end, amount: record.amount_yen, unit: "yen", value_status: record.value_status, scope: record.account_or_fund, accounting_basis: record.accounting_basis, consolidation_scope: record.consolidation_scope }));
   history.national_burden_ratios.forEach((record) => push("national_burden_ratio", `${record.fiscal_year}-${record.value_kind}`, record, { type: record.value_kind, effective: record.fiscal_year, value_status: record.value_kind }));
-  history.national_burden_mappings.forEach((record) => push("national_burden_mapping", record.mapping_id, record, { tax_id: record.tax_id, type: record.status }));
+  history.national_burden_ratio_mappings.forEach((record) => push("national_burden_ratio_mapping", record.mapping_id, record, { tax_id: record.tax_id, type: record.status }));
   return rows;
 }
 

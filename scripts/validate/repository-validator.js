@@ -4,7 +4,7 @@ import { parse } from "csv-parse/sync";
 import { createValidators, readYaml, validateDocument } from "./schema-validator.js";
 import { validateIntegrity } from "./integrity-validator.js";
 
-const SCHEMA_NAMES = ["burden", "change", "event", "phase", "source", "revenue", "national-burden-ratio", "national-burden-mapping", "distribution-config"];
+const SCHEMA_NAMES = ["burden", "change", "event", "phase", "source", "revenue", "national-burden-ratio", "national-burden-ratio-mapping", "distribution-config"];
 
 async function parseCsvFile(path, schema, errors) {
   try {
@@ -80,10 +80,10 @@ export async function validateRepository(root) {
     }
   }
 
-  const mappingPath = join(root, "data/reconciliation/national-burden-mapping.yaml");
+  const mappingPath = join(root, "data/reconciliation/national-burden-ratio-mapping.yaml");
   try {
     const mappingRegistry = await readYaml(mappingPath);
-    const mappingErrors = validateDocument(validators["national-burden-mapping"], mappingRegistry, mappingPath);
+    const mappingErrors = validateDocument(validators["national-burden-ratio-mapping"], mappingRegistry, mappingPath);
     errors.push(...mappingErrors);
     if (mappingErrors.length === 0) collections.mappings.push(...mappingRegistry.mappings);
   } catch (error) {

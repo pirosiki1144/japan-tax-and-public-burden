@@ -1,7 +1,7 @@
 {
   "$schema": "https://json-schema.org/draft/2020-12/schema",
-  "$id": "https://github.com/pirosiki1144/japan-tax-and-public-burden/schemas/national-burden-mapping.schema.json",
-  "title": "National burden reconciliation mapping",
+  "$id": "https://github.com/pirosiki1144/japan-tax-and-public-burden/schemas/national-burden-ratio-mapping.schema.json",
+  "title": "National burden ratio reconciliation mapping",
   "type": "object",
   "additionalProperties": false,
   "required": ["mappings"],
