@@ -1,5 +1,5 @@
 {
-  "schema_version": 1,
+  "schema_version": 2,
   "dataset": "history",
   "as_of": "2026-08-18",
   "sources": [
@@ -443,5 +443,5 @@
   ],
   "revenue": [],
   "national_burden_ratios": [],
-  "national_burden_mappings": []
+  "national_burden_ratio_mappings": []
 }

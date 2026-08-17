@@ -828,7 +828,7 @@ PRに最低限含める内容:
 
 ### 15.3 対応表
 
-data/reconciliation/national-burden-mapping.yaml に次を持つ。
+data/reconciliation/national-burden-ratio-mapping.yaml に次を持つ。
 
 ~~~
 tax_id
@@ -870,7 +870,7 @@ mapping_status:
 │   ├── source.schema.json
 │   ├── revenue.schema.json
 │   ├── national-burden-ratio.schema.json
-│   └── national-burden-mapping.schema.json
+│   └── national-burden-ratio-mapping.schema.json
 ├── data/
 │   ├── burdens/
 │   ├── changes/
@@ -880,7 +880,7 @@ mapping_status:
 │   │   └── actuals.csv
 │   └── reconciliation/
 │       ├── national-burden-ratio.csv
-│       └── national-burden-mapping.yaml
+│       └── national-burden-ratio-mapping.yaml
 ├── scripts/
 │   ├── fetch/
 │   ├── normalize/
@@ -897,6 +897,12 @@ mapping_status:
 README.mdは一般利用者向け、PROJECT_SPEC.mdは設計根拠、AGENTS.mdはエージェントの行動規則に分ける。
 
 `config/sources.yaml` は情報源レジストリ、`data/` 配下の検証済み構造化データは正本とする。取得途中のHTML、PDF、API応答は `.cache/` 配下の一時データとしてGit管理しない。`reports/` と将来の `generated/` は正本から再生成する成果物とし、直接編集しない。履歴は追記型event、phaseとGit履歴で保持する。
+
+### 16.1 Schemaの命名規則
+
+国税・地方税・社会保険料・その他の公的負担を共通で扱う汎用Schemaには、`national` や `local` など管轄を表す接頭辞を付けない。`burden.schema.json`、`change.schema.json`、`revenue.schema.json` のように役割を直接表す名称を用いる。
+
+特定の公式統計・制度・固有概念だけを扱うSchemaでは、その概念を省略しない。`national-burden-ratio.schema.json` の `national-burden-ratio` は管轄ではなく財務省の固有指標「国民負担率」を表すため維持する。同指標への対応表も汎用対応表ではないため、`national-burden-ratio-mapping.schema.json` として対象概念を明示する。
 
 ## 17. 品質・検証ルール
 
