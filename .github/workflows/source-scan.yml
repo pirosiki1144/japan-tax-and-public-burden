@@ -8,11 +8,19 @@ on:
 permissions:
   contents: read
 
+concurrency:
+  group: official-source-update
+  cancel-in-progress: false
+
 jobs:
   scan:
     runs-on: ubuntu-latest
+    outputs:
+      has_changes: ${{ steps.scan.outputs.has_changes }}
     steps:
       - uses: actions/checkout@v4
+        with:
+          ref: main
       - uses: actions/setup-node@v4
         with:
           node-version: 22
@@ -20,10 +28,66 @@ jobs:
       - run: npm ci
       - run: npm test
       - run: npm run validate
-      - run: npm run scan -- --all --dry-run --output .cache/source-scan-result.json
+      - id: scan
+        run: |
+          npm run scan -- --all --output .cache/source-scan-result.json
+          node -e 'const result = require("./.cache/source-scan-result.json"); process.stdout.write(`has_changes=${result.status === "change_detected"}\n`)' >> "$GITHUB_OUTPUT"
       - if: always()
         uses: actions/upload-artifact@v4
         with:
           name: source-scan-result
           path: .cache/source-scan-result.json
           if-no-files-found: error
+
+  update-pr:
+    needs: scan
+    if: needs.scan.outputs.has_changes == 'true'
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+      pull-requests: write
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: main
+          fetch-depth: 0
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+          cache: npm
+      - uses: actions/download-artifact@v4
+        with:
+          name: source-scan-result
+          path: .cache
+      - run: npm ci
+      - env:
+          UPDATE_BRANCH: automation/official-source-updates
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          if git ls-remote --exit-code --heads origin "$UPDATE_BRANCH"; then
+            git fetch origin "$UPDATE_BRANCH"
+            git switch --create "$UPDATE_BRANCH" --track "origin/$UPDATE_BRANCH"
+            git merge --no-edit origin/main
+          else
+            git switch --create "$UPDATE_BRANCH" origin/main
+          fi
+          npm run prepare-update -- --scan .cache/source-scan-result.json --report .cache/update-pr-body.md
+          npm test
+          npm run validate
+          if ! git diff --quiet; then
+            git add data
+            git commit -m "公式情報に基づくデータ更新候補"
+          fi
+          if git diff --quiet origin/main...HEAD; then
+            echo "No candidate difference remains against main"
+            exit 0
+          fi
+          git push --set-upstream origin "$UPDATE_BRANCH"
+          existing_pr="$(gh pr list --state open --base main --head "$UPDATE_BRANCH" --json number --jq '.[0].number')"
+          if [ -n "$existing_pr" ]; then
+            gh pr edit "$existing_pr" --body-file .cache/update-pr-body.md
+          else
+            gh pr create --base main --head "$UPDATE_BRANCH" --title "公式情報に基づくデータ更新候補" --body-file .cache/update-pr-body.md
+          fi

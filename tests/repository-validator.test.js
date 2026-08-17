@@ -27,11 +27,19 @@ test("source scan workflow is fixed, scheduled, and manually runnable", async ()
   assert.ok(Object.hasOwn(workflow.on, "schedule"));
   assert.ok(!Object.hasOwn(workflow.on, "push"));
   assert.equal(workflow.permissions.contents, "read");
-  const commands = workflow.jobs.scan.steps.map(({ run }) => run).filter(Boolean);
-  assert.ok(commands.includes("npm test"));
-  assert.ok(commands.includes("npm run validate"));
-  assert.ok(commands.some((command) => command.includes("--dry-run")));
-  assert.ok(commands.some((command) => command.includes("--all")));
+  assert.equal(workflow.jobs["update-pr"].permissions.contents, "write");
+  assert.equal(workflow.jobs["update-pr"].permissions["pull-requests"], "write");
+  assert.equal(workflow.jobs["update-pr"].needs, "scan");
+  assert.equal(workflow.concurrency.group, "official-source-update");
+  assert.equal(workflow.concurrency["cancel-in-progress"], false);
+  const scanCommands = workflow.jobs.scan.steps.map(({ run }) => run).filter(Boolean);
+  const updateCommands = workflow.jobs["update-pr"].steps.map(({ run }) => run).filter(Boolean);
+  assert.ok(scanCommands.includes("npm test"));
+  assert.ok(scanCommands.includes("npm run validate"));
+  assert.ok(scanCommands.some((command) => command.includes("--all")));
+  assert.ok(updateCommands.some((command) => command.includes("npm run prepare-update")));
+  assert.ok(updateCommands.some((command) => command.includes("gh pr list") && command.includes("gh pr edit") && command.includes("gh pr create")));
+  assert.ok([...scanCommands, ...updateCommands].every((command) => !command.includes("gh pr merge")));
 });
 
 test("revenue schema distinguishes an unavailable amount from zero", async () => {
