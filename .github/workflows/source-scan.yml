@@ -17,6 +17,8 @@ jobs:
     runs-on: ubuntu-latest
     outputs:
       has_changes: ${{ steps.scan.outputs.has_changes }}
+      has_findings: ${{ steps.scan.outputs.has_findings }}
+      scan_failed: ${{ steps.scan.outputs.scan_failed }}
     steps:
       - uses: actions/checkout@v4
         with:
@@ -28,16 +30,27 @@ jobs:
       - run: npm ci
       - run: npm test
       - run: npm run validate
+      - run: npm run audit -- --output .cache/repository-audit.json
       - id: scan
         run: |
+          set +e
           npm run scan -- --all --output .cache/source-scan-result.json
-          node -e 'const result = require("./.cache/source-scan-result.json"); process.stdout.write(`has_changes=${result.status === "change_detected"}\n`)' >> "$GITHUB_OUTPUT"
+          scan_exit=$?
+          set -e
+          npm run audit:scan -- --scan .cache/source-scan-result.json --report .cache/source-audit-report.json
+          node -e 'const scan = require("./.cache/source-scan-result.json"); const audit = require("./.cache/source-audit-report.json"); process.stdout.write(`has_changes=${scan.status === "change_detected"}\nhas_findings=${audit.issue_candidates.length > 0}\nscan_failed=${scan.status === "error"}\n`)' >> "$GITHUB_OUTPUT"
+          echo "scan_exit=$scan_exit"
       - if: always()
         uses: actions/upload-artifact@v4
         with:
           name: source-scan-result
-          path: .cache/source-scan-result.json
+          path: |
+            .cache/source-scan-result.json
+            .cache/source-audit-report.json
+            .cache/repository-audit.json
           if-no-files-found: error
+      - if: steps.scan.outputs.scan_failed == 'true'
+        run: exit 1
 
   update-pr:
     needs: scan
@@ -76,6 +89,7 @@ jobs:
           npm run prepare-update -- --scan .cache/source-scan-result.json --report .cache/update-pr-body.md
           npm test
           npm run validate
+          npm run audit -- --output .cache/repository-audit-after-update.json
           if ! git diff --quiet; then
             git add data
             git commit -m "公式情報に基づくデータ更新候補"
@@ -91,3 +105,25 @@ jobs:
           else
             gh pr create --base main --head "$UPDATE_BRANCH" --title "公式情報に基づくデータ更新候補" --body-file .cache/update-pr-body.md
           fi
+
+  audit-issues:
+    needs: scan
+    if: always() && needs.scan.outputs.has_findings == 'true'
+    runs-on: ubuntu-latest
+    permissions:
+      contents: read
+      issues: write
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: main
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+      - uses: actions/download-artifact@v4
+        with:
+          name: source-scan-result
+          path: .cache
+      - env:
+          GH_TOKEN: ${{ github.token }}
+        run: npm run audit:issues -- --report .cache/source-audit-report.json

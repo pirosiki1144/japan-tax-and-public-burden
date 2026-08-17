@@ -1,0 +1,35 @@
+import test from "node:test";
+import assert from "node:assert/strict";
+import { fetchSourcePages, SourceFetchError } from "../scripts/fetch/http-fetcher.js";
+
+const source = {
+  base_url: "https://example.go.jp/",
+  entry_urls: ["https://example.go.jp/source"],
+  accepted_content_types: ["text/html"]
+};
+
+test("temporary URL failures are retried before succeeding", async () => {
+  let attempts = 0;
+  const pages = await fetchSourcePages(source, {
+    fetchImpl: async () => {
+      attempts += 1;
+      return attempts < 3 ? new Response("temporary", { status: 503 }) : new Response("official", { status: 200, headers: { "content-type": "text/html" } });
+    },
+    sleep: async () => {},
+    now: () => new Date("2026-08-17T01:02:03Z")
+  });
+  assert.equal(attempts, 3);
+  assert.equal(pages[0].body, "official");
+});
+
+test("permanent URL failures stop without retrying", async () => {
+  let attempts = 0;
+  await assert.rejects(fetchSourcePages(source, {
+    fetchImpl: async () => {
+      attempts += 1;
+      return new Response("missing", { status: 404 });
+    },
+    sleep: async () => {}
+  }), (error) => error instanceof SourceFetchError && error.code === "url_permanent_failure");
+  assert.equal(attempts, 1);
+});

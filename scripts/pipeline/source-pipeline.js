@@ -8,18 +8,25 @@ export async function runSourcePipeline({ root, sourceId, source: configuredSour
   const source = configuredSource ?? await loadEnabledSource(root, sourceId);
   const adapter = getSourceAdapter(source.adapter);
   const pages = await fetchSourcePages(source, { fetchImpl, now });
-  const normalized = validateNormalizedSource(adapter.normalize(source, pages));
-  const candidateDiff = await detectCanonicalDiff(root, normalized);
-  return {
-    schema_version: 1,
-    status: candidateDiff.length === 0 ? "no_change" : "change_detected",
-    dry_run: dryRun,
-    source_id: source.source_id,
-    completed_at: now().toISOString(),
-    fetches: pages.map(({ body: _body, ...metadata }) => metadata),
-    normalized,
-    candidate_diff: candidateDiff
-  };
+  const fetches = pages.map(({ body: _body, ...metadata }) => metadata);
+  try {
+    const normalized = validateNormalizedSource(adapter.normalize(source, pages));
+    const candidateDiff = await detectCanonicalDiff(root, normalized);
+    return {
+      schema_version: 1,
+      status: candidateDiff.length === 0 ? "no_change" : "change_detected",
+      dry_run: dryRun,
+      source_id: source.source_id,
+      completed_at: now().toISOString(),
+      fetches,
+      normalized,
+      candidate_diff: candidateDiff
+    };
+  } catch (error) {
+    error.fetches = fetches;
+    error.sourceUrl ??= source.entry_urls[0];
+    throw error;
+  }
 }
 
 export async function runAutomatedSources({ root, fetchImpl, now = () => new Date(), dryRun = false }) {
@@ -34,7 +41,18 @@ export async function runConfiguredSources({ root, sources, fetchImpl, now = () 
     try {
       results.push(await runSourcePipeline({ root, sourceId: source.source_id, source, fetchImpl, now, dryRun }));
     } catch (error) {
-      results.push({ schema_version: 1, status: "error", dry_run: dryRun, source_id: source.source_id, error: error.message });
+      results.push({
+        schema_version: 1,
+        status: "error",
+        dry_run: dryRun,
+        source_id: source.source_id,
+        error_code: error.code ?? (error.message.includes("Source structure changed") ? "source_structure_changed" : "source_processing_failed"),
+        error: error.message,
+        retryable: error.retryable ?? false,
+        attempts: error.attempts ?? 1,
+        source_url: error.sourceUrl,
+        fetches: error.fetches
+      });
     }
   }
   return {

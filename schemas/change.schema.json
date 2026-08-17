@@ -4,7 +4,7 @@
   "title": "Burden change",
   "type": "object",
   "additionalProperties": false,
-  "required": ["change_id", "tax_ids", "title", "change_types", "proposal_origin", "current_stage", "stage_confidence", "bill_ids", "law_ids", "events", "application_start_dates", "collection_start_dates", "source_refs", "evidence_gaps"],
+  "required": ["change_id", "tax_ids", "title", "change_types", "proposal_origin", "current_stage", "stage_confidence", "bill_ids", "law_ids", "events", "promulgation_date", "enforcement_date", "application_start_dates", "collection_start_dates", "source_refs", "evidence_gaps"],
   "properties": {
     "change_id": {"type": "string", "pattern": "^[a-z0-9]+(?:-[a-z0-9]+)*$"},
     "tax_ids": {"type": "array", "minItems": 1, "items": {"type": "string", "pattern": "^[a-z0-9]+(?:-[a-z0-9]+)*$"}, "uniqueItems": true},

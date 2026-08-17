@@ -67,6 +67,14 @@ test("one source failure does not starve later sources and makes the aggregate f
   assert.match(result.results[0].error, /Fetch failed \(503\)/);
 });
 
+test("structure failures retain fetched hashes for the audit trail", async () => {
+  const source = await loadEnabledSource(root, "nta-consumption-tax-rates");
+  const result = await runConfiguredSources({ root, sources: [source], fetchImpl: fixtureFetch((body) => body.replace("週2回以上発行", "")), now, dryRun: true });
+  assert.equal(result.results[0].error_code, "source_structure_changed");
+  assert.equal(result.results[0].fetches.length, 2);
+  assert.ok(result.results[0].fetches.every(({ source_url, sha256 }) => source_url && /^[a-f0-9]{64}$/.test(sha256)));
+});
+
 test("fetch and structure failures reject the whole run", async () => {
   await assert.rejects(
     runSourcePipeline({ root, sourceId: "nta-consumption-tax-rates", fetchImpl: async () => new Response("failure", { status: 503 }), now }),
