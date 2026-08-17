@@ -7,7 +7,8 @@
   "scripts": {
     "test": "node --test",
     "validate": "node scripts/validate/validate-data.js",
-    "scan": "node scripts/pipeline/scan-source.js"
+    "scan": "node scripts/pipeline/scan-source.js",
+    "prepare-update": "node scripts/automation/prepare-update.js"
   },
   "devDependencies": {
     "ajv": "^8.17.1",

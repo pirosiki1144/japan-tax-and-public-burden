@@ -68,3 +68,5 @@ npm run scan -- --all --dry-run --output .cache/source-scan-result.json
 このプロジェクトはIssue駆動で開発します。変更に着手する前に対応するIssueを確認し、Issueがなければ目的、対象範囲、受け入れ条件を記載したIssueを作成してください。Pull Requestには関連Issueを明記し、Issueの受け入れ条件に対する結果を記載します。ユーザーによるPR承認を、実装内容に対する確認として扱います。
 
 あわせて [AGENTS.md](AGENTS.md) と [PROJECT_SPEC.md](PROJECT_SPEC.md) を確認してください。新しい事実には一次情報のURLと確認日時を付け、推測値は登録しないでください。巡回先の追加・変更・停止もPull Requestでレビューします。
+
+定期巡回は既存の `source-scan.yml` だけで実行します。確定的な差分がある場合は固定ブランチ `automation/official-source-updates` から `main` 向けのPRを作成し、既存PRがあれば更新します。取得失敗、構造変更、対象不明、正本との競合ではデータをcommitせず停止します。変更がなければbranch、commit、PRを作成せず、自動マージも行いません。
