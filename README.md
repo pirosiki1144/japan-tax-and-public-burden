@@ -70,3 +70,5 @@ npm run scan -- --all --dry-run --output .cache/source-scan-result.json
 あわせて [AGENTS.md](AGENTS.md) と [PROJECT_SPEC.md](PROJECT_SPEC.md) を確認してください。新しい事実には一次情報のURLと確認日時を付け、推測値は登録しないでください。巡回先の追加・変更・停止もPull Requestでレビューします。
 
 定期巡回は既存の `source-scan.yml` だけで実行します。確定的な差分がある場合は固定ブランチ `automation/official-source-updates` から `main` 向けのPRを作成し、既存PRがあれば更新します。取得失敗、構造変更、対象不明、正本との競合ではデータをcommitせず停止します。変更がなければbranch、commit、PRを作成せず、自動マージも行いません。
+
+監査は `npm run audit -- --output .cache/repository-audit.json` で実行できます。制度日付、主状態と法律手続状態、phase期間、参照関係、金額の集計範囲を検査し、再生成可能なJSONレポートを `.cache/` に出力します。定期巡回で一時障害の再試行後も取得できない場合、参照元の構造が変わった場合、公式ソース間で値が一致しない場合、または正本へ対応付けられない場合は、正本を推測更新せず `[audit-topic:...]` を持つIssueを作成します。同じキーの未解決Issueは再利用し、解決後もIssueを削除せず根拠と関連PRを残してCloseします。
