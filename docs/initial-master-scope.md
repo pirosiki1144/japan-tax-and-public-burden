@@ -67,7 +67,7 @@
 | `legal_mandate_type` | 法律、政省令、条例、民間ルール、間接転嫁、`unknown` |
 | `jurisdiction` | 国、都道府県、市区町村、全国共通等 |
 | `liable_party` | 法律上または制度上の納付義務者 |
-| `collector` | 徴収主体 |
+| `collectors` | 徴収主体の配列。未確認なら `unknown` を1要素として根拠不足を記録する |
 | `current_status` | 4種類の主状態。根拠不足なら設定せず要確認とする |
 | `coverage_status` | `confirmed`、`candidate`、`needs_review`、`excluded` |
 | `source_urls` | 事実と対応付けた公式URL |

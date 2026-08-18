@@ -255,7 +255,7 @@ date_certainty の例:
 | jurisdiction | 国、都道府県、市区町村、全国共通等 |
 | liable_party | 法律上の納付義務者 |
 | economic_bearer | 実質的に負担する者。断定できない場合はunknown |
-| collector | 徴収主体 |
+| collectors | 徴収主体の配列。複数主体を一つの文字列へ結合しない |
 | beneficiary_or_fund | 帰属先、基金、会計 |
 | purpose | 制度目的 |
 | calculation_basis | 課税標準、算定基礎 |
