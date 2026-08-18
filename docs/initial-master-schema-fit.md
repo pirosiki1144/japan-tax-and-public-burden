@@ -23,6 +23,7 @@
 | 通称・旧称 | `aliases` | 適合 | 一意な配列を維持 |
 | 根拠法令 | `legal_bases` | 適合 | 法令名、ID、条項、公式URLを分離済み |
 | 公式出典と確認日時 | `source_refs` / `source_urls` / `verified_at` | 適合 | 正本はレジストリ参照、候補は調査元URLを保持 |
+| 所管府省と候補段階の根拠法令 | 候補Schema | 不適合 | 実データ調査で必要性を確認し、任意の `responsible_authorities` と `legal_basis_notes` を追加 |
 | 公布・施行・適用・徴収開始 | change / phase | 適合 | 4日付を分離し、不明値の根拠不足を検証済み |
 | 段階適用、対象範囲、率・金額 | phase | 適合 | 複数phaseと構造化valueを維持 |
 | 法律手続の状態 | change / event | 適合 | burdenの主状態と分離済み |
@@ -46,4 +47,3 @@
 - 候補と正本の自動昇格は行わない。
 - `jurisdiction` の自治体コード等への構造化は、自治体別データ設計と同時に判断する。
 - revenueの `collector` は一つの徴収実績行の徴収主体なので、制度マスタの `collectors` とは別に単数のまま維持する。
-
