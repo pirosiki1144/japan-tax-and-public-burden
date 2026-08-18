@@ -4,7 +4,7 @@
   "title": "Tax or public burden",
   "type": "object",
   "additionalProperties": false,
-  "required": ["tax_id", "official_name", "aliases", "burden_type", "legal_mandate_type", "jurisdiction", "liable_party", "economic_bearer", "collector", "purpose", "calculation_basis", "current_status", "legal_bases", "current_phases", "pending_changes", "source_refs", "coverage_status", "evidence_gaps", "verified_at"],
+  "required": ["tax_id", "official_name", "aliases", "burden_type", "legal_mandate_type", "jurisdiction", "liable_party", "economic_bearer", "collectors", "purpose", "calculation_basis", "current_status", "legal_bases", "current_phases", "pending_changes", "source_refs", "coverage_status", "evidence_gaps", "verified_at"],
   "properties": {
     "tax_id": {"type": "string", "pattern": "^[a-z0-9]+(?:-[a-z0-9]+)*$"},
     "official_name": {"type": "string", "minLength": 1},
@@ -14,7 +14,7 @@
     "jurisdiction": {"type": "string", "minLength": 1},
     "liable_party": {"type": "string", "minLength": 1},
     "economic_bearer": {"type": "string", "minLength": 1},
-    "collector": {"type": "string", "minLength": 1},
+    "collectors": {"type": "array", "minItems": 1, "uniqueItems": true, "items": {"type": "string", "minLength": 1}},
     "beneficiary_or_fund": {"type": ["string", "null"]},
     "purpose": {"type": "string"},
     "calculation_basis": {"type": "string"},

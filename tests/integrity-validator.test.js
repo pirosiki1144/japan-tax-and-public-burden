@@ -5,6 +5,7 @@ import { validateIntegrity } from "../scripts/validate/integrity-validator.js";
 function validCollections() {
   return {
     sources: [{ source_id: "official-source" }],
+    candidates: [{ candidate_id: "sample-candidate" }],
     burdens: [{ tax_id: "sample-tax", current_phases: ["sample-phase"], pending_changes: [], source_refs: ["official-source"] }],
     changes: [{ change_id: "sample-change", tax_ids: ["sample-tax"], events: ["sample-event"], source_refs: ["official-source"] }],
     events: [{ event_id: "sample-event", change_id: "sample-change" }],
@@ -22,6 +23,12 @@ test("duplicate IDs are rejected", () => {
   const collections = validCollections();
   collections.burdens.push({ ...collections.burdens[0] });
   assert.ok(validateIntegrity(collections).some((message) => message.includes("duplicate ID sample-tax")));
+});
+
+test("duplicate initial master candidate IDs are rejected", () => {
+  const collections = validCollections();
+  collections.candidates.push({ ...collections.candidates[0] });
+  assert.ok(validateIntegrity(collections).some((message) => message.includes("duplicate ID sample-candidate")));
 });
 
 test("dangling references are rejected", () => {

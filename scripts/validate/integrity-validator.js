@@ -1,5 +1,6 @@
 const ID_FIELDS = {
   burdens: "tax_id",
+  candidates: "candidate_id",
   changes: "change_id",
   events: "event_id",
   phases: "phase_id",

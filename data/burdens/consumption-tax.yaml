@@ -7,7 +7,9 @@ legal_mandate_type: mandatory_by_law
 jurisdiction: Japan
 liable_party: 課税資産の譲渡等を行う事業者等
 economic_bearer: 消費者
-collector: 国税庁および税関
+collectors:
+  - 国税庁
+  - 税関
 beneficiary_or_fund: 国および地方公共団体
 purpose: 消費一般に広く負担を求める間接税
 calculation_basis: 課税資産の譲渡等の対価の額等
