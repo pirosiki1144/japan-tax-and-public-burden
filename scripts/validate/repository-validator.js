@@ -4,7 +4,7 @@ import { parse } from "csv-parse/sync";
 import { createValidators, readYaml, validateDocument } from "./schema-validator.js";
 import { validateIntegrity } from "./integrity-validator.js";
 
-const SCHEMA_NAMES = ["burden", "initial-master-candidate", "change", "event", "phase", "source", "revenue", "national-burden-ratio", "national-burden-ratio-mapping", "distribution-config"];
+const SCHEMA_NAMES = ["burden", "initial-master-candidate", "initial-master-selection", "change", "event", "phase", "source", "revenue", "national-burden-ratio", "national-burden-ratio-mapping", "distribution-config"];
 
 async function parseCsvFile(path, schema, errors) {
   try {
@@ -37,7 +37,7 @@ export async function validateRepository(root) {
   const schemaPaths = Object.fromEntries(SCHEMA_NAMES.map((name) => [name, join(root, `schemas/${name}.schema.json`)]));
   const schemas = Object.fromEntries(await Promise.all(SCHEMA_NAMES.map(async (name) => [name, JSON.parse(await readFile(schemaPaths[name], "utf8"))])));
   const validators = await createValidators(schemaPaths);
-  const collections = { burdens: [], candidates: [], changes: [], events: [], phases: [], sources: [], revenues: [], mappings: [], ratios: [], distributionConfigs: [] };
+  const collections = { burdens: [], candidates: [], changes: [], events: [], phases: [], sources: [], revenues: [], mappings: [], ratios: [], distributionConfigs: [], selectionConfigs: [] };
 
   async function validateAndCollect(path, schemaName, target, allowArray = true) {
     try {
@@ -65,6 +65,7 @@ export async function validateRepository(root) {
   }
 
   await validateAndCollect(join(root, "config/distribution.yaml"), "distribution-config", "distributionConfigs", false);
+  await validateAndCollect(join(root, "config/initial-master-selection.yaml"), "initial-master-selection", "selectionConfigs", false);
 
   for (const [directory, schemaName, target] of [
     ["burdens", "burden", "burdens"],

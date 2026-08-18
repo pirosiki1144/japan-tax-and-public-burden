@@ -1,0 +1,28 @@
+schema_version: 1
+issue: 28
+decided_at: 2026-08-19
+candidate_files:
+  - data/candidates/national-taxes.yaml
+  - data/candidates/local-taxes.yaml
+  - data/candidates/public-burdens-question-39.yaml
+  - data/candidates/public-burdens-government-additions.yaml
+default_decision:
+  disposition: hold
+  reason: 現在状態、納付義務者、徴収主体等の根拠不足を解消するまで正本投入を保留する
+existing_merges:
+  - candidate_id: consumption-tax-candidate
+    existing_tax_id: consumption-tax
+    reason: 同じ国税の消費税であり、既存正本へ統合する。地方消費税は別制度として扱う
+identity_reviews:
+  - candidate_ids: [consumption-tax-candidate, local-consumption-tax]
+    relation: distinct
+    reason: 国税の消費税と地方税の地方消費税は課税主体・帰属が異なる
+  - candidate_ids: [national-health-insurance-tax, medical-insurance-premium]
+    relation: distinct
+    reason: 国民健康保険税は地方税方式、医療保険料は複数の保険料制度を含む総称である
+  - candidate_ids: [nuclear-damage-support-general-charge, nuclear-damage-support-special-charge]
+    relation: distinct
+    reason: 同じ根拠法の一般負担金と特別負担金は別の制度区分である
+  - candidate_ids: [asbestos-relief-general-contribution, asbestos-relief-special-contribution]
+    relation: distinct
+    reason: 一般拠出金と特別拠出金は別の納付区分である

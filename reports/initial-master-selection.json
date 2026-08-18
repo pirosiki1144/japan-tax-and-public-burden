@@ -1,0 +1,2534 @@
+{
+  "schema_version": 1,
+  "dataset": "initial-master-selection",
+  "issue": 28,
+  "decided_at": "2026-08-19",
+  "completeness_note": "収集済み候補119件に対する判定であり、日本の公的負担の完全一覧ではない",
+  "counts": {
+    "candidates": 119,
+    "insert": 0,
+    "merge_existing": 1,
+    "hold": 118,
+    "excluded": 0
+  },
+  "identity_reviews": [
+    {
+      "candidate_ids": [
+        "consumption-tax-candidate",
+        "local-consumption-tax"
+      ],
+      "relation": "distinct",
+      "reason": "国税の消費税と地方税の地方消費税は課税主体・帰属が異なる"
+    },
+    {
+      "candidate_ids": [
+        "national-health-insurance-tax",
+        "medical-insurance-premium"
+      ],
+      "relation": "distinct",
+      "reason": "国民健康保険税は地方税方式、医療保険料は複数の保険料制度を含む総称である"
+    },
+    {
+      "candidate_ids": [
+        "nuclear-damage-support-general-charge",
+        "nuclear-damage-support-special-charge"
+      ],
+      "relation": "distinct",
+      "reason": "同じ根拠法の一般負担金と特別負担金は別の制度区分である"
+    },
+    {
+      "candidate_ids": [
+        "asbestos-relief-general-contribution",
+        "asbestos-relief-special-contribution"
+      ],
+      "relation": "distinct",
+      "reason": "一般拠出金と特別拠出金は別の納付区分である"
+    }
+  ],
+  "records": [
+    {
+      "candidate_id": "adverse-drug-reaction-contribution",
+      "candidate_file": "data/candidates/public-burdens-government-additions.yaml",
+      "proposed_tax_id": "adverse-drug-reaction-contribution",
+      "disposition": "hold",
+      "existing_tax_id": null,
+      "identity_basis": "候補間の名称完全一致はなく、候補IDを永続ID案として維持する",
+      "burden_type": "contribution",
+      "coverage_status": "candidate",
+      "current_status": null,
+      "evidence_gaps": [
+        "現行法・納付義務者・適用状態を確認する"
+      ],
+      "source_urls": [
+        "https://www.sangiin.go.jp/japanese/joho1/kousei/syuisyo/212/touh/t212073.htm",
+        "https://www.sangiin.go.jp/japanese/joho1/kousei/syuisyo/212/meisai/m212073.htm"
+      ],
+      "verified_at": "2026-08-18T23:35:17+09:00",
+      "decision_reason": "現在状態、納付義務者、徴収主体等の根拠不足を解消するまで正本投入を保留する"
+    },
+    {
+      "candidate_id": "agricultural-cooperative-savings-charge",
+      "candidate_file": "data/candidates/public-burdens-government-additions.yaml",
+      "proposed_tax_id": "agricultural-cooperative-savings-charge",
+      "disposition": "hold",
+      "existing_tax_id": null,
+      "identity_basis": "候補間の名称完全一致はなく、候補IDを永続ID案として維持する",
+      "burden_type": "burden_charge",
+      "coverage_status": "candidate",
+      "current_status": null,
+      "evidence_gaps": [
+        "法令上の正式名称・納付義務者・適用状態を確認する"
+      ],
+      "source_urls": [
+        "https://www.sangiin.go.jp/japanese/joho1/kousei/syuisyo/212/touh/t212073.htm",
+        "https://www.sangiin.go.jp/japanese/joho1/kousei/syuisyo/212/meisai/m212073.htm"
+      ],
+      "verified_at": "2026-08-18T23:35:17+09:00",
+      "decision_reason": "現在状態、納付義務者、徴収主体等の根拠不足を解消するまで正本投入を保留する"
+    },
+    {
+      "candidate_id": "agricultural-cooperative-savings-insurance-premium",
+      "candidate_file": "data/candidates/public-burdens-government-additions.yaml",
+      "proposed_tax_id": "agricultural-cooperative-savings-insurance-premium",
+      "disposition": "hold",
+      "existing_tax_id": null,
+      "identity_basis": "候補間の名称完全一致はなく、候補IDを永続ID案として維持する",
+      "burden_type": "insurance_premium",
+      "coverage_status": "candidate",
+      "current_status": null,
+      "evidence_gaps": [
+        "法令上の正式名称・納付義務者・適用状態を確認する"
+      ],
+      "source_urls": [
+        "https://www.sangiin.go.jp/japanese/joho1/kousei/syuisyo/212/touh/t212073.htm",
+        "https://www.sangiin.go.jp/japanese/joho1/kousei/syuisyo/212/meisai/m212073.htm"
+      ],
+      "verified_at": "2026-08-18T23:35:17+09:00",
+      "decision_reason": "現在状態、納付義務者、徴収主体等の根拠不足を解消するまで正本投入を保留する"
+    },
+    {
+      "candidate_id": "agricultural-cooperative-savings-special-charge",
+      "candidate_file": "data/candidates/public-burdens-government-additions.yaml",
+      "proposed_tax_id": "agricultural-cooperative-savings-special-charge",
+      "disposition": "hold",
+      "existing_tax_id": null,
+      "identity_basis": "候補間の名称完全一致はなく、候補IDを永続ID案として維持する",
+      "burden_type": "burden_charge",
+      "coverage_status": "candidate",
+      "current_status": null,
+      "evidence_gaps": [
+        "法令上の正式名称・納付義務者・適用状態を確認する"
+      ],
+      "source_urls": [
+        "https://www.sangiin.go.jp/japanese/joho1/kousei/syuisyo/212/touh/t212073.htm",
+        "https://www.sangiin.go.jp/japanese/joho1/kousei/syuisyo/212/meisai/m212073.htm"
+      ],
+      "verified_at": "2026-08-18T23:35:17+09:00",
+      "decision_reason": "現在状態、納付義務者、徴収主体等の根拠不足を解消するまで正本投入を保留する"
+    },
+    {
+      "candidate_id": "agricultural-mutual-aid-special-operations-charge",
+      "candidate_file": "data/candidates/public-burdens-government-additions.yaml",
+      "proposed_tax_id": "agricultural-mutual-aid-special-operations-charge",
+      "disposition": "hold",
+      "existing_tax_id": null,
+      "identity_basis": "候補間の名称完全一致はなく、候補IDを永続ID案として維持する",
+      "burden_type": "burden_charge",
+      "coverage_status": "candidate",
+      "current_status": null,
+      "evidence_gaps": [
+        "法令の正式名称・納付義務者・適用状態を確認する"
+      ],
+      "source_urls": [
+        "https://www.sangiin.go.jp/japanese/joho1/kousei/syuisyo/212/touh/t212073.htm",
+        "https://www.sangiin.go.jp/japanese/joho1/kousei/syuisyo/212/meisai/m212073.htm"
+      ],
+      "verified_at": "2026-08-18T23:35:17+09:00",
+      "decision_reason": "現在状態、納付義務者、徴収主体等の根拠不足を解消するまで正本投入を保留する"
+    },
+    {
+      "candidate_id": "asbestos-relief-general-contribution",
+      "candidate_file": "data/candidates/public-burdens-question-39.yaml",
+      "proposed_tax_id": "asbestos-relief-general-contribution",
+      "disposition": "hold",
+      "existing_tax_id": null,
+      "identity_basis": "候補間の名称完全一致はなく、候補IDを永続ID案として維持する",
+      "burden_type": "contribution",
+      "coverage_status": "candidate",
+      "current_status": null,
+      "evidence_gaps": [
+        "現行法・納付義務者・徴収主体・適用状態を再確認する"
+      ],
+      "source_urls": [
+        "https://www.sangiin.go.jp/japanese/joho1/kousei/syuisyo/212/syuh/s212073.htm",
+        "https://www.sangiin.go.jp/japanese/joho1/kousei/syuisyo/212/touh/t212073.htm",
+        "https://www.sangiin.go.jp/japanese/joho1/kousei/syuisyo/212/meisai/m212073.htm"
+      ],
+      "verified_at": "2026-08-18T23:35:17+09:00",
+      "decision_reason": "現在状態、納付義務者、徴収主体等の根拠不足を解消するまで正本投入を保留する"
+    },
+    {
+      "candidate_id": "asbestos-relief-special-contribution",
+      "candidate_file": "data/candidates/public-burdens-question-39.yaml",
+      "proposed_tax_id": "asbestos-relief-special-contribution",
+      "disposition": "hold",
+      "existing_tax_id": null,
+      "identity_basis": "候補間の名称完全一致はなく、候補IDを永続ID案として維持する",
+      "burden_type": "contribution",
+      "coverage_status": "candidate",
+      "current_status": null,
+      "evidence_gaps": [
+        "現行法・納付義務者・徴収主体・適用状態を再確認する"
+      ],
+      "source_urls": [
+        "https://www.sangiin.go.jp/japanese/joho1/kousei/syuisyo/212/syuh/s212073.htm",
+        "https://www.sangiin.go.jp/japanese/joho1/kousei/syuisyo/212/touh/t212073.htm",
+        "https://www.sangiin.go.jp/japanese/joho1/kousei/syuisyo/212/meisai/m212073.htm"
+      ],
+      "verified_at": "2026-08-18T23:35:17+09:00",
+      "decision_reason": "現在状態、納付義務者、徴収主体等の根拠不足を解消するまで正本投入を保留する"
+    },
+    {
+      "candidate_id": "automobile-accident-countermeasure-levy",
+      "candidate_file": "data/candidates/public-burdens-government-additions.yaml",
+      "proposed_tax_id": "automobile-accident-countermeasure-levy",
+      "disposition": "hold",
+      "existing_tax_id": null,
+      "identity_basis": "候補間の名称完全一致はなく、候補IDを永続ID案として維持する",
+      "burden_type": "levy",
+      "coverage_status": "candidate",
+      "current_status": null,
+      "evidence_gaps": [
+        "徴収主体・納付義務者・適用状態を確認する"
+      ],
+      "source_urls": [
+        "https://www.sangiin.go.jp/japanese/joho1/kousei/syuisyo/212/touh/t212073.htm",
+        "https://www.sangiin.go.jp/japanese/joho1/kousei/syuisyo/212/meisai/m212073.htm"
+      ],
+      "verified_at": "2026-08-18T23:35:17+09:00",
+      "decision_reason": "現在状態、納付義務者、徴収主体等の根拠不足を解消するまで正本投入を保留する"
+    },
+    {
+      "candidate_id": "automobile-tax",
+      "candidate_file": "data/candidates/local-taxes.yaml",
+      "proposed_tax_id": "automobile-tax",
+      "disposition": "hold",
+      "existing_tax_id": null,
+      "identity_basis": "候補間の名称完全一致はなく、候補IDを永続ID案として維持する",
+      "burden_type": "local_tax",
+      "coverage_status": "needs_review",
+      "current_status": null,
+      "evidence_gaps": [
+        "種別割・環境性能割等の制度粒度を確認する",
+        "国税の自動車重量税と別制度として扱う",
+        "適用状態を確認する"
+      ],
+      "source_urls": [
+        "https://www.mof.go.jp/tax_policy/summary/condition/a01.htm",
+        "https://laws.e-gov.go.jp/law/325AC0000000226"
+      ],
+      "verified_at": "2026-08-18T22:37:46+09:00",
+      "decision_reason": "現在状態、納付義務者、徴収主体等の根拠不足を解消するまで正本投入を保留する"
+    },
+    {
+      "candidate_id": "automobile-weight-tax",
+      "candidate_file": "data/candidates/national-taxes.yaml",
+      "proposed_tax_id": "automobile-weight-tax",
+      "disposition": "hold",
+      "existing_tax_id": null,
+      "identity_basis": "候補間の名称完全一致はなく、候補IDを永続ID案として維持する",
+      "burden_type": "national_tax",
+      "coverage_status": "candidate",
+      "current_status": null,
+      "evidence_gaps": [
+        "本表と譲与分参考欄を二重計上しない集計関係を確認する",
+        "適用状態は個別確認する"
+      ],
+      "source_urls": [
+        "https://www.mof.go.jp/tax_policy/summary/condition/a01.htm",
+        "https://www.mof.go.jp/tax_policy/reference/taxes_and_stamp_revenues/202606.pdf",
+        "https://www.mof.go.jp/tax_policy/reference/account/r2025.pdf"
+      ],
+      "verified_at": "2026-08-18T22:37:46+09:00",
+      "decision_reason": "現在状態、納付義務者、徴収主体等の根拠不足を解消するまで正本投入を保留する"
+    },
+    {
+      "candidate_id": "aviation-fuel-tax",
+      "candidate_file": "data/candidates/national-taxes.yaml",
+      "proposed_tax_id": "aviation-fuel-tax",
+      "disposition": "hold",
+      "existing_tax_id": null,
+      "identity_basis": "候補間の名称完全一致はなく、候補IDを永続ID案として維持する",
+      "burden_type": "national_tax",
+      "coverage_status": "candidate",
+      "current_status": null,
+      "evidence_gaps": [
+        "本表と譲与分参考欄を二重計上しない集計関係を確認する",
+        "適用状態は個別確認する"
+      ],
+      "source_urls": [
+        "https://www.mof.go.jp/tax_policy/summary/condition/a01.htm",
+        "https://www.mof.go.jp/tax_policy/reference/taxes_and_stamp_revenues/202606.pdf",
+        "https://www.mof.go.jp/tax_policy/reference/account/r2025.pdf"
+      ],
+      "verified_at": "2026-08-18T22:37:46+09:00",
+      "decision_reason": "現在状態、納付義務者、徴収主体等の根拠不足を解消するまで正本投入を保留する"
+    },
+    {
+      "candidate_id": "banks-shareholdings-purchase-corporation-contribution",
+      "candidate_file": "data/candidates/public-burdens-government-additions.yaml",
+      "proposed_tax_id": "banks-shareholdings-purchase-corporation-contribution",
+      "disposition": "hold",
+      "existing_tax_id": null,
+      "identity_basis": "候補間の名称完全一致はなく、候補IDを永続ID案として維持する",
+      "burden_type": "contribution",
+      "coverage_status": "candidate",
+      "current_status": null,
+      "evidence_gaps": [
+        "当初拠出金と売却時拠出金を分割するか確認する",
+        "現行法・適用状態を確認する"
+      ],
+      "source_urls": [
+        "https://www.sangiin.go.jp/japanese/joho1/kousei/syuisyo/212/touh/t212073.htm",
+        "https://www.sangiin.go.jp/japanese/joho1/kousei/syuisyo/212/meisai/m212073.htm"
+      ],
+      "verified_at": "2026-08-18T23:35:17+09:00",
+      "decision_reason": "現在状態、納付義務者、徴収主体等の根拠不足を解消するまで正本投入を保留する"
+    },
+    {
+      "candidate_id": "bathing-tax",
+      "candidate_file": "data/candidates/local-taxes.yaml",
+      "proposed_tax_id": "bathing-tax",
+      "disposition": "hold",
+      "existing_tax_id": null,
+      "identity_basis": "候補間の名称完全一致はなく、候補IDを永続ID案として維持する",
+      "burden_type": "local_tax",
+      "coverage_status": "candidate",
+      "current_status": null,
+      "evidence_gaps": [
+        "根拠条項・納税義務者・徴収主体・適用状態を確認する"
+      ],
+      "source_urls": [
+        "https://www.mof.go.jp/tax_policy/summary/condition/a01.htm",
+        "https://laws.e-gov.go.jp/law/325AC0000000226"
+      ],
+      "verified_at": "2026-08-18T22:37:46+09:00",
+      "decision_reason": "現在状態、納付義務者、徴収主体等の根拠不足を解消するまで正本投入を保留する"
+    },
+    {
+      "candidate_id": "broadband-service-charge",
+      "candidate_file": "data/candidates/public-burdens-government-additions.yaml",
+      "proposed_tax_id": "broadband-service-charge",
+      "disposition": "hold",
+      "existing_tax_id": null,
+      "identity_basis": "候補間の名称完全一致はなく、候補IDを永続ID案として維持する",
+      "burden_type": "burden_charge",
+      "coverage_status": "needs_review",
+      "current_status": null,
+      "evidence_gaps": [
+        "政府答弁時は関連省令を検討中としており現行制度・施行・徴収開始を再確認する",
+        "正式名称・徴収主体を確認する"
+      ],
+      "source_urls": [
+        "https://www.sangiin.go.jp/japanese/joho1/kousei/syuisyo/212/touh/t212073.htm",
+        "https://www.sangiin.go.jp/japanese/joho1/kousei/syuisyo/212/meisai/m212073.htm"
+      ],
+      "verified_at": "2026-08-18T23:35:17+09:00",
+      "decision_reason": "現在状態、納付義務者、徴収主体等の根拠不足を解消するまで正本投入を保留する"
+    },
+    {
+      "candidate_id": "business-office-tax",
+      "candidate_file": "data/candidates/local-taxes.yaml",
+      "proposed_tax_id": "business-office-tax",
+      "disposition": "hold",
+      "existing_tax_id": null,
+      "identity_basis": "候補間の名称完全一致はなく、候補IDを永続ID案として維持する",
+      "burden_type": "local_tax",
+      "coverage_status": "candidate",
+      "current_status": null,
+      "evidence_gaps": [
+        "課税団体の範囲・根拠条項・納税義務者・適用状態を確認する"
+      ],
+      "source_urls": [
+        "https://www.mof.go.jp/tax_policy/summary/condition/a01.htm",
+        "https://laws.e-gov.go.jp/law/325AC0000000226"
+      ],
+      "verified_at": "2026-08-18T22:37:46+09:00",
+      "decision_reason": "現在状態、納付義務者、徴収主体等の根拠不足を解消するまで正本投入を保留する"
+    },
+    {
+      "candidate_id": "child-care-contribution",
+      "candidate_file": "data/candidates/public-burdens-question-39.yaml",
+      "proposed_tax_id": "child-care-contribution",
+      "disposition": "hold",
+      "existing_tax_id": null,
+      "identity_basis": "候補間の名称完全一致はなく、候補IDを永続ID案として維持する",
+      "burden_type": "contribution",
+      "coverage_status": "candidate",
+      "current_status": null,
+      "evidence_gaps": [
+        "現行法・納付義務者・徴収主体・適用状態を再確認する"
+      ],
+      "source_urls": [
+        "https://www.sangiin.go.jp/japanese/joho1/kousei/syuisyo/212/syuh/s212073.htm",
+        "https://www.sangiin.go.jp/japanese/joho1/kousei/syuisyo/212/touh/t212073.htm",
+        "https://www.sangiin.go.jp/japanese/joho1/kousei/syuisyo/212/meisai/m212073.htm"
+      ],
+      "verified_at": "2026-08-18T23:35:17+09:00",
+      "decision_reason": "現在状態、納付義務者、徴収主体等の根拠不足を解消するまで正本投入を保留する"
+    },
+    {
+      "candidate_id": "city-planning-tax",
+      "candidate_file": "data/candidates/local-taxes.yaml",
+      "proposed_tax_id": "city-planning-tax",
+      "disposition": "hold",
+      "existing_tax_id": null,
+      "identity_basis": "候補間の名称完全一致はなく、候補IDを永続ID案として維持する",
+      "burden_type": "local_tax",
+      "coverage_status": "candidate",
+      "current_status": null,
+      "evidence_gaps": [
+        "課税団体・対象区域・根拠条項・適用状態を確認する"
+      ],
+      "source_urls": [
+        "https://www.mof.go.jp/tax_policy/summary/condition/a01.htm",
+        "https://laws.e-gov.go.jp/law/325AC0000000226"
+      ],
+      "verified_at": "2026-08-18T22:37:46+09:00",
+      "decision_reason": "現在状態、納付義務者、徴収主体等の根拠不足を解消するまで正本投入を保留する"
+    },
+    {
+      "candidate_id": "commodity-customer-protection-fund-charge",
+      "candidate_file": "data/candidates/public-burdens-government-additions.yaml",
+      "proposed_tax_id": "commodity-customer-protection-fund-charge",
+      "disposition": "hold",
+      "existing_tax_id": null,
+      "identity_basis": "候補間の名称完全一致はなく、候補IDを永続ID案として維持する",
+      "burden_type": "burden_charge",
+      "coverage_status": "candidate",
+      "current_status": null,
+      "evidence_gaps": [
+        "現行法・納付義務者・適用状態を確認する"
+      ],
+      "source_urls": [
+        "https://www.sangiin.go.jp/japanese/joho1/kousei/syuisyo/212/touh/t212073.htm",
+        "https://www.sangiin.go.jp/japanese/joho1/kousei/syuisyo/212/meisai/m212073.htm"
+      ],
+      "verified_at": "2026-08-18T23:35:17+09:00",
+      "decision_reason": "現在状態、納付義務者、徴収主体等の根拠不足を解消するまで正本投入を保留する"
+    },
+    {
+      "candidate_id": "common-facilities-tax",
+      "candidate_file": "data/candidates/local-taxes.yaml",
+      "proposed_tax_id": "common-facilities-tax",
+      "disposition": "hold",
+      "existing_tax_id": null,
+      "identity_basis": "候補間の名称完全一致はなく、候補IDを永続ID案として維持する",
+      "burden_type": "local_tax",
+      "coverage_status": "candidate",
+      "current_status": null,
+      "evidence_gaps": [
+        "課税団体・根拠条項・納税義務者・適用状態を確認する"
+      ],
+      "source_urls": [
+        "https://www.mof.go.jp/tax_policy/summary/condition/a01.htm",
+        "https://laws.e-gov.go.jp/law/325AC0000000226"
+      ],
+      "verified_at": "2026-08-18T22:37:46+09:00",
+      "decision_reason": "現在状態、納付義務者、徴収主体等の根拠不足を解消するまで正本投入を保留する"
+    },
+    {
+      "candidate_id": "common-utility-tunnel-charge",
+      "candidate_file": "data/candidates/public-burdens-government-additions.yaml",
+      "proposed_tax_id": "common-utility-tunnel-charge",
+      "disposition": "hold",
+      "existing_tax_id": null,
+      "identity_basis": "候補間の名称完全一致はなく、候補IDを永続ID案として維持する",
+      "burden_type": "burden_charge",
+      "coverage_status": "needs_review",
+      "current_status": null,
+      "evidence_gaps": [
+        "条項別負担金の制度粒度・徴収主体・適用状態を確認する"
+      ],
+      "source_urls": [
+        "https://www.sangiin.go.jp/japanese/joho1/kousei/syuisyo/212/touh/t212073.htm",
+        "https://www.sangiin.go.jp/japanese/joho1/kousei/syuisyo/212/meisai/m212073.htm"
+      ],
+      "verified_at": "2026-08-18T23:35:17+09:00",
+      "decision_reason": "現在状態、納付義務者、徴収主体等の根拠不足を解消するまで正本投入を保留する"
+    },
+    {
+      "candidate_id": "consumption-tax-candidate",
+      "candidate_file": "data/candidates/national-taxes.yaml",
+      "proposed_tax_id": "consumption-tax",
+      "disposition": "merge_existing",
+      "existing_tax_id": "consumption-tax",
+      "identity_basis": "同じ国税の消費税であり、既存正本へ統合する。地方消費税は別制度として扱う",
+      "burden_type": "national_tax",
+      "coverage_status": "candidate",
+      "current_status": null,
+      "evidence_gaps": [
+        "既存tax_id consumption-taxとの統合と地方消費税を含む合計税率表示の分離を#28で確認する"
+      ],
+      "source_urls": [
+        "https://www.mof.go.jp/tax_policy/summary/condition/a01.htm",
+        "https://www.mof.go.jp/tax_policy/reference/taxes_and_stamp_revenues/202606.pdf",
+        "https://www.mof.go.jp/tax_policy/reference/account/r2025.pdf"
+      ],
+      "verified_at": "2026-08-18T22:37:46+09:00",
+      "decision_reason": "同じ国税の消費税であり、既存正本へ統合する。地方消費税は別制度として扱う"
+    },
+    {
+      "candidate_id": "corporation-tax",
+      "candidate_file": "data/candidates/national-taxes.yaml",
+      "proposed_tax_id": "corporation-tax",
+      "disposition": "hold",
+      "existing_tax_id": null,
+      "identity_basis": "候補間の名称完全一致はなく、候補IDを永続ID案として維持する",
+      "burden_type": "national_tax",
+      "coverage_status": "candidate",
+      "current_status": null,
+      "evidence_gaps": [
+        "根拠法令・納税義務者・徴収主体・適用状態は個別の公式資料で確認する"
+      ],
+      "source_urls": [
+        "https://www.mof.go.jp/tax_policy/summary/condition/a01.htm",
+        "https://www.mof.go.jp/tax_policy/reference/taxes_and_stamp_revenues/202606.pdf",
+        "https://www.mof.go.jp/tax_policy/reference/account/r2025.pdf"
+      ],
+      "verified_at": "2026-08-18T22:37:46+09:00",
+      "decision_reason": "現在状態、納付義務者、徴収主体等の根拠不足を解消するまで正本投入を保留する"
+    },
+    {
+      "candidate_id": "customs-duty",
+      "candidate_file": "data/candidates/national-taxes.yaml",
+      "proposed_tax_id": "customs-duty",
+      "disposition": "hold",
+      "existing_tax_id": null,
+      "identity_basis": "候補間の名称完全一致はなく、候補IDを永続ID案として維持する",
+      "burden_type": "national_tax",
+      "coverage_status": "candidate",
+      "current_status": null,
+      "evidence_gaps": [
+        "品目別税率ではなく制度マスタとしての粒度を確認する",
+        "適用状態は個別確認する"
+      ],
+      "source_urls": [
+        "https://www.mof.go.jp/tax_policy/summary/condition/a01.htm",
+        "https://www.mof.go.jp/tax_policy/reference/taxes_and_stamp_revenues/202606.pdf",
+        "https://www.mof.go.jp/tax_policy/reference/account/r2025.pdf"
+      ],
+      "verified_at": "2026-08-18T22:37:46+09:00",
+      "decision_reason": "現在状態、納付義務者、徴収主体等の根拠不足を解消するまで正本投入を保留する"
+    },
+    {
+      "candidate_id": "decommissioning-facilitation-charge",
+      "candidate_file": "data/candidates/public-burdens-question-39.yaml",
+      "proposed_tax_id": "decommissioning-facilitation-charge",
+      "disposition": "hold",
+      "existing_tax_id": null,
+      "identity_basis": "候補間の名称完全一致はなく、候補IDを永続ID案として維持する",
+      "burden_type": "burden_charge",
+      "coverage_status": "candidate",
+      "current_status": null,
+      "evidence_gaps": [
+        "現行法・料金転嫁・徴収主体・適用状態を再確認する"
+      ],
+      "source_urls": [
+        "https://www.sangiin.go.jp/japanese/joho1/kousei/syuisyo/212/syuh/s212073.htm",
+        "https://www.sangiin.go.jp/japanese/joho1/kousei/syuisyo/212/touh/t212073.htm",
+        "https://www.sangiin.go.jp/japanese/joho1/kousei/syuisyo/212/meisai/m212073.htm"
+      ],
+      "verified_at": "2026-08-18T23:35:17+09:00",
+      "decision_reason": "現在状態、納付義務者、徴収主体等の根拠不足を解消するまで正本投入を保留する"
+    },
+    {
+      "candidate_id": "defense-special-corporation-tax",
+      "candidate_file": "data/candidates/national-taxes.yaml",
+      "proposed_tax_id": "defense-special-corporation-tax",
+      "disposition": "hold",
+      "existing_tax_id": null,
+      "identity_basis": "候補間の名称完全一致はなく、候補IDを永続ID案として維持する",
+      "burden_type": "national_tax",
+      "coverage_status": "candidate",
+      "current_status": null,
+      "evidence_gaps": [
+        "令和7年度決算額調に個別行がなく令和8年6月末収入額調は零計上である",
+        "公布・施行・適用・徴収開始を個別に確認する"
+      ],
+      "source_urls": [
+        "https://www.mof.go.jp/tax_policy/summary/condition/a01.htm",
+        "https://www.mof.go.jp/tax_policy/reference/taxes_and_stamp_revenues/202606.pdf",
+        "https://www.mof.go.jp/tax_policy/reference/account/r2025.pdf"
+      ],
+      "verified_at": "2026-08-18T22:37:46+09:00",
+      "decision_reason": "現在状態、納付義務者、徴収主体等の根拠不足を解消するまで正本投入を保留する"
+    },
+    {
+      "candidate_id": "defense-special-income-tax",
+      "candidate_file": "data/candidates/national-taxes.yaml",
+      "proposed_tax_id": "defense-special-income-tax",
+      "disposition": "hold",
+      "existing_tax_id": null,
+      "identity_basis": "候補間の名称完全一致はなく、候補IDを永続ID案として維持する",
+      "burden_type": "national_tax",
+      "coverage_status": "candidate",
+      "current_status": null,
+      "evidence_gaps": [
+        "令和7年度決算額調に個別行がなく令和8年6月末収入額調は零計上である",
+        "公布・施行・適用・徴収開始を個別に確認する"
+      ],
+      "source_urls": [
+        "https://www.mof.go.jp/tax_policy/summary/condition/a01.htm",
+        "https://www.mof.go.jp/tax_policy/reference/taxes_and_stamp_revenues/202606.pdf",
+        "https://www.mof.go.jp/tax_policy/reference/account/r2025.pdf"
+      ],
+      "verified_at": "2026-08-18T22:37:46+09:00",
+      "decision_reason": "現在状態、納付義務者、徴収主体等の根拠不足を解消するまで正本投入を保留する"
+    },
+    {
+      "candidate_id": "deposit-insurance-corporation-charge",
+      "candidate_file": "data/candidates/public-burdens-government-additions.yaml",
+      "proposed_tax_id": "deposit-insurance-corporation-charge",
+      "disposition": "hold",
+      "existing_tax_id": null,
+      "identity_basis": "候補間の名称完全一致はなく、候補IDを永続ID案として維持する",
+      "burden_type": "burden_charge",
+      "coverage_status": "candidate",
+      "current_status": null,
+      "evidence_gaps": [
+        "現行法・納付義務者・適用状態を再確認する"
+      ],
+      "source_urls": [
+        "https://www.sangiin.go.jp/japanese/joho1/kousei/syuisyo/212/touh/t212073.htm",
+        "https://www.sangiin.go.jp/japanese/joho1/kousei/syuisyo/212/meisai/m212073.htm"
+      ],
+      "verified_at": "2026-08-18T23:35:17+09:00",
+      "decision_reason": "現在状態、納付義務者、徴収主体等の根拠不足を解消するまで正本投入を保留する"
+    },
+    {
+      "candidate_id": "deposit-insurance-corporation-special-charge",
+      "candidate_file": "data/candidates/public-burdens-government-additions.yaml",
+      "proposed_tax_id": "deposit-insurance-corporation-special-charge",
+      "disposition": "hold",
+      "existing_tax_id": null,
+      "identity_basis": "候補間の名称完全一致はなく、候補IDを永続ID案として維持する",
+      "burden_type": "burden_charge",
+      "coverage_status": "candidate",
+      "current_status": null,
+      "evidence_gaps": [
+        "現行法・納付義務者・適用状態を再確認する"
+      ],
+      "source_urls": [
+        "https://www.sangiin.go.jp/japanese/joho1/kousei/syuisyo/212/touh/t212073.htm",
+        "https://www.sangiin.go.jp/japanese/joho1/kousei/syuisyo/212/meisai/m212073.htm"
+      ],
+      "verified_at": "2026-08-18T23:35:17+09:00",
+      "decision_reason": "現在状態、納付義務者、徴収主体等の根拠不足を解消するまで正本投入を保留する"
+    },
+    {
+      "candidate_id": "deposit-insurance-premium",
+      "candidate_file": "data/candidates/public-burdens-question-39.yaml",
+      "proposed_tax_id": "deposit-insurance-premium",
+      "disposition": "hold",
+      "existing_tax_id": null,
+      "identity_basis": "候補間の名称完全一致はなく、候補IDを永続ID案として維持する",
+      "burden_type": "insurance_premium",
+      "coverage_status": "candidate",
+      "current_status": null,
+      "evidence_gaps": [
+        "現行法・納付義務者・徴収主体・適用状態を再確認する"
+      ],
+      "source_urls": [
+        "https://www.sangiin.go.jp/japanese/joho1/kousei/syuisyo/212/syuh/s212073.htm",
+        "https://www.sangiin.go.jp/japanese/joho1/kousei/syuisyo/212/touh/t212073.htm",
+        "https://www.sangiin.go.jp/japanese/joho1/kousei/syuisyo/212/meisai/m212073.htm"
+      ],
+      "verified_at": "2026-08-18T23:35:17+09:00",
+      "decision_reason": "現在状態、納付義務者、徴収主体等の根拠不足を解消するまで正本投入を保留する"
+    },
+    {
+      "candidate_id": "disability-employment-levy",
+      "candidate_file": "data/candidates/public-burdens-question-39.yaml",
+      "proposed_tax_id": "disability-employment-levy",
+      "disposition": "hold",
+      "existing_tax_id": null,
+      "identity_basis": "候補間の名称完全一致はなく、候補IDを永続ID案として維持する",
+      "burden_type": "payment",
+      "coverage_status": "candidate",
+      "current_status": null,
+      "evidence_gaps": [
+        "現行法・納付義務者・徴収主体・適用状態を確認する"
+      ],
+      "source_urls": [
+        "https://www.sangiin.go.jp/japanese/joho1/kousei/syuisyo/212/syuh/s212073.htm",
+        "https://www.sangiin.go.jp/japanese/joho1/kousei/syuisyo/212/touh/t212073.htm",
+        "https://www.sangiin.go.jp/japanese/joho1/kousei/syuisyo/212/meisai/m212073.htm"
+      ],
+      "verified_at": "2026-08-18T23:35:17+09:00",
+      "decision_reason": "現在状態、納付義務者、徴収主体等の根拠不足を解消するまで正本投入を保留する"
+    },
+    {
+      "candidate_id": "east-japan-business-rehabilitation-contribution",
+      "candidate_file": "data/candidates/public-burdens-question-39.yaml",
+      "proposed_tax_id": "east-japan-business-rehabilitation-contribution",
+      "disposition": "hold",
+      "existing_tax_id": null,
+      "identity_basis": "候補間の名称完全一致はなく、候補IDを永続ID案として維持する",
+      "burden_type": "contribution",
+      "coverage_status": "candidate",
+      "current_status": null,
+      "evidence_gaps": [
+        "法令上の正式名称・徴収主体・適用状態を再確認する"
+      ],
+      "source_urls": [
+        "https://www.sangiin.go.jp/japanese/joho1/kousei/syuisyo/212/syuh/s212073.htm",
+        "https://www.sangiin.go.jp/japanese/joho1/kousei/syuisyo/212/touh/t212073.htm",
+        "https://www.sangiin.go.jp/japanese/joho1/kousei/syuisyo/212/meisai/m212073.htm"
+      ],
+      "verified_at": "2026-08-18T23:35:17+09:00",
+      "decision_reason": "現在状態、納付義務者、徴収主体等の根拠不足を解消するまで正本投入を保留する"
+    },
+    {
+      "candidate_id": "educational-public-transmission-compensation",
+      "candidate_file": "data/candidates/public-burdens-question-39.yaml",
+      "proposed_tax_id": "educational-public-transmission-compensation",
+      "disposition": "hold",
+      "existing_tax_id": null,
+      "identity_basis": "候補間の名称完全一致はなく、候補IDを永続ID案として維持する",
+      "burden_type": "payment",
+      "coverage_status": "candidate",
+      "current_status": null,
+      "evidence_gaps": [
+        "現行法・納付義務者・徴収主体・適用状態を確認する"
+      ],
+      "source_urls": [
+        "https://www.sangiin.go.jp/japanese/joho1/kousei/syuisyo/212/syuh/s212073.htm",
+        "https://www.sangiin.go.jp/japanese/joho1/kousei/syuisyo/212/touh/t212073.htm",
+        "https://www.sangiin.go.jp/japanese/joho1/kousei/syuisyo/212/meisai/m212073.htm"
+      ],
+      "verified_at": "2026-08-18T23:35:17+09:00",
+      "decision_reason": "現在状態、納付義務者、徴収主体等の根拠不足を解消するまで正本投入を保留する"
+    },
+    {
+      "candidate_id": "electricity-business-compensation-charge",
+      "candidate_file": "data/candidates/public-burdens-question-39.yaml",
+      "proposed_tax_id": "electricity-business-compensation-charge",
+      "disposition": "hold",
+      "existing_tax_id": null,
+      "identity_basis": "候補間の名称完全一致はなく、候補IDを永続ID案として維持する",
+      "burden_type": "burden_charge",
+      "coverage_status": "needs_review",
+      "current_status": null,
+      "evidence_gaps": [
+        "現行規則の条項・正式名称・料金転嫁・適用状態を確認する"
+      ],
+      "source_urls": [
+        "https://www.sangiin.go.jp/japanese/joho1/kousei/syuisyo/212/syuh/s212073.htm",
+        "https://www.sangiin.go.jp/japanese/joho1/kousei/syuisyo/212/touh/t212073.htm",
+        "https://www.sangiin.go.jp/japanese/joho1/kousei/syuisyo/212/meisai/m212073.htm"
+      ],
+      "verified_at": "2026-08-18T23:35:17+09:00",
+      "decision_reason": "現在状態、納付義務者、徴収主体等の根拠不足を解消するまで正本投入を保留する"
+    },
+    {
+      "candidate_id": "employment-insurance-premium",
+      "candidate_file": "data/candidates/public-burdens-question-39.yaml",
+      "proposed_tax_id": "employment-insurance-premium",
+      "disposition": "hold",
+      "existing_tax_id": null,
+      "identity_basis": "候補間の名称完全一致はなく、候補IDを永続ID案として維持する",
+      "burden_type": "social_insurance_premium",
+      "coverage_status": "candidate",
+      "current_status": null,
+      "evidence_gaps": [
+        "労働保険料徴収法との関係・納付義務者・徴収主体・適用状態を確認する"
+      ],
+      "source_urls": [
+        "https://www.sangiin.go.jp/japanese/joho1/kousei/syuisyo/212/syuh/s212073.htm",
+        "https://www.sangiin.go.jp/japanese/joho1/kousei/syuisyo/212/touh/t212073.htm",
+        "https://www.sangiin.go.jp/japanese/joho1/kousei/syuisyo/212/meisai/m212073.htm"
+      ],
+      "verified_at": "2026-08-18T23:35:17+09:00",
+      "decision_reason": "現在状態、納付義務者、徴収主体等の根拠不足を解消するまで正本投入を保留する"
+    },
+    {
+      "candidate_id": "enterprise-tax",
+      "candidate_file": "data/candidates/local-taxes.yaml",
+      "proposed_tax_id": "enterprise-tax",
+      "disposition": "hold",
+      "existing_tax_id": null,
+      "identity_basis": "候補間の名称完全一致はなく、候補IDを永続ID案として維持する",
+      "burden_type": "local_tax",
+      "coverage_status": "needs_review",
+      "current_status": null,
+      "evidence_gaps": [
+        "個人事業税・法人事業税の制度粒度と特別法人事業税との関係を確認する",
+        "根拠条項・徴収主体・適用状態を確認する"
+      ],
+      "source_urls": [
+        "https://www.mof.go.jp/tax_policy/summary/condition/a01.htm",
+        "https://laws.e-gov.go.jp/law/325AC0000000226"
+      ],
+      "verified_at": "2026-08-18T22:37:46+09:00",
+      "decision_reason": "現在状態、納付義務者、徴収主体等の根拠不足を解消するまで正本投入を保留する"
+    },
+    {
+      "candidate_id": "financial-adr-charge",
+      "candidate_file": "data/candidates/public-burdens-question-39.yaml",
+      "proposed_tax_id": "financial-adr-charge",
+      "disposition": "hold",
+      "existing_tax_id": null,
+      "identity_basis": "候補間の名称完全一致はなく、候補IDを永続ID案として維持する",
+      "burden_type": "burden_charge",
+      "coverage_status": "needs_review",
+      "current_status": null,
+      "evidence_gaps": [
+        "指定紛争解決機関と根拠法令ごとの制度粒度を確認する",
+        "正式名称・適用状態を確認する"
+      ],
+      "source_urls": [
+        "https://www.sangiin.go.jp/japanese/joho1/kousei/syuisyo/212/syuh/s212073.htm",
+        "https://www.sangiin.go.jp/japanese/joho1/kousei/syuisyo/212/touh/t212073.htm",
+        "https://www.sangiin.go.jp/japanese/joho1/kousei/syuisyo/212/meisai/m212073.htm"
+      ],
+      "verified_at": "2026-08-18T23:35:17+09:00",
+      "decision_reason": "現在状態、納付義務者、徴収主体等の根拠不足を解消するまで正本投入を保留する"
+    },
+    {
+      "candidate_id": "fixed-asset-tax",
+      "candidate_file": "data/candidates/local-taxes.yaml",
+      "proposed_tax_id": "fixed-asset-tax",
+      "disposition": "hold",
+      "existing_tax_id": null,
+      "identity_basis": "候補間の名称完全一致はなく、候補IDを永続ID案として維持する",
+      "burden_type": "local_tax",
+      "coverage_status": "candidate",
+      "current_status": null,
+      "evidence_gaps": [
+        "土地・家屋・償却資産等の対象区分と根拠条項・適用状態を確認する"
+      ],
+      "source_urls": [
+        "https://www.mof.go.jp/tax_policy/summary/condition/a01.htm",
+        "https://laws.e-gov.go.jp/law/325AC0000000226"
+      ],
+      "verified_at": "2026-08-18T22:37:46+09:00",
+      "decision_reason": "現在状態、納付義務者、徴収主体等の根拠不足を解消するまで正本投入を保留する"
+    },
+    {
+      "candidate_id": "forest-environment-tax",
+      "candidate_file": "data/candidates/national-taxes.yaml",
+      "proposed_tax_id": "forest-environment-tax",
+      "disposition": "hold",
+      "existing_tax_id": null,
+      "identity_basis": "候補間の名称完全一致はなく、候補IDを永続ID案として維持する",
+      "burden_type": "national_tax",
+      "coverage_status": "candidate",
+      "current_status": null,
+      "evidence_gaps": [
+        "市町村による賦課徴収と国税としての帰属を分けて確認する",
+        "適用状態は個別の公式資料で確認する"
+      ],
+      "source_urls": [
+        "https://www.mof.go.jp/tax_policy/summary/condition/a01.htm",
+        "https://www.mof.go.jp/tax_policy/reference/taxes_and_stamp_revenues/202606.pdf",
+        "https://www.mof.go.jp/tax_policy/reference/account/r2025.pdf"
+      ],
+      "verified_at": "2026-08-18T22:37:46+09:00",
+      "decision_reason": "現在状態、納付義務者、徴収主体等の根拠不足を解消するまで正本投入を保留する"
+    },
+    {
+      "candidate_id": "fossil-fuel-levy",
+      "candidate_file": "data/candidates/public-burdens-question-39.yaml",
+      "proposed_tax_id": "fossil-fuel-levy",
+      "disposition": "hold",
+      "existing_tax_id": null,
+      "identity_basis": "候補間の名称完全一致はなく、候補IDを永続ID案として維持する",
+      "burden_type": "levy",
+      "coverage_status": "needs_review",
+      "current_status": null,
+      "evidence_gaps": [
+        "公布・施行・適用開始・徴収開始を分離して確認する",
+        "納付義務者・徴収主体を確認する"
+      ],
+      "source_urls": [
+        "https://www.sangiin.go.jp/japanese/joho1/kousei/syuisyo/212/syuh/s212073.htm",
+        "https://www.sangiin.go.jp/japanese/joho1/kousei/syuisyo/212/touh/t212073.htm",
+        "https://www.sangiin.go.jp/japanese/joho1/kousei/syuisyo/212/meisai/m212073.htm"
+      ],
+      "verified_at": "2026-08-18T23:35:17+09:00",
+      "decision_reason": "現在状態、納付義務者、徴収主体等の根拠不足を解消するまで正本投入を保留する"
+    },
+    {
+      "candidate_id": "gasoline-tax",
+      "candidate_file": "data/candidates/national-taxes.yaml",
+      "proposed_tax_id": "gasoline-tax",
+      "disposition": "hold",
+      "existing_tax_id": null,
+      "identity_basis": "候補間の名称完全一致はなく、候補IDを永続ID案として維持する",
+      "burden_type": "national_tax",
+      "coverage_status": "candidate",
+      "current_status": null,
+      "evidence_gaps": [
+        "地方揮発油税と別制度として根拠・帰属を確認する",
+        "適用状態は個別確認する"
+      ],
+      "source_urls": [
+        "https://www.mof.go.jp/tax_policy/summary/condition/a01.htm",
+        "https://www.mof.go.jp/tax_policy/reference/taxes_and_stamp_revenues/202606.pdf",
+        "https://www.mof.go.jp/tax_policy/reference/account/r2025.pdf"
+      ],
+      "verified_at": "2026-08-18T22:37:46+09:00",
+      "decision_reason": "現在状態、納付義務者、徴収主体等の根拠不足を解消するまで正本投入を保留する"
+    },
+    {
+      "candidate_id": "golf-course-utilization-tax",
+      "candidate_file": "data/candidates/local-taxes.yaml",
+      "proposed_tax_id": "golf-course-utilization-tax",
+      "disposition": "hold",
+      "existing_tax_id": null,
+      "identity_basis": "候補間の名称完全一致はなく、候補IDを永続ID案として維持する",
+      "burden_type": "local_tax",
+      "coverage_status": "candidate",
+      "current_status": null,
+      "evidence_gaps": [
+        "根拠条項・納税義務者・徴収主体・適用状態を確認する"
+      ],
+      "source_urls": [
+        "https://www.mof.go.jp/tax_policy/summary/condition/a01.htm",
+        "https://laws.e-gov.go.jp/law/325AC0000000226"
+      ],
+      "verified_at": "2026-08-18T22:37:46+09:00",
+      "decision_reason": "現在状態、納付義務者、徴収主体等の根拠不足を解消するまで正本投入を保留する"
+    },
+    {
+      "candidate_id": "gx-specified-business-charge",
+      "candidate_file": "data/candidates/public-burdens-question-39.yaml",
+      "proposed_tax_id": "gx-specified-business-charge",
+      "disposition": "hold",
+      "existing_tax_id": null,
+      "identity_basis": "候補間の名称完全一致はなく、候補IDを永続ID案として維持する",
+      "burden_type": "burden_charge",
+      "coverage_status": "needs_review",
+      "current_status": null,
+      "evidence_gaps": [
+        "公布・施行・適用開始・徴収開始を分離して確認する",
+        "正式名称・徴収主体を確認する"
+      ],
+      "source_urls": [
+        "https://www.sangiin.go.jp/japanese/joho1/kousei/syuisyo/212/syuh/s212073.htm",
+        "https://www.sangiin.go.jp/japanese/joho1/kousei/syuisyo/212/touh/t212073.htm",
+        "https://www.sangiin.go.jp/japanese/joho1/kousei/syuisyo/212/meisai/m212073.htm"
+      ],
+      "verified_at": "2026-08-18T23:35:17+09:00",
+      "decision_reason": "現在状態、納付義務者、徴収主体等の根拠不足を解消するまで正本投入を保留する"
+    },
+    {
+      "candidate_id": "hepatitis-c-special-relief-contribution",
+      "candidate_file": "data/candidates/public-burdens-government-additions.yaml",
+      "proposed_tax_id": "hepatitis-c-special-relief-contribution",
+      "disposition": "hold",
+      "existing_tax_id": null,
+      "identity_basis": "候補間の名称完全一致はなく、候補IDを永続ID案として維持する",
+      "burden_type": "contribution",
+      "coverage_status": "candidate",
+      "current_status": null,
+      "evidence_gaps": [
+        "法令の正式名称・徴収主体・納付義務者・適用状態を確認する"
+      ],
+      "source_urls": [
+        "https://www.sangiin.go.jp/japanese/joho1/kousei/syuisyo/212/touh/t212073.htm",
+        "https://www.sangiin.go.jp/japanese/joho1/kousei/syuisyo/212/meisai/m212073.htm"
+      ],
+      "verified_at": "2026-08-18T23:35:17+09:00",
+      "decision_reason": "現在状態、納付義務者、徴収主体等の根拠不足を解消するまで正本投入を保留する"
+    },
+    {
+      "candidate_id": "high-level-waste-disposal-contribution",
+      "candidate_file": "data/candidates/public-burdens-question-39.yaml",
+      "proposed_tax_id": "high-level-waste-disposal-contribution",
+      "disposition": "hold",
+      "existing_tax_id": null,
+      "identity_basis": "候補間の名称完全一致はなく、候補IDを永続ID案として維持する",
+      "burden_type": "contribution",
+      "coverage_status": "candidate",
+      "current_status": null,
+      "evidence_gaps": [
+        "正式名称・条項・徴収主体・適用状態を再確認する"
+      ],
+      "source_urls": [
+        "https://www.sangiin.go.jp/japanese/joho1/kousei/syuisyo/212/syuh/s212073.htm",
+        "https://www.sangiin.go.jp/japanese/joho1/kousei/syuisyo/212/touh/t212073.htm",
+        "https://www.sangiin.go.jp/japanese/joho1/kousei/syuisyo/212/meisai/m212073.htm"
+      ],
+      "verified_at": "2026-08-18T23:35:17+09:00",
+      "decision_reason": "現在状態、納付義務者、徴収主体等の根拠不足を解消するまで正本投入を保留する"
+    },
+    {
+      "candidate_id": "hunting-tax",
+      "candidate_file": "data/candidates/local-taxes.yaml",
+      "proposed_tax_id": "hunting-tax",
+      "disposition": "hold",
+      "existing_tax_id": null,
+      "identity_basis": "候補間の名称完全一致はなく、候補IDを永続ID案として維持する",
+      "burden_type": "local_tax",
+      "coverage_status": "candidate",
+      "current_status": null,
+      "evidence_gaps": [
+        "根拠条項・納税義務者・徴収主体・適用状態を確認する"
+      ],
+      "source_urls": [
+        "https://www.mof.go.jp/tax_policy/summary/condition/a01.htm",
+        "https://laws.e-gov.go.jp/law/325AC0000000226"
+      ],
+      "verified_at": "2026-08-18T22:37:46+09:00",
+      "decision_reason": "現在状態、納付義務者、徴収主体等の根拠不足を解消するまで正本投入を保留する"
+    },
+    {
+      "candidate_id": "imported-sugar-adjustment-charge",
+      "candidate_file": "data/candidates/public-burdens-question-39.yaml",
+      "proposed_tax_id": "imported-sugar-adjustment-charge",
+      "disposition": "hold",
+      "existing_tax_id": null,
+      "identity_basis": "候補間の名称完全一致はなく、候補IDを永続ID案として維持する",
+      "burden_type": "adjustment_charge",
+      "coverage_status": "candidate",
+      "current_status": null,
+      "evidence_gaps": [
+        "正式名称・条項・納付義務者・徴収主体・適用状態を確認する"
+      ],
+      "source_urls": [
+        "https://www.sangiin.go.jp/japanese/joho1/kousei/syuisyo/212/syuh/s212073.htm",
+        "https://www.sangiin.go.jp/japanese/joho1/kousei/syuisyo/212/touh/t212073.htm",
+        "https://www.sangiin.go.jp/japanese/joho1/kousei/syuisyo/212/meisai/m212073.htm"
+      ],
+      "verified_at": "2026-08-18T23:35:17+09:00",
+      "decision_reason": "現在状態、納付義務者、徴収主体等の根拠不足を解消するまで正本投入を保留する"
+    },
+    {
+      "candidate_id": "income-tax",
+      "candidate_file": "data/candidates/national-taxes.yaml",
+      "proposed_tax_id": "income-tax",
+      "disposition": "hold",
+      "existing_tax_id": null,
+      "identity_basis": "候補間の名称完全一致はなく、候補IDを永続ID案として維持する",
+      "burden_type": "national_tax",
+      "coverage_status": "candidate",
+      "current_status": null,
+      "evidence_gaps": [
+        "根拠法令・納税義務者・徴収主体・適用状態は個別の公式資料で確認する"
+      ],
+      "source_urls": [
+        "https://www.mof.go.jp/tax_policy/summary/condition/a01.htm",
+        "https://www.mof.go.jp/tax_policy/reference/taxes_and_stamp_revenues/202606.pdf",
+        "https://www.mof.go.jp/tax_policy/reference/account/r2025.pdf"
+      ],
+      "verified_at": "2026-08-18T22:37:46+09:00",
+      "decision_reason": "現在状態、納付義務者、徴収主体等の根拠不足を解消するまで正本投入を保留する"
+    },
+    {
+      "candidate_id": "infection-contribution",
+      "candidate_file": "data/candidates/public-burdens-government-additions.yaml",
+      "proposed_tax_id": "infection-contribution",
+      "disposition": "hold",
+      "existing_tax_id": null,
+      "identity_basis": "候補間の名称完全一致はなく、候補IDを永続ID案として維持する",
+      "burden_type": "contribution",
+      "coverage_status": "candidate",
+      "current_status": null,
+      "evidence_gaps": [
+        "現行法・納付義務者・適用状態を確認する"
+      ],
+      "source_urls": [
+        "https://www.sangiin.go.jp/japanese/joho1/kousei/syuisyo/212/touh/t212073.htm",
+        "https://www.sangiin.go.jp/japanese/joho1/kousei/syuisyo/212/meisai/m212073.htm"
+      ],
+      "verified_at": "2026-08-18T23:35:17+09:00",
+      "decision_reason": "現在状態、納付義務者、徴収主体等の根拠不足を解消するまで正本投入を保留する"
+    },
+    {
+      "candidate_id": "inheritance-and-gift-tax",
+      "candidate_file": "data/candidates/national-taxes.yaml",
+      "proposed_tax_id": "inheritance-and-gift-tax",
+      "disposition": "hold",
+      "existing_tax_id": null,
+      "identity_basis": "候補間の名称完全一致はなく、候補IDを永続ID案として維持する",
+      "burden_type": "national_tax",
+      "coverage_status": "needs_review",
+      "current_status": null,
+      "evidence_gaps": [
+        "財務省税目一覧の複合表記を一制度とするか相続税と贈与税へ分割するか確認する",
+        "歳入資料は相続税の行のみで贈与税の包含関係を確認する"
+      ],
+      "source_urls": [
+        "https://www.mof.go.jp/tax_policy/summary/condition/a01.htm",
+        "https://www.mof.go.jp/tax_policy/reference/taxes_and_stamp_revenues/202606.pdf",
+        "https://www.mof.go.jp/tax_policy/reference/account/r2025.pdf"
+      ],
+      "verified_at": "2026-08-18T22:37:46+09:00",
+      "decision_reason": "現在状態、納付義務者、徴収主体等の根拠不足を解消するまで正本投入を保留する"
+    },
+    {
+      "candidate_id": "international-oil-pollution-fund-annual-contribution",
+      "candidate_file": "data/candidates/public-burdens-government-additions.yaml",
+      "proposed_tax_id": "international-oil-pollution-fund-annual-contribution",
+      "disposition": "hold",
+      "existing_tax_id": null,
+      "identity_basis": "候補間の名称完全一致はなく、候補IDを永続ID案として維持する",
+      "burden_type": "contribution",
+      "coverage_status": "candidate",
+      "current_status": null,
+      "evidence_gaps": [
+        "基金・徴収主体・納付義務者・適用状態を確認する"
+      ],
+      "source_urls": [
+        "https://www.sangiin.go.jp/japanese/joho1/kousei/syuisyo/212/touh/t212073.htm",
+        "https://www.sangiin.go.jp/japanese/joho1/kousei/syuisyo/212/meisai/m212073.htm"
+      ],
+      "verified_at": "2026-08-18T23:35:17+09:00",
+      "decision_reason": "現在状態、納付義務者、徴収主体等の根拠不足を解消するまで正本投入を保留する"
+    },
+    {
+      "candidate_id": "international-tourist-tax",
+      "candidate_file": "data/candidates/national-taxes.yaml",
+      "proposed_tax_id": "international-tourist-tax",
+      "disposition": "hold",
+      "existing_tax_id": null,
+      "identity_basis": "候補間の名称完全一致はなく、候補IDを永続ID案として維持する",
+      "burden_type": "national_tax",
+      "coverage_status": "candidate",
+      "current_status": null,
+      "evidence_gaps": [
+        "根拠法令・納税義務者・徴収主体・適用状態は個別の公式資料で確認する"
+      ],
+      "source_urls": [
+        "https://www.mof.go.jp/tax_policy/summary/condition/a01.htm",
+        "https://www.mof.go.jp/tax_policy/reference/taxes_and_stamp_revenues/202606.pdf",
+        "https://www.mof.go.jp/tax_policy/reference/account/r2025.pdf"
+      ],
+      "verified_at": "2026-08-18T22:37:46+09:00",
+      "decision_reason": "現在状態、納付義務者、徴収主体等の根拠不足を解消するまで正本投入を保留する"
+    },
+    {
+      "candidate_id": "investor-protection-fund-charge",
+      "candidate_file": "data/candidates/public-burdens-question-39.yaml",
+      "proposed_tax_id": "investor-protection-fund-charge",
+      "disposition": "hold",
+      "existing_tax_id": null,
+      "identity_basis": "候補間の名称完全一致はなく、候補IDを永続ID案として維持する",
+      "burden_type": "burden_charge",
+      "coverage_status": "candidate",
+      "current_status": null,
+      "evidence_gaps": [
+        "現行法・納付義務者・適用状態を再確認する"
+      ],
+      "source_urls": [
+        "https://www.sangiin.go.jp/japanese/joho1/kousei/syuisyo/212/syuh/s212073.htm",
+        "https://www.sangiin.go.jp/japanese/joho1/kousei/syuisyo/212/touh/t212073.htm",
+        "https://www.sangiin.go.jp/japanese/joho1/kousei/syuisyo/212/meisai/m212073.htm"
+      ],
+      "verified_at": "2026-08-18T23:35:17+09:00",
+      "decision_reason": "現在状態、納付義務者、徴収主体等の根拠不足を解消するまで正本投入を保留する"
+    },
+    {
+      "candidate_id": "irrigation-water-facility-charge",
+      "candidate_file": "data/candidates/public-burdens-government-additions.yaml",
+      "proposed_tax_id": "irrigation-water-facility-charge",
+      "disposition": "hold",
+      "existing_tax_id": null,
+      "identity_basis": "候補間の名称完全一致はなく、候補IDを永続ID案として維持する",
+      "burden_type": "burden_charge",
+      "coverage_status": "candidate",
+      "current_status": null,
+      "evidence_gaps": [
+        "正式名称・納付義務者・適用状態を確認する"
+      ],
+      "source_urls": [
+        "https://www.sangiin.go.jp/japanese/joho1/kousei/syuisyo/212/touh/t212073.htm",
+        "https://www.sangiin.go.jp/japanese/joho1/kousei/syuisyo/212/meisai/m212073.htm"
+      ],
+      "verified_at": "2026-08-18T23:35:17+09:00",
+      "decision_reason": "現在状態、納付義務者、徴収主体等の根拠不足を解消するまで正本投入を保留する"
+    },
+    {
+      "candidate_id": "library-public-transmission-compensation",
+      "candidate_file": "data/candidates/public-burdens-question-39.yaml",
+      "proposed_tax_id": "library-public-transmission-compensation",
+      "disposition": "hold",
+      "existing_tax_id": null,
+      "identity_basis": "候補間の名称完全一致はなく、候補IDを永続ID案として維持する",
+      "burden_type": "payment",
+      "coverage_status": "candidate",
+      "current_status": null,
+      "evidence_gaps": [
+        "現行法・納付義務者・徴収主体・適用状態を確認する"
+      ],
+      "source_urls": [
+        "https://www.sangiin.go.jp/japanese/joho1/kousei/syuisyo/212/syuh/s212073.htm",
+        "https://www.sangiin.go.jp/japanese/joho1/kousei/syuisyo/212/touh/t212073.htm",
+        "https://www.sangiin.go.jp/japanese/joho1/kousei/syuisyo/212/meisai/m212073.htm"
+      ],
+      "verified_at": "2026-08-18T23:35:17+09:00",
+      "decision_reason": "現在状態、納付義務者、徴収主体等の根拠不足を解消するまで正本投入を保留する"
+    },
+    {
+      "candidate_id": "light-motor-vehicle-tax",
+      "candidate_file": "data/candidates/local-taxes.yaml",
+      "proposed_tax_id": "light-motor-vehicle-tax",
+      "disposition": "hold",
+      "existing_tax_id": null,
+      "identity_basis": "候補間の名称完全一致はなく、候補IDを永続ID案として維持する",
+      "burden_type": "local_tax",
+      "coverage_status": "needs_review",
+      "current_status": null,
+      "evidence_gaps": [
+        "種別割・環境性能割等の制度粒度を確認する",
+        "根拠条項・徴収主体・適用状態を確認する"
+      ],
+      "source_urls": [
+        "https://www.mof.go.jp/tax_policy/summary/condition/a01.htm",
+        "https://laws.e-gov.go.jp/law/325AC0000000226"
+      ],
+      "verified_at": "2026-08-18T22:37:46+09:00",
+      "decision_reason": "現在状態、納付義務者、徴収主体等の根拠不足を解消するまで正本投入を保留する"
+    },
+    {
+      "candidate_id": "light-oil-delivery-tax",
+      "candidate_file": "data/candidates/local-taxes.yaml",
+      "proposed_tax_id": "light-oil-delivery-tax",
+      "disposition": "hold",
+      "existing_tax_id": null,
+      "identity_basis": "候補間の名称完全一致はなく、候補IDを永続ID案として維持する",
+      "burden_type": "local_tax",
+      "coverage_status": "candidate",
+      "current_status": null,
+      "evidence_gaps": [
+        "根拠条項・納税義務者・徴収主体・適用状態を確認する"
+      ],
+      "source_urls": [
+        "https://www.mof.go.jp/tax_policy/summary/condition/a01.htm",
+        "https://laws.e-gov.go.jp/law/325AC0000000226"
+      ],
+      "verified_at": "2026-08-18T22:37:46+09:00",
+      "decision_reason": "現在状態、納付義務者、徴収主体等の根拠不足を解消するまで正本投入を保留する"
+    },
+    {
+      "candidate_id": "liquor-tax",
+      "candidate_file": "data/candidates/national-taxes.yaml",
+      "proposed_tax_id": "liquor-tax",
+      "disposition": "hold",
+      "existing_tax_id": null,
+      "identity_basis": "候補間の名称完全一致はなく、候補IDを永続ID案として維持する",
+      "burden_type": "national_tax",
+      "coverage_status": "candidate",
+      "current_status": null,
+      "evidence_gaps": [
+        "根拠法令・納税義務者・徴収主体・適用状態は個別の公式資料で確認する"
+      ],
+      "source_urls": [
+        "https://www.mof.go.jp/tax_policy/summary/condition/a01.htm",
+        "https://www.mof.go.jp/tax_policy/reference/taxes_and_stamp_revenues/202606.pdf",
+        "https://www.mof.go.jp/tax_policy/reference/account/r2025.pdf"
+      ],
+      "verified_at": "2026-08-18T22:37:46+09:00",
+      "decision_reason": "現在状態、納付義務者、徴収主体等の根拠不足を解消するまで正本投入を保留する"
+    },
+    {
+      "candidate_id": "local-consumption-tax",
+      "candidate_file": "data/candidates/local-taxes.yaml",
+      "proposed_tax_id": "local-consumption-tax",
+      "disposition": "hold",
+      "existing_tax_id": null,
+      "identity_basis": "候補間の名称完全一致はなく、候補IDを永続ID案として維持する",
+      "burden_type": "local_tax",
+      "coverage_status": "candidate",
+      "current_status": null,
+      "evidence_gaps": [
+        "国税の消費税と別制度として徴収・清算・帰属を確認する",
+        "合計税率を重複登録しない",
+        "適用状態を確認する"
+      ],
+      "source_urls": [
+        "https://www.mof.go.jp/tax_policy/summary/condition/a01.htm",
+        "https://laws.e-gov.go.jp/law/325AC0000000226"
+      ],
+      "verified_at": "2026-08-18T22:37:46+09:00",
+      "decision_reason": "現在状態、納付義務者、徴収主体等の根拠不足を解消するまで正本投入を保留する"
+    },
+    {
+      "candidate_id": "local-corporation-tax",
+      "candidate_file": "data/candidates/national-taxes.yaml",
+      "proposed_tax_id": "local-corporation-tax",
+      "disposition": "hold",
+      "existing_tax_id": null,
+      "identity_basis": "候補間の名称完全一致はなく、候補IDを永続ID案として維持する",
+      "burden_type": "national_tax",
+      "coverage_status": "candidate",
+      "current_status": null,
+      "evidence_gaps": [
+        "名称に地方を含むが国税であることと地方交付税原資等の関係を正本で明示する",
+        "適用状態は個別確認する"
+      ],
+      "source_urls": [
+        "https://www.mof.go.jp/tax_policy/summary/condition/a01.htm",
+        "https://www.mof.go.jp/tax_policy/reference/taxes_and_stamp_revenues/202606.pdf",
+        "https://www.mof.go.jp/tax_policy/reference/account/r2025.pdf"
+      ],
+      "verified_at": "2026-08-18T22:37:46+09:00",
+      "decision_reason": "現在状態、納付義務者、徴収主体等の根拠不足を解消するまで正本投入を保留する"
+    },
+    {
+      "candidate_id": "local-gasoline-tax",
+      "candidate_file": "data/candidates/national-taxes.yaml",
+      "proposed_tax_id": "local-gasoline-tax",
+      "disposition": "hold",
+      "existing_tax_id": null,
+      "identity_basis": "候補間の名称完全一致はなく、候補IDを永続ID案として維持する",
+      "burden_type": "national_tax",
+      "coverage_status": "candidate",
+      "current_status": null,
+      "evidence_gaps": [
+        "名称に地方を含むが国税であることと譲与分を区別する",
+        "適用状態は個別確認する"
+      ],
+      "source_urls": [
+        "https://www.mof.go.jp/tax_policy/summary/condition/a01.htm",
+        "https://www.mof.go.jp/tax_policy/reference/taxes_and_stamp_revenues/202606.pdf",
+        "https://www.mof.go.jp/tax_policy/reference/account/r2025.pdf"
+      ],
+      "verified_at": "2026-08-18T22:37:46+09:00",
+      "decision_reason": "現在状態、納付義務者、徴収主体等の根拠不足を解消するまで正本投入を保留する"
+    },
+    {
+      "candidate_id": "local-tobacco-tax",
+      "candidate_file": "data/candidates/local-taxes.yaml",
+      "proposed_tax_id": "local-tobacco-tax",
+      "disposition": "hold",
+      "existing_tax_id": null,
+      "identity_basis": "候補間の名称完全一致はなく、候補IDを永続ID案として維持する",
+      "burden_type": "local_tax",
+      "coverage_status": "needs_review",
+      "current_status": null,
+      "evidence_gaps": [
+        "道府県たばこ税と市町村たばこ税の制度粒度を確認する",
+        "国税のたばこ税と別制度として帰属・適用状態を確認する"
+      ],
+      "source_urls": [
+        "https://www.mof.go.jp/tax_policy/summary/condition/a01.htm",
+        "https://laws.e-gov.go.jp/law/325AC0000000226"
+      ],
+      "verified_at": "2026-08-18T22:37:46+09:00",
+      "decision_reason": "現在状態、納付義務者、徴収主体等の根拠不足を解消するまで正本投入を保留する"
+    },
+    {
+      "candidate_id": "long-term-care-insurance-premium",
+      "candidate_file": "data/candidates/public-burdens-question-39.yaml",
+      "proposed_tax_id": "long-term-care-insurance-premium",
+      "disposition": "hold",
+      "existing_tax_id": null,
+      "identity_basis": "候補間の名称完全一致はなく、候補IDを永続ID案として維持する",
+      "burden_type": "social_insurance_premium",
+      "coverage_status": "needs_review",
+      "current_status": null,
+      "evidence_gaps": [
+        "被保険者区分等の制度粒度・納付義務者・徴収主体・適用状態を確認する"
+      ],
+      "source_urls": [
+        "https://www.sangiin.go.jp/japanese/joho1/kousei/syuisyo/212/syuh/s212073.htm",
+        "https://www.sangiin.go.jp/japanese/joho1/kousei/syuisyo/212/touh/t212073.htm",
+        "https://www.sangiin.go.jp/japanese/joho1/kousei/syuisyo/212/meisai/m212073.htm"
+      ],
+      "verified_at": "2026-08-18T23:35:17+09:00",
+      "decision_reason": "現在状態、納付義務者、徴収主体等の根拠不足を解消するまで正本投入を保留する"
+    },
+    {
+      "candidate_id": "medical-insurance-premium",
+      "candidate_file": "data/candidates/public-burdens-question-39.yaml",
+      "proposed_tax_id": "medical-insurance-premium",
+      "disposition": "hold",
+      "existing_tax_id": null,
+      "identity_basis": "候補間の名称完全一致はなく、候補IDを永続ID案として維持する",
+      "burden_type": "social_insurance_premium",
+      "coverage_status": "needs_review",
+      "current_status": null,
+      "evidence_gaps": [
+        "健康保険・国民健康保険・後期高齢者医療等の個別制度へ分割する",
+        "国民健康保険税と混同しない"
+      ],
+      "source_urls": [
+        "https://www.sangiin.go.jp/japanese/joho1/kousei/syuisyo/212/syuh/s212073.htm",
+        "https://www.sangiin.go.jp/japanese/joho1/kousei/syuisyo/212/touh/t212073.htm",
+        "https://www.sangiin.go.jp/japanese/joho1/kousei/syuisyo/212/meisai/m212073.htm"
+      ],
+      "verified_at": "2026-08-18T23:35:17+09:00",
+      "decision_reason": "現在状態、納付義務者、徴収主体等の根拠不足を解消するまで正本投入を保留する"
+    },
+    {
+      "candidate_id": "minamata-specified-business-compensation-levy",
+      "candidate_file": "data/candidates/public-burdens-government-additions.yaml",
+      "proposed_tax_id": "minamata-specified-business-compensation-levy",
+      "disposition": "hold",
+      "existing_tax_id": null,
+      "identity_basis": "候補間の名称完全一致はなく、候補IDを永続ID案として維持する",
+      "burden_type": "levy",
+      "coverage_status": "candidate",
+      "current_status": null,
+      "evidence_gaps": [
+        "法令の正式名称・徴収主体・適用状態を確認する"
+      ],
+      "source_urls": [
+        "https://www.sangiin.go.jp/japanese/joho1/kousei/syuisyo/212/touh/t212073.htm",
+        "https://www.sangiin.go.jp/japanese/joho1/kousei/syuisyo/212/meisai/m212073.htm"
+      ],
+      "verified_at": "2026-08-18T23:35:17+09:00",
+      "decision_reason": "現在状態、納付義務者、徴収主体等の根拠不足を解消するまで正本投入を保留する"
+    },
+    {
+      "candidate_id": "mineral-product-tax",
+      "candidate_file": "data/candidates/local-taxes.yaml",
+      "proposed_tax_id": "mineral-product-tax",
+      "disposition": "hold",
+      "existing_tax_id": null,
+      "identity_basis": "候補間の名称完全一致はなく、候補IDを永続ID案として維持する",
+      "burden_type": "local_tax",
+      "coverage_status": "candidate",
+      "current_status": null,
+      "evidence_gaps": [
+        "根拠条項・納税義務者・徴収主体・適用状態を確認する"
+      ],
+      "source_urls": [
+        "https://www.mof.go.jp/tax_policy/summary/condition/a01.htm",
+        "https://laws.e-gov.go.jp/law/325AC0000000226"
+      ],
+      "verified_at": "2026-08-18T22:37:46+09:00",
+      "decision_reason": "現在状態、納付義務者、徴収主体等の根拠不足を解消するまで正本投入を保留する"
+    },
+    {
+      "candidate_id": "mining-area-tax",
+      "candidate_file": "data/candidates/local-taxes.yaml",
+      "proposed_tax_id": "mining-area-tax",
+      "disposition": "hold",
+      "existing_tax_id": null,
+      "identity_basis": "候補間の名称完全一致はなく、候補IDを永続ID案として維持する",
+      "burden_type": "local_tax",
+      "coverage_status": "candidate",
+      "current_status": null,
+      "evidence_gaps": [
+        "根拠条項・納税義務者・徴収主体・適用状態を確認する"
+      ],
+      "source_urls": [
+        "https://www.mof.go.jp/tax_policy/summary/condition/a01.htm",
+        "https://laws.e-gov.go.jp/law/325AC0000000226"
+      ],
+      "verified_at": "2026-08-18T22:37:46+09:00",
+      "decision_reason": "現在状態、納付義務者、徴収主体等の根拠不足を解消するまで正本投入を保留する"
+    },
+    {
+      "candidate_id": "mining-pollution-prevention-fund-contribution",
+      "candidate_file": "data/candidates/public-burdens-government-additions.yaml",
+      "proposed_tax_id": "mining-pollution-prevention-fund-contribution",
+      "disposition": "hold",
+      "existing_tax_id": null,
+      "identity_basis": "候補間の名称完全一致はなく、候補IDを永続ID案として維持する",
+      "burden_type": "contribution",
+      "coverage_status": "candidate",
+      "current_status": null,
+      "evidence_gaps": [
+        "徴収主体・納付義務者・適用状態を確認する"
+      ],
+      "source_urls": [
+        "https://www.sangiin.go.jp/japanese/joho1/kousei/syuisyo/212/touh/t212073.htm",
+        "https://www.sangiin.go.jp/japanese/joho1/kousei/syuisyo/212/meisai/m212073.htm"
+      ],
+      "verified_at": "2026-08-18T23:35:17+09:00",
+      "decision_reason": "現在状態、納付義務者、徴収主体等の根拠不足を解消するまで正本投入を保留する"
+    },
+    {
+      "candidate_id": "multipurpose-dam-charge",
+      "candidate_file": "data/candidates/public-burdens-government-additions.yaml",
+      "proposed_tax_id": "multipurpose-dam-charge",
+      "disposition": "hold",
+      "existing_tax_id": null,
+      "identity_basis": "候補間の名称完全一致はなく、候補IDを永続ID案として維持する",
+      "burden_type": "burden_charge",
+      "coverage_status": "needs_review",
+      "current_status": null,
+      "evidence_gaps": [
+        "複数条項の負担金とダム使用権者負担金を分割するか確認する",
+        "徴収主体・適用状態を確認する"
+      ],
+      "source_urls": [
+        "https://www.sangiin.go.jp/japanese/joho1/kousei/syuisyo/212/touh/t212073.htm",
+        "https://www.sangiin.go.jp/japanese/joho1/kousei/syuisyo/212/meisai/m212073.htm"
+      ],
+      "verified_at": "2026-08-18T23:35:17+09:00",
+      "decision_reason": "現在状態、納付義務者、徴収主体等の根拠不足を解消するまで正本投入を保留する"
+    },
+    {
+      "candidate_id": "national-health-insurance-tax",
+      "candidate_file": "data/candidates/local-taxes.yaml",
+      "proposed_tax_id": "national-health-insurance-tax",
+      "disposition": "hold",
+      "existing_tax_id": null,
+      "identity_basis": "候補間の名称完全一致はなく、候補IDを永続ID案として維持する",
+      "burden_type": "local_tax",
+      "coverage_status": "needs_review",
+      "current_status": null,
+      "evidence_gaps": [
+        "国民健康保険料と混同せず自治体の採用方式・根拠・制度粒度を確認する",
+        "適用状態を確認する"
+      ],
+      "source_urls": [
+        "https://www.mof.go.jp/tax_policy/summary/condition/a01.htm",
+        "https://laws.e-gov.go.jp/law/325AC0000000226"
+      ],
+      "verified_at": "2026-08-18T22:37:46+09:00",
+      "decision_reason": "現在状態、納付義務者、徴収主体等の根拠不足を解消するまで正本投入を保留する"
+    },
+    {
+      "candidate_id": "non-statutory-ordinary-tax-category",
+      "candidate_file": "data/candidates/local-taxes.yaml",
+      "proposed_tax_id": "non-statutory-ordinary-tax-category",
+      "disposition": "hold",
+      "existing_tax_id": null,
+      "identity_basis": "候補間の名称完全一致はなく、候補IDを永続ID案として維持する",
+      "burden_type": "local_tax",
+      "coverage_status": "needs_review",
+      "current_status": null,
+      "evidence_gaps": [
+        "個別税ではなく制度区分として登録する粒度を#28で確認する"
+      ],
+      "source_urls": [
+        "https://www.mof.go.jp/tax_policy/summary/condition/a01.htm",
+        "https://laws.e-gov.go.jp/law/325AC0000000226"
+      ],
+      "verified_at": "2026-08-18T22:37:46+09:00",
+      "decision_reason": "現在状態、納付義務者、徴収主体等の根拠不足を解消するまで正本投入を保留する"
+    },
+    {
+      "candidate_id": "non-statutory-purpose-tax-category",
+      "candidate_file": "data/candidates/local-taxes.yaml",
+      "proposed_tax_id": "non-statutory-purpose-tax-category",
+      "disposition": "hold",
+      "existing_tax_id": null,
+      "identity_basis": "候補間の名称完全一致はなく、候補IDを永続ID案として維持する",
+      "burden_type": "local_tax",
+      "coverage_status": "needs_review",
+      "current_status": null,
+      "evidence_gaps": [
+        "個別税ではなく制度区分として登録する粒度を#28で確認する"
+      ],
+      "source_urls": [
+        "https://www.mof.go.jp/tax_policy/summary/condition/a01.htm",
+        "https://laws.e-gov.go.jp/law/325AC0000000226"
+      ],
+      "verified_at": "2026-08-18T22:37:46+09:00",
+      "decision_reason": "現在状態、納付義務者、徴収主体等の根拠不足を解消するまで正本投入を保留する"
+    },
+    {
+      "candidate_id": "nonlife-insurance-rate-organization-charge",
+      "candidate_file": "data/candidates/public-burdens-question-39.yaml",
+      "proposed_tax_id": "nonlife-insurance-rate-organization-charge",
+      "disposition": "hold",
+      "existing_tax_id": null,
+      "identity_basis": "候補間の名称完全一致はなく、候補IDを永続ID案として維持する",
+      "burden_type": "fee",
+      "coverage_status": "needs_review",
+      "current_status": null,
+      "evidence_gaps": [
+        "質問本文の法定負担という前提と定款会費という政府答弁の差を確認する",
+        "正式名称・適用状態を確認する"
+      ],
+      "source_urls": [
+        "https://www.sangiin.go.jp/japanese/joho1/kousei/syuisyo/212/syuh/s212073.htm",
+        "https://www.sangiin.go.jp/japanese/joho1/kousei/syuisyo/212/touh/t212073.htm",
+        "https://www.sangiin.go.jp/japanese/joho1/kousei/syuisyo/212/meisai/m212073.htm"
+      ],
+      "verified_at": "2026-08-18T23:35:17+09:00",
+      "decision_reason": "現在状態、納付義務者、徴収主体等の根拠不足を解消するまで正本投入を保留する"
+    },
+    {
+      "candidate_id": "nuclear-damage-support-general-charge",
+      "candidate_file": "data/candidates/public-burdens-question-39.yaml",
+      "proposed_tax_id": "nuclear-damage-support-general-charge",
+      "disposition": "hold",
+      "existing_tax_id": null,
+      "identity_basis": "候補間の名称完全一致はなく、候補IDを永続ID案として維持する",
+      "burden_type": "burden_charge",
+      "coverage_status": "candidate",
+      "current_status": null,
+      "evidence_gaps": [
+        "正式名称・条項・納付義務者・適用状態を再確認する"
+      ],
+      "source_urls": [
+        "https://www.sangiin.go.jp/japanese/joho1/kousei/syuisyo/212/syuh/s212073.htm",
+        "https://www.sangiin.go.jp/japanese/joho1/kousei/syuisyo/212/touh/t212073.htm",
+        "https://www.sangiin.go.jp/japanese/joho1/kousei/syuisyo/212/meisai/m212073.htm"
+      ],
+      "verified_at": "2026-08-18T23:35:17+09:00",
+      "decision_reason": "現在状態、納付義務者、徴収主体等の根拠不足を解消するまで正本投入を保留する"
+    },
+    {
+      "candidate_id": "nuclear-damage-support-special-charge",
+      "candidate_file": "data/candidates/public-burdens-question-39.yaml",
+      "proposed_tax_id": "nuclear-damage-support-special-charge",
+      "disposition": "hold",
+      "existing_tax_id": null,
+      "identity_basis": "候補間の名称完全一致はなく、候補IDを永続ID案として維持する",
+      "burden_type": "burden_charge",
+      "coverage_status": "candidate",
+      "current_status": null,
+      "evidence_gaps": [
+        "正式名称・条項・納付義務者・適用状態を再確認する"
+      ],
+      "source_urls": [
+        "https://www.sangiin.go.jp/japanese/joho1/kousei/syuisyo/212/syuh/s212073.htm",
+        "https://www.sangiin.go.jp/japanese/joho1/kousei/syuisyo/212/touh/t212073.htm",
+        "https://www.sangiin.go.jp/japanese/joho1/kousei/syuisyo/212/meisai/m212073.htm"
+      ],
+      "verified_at": "2026-08-18T23:35:17+09:00",
+      "decision_reason": "現在状態、納付義務者、徴収主体等の根拠不足を解消するまで正本投入を保留する"
+    },
+    {
+      "candidate_id": "nuclear-decommissioning-contribution",
+      "candidate_file": "data/candidates/public-burdens-question-39.yaml",
+      "proposed_tax_id": "nuclear-decommissioning-contribution",
+      "disposition": "hold",
+      "existing_tax_id": null,
+      "identity_basis": "候補間の名称完全一致はなく、候補IDを永続ID案として維持する",
+      "burden_type": "contribution",
+      "coverage_status": "candidate",
+      "current_status": null,
+      "evidence_gaps": [
+        "正式名称・条項・徴収主体・適用状態を再確認する"
+      ],
+      "source_urls": [
+        "https://www.sangiin.go.jp/japanese/joho1/kousei/syuisyo/212/syuh/s212073.htm",
+        "https://www.sangiin.go.jp/japanese/joho1/kousei/syuisyo/212/touh/t212073.htm",
+        "https://www.sangiin.go.jp/japanese/joho1/kousei/syuisyo/212/meisai/m212073.htm"
+      ],
+      "verified_at": "2026-08-18T23:35:17+09:00",
+      "decision_reason": "現在状態、納付義務者、徴収主体等の根拠不足を解消するまで正本投入を保留する"
+    },
+    {
+      "candidate_id": "participant-protection-trust-charge",
+      "candidate_file": "data/candidates/public-burdens-government-additions.yaml",
+      "proposed_tax_id": "participant-protection-trust-charge",
+      "disposition": "hold",
+      "existing_tax_id": null,
+      "identity_basis": "候補間の名称完全一致はなく、候補IDを永続ID案として維持する",
+      "burden_type": "burden_charge",
+      "coverage_status": "candidate",
+      "current_status": null,
+      "evidence_gaps": [
+        "徴収主体・現行法・納付義務者・適用状態を確認する"
+      ],
+      "source_urls": [
+        "https://www.sangiin.go.jp/japanese/joho1/kousei/syuisyo/212/touh/t212073.htm",
+        "https://www.sangiin.go.jp/japanese/joho1/kousei/syuisyo/212/meisai/m212073.htm"
+      ],
+      "verified_at": "2026-08-18T23:35:17+09:00",
+      "decision_reason": "現在状態、納付義務者、徴収主体等の根拠不足を解消するまで正本投入を保留する"
+    },
+    {
+      "candidate_id": "pension-insurance-premium",
+      "candidate_file": "data/candidates/public-burdens-question-39.yaml",
+      "proposed_tax_id": "pension-insurance-premium",
+      "disposition": "hold",
+      "existing_tax_id": null,
+      "identity_basis": "候補間の名称完全一致はなく、候補IDを永続ID案として維持する",
+      "burden_type": "social_insurance_premium",
+      "coverage_status": "needs_review",
+      "current_status": null,
+      "evidence_gaps": [
+        "厚生年金・国民年金等の個別制度へ分割する",
+        "納付義務者・徴収主体・適用状態を確認する"
+      ],
+      "source_urls": [
+        "https://www.sangiin.go.jp/japanese/joho1/kousei/syuisyo/212/syuh/s212073.htm",
+        "https://www.sangiin.go.jp/japanese/joho1/kousei/syuisyo/212/touh/t212073.htm",
+        "https://www.sangiin.go.jp/japanese/joho1/kousei/syuisyo/212/meisai/m212073.htm"
+      ],
+      "verified_at": "2026-08-18T23:35:17+09:00",
+      "decision_reason": "現在状態、納付義務者、徴収主体等の根拠不足を解消するまで正本投入を保留する"
+    },
+    {
+      "candidate_id": "petroleum-and-coal-tax",
+      "candidate_file": "data/candidates/national-taxes.yaml",
+      "proposed_tax_id": "petroleum-and-coal-tax",
+      "disposition": "hold",
+      "existing_tax_id": null,
+      "identity_basis": "候補間の名称完全一致はなく、候補IDを永続ID案として維持する",
+      "burden_type": "national_tax",
+      "coverage_status": "candidate",
+      "current_status": null,
+      "evidence_gaps": [
+        "根拠法令・納税義務者・徴収主体・適用状態は個別の公式資料で確認する"
+      ],
+      "source_urls": [
+        "https://www.mof.go.jp/tax_policy/summary/condition/a01.htm",
+        "https://www.mof.go.jp/tax_policy/reference/taxes_and_stamp_revenues/202606.pdf",
+        "https://www.mof.go.jp/tax_policy/reference/account/r2025.pdf"
+      ],
+      "verified_at": "2026-08-18T22:37:46+09:00",
+      "decision_reason": "現在状態、納付義務者、徴収主体等の根拠不足を解消するまで正本投入を保留する"
+    },
+    {
+      "candidate_id": "petroleum-gas-tax",
+      "candidate_file": "data/candidates/national-taxes.yaml",
+      "proposed_tax_id": "petroleum-gas-tax",
+      "disposition": "hold",
+      "existing_tax_id": null,
+      "identity_basis": "候補間の名称完全一致はなく、候補IDを永続ID案として維持する",
+      "burden_type": "national_tax",
+      "coverage_status": "candidate",
+      "current_status": null,
+      "evidence_gaps": [
+        "本表と譲与分参考欄を二重計上しない集計関係を確認する",
+        "適用状態は個別確認する"
+      ],
+      "source_urls": [
+        "https://www.mof.go.jp/tax_policy/summary/condition/a01.htm",
+        "https://www.mof.go.jp/tax_policy/reference/taxes_and_stamp_revenues/202606.pdf",
+        "https://www.mof.go.jp/tax_policy/reference/account/r2025.pdf"
+      ],
+      "verified_at": "2026-08-18T22:37:46+09:00",
+      "decision_reason": "現在状態、納付義務者、徴収主体等の根拠不足を解消するまで正本投入を保留する"
+    },
+    {
+      "candidate_id": "pharmaceutical-safety-contribution",
+      "candidate_file": "data/candidates/public-burdens-government-additions.yaml",
+      "proposed_tax_id": "pharmaceutical-safety-contribution",
+      "disposition": "hold",
+      "existing_tax_id": null,
+      "identity_basis": "候補間の名称完全一致はなく、候補IDを永続ID案として維持する",
+      "burden_type": "contribution",
+      "coverage_status": "candidate",
+      "current_status": null,
+      "evidence_gaps": [
+        "法令上の正式名称・納付義務者・適用状態を確認する"
+      ],
+      "source_urls": [
+        "https://www.sangiin.go.jp/japanese/joho1/kousei/syuisyo/212/touh/t212073.htm",
+        "https://www.sangiin.go.jp/japanese/joho1/kousei/syuisyo/212/meisai/m212073.htm"
+      ],
+      "verified_at": "2026-08-18T23:35:17+09:00",
+      "decision_reason": "現在状態、納付義務者、徴収主体等の根拠不足を解消するまで正本投入を保留する"
+    },
+    {
+      "candidate_id": "policyholder-protection-fund-charge",
+      "candidate_file": "data/candidates/public-burdens-question-39.yaml",
+      "proposed_tax_id": "policyholder-protection-fund-charge",
+      "disposition": "hold",
+      "existing_tax_id": null,
+      "identity_basis": "候補間の名称完全一致はなく、候補IDを永続ID案として維持する",
+      "burden_type": "burden_charge",
+      "coverage_status": "needs_review",
+      "current_status": null,
+      "evidence_gaps": [
+        "生命保険契約者保護機構と損害保険契約者保護機構を別制度へ分割するか確認する",
+        "現行法・適用状態を再確認する"
+      ],
+      "source_urls": [
+        "https://www.sangiin.go.jp/japanese/joho1/kousei/syuisyo/212/syuh/s212073.htm",
+        "https://www.sangiin.go.jp/japanese/joho1/kousei/syuisyo/212/touh/t212073.htm",
+        "https://www.sangiin.go.jp/japanese/joho1/kousei/syuisyo/212/meisai/m212073.htm"
+      ],
+      "verified_at": "2026-08-18T23:35:17+09:00",
+      "decision_reason": "現在状態、納付義務者、徴収主体等の根拠不足を解消するまで正本投入を保留する"
+    },
+    {
+      "candidate_id": "pollution-load-levy",
+      "candidate_file": "data/candidates/public-burdens-question-39.yaml",
+      "proposed_tax_id": "pollution-load-levy",
+      "disposition": "hold",
+      "existing_tax_id": null,
+      "identity_basis": "候補間の名称完全一致はなく、候補IDを永続ID案として維持する",
+      "burden_type": "levy",
+      "coverage_status": "candidate",
+      "current_status": null,
+      "evidence_gaps": [
+        "現行法・納付義務者・徴収主体・適用状態を再確認する"
+      ],
+      "source_urls": [
+        "https://www.sangiin.go.jp/japanese/joho1/kousei/syuisyo/212/syuh/s212073.htm",
+        "https://www.sangiin.go.jp/japanese/joho1/kousei/syuisyo/212/touh/t212073.htm",
+        "https://www.sangiin.go.jp/japanese/joho1/kousei/syuisyo/212/meisai/m212073.htm"
+      ],
+      "verified_at": "2026-08-18T23:35:17+09:00",
+      "decision_reason": "現在状態、納付義務者、徴収主体等の根拠不足を解消するまで正本投入を保留する"
+    },
+    {
+      "candidate_id": "pollution-prevention-project-business-charge",
+      "candidate_file": "data/candidates/public-burdens-government-additions.yaml",
+      "proposed_tax_id": "pollution-prevention-project-business-charge",
+      "disposition": "hold",
+      "existing_tax_id": null,
+      "identity_basis": "候補間の名称完全一致はなく、候補IDを永続ID案として維持する",
+      "burden_type": "burden_charge",
+      "coverage_status": "candidate",
+      "current_status": null,
+      "evidence_gaps": [
+        "徴収主体・納付義務者・適用状態を確認する"
+      ],
+      "source_urls": [
+        "https://www.sangiin.go.jp/japanese/joho1/kousei/syuisyo/212/touh/t212073.htm",
+        "https://www.sangiin.go.jp/japanese/joho1/kousei/syuisyo/212/meisai/m212073.htm"
+      ],
+      "verified_at": "2026-08-18T23:35:17+09:00",
+      "decision_reason": "現在状態、納付義務者、徴収主体等の根拠不足を解消するまで正本投入を保留する"
+    },
+    {
+      "candidate_id": "port-environment-improvement-charge",
+      "candidate_file": "data/candidates/public-burdens-question-39.yaml",
+      "proposed_tax_id": "port-environment-improvement-charge",
+      "disposition": "hold",
+      "existing_tax_id": null,
+      "identity_basis": "候補間の名称完全一致はなく、候補IDを永続ID案として維持する",
+      "burden_type": "burden_charge",
+      "coverage_status": "candidate",
+      "current_status": null,
+      "evidence_gaps": [
+        "現行法・納付義務者・徴収主体・適用状態を確認する"
+      ],
+      "source_urls": [
+        "https://www.sangiin.go.jp/japanese/joho1/kousei/syuisyo/212/syuh/s212073.htm",
+        "https://www.sangiin.go.jp/japanese/joho1/kousei/syuisyo/212/touh/t212073.htm",
+        "https://www.sangiin.go.jp/japanese/joho1/kousei/syuisyo/212/meisai/m212073.htm"
+      ],
+      "verified_at": "2026-08-18T23:35:17+09:00",
+      "decision_reason": "現在状態、納付義務者、徴収主体等の根拠不足を解消するまで正本投入を保留する"
+    },
+    {
+      "candidate_id": "port-transport-business-contribution",
+      "candidate_file": "data/candidates/public-burdens-question-39.yaml",
+      "proposed_tax_id": "port-transport-business-contribution",
+      "disposition": "hold",
+      "existing_tax_id": null,
+      "identity_basis": "候補間の名称完全一致はなく、候補IDを永続ID案として維持する",
+      "burden_type": "contribution",
+      "coverage_status": "needs_review",
+      "current_status": null,
+      "evidence_gaps": [
+        "質問本文の法定負担という前提と政府答弁の法的根拠区分の差を確認する",
+        "正式名称・適用状態を確認する"
+      ],
+      "source_urls": [
+        "https://www.sangiin.go.jp/japanese/joho1/kousei/syuisyo/212/syuh/s212073.htm",
+        "https://www.sangiin.go.jp/japanese/joho1/kousei/syuisyo/212/touh/t212073.htm",
+        "https://www.sangiin.go.jp/japanese/joho1/kousei/syuisyo/212/meisai/m212073.htm"
+      ],
+      "verified_at": "2026-08-18T23:35:17+09:00",
+      "decision_reason": "現在状態、納付義務者、徴収主体等の根拠不足を解消するまで正本投入を保留する"
+    },
+    {
+      "candidate_id": "postal-network-support-contribution",
+      "candidate_file": "data/candidates/public-burdens-question-39.yaml",
+      "proposed_tax_id": "postal-network-support-contribution",
+      "disposition": "hold",
+      "existing_tax_id": null,
+      "identity_basis": "候補間の名称完全一致はなく、候補IDを永続ID案として維持する",
+      "burden_type": "contribution",
+      "coverage_status": "candidate",
+      "current_status": null,
+      "evidence_gaps": [
+        "現行の法令名・正式名称・徴収主体・適用状態を確認する"
+      ],
+      "source_urls": [
+        "https://www.sangiin.go.jp/japanese/joho1/kousei/syuisyo/212/syuh/s212073.htm",
+        "https://www.sangiin.go.jp/japanese/joho1/kousei/syuisyo/212/touh/t212073.htm",
+        "https://www.sangiin.go.jp/japanese/joho1/kousei/syuisyo/212/meisai/m212073.htm"
+      ],
+      "verified_at": "2026-08-18T23:35:17+09:00",
+      "decision_reason": "現在状態、納付義務者、徴収主体等の根拠不足を解消するまで正本投入を保留する"
+    },
+    {
+      "candidate_id": "postal-transport-consignment-compensation",
+      "candidate_file": "data/candidates/public-burdens-government-additions.yaml",
+      "proposed_tax_id": "postal-transport-consignment-compensation",
+      "disposition": "hold",
+      "existing_tax_id": null,
+      "identity_basis": "候補間の名称完全一致はなく、候補IDを永続ID案として維持する",
+      "burden_type": "payment",
+      "coverage_status": "candidate",
+      "current_status": null,
+      "evidence_gaps": [
+        "支払方向・当事者・徴収主体・適用状態を確認する"
+      ],
+      "source_urls": [
+        "https://www.sangiin.go.jp/japanese/joho1/kousei/syuisyo/212/touh/t212073.htm",
+        "https://www.sangiin.go.jp/japanese/joho1/kousei/syuisyo/212/meisai/m212073.htm"
+      ],
+      "verified_at": "2026-08-18T23:35:17+09:00",
+      "decision_reason": "現在状態、納付義務者、徴収主体等の根拠不足を解消するまで正本投入を保留する"
+    },
+    {
+      "candidate_id": "power-development-promotion-tax",
+      "candidate_file": "data/candidates/national-taxes.yaml",
+      "proposed_tax_id": "power-development-promotion-tax",
+      "disposition": "hold",
+      "existing_tax_id": null,
+      "identity_basis": "候補間の名称完全一致はなく、候補IDを永続ID案として維持する",
+      "burden_type": "national_tax",
+      "coverage_status": "candidate",
+      "current_status": null,
+      "evidence_gaps": [
+        "根拠法令・納税義務者・徴収主体・適用状態は個別の公式資料で確認する"
+      ],
+      "source_urls": [
+        "https://www.mof.go.jp/tax_policy/summary/condition/a01.htm",
+        "https://www.mof.go.jp/tax_policy/reference/taxes_and_stamp_revenues/202606.pdf",
+        "https://www.mof.go.jp/tax_policy/reference/account/r2025.pdf"
+      ],
+      "verified_at": "2026-08-18T22:37:46+09:00",
+      "decision_reason": "現在状態、納付義務者、徴収主体等の根拠不足を解消するまで正本投入を保留する"
+    },
+    {
+      "candidate_id": "private-recording-compensation",
+      "candidate_file": "data/candidates/public-burdens-question-39.yaml",
+      "proposed_tax_id": "private-recording-compensation",
+      "disposition": "hold",
+      "existing_tax_id": null,
+      "identity_basis": "候補間の名称完全一致はなく、候補IDを永続ID案として維持する",
+      "burden_type": "payment",
+      "coverage_status": "candidate",
+      "current_status": null,
+      "evidence_gaps": [
+        "録音と録画の制度粒度・徴収主体・適用状態を確認する"
+      ],
+      "source_urls": [
+        "https://www.sangiin.go.jp/japanese/joho1/kousei/syuisyo/212/syuh/s212073.htm",
+        "https://www.sangiin.go.jp/japanese/joho1/kousei/syuisyo/212/touh/t212073.htm",
+        "https://www.sangiin.go.jp/japanese/joho1/kousei/syuisyo/212/meisai/m212073.htm"
+      ],
+      "verified_at": "2026-08-18T23:35:17+09:00",
+      "decision_reason": "現在状態、納付義務者、徴収主体等の根拠不足を解消するまで正本投入を保留する"
+    },
+    {
+      "candidate_id": "railway-barrier-free-fee",
+      "candidate_file": "data/candidates/public-burdens-question-39.yaml",
+      "proposed_tax_id": "railway-barrier-free-fee",
+      "disposition": "hold",
+      "existing_tax_id": null,
+      "identity_basis": "候補間の名称完全一致はなく、候補IDを永続ID案として維持する",
+      "burden_type": "fee",
+      "coverage_status": "needs_review",
+      "current_status": null,
+      "evidence_gaps": [
+        "制度名と個別料金を分ける粒度・料金転嫁・適用事業者を確認する"
+      ],
+      "source_urls": [
+        "https://www.sangiin.go.jp/japanese/joho1/kousei/syuisyo/212/syuh/s212073.htm",
+        "https://www.sangiin.go.jp/japanese/joho1/kousei/syuisyo/212/touh/t212073.htm",
+        "https://www.sangiin.go.jp/japanese/joho1/kousei/syuisyo/212/meisai/m212073.htm"
+      ],
+      "verified_at": "2026-08-18T23:35:17+09:00",
+      "decision_reason": "現在状態、納付義務者、徴収主体等の根拠不足を解消するまで正本投入を保留する"
+    },
+    {
+      "candidate_id": "real-estate-acquisition-tax",
+      "candidate_file": "data/candidates/local-taxes.yaml",
+      "proposed_tax_id": "real-estate-acquisition-tax",
+      "disposition": "hold",
+      "existing_tax_id": null,
+      "identity_basis": "候補間の名称完全一致はなく、候補IDを永続ID案として維持する",
+      "burden_type": "local_tax",
+      "coverage_status": "candidate",
+      "current_status": null,
+      "evidence_gaps": [
+        "根拠条項・納税義務者・徴収主体・適用状態を確認する"
+      ],
+      "source_urls": [
+        "https://www.mof.go.jp/tax_policy/summary/condition/a01.htm",
+        "https://laws.e-gov.go.jp/law/325AC0000000226"
+      ],
+      "verified_at": "2026-08-18T22:37:46+09:00",
+      "decision_reason": "現在状態、納付義務者、徴収主体等の根拠不足を解消するまで正本投入を保留する"
+    },
+    {
+      "candidate_id": "reconstruction-special-income-tax",
+      "candidate_file": "data/candidates/national-taxes.yaml",
+      "proposed_tax_id": "reconstruction-special-income-tax",
+      "disposition": "hold",
+      "existing_tax_id": null,
+      "identity_basis": "候補間の名称完全一致はなく、候補IDを永続ID案として維持する",
+      "burden_type": "national_tax",
+      "coverage_status": "candidate",
+      "current_status": null,
+      "evidence_gaps": [
+        "根拠法令・納税義務者・徴収主体・適用状態は個別の公式資料で確認する"
+      ],
+      "source_urls": [
+        "https://www.mof.go.jp/tax_policy/summary/condition/a01.htm",
+        "https://www.mof.go.jp/tax_policy/reference/taxes_and_stamp_revenues/202606.pdf",
+        "https://www.mof.go.jp/tax_policy/reference/account/r2025.pdf"
+      ],
+      "verified_at": "2026-08-18T22:37:46+09:00",
+      "decision_reason": "現在状態、納付義務者、徴収主体等の根拠不足を解消するまで正本投入を保留する"
+    },
+    {
+      "candidate_id": "regional-economy-revitalization-contribution",
+      "candidate_file": "data/candidates/public-burdens-question-39.yaml",
+      "proposed_tax_id": "regional-economy-revitalization-contribution",
+      "disposition": "hold",
+      "existing_tax_id": null,
+      "identity_basis": "候補間の名称完全一致はなく、候補IDを永続ID案として維持する",
+      "burden_type": "contribution",
+      "coverage_status": "candidate",
+      "current_status": null,
+      "evidence_gaps": [
+        "法令上の正式名称・徴収主体・適用状態を再確認する"
+      ],
+      "source_urls": [
+        "https://www.sangiin.go.jp/japanese/joho1/kousei/syuisyo/212/syuh/s212073.htm",
+        "https://www.sangiin.go.jp/japanese/joho1/kousei/syuisyo/212/touh/t212073.htm",
+        "https://www.sangiin.go.jp/japanese/joho1/kousei/syuisyo/212/meisai/m212073.htm"
+      ],
+      "verified_at": "2026-08-18T23:35:17+09:00",
+      "decision_reason": "現在状態、納付義務者、徴収主体等の根拠不足を解消するまで正本投入を保留する"
+    },
+    {
+      "candidate_id": "registration-and-license-tax",
+      "candidate_file": "data/candidates/national-taxes.yaml",
+      "proposed_tax_id": "registration-and-license-tax",
+      "disposition": "hold",
+      "existing_tax_id": null,
+      "identity_basis": "候補間の名称完全一致はなく、候補IDを永続ID案として維持する",
+      "burden_type": "national_tax",
+      "coverage_status": "candidate",
+      "current_status": null,
+      "evidence_gaps": [
+        "両歳入資料に個別行がなく一般会計のその他等への包含を確認する",
+        "適用状態は個別確認する"
+      ],
+      "source_urls": [
+        "https://www.mof.go.jp/tax_policy/summary/condition/a01.htm",
+        "https://www.mof.go.jp/tax_policy/reference/taxes_and_stamp_revenues/202606.pdf",
+        "https://www.mof.go.jp/tax_policy/reference/account/r2025.pdf"
+      ],
+      "verified_at": "2026-08-18T22:37:46+09:00",
+      "decision_reason": "現在状態、納付義務者、徴収主体等の根拠不足を解消するまで正本投入を保留する"
+    },
+    {
+      "candidate_id": "renewable-energy-surcharge",
+      "candidate_file": "data/candidates/public-burdens-question-39.yaml",
+      "proposed_tax_id": "renewable-energy-surcharge",
+      "disposition": "hold",
+      "existing_tax_id": null,
+      "identity_basis": "候補間の名称完全一致はなく、候補IDを永続ID案として維持する",
+      "burden_type": "levy",
+      "coverage_status": "candidate",
+      "current_status": null,
+      "evidence_gaps": [
+        "現行法・料金転嫁・徴収主体・適用状態を再確認する"
+      ],
+      "source_urls": [
+        "https://www.sangiin.go.jp/japanese/joho1/kousei/syuisyo/212/syuh/s212073.htm",
+        "https://www.sangiin.go.jp/japanese/joho1/kousei/syuisyo/212/touh/t212073.htm",
+        "https://www.sangiin.go.jp/japanese/joho1/kousei/syuisyo/212/meisai/m212073.htm"
+      ],
+      "verified_at": "2026-08-18T23:35:17+09:00",
+      "decision_reason": "現在状態、納付義務者、徴収主体等の根拠不足を解消するまで正本投入を保留する"
+    },
+    {
+      "candidate_id": "reprocessing-contribution",
+      "candidate_file": "data/candidates/public-burdens-question-39.yaml",
+      "proposed_tax_id": "reprocessing-contribution",
+      "disposition": "hold",
+      "existing_tax_id": null,
+      "identity_basis": "候補間の名称完全一致はなく、候補IDを永続ID案として維持する",
+      "burden_type": "contribution",
+      "coverage_status": "candidate",
+      "current_status": null,
+      "evidence_gaps": [
+        "現行法・納付義務者・徴収主体・適用状態を再確認する"
+      ],
+      "source_urls": [
+        "https://www.sangiin.go.jp/japanese/joho1/kousei/syuisyo/212/syuh/s212073.htm",
+        "https://www.sangiin.go.jp/japanese/joho1/kousei/syuisyo/212/touh/t212073.htm",
+        "https://www.sangiin.go.jp/japanese/joho1/kousei/syuisyo/212/meisai/m212073.htm"
+      ],
+      "verified_at": "2026-08-18T23:35:17+09:00",
+      "decision_reason": "現在状態、納付義務者、徴収主体等の根拠不足を解消するまで正本投入を保留する"
+    },
+    {
+      "candidate_id": "resident-tax",
+      "candidate_file": "data/candidates/local-taxes.yaml",
+      "proposed_tax_id": "resident-tax",
+      "disposition": "hold",
+      "existing_tax_id": null,
+      "identity_basis": "候補間の名称完全一致はなく、候補IDを永続ID案として維持する",
+      "burden_type": "local_tax",
+      "coverage_status": "needs_review",
+      "current_status": null,
+      "evidence_gaps": [
+        "道府県民税・市町村民税および個人・法人の制度粒度を確認する",
+        "根拠条項・納税義務者・徴収主体・適用状態を確認する"
+      ],
+      "source_urls": [
+        "https://www.mof.go.jp/tax_policy/summary/condition/a01.htm",
+        "https://laws.e-gov.go.jp/law/325AC0000000226"
+      ],
+      "verified_at": "2026-08-18T22:37:46+09:00",
+      "decision_reason": "現在状態、納付義務者、徴収主体等の根拠不足を解消するまで正本投入を保留する"
+    },
+    {
+      "candidate_id": "residential-land-development-tax",
+      "candidate_file": "data/candidates/local-taxes.yaml",
+      "proposed_tax_id": "residential-land-development-tax",
+      "disposition": "hold",
+      "existing_tax_id": null,
+      "identity_basis": "候補間の名称完全一致はなく、候補IDを永続ID案として維持する",
+      "burden_type": "local_tax",
+      "coverage_status": "candidate",
+      "current_status": null,
+      "evidence_gaps": [
+        "課税団体・根拠条項・納税義務者・適用状態を確認する"
+      ],
+      "source_urls": [
+        "https://www.mof.go.jp/tax_policy/summary/condition/a01.htm",
+        "https://laws.e-gov.go.jp/law/325AC0000000226"
+      ],
+      "verified_at": "2026-08-18T22:37:46+09:00",
+      "decision_reason": "現在状態、納付義務者、徴収主体等の根拠不足を解消するまで正本投入を保留する"
+    },
+    {
+      "candidate_id": "special-corporate-enterprise-tax",
+      "candidate_file": "data/candidates/national-taxes.yaml",
+      "proposed_tax_id": "special-corporate-enterprise-tax",
+      "disposition": "hold",
+      "existing_tax_id": null,
+      "identity_basis": "候補間の名称完全一致はなく、候補IDを永続ID案として維持する",
+      "burden_type": "national_tax",
+      "coverage_status": "candidate",
+      "current_status": null,
+      "evidence_gaps": [
+        "都道府県による賦課徴収と国税としての帰属を分けて確認する",
+        "適用状態は個別確認する"
+      ],
+      "source_urls": [
+        "https://www.mof.go.jp/tax_policy/summary/condition/a01.htm",
+        "https://www.mof.go.jp/tax_policy/reference/taxes_and_stamp_revenues/202606.pdf",
+        "https://www.mof.go.jp/tax_policy/reference/account/r2025.pdf"
+      ],
+      "verified_at": "2026-08-18T22:37:46+09:00",
+      "decision_reason": "現在状態、納付義務者、徴収主体等の根拠不足を解消するまで正本投入を保留する"
+    },
+    {
+      "candidate_id": "special-landholding-tax",
+      "candidate_file": "data/candidates/local-taxes.yaml",
+      "proposed_tax_id": "special-landholding-tax",
+      "disposition": "hold",
+      "existing_tax_id": null,
+      "identity_basis": "候補間の名称完全一致はなく、候補IDを永続ID案として維持する",
+      "burden_type": "local_tax",
+      "coverage_status": "needs_review",
+      "current_status": null,
+      "evidence_gaps": [
+        "新規課税停止と既存制度の法的状態を区別しcurrent_statusを確認する",
+        "根拠条項・徴収主体を確認する"
+      ],
+      "source_urls": [
+        "https://www.mof.go.jp/tax_policy/summary/condition/a01.htm",
+        "https://laws.e-gov.go.jp/law/325AC0000000226"
+      ],
+      "verified_at": "2026-08-18T22:37:46+09:00",
+      "decision_reason": "現在状態、納付義務者、徴収主体等の根拠不足を解消するまで正本投入を保留する"
+    },
+    {
+      "candidate_id": "special-tobacco-tax",
+      "candidate_file": "data/candidates/national-taxes.yaml",
+      "proposed_tax_id": "special-tobacco-tax",
+      "disposition": "hold",
+      "existing_tax_id": null,
+      "identity_basis": "候補間の名称完全一致はなく、候補IDを永続ID案として維持する",
+      "burden_type": "national_tax",
+      "coverage_status": "candidate",
+      "current_status": null,
+      "evidence_gaps": [
+        "根拠法令・納税義務者・徴収主体・適用状態は個別の公式資料で確認する"
+      ],
+      "source_urls": [
+        "https://www.mof.go.jp/tax_policy/summary/condition/a01.htm",
+        "https://www.mof.go.jp/tax_policy/reference/taxes_and_stamp_revenues/202606.pdf",
+        "https://www.mof.go.jp/tax_policy/reference/account/r2025.pdf"
+      ],
+      "verified_at": "2026-08-18T22:37:46+09:00",
+      "decision_reason": "現在状態、納付義務者、徴収主体等の根拠不足を解消するまで正本投入を保留する"
+    },
+    {
+      "candidate_id": "special-tonnage-tax",
+      "candidate_file": "data/candidates/national-taxes.yaml",
+      "proposed_tax_id": "special-tonnage-tax",
+      "disposition": "hold",
+      "existing_tax_id": null,
+      "identity_basis": "候補間の名称完全一致はなく、候補IDを永続ID案として維持する",
+      "burden_type": "national_tax",
+      "coverage_status": "candidate",
+      "current_status": null,
+      "evidence_gaps": [
+        "とん税と別制度として根拠・帰属を確認する",
+        "適用状態は個別確認する"
+      ],
+      "source_urls": [
+        "https://www.mof.go.jp/tax_policy/summary/condition/a01.htm",
+        "https://www.mof.go.jp/tax_policy/reference/taxes_and_stamp_revenues/202606.pdf",
+        "https://www.mof.go.jp/tax_policy/reference/account/r2025.pdf"
+      ],
+      "verified_at": "2026-08-18T22:37:46+09:00",
+      "decision_reason": "現在状態、納付義務者、徴収主体等の根拠不足を解消するまで正本投入を保留する"
+    },
+    {
+      "candidate_id": "specified-pollution-levy",
+      "candidate_file": "data/candidates/public-burdens-question-39.yaml",
+      "proposed_tax_id": "specified-pollution-levy",
+      "disposition": "hold",
+      "existing_tax_id": null,
+      "identity_basis": "候補間の名称完全一致はなく、候補IDを永続ID案として維持する",
+      "burden_type": "levy",
+      "coverage_status": "candidate",
+      "current_status": null,
+      "evidence_gaps": [
+        "正式名称・条項・納付義務者・徴収主体・適用状態を確認する"
+      ],
+      "source_urls": [
+        "https://www.sangiin.go.jp/japanese/joho1/kousei/syuisyo/212/syuh/s212073.htm",
+        "https://www.sangiin.go.jp/japanese/joho1/kousei/syuisyo/212/touh/t212073.htm",
+        "https://www.sangiin.go.jp/japanese/joho1/kousei/syuisyo/212/meisai/m212073.htm"
+      ],
+      "verified_at": "2026-08-18T23:35:17+09:00",
+      "decision_reason": "現在状態、納付義務者、徴収主体等の根拠不足を解消するまで正本投入を保留する"
+    },
+    {
+      "candidate_id": "stamp-tax",
+      "candidate_file": "data/candidates/national-taxes.yaml",
+      "proposed_tax_id": "stamp-tax",
+      "disposition": "hold",
+      "existing_tax_id": null,
+      "identity_basis": "候補間の名称完全一致はなく、候補IDを永続ID案として維持する",
+      "burden_type": "national_tax",
+      "coverage_status": "candidate",
+      "current_status": null,
+      "evidence_gaps": [
+        "歳入資料の印紙収入と印紙税の範囲が同一か確認する",
+        "適用状態は個別確認する"
+      ],
+      "source_urls": [
+        "https://www.mof.go.jp/tax_policy/summary/condition/a01.htm",
+        "https://www.mof.go.jp/tax_policy/reference/taxes_and_stamp_revenues/202606.pdf",
+        "https://www.mof.go.jp/tax_policy/reference/account/r2025.pdf"
+      ],
+      "verified_at": "2026-08-18T22:37:46+09:00",
+      "decision_reason": "現在状態、納付義務者、徴収主体等の根拠不足を解消するまで正本投入を保留する"
+    },
+    {
+      "candidate_id": "supplementary-nuclear-damage-general-charge",
+      "candidate_file": "data/candidates/public-burdens-government-additions.yaml",
+      "proposed_tax_id": "supplementary-nuclear-damage-general-charge",
+      "disposition": "hold",
+      "existing_tax_id": null,
+      "identity_basis": "候補間の名称完全一致はなく、候補IDを永続ID案として維持する",
+      "burden_type": "burden_charge",
+      "coverage_status": "candidate",
+      "current_status": null,
+      "evidence_gaps": [
+        "法令上の正式名称・徴収主体・納付義務者・適用状態を確認する"
+      ],
+      "source_urls": [
+        "https://www.sangiin.go.jp/japanese/joho1/kousei/syuisyo/212/touh/t212073.htm",
+        "https://www.sangiin.go.jp/japanese/joho1/kousei/syuisyo/212/meisai/m212073.htm"
+      ],
+      "verified_at": "2026-08-18T23:35:17+09:00",
+      "decision_reason": "現在状態、納付義務者、徴収主体等の根拠不足を解消するまで正本投入を保留する"
+    },
+    {
+      "candidate_id": "supplementary-nuclear-damage-special-charge",
+      "candidate_file": "data/candidates/public-burdens-government-additions.yaml",
+      "proposed_tax_id": "supplementary-nuclear-damage-special-charge",
+      "disposition": "hold",
+      "existing_tax_id": null,
+      "identity_basis": "候補間の名称完全一致はなく、候補IDを永続ID案として維持する",
+      "burden_type": "burden_charge",
+      "coverage_status": "candidate",
+      "current_status": null,
+      "evidence_gaps": [
+        "法令上の正式名称・徴収主体・納付義務者・適用状態を確認する"
+      ],
+      "source_urls": [
+        "https://www.sangiin.go.jp/japanese/joho1/kousei/syuisyo/212/touh/t212073.htm",
+        "https://www.sangiin.go.jp/japanese/joho1/kousei/syuisyo/212/meisai/m212073.htm"
+      ],
+      "verified_at": "2026-08-18T23:35:17+09:00",
+      "decision_reason": "現在状態、納付義務者、徴収主体等の根拠不足を解消するまで正本投入を保留する"
+    },
+    {
+      "candidate_id": "supplementary-oil-pollution-fund-annual-contribution",
+      "candidate_file": "data/candidates/public-burdens-government-additions.yaml",
+      "proposed_tax_id": "supplementary-oil-pollution-fund-annual-contribution",
+      "disposition": "hold",
+      "existing_tax_id": null,
+      "identity_basis": "候補間の名称完全一致はなく、候補IDを永続ID案として維持する",
+      "burden_type": "contribution",
+      "coverage_status": "candidate",
+      "current_status": null,
+      "evidence_gaps": [
+        "基金・徴収主体・納付義務者・適用状態を確認する"
+      ],
+      "source_urls": [
+        "https://www.sangiin.go.jp/japanese/joho1/kousei/syuisyo/212/touh/t212073.htm",
+        "https://www.sangiin.go.jp/japanese/joho1/kousei/syuisyo/212/meisai/m212073.htm"
+      ],
+      "verified_at": "2026-08-18T23:35:17+09:00",
+      "decision_reason": "現在状態、納付義務者、徴収主体等の根拠不足を解消するまで正本投入を保留する"
+    },
+    {
+      "candidate_id": "taxi-center-business-charge",
+      "candidate_file": "data/candidates/public-burdens-question-39.yaml",
+      "proposed_tax_id": "taxi-center-business-charge",
+      "disposition": "hold",
+      "existing_tax_id": null,
+      "identity_basis": "候補間の名称完全一致はなく、候補IDを永続ID案として維持する",
+      "burden_type": "burden_charge",
+      "coverage_status": "needs_review",
+      "current_status": null,
+      "evidence_gaps": [
+        "等に含まれる機関と地域ごとの制度粒度・法的根拠・適用状態を確認する"
+      ],
+      "source_urls": [
+        "https://www.sangiin.go.jp/japanese/joho1/kousei/syuisyo/212/syuh/s212073.htm",
+        "https://www.sangiin.go.jp/japanese/joho1/kousei/syuisyo/212/touh/t212073.htm",
+        "https://www.sangiin.go.jp/japanese/joho1/kousei/syuisyo/212/meisai/m212073.htm"
+      ],
+      "verified_at": "2026-08-18T23:35:17+09:00",
+      "decision_reason": "現在状態、納付義務者、徴収主体等の根拠不足を解消するまで正本投入を保留する"
+    },
+    {
+      "candidate_id": "telephone-accessibility-charge",
+      "candidate_file": "data/candidates/public-burdens-government-additions.yaml",
+      "proposed_tax_id": "telephone-accessibility-charge",
+      "disposition": "hold",
+      "existing_tax_id": null,
+      "identity_basis": "候補間の名称完全一致はなく、候補IDを永続ID案として維持する",
+      "burden_type": "burden_charge",
+      "coverage_status": "candidate",
+      "current_status": null,
+      "evidence_gaps": [
+        "法令上の正式名称・徴収主体・納付義務者・適用状態を確認する"
+      ],
+      "source_urls": [
+        "https://www.sangiin.go.jp/japanese/joho1/kousei/syuisyo/212/touh/t212073.htm",
+        "https://www.sangiin.go.jp/japanese/joho1/kousei/syuisyo/212/meisai/m212073.htm"
+      ],
+      "verified_at": "2026-08-18T23:35:17+09:00",
+      "decision_reason": "現在状態、納付義務者、徴収主体等の根拠不足を解消するまで正本投入を保留する"
+    },
+    {
+      "candidate_id": "tobacco-tax",
+      "candidate_file": "data/candidates/national-taxes.yaml",
+      "proposed_tax_id": "tobacco-tax",
+      "disposition": "hold",
+      "existing_tax_id": null,
+      "identity_basis": "候補間の名称完全一致はなく、候補IDを永続ID案として維持する",
+      "burden_type": "national_tax",
+      "coverage_status": "candidate",
+      "current_status": null,
+      "evidence_gaps": [
+        "地方たばこ税と別制度として根拠・税率・帰属を確認する",
+        "適用状態は個別確認する"
+      ],
+      "source_urls": [
+        "https://www.mof.go.jp/tax_policy/summary/condition/a01.htm",
+        "https://www.mof.go.jp/tax_policy/reference/taxes_and_stamp_revenues/202606.pdf",
+        "https://www.mof.go.jp/tax_policy/reference/account/r2025.pdf"
+      ],
+      "verified_at": "2026-08-18T22:37:46+09:00",
+      "decision_reason": "現在状態、納付義務者、徴収主体等の根拠不足を解消するまで正本投入を保留する"
+    },
+    {
+      "candidate_id": "tonnage-tax",
+      "candidate_file": "data/candidates/national-taxes.yaml",
+      "proposed_tax_id": "tonnage-tax",
+      "disposition": "hold",
+      "existing_tax_id": null,
+      "identity_basis": "候補間の名称完全一致はなく、候補IDを永続ID案として維持する",
+      "burden_type": "national_tax",
+      "coverage_status": "candidate",
+      "current_status": null,
+      "evidence_gaps": [
+        "特別とん税と別制度として根拠・帰属を確認する",
+        "適用状態は個別確認する"
+      ],
+      "source_urls": [
+        "https://www.mof.go.jp/tax_policy/summary/condition/a01.htm",
+        "https://www.mof.go.jp/tax_policy/reference/taxes_and_stamp_revenues/202606.pdf",
+        "https://www.mof.go.jp/tax_policy/reference/account/r2025.pdf"
+      ],
+      "verified_at": "2026-08-18T22:37:46+09:00",
+      "decision_reason": "現在状態、納付義務者、徴収主体等の根拠不足を解消するまで正本投入を保留する"
+    },
+    {
+      "candidate_id": "tru-waste-disposal-contribution",
+      "candidate_file": "data/candidates/public-burdens-question-39.yaml",
+      "proposed_tax_id": "tru-waste-disposal-contribution",
+      "disposition": "hold",
+      "existing_tax_id": null,
+      "identity_basis": "候補間の名称完全一致はなく、候補IDを永続ID案として維持する",
+      "burden_type": "contribution",
+      "coverage_status": "candidate",
+      "current_status": null,
+      "evidence_gaps": [
+        "正式名称・条項・徴収主体・適用状態を再確認する"
+      ],
+      "source_urls": [
+        "https://www.sangiin.go.jp/japanese/joho1/kousei/syuisyo/212/syuh/s212073.htm",
+        "https://www.sangiin.go.jp/japanese/joho1/kousei/syuisyo/212/touh/t212073.htm",
+        "https://www.sangiin.go.jp/japanese/joho1/kousei/syuisyo/212/meisai/m212073.htm"
+      ],
+      "verified_at": "2026-08-18T23:35:17+09:00",
+      "decision_reason": "現在状態、納付義務者、徴収主体等の根拠不足を解消するまで正本投入を保留する"
+    },
+    {
+      "candidate_id": "universal-service-fee",
+      "candidate_file": "data/candidates/public-burdens-question-39.yaml",
+      "proposed_tax_id": "universal-service-fee",
+      "disposition": "hold",
+      "existing_tax_id": null,
+      "identity_basis": "候補間の名称完全一致はなく、候補IDを永続ID案として維持する",
+      "burden_type": "fee",
+      "coverage_status": "needs_review",
+      "current_status": null,
+      "evidence_gaps": [
+        "法令上の第一種負担金と利用者向け料金表示の制度関係を確認する",
+        "適用状態を確認する"
+      ],
+      "source_urls": [
+        "https://www.sangiin.go.jp/japanese/joho1/kousei/syuisyo/212/syuh/s212073.htm",
+        "https://www.sangiin.go.jp/japanese/joho1/kousei/syuisyo/212/touh/t212073.htm",
+        "https://www.sangiin.go.jp/japanese/joho1/kousei/syuisyo/212/meisai/m212073.htm"
+      ],
+      "verified_at": "2026-08-18T23:35:17+09:00",
+      "decision_reason": "現在状態、納付義務者、徴収主体等の根拠不足を解消するまで正本投入を保留する"
+    },
+    {
+      "candidate_id": "utility-tunnel-management-charge",
+      "candidate_file": "data/candidates/public-burdens-government-additions.yaml",
+      "proposed_tax_id": "utility-tunnel-management-charge",
+      "disposition": "hold",
+      "existing_tax_id": null,
+      "identity_basis": "候補間の名称完全一致はなく、候補IDを永続ID案として維持する",
+      "burden_type": "burden_charge",
+      "coverage_status": "candidate",
+      "current_status": null,
+      "evidence_gaps": [
+        "正式名称・徴収主体・納付義務者・適用状態を確認する"
+      ],
+      "source_urls": [
+        "https://www.sangiin.go.jp/japanese/joho1/kousei/syuisyo/212/touh/t212073.htm",
+        "https://www.sangiin.go.jp/japanese/joho1/kousei/syuisyo/212/meisai/m212073.htm"
+      ],
+      "verified_at": "2026-08-18T23:35:17+09:00",
+      "decision_reason": "現在状態、納付義務者、徴収主体等の根拠不足を解消するまで正本投入を保留する"
+    },
+    {
+      "candidate_id": "utility-tunnel-other-occupant-charge",
+      "candidate_file": "data/candidates/public-burdens-government-additions.yaml",
+      "proposed_tax_id": "utility-tunnel-other-occupant-charge",
+      "disposition": "hold",
+      "existing_tax_id": null,
+      "identity_basis": "候補間の名称完全一致はなく、候補IDを永続ID案として維持する",
+      "burden_type": "burden_charge",
+      "coverage_status": "candidate",
+      "current_status": null,
+      "evidence_gaps": [
+        "正式名称・徴収主体・納付義務者・適用状態を確認する"
+      ],
+      "source_urls": [
+        "https://www.sangiin.go.jp/japanese/joho1/kousei/syuisyo/212/touh/t212073.htm",
+        "https://www.sangiin.go.jp/japanese/joho1/kousei/syuisyo/212/meisai/m212073.htm"
+      ],
+      "verified_at": "2026-08-18T23:35:17+09:00",
+      "decision_reason": "現在状態、納付義務者、徴収主体等の根拠不足を解消するまで正本投入を保留する"
+    },
+    {
+      "candidate_id": "utility-tunnel-planned-occupant-construction-charge",
+      "candidate_file": "data/candidates/public-burdens-government-additions.yaml",
+      "proposed_tax_id": "utility-tunnel-planned-occupant-construction-charge",
+      "disposition": "hold",
+      "existing_tax_id": null,
+      "identity_basis": "候補間の名称完全一致はなく、候補IDを永続ID案として維持する",
+      "burden_type": "burden_charge",
+      "coverage_status": "candidate",
+      "current_status": null,
+      "evidence_gaps": [
+        "正式名称・徴収主体・納付義務者・適用状態を確認する"
+      ],
+      "source_urls": [
+        "https://www.sangiin.go.jp/japanese/joho1/kousei/syuisyo/212/touh/t212073.htm",
+        "https://www.sangiin.go.jp/japanese/joho1/kousei/syuisyo/212/meisai/m212073.htm"
+      ],
+      "verified_at": "2026-08-18T23:35:17+09:00",
+      "decision_reason": "現在状態、納付義務者、徴収主体等の根拠不足を解消するまで正本投入を保留する"
+    },
+    {
+      "candidate_id": "water-and-land-benefit-tax",
+      "candidate_file": "data/candidates/local-taxes.yaml",
+      "proposed_tax_id": "water-and-land-benefit-tax",
+      "disposition": "hold",
+      "existing_tax_id": null,
+      "identity_basis": "候補間の名称完全一致はなく、候補IDを永続ID案として維持する",
+      "burden_type": "local_tax",
+      "coverage_status": "candidate",
+      "current_status": null,
+      "evidence_gaps": [
+        "課税団体・根拠条項・納税義務者・適用状態を確認する"
+      ],
+      "source_urls": [
+        "https://www.mof.go.jp/tax_policy/summary/condition/a01.htm",
+        "https://laws.e-gov.go.jp/law/325AC0000000226"
+      ],
+      "verified_at": "2026-08-18T22:37:46+09:00",
+      "decision_reason": "現在状態、納付義務者、徴収主体等の根拠不足を解消するまで正本投入を保留する"
+    },
+    {
+      "candidate_id": "water-resources-facility-user-charge",
+      "candidate_file": "data/candidates/public-burdens-government-additions.yaml",
+      "proposed_tax_id": "water-resources-facility-user-charge",
+      "disposition": "hold",
+      "existing_tax_id": null,
+      "identity_basis": "候補間の名称完全一致はなく、候補IDを永続ID案として維持する",
+      "burden_type": "burden_charge",
+      "coverage_status": "candidate",
+      "current_status": null,
+      "evidence_gaps": [
+        "正式名称・納付義務者区分・適用状態を確認する"
+      ],
+      "source_urls": [
+        "https://www.sangiin.go.jp/japanese/joho1/kousei/syuisyo/212/touh/t212073.htm",
+        "https://www.sangiin.go.jp/japanese/joho1/kousei/syuisyo/212/meisai/m212073.htm"
+      ],
+      "verified_at": "2026-08-18T23:35:17+09:00",
+      "decision_reason": "現在状態、納付義務者、徴収主体等の根拠不足を解消するまで正本投入を保留する"
+    },
+    {
+      "candidate_id": "workers-compensation-insurance-premium",
+      "candidate_file": "data/candidates/public-burdens-question-39.yaml",
+      "proposed_tax_id": "workers-compensation-insurance-premium",
+      "disposition": "hold",
+      "existing_tax_id": null,
+      "identity_basis": "候補間の名称完全一致はなく、候補IDを永続ID案として維持する",
+      "burden_type": "social_insurance_premium",
+      "coverage_status": "candidate",
+      "current_status": null,
+      "evidence_gaps": [
+        "労働保険料徴収法との関係・納付義務者・徴収主体・適用状態を確認する"
+      ],
+      "source_urls": [
+        "https://www.sangiin.go.jp/japanese/joho1/kousei/syuisyo/212/syuh/s212073.htm",
+        "https://www.sangiin.go.jp/japanese/joho1/kousei/syuisyo/212/touh/t212073.htm",
+        "https://www.sangiin.go.jp/japanese/joho1/kousei/syuisyo/212/meisai/m212073.htm"
+      ],
+      "verified_at": "2026-08-18T23:35:17+09:00",
+      "decision_reason": "現在状態、納付義務者、徴収主体等の根拠不足を解消するまで正本投入を保留する"
+    }
+  ]
+}
