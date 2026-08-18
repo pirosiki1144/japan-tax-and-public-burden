@@ -36,8 +36,19 @@ export async function buildInitialMasterSelection(repositoryRoot) {
     for (const id of review.candidate_ids) if (!candidates.some(({ candidate_id }) => candidate_id === id)) throw new Error(`Unknown identity-review candidate ${id}`);
   }
 
+  const lawSources = new Map();
+  for (const source of configuration.law_sources) {
+    if (source.law_titles.length !== source.source_urls.length) throw new Error(`law_titles/source_urls length mismatch: ${source.candidate_ids.join(",")}`);
+    for (const id of source.candidate_ids) {
+      if (!candidates.some(({ candidate_id }) => candidate_id === id)) throw new Error(`Unknown law-source candidate ${id}`);
+      if (lawSources.has(id)) throw new Error(`Duplicate law-source candidate ${id}`);
+      lawSources.set(id, source);
+    }
+  }
+
   const records = candidates.map((candidate) => {
     const merge = merges.get(candidate.candidate_id);
+    const lawSource = lawSources.get(candidate.candidate_id);
     const disposition = merge ? "merge_existing" : configuration.default_decision.disposition;
     return {
       candidate_id: candidate.candidate_id,
@@ -51,6 +62,12 @@ export async function buildInitialMasterSelection(repositoryRoot) {
       current_status: candidate.current_status,
       evidence_gaps: candidate.evidence_gaps,
       source_urls: candidate.source_urls,
+      status_source_urls: lawSource?.source_urls ?? [],
+      law_titles: lawSource?.law_titles ?? [],
+      law_source_status: lawSource ? "found" : "not_found",
+      law_source_note: lawSource ? "e-Gov法令API Version 2で法令IDを確認" : "候補資料の名称からe-Gov法令API Version 2の現行法令を一意に特定できない",
+      law_sources_verified_at: lawSource ? configuration.law_sources_verified_at : null,
+      current_status_resolution: merge ? "resolved_by_existing_canonical" : lawSource ? "law_found_article_check_deferred_to_issue_30" : "law_source_not_found",
       verified_at: candidate.verified_at,
       decision_reason: merge?.reason ?? configuration.default_decision.reason
     };
@@ -72,7 +89,9 @@ export async function buildInitialMasterSelection(repositoryRoot) {
       insert: count("insert"),
       merge_existing: count("merge_existing"),
       hold: count("hold"),
-      excluded: count("excluded")
+      excluded: count("excluded"),
+      law_source_found: records.filter(({ law_source_status }) => law_source_status === "found").length,
+      law_source_not_found: records.filter(({ law_source_status }) => law_source_status === "not_found").length
     },
     identity_reviews: configuration.identity_reviews,
     records

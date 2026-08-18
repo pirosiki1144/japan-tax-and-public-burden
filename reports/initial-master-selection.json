@@ -9,7 +9,9 @@
     "insert": 0,
     "merge_existing": 1,
     "hold": 118,
-    "excluded": 0
+    "excluded": 0,
+    "law_source_found": 112,
+    "law_source_not_found": 7
   },
   "identity_reviews": [
     {
@@ -63,6 +65,16 @@
         "https://www.sangiin.go.jp/japanese/joho1/kousei/syuisyo/212/touh/t212073.htm",
         "https://www.sangiin.go.jp/japanese/joho1/kousei/syuisyo/212/meisai/m212073.htm"
       ],
+      "status_source_urls": [
+        "https://laws.e-gov.go.jp/api/2/law_data/414AC0000000192"
+      ],
+      "law_titles": [
+        "独立行政法人医薬品医療機器総合機構法"
+      ],
+      "law_source_status": "found",
+      "law_source_note": "e-Gov法令API Version 2で法令IDを確認",
+      "law_sources_verified_at": "2026-08-19T07:31:40+09:00",
+      "current_status_resolution": "law_found_article_check_deferred_to_issue_30",
       "verified_at": "2026-08-18T23:35:17+09:00",
       "decision_reason": "現在状態、納付義務者、徴収主体等の根拠不足を解消するまで正本投入を保留する"
     },
@@ -83,6 +95,16 @@
         "https://www.sangiin.go.jp/japanese/joho1/kousei/syuisyo/212/touh/t212073.htm",
         "https://www.sangiin.go.jp/japanese/joho1/kousei/syuisyo/212/meisai/m212073.htm"
       ],
+      "status_source_urls": [
+        "https://laws.e-gov.go.jp/api/2/law_data/348AC0000000053"
+      ],
+      "law_titles": [
+        "農水産業協同組合貯金保険法"
+      ],
+      "law_source_status": "found",
+      "law_source_note": "e-Gov法令API Version 2で法令IDを確認",
+      "law_sources_verified_at": "2026-08-19T07:31:40+09:00",
+      "current_status_resolution": "law_found_article_check_deferred_to_issue_30",
       "verified_at": "2026-08-18T23:35:17+09:00",
       "decision_reason": "現在状態、納付義務者、徴収主体等の根拠不足を解消するまで正本投入を保留する"
     },
@@ -103,6 +125,16 @@
         "https://www.sangiin.go.jp/japanese/joho1/kousei/syuisyo/212/touh/t212073.htm",
         "https://www.sangiin.go.jp/japanese/joho1/kousei/syuisyo/212/meisai/m212073.htm"
       ],
+      "status_source_urls": [
+        "https://laws.e-gov.go.jp/api/2/law_data/348AC0000000053"
+      ],
+      "law_titles": [
+        "農水産業協同組合貯金保険法"
+      ],
+      "law_source_status": "found",
+      "law_source_note": "e-Gov法令API Version 2で法令IDを確認",
+      "law_sources_verified_at": "2026-08-19T07:31:40+09:00",
+      "current_status_resolution": "law_found_article_check_deferred_to_issue_30",
       "verified_at": "2026-08-18T23:35:17+09:00",
       "decision_reason": "現在状態、納付義務者、徴収主体等の根拠不足を解消するまで正本投入を保留する"
     },
@@ -123,6 +155,16 @@
         "https://www.sangiin.go.jp/japanese/joho1/kousei/syuisyo/212/touh/t212073.htm",
         "https://www.sangiin.go.jp/japanese/joho1/kousei/syuisyo/212/meisai/m212073.htm"
       ],
+      "status_source_urls": [
+        "https://laws.e-gov.go.jp/api/2/law_data/348AC0000000053"
+      ],
+      "law_titles": [
+        "農水産業協同組合貯金保険法"
+      ],
+      "law_source_status": "found",
+      "law_source_note": "e-Gov法令API Version 2で法令IDを確認",
+      "law_sources_verified_at": "2026-08-19T07:31:40+09:00",
+      "current_status_resolution": "law_found_article_check_deferred_to_issue_30",
       "verified_at": "2026-08-18T23:35:17+09:00",
       "decision_reason": "現在状態、納付義務者、徴収主体等の根拠不足を解消するまで正本投入を保留する"
     },
@@ -143,6 +185,12 @@
         "https://www.sangiin.go.jp/japanese/joho1/kousei/syuisyo/212/touh/t212073.htm",
         "https://www.sangiin.go.jp/japanese/joho1/kousei/syuisyo/212/meisai/m212073.htm"
       ],
+      "status_source_urls": [],
+      "law_titles": [],
+      "law_source_status": "not_found",
+      "law_source_note": "候補資料の名称からe-Gov法令API Version 2の現行法令を一意に特定できない",
+      "law_sources_verified_at": null,
+      "current_status_resolution": "law_source_not_found",
       "verified_at": "2026-08-18T23:35:17+09:00",
       "decision_reason": "現在状態、納付義務者、徴収主体等の根拠不足を解消するまで正本投入を保留する"
     },
@@ -164,6 +212,16 @@
         "https://www.sangiin.go.jp/japanese/joho1/kousei/syuisyo/212/touh/t212073.htm",
         "https://www.sangiin.go.jp/japanese/joho1/kousei/syuisyo/212/meisai/m212073.htm"
       ],
+      "status_source_urls": [
+        "https://laws.e-gov.go.jp/api/2/law_data/418AC0000000004"
+      ],
+      "law_titles": [
+        "石綿による健康被害の救済に関する法律"
+      ],
+      "law_source_status": "found",
+      "law_source_note": "e-Gov法令API Version 2で法令IDを確認",
+      "law_sources_verified_at": "2026-08-19T07:31:40+09:00",
+      "current_status_resolution": "law_found_article_check_deferred_to_issue_30",
       "verified_at": "2026-08-18T23:35:17+09:00",
       "decision_reason": "現在状態、納付義務者、徴収主体等の根拠不足を解消するまで正本投入を保留する"
     },
@@ -185,6 +243,16 @@
         "https://www.sangiin.go.jp/japanese/joho1/kousei/syuisyo/212/touh/t212073.htm",
         "https://www.sangiin.go.jp/japanese/joho1/kousei/syuisyo/212/meisai/m212073.htm"
       ],
+      "status_source_urls": [
+        "https://laws.e-gov.go.jp/api/2/law_data/418AC0000000004"
+      ],
+      "law_titles": [
+        "石綿による健康被害の救済に関する法律"
+      ],
+      "law_source_status": "found",
+      "law_source_note": "e-Gov法令API Version 2で法令IDを確認",
+      "law_sources_verified_at": "2026-08-19T07:31:40+09:00",
+      "current_status_resolution": "law_found_article_check_deferred_to_issue_30",
       "verified_at": "2026-08-18T23:35:17+09:00",
       "decision_reason": "現在状態、納付義務者、徴収主体等の根拠不足を解消するまで正本投入を保留する"
     },
@@ -205,6 +273,16 @@
         "https://www.sangiin.go.jp/japanese/joho1/kousei/syuisyo/212/touh/t212073.htm",
         "https://www.sangiin.go.jp/japanese/joho1/kousei/syuisyo/212/meisai/m212073.htm"
       ],
+      "status_source_urls": [
+        "https://laws.e-gov.go.jp/api/2/law_data/330AC0000000097"
+      ],
+      "law_titles": [
+        "自動車損害賠償保障法"
+      ],
+      "law_source_status": "found",
+      "law_source_note": "e-Gov法令API Version 2で法令IDを確認",
+      "law_sources_verified_at": "2026-08-19T07:31:40+09:00",
+      "current_status_resolution": "law_found_article_check_deferred_to_issue_30",
       "verified_at": "2026-08-18T23:35:17+09:00",
       "decision_reason": "現在状態、納付義務者、徴収主体等の根拠不足を解消するまで正本投入を保留する"
     },
@@ -227,6 +305,16 @@
         "https://www.mof.go.jp/tax_policy/summary/condition/a01.htm",
         "https://laws.e-gov.go.jp/law/325AC0000000226"
       ],
+      "status_source_urls": [
+        "https://laws.e-gov.go.jp/api/2/law_data/325AC0000000226"
+      ],
+      "law_titles": [
+        "地方税法"
+      ],
+      "law_source_status": "found",
+      "law_source_note": "e-Gov法令API Version 2で法令IDを確認",
+      "law_sources_verified_at": "2026-08-19T07:31:40+09:00",
+      "current_status_resolution": "law_found_article_check_deferred_to_issue_30",
       "verified_at": "2026-08-18T22:37:46+09:00",
       "decision_reason": "現在状態、納付義務者、徴収主体等の根拠不足を解消するまで正本投入を保留する"
     },
@@ -249,6 +337,16 @@
         "https://www.mof.go.jp/tax_policy/reference/taxes_and_stamp_revenues/202606.pdf",
         "https://www.mof.go.jp/tax_policy/reference/account/r2025.pdf"
       ],
+      "status_source_urls": [
+        "https://laws.e-gov.go.jp/api/2/law_data/346AC0000000089"
+      ],
+      "law_titles": [
+        "自動車重量税法"
+      ],
+      "law_source_status": "found",
+      "law_source_note": "e-Gov法令API Version 2で法令IDを確認",
+      "law_sources_verified_at": "2026-08-19T07:31:40+09:00",
+      "current_status_resolution": "law_found_article_check_deferred_to_issue_30",
       "verified_at": "2026-08-18T22:37:46+09:00",
       "decision_reason": "現在状態、納付義務者、徴収主体等の根拠不足を解消するまで正本投入を保留する"
     },
@@ -271,6 +369,16 @@
         "https://www.mof.go.jp/tax_policy/reference/taxes_and_stamp_revenues/202606.pdf",
         "https://www.mof.go.jp/tax_policy/reference/account/r2025.pdf"
       ],
+      "status_source_urls": [
+        "https://laws.e-gov.go.jp/api/2/law_data/347AC0000000007"
+      ],
+      "law_titles": [
+        "航空機燃料税法"
+      ],
+      "law_source_status": "found",
+      "law_source_note": "e-Gov法令API Version 2で法令IDを確認",
+      "law_sources_verified_at": "2026-08-19T07:31:40+09:00",
+      "current_status_resolution": "law_found_article_check_deferred_to_issue_30",
       "verified_at": "2026-08-18T22:37:46+09:00",
       "decision_reason": "現在状態、納付義務者、徴収主体等の根拠不足を解消するまで正本投入を保留する"
     },
@@ -292,6 +400,16 @@
         "https://www.sangiin.go.jp/japanese/joho1/kousei/syuisyo/212/touh/t212073.htm",
         "https://www.sangiin.go.jp/japanese/joho1/kousei/syuisyo/212/meisai/m212073.htm"
       ],
+      "status_source_urls": [
+        "https://laws.e-gov.go.jp/api/2/law_data/413AC0000000131"
+      ],
+      "law_titles": [
+        "銀行等の株式等の保有の制限等に関する法律"
+      ],
+      "law_source_status": "found",
+      "law_source_note": "e-Gov法令API Version 2で法令IDを確認",
+      "law_sources_verified_at": "2026-08-19T07:31:40+09:00",
+      "current_status_resolution": "law_found_article_check_deferred_to_issue_30",
       "verified_at": "2026-08-18T23:35:17+09:00",
       "decision_reason": "現在状態、納付義務者、徴収主体等の根拠不足を解消するまで正本投入を保留する"
     },
@@ -312,6 +430,16 @@
         "https://www.mof.go.jp/tax_policy/summary/condition/a01.htm",
         "https://laws.e-gov.go.jp/law/325AC0000000226"
       ],
+      "status_source_urls": [
+        "https://laws.e-gov.go.jp/api/2/law_data/325AC0000000226"
+      ],
+      "law_titles": [
+        "地方税法"
+      ],
+      "law_source_status": "found",
+      "law_source_note": "e-Gov法令API Version 2で法令IDを確認",
+      "law_sources_verified_at": "2026-08-19T07:31:40+09:00",
+      "current_status_resolution": "law_found_article_check_deferred_to_issue_30",
       "verified_at": "2026-08-18T22:37:46+09:00",
       "decision_reason": "現在状態、納付義務者、徴収主体等の根拠不足を解消するまで正本投入を保留する"
     },
@@ -333,6 +461,16 @@
         "https://www.sangiin.go.jp/japanese/joho1/kousei/syuisyo/212/touh/t212073.htm",
         "https://www.sangiin.go.jp/japanese/joho1/kousei/syuisyo/212/meisai/m212073.htm"
       ],
+      "status_source_urls": [
+        "https://laws.e-gov.go.jp/api/2/law_data/359AC0000000086"
+      ],
+      "law_titles": [
+        "電気通信事業法"
+      ],
+      "law_source_status": "found",
+      "law_source_note": "e-Gov法令API Version 2で法令IDを確認",
+      "law_sources_verified_at": "2026-08-19T07:31:40+09:00",
+      "current_status_resolution": "law_found_article_check_deferred_to_issue_30",
       "verified_at": "2026-08-18T23:35:17+09:00",
       "decision_reason": "現在状態、納付義務者、徴収主体等の根拠不足を解消するまで正本投入を保留する"
     },
@@ -353,6 +491,16 @@
         "https://www.mof.go.jp/tax_policy/summary/condition/a01.htm",
         "https://laws.e-gov.go.jp/law/325AC0000000226"
       ],
+      "status_source_urls": [
+        "https://laws.e-gov.go.jp/api/2/law_data/325AC0000000226"
+      ],
+      "law_titles": [
+        "地方税法"
+      ],
+      "law_source_status": "found",
+      "law_source_note": "e-Gov法令API Version 2で法令IDを確認",
+      "law_sources_verified_at": "2026-08-19T07:31:40+09:00",
+      "current_status_resolution": "law_found_article_check_deferred_to_issue_30",
       "verified_at": "2026-08-18T22:37:46+09:00",
       "decision_reason": "現在状態、納付義務者、徴収主体等の根拠不足を解消するまで正本投入を保留する"
     },
@@ -374,6 +522,16 @@
         "https://www.sangiin.go.jp/japanese/joho1/kousei/syuisyo/212/touh/t212073.htm",
         "https://www.sangiin.go.jp/japanese/joho1/kousei/syuisyo/212/meisai/m212073.htm"
       ],
+      "status_source_urls": [
+        "https://laws.e-gov.go.jp/api/2/law_data/424AC0000000065"
+      ],
+      "law_titles": [
+        "子ども・子育て支援法"
+      ],
+      "law_source_status": "found",
+      "law_source_note": "e-Gov法令API Version 2で法令IDを確認",
+      "law_sources_verified_at": "2026-08-19T07:31:40+09:00",
+      "current_status_resolution": "law_found_article_check_deferred_to_issue_30",
       "verified_at": "2026-08-18T23:35:17+09:00",
       "decision_reason": "現在状態、納付義務者、徴収主体等の根拠不足を解消するまで正本投入を保留する"
     },
@@ -394,6 +552,16 @@
         "https://www.mof.go.jp/tax_policy/summary/condition/a01.htm",
         "https://laws.e-gov.go.jp/law/325AC0000000226"
       ],
+      "status_source_urls": [
+        "https://laws.e-gov.go.jp/api/2/law_data/325AC0000000226"
+      ],
+      "law_titles": [
+        "地方税法"
+      ],
+      "law_source_status": "found",
+      "law_source_note": "e-Gov法令API Version 2で法令IDを確認",
+      "law_sources_verified_at": "2026-08-19T07:31:40+09:00",
+      "current_status_resolution": "law_found_article_check_deferred_to_issue_30",
       "verified_at": "2026-08-18T22:37:46+09:00",
       "decision_reason": "現在状態、納付義務者、徴収主体等の根拠不足を解消するまで正本投入を保留する"
     },
@@ -414,6 +582,16 @@
         "https://www.sangiin.go.jp/japanese/joho1/kousei/syuisyo/212/touh/t212073.htm",
         "https://www.sangiin.go.jp/japanese/joho1/kousei/syuisyo/212/meisai/m212073.htm"
       ],
+      "status_source_urls": [
+        "https://laws.e-gov.go.jp/api/2/law_data/325AC0000000239"
+      ],
+      "law_titles": [
+        "商品先物取引法"
+      ],
+      "law_source_status": "found",
+      "law_source_note": "e-Gov法令API Version 2で法令IDを確認",
+      "law_sources_verified_at": "2026-08-19T07:31:40+09:00",
+      "current_status_resolution": "law_found_article_check_deferred_to_issue_30",
       "verified_at": "2026-08-18T23:35:17+09:00",
       "decision_reason": "現在状態、納付義務者、徴収主体等の根拠不足を解消するまで正本投入を保留する"
     },
@@ -434,6 +612,16 @@
         "https://www.mof.go.jp/tax_policy/summary/condition/a01.htm",
         "https://laws.e-gov.go.jp/law/325AC0000000226"
       ],
+      "status_source_urls": [
+        "https://laws.e-gov.go.jp/api/2/law_data/325AC0000000226"
+      ],
+      "law_titles": [
+        "地方税法"
+      ],
+      "law_source_status": "found",
+      "law_source_note": "e-Gov法令API Version 2で法令IDを確認",
+      "law_sources_verified_at": "2026-08-19T07:31:40+09:00",
+      "current_status_resolution": "law_found_article_check_deferred_to_issue_30",
       "verified_at": "2026-08-18T22:37:46+09:00",
       "decision_reason": "現在状態、納付義務者、徴収主体等の根拠不足を解消するまで正本投入を保留する"
     },
@@ -454,6 +642,16 @@
         "https://www.sangiin.go.jp/japanese/joho1/kousei/syuisyo/212/touh/t212073.htm",
         "https://www.sangiin.go.jp/japanese/joho1/kousei/syuisyo/212/meisai/m212073.htm"
       ],
+      "status_source_urls": [
+        "https://laws.e-gov.go.jp/api/2/law_data/338AC0000000081"
+      ],
+      "law_titles": [
+        "共同溝の整備等に関する特別措置法"
+      ],
+      "law_source_status": "found",
+      "law_source_note": "e-Gov法令API Version 2で法令IDを確認",
+      "law_sources_verified_at": "2026-08-19T07:31:40+09:00",
+      "current_status_resolution": "law_found_article_check_deferred_to_issue_30",
       "verified_at": "2026-08-18T23:35:17+09:00",
       "decision_reason": "現在状態、納付義務者、徴収主体等の根拠不足を解消するまで正本投入を保留する"
     },
@@ -475,6 +673,16 @@
         "https://www.mof.go.jp/tax_policy/reference/taxes_and_stamp_revenues/202606.pdf",
         "https://www.mof.go.jp/tax_policy/reference/account/r2025.pdf"
       ],
+      "status_source_urls": [
+        "https://laws.e-gov.go.jp/api/2/law_data/363AC0000000108"
+      ],
+      "law_titles": [
+        "消費税法"
+      ],
+      "law_source_status": "found",
+      "law_source_note": "e-Gov法令API Version 2で法令IDを確認",
+      "law_sources_verified_at": "2026-08-19T07:31:40+09:00",
+      "current_status_resolution": "resolved_by_existing_canonical",
       "verified_at": "2026-08-18T22:37:46+09:00",
       "decision_reason": "同じ国税の消費税であり、既存正本へ統合する。地方消費税は別制度として扱う"
     },
@@ -496,6 +704,16 @@
         "https://www.mof.go.jp/tax_policy/reference/taxes_and_stamp_revenues/202606.pdf",
         "https://www.mof.go.jp/tax_policy/reference/account/r2025.pdf"
       ],
+      "status_source_urls": [
+        "https://laws.e-gov.go.jp/api/2/law_data/340AC0000000034"
+      ],
+      "law_titles": [
+        "法人税法"
+      ],
+      "law_source_status": "found",
+      "law_source_note": "e-Gov法令API Version 2で法令IDを確認",
+      "law_sources_verified_at": "2026-08-19T07:31:40+09:00",
+      "current_status_resolution": "law_found_article_check_deferred_to_issue_30",
       "verified_at": "2026-08-18T22:37:46+09:00",
       "decision_reason": "現在状態、納付義務者、徴収主体等の根拠不足を解消するまで正本投入を保留する"
     },
@@ -518,6 +736,16 @@
         "https://www.mof.go.jp/tax_policy/reference/taxes_and_stamp_revenues/202606.pdf",
         "https://www.mof.go.jp/tax_policy/reference/account/r2025.pdf"
       ],
+      "status_source_urls": [
+        "https://laws.e-gov.go.jp/api/2/law_data/329AC0000000061"
+      ],
+      "law_titles": [
+        "関税法"
+      ],
+      "law_source_status": "found",
+      "law_source_note": "e-Gov法令API Version 2で法令IDを確認",
+      "law_sources_verified_at": "2026-08-19T07:31:40+09:00",
+      "current_status_resolution": "law_found_article_check_deferred_to_issue_30",
       "verified_at": "2026-08-18T22:37:46+09:00",
       "decision_reason": "現在状態、納付義務者、徴収主体等の根拠不足を解消するまで正本投入を保留する"
     },
@@ -539,6 +767,12 @@
         "https://www.sangiin.go.jp/japanese/joho1/kousei/syuisyo/212/touh/t212073.htm",
         "https://www.sangiin.go.jp/japanese/joho1/kousei/syuisyo/212/meisai/m212073.htm"
       ],
+      "status_source_urls": [],
+      "law_titles": [],
+      "law_source_status": "not_found",
+      "law_source_note": "候補資料の名称からe-Gov法令API Version 2の現行法令を一意に特定できない",
+      "law_sources_verified_at": null,
+      "current_status_resolution": "law_source_not_found",
       "verified_at": "2026-08-18T23:35:17+09:00",
       "decision_reason": "現在状態、納付義務者、徴収主体等の根拠不足を解消するまで正本投入を保留する"
     },
@@ -561,6 +795,12 @@
         "https://www.mof.go.jp/tax_policy/reference/taxes_and_stamp_revenues/202606.pdf",
         "https://www.mof.go.jp/tax_policy/reference/account/r2025.pdf"
       ],
+      "status_source_urls": [],
+      "law_titles": [],
+      "law_source_status": "not_found",
+      "law_source_note": "候補資料の名称からe-Gov法令API Version 2の現行法令を一意に特定できない",
+      "law_sources_verified_at": null,
+      "current_status_resolution": "law_source_not_found",
       "verified_at": "2026-08-18T22:37:46+09:00",
       "decision_reason": "現在状態、納付義務者、徴収主体等の根拠不足を解消するまで正本投入を保留する"
     },
@@ -583,6 +823,12 @@
         "https://www.mof.go.jp/tax_policy/reference/taxes_and_stamp_revenues/202606.pdf",
         "https://www.mof.go.jp/tax_policy/reference/account/r2025.pdf"
       ],
+      "status_source_urls": [],
+      "law_titles": [],
+      "law_source_status": "not_found",
+      "law_source_note": "候補資料の名称からe-Gov法令API Version 2の現行法令を一意に特定できない",
+      "law_sources_verified_at": null,
+      "current_status_resolution": "law_source_not_found",
       "verified_at": "2026-08-18T22:37:46+09:00",
       "decision_reason": "現在状態、納付義務者、徴収主体等の根拠不足を解消するまで正本投入を保留する"
     },
@@ -603,6 +849,16 @@
         "https://www.sangiin.go.jp/japanese/joho1/kousei/syuisyo/212/touh/t212073.htm",
         "https://www.sangiin.go.jp/japanese/joho1/kousei/syuisyo/212/meisai/m212073.htm"
       ],
+      "status_source_urls": [
+        "https://laws.e-gov.go.jp/api/2/law_data/346AC0000000034"
+      ],
+      "law_titles": [
+        "預金保険法"
+      ],
+      "law_source_status": "found",
+      "law_source_note": "e-Gov法令API Version 2で法令IDを確認",
+      "law_sources_verified_at": "2026-08-19T07:31:40+09:00",
+      "current_status_resolution": "law_found_article_check_deferred_to_issue_30",
       "verified_at": "2026-08-18T23:35:17+09:00",
       "decision_reason": "現在状態、納付義務者、徴収主体等の根拠不足を解消するまで正本投入を保留する"
     },
@@ -623,6 +879,16 @@
         "https://www.sangiin.go.jp/japanese/joho1/kousei/syuisyo/212/touh/t212073.htm",
         "https://www.sangiin.go.jp/japanese/joho1/kousei/syuisyo/212/meisai/m212073.htm"
       ],
+      "status_source_urls": [
+        "https://laws.e-gov.go.jp/api/2/law_data/346AC0000000034"
+      ],
+      "law_titles": [
+        "預金保険法"
+      ],
+      "law_source_status": "found",
+      "law_source_note": "e-Gov法令API Version 2で法令IDを確認",
+      "law_sources_verified_at": "2026-08-19T07:31:40+09:00",
+      "current_status_resolution": "law_found_article_check_deferred_to_issue_30",
       "verified_at": "2026-08-18T23:35:17+09:00",
       "decision_reason": "現在状態、納付義務者、徴収主体等の根拠不足を解消するまで正本投入を保留する"
     },
@@ -644,6 +910,16 @@
         "https://www.sangiin.go.jp/japanese/joho1/kousei/syuisyo/212/touh/t212073.htm",
         "https://www.sangiin.go.jp/japanese/joho1/kousei/syuisyo/212/meisai/m212073.htm"
       ],
+      "status_source_urls": [
+        "https://laws.e-gov.go.jp/api/2/law_data/346AC0000000034"
+      ],
+      "law_titles": [
+        "預金保険法"
+      ],
+      "law_source_status": "found",
+      "law_source_note": "e-Gov法令API Version 2で法令IDを確認",
+      "law_sources_verified_at": "2026-08-19T07:31:40+09:00",
+      "current_status_resolution": "law_found_article_check_deferred_to_issue_30",
       "verified_at": "2026-08-18T23:35:17+09:00",
       "decision_reason": "現在状態、納付義務者、徴収主体等の根拠不足を解消するまで正本投入を保留する"
     },
@@ -665,6 +941,16 @@
         "https://www.sangiin.go.jp/japanese/joho1/kousei/syuisyo/212/touh/t212073.htm",
         "https://www.sangiin.go.jp/japanese/joho1/kousei/syuisyo/212/meisai/m212073.htm"
       ],
+      "status_source_urls": [
+        "https://laws.e-gov.go.jp/api/2/law_data/335AC0000000123"
+      ],
+      "law_titles": [
+        "障害者の雇用の促進等に関する法律"
+      ],
+      "law_source_status": "found",
+      "law_source_note": "e-Gov法令API Version 2で法令IDを確認",
+      "law_sources_verified_at": "2026-08-19T07:31:40+09:00",
+      "current_status_resolution": "law_found_article_check_deferred_to_issue_30",
       "verified_at": "2026-08-18T23:35:17+09:00",
       "decision_reason": "現在状態、納付義務者、徴収主体等の根拠不足を解消するまで正本投入を保留する"
     },
@@ -686,6 +972,16 @@
         "https://www.sangiin.go.jp/japanese/joho1/kousei/syuisyo/212/touh/t212073.htm",
         "https://www.sangiin.go.jp/japanese/joho1/kousei/syuisyo/212/meisai/m212073.htm"
       ],
+      "status_source_urls": [
+        "https://laws.e-gov.go.jp/api/2/law_data/423AC0100000113"
+      ],
+      "law_titles": [
+        "株式会社東日本大震災事業者再生支援機構法"
+      ],
+      "law_source_status": "found",
+      "law_source_note": "e-Gov法令API Version 2で法令IDを確認",
+      "law_sources_verified_at": "2026-08-19T07:31:40+09:00",
+      "current_status_resolution": "law_found_article_check_deferred_to_issue_30",
       "verified_at": "2026-08-18T23:35:17+09:00",
       "decision_reason": "現在状態、納付義務者、徴収主体等の根拠不足を解消するまで正本投入を保留する"
     },
@@ -707,6 +1003,16 @@
         "https://www.sangiin.go.jp/japanese/joho1/kousei/syuisyo/212/touh/t212073.htm",
         "https://www.sangiin.go.jp/japanese/joho1/kousei/syuisyo/212/meisai/m212073.htm"
       ],
+      "status_source_urls": [
+        "https://laws.e-gov.go.jp/api/2/law_data/345AC0000000048"
+      ],
+      "law_titles": [
+        "著作権法"
+      ],
+      "law_source_status": "found",
+      "law_source_note": "e-Gov法令API Version 2で法令IDを確認",
+      "law_sources_verified_at": "2026-08-19T07:31:40+09:00",
+      "current_status_resolution": "law_found_article_check_deferred_to_issue_30",
       "verified_at": "2026-08-18T23:35:17+09:00",
       "decision_reason": "現在状態、納付義務者、徴収主体等の根拠不足を解消するまで正本投入を保留する"
     },
@@ -728,6 +1034,16 @@
         "https://www.sangiin.go.jp/japanese/joho1/kousei/syuisyo/212/touh/t212073.htm",
         "https://www.sangiin.go.jp/japanese/joho1/kousei/syuisyo/212/meisai/m212073.htm"
       ],
+      "status_source_urls": [
+        "https://laws.e-gov.go.jp/api/2/law_data/407M50000400077"
+      ],
+      "law_titles": [
+        "電気事業法施行規則"
+      ],
+      "law_source_status": "found",
+      "law_source_note": "e-Gov法令API Version 2で法令IDを確認",
+      "law_sources_verified_at": "2026-08-19T07:31:40+09:00",
+      "current_status_resolution": "law_found_article_check_deferred_to_issue_30",
       "verified_at": "2026-08-18T23:35:17+09:00",
       "decision_reason": "現在状態、納付義務者、徴収主体等の根拠不足を解消するまで正本投入を保留する"
     },
@@ -749,6 +1065,16 @@
         "https://www.sangiin.go.jp/japanese/joho1/kousei/syuisyo/212/touh/t212073.htm",
         "https://www.sangiin.go.jp/japanese/joho1/kousei/syuisyo/212/meisai/m212073.htm"
       ],
+      "status_source_urls": [
+        "https://laws.e-gov.go.jp/api/2/law_data/349AC0000000116"
+      ],
+      "law_titles": [
+        "雇用保険法"
+      ],
+      "law_source_status": "found",
+      "law_source_note": "e-Gov法令API Version 2で法令IDを確認",
+      "law_sources_verified_at": "2026-08-19T07:31:40+09:00",
+      "current_status_resolution": "law_found_article_check_deferred_to_issue_30",
       "verified_at": "2026-08-18T23:35:17+09:00",
       "decision_reason": "現在状態、納付義務者、徴収主体等の根拠不足を解消するまで正本投入を保留する"
     },
@@ -770,6 +1096,16 @@
         "https://www.mof.go.jp/tax_policy/summary/condition/a01.htm",
         "https://laws.e-gov.go.jp/law/325AC0000000226"
       ],
+      "status_source_urls": [
+        "https://laws.e-gov.go.jp/api/2/law_data/325AC0000000226"
+      ],
+      "law_titles": [
+        "地方税法"
+      ],
+      "law_source_status": "found",
+      "law_source_note": "e-Gov法令API Version 2で法令IDを確認",
+      "law_sources_verified_at": "2026-08-19T07:31:40+09:00",
+      "current_status_resolution": "law_found_article_check_deferred_to_issue_30",
       "verified_at": "2026-08-18T22:37:46+09:00",
       "decision_reason": "現在状態、納付義務者、徴収主体等の根拠不足を解消するまで正本投入を保留する"
     },
@@ -792,6 +1128,12 @@
         "https://www.sangiin.go.jp/japanese/joho1/kousei/syuisyo/212/touh/t212073.htm",
         "https://www.sangiin.go.jp/japanese/joho1/kousei/syuisyo/212/meisai/m212073.htm"
       ],
+      "status_source_urls": [],
+      "law_titles": [],
+      "law_source_status": "not_found",
+      "law_source_note": "候補資料の名称からe-Gov法令API Version 2の現行法令を一意に特定できない",
+      "law_sources_verified_at": null,
+      "current_status_resolution": "law_source_not_found",
       "verified_at": "2026-08-18T23:35:17+09:00",
       "decision_reason": "現在状態、納付義務者、徴収主体等の根拠不足を解消するまで正本投入を保留する"
     },
@@ -812,6 +1154,16 @@
         "https://www.mof.go.jp/tax_policy/summary/condition/a01.htm",
         "https://laws.e-gov.go.jp/law/325AC0000000226"
       ],
+      "status_source_urls": [
+        "https://laws.e-gov.go.jp/api/2/law_data/325AC0000000226"
+      ],
+      "law_titles": [
+        "地方税法"
+      ],
+      "law_source_status": "found",
+      "law_source_note": "e-Gov法令API Version 2で法令IDを確認",
+      "law_sources_verified_at": "2026-08-19T07:31:40+09:00",
+      "current_status_resolution": "law_found_article_check_deferred_to_issue_30",
       "verified_at": "2026-08-18T22:37:46+09:00",
       "decision_reason": "現在状態、納付義務者、徴収主体等の根拠不足を解消するまで正本投入を保留する"
     },
@@ -834,6 +1186,16 @@
         "https://www.mof.go.jp/tax_policy/reference/taxes_and_stamp_revenues/202606.pdf",
         "https://www.mof.go.jp/tax_policy/reference/account/r2025.pdf"
       ],
+      "status_source_urls": [
+        "https://laws.e-gov.go.jp/api/2/law_data/431AC0000000003"
+      ],
+      "law_titles": [
+        "森林環境税及び森林環境譲与税に関する法律"
+      ],
+      "law_source_status": "found",
+      "law_source_note": "e-Gov法令API Version 2で法令IDを確認",
+      "law_sources_verified_at": "2026-08-19T07:31:40+09:00",
+      "current_status_resolution": "law_found_article_check_deferred_to_issue_30",
       "verified_at": "2026-08-18T22:37:46+09:00",
       "decision_reason": "現在状態、納付義務者、徴収主体等の根拠不足を解消するまで正本投入を保留する"
     },
@@ -856,6 +1218,16 @@
         "https://www.sangiin.go.jp/japanese/joho1/kousei/syuisyo/212/touh/t212073.htm",
         "https://www.sangiin.go.jp/japanese/joho1/kousei/syuisyo/212/meisai/m212073.htm"
       ],
+      "status_source_urls": [
+        "https://laws.e-gov.go.jp/api/2/law_data/505AC0000000032"
+      ],
+      "law_titles": [
+        "脱炭素成長型経済構造への円滑な移行の推進に関する法律"
+      ],
+      "law_source_status": "found",
+      "law_source_note": "e-Gov法令API Version 2で法令IDを確認",
+      "law_sources_verified_at": "2026-08-19T07:31:40+09:00",
+      "current_status_resolution": "law_found_article_check_deferred_to_issue_30",
       "verified_at": "2026-08-18T23:35:17+09:00",
       "decision_reason": "現在状態、納付義務者、徴収主体等の根拠不足を解消するまで正本投入を保留する"
     },
@@ -878,6 +1250,16 @@
         "https://www.mof.go.jp/tax_policy/reference/taxes_and_stamp_revenues/202606.pdf",
         "https://www.mof.go.jp/tax_policy/reference/account/r2025.pdf"
       ],
+      "status_source_urls": [
+        "https://laws.e-gov.go.jp/api/2/law_data/332AC0000000055"
+      ],
+      "law_titles": [
+        "揮発油税法"
+      ],
+      "law_source_status": "found",
+      "law_source_note": "e-Gov法令API Version 2で法令IDを確認",
+      "law_sources_verified_at": "2026-08-19T07:31:40+09:00",
+      "current_status_resolution": "law_found_article_check_deferred_to_issue_30",
       "verified_at": "2026-08-18T22:37:46+09:00",
       "decision_reason": "現在状態、納付義務者、徴収主体等の根拠不足を解消するまで正本投入を保留する"
     },
@@ -898,6 +1280,16 @@
         "https://www.mof.go.jp/tax_policy/summary/condition/a01.htm",
         "https://laws.e-gov.go.jp/law/325AC0000000226"
       ],
+      "status_source_urls": [
+        "https://laws.e-gov.go.jp/api/2/law_data/325AC0000000226"
+      ],
+      "law_titles": [
+        "地方税法"
+      ],
+      "law_source_status": "found",
+      "law_source_note": "e-Gov法令API Version 2で法令IDを確認",
+      "law_sources_verified_at": "2026-08-19T07:31:40+09:00",
+      "current_status_resolution": "law_found_article_check_deferred_to_issue_30",
       "verified_at": "2026-08-18T22:37:46+09:00",
       "decision_reason": "現在状態、納付義務者、徴収主体等の根拠不足を解消するまで正本投入を保留する"
     },
@@ -920,6 +1312,16 @@
         "https://www.sangiin.go.jp/japanese/joho1/kousei/syuisyo/212/touh/t212073.htm",
         "https://www.sangiin.go.jp/japanese/joho1/kousei/syuisyo/212/meisai/m212073.htm"
       ],
+      "status_source_urls": [
+        "https://laws.e-gov.go.jp/api/2/law_data/505AC0000000032"
+      ],
+      "law_titles": [
+        "脱炭素成長型経済構造への円滑な移行の推進に関する法律"
+      ],
+      "law_source_status": "found",
+      "law_source_note": "e-Gov法令API Version 2で法令IDを確認",
+      "law_sources_verified_at": "2026-08-19T07:31:40+09:00",
+      "current_status_resolution": "law_found_article_check_deferred_to_issue_30",
       "verified_at": "2026-08-18T23:35:17+09:00",
       "decision_reason": "現在状態、納付義務者、徴収主体等の根拠不足を解消するまで正本投入を保留する"
     },
@@ -940,6 +1342,16 @@
         "https://www.sangiin.go.jp/japanese/joho1/kousei/syuisyo/212/touh/t212073.htm",
         "https://www.sangiin.go.jp/japanese/joho1/kousei/syuisyo/212/meisai/m212073.htm"
       ],
+      "status_source_urls": [
+        "https://laws.e-gov.go.jp/api/2/law_data/420AC1000000002"
+      ],
+      "law_titles": [
+        "特定フィブリノゲン製剤及び特定血液凝固第ＩＸ因子製剤によるＣ型肝炎感染被害者を救済するための給付金の支給に関する特別措置法"
+      ],
+      "law_source_status": "found",
+      "law_source_note": "e-Gov法令API Version 2で法令IDを確認",
+      "law_sources_verified_at": "2026-08-19T07:31:40+09:00",
+      "current_status_resolution": "law_found_article_check_deferred_to_issue_30",
       "verified_at": "2026-08-18T23:35:17+09:00",
       "decision_reason": "現在状態、納付義務者、徴収主体等の根拠不足を解消するまで正本投入を保留する"
     },
@@ -961,6 +1373,16 @@
         "https://www.sangiin.go.jp/japanese/joho1/kousei/syuisyo/212/touh/t212073.htm",
         "https://www.sangiin.go.jp/japanese/joho1/kousei/syuisyo/212/meisai/m212073.htm"
       ],
+      "status_source_urls": [
+        "https://laws.e-gov.go.jp/api/2/law_data/412AC0000000117"
+      ],
+      "law_titles": [
+        "特定放射性廃棄物の最終処分に関する法律"
+      ],
+      "law_source_status": "found",
+      "law_source_note": "e-Gov法令API Version 2で法令IDを確認",
+      "law_sources_verified_at": "2026-08-19T07:31:40+09:00",
+      "current_status_resolution": "law_found_article_check_deferred_to_issue_30",
       "verified_at": "2026-08-18T23:35:17+09:00",
       "decision_reason": "現在状態、納付義務者、徴収主体等の根拠不足を解消するまで正本投入を保留する"
     },
@@ -981,6 +1403,16 @@
         "https://www.mof.go.jp/tax_policy/summary/condition/a01.htm",
         "https://laws.e-gov.go.jp/law/325AC0000000226"
       ],
+      "status_source_urls": [
+        "https://laws.e-gov.go.jp/api/2/law_data/325AC0000000226"
+      ],
+      "law_titles": [
+        "地方税法"
+      ],
+      "law_source_status": "found",
+      "law_source_note": "e-Gov法令API Version 2で法令IDを確認",
+      "law_sources_verified_at": "2026-08-19T07:31:40+09:00",
+      "current_status_resolution": "law_found_article_check_deferred_to_issue_30",
       "verified_at": "2026-08-18T22:37:46+09:00",
       "decision_reason": "現在状態、納付義務者、徴収主体等の根拠不足を解消するまで正本投入を保留する"
     },
@@ -1002,6 +1434,16 @@
         "https://www.sangiin.go.jp/japanese/joho1/kousei/syuisyo/212/touh/t212073.htm",
         "https://www.sangiin.go.jp/japanese/joho1/kousei/syuisyo/212/meisai/m212073.htm"
       ],
+      "status_source_urls": [
+        "https://laws.e-gov.go.jp/api/2/law_data/340AC0000000109"
+      ],
+      "law_titles": [
+        "砂糖及びでん粉の価格調整に関する法律"
+      ],
+      "law_source_status": "found",
+      "law_source_note": "e-Gov法令API Version 2で法令IDを確認",
+      "law_sources_verified_at": "2026-08-19T07:31:40+09:00",
+      "current_status_resolution": "law_found_article_check_deferred_to_issue_30",
       "verified_at": "2026-08-18T23:35:17+09:00",
       "decision_reason": "現在状態、納付義務者、徴収主体等の根拠不足を解消するまで正本投入を保留する"
     },
@@ -1023,6 +1465,16 @@
         "https://www.mof.go.jp/tax_policy/reference/taxes_and_stamp_revenues/202606.pdf",
         "https://www.mof.go.jp/tax_policy/reference/account/r2025.pdf"
       ],
+      "status_source_urls": [
+        "https://laws.e-gov.go.jp/api/2/law_data/340AC0000000033"
+      ],
+      "law_titles": [
+        "所得税法"
+      ],
+      "law_source_status": "found",
+      "law_source_note": "e-Gov法令API Version 2で法令IDを確認",
+      "law_sources_verified_at": "2026-08-19T07:31:40+09:00",
+      "current_status_resolution": "law_found_article_check_deferred_to_issue_30",
       "verified_at": "2026-08-18T22:37:46+09:00",
       "decision_reason": "現在状態、納付義務者、徴収主体等の根拠不足を解消するまで正本投入を保留する"
     },
@@ -1043,6 +1495,16 @@
         "https://www.sangiin.go.jp/japanese/joho1/kousei/syuisyo/212/touh/t212073.htm",
         "https://www.sangiin.go.jp/japanese/joho1/kousei/syuisyo/212/meisai/m212073.htm"
       ],
+      "status_source_urls": [
+        "https://laws.e-gov.go.jp/api/2/law_data/414AC0000000192"
+      ],
+      "law_titles": [
+        "独立行政法人医薬品医療機器総合機構法"
+      ],
+      "law_source_status": "found",
+      "law_source_note": "e-Gov法令API Version 2で法令IDを確認",
+      "law_sources_verified_at": "2026-08-19T07:31:40+09:00",
+      "current_status_resolution": "law_found_article_check_deferred_to_issue_30",
       "verified_at": "2026-08-18T23:35:17+09:00",
       "decision_reason": "現在状態、納付義務者、徴収主体等の根拠不足を解消するまで正本投入を保留する"
     },
@@ -1065,6 +1527,16 @@
         "https://www.mof.go.jp/tax_policy/reference/taxes_and_stamp_revenues/202606.pdf",
         "https://www.mof.go.jp/tax_policy/reference/account/r2025.pdf"
       ],
+      "status_source_urls": [
+        "https://laws.e-gov.go.jp/api/2/law_data/325AC0000000073"
+      ],
+      "law_titles": [
+        "相続税法"
+      ],
+      "law_source_status": "found",
+      "law_source_note": "e-Gov法令API Version 2で法令IDを確認",
+      "law_sources_verified_at": "2026-08-19T07:31:40+09:00",
+      "current_status_resolution": "law_found_article_check_deferred_to_issue_30",
       "verified_at": "2026-08-18T22:37:46+09:00",
       "decision_reason": "現在状態、納付義務者、徴収主体等の根拠不足を解消するまで正本投入を保留する"
     },
@@ -1085,6 +1557,16 @@
         "https://www.sangiin.go.jp/japanese/joho1/kousei/syuisyo/212/touh/t212073.htm",
         "https://www.sangiin.go.jp/japanese/joho1/kousei/syuisyo/212/meisai/m212073.htm"
       ],
+      "status_source_urls": [
+        "https://laws.e-gov.go.jp/api/2/law_data/350AC0000000095"
+      ],
+      "law_titles": [
+        "船舶油濁等損害賠償保障法"
+      ],
+      "law_source_status": "found",
+      "law_source_note": "e-Gov法令API Version 2で法令IDを確認",
+      "law_sources_verified_at": "2026-08-19T07:31:40+09:00",
+      "current_status_resolution": "law_found_article_check_deferred_to_issue_30",
       "verified_at": "2026-08-18T23:35:17+09:00",
       "decision_reason": "現在状態、納付義務者、徴収主体等の根拠不足を解消するまで正本投入を保留する"
     },
@@ -1106,6 +1588,16 @@
         "https://www.mof.go.jp/tax_policy/reference/taxes_and_stamp_revenues/202606.pdf",
         "https://www.mof.go.jp/tax_policy/reference/account/r2025.pdf"
       ],
+      "status_source_urls": [
+        "https://laws.e-gov.go.jp/api/2/law_data/430AC0000000016"
+      ],
+      "law_titles": [
+        "国際観光旅客税法"
+      ],
+      "law_source_status": "found",
+      "law_source_note": "e-Gov法令API Version 2で法令IDを確認",
+      "law_sources_verified_at": "2026-08-19T07:31:40+09:00",
+      "current_status_resolution": "law_found_article_check_deferred_to_issue_30",
       "verified_at": "2026-08-18T22:37:46+09:00",
       "decision_reason": "現在状態、納付義務者、徴収主体等の根拠不足を解消するまで正本投入を保留する"
     },
@@ -1127,6 +1619,16 @@
         "https://www.sangiin.go.jp/japanese/joho1/kousei/syuisyo/212/touh/t212073.htm",
         "https://www.sangiin.go.jp/japanese/joho1/kousei/syuisyo/212/meisai/m212073.htm"
       ],
+      "status_source_urls": [
+        "https://laws.e-gov.go.jp/api/2/law_data/323AC0000000025"
+      ],
+      "law_titles": [
+        "金融商品取引法"
+      ],
+      "law_source_status": "found",
+      "law_source_note": "e-Gov法令API Version 2で法令IDを確認",
+      "law_sources_verified_at": "2026-08-19T07:31:40+09:00",
+      "current_status_resolution": "law_found_article_check_deferred_to_issue_30",
       "verified_at": "2026-08-18T23:35:17+09:00",
       "decision_reason": "現在状態、納付義務者、徴収主体等の根拠不足を解消するまで正本投入を保留する"
     },
@@ -1147,6 +1649,16 @@
         "https://www.sangiin.go.jp/japanese/joho1/kousei/syuisyo/212/touh/t212073.htm",
         "https://www.sangiin.go.jp/japanese/joho1/kousei/syuisyo/212/meisai/m212073.htm"
       ],
+      "status_source_urls": [
+        "https://laws.e-gov.go.jp/api/2/law_data/414AC0000000182"
+      ],
+      "law_titles": [
+        "独立行政法人水資源機構法"
+      ],
+      "law_source_status": "found",
+      "law_source_note": "e-Gov法令API Version 2で法令IDを確認",
+      "law_sources_verified_at": "2026-08-19T07:31:40+09:00",
+      "current_status_resolution": "law_found_article_check_deferred_to_issue_30",
       "verified_at": "2026-08-18T23:35:17+09:00",
       "decision_reason": "現在状態、納付義務者、徴収主体等の根拠不足を解消するまで正本投入を保留する"
     },
@@ -1168,6 +1680,16 @@
         "https://www.sangiin.go.jp/japanese/joho1/kousei/syuisyo/212/touh/t212073.htm",
         "https://www.sangiin.go.jp/japanese/joho1/kousei/syuisyo/212/meisai/m212073.htm"
       ],
+      "status_source_urls": [
+        "https://laws.e-gov.go.jp/api/2/law_data/345AC0000000048"
+      ],
+      "law_titles": [
+        "著作権法"
+      ],
+      "law_source_status": "found",
+      "law_source_note": "e-Gov法令API Version 2で法令IDを確認",
+      "law_sources_verified_at": "2026-08-19T07:31:40+09:00",
+      "current_status_resolution": "law_found_article_check_deferred_to_issue_30",
       "verified_at": "2026-08-18T23:35:17+09:00",
       "decision_reason": "現在状態、納付義務者、徴収主体等の根拠不足を解消するまで正本投入を保留する"
     },
@@ -1189,6 +1711,16 @@
         "https://www.mof.go.jp/tax_policy/summary/condition/a01.htm",
         "https://laws.e-gov.go.jp/law/325AC0000000226"
       ],
+      "status_source_urls": [
+        "https://laws.e-gov.go.jp/api/2/law_data/325AC0000000226"
+      ],
+      "law_titles": [
+        "地方税法"
+      ],
+      "law_source_status": "found",
+      "law_source_note": "e-Gov法令API Version 2で法令IDを確認",
+      "law_sources_verified_at": "2026-08-19T07:31:40+09:00",
+      "current_status_resolution": "law_found_article_check_deferred_to_issue_30",
       "verified_at": "2026-08-18T22:37:46+09:00",
       "decision_reason": "現在状態、納付義務者、徴収主体等の根拠不足を解消するまで正本投入を保留する"
     },
@@ -1209,6 +1741,16 @@
         "https://www.mof.go.jp/tax_policy/summary/condition/a01.htm",
         "https://laws.e-gov.go.jp/law/325AC0000000226"
       ],
+      "status_source_urls": [
+        "https://laws.e-gov.go.jp/api/2/law_data/325AC0000000226"
+      ],
+      "law_titles": [
+        "地方税法"
+      ],
+      "law_source_status": "found",
+      "law_source_note": "e-Gov法令API Version 2で法令IDを確認",
+      "law_sources_verified_at": "2026-08-19T07:31:40+09:00",
+      "current_status_resolution": "law_found_article_check_deferred_to_issue_30",
       "verified_at": "2026-08-18T22:37:46+09:00",
       "decision_reason": "現在状態、納付義務者、徴収主体等の根拠不足を解消するまで正本投入を保留する"
     },
@@ -1230,6 +1772,16 @@
         "https://www.mof.go.jp/tax_policy/reference/taxes_and_stamp_revenues/202606.pdf",
         "https://www.mof.go.jp/tax_policy/reference/account/r2025.pdf"
       ],
+      "status_source_urls": [
+        "https://laws.e-gov.go.jp/api/2/law_data/328AC0000000006"
+      ],
+      "law_titles": [
+        "酒税法"
+      ],
+      "law_source_status": "found",
+      "law_source_note": "e-Gov法令API Version 2で法令IDを確認",
+      "law_sources_verified_at": "2026-08-19T07:31:40+09:00",
+      "current_status_resolution": "law_found_article_check_deferred_to_issue_30",
       "verified_at": "2026-08-18T22:37:46+09:00",
       "decision_reason": "現在状態、納付義務者、徴収主体等の根拠不足を解消するまで正本投入を保留する"
     },
@@ -1252,6 +1804,16 @@
         "https://www.mof.go.jp/tax_policy/summary/condition/a01.htm",
         "https://laws.e-gov.go.jp/law/325AC0000000226"
       ],
+      "status_source_urls": [
+        "https://laws.e-gov.go.jp/api/2/law_data/325AC0000000226"
+      ],
+      "law_titles": [
+        "地方税法"
+      ],
+      "law_source_status": "found",
+      "law_source_note": "e-Gov法令API Version 2で法令IDを確認",
+      "law_sources_verified_at": "2026-08-19T07:31:40+09:00",
+      "current_status_resolution": "law_found_article_check_deferred_to_issue_30",
       "verified_at": "2026-08-18T22:37:46+09:00",
       "decision_reason": "現在状態、納付義務者、徴収主体等の根拠不足を解消するまで正本投入を保留する"
     },
@@ -1274,6 +1836,16 @@
         "https://www.mof.go.jp/tax_policy/reference/taxes_and_stamp_revenues/202606.pdf",
         "https://www.mof.go.jp/tax_policy/reference/account/r2025.pdf"
       ],
+      "status_source_urls": [
+        "https://laws.e-gov.go.jp/api/2/law_data/426AC0000000011"
+      ],
+      "law_titles": [
+        "地方法人税法"
+      ],
+      "law_source_status": "found",
+      "law_source_note": "e-Gov法令API Version 2で法令IDを確認",
+      "law_sources_verified_at": "2026-08-19T07:31:40+09:00",
+      "current_status_resolution": "law_found_article_check_deferred_to_issue_30",
       "verified_at": "2026-08-18T22:37:46+09:00",
       "decision_reason": "現在状態、納付義務者、徴収主体等の根拠不足を解消するまで正本投入を保留する"
     },
@@ -1296,6 +1868,16 @@
         "https://www.mof.go.jp/tax_policy/reference/taxes_and_stamp_revenues/202606.pdf",
         "https://www.mof.go.jp/tax_policy/reference/account/r2025.pdf"
       ],
+      "status_source_urls": [
+        "https://laws.e-gov.go.jp/api/2/law_data/330AC0000000104"
+      ],
+      "law_titles": [
+        "地方揮発油税法"
+      ],
+      "law_source_status": "found",
+      "law_source_note": "e-Gov法令API Version 2で法令IDを確認",
+      "law_sources_verified_at": "2026-08-19T07:31:40+09:00",
+      "current_status_resolution": "law_found_article_check_deferred_to_issue_30",
       "verified_at": "2026-08-18T22:37:46+09:00",
       "decision_reason": "現在状態、納付義務者、徴収主体等の根拠不足を解消するまで正本投入を保留する"
     },
@@ -1317,6 +1899,16 @@
         "https://www.mof.go.jp/tax_policy/summary/condition/a01.htm",
         "https://laws.e-gov.go.jp/law/325AC0000000226"
       ],
+      "status_source_urls": [
+        "https://laws.e-gov.go.jp/api/2/law_data/325AC0000000226"
+      ],
+      "law_titles": [
+        "地方税法"
+      ],
+      "law_source_status": "found",
+      "law_source_note": "e-Gov法令API Version 2で法令IDを確認",
+      "law_sources_verified_at": "2026-08-19T07:31:40+09:00",
+      "current_status_resolution": "law_found_article_check_deferred_to_issue_30",
       "verified_at": "2026-08-18T22:37:46+09:00",
       "decision_reason": "現在状態、納付義務者、徴収主体等の根拠不足を解消するまで正本投入を保留する"
     },
@@ -1338,6 +1930,16 @@
         "https://www.sangiin.go.jp/japanese/joho1/kousei/syuisyo/212/touh/t212073.htm",
         "https://www.sangiin.go.jp/japanese/joho1/kousei/syuisyo/212/meisai/m212073.htm"
       ],
+      "status_source_urls": [
+        "https://laws.e-gov.go.jp/api/2/law_data/409AC0000000123"
+      ],
+      "law_titles": [
+        "介護保険法"
+      ],
+      "law_source_status": "found",
+      "law_source_note": "e-Gov法令API Version 2で法令IDを確認",
+      "law_sources_verified_at": "2026-08-19T07:31:40+09:00",
+      "current_status_resolution": "law_found_article_check_deferred_to_issue_30",
       "verified_at": "2026-08-18T23:35:17+09:00",
       "decision_reason": "現在状態、納付義務者、徴収主体等の根拠不足を解消するまで正本投入を保留する"
     },
@@ -1360,6 +1962,20 @@
         "https://www.sangiin.go.jp/japanese/joho1/kousei/syuisyo/212/touh/t212073.htm",
         "https://www.sangiin.go.jp/japanese/joho1/kousei/syuisyo/212/meisai/m212073.htm"
       ],
+      "status_source_urls": [
+        "https://laws.e-gov.go.jp/api/2/law_data/211AC0000000070",
+        "https://laws.e-gov.go.jp/api/2/law_data/333AC0000000192",
+        "https://laws.e-gov.go.jp/api/2/law_data/357AC0000000080"
+      ],
+      "law_titles": [
+        "健康保険法",
+        "国民健康保険法",
+        "高齢者の医療の確保に関する法律"
+      ],
+      "law_source_status": "found",
+      "law_source_note": "e-Gov法令API Version 2で法令IDを確認",
+      "law_sources_verified_at": "2026-08-19T07:31:40+09:00",
+      "current_status_resolution": "law_found_article_check_deferred_to_issue_30",
       "verified_at": "2026-08-18T23:35:17+09:00",
       "decision_reason": "現在状態、納付義務者、徴収主体等の根拠不足を解消するまで正本投入を保留する"
     },
@@ -1380,6 +1996,16 @@
         "https://www.sangiin.go.jp/japanese/joho1/kousei/syuisyo/212/touh/t212073.htm",
         "https://www.sangiin.go.jp/japanese/joho1/kousei/syuisyo/212/meisai/m212073.htm"
       ],
+      "status_source_urls": [
+        "https://laws.e-gov.go.jp/api/2/law_data/421AC1000000081"
+      ],
+      "law_titles": [
+        "水俣病被害者の救済及び水俣病問題の解決に関する特別措置法"
+      ],
+      "law_source_status": "found",
+      "law_source_note": "e-Gov法令API Version 2で法令IDを確認",
+      "law_sources_verified_at": "2026-08-19T07:31:40+09:00",
+      "current_status_resolution": "law_found_article_check_deferred_to_issue_30",
       "verified_at": "2026-08-18T23:35:17+09:00",
       "decision_reason": "現在状態、納付義務者、徴収主体等の根拠不足を解消するまで正本投入を保留する"
     },
@@ -1400,6 +2026,16 @@
         "https://www.mof.go.jp/tax_policy/summary/condition/a01.htm",
         "https://laws.e-gov.go.jp/law/325AC0000000226"
       ],
+      "status_source_urls": [
+        "https://laws.e-gov.go.jp/api/2/law_data/325AC0000000226"
+      ],
+      "law_titles": [
+        "地方税法"
+      ],
+      "law_source_status": "found",
+      "law_source_note": "e-Gov法令API Version 2で法令IDを確認",
+      "law_sources_verified_at": "2026-08-19T07:31:40+09:00",
+      "current_status_resolution": "law_found_article_check_deferred_to_issue_30",
       "verified_at": "2026-08-18T22:37:46+09:00",
       "decision_reason": "現在状態、納付義務者、徴収主体等の根拠不足を解消するまで正本投入を保留する"
     },
@@ -1420,6 +2056,16 @@
         "https://www.mof.go.jp/tax_policy/summary/condition/a01.htm",
         "https://laws.e-gov.go.jp/law/325AC0000000226"
       ],
+      "status_source_urls": [
+        "https://laws.e-gov.go.jp/api/2/law_data/325AC0000000226"
+      ],
+      "law_titles": [
+        "地方税法"
+      ],
+      "law_source_status": "found",
+      "law_source_note": "e-Gov法令API Version 2で法令IDを確認",
+      "law_sources_verified_at": "2026-08-19T07:31:40+09:00",
+      "current_status_resolution": "law_found_article_check_deferred_to_issue_30",
       "verified_at": "2026-08-18T22:37:46+09:00",
       "decision_reason": "現在状態、納付義務者、徴収主体等の根拠不足を解消するまで正本投入を保留する"
     },
@@ -1440,6 +2086,16 @@
         "https://www.sangiin.go.jp/japanese/joho1/kousei/syuisyo/212/touh/t212073.htm",
         "https://www.sangiin.go.jp/japanese/joho1/kousei/syuisyo/212/meisai/m212073.htm"
       ],
+      "status_source_urls": [
+        "https://laws.e-gov.go.jp/api/2/law_data/348AC0000000026"
+      ],
+      "law_titles": [
+        "金属鉱業等鉱害対策特別措置法"
+      ],
+      "law_source_status": "found",
+      "law_source_note": "e-Gov法令API Version 2で法令IDを確認",
+      "law_sources_verified_at": "2026-08-19T07:31:40+09:00",
+      "current_status_resolution": "law_found_article_check_deferred_to_issue_30",
       "verified_at": "2026-08-18T23:35:17+09:00",
       "decision_reason": "現在状態、納付義務者、徴収主体等の根拠不足を解消するまで正本投入を保留する"
     },
@@ -1461,6 +2117,16 @@
         "https://www.sangiin.go.jp/japanese/joho1/kousei/syuisyo/212/touh/t212073.htm",
         "https://www.sangiin.go.jp/japanese/joho1/kousei/syuisyo/212/meisai/m212073.htm"
       ],
+      "status_source_urls": [
+        "https://laws.e-gov.go.jp/api/2/law_data/332AC0000000035"
+      ],
+      "law_titles": [
+        "特定多目的ダム法"
+      ],
+      "law_source_status": "found",
+      "law_source_note": "e-Gov法令API Version 2で法令IDを確認",
+      "law_sources_verified_at": "2026-08-19T07:31:40+09:00",
+      "current_status_resolution": "law_found_article_check_deferred_to_issue_30",
       "verified_at": "2026-08-18T23:35:17+09:00",
       "decision_reason": "現在状態、納付義務者、徴収主体等の根拠不足を解消するまで正本投入を保留する"
     },
@@ -1482,6 +2148,16 @@
         "https://www.mof.go.jp/tax_policy/summary/condition/a01.htm",
         "https://laws.e-gov.go.jp/law/325AC0000000226"
       ],
+      "status_source_urls": [
+        "https://laws.e-gov.go.jp/api/2/law_data/325AC0000000226"
+      ],
+      "law_titles": [
+        "地方税法"
+      ],
+      "law_source_status": "found",
+      "law_source_note": "e-Gov法令API Version 2で法令IDを確認",
+      "law_sources_verified_at": "2026-08-19T07:31:40+09:00",
+      "current_status_resolution": "law_found_article_check_deferred_to_issue_30",
       "verified_at": "2026-08-18T22:37:46+09:00",
       "decision_reason": "現在状態、納付義務者、徴収主体等の根拠不足を解消するまで正本投入を保留する"
     },
@@ -1502,6 +2178,16 @@
         "https://www.mof.go.jp/tax_policy/summary/condition/a01.htm",
         "https://laws.e-gov.go.jp/law/325AC0000000226"
       ],
+      "status_source_urls": [
+        "https://laws.e-gov.go.jp/api/2/law_data/325AC0000000226"
+      ],
+      "law_titles": [
+        "地方税法"
+      ],
+      "law_source_status": "found",
+      "law_source_note": "e-Gov法令API Version 2で法令IDを確認",
+      "law_sources_verified_at": "2026-08-19T07:31:40+09:00",
+      "current_status_resolution": "law_found_article_check_deferred_to_issue_30",
       "verified_at": "2026-08-18T22:37:46+09:00",
       "decision_reason": "現在状態、納付義務者、徴収主体等の根拠不足を解消するまで正本投入を保留する"
     },
@@ -1522,6 +2208,16 @@
         "https://www.mof.go.jp/tax_policy/summary/condition/a01.htm",
         "https://laws.e-gov.go.jp/law/325AC0000000226"
       ],
+      "status_source_urls": [
+        "https://laws.e-gov.go.jp/api/2/law_data/325AC0000000226"
+      ],
+      "law_titles": [
+        "地方税法"
+      ],
+      "law_source_status": "found",
+      "law_source_note": "e-Gov法令API Version 2で法令IDを確認",
+      "law_sources_verified_at": "2026-08-19T07:31:40+09:00",
+      "current_status_resolution": "law_found_article_check_deferred_to_issue_30",
       "verified_at": "2026-08-18T22:37:46+09:00",
       "decision_reason": "現在状態、納付義務者、徴収主体等の根拠不足を解消するまで正本投入を保留する"
     },
@@ -1544,6 +2240,12 @@
         "https://www.sangiin.go.jp/japanese/joho1/kousei/syuisyo/212/touh/t212073.htm",
         "https://www.sangiin.go.jp/japanese/joho1/kousei/syuisyo/212/meisai/m212073.htm"
       ],
+      "status_source_urls": [],
+      "law_titles": [],
+      "law_source_status": "not_found",
+      "law_source_note": "候補資料の名称からe-Gov法令API Version 2の現行法令を一意に特定できない",
+      "law_sources_verified_at": null,
+      "current_status_resolution": "law_source_not_found",
       "verified_at": "2026-08-18T23:35:17+09:00",
       "decision_reason": "現在状態、納付義務者、徴収主体等の根拠不足を解消するまで正本投入を保留する"
     },
@@ -1565,6 +2267,16 @@
         "https://www.sangiin.go.jp/japanese/joho1/kousei/syuisyo/212/touh/t212073.htm",
         "https://www.sangiin.go.jp/japanese/joho1/kousei/syuisyo/212/meisai/m212073.htm"
       ],
+      "status_source_urls": [
+        "https://laws.e-gov.go.jp/api/2/law_data/423AC0000000094"
+      ],
+      "law_titles": [
+        "原子力損害賠償・廃炉等支援機構法"
+      ],
+      "law_source_status": "found",
+      "law_source_note": "e-Gov法令API Version 2で法令IDを確認",
+      "law_sources_verified_at": "2026-08-19T07:31:40+09:00",
+      "current_status_resolution": "law_found_article_check_deferred_to_issue_30",
       "verified_at": "2026-08-18T23:35:17+09:00",
       "decision_reason": "現在状態、納付義務者、徴収主体等の根拠不足を解消するまで正本投入を保留する"
     },
@@ -1586,6 +2298,16 @@
         "https://www.sangiin.go.jp/japanese/joho1/kousei/syuisyo/212/touh/t212073.htm",
         "https://www.sangiin.go.jp/japanese/joho1/kousei/syuisyo/212/meisai/m212073.htm"
       ],
+      "status_source_urls": [
+        "https://laws.e-gov.go.jp/api/2/law_data/423AC0000000094"
+      ],
+      "law_titles": [
+        "原子力損害賠償・廃炉等支援機構法"
+      ],
+      "law_source_status": "found",
+      "law_source_note": "e-Gov法令API Version 2で法令IDを確認",
+      "law_sources_verified_at": "2026-08-19T07:31:40+09:00",
+      "current_status_resolution": "law_found_article_check_deferred_to_issue_30",
       "verified_at": "2026-08-18T23:35:17+09:00",
       "decision_reason": "現在状態、納付義務者、徴収主体等の根拠不足を解消するまで正本投入を保留する"
     },
@@ -1607,6 +2329,16 @@
         "https://www.sangiin.go.jp/japanese/joho1/kousei/syuisyo/212/touh/t212073.htm",
         "https://www.sangiin.go.jp/japanese/joho1/kousei/syuisyo/212/meisai/m212073.htm"
       ],
+      "status_source_urls": [
+        "https://laws.e-gov.go.jp/api/2/law_data/417AC0000000048"
+      ],
+      "law_titles": [
+        "原子力発電における使用済燃料の再処理等の実施及び廃炉の推進に関する法律"
+      ],
+      "law_source_status": "found",
+      "law_source_note": "e-Gov法令API Version 2で法令IDを確認",
+      "law_sources_verified_at": "2026-08-19T07:31:40+09:00",
+      "current_status_resolution": "law_found_article_check_deferred_to_issue_30",
       "verified_at": "2026-08-18T23:35:17+09:00",
       "decision_reason": "現在状態、納付義務者、徴収主体等の根拠不足を解消するまで正本投入を保留する"
     },
@@ -1627,6 +2359,16 @@
         "https://www.sangiin.go.jp/japanese/joho1/kousei/syuisyo/212/touh/t212073.htm",
         "https://www.sangiin.go.jp/japanese/joho1/kousei/syuisyo/212/meisai/m212073.htm"
       ],
+      "status_source_urls": [
+        "https://laws.e-gov.go.jp/api/2/law_data/413AC0000000075"
+      ],
+      "law_titles": [
+        "社債、株式等の振替に関する法律"
+      ],
+      "law_source_status": "found",
+      "law_source_note": "e-Gov法令API Version 2で法令IDを確認",
+      "law_sources_verified_at": "2026-08-19T07:31:40+09:00",
+      "current_status_resolution": "law_found_article_check_deferred_to_issue_30",
       "verified_at": "2026-08-18T23:35:17+09:00",
       "decision_reason": "現在状態、納付義務者、徴収主体等の根拠不足を解消するまで正本投入を保留する"
     },
@@ -1649,6 +2391,18 @@
         "https://www.sangiin.go.jp/japanese/joho1/kousei/syuisyo/212/touh/t212073.htm",
         "https://www.sangiin.go.jp/japanese/joho1/kousei/syuisyo/212/meisai/m212073.htm"
       ],
+      "status_source_urls": [
+        "https://laws.e-gov.go.jp/api/2/law_data/329AC0000000115",
+        "https://laws.e-gov.go.jp/api/2/law_data/334AC0000000141"
+      ],
+      "law_titles": [
+        "厚生年金保険法",
+        "国民年金法"
+      ],
+      "law_source_status": "found",
+      "law_source_note": "e-Gov法令API Version 2で法令IDを確認",
+      "law_sources_verified_at": "2026-08-19T07:31:40+09:00",
+      "current_status_resolution": "law_found_article_check_deferred_to_issue_30",
       "verified_at": "2026-08-18T23:35:17+09:00",
       "decision_reason": "現在状態、納付義務者、徴収主体等の根拠不足を解消するまで正本投入を保留する"
     },
@@ -1670,6 +2424,16 @@
         "https://www.mof.go.jp/tax_policy/reference/taxes_and_stamp_revenues/202606.pdf",
         "https://www.mof.go.jp/tax_policy/reference/account/r2025.pdf"
       ],
+      "status_source_urls": [
+        "https://laws.e-gov.go.jp/api/2/law_data/353AC0000000025"
+      ],
+      "law_titles": [
+        "石油石炭税法"
+      ],
+      "law_source_status": "found",
+      "law_source_note": "e-Gov法令API Version 2で法令IDを確認",
+      "law_sources_verified_at": "2026-08-19T07:31:40+09:00",
+      "current_status_resolution": "law_found_article_check_deferred_to_issue_30",
       "verified_at": "2026-08-18T22:37:46+09:00",
       "decision_reason": "現在状態、納付義務者、徴収主体等の根拠不足を解消するまで正本投入を保留する"
     },
@@ -1692,6 +2456,16 @@
         "https://www.mof.go.jp/tax_policy/reference/taxes_and_stamp_revenues/202606.pdf",
         "https://www.mof.go.jp/tax_policy/reference/account/r2025.pdf"
       ],
+      "status_source_urls": [
+        "https://laws.e-gov.go.jp/api/2/law_data/340AC0000000156"
+      ],
+      "law_titles": [
+        "石油ガス税法"
+      ],
+      "law_source_status": "found",
+      "law_source_note": "e-Gov法令API Version 2で法令IDを確認",
+      "law_sources_verified_at": "2026-08-19T07:31:40+09:00",
+      "current_status_resolution": "law_found_article_check_deferred_to_issue_30",
       "verified_at": "2026-08-18T22:37:46+09:00",
       "decision_reason": "現在状態、納付義務者、徴収主体等の根拠不足を解消するまで正本投入を保留する"
     },
@@ -1712,6 +2486,16 @@
         "https://www.sangiin.go.jp/japanese/joho1/kousei/syuisyo/212/touh/t212073.htm",
         "https://www.sangiin.go.jp/japanese/joho1/kousei/syuisyo/212/meisai/m212073.htm"
       ],
+      "status_source_urls": [
+        "https://laws.e-gov.go.jp/api/2/law_data/414AC0000000192"
+      ],
+      "law_titles": [
+        "独立行政法人医薬品医療機器総合機構法"
+      ],
+      "law_source_status": "found",
+      "law_source_note": "e-Gov法令API Version 2で法令IDを確認",
+      "law_sources_verified_at": "2026-08-19T07:31:40+09:00",
+      "current_status_resolution": "law_found_article_check_deferred_to_issue_30",
       "verified_at": "2026-08-18T23:35:17+09:00",
       "decision_reason": "現在状態、納付義務者、徴収主体等の根拠不足を解消するまで正本投入を保留する"
     },
@@ -1734,6 +2518,16 @@
         "https://www.sangiin.go.jp/japanese/joho1/kousei/syuisyo/212/touh/t212073.htm",
         "https://www.sangiin.go.jp/japanese/joho1/kousei/syuisyo/212/meisai/m212073.htm"
       ],
+      "status_source_urls": [
+        "https://laws.e-gov.go.jp/api/2/law_data/407AC0000000105"
+      ],
+      "law_titles": [
+        "保険業法"
+      ],
+      "law_source_status": "found",
+      "law_source_note": "e-Gov法令API Version 2で法令IDを確認",
+      "law_sources_verified_at": "2026-08-19T07:31:40+09:00",
+      "current_status_resolution": "law_found_article_check_deferred_to_issue_30",
       "verified_at": "2026-08-18T23:35:17+09:00",
       "decision_reason": "現在状態、納付義務者、徴収主体等の根拠不足を解消するまで正本投入を保留する"
     },
@@ -1755,6 +2549,16 @@
         "https://www.sangiin.go.jp/japanese/joho1/kousei/syuisyo/212/touh/t212073.htm",
         "https://www.sangiin.go.jp/japanese/joho1/kousei/syuisyo/212/meisai/m212073.htm"
       ],
+      "status_source_urls": [
+        "https://laws.e-gov.go.jp/api/2/law_data/348AC0000000111"
+      ],
+      "law_titles": [
+        "公害健康被害の補償等に関する法律"
+      ],
+      "law_source_status": "found",
+      "law_source_note": "e-Gov法令API Version 2で法令IDを確認",
+      "law_sources_verified_at": "2026-08-19T07:31:40+09:00",
+      "current_status_resolution": "law_found_article_check_deferred_to_issue_30",
       "verified_at": "2026-08-18T23:35:17+09:00",
       "decision_reason": "現在状態、納付義務者、徴収主体等の根拠不足を解消するまで正本投入を保留する"
     },
@@ -1775,6 +2579,16 @@
         "https://www.sangiin.go.jp/japanese/joho1/kousei/syuisyo/212/touh/t212073.htm",
         "https://www.sangiin.go.jp/japanese/joho1/kousei/syuisyo/212/meisai/m212073.htm"
       ],
+      "status_source_urls": [
+        "https://laws.e-gov.go.jp/api/2/law_data/345AC0000000133"
+      ],
+      "law_titles": [
+        "公害防止事業費事業者負担法"
+      ],
+      "law_source_status": "found",
+      "law_source_note": "e-Gov法令API Version 2で法令IDを確認",
+      "law_sources_verified_at": "2026-08-19T07:31:40+09:00",
+      "current_status_resolution": "law_found_article_check_deferred_to_issue_30",
       "verified_at": "2026-08-18T23:35:17+09:00",
       "decision_reason": "現在状態、納付義務者、徴収主体等の根拠不足を解消するまで正本投入を保留する"
     },
@@ -1796,6 +2610,16 @@
         "https://www.sangiin.go.jp/japanese/joho1/kousei/syuisyo/212/touh/t212073.htm",
         "https://www.sangiin.go.jp/japanese/joho1/kousei/syuisyo/212/meisai/m212073.htm"
       ],
+      "status_source_urls": [
+        "https://laws.e-gov.go.jp/api/2/law_data/325AC0000000218"
+      ],
+      "law_titles": [
+        "港湾法"
+      ],
+      "law_source_status": "found",
+      "law_source_note": "e-Gov法令API Version 2で法令IDを確認",
+      "law_sources_verified_at": "2026-08-19T07:31:40+09:00",
+      "current_status_resolution": "law_found_article_check_deferred_to_issue_30",
       "verified_at": "2026-08-18T23:35:17+09:00",
       "decision_reason": "現在状態、納付義務者、徴収主体等の根拠不足を解消するまで正本投入を保留する"
     },
@@ -1818,6 +2642,12 @@
         "https://www.sangiin.go.jp/japanese/joho1/kousei/syuisyo/212/touh/t212073.htm",
         "https://www.sangiin.go.jp/japanese/joho1/kousei/syuisyo/212/meisai/m212073.htm"
       ],
+      "status_source_urls": [],
+      "law_titles": [],
+      "law_source_status": "not_found",
+      "law_source_note": "候補資料の名称からe-Gov法令API Version 2の現行法令を一意に特定できない",
+      "law_sources_verified_at": null,
+      "current_status_resolution": "law_source_not_found",
       "verified_at": "2026-08-18T23:35:17+09:00",
       "decision_reason": "現在状態、納付義務者、徴収主体等の根拠不足を解消するまで正本投入を保留する"
     },
@@ -1839,6 +2669,16 @@
         "https://www.sangiin.go.jp/japanese/joho1/kousei/syuisyo/212/touh/t212073.htm",
         "https://www.sangiin.go.jp/japanese/joho1/kousei/syuisyo/212/meisai/m212073.htm"
       ],
+      "status_source_urls": [
+        "https://laws.e-gov.go.jp/api/2/law_data/417AC0000000101"
+      ],
+      "law_titles": [
+        "独立行政法人郵便貯金簡易生命保険管理・郵便局ネットワーク支援機構法"
+      ],
+      "law_source_status": "found",
+      "law_source_note": "e-Gov法令API Version 2で法令IDを確認",
+      "law_sources_verified_at": "2026-08-19T07:31:40+09:00",
+      "current_status_resolution": "law_found_article_check_deferred_to_issue_30",
       "verified_at": "2026-08-18T23:35:17+09:00",
       "decision_reason": "現在状態、納付義務者、徴収主体等の根拠不足を解消するまで正本投入を保留する"
     },
@@ -1859,6 +2699,16 @@
         "https://www.sangiin.go.jp/japanese/joho1/kousei/syuisyo/212/touh/t212073.htm",
         "https://www.sangiin.go.jp/japanese/joho1/kousei/syuisyo/212/meisai/m212073.htm"
       ],
+      "status_source_urls": [
+        "https://laws.e-gov.go.jp/api/2/law_data/324AC0000000284"
+      ],
+      "law_titles": [
+        "郵便物運送委託法"
+      ],
+      "law_source_status": "found",
+      "law_source_note": "e-Gov法令API Version 2で法令IDを確認",
+      "law_sources_verified_at": "2026-08-19T07:31:40+09:00",
+      "current_status_resolution": "law_found_article_check_deferred_to_issue_30",
       "verified_at": "2026-08-18T23:35:17+09:00",
       "decision_reason": "現在状態、納付義務者、徴収主体等の根拠不足を解消するまで正本投入を保留する"
     },
@@ -1880,6 +2730,16 @@
         "https://www.mof.go.jp/tax_policy/reference/taxes_and_stamp_revenues/202606.pdf",
         "https://www.mof.go.jp/tax_policy/reference/account/r2025.pdf"
       ],
+      "status_source_urls": [
+        "https://laws.e-gov.go.jp/api/2/law_data/349AC0000000079"
+      ],
+      "law_titles": [
+        "電源開発促進税法"
+      ],
+      "law_source_status": "found",
+      "law_source_note": "e-Gov法令API Version 2で法令IDを確認",
+      "law_sources_verified_at": "2026-08-19T07:31:40+09:00",
+      "current_status_resolution": "law_found_article_check_deferred_to_issue_30",
       "verified_at": "2026-08-18T22:37:46+09:00",
       "decision_reason": "現在状態、納付義務者、徴収主体等の根拠不足を解消するまで正本投入を保留する"
     },
@@ -1901,6 +2761,16 @@
         "https://www.sangiin.go.jp/japanese/joho1/kousei/syuisyo/212/touh/t212073.htm",
         "https://www.sangiin.go.jp/japanese/joho1/kousei/syuisyo/212/meisai/m212073.htm"
       ],
+      "status_source_urls": [
+        "https://laws.e-gov.go.jp/api/2/law_data/345AC0000000048"
+      ],
+      "law_titles": [
+        "著作権法"
+      ],
+      "law_source_status": "found",
+      "law_source_note": "e-Gov法令API Version 2で法令IDを確認",
+      "law_sources_verified_at": "2026-08-19T07:31:40+09:00",
+      "current_status_resolution": "law_found_article_check_deferred_to_issue_30",
       "verified_at": "2026-08-18T23:35:17+09:00",
       "decision_reason": "現在状態、納付義務者、徴収主体等の根拠不足を解消するまで正本投入を保留する"
     },
@@ -1922,6 +2792,16 @@
         "https://www.sangiin.go.jp/japanese/joho1/kousei/syuisyo/212/touh/t212073.htm",
         "https://www.sangiin.go.jp/japanese/joho1/kousei/syuisyo/212/meisai/m212073.htm"
       ],
+      "status_source_urls": [
+        "https://laws.e-gov.go.jp/api/2/law_data/361AC0000000092"
+      ],
+      "law_titles": [
+        "鉄道事業法"
+      ],
+      "law_source_status": "found",
+      "law_source_note": "e-Gov法令API Version 2で法令IDを確認",
+      "law_sources_verified_at": "2026-08-19T07:31:40+09:00",
+      "current_status_resolution": "law_found_article_check_deferred_to_issue_30",
       "verified_at": "2026-08-18T23:35:17+09:00",
       "decision_reason": "現在状態、納付義務者、徴収主体等の根拠不足を解消するまで正本投入を保留する"
     },
@@ -1942,6 +2822,16 @@
         "https://www.mof.go.jp/tax_policy/summary/condition/a01.htm",
         "https://laws.e-gov.go.jp/law/325AC0000000226"
       ],
+      "status_source_urls": [
+        "https://laws.e-gov.go.jp/api/2/law_data/325AC0000000226"
+      ],
+      "law_titles": [
+        "地方税法"
+      ],
+      "law_source_status": "found",
+      "law_source_note": "e-Gov法令API Version 2で法令IDを確認",
+      "law_sources_verified_at": "2026-08-19T07:31:40+09:00",
+      "current_status_resolution": "law_found_article_check_deferred_to_issue_30",
       "verified_at": "2026-08-18T22:37:46+09:00",
       "decision_reason": "現在状態、納付義務者、徴収主体等の根拠不足を解消するまで正本投入を保留する"
     },
@@ -1963,6 +2853,16 @@
         "https://www.mof.go.jp/tax_policy/reference/taxes_and_stamp_revenues/202606.pdf",
         "https://www.mof.go.jp/tax_policy/reference/account/r2025.pdf"
       ],
+      "status_source_urls": [
+        "https://laws.e-gov.go.jp/api/2/law_data/423AC0000000117"
+      ],
+      "law_titles": [
+        "東日本大震災からの復興のための施策を実施するために必要な財源の確保に関する特別措置法"
+      ],
+      "law_source_status": "found",
+      "law_source_note": "e-Gov法令API Version 2で法令IDを確認",
+      "law_sources_verified_at": "2026-08-19T07:31:40+09:00",
+      "current_status_resolution": "law_found_article_check_deferred_to_issue_30",
       "verified_at": "2026-08-18T22:37:46+09:00",
       "decision_reason": "現在状態、納付義務者、徴収主体等の根拠不足を解消するまで正本投入を保留する"
     },
@@ -1984,6 +2884,16 @@
         "https://www.sangiin.go.jp/japanese/joho1/kousei/syuisyo/212/touh/t212073.htm",
         "https://www.sangiin.go.jp/japanese/joho1/kousei/syuisyo/212/meisai/m212073.htm"
       ],
+      "status_source_urls": [
+        "https://laws.e-gov.go.jp/api/2/law_data/421AC0000000063"
+      ],
+      "law_titles": [
+        "株式会社地域経済活性化支援機構法"
+      ],
+      "law_source_status": "found",
+      "law_source_note": "e-Gov法令API Version 2で法令IDを確認",
+      "law_sources_verified_at": "2026-08-19T07:31:40+09:00",
+      "current_status_resolution": "law_found_article_check_deferred_to_issue_30",
       "verified_at": "2026-08-18T23:35:17+09:00",
       "decision_reason": "現在状態、納付義務者、徴収主体等の根拠不足を解消するまで正本投入を保留する"
     },
@@ -2006,6 +2916,16 @@
         "https://www.mof.go.jp/tax_policy/reference/taxes_and_stamp_revenues/202606.pdf",
         "https://www.mof.go.jp/tax_policy/reference/account/r2025.pdf"
       ],
+      "status_source_urls": [
+        "https://laws.e-gov.go.jp/api/2/law_data/342AC0000000035"
+      ],
+      "law_titles": [
+        "登録免許税法"
+      ],
+      "law_source_status": "found",
+      "law_source_note": "e-Gov法令API Version 2で法令IDを確認",
+      "law_sources_verified_at": "2026-08-19T07:31:40+09:00",
+      "current_status_resolution": "law_found_article_check_deferred_to_issue_30",
       "verified_at": "2026-08-18T22:37:46+09:00",
       "decision_reason": "現在状態、納付義務者、徴収主体等の根拠不足を解消するまで正本投入を保留する"
     },
@@ -2027,6 +2947,16 @@
         "https://www.sangiin.go.jp/japanese/joho1/kousei/syuisyo/212/touh/t212073.htm",
         "https://www.sangiin.go.jp/japanese/joho1/kousei/syuisyo/212/meisai/m212073.htm"
       ],
+      "status_source_urls": [
+        "https://laws.e-gov.go.jp/api/2/law_data/423AC0000000108"
+      ],
+      "law_titles": [
+        "再生可能エネルギー電気の利用の促進に関する特別措置法"
+      ],
+      "law_source_status": "found",
+      "law_source_note": "e-Gov法令API Version 2で法令IDを確認",
+      "law_sources_verified_at": "2026-08-19T07:31:40+09:00",
+      "current_status_resolution": "law_found_article_check_deferred_to_issue_30",
       "verified_at": "2026-08-18T23:35:17+09:00",
       "decision_reason": "現在状態、納付義務者、徴収主体等の根拠不足を解消するまで正本投入を保留する"
     },
@@ -2048,6 +2978,16 @@
         "https://www.sangiin.go.jp/japanese/joho1/kousei/syuisyo/212/touh/t212073.htm",
         "https://www.sangiin.go.jp/japanese/joho1/kousei/syuisyo/212/meisai/m212073.htm"
       ],
+      "status_source_urls": [
+        "https://laws.e-gov.go.jp/api/2/law_data/417AC0000000048"
+      ],
+      "law_titles": [
+        "原子力発電における使用済燃料の再処理等の実施及び廃炉の推進に関する法律"
+      ],
+      "law_source_status": "found",
+      "law_source_note": "e-Gov法令API Version 2で法令IDを確認",
+      "law_sources_verified_at": "2026-08-19T07:31:40+09:00",
+      "current_status_resolution": "law_found_article_check_deferred_to_issue_30",
       "verified_at": "2026-08-18T23:35:17+09:00",
       "decision_reason": "現在状態、納付義務者、徴収主体等の根拠不足を解消するまで正本投入を保留する"
     },
@@ -2069,6 +3009,16 @@
         "https://www.mof.go.jp/tax_policy/summary/condition/a01.htm",
         "https://laws.e-gov.go.jp/law/325AC0000000226"
       ],
+      "status_source_urls": [
+        "https://laws.e-gov.go.jp/api/2/law_data/325AC0000000226"
+      ],
+      "law_titles": [
+        "地方税法"
+      ],
+      "law_source_status": "found",
+      "law_source_note": "e-Gov法令API Version 2で法令IDを確認",
+      "law_sources_verified_at": "2026-08-19T07:31:40+09:00",
+      "current_status_resolution": "law_found_article_check_deferred_to_issue_30",
       "verified_at": "2026-08-18T22:37:46+09:00",
       "decision_reason": "現在状態、納付義務者、徴収主体等の根拠不足を解消するまで正本投入を保留する"
     },
@@ -2089,6 +3039,16 @@
         "https://www.mof.go.jp/tax_policy/summary/condition/a01.htm",
         "https://laws.e-gov.go.jp/law/325AC0000000226"
       ],
+      "status_source_urls": [
+        "https://laws.e-gov.go.jp/api/2/law_data/325AC0000000226"
+      ],
+      "law_titles": [
+        "地方税法"
+      ],
+      "law_source_status": "found",
+      "law_source_note": "e-Gov法令API Version 2で法令IDを確認",
+      "law_sources_verified_at": "2026-08-19T07:31:40+09:00",
+      "current_status_resolution": "law_found_article_check_deferred_to_issue_30",
       "verified_at": "2026-08-18T22:37:46+09:00",
       "decision_reason": "現在状態、納付義務者、徴収主体等の根拠不足を解消するまで正本投入を保留する"
     },
@@ -2111,6 +3071,16 @@
         "https://www.mof.go.jp/tax_policy/reference/taxes_and_stamp_revenues/202606.pdf",
         "https://www.mof.go.jp/tax_policy/reference/account/r2025.pdf"
       ],
+      "status_source_urls": [
+        "https://laws.e-gov.go.jp/api/2/law_data/431AC0000000004"
+      ],
+      "law_titles": [
+        "特別法人事業税及び特別法人事業譲与税に関する法律"
+      ],
+      "law_source_status": "found",
+      "law_source_note": "e-Gov法令API Version 2で法令IDを確認",
+      "law_sources_verified_at": "2026-08-19T07:31:40+09:00",
+      "current_status_resolution": "law_found_article_check_deferred_to_issue_30",
       "verified_at": "2026-08-18T22:37:46+09:00",
       "decision_reason": "現在状態、納付義務者、徴収主体等の根拠不足を解消するまで正本投入を保留する"
     },
@@ -2132,6 +3102,16 @@
         "https://www.mof.go.jp/tax_policy/summary/condition/a01.htm",
         "https://laws.e-gov.go.jp/law/325AC0000000226"
       ],
+      "status_source_urls": [
+        "https://laws.e-gov.go.jp/api/2/law_data/325AC0000000226"
+      ],
+      "law_titles": [
+        "地方税法"
+      ],
+      "law_source_status": "found",
+      "law_source_note": "e-Gov法令API Version 2で法令IDを確認",
+      "law_sources_verified_at": "2026-08-19T07:31:40+09:00",
+      "current_status_resolution": "law_found_article_check_deferred_to_issue_30",
       "verified_at": "2026-08-18T22:37:46+09:00",
       "decision_reason": "現在状態、納付義務者、徴収主体等の根拠不足を解消するまで正本投入を保留する"
     },
@@ -2153,6 +3133,16 @@
         "https://www.mof.go.jp/tax_policy/reference/taxes_and_stamp_revenues/202606.pdf",
         "https://www.mof.go.jp/tax_policy/reference/account/r2025.pdf"
       ],
+      "status_source_urls": [
+        "https://laws.e-gov.go.jp/api/2/law_data/410AC0000000137"
+      ],
+      "law_titles": [
+        "一般会計における債務の承継等に伴い必要な財源の確保に係る特別措置に関する法律"
+      ],
+      "law_source_status": "found",
+      "law_source_note": "e-Gov法令API Version 2で法令IDを確認",
+      "law_sources_verified_at": "2026-08-19T07:31:40+09:00",
+      "current_status_resolution": "law_found_article_check_deferred_to_issue_30",
       "verified_at": "2026-08-18T22:37:46+09:00",
       "decision_reason": "現在状態、納付義務者、徴収主体等の根拠不足を解消するまで正本投入を保留する"
     },
@@ -2175,6 +3165,16 @@
         "https://www.mof.go.jp/tax_policy/reference/taxes_and_stamp_revenues/202606.pdf",
         "https://www.mof.go.jp/tax_policy/reference/account/r2025.pdf"
       ],
+      "status_source_urls": [
+        "https://laws.e-gov.go.jp/api/2/law_data/332AC0000000038"
+      ],
+      "law_titles": [
+        "特別とん税法"
+      ],
+      "law_source_status": "found",
+      "law_source_note": "e-Gov法令API Version 2で法令IDを確認",
+      "law_sources_verified_at": "2026-08-19T07:31:40+09:00",
+      "current_status_resolution": "law_found_article_check_deferred_to_issue_30",
       "verified_at": "2026-08-18T22:37:46+09:00",
       "decision_reason": "現在状態、納付義務者、徴収主体等の根拠不足を解消するまで正本投入を保留する"
     },
@@ -2196,6 +3196,16 @@
         "https://www.sangiin.go.jp/japanese/joho1/kousei/syuisyo/212/touh/t212073.htm",
         "https://www.sangiin.go.jp/japanese/joho1/kousei/syuisyo/212/meisai/m212073.htm"
       ],
+      "status_source_urls": [
+        "https://laws.e-gov.go.jp/api/2/law_data/348AC0000000111"
+      ],
+      "law_titles": [
+        "公害健康被害の補償等に関する法律"
+      ],
+      "law_source_status": "found",
+      "law_source_note": "e-Gov法令API Version 2で法令IDを確認",
+      "law_sources_verified_at": "2026-08-19T07:31:40+09:00",
+      "current_status_resolution": "law_found_article_check_deferred_to_issue_30",
       "verified_at": "2026-08-18T23:35:17+09:00",
       "decision_reason": "現在状態、納付義務者、徴収主体等の根拠不足を解消するまで正本投入を保留する"
     },
@@ -2218,6 +3228,16 @@
         "https://www.mof.go.jp/tax_policy/reference/taxes_and_stamp_revenues/202606.pdf",
         "https://www.mof.go.jp/tax_policy/reference/account/r2025.pdf"
       ],
+      "status_source_urls": [
+        "https://laws.e-gov.go.jp/api/2/law_data/342AC0000000023"
+      ],
+      "law_titles": [
+        "印紙税法"
+      ],
+      "law_source_status": "found",
+      "law_source_note": "e-Gov法令API Version 2で法令IDを確認",
+      "law_sources_verified_at": "2026-08-19T07:31:40+09:00",
+      "current_status_resolution": "law_found_article_check_deferred_to_issue_30",
       "verified_at": "2026-08-18T22:37:46+09:00",
       "decision_reason": "現在状態、納付義務者、徴収主体等の根拠不足を解消するまで正本投入を保留する"
     },
@@ -2238,6 +3258,16 @@
         "https://www.sangiin.go.jp/japanese/joho1/kousei/syuisyo/212/touh/t212073.htm",
         "https://www.sangiin.go.jp/japanese/joho1/kousei/syuisyo/212/meisai/m212073.htm"
       ],
+      "status_source_urls": [
+        "https://laws.e-gov.go.jp/api/2/law_data/426AC0000000133"
+      ],
+      "law_titles": [
+        "原子力損害の補完的な補償に関する条約の実施に伴う原子力損害賠償資金の補助等に関する法律"
+      ],
+      "law_source_status": "found",
+      "law_source_note": "e-Gov法令API Version 2で法令IDを確認",
+      "law_sources_verified_at": "2026-08-19T07:31:40+09:00",
+      "current_status_resolution": "law_found_article_check_deferred_to_issue_30",
       "verified_at": "2026-08-18T23:35:17+09:00",
       "decision_reason": "現在状態、納付義務者、徴収主体等の根拠不足を解消するまで正本投入を保留する"
     },
@@ -2258,6 +3288,16 @@
         "https://www.sangiin.go.jp/japanese/joho1/kousei/syuisyo/212/touh/t212073.htm",
         "https://www.sangiin.go.jp/japanese/joho1/kousei/syuisyo/212/meisai/m212073.htm"
       ],
+      "status_source_urls": [
+        "https://laws.e-gov.go.jp/api/2/law_data/426AC0000000133"
+      ],
+      "law_titles": [
+        "原子力損害の補完的な補償に関する条約の実施に伴う原子力損害賠償資金の補助等に関する法律"
+      ],
+      "law_source_status": "found",
+      "law_source_note": "e-Gov法令API Version 2で法令IDを確認",
+      "law_sources_verified_at": "2026-08-19T07:31:40+09:00",
+      "current_status_resolution": "law_found_article_check_deferred_to_issue_30",
       "verified_at": "2026-08-18T23:35:17+09:00",
       "decision_reason": "現在状態、納付義務者、徴収主体等の根拠不足を解消するまで正本投入を保留する"
     },
@@ -2278,6 +3318,16 @@
         "https://www.sangiin.go.jp/japanese/joho1/kousei/syuisyo/212/touh/t212073.htm",
         "https://www.sangiin.go.jp/japanese/joho1/kousei/syuisyo/212/meisai/m212073.htm"
       ],
+      "status_source_urls": [
+        "https://laws.e-gov.go.jp/api/2/law_data/350AC0000000095"
+      ],
+      "law_titles": [
+        "船舶油濁等損害賠償保障法"
+      ],
+      "law_source_status": "found",
+      "law_source_note": "e-Gov法令API Version 2で法令IDを確認",
+      "law_sources_verified_at": "2026-08-19T07:31:40+09:00",
+      "current_status_resolution": "law_found_article_check_deferred_to_issue_30",
       "verified_at": "2026-08-18T23:35:17+09:00",
       "decision_reason": "現在状態、納付義務者、徴収主体等の根拠不足を解消するまで正本投入を保留する"
     },
@@ -2299,6 +3349,16 @@
         "https://www.sangiin.go.jp/japanese/joho1/kousei/syuisyo/212/touh/t212073.htm",
         "https://www.sangiin.go.jp/japanese/joho1/kousei/syuisyo/212/meisai/m212073.htm"
       ],
+      "status_source_urls": [
+        "https://laws.e-gov.go.jp/api/2/law_data/421AC0000000064"
+      ],
+      "law_titles": [
+        "特定地域及び準特定地域における一般乗用旅客自動車運送事業の適正化及び活性化に関する特別措置法"
+      ],
+      "law_source_status": "found",
+      "law_source_note": "e-Gov法令API Version 2で法令IDを確認",
+      "law_sources_verified_at": "2026-08-19T07:31:40+09:00",
+      "current_status_resolution": "law_found_article_check_deferred_to_issue_30",
       "verified_at": "2026-08-18T23:35:17+09:00",
       "decision_reason": "現在状態、納付義務者、徴収主体等の根拠不足を解消するまで正本投入を保留する"
     },
@@ -2319,6 +3379,16 @@
         "https://www.sangiin.go.jp/japanese/joho1/kousei/syuisyo/212/touh/t212073.htm",
         "https://www.sangiin.go.jp/japanese/joho1/kousei/syuisyo/212/meisai/m212073.htm"
       ],
+      "status_source_urls": [
+        "https://laws.e-gov.go.jp/api/2/law_data/502AC0000000053"
+      ],
+      "law_titles": [
+        "聴覚障害者等による電話の利用の円滑化に関する法律"
+      ],
+      "law_source_status": "found",
+      "law_source_note": "e-Gov法令API Version 2で法令IDを確認",
+      "law_sources_verified_at": "2026-08-19T07:31:40+09:00",
+      "current_status_resolution": "law_found_article_check_deferred_to_issue_30",
       "verified_at": "2026-08-18T23:35:17+09:00",
       "decision_reason": "現在状態、納付義務者、徴収主体等の根拠不足を解消するまで正本投入を保留する"
     },
@@ -2341,6 +3411,16 @@
         "https://www.mof.go.jp/tax_policy/reference/taxes_and_stamp_revenues/202606.pdf",
         "https://www.mof.go.jp/tax_policy/reference/account/r2025.pdf"
       ],
+      "status_source_urls": [
+        "https://laws.e-gov.go.jp/api/2/law_data/359AC0000000072"
+      ],
+      "law_titles": [
+        "たばこ税法"
+      ],
+      "law_source_status": "found",
+      "law_source_note": "e-Gov法令API Version 2で法令IDを確認",
+      "law_sources_verified_at": "2026-08-19T07:31:40+09:00",
+      "current_status_resolution": "law_found_article_check_deferred_to_issue_30",
       "verified_at": "2026-08-18T22:37:46+09:00",
       "decision_reason": "現在状態、納付義務者、徴収主体等の根拠不足を解消するまで正本投入を保留する"
     },
@@ -2363,6 +3443,16 @@
         "https://www.mof.go.jp/tax_policy/reference/taxes_and_stamp_revenues/202606.pdf",
         "https://www.mof.go.jp/tax_policy/reference/account/r2025.pdf"
       ],
+      "status_source_urls": [
+        "https://laws.e-gov.go.jp/api/2/law_data/332AC0000000037"
+      ],
+      "law_titles": [
+        "とん税法"
+      ],
+      "law_source_status": "found",
+      "law_source_note": "e-Gov法令API Version 2で法令IDを確認",
+      "law_sources_verified_at": "2026-08-19T07:31:40+09:00",
+      "current_status_resolution": "law_found_article_check_deferred_to_issue_30",
       "verified_at": "2026-08-18T22:37:46+09:00",
       "decision_reason": "現在状態、納付義務者、徴収主体等の根拠不足を解消するまで正本投入を保留する"
     },
@@ -2384,6 +3474,16 @@
         "https://www.sangiin.go.jp/japanese/joho1/kousei/syuisyo/212/touh/t212073.htm",
         "https://www.sangiin.go.jp/japanese/joho1/kousei/syuisyo/212/meisai/m212073.htm"
       ],
+      "status_source_urls": [
+        "https://laws.e-gov.go.jp/api/2/law_data/412AC0000000117"
+      ],
+      "law_titles": [
+        "特定放射性廃棄物の最終処分に関する法律"
+      ],
+      "law_source_status": "found",
+      "law_source_note": "e-Gov法令API Version 2で法令IDを確認",
+      "law_sources_verified_at": "2026-08-19T07:31:40+09:00",
+      "current_status_resolution": "law_found_article_check_deferred_to_issue_30",
       "verified_at": "2026-08-18T23:35:17+09:00",
       "decision_reason": "現在状態、納付義務者、徴収主体等の根拠不足を解消するまで正本投入を保留する"
     },
@@ -2406,6 +3506,16 @@
         "https://www.sangiin.go.jp/japanese/joho1/kousei/syuisyo/212/touh/t212073.htm",
         "https://www.sangiin.go.jp/japanese/joho1/kousei/syuisyo/212/meisai/m212073.htm"
       ],
+      "status_source_urls": [
+        "https://laws.e-gov.go.jp/api/2/law_data/359AC0000000086"
+      ],
+      "law_titles": [
+        "電気通信事業法"
+      ],
+      "law_source_status": "found",
+      "law_source_note": "e-Gov法令API Version 2で法令IDを確認",
+      "law_sources_verified_at": "2026-08-19T07:31:40+09:00",
+      "current_status_resolution": "law_found_article_check_deferred_to_issue_30",
       "verified_at": "2026-08-18T23:35:17+09:00",
       "decision_reason": "現在状態、納付義務者、徴収主体等の根拠不足を解消するまで正本投入を保留する"
     },
@@ -2426,6 +3536,16 @@
         "https://www.sangiin.go.jp/japanese/joho1/kousei/syuisyo/212/touh/t212073.htm",
         "https://www.sangiin.go.jp/japanese/joho1/kousei/syuisyo/212/meisai/m212073.htm"
       ],
+      "status_source_urls": [
+        "https://laws.e-gov.go.jp/api/2/law_data/407AC0000000039"
+      ],
+      "law_titles": [
+        "電線共同溝の整備等に関する特別措置法"
+      ],
+      "law_source_status": "found",
+      "law_source_note": "e-Gov法令API Version 2で法令IDを確認",
+      "law_sources_verified_at": "2026-08-19T07:31:40+09:00",
+      "current_status_resolution": "law_found_article_check_deferred_to_issue_30",
       "verified_at": "2026-08-18T23:35:17+09:00",
       "decision_reason": "現在状態、納付義務者、徴収主体等の根拠不足を解消するまで正本投入を保留する"
     },
@@ -2446,6 +3566,16 @@
         "https://www.sangiin.go.jp/japanese/joho1/kousei/syuisyo/212/touh/t212073.htm",
         "https://www.sangiin.go.jp/japanese/joho1/kousei/syuisyo/212/meisai/m212073.htm"
       ],
+      "status_source_urls": [
+        "https://laws.e-gov.go.jp/api/2/law_data/407AC0000000039"
+      ],
+      "law_titles": [
+        "電線共同溝の整備等に関する特別措置法"
+      ],
+      "law_source_status": "found",
+      "law_source_note": "e-Gov法令API Version 2で法令IDを確認",
+      "law_sources_verified_at": "2026-08-19T07:31:40+09:00",
+      "current_status_resolution": "law_found_article_check_deferred_to_issue_30",
       "verified_at": "2026-08-18T23:35:17+09:00",
       "decision_reason": "現在状態、納付義務者、徴収主体等の根拠不足を解消するまで正本投入を保留する"
     },
@@ -2466,6 +3596,16 @@
         "https://www.sangiin.go.jp/japanese/joho1/kousei/syuisyo/212/touh/t212073.htm",
         "https://www.sangiin.go.jp/japanese/joho1/kousei/syuisyo/212/meisai/m212073.htm"
       ],
+      "status_source_urls": [
+        "https://laws.e-gov.go.jp/api/2/law_data/407AC0000000039"
+      ],
+      "law_titles": [
+        "電線共同溝の整備等に関する特別措置法"
+      ],
+      "law_source_status": "found",
+      "law_source_note": "e-Gov法令API Version 2で法令IDを確認",
+      "law_sources_verified_at": "2026-08-19T07:31:40+09:00",
+      "current_status_resolution": "law_found_article_check_deferred_to_issue_30",
       "verified_at": "2026-08-18T23:35:17+09:00",
       "decision_reason": "現在状態、納付義務者、徴収主体等の根拠不足を解消するまで正本投入を保留する"
     },
@@ -2486,6 +3626,16 @@
         "https://www.mof.go.jp/tax_policy/summary/condition/a01.htm",
         "https://laws.e-gov.go.jp/law/325AC0000000226"
       ],
+      "status_source_urls": [
+        "https://laws.e-gov.go.jp/api/2/law_data/325AC0000000226"
+      ],
+      "law_titles": [
+        "地方税法"
+      ],
+      "law_source_status": "found",
+      "law_source_note": "e-Gov法令API Version 2で法令IDを確認",
+      "law_sources_verified_at": "2026-08-19T07:31:40+09:00",
+      "current_status_resolution": "law_found_article_check_deferred_to_issue_30",
       "verified_at": "2026-08-18T22:37:46+09:00",
       "decision_reason": "現在状態、納付義務者、徴収主体等の根拠不足を解消するまで正本投入を保留する"
     },
@@ -2506,6 +3656,16 @@
         "https://www.sangiin.go.jp/japanese/joho1/kousei/syuisyo/212/touh/t212073.htm",
         "https://www.sangiin.go.jp/japanese/joho1/kousei/syuisyo/212/meisai/m212073.htm"
       ],
+      "status_source_urls": [
+        "https://laws.e-gov.go.jp/api/2/law_data/414AC0000000182"
+      ],
+      "law_titles": [
+        "独立行政法人水資源機構法"
+      ],
+      "law_source_status": "found",
+      "law_source_note": "e-Gov法令API Version 2で法令IDを確認",
+      "law_sources_verified_at": "2026-08-19T07:31:40+09:00",
+      "current_status_resolution": "law_found_article_check_deferred_to_issue_30",
       "verified_at": "2026-08-18T23:35:17+09:00",
       "decision_reason": "現在状態、納付義務者、徴収主体等の根拠不足を解消するまで正本投入を保留する"
     },
@@ -2527,6 +3687,16 @@
         "https://www.sangiin.go.jp/japanese/joho1/kousei/syuisyo/212/touh/t212073.htm",
         "https://www.sangiin.go.jp/japanese/joho1/kousei/syuisyo/212/meisai/m212073.htm"
       ],
+      "status_source_urls": [
+        "https://laws.e-gov.go.jp/api/2/law_data/322AC0000000050"
+      ],
+      "law_titles": [
+        "労働者災害補償保険法"
+      ],
+      "law_source_status": "found",
+      "law_source_note": "e-Gov法令API Version 2で法令IDを確認",
+      "law_sources_verified_at": "2026-08-19T07:31:40+09:00",
+      "current_status_resolution": "law_found_article_check_deferred_to_issue_30",
       "verified_at": "2026-08-18T23:35:17+09:00",
       "decision_reason": "現在状態、納付義務者、徴収主体等の根拠不足を解消するまで正本投入を保留する"
     }
