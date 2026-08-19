@@ -10,20 +10,60 @@
       "updated_at": "2026-08-19T00:00:00+09:00",
       "source_url": "https://laws.e-gov.go.jp/api/2/law_data/363AC0000000108",
       "taxpayer_rules": [
-        {"role": "business_operator", "article_num": "5", "paragraph_num": "1", "raw": "事業者は、国内において行つた課税資産の譲渡等につき、消費税を納める義務がある。"},
-        {"role": "bonded_goods_withdrawer", "article_num": "5", "paragraph_num": "2", "raw": "外国貨物を保税地域から引き取る者は、課税貨物につき、消費税を納める義務がある。"}
+        {
+          "role": "business_operator",
+          "article_num": "5",
+          "paragraph_num": "1",
+          "raw": "事業者は、国内において行つた課税資産の譲渡等につき、消費税を納める義務がある。"
+        },
+        {
+          "role": "bonded_goods_withdrawer",
+          "article_num": "5",
+          "paragraph_num": "2",
+          "raw": "外国貨物を保税地域から引き取る者は、課税貨物につき、消費税を納める義務がある。"
+        }
       ],
       "taxable_scope_rules": [
-        {"article_num": "4", "paragraph_num": "1", "raw": "国内において事業者が行つた資産の譲渡等には消費税を課する。"},
-        {"article_num": "4", "paragraph_num": "2", "raw": "保税地域から引き取られる外国貨物には消費税を課する。"}
+        {
+          "article_num": "4",
+          "paragraph_num": "1",
+          "raw": "国内において事業者が行つた資産の譲渡等には消費税を課する。"
+        },
+        {
+          "article_num": "4",
+          "paragraph_num": "2",
+          "raw": "保税地域から引き取られる外国貨物には消費税を課する。"
+        }
       ],
       "tax_base_rules": [
-        {"article_num": "28", "paragraph_num": "1", "raw": "課税資産の譲渡等に係る消費税の課税標準は、課税資産の譲渡等の対価の額とする。"},
-        {"article_num": "28", "paragraph_num": "2", "raw": "特定課税仕入れに係る消費税の課税標準は、特定課税仕入れに係る支払対価の額とする。"}
+        {
+          "article_num": "28",
+          "paragraph_num": "1",
+          "raw": "課税資産の譲渡等に係る消費税の課税標準は、課税資産の譲渡等の対価の額とする。"
+        },
+        {
+          "article_num": "28",
+          "paragraph_num": "2",
+          "raw": "特定課税仕入れに係る消費税の課税標準は、特定課税仕入れに係る支払対価の額とする。"
+        }
       ],
       "rates": [
-        {"rate_type": "standard", "value": 7.8, "unit": "percent", "article_num": "29", "item_num": "1", "raw": "課税資産の譲渡等　百分の七・八"},
-        {"rate_type": "reduced", "value": 6.24, "unit": "percent", "article_num": "29", "item_num": "2", "raw": "軽減対象課税資産の譲渡等　百分の六・二四"}
+        {
+          "rate_type": "standard",
+          "value": 7.8,
+          "unit": "percent",
+          "article_num": "29",
+          "item_num": "1",
+          "raw": "課税資産の譲渡等　百分の七・八"
+        },
+        {
+          "rate_type": "reduced",
+          "value": 6.24,
+          "unit": "percent",
+          "article_num": "29",
+          "item_num": "2",
+          "raw": "軽減対象課税資産の譲渡等　百分の六・二四"
+        }
       ]
     },
     {
@@ -31,21 +71,69 @@
       "tax_id": "automobile-tax",
       "law_id": "325AC0000000226",
       "law_title": "地方税法",
-      "revision_id": "325AC0000000226_fixture",
-      "updated_at": "2026-08-19T00:00:00+09:00",
+      "revision_id": "325AC0000000226_20260731_508AC0000000002",
+      "updated_at": "2026-06-16T16:03:55+09:00",
       "source_url": "https://laws.e-gov.go.jp/api/2/law_data/325AC0000000226",
       "taxpayer_rules": [
-        {"role": "owner", "article_num": "146", "paragraph_num": "1", "raw": "自動車税は、自動車の主たる定置場所在の道府県において、その所有者に課する。"},
-        {"role": "user_when_owner_exempt", "article_num": "146", "paragraph_num": "2", "raw": "所有者に課することができない場合は、当該自動車の使用者に課する。"}
+        {
+          "role": "owner",
+          "article_num": "146",
+          "paragraph_num": "1",
+          "raw": "自動車税は、自動車の主たる定置場所在の道府県において、その所有者に課する。"
+        },
+        {
+          "role": "user_when_owner_exempt",
+          "article_num": "146",
+          "paragraph_num": "2",
+          "raw": "所有者に課することができない場合は、当該自動車の使用者に課する。"
+        }
       ],
       "rates": [
-        {"category_path": ["一　乗用車", "イ　営業用"], "condition": "（１）　総排気量が一リットル以下のもの", "amount_yen": 7500, "amount_raw": "七千五百円", "period": "annual", "article_num": "154"},
-        {"category_path": ["一　乗用車", "ロ　自家用"], "condition": "（１）　総排気量が一リットル以下のもの", "amount_yen": 25000, "amount_raw": "二万五千円", "period": "annual", "article_num": "154"},
-        {"category_path": ["二　トラック", "イ　営業用"], "condition": "（１）　最大積載量が一トン以下のもの", "amount_yen": 6500, "amount_raw": "六千五百円", "period": "annual", "article_num": "154"}
+        {
+          "category_path": [
+            "一　乗用車",
+            "イ　営業用"
+          ],
+          "condition": "（１）　総排気量が一リットル以下のもの",
+          "amount_yen": 7500,
+          "amount_raw": "七千五百円",
+          "period": "annual",
+          "article_num": "154"
+        },
+        {
+          "category_path": [
+            "一　乗用車",
+            "ロ　自家用"
+          ],
+          "condition": "（１）　総排気量が一リットル以下のもの",
+          "amount_yen": 25000,
+          "amount_raw": "二万五千円",
+          "period": "annual",
+          "article_num": "154"
+        },
+        {
+          "category_path": [
+            "二　トラック",
+            "イ　営業用"
+          ],
+          "condition": "（１）　最大積載量が一トン以下のもの",
+          "amount_yen": 6500,
+          "amount_raw": "六千五百円",
+          "period": "annual",
+          "article_num": "154"
+        }
       ],
       "rate_adjustment_rules": [
-        {"article_num": "154", "paragraph_num": "2", "raw": "一定のトラックには区分に応じた額を加算する。"},
-        {"article_num": "154", "paragraph_num": "4", "raw": "道府県は標準税率の一・五倍を超える税率で課することができない。"}
+        {
+          "article_num": "154",
+          "paragraph_num": "2",
+          "raw": "一定のトラックには区分に応じた額を加算する。"
+        },
+        {
+          "article_num": "154",
+          "paragraph_num": "4",
+          "raw": "道府県は標準税率の一・五倍を超える税率で課することができない。"
+        }
       ]
     }
   ]
