@@ -36,6 +36,7 @@ reports/      生成レポート
 ## データの境界
 
 - `config/sources.yaml` は巡回先と利用条件を管理する情報源レジストリです。
+- `config/monitoring.yaml` は正本制度ごとの監視可否、複数source、対象ID、抽出対象を管理します。詳細は[初期マスタ監視設定](docs/monitoring-configuration.md)を参照してください。
 - `data/burdens`、`data/changes`、`data/events`、`data/phases`、`data/revenue`、`data/reconciliation` はレビュー後にGitで履歴管理する正本です。
 - 初期マスタの投入件数と未解決事項は[初期マスタ投入・検証レポート](docs/initial-master-import-report.md)を参照してください。
 - `data/candidates` は初期マスタへ昇格する前の調査候補です。Schema検証とGitレビューの対象ですが、確定制度マスタや配布対象として扱いません。適合性と昇格条件は[初期マスタ候補のSchema適合性確認](docs/initial-master-schema-fit.md)、税以外の候補の収集範囲は[税以外の公的負担候補の収集・照合](docs/public-burden-candidate-reconciliation.md)、統合判定は[初期マスタ投入対象の統合判定](docs/initial-master-selection.md)を参照してください。

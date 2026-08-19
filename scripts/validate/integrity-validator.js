@@ -70,5 +70,18 @@ export function validateIntegrity(collections) {
     requireReference(indexes.burdens, mapping.tax_id, `${mapping.mapping_id}.tax_id`, errors);
   }
 
+  if (collections.monitoringTargets !== undefined) {
+    const monitoredTaxIds = new Set();
+    for (const target of collections.monitoringTargets) {
+      requireReference(indexes.burdens, target.tax_id, `${target.tax_id}.monitoring.tax_id`, errors);
+      if (monitoredTaxIds.has(target.tax_id)) errors.push(`monitoring tax_id: duplicate ${target.tax_id}`);
+      monitoredTaxIds.add(target.tax_id);
+      for (const source of target.sources) requireReference(indexes.sources, source.source_id, `${target.tax_id}.monitoring.source_id`, errors);
+    }
+    for (const burden of collections.burdens ?? []) {
+      if (!monitoredTaxIds.has(burden.tax_id)) errors.push(`${burden.tax_id}: missing monitoring target`);
+    }
+  }
+
   return errors;
 }
