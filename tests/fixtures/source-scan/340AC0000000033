@@ -1,0 +1,2407 @@
+{
+  "law_info": {
+    "law_type": "Act",
+    "law_id": "340AC0000000033",
+    "law_num": "昭和四十年法律第三十三号",
+    "law_num_era": "Showa",
+    "law_num_year": 40,
+    "law_num_type": "Act",
+    "law_num_num": "033",
+    "promulgation_date": "1965-03-31"
+  },
+  "revision_info": {
+    "law_revision_id": "340AC0000000033_20260812_508AC0000000064",
+    "law_type": "Act",
+    "law_title": "所得税法",
+    "law_title_kana": "しょとくぜいほう",
+    "abbrev": "",
+    "category": "国税",
+    "updated": "2026-07-23T13:34:50+09:00",
+    "amendment_promulgate_date": "2026-07-23",
+    "amendment_enforcement_date": "2026-08-12",
+    "amendment_enforcement_comment": null,
+    "amendment_scheduled_enforcement_date": null,
+    "amendment_law_id": "508AC0000000064",
+    "amendment_law_title": "金融商品取引法及び資金決済に関する法律の一部を改正する法律",
+    "amendment_law_title_kana": null,
+    "amendment_law_num": "令和八年法律第六十四号",
+    "amendment_type": "3",
+    "repeal_status": "None",
+    "repeal_date": null,
+    "remain_in_force": false,
+    "mission": "New",
+    "current_revision_status": "CurrentEnforced"
+  },
+  "law_full_text": {
+    "tag": "Law",
+    "children": [
+      {
+        "tag": "MainProvision",
+        "children": [
+          {
+            "tag": "Article",
+            "attr": {
+              "Num": "5"
+            },
+            "children": [
+              {
+                "tag": "ArticleCaption",
+                "attr": {},
+                "children": [
+                  "（納税義務者）"
+                ]
+              },
+              {
+                "tag": "ArticleTitle",
+                "attr": {},
+                "children": [
+                  "第五条"
+                ]
+              },
+              {
+                "tag": "Paragraph",
+                "attr": {
+                  "Num": "1"
+                },
+                "children": [
+                  {
+                    "tag": "ParagraphNum",
+                    "attr": {},
+                    "children": []
+                  },
+                  {
+                    "tag": "ParagraphSentence",
+                    "attr": {},
+                    "children": [
+                      {
+                        "tag": "Sentence",
+                        "attr": {
+                          "Num": "1"
+                        },
+                        "children": [
+                          "居住者は、この法律により、所得税を納める義務がある。"
+                        ]
+                      }
+                    ]
+                  }
+                ]
+              },
+              {
+                "tag": "Paragraph",
+                "attr": {
+                  "Num": "2"
+                },
+                "children": [
+                  {
+                    "tag": "ParagraphNum",
+                    "attr": {},
+                    "children": [
+                      "２"
+                    ]
+                  },
+                  {
+                    "tag": "ParagraphSentence",
+                    "attr": {},
+                    "children": [
+                      {
+                        "tag": "Sentence",
+                        "attr": {
+                          "Num": "1"
+                        },
+                        "children": [
+                          "非居住者は、次に掲げる場合には、この法律により、所得税を納める義務がある。"
+                        ]
+                      }
+                    ]
+                  },
+                  {
+                    "tag": "Item",
+                    "attr": {
+                      "Num": "1"
+                    },
+                    "children": [
+                      {
+                        "tag": "ItemTitle",
+                        "attr": {},
+                        "children": [
+                          "一"
+                        ]
+                      },
+                      {
+                        "tag": "ItemSentence",
+                        "attr": {},
+                        "children": [
+                          {
+                            "tag": "Sentence",
+                            "attr": {
+                              "Num": "1"
+                            },
+                            "children": [
+                              "第百六十一条第一項（国内源泉所得）に規定する国内源泉所得（次号において「国内源泉所得」という。）を有するとき（同号に掲げる場合を除く。）。"
+                            ]
+                          }
+                        ]
+                      }
+                    ]
+                  },
+                  {
+                    "tag": "Item",
+                    "attr": {
+                      "Num": "2"
+                    },
+                    "children": [
+                      {
+                        "tag": "ItemTitle",
+                        "attr": {},
+                        "children": [
+                          "二"
+                        ]
+                      },
+                      {
+                        "tag": "ItemSentence",
+                        "attr": {},
+                        "children": [
+                          {
+                            "tag": "Sentence",
+                            "attr": {
+                              "Num": "1"
+                            },
+                            "children": [
+                              "その引受けを行う法人課税信託の信託財産に帰せられる内国法人課税所得（第百七十四条各号（内国法人に係る所得税の課税標準）に掲げる利子等、配当等、給付補塡金、利息、利益、差益、利益の分配又は賞金をいう。以下この条において同じ。）の支払を国内において受けるとき又は当該信託財産に帰せられる外国法人課税所得（国内源泉所得のうち第百六十一条第一項第四号から第十一号まで又は第十三号から第十六号までに掲げるものをいう。以下この条において同じ。）の支払を受けるとき。"
+                            ]
+                          }
+                        ]
+                      }
+                    ]
+                  }
+                ]
+              },
+              {
+                "tag": "Paragraph",
+                "attr": {
+                  "Num": "3"
+                },
+                "children": [
+                  {
+                    "tag": "ParagraphNum",
+                    "attr": {},
+                    "children": [
+                      "３"
+                    ]
+                  },
+                  {
+                    "tag": "ParagraphSentence",
+                    "attr": {},
+                    "children": [
+                      {
+                        "tag": "Sentence",
+                        "attr": {
+                          "Num": "1"
+                        },
+                        "children": [
+                          "内国法人は、国内において内国法人課税所得の支払を受けるとき又はその引受けを行う法人課税信託の信託財産に帰せられる外国法人課税所得の支払を受けるときは、この法律により、所得税を納める義務がある。"
+                        ]
+                      }
+                    ]
+                  }
+                ]
+              },
+              {
+                "tag": "Paragraph",
+                "attr": {
+                  "Num": "4"
+                },
+                "children": [
+                  {
+                    "tag": "ParagraphNum",
+                    "attr": {},
+                    "children": [
+                      "４"
+                    ]
+                  },
+                  {
+                    "tag": "ParagraphSentence",
+                    "attr": {},
+                    "children": [
+                      {
+                        "tag": "Sentence",
+                        "attr": {
+                          "Num": "1"
+                        },
+                        "children": [
+                          "外国法人は、外国法人課税所得の支払を受けるとき又はその引受けを行う法人課税信託の信託財産に帰せられる内国法人課税所得の支払を国内において受けるときは、この法律により、所得税を納める義務がある。"
+                        ]
+                      }
+                    ]
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "tag": "Article",
+            "attr": {
+              "Num": "7"
+            },
+            "children": [
+              {
+                "tag": "ArticleCaption",
+                "attr": {},
+                "children": [
+                  "（課税所得の範囲）"
+                ]
+              },
+              {
+                "tag": "ArticleTitle",
+                "attr": {},
+                "children": [
+                  "第七条"
+                ]
+              },
+              {
+                "tag": "Paragraph",
+                "attr": {
+                  "Num": "1"
+                },
+                "children": [
+                  {
+                    "tag": "ParagraphNum",
+                    "attr": {},
+                    "children": []
+                  },
+                  {
+                    "tag": "ParagraphSentence",
+                    "attr": {},
+                    "children": [
+                      {
+                        "tag": "Sentence",
+                        "attr": {
+                          "Num": "1"
+                        },
+                        "children": [
+                          "所得税は、次の各号に掲げる者の区分に応じ当該各号に定める所得について課する。"
+                        ]
+                      }
+                    ]
+                  },
+                  {
+                    "tag": "Item",
+                    "attr": {
+                      "Num": "1"
+                    },
+                    "children": [
+                      {
+                        "tag": "ItemTitle",
+                        "attr": {},
+                        "children": [
+                          "一"
+                        ]
+                      },
+                      {
+                        "tag": "ItemSentence",
+                        "attr": {},
+                        "children": [
+                          {
+                            "tag": "Column",
+                            "attr": {
+                              "Num": "1"
+                            },
+                            "children": [
+                              {
+                                "tag": "Sentence",
+                                "attr": {
+                                  "Num": "1"
+                                },
+                                "children": [
+                                  "非永住者以外の居住者"
+                                ]
+                              }
+                            ]
+                          },
+                          {
+                            "tag": "Column",
+                            "attr": {
+                              "Num": "2"
+                            },
+                            "children": [
+                              {
+                                "tag": "Sentence",
+                                "attr": {
+                                  "Num": "1"
+                                },
+                                "children": [
+                                  "全ての所得"
+                                ]
+                              }
+                            ]
+                          }
+                        ]
+                      }
+                    ]
+                  },
+                  {
+                    "tag": "Item",
+                    "attr": {
+                      "Num": "2"
+                    },
+                    "children": [
+                      {
+                        "tag": "ItemTitle",
+                        "attr": {},
+                        "children": [
+                          "二"
+                        ]
+                      },
+                      {
+                        "tag": "ItemSentence",
+                        "attr": {},
+                        "children": [
+                          {
+                            "tag": "Column",
+                            "attr": {
+                              "Num": "1"
+                            },
+                            "children": [
+                              {
+                                "tag": "Sentence",
+                                "attr": {
+                                  "Num": "1"
+                                },
+                                "children": [
+                                  "非永住者"
+                                ]
+                              }
+                            ]
+                          },
+                          {
+                            "tag": "Column",
+                            "attr": {
+                              "Num": "2"
+                            },
+                            "children": [
+                              {
+                                "tag": "Sentence",
+                                "attr": {
+                                  "Num": "1"
+                                },
+                                "children": [
+                                  "第九十五条第一項（外国税額控除）に規定する国外源泉所得（国外にある有価証券の譲渡により生ずる所得として政令で定めるものを含む。以下この号において「国外源泉所得」という。）以外の所得及び国外源泉所得で国内において支払われ、又は国外から送金されたもの"
+                                ]
+                              }
+                            ]
+                          }
+                        ]
+                      }
+                    ]
+                  },
+                  {
+                    "tag": "Item",
+                    "attr": {
+                      "Num": "3"
+                    },
+                    "children": [
+                      {
+                        "tag": "ItemTitle",
+                        "attr": {},
+                        "children": [
+                          "三"
+                        ]
+                      },
+                      {
+                        "tag": "ItemSentence",
+                        "attr": {},
+                        "children": [
+                          {
+                            "tag": "Column",
+                            "attr": {
+                              "Num": "1"
+                            },
+                            "children": [
+                              {
+                                "tag": "Sentence",
+                                "attr": {
+                                  "Num": "1"
+                                },
+                                "children": [
+                                  "非居住者"
+                                ]
+                              }
+                            ]
+                          },
+                          {
+                            "tag": "Column",
+                            "attr": {
+                              "Num": "2"
+                            },
+                            "children": [
+                              {
+                                "tag": "Sentence",
+                                "attr": {
+                                  "Num": "1"
+                                },
+                                "children": [
+                                  "第百六十四条第一項各号（非居住者に対する課税の方法）に掲げる非居住者の区分に応じそれぞれ同項各号及び同条第二項各号に定める国内源泉所得"
+                                ]
+                              }
+                            ]
+                          }
+                        ]
+                      }
+                    ]
+                  },
+                  {
+                    "tag": "Item",
+                    "attr": {
+                      "Num": "4"
+                    },
+                    "children": [
+                      {
+                        "tag": "ItemTitle",
+                        "attr": {},
+                        "children": [
+                          "四"
+                        ]
+                      },
+                      {
+                        "tag": "ItemSentence",
+                        "attr": {},
+                        "children": [
+                          {
+                            "tag": "Column",
+                            "attr": {
+                              "Num": "1"
+                            },
+                            "children": [
+                              {
+                                "tag": "Sentence",
+                                "attr": {
+                                  "Num": "1"
+                                },
+                                "children": [
+                                  "内国法人"
+                                ]
+                              }
+                            ]
+                          },
+                          {
+                            "tag": "Column",
+                            "attr": {
+                              "Num": "2"
+                            },
+                            "children": [
+                              {
+                                "tag": "Sentence",
+                                "attr": {
+                                  "Num": "1"
+                                },
+                                "children": [
+                                  "国内において支払われる第百七十四条各号（内国法人に係る所得税の課税標準）に掲げる利子等、配当等、給付補塡金、利息、利益、差益、利益の分配及び賞金"
+                                ]
+                              }
+                            ]
+                          }
+                        ]
+                      }
+                    ]
+                  },
+                  {
+                    "tag": "Item",
+                    "attr": {
+                      "Num": "5"
+                    },
+                    "children": [
+                      {
+                        "tag": "ItemTitle",
+                        "attr": {},
+                        "children": [
+                          "五"
+                        ]
+                      },
+                      {
+                        "tag": "ItemSentence",
+                        "attr": {},
+                        "children": [
+                          {
+                            "tag": "Column",
+                            "attr": {
+                              "Num": "1"
+                            },
+                            "children": [
+                              {
+                                "tag": "Sentence",
+                                "attr": {
+                                  "Num": "1"
+                                },
+                                "children": [
+                                  "外国法人"
+                                ]
+                              }
+                            ]
+                          },
+                          {
+                            "tag": "Column",
+                            "attr": {
+                              "Num": "2"
+                            },
+                            "children": [
+                              {
+                                "tag": "Sentence",
+                                "attr": {
+                                  "Num": "1"
+                                },
+                                "children": [
+                                  "第百六十一条第一項（国内源泉所得）に規定する国内源泉所得のうち同項第四号から第十一号まで及び第十三号から第十六号までに掲げるもの"
+                                ]
+                              }
+                            ]
+                          }
+                        ]
+                      }
+                    ]
+                  }
+                ]
+              },
+              {
+                "tag": "Paragraph",
+                "attr": {
+                  "Num": "2"
+                },
+                "children": [
+                  {
+                    "tag": "ParagraphNum",
+                    "attr": {},
+                    "children": [
+                      "２"
+                    ]
+                  },
+                  {
+                    "tag": "ParagraphSentence",
+                    "attr": {},
+                    "children": [
+                      {
+                        "tag": "Sentence",
+                        "attr": {
+                          "Num": "1"
+                        },
+                        "children": [
+                          "前項第二号に掲げる所得の範囲に関し必要な事項は、政令で定める。"
+                        ]
+                      }
+                    ]
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "tag": "Article",
+            "attr": {
+              "Num": "8"
+            },
+            "children": [
+              {
+                "tag": "ArticleCaption",
+                "attr": {},
+                "children": [
+                  "（納税義務者の区分が異動した場合の課税所得の範囲）"
+                ]
+              },
+              {
+                "tag": "ArticleTitle",
+                "attr": {},
+                "children": [
+                  "第八条"
+                ]
+              },
+              {
+                "tag": "Paragraph",
+                "attr": {
+                  "Num": "1"
+                },
+                "children": [
+                  {
+                    "tag": "ParagraphNum",
+                    "attr": {},
+                    "children": []
+                  },
+                  {
+                    "tag": "ParagraphSentence",
+                    "attr": {},
+                    "children": [
+                      {
+                        "tag": "Sentence",
+                        "attr": {
+                          "Num": "1"
+                        },
+                        "children": [
+                          "その年において、個人が非永住者以外の居住者、非永住者又は第百六十四条第一項各号（非居住者に対する課税の方法）に掲げる非居住者の区分のうち二以上のものに該当した場合には、その者がその年において非永住者以外の居住者、非永住者又は当該各号に掲げる非居住者であつた期間に応じ、それぞれの期間内に生じた前条第一項第一号から第三号までに掲げる所得に対し、所得税を課する。"
+                        ]
+                      }
+                    ]
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "tag": "Article",
+            "attr": {
+              "Num": "89"
+            },
+            "children": [
+              {
+                "tag": "ArticleCaption",
+                "attr": {},
+                "children": [
+                  "（税率）"
+                ]
+              },
+              {
+                "tag": "ArticleTitle",
+                "attr": {},
+                "children": [
+                  "第八十九条"
+                ]
+              },
+              {
+                "tag": "Paragraph",
+                "attr": {
+                  "Num": "1"
+                },
+                "children": [
+                  {
+                    "tag": "ParagraphNum",
+                    "attr": {},
+                    "children": []
+                  },
+                  {
+                    "tag": "ParagraphSentence",
+                    "attr": {},
+                    "children": [
+                      {
+                        "tag": "Sentence",
+                        "attr": {
+                          "Num": "1"
+                        },
+                        "children": [
+                          "居住者に対して課する所得税の額は、その年分の課税総所得金額又は課税退職所得金額をそれぞれ次の表の上欄に掲げる金額に区分してそれぞれの金額に同表の下欄に掲げる税率を乗じて計算した金額を合計した金額と、その年分の課税山林所得金額の五分の一に相当する金額を同表の上欄に掲げる金額に区分してそれぞれの金額に同表の下欄に掲げる税率を乗じて計算した金額を合計した金額に五を乗じて計算した金額との合計額とする。"
+                        ]
+                      }
+                    ]
+                  },
+                  {
+                    "tag": "TableStruct",
+                    "attr": {},
+                    "children": [
+                      {
+                        "tag": "Table",
+                        "attr": {},
+                        "children": [
+                          {
+                            "tag": "TableRow",
+                            "attr": {},
+                            "children": [
+                              {
+                                "tag": "TableColumn",
+                                "attr": {
+                                  "BorderBottom": "none"
+                                },
+                                "children": [
+                                  {
+                                    "tag": "Sentence",
+                                    "attr": {
+                                      "Num": "1"
+                                    },
+                                    "children": [
+                                      "百九十五万円以下の金額"
+                                    ]
+                                  }
+                                ]
+                              },
+                              {
+                                "tag": "TableColumn",
+                                "attr": {
+                                  "BorderBottom": "none"
+                                },
+                                "children": [
+                                  {
+                                    "tag": "Sentence",
+                                    "attr": {
+                                      "Num": "1"
+                                    },
+                                    "children": [
+                                      "百分の五"
+                                    ]
+                                  }
+                                ]
+                              }
+                            ]
+                          },
+                          {
+                            "tag": "TableRow",
+                            "attr": {},
+                            "children": [
+                              {
+                                "tag": "TableColumn",
+                                "attr": {
+                                  "BorderBottom": "none",
+                                  "BorderTop": "none"
+                                },
+                                "children": [
+                                  {
+                                    "tag": "Sentence",
+                                    "attr": {
+                                      "Num": "1"
+                                    },
+                                    "children": [
+                                      "百九十五万円を超え三百三十万円以下の金額"
+                                    ]
+                                  }
+                                ]
+                              },
+                              {
+                                "tag": "TableColumn",
+                                "attr": {
+                                  "BorderBottom": "none",
+                                  "BorderTop": "none"
+                                },
+                                "children": [
+                                  {
+                                    "tag": "Sentence",
+                                    "attr": {
+                                      "Num": "1"
+                                    },
+                                    "children": [
+                                      "百分の十"
+                                    ]
+                                  }
+                                ]
+                              }
+                            ]
+                          },
+                          {
+                            "tag": "TableRow",
+                            "attr": {},
+                            "children": [
+                              {
+                                "tag": "TableColumn",
+                                "attr": {
+                                  "BorderBottom": "none",
+                                  "BorderTop": "none"
+                                },
+                                "children": [
+                                  {
+                                    "tag": "Sentence",
+                                    "attr": {
+                                      "Num": "1"
+                                    },
+                                    "children": [
+                                      "三百三十万円を超え六百九十五万円以下の金額"
+                                    ]
+                                  }
+                                ]
+                              },
+                              {
+                                "tag": "TableColumn",
+                                "attr": {
+                                  "BorderBottom": "none",
+                                  "BorderTop": "none"
+                                },
+                                "children": [
+                                  {
+                                    "tag": "Sentence",
+                                    "attr": {
+                                      "Num": "1"
+                                    },
+                                    "children": [
+                                      "百分の二十"
+                                    ]
+                                  }
+                                ]
+                              }
+                            ]
+                          },
+                          {
+                            "tag": "TableRow",
+                            "attr": {},
+                            "children": [
+                              {
+                                "tag": "TableColumn",
+                                "attr": {
+                                  "BorderBottom": "none",
+                                  "BorderTop": "none"
+                                },
+                                "children": [
+                                  {
+                                    "tag": "Sentence",
+                                    "attr": {
+                                      "Num": "1"
+                                    },
+                                    "children": [
+                                      "六百九十五万円を超え九百万円以下の金額"
+                                    ]
+                                  }
+                                ]
+                              },
+                              {
+                                "tag": "TableColumn",
+                                "attr": {
+                                  "BorderBottom": "none",
+                                  "BorderTop": "none"
+                                },
+                                "children": [
+                                  {
+                                    "tag": "Sentence",
+                                    "attr": {
+                                      "Num": "1"
+                                    },
+                                    "children": [
+                                      "百分の二十三"
+                                    ]
+                                  }
+                                ]
+                              }
+                            ]
+                          },
+                          {
+                            "tag": "TableRow",
+                            "attr": {},
+                            "children": [
+                              {
+                                "tag": "TableColumn",
+                                "attr": {
+                                  "BorderBottom": "none",
+                                  "BorderTop": "none"
+                                },
+                                "children": [
+                                  {
+                                    "tag": "Sentence",
+                                    "attr": {
+                                      "Num": "1"
+                                    },
+                                    "children": [
+                                      "九百万円を超え千八百万円以下の金額"
+                                    ]
+                                  }
+                                ]
+                              },
+                              {
+                                "tag": "TableColumn",
+                                "attr": {
+                                  "BorderBottom": "none",
+                                  "BorderTop": "none"
+                                },
+                                "children": [
+                                  {
+                                    "tag": "Sentence",
+                                    "attr": {
+                                      "Num": "1"
+                                    },
+                                    "children": [
+                                      "百分の三十三"
+                                    ]
+                                  }
+                                ]
+                              }
+                            ]
+                          },
+                          {
+                            "tag": "TableRow",
+                            "attr": {},
+                            "children": [
+                              {
+                                "tag": "TableColumn",
+                                "attr": {
+                                  "BorderBottom": "none",
+                                  "BorderTop": "none"
+                                },
+                                "children": [
+                                  {
+                                    "tag": "Sentence",
+                                    "attr": {
+                                      "Num": "1"
+                                    },
+                                    "children": [
+                                      "千八百万円を超え四千万円以下の金額"
+                                    ]
+                                  }
+                                ]
+                              },
+                              {
+                                "tag": "TableColumn",
+                                "attr": {
+                                  "BorderBottom": "none",
+                                  "BorderTop": "none"
+                                },
+                                "children": [
+                                  {
+                                    "tag": "Sentence",
+                                    "attr": {
+                                      "Num": "1"
+                                    },
+                                    "children": [
+                                      "百分の四十"
+                                    ]
+                                  }
+                                ]
+                              }
+                            ]
+                          },
+                          {
+                            "tag": "TableRow",
+                            "attr": {},
+                            "children": [
+                              {
+                                "tag": "TableColumn",
+                                "attr": {
+                                  "BorderTop": "none"
+                                },
+                                "children": [
+                                  {
+                                    "tag": "Sentence",
+                                    "attr": {
+                                      "Num": "1"
+                                    },
+                                    "children": [
+                                      "四千万円を超える金額"
+                                    ]
+                                  }
+                                ]
+                              },
+                              {
+                                "tag": "TableColumn",
+                                "attr": {
+                                  "BorderTop": "none"
+                                },
+                                "children": [
+                                  {
+                                    "tag": "Sentence",
+                                    "attr": {
+                                      "Num": "1"
+                                    },
+                                    "children": [
+                                      "百分の四十五"
+                                    ]
+                                  }
+                                ]
+                              }
+                            ]
+                          }
+                        ]
+                      }
+                    ]
+                  }
+                ]
+              },
+              {
+                "tag": "Paragraph",
+                "attr": {
+                  "Num": "2"
+                },
+                "children": [
+                  {
+                    "tag": "ParagraphNum",
+                    "attr": {},
+                    "children": [
+                      "２"
+                    ]
+                  },
+                  {
+                    "tag": "ParagraphSentence",
+                    "attr": {},
+                    "children": [
+                      {
+                        "tag": "Sentence",
+                        "attr": {
+                          "Num": "1"
+                        },
+                        "children": [
+                          "課税総所得金額、課税退職所得金額又は課税山林所得金額は、それぞれ、総所得金額、退職所得金額又は山林所得金額から前章第四節（所得控除）の規定による控除をした残額とする。"
+                        ]
+                      }
+                    ]
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "tag": "Article",
+            "attr": {
+              "Num": "165"
+            },
+            "children": [
+              {
+                "tag": "ArticleCaption",
+                "attr": {},
+                "children": [
+                  "（総合課税に係る所得税の課税標準、税額等の計算）"
+                ]
+              },
+              {
+                "tag": "ArticleTitle",
+                "attr": {},
+                "children": [
+                  "第百六十五条"
+                ]
+              },
+              {
+                "tag": "Paragraph",
+                "attr": {
+                  "Num": "1"
+                },
+                "children": [
+                  {
+                    "tag": "ParagraphNum",
+                    "attr": {},
+                    "children": []
+                  },
+                  {
+                    "tag": "ParagraphSentence",
+                    "attr": {},
+                    "children": [
+                      {
+                        "tag": "Sentence",
+                        "attr": {
+                          "Num": "1"
+                        },
+                        "children": [
+                          "前条第一項各号に掲げる非居住者の当該各号に定める国内源泉所得について課する所得税（以下この節において「総合課税に係る所得税」という。）の課税標準及び所得税の額は、当該各号に定める国内源泉所得について、別段の定めがあるものを除き、前編第一章から第四章まで（居住者に係る所得税の課税標準、税額等の計算）（第四十四条の三（減額された外国所得税額の総収入金額不算入等）、第四十六条（所得税額から控除する外国税額の必要経費不算入）、第六十条の四（外国転出時課税の規定の適用を受けた場合の譲渡所得等の特例）、第七十三条から第七十七条まで（医療費控除等）、第七十九条から第八十五条まで（障害者控除等）、第九十三条（分配時調整外国税相当額控除）、第九十五条（外国税額控除）及び第九十五条の二（国外転出をする場合の譲渡所得等の特例に係る外国税額控除の特例）を除く。）の規定に準じて計算した金額とする。"
+                        ]
+                      }
+                    ]
+                  }
+                ]
+              },
+              {
+                "tag": "Paragraph",
+                "attr": {
+                  "Num": "2"
+                },
+                "children": [
+                  {
+                    "tag": "ParagraphNum",
+                    "attr": {},
+                    "children": [
+                      "２"
+                    ]
+                  },
+                  {
+                    "tag": "ParagraphSentence",
+                    "attr": {},
+                    "children": [
+                      {
+                        "tag": "Sentence",
+                        "attr": {
+                          "Num": "1"
+                        },
+                        "children": [
+                          "前条第一項第一号に掲げる非居住者の同号イに掲げる国内源泉所得（以下この款において「恒久的施設帰属所得」という。）に係る各種所得の金額につき前項の規定により前編第二章第二節第一款及び第二款（各種所得の金額の計算）の規定に準じて計算する場合には、次に定めるところによる。"
+                        ]
+                      }
+                    ]
+                  },
+                  {
+                    "tag": "Item",
+                    "attr": {
+                      "Num": "1"
+                    },
+                    "children": [
+                      {
+                        "tag": "ItemTitle",
+                        "attr": {},
+                        "children": [
+                          "一"
+                        ]
+                      },
+                      {
+                        "tag": "ItemSentence",
+                        "attr": {},
+                        "children": [
+                          {
+                            "tag": "Sentence",
+                            "attr": {
+                              "Num": "1"
+                            },
+                            "children": [
+                              "第三十七条第一項（必要経費）に規定する販売費、一般管理費その他同項に規定する所得を生ずべき業務について生じた費用（次号において「販売費等」という。）及び同条第二項に規定する山林の植林費、取得に要した費用、管理費、伐採費その他その山林の育成又は譲渡に要した費用（同号において「育成費等」という。）のうち、第百六十一条第一項第一号（国内源泉所得）に規定する内部取引に係るものについては、債務の確定しないものを含むものとする。"
+                            ]
+                          }
+                        ]
+                      }
+                    ]
+                  },
+                  {
+                    "tag": "Item",
+                    "attr": {
+                      "Num": "2"
+                    },
+                    "children": [
+                      {
+                        "tag": "ItemTitle",
+                        "attr": {},
+                        "children": [
+                          "二"
+                        ]
+                      },
+                      {
+                        "tag": "ItemSentence",
+                        "attr": {},
+                        "children": [
+                          {
+                            "tag": "Sentence",
+                            "attr": {
+                              "Num": "1"
+                            },
+                            "children": [
+                              "販売費等及び育成費等並びに支出した金額（第三十四条第二項（一時所得）に規定する支出した金額をいう。以下この号において同じ。）には、非居住者の恒久的施設を通じて行う事業及びそれ以外の事業に共通する販売費等及び育成費等並びに支出した金額のうち、当該恒久的施設を通じて行う事業に係るものとして政令で定めるところにより配分した金額を含むものとする。"
+                            ]
+                          }
+                        ]
+                      }
+                    ]
+                  }
+                ]
+              },
+              {
+                "tag": "Paragraph",
+                "attr": {
+                  "Num": "3"
+                },
+                "children": [
+                  {
+                    "tag": "ParagraphNum",
+                    "attr": {},
+                    "children": [
+                      "３"
+                    ]
+                  },
+                  {
+                    "tag": "ParagraphSentence",
+                    "attr": {},
+                    "children": [
+                      {
+                        "tag": "Sentence",
+                        "attr": {
+                          "Num": "1"
+                        },
+                        "children": [
+                          "前項に定めるもののほか、第一項の規定の適用に関し必要な事項は、政令で定める。"
+                        ]
+                      }
+                    ]
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "tag": "Article",
+            "attr": {
+              "Num": "169"
+            },
+            "children": [
+              {
+                "tag": "ArticleCaption",
+                "attr": {},
+                "children": [
+                  "（分離課税に係る所得税の課税標準）"
+                ]
+              },
+              {
+                "tag": "ArticleTitle",
+                "attr": {},
+                "children": [
+                  "第百六十九条"
+                ]
+              },
+              {
+                "tag": "Paragraph",
+                "attr": {
+                  "Num": "1"
+                },
+                "children": [
+                  {
+                    "tag": "ParagraphNum",
+                    "attr": {},
+                    "children": []
+                  },
+                  {
+                    "tag": "ParagraphSentence",
+                    "attr": {},
+                    "children": [
+                      {
+                        "tag": "Sentence",
+                        "attr": {
+                          "Num": "1"
+                        },
+                        "children": [
+                          "第百六十四条第二項各号（非居住者に対する課税の方法）に掲げる非居住者の当該各号に定める国内源泉所得については、他の所得と区分して所得税を課するものとし、その所得税の課税標準は、その支払を受けるべき当該国内源泉所得の金額（次の各号に掲げる国内源泉所得については、当該各号に定める金額）とする。"
+                        ]
+                      }
+                    ]
+                  },
+                  {
+                    "tag": "Item",
+                    "attr": {
+                      "Num": "1"
+                    },
+                    "children": [
+                      {
+                        "tag": "ItemTitle",
+                        "attr": {},
+                        "children": [
+                          "一"
+                        ]
+                      },
+                      {
+                        "tag": "ItemSentence",
+                        "attr": {},
+                        "children": [
+                          {
+                            "tag": "Column",
+                            "attr": {
+                              "Num": "1"
+                            },
+                            "children": [
+                              {
+                                "tag": "Sentence",
+                                "attr": {
+                                  "Num": "1"
+                                },
+                                "children": [
+                                  "第百六十一条第一項第八号（国内源泉所得）に掲げる利子等のうち無記名の公社債の利子又は無記名の貸付信託、公社債投資信託若しくは公募公社債等運用投資信託の受益証券に係る収益の分配"
+                                ]
+                              }
+                            ]
+                          },
+                          {
+                            "tag": "Column",
+                            "attr": {
+                              "Num": "2"
+                            },
+                            "children": [
+                              {
+                                "tag": "Sentence",
+                                "attr": {
+                                  "Num": "1"
+                                },
+                                "children": [
+                                  "その支払を受けた金額"
+                                ]
+                              }
+                            ]
+                          }
+                        ]
+                      }
+                    ]
+                  },
+                  {
+                    "tag": "Item",
+                    "attr": {
+                      "Num": "2"
+                    },
+                    "children": [
+                      {
+                        "tag": "ItemTitle",
+                        "attr": {},
+                        "children": [
+                          "二"
+                        ]
+                      },
+                      {
+                        "tag": "ItemSentence",
+                        "attr": {},
+                        "children": [
+                          {
+                            "tag": "Column",
+                            "attr": {
+                              "Num": "1"
+                            },
+                            "children": [
+                              {
+                                "tag": "Sentence",
+                                "attr": {
+                                  "Num": "1"
+                                },
+                                "children": [
+                                  "第百六十一条第一項第九号に掲げる配当等のうち無記名株式等の剰余金の配当（第二十四条第一項（配当所得）に規定する剰余金の配当をいう。）又は無記名の投資信託（公社債投資信託及び公募公社債等運用投資信託を除く。）若しくは特定受益証券発行信託の受益証券に係る収益の分配"
+                                ]
+                              }
+                            ]
+                          },
+                          {
+                            "tag": "Column",
+                            "attr": {
+                              "Num": "2"
+                            },
+                            "children": [
+                              {
+                                "tag": "Sentence",
+                                "attr": {
+                                  "Num": "1"
+                                },
+                                "children": [
+                                  "その支払を受けた金額"
+                                ]
+                              }
+                            ]
+                          }
+                        ]
+                      }
+                    ]
+                  },
+                  {
+                    "tag": "Item",
+                    "attr": {
+                      "Num": "3"
+                    },
+                    "children": [
+                      {
+                        "tag": "ItemTitle",
+                        "attr": {},
+                        "children": [
+                          "三"
+                        ]
+                      },
+                      {
+                        "tag": "ItemSentence",
+                        "attr": {},
+                        "children": [
+                          {
+                            "tag": "Column",
+                            "attr": {
+                              "Num": "1"
+                            },
+                            "children": [
+                              {
+                                "tag": "Sentence",
+                                "attr": {
+                                  "Num": "1"
+                                },
+                                "children": [
+                                  "第百六十一条第一項第十二号ロに掲げる年金"
+                                ]
+                              }
+                            ]
+                          },
+                          {
+                            "tag": "Column",
+                            "attr": {
+                              "Num": "2"
+                            },
+                            "children": [
+                              {
+                                "tag": "Sentence",
+                                "attr": {
+                                  "Num": "1"
+                                },
+                                "children": [
+                                  "その支払を受けるべき年金の額から五万円にその支払を受けるべき年金の額に係る月数を乗じて計算した金額を控除した金額"
+                                ]
+                              }
+                            ]
+                          }
+                        ]
+                      }
+                    ]
+                  },
+                  {
+                    "tag": "Item",
+                    "attr": {
+                      "Num": "4"
+                    },
+                    "children": [
+                      {
+                        "tag": "ItemTitle",
+                        "attr": {},
+                        "children": [
+                          "四"
+                        ]
+                      },
+                      {
+                        "tag": "ItemSentence",
+                        "attr": {},
+                        "children": [
+                          {
+                            "tag": "Column",
+                            "attr": {
+                              "Num": "1"
+                            },
+                            "children": [
+                              {
+                                "tag": "Sentence",
+                                "attr": {
+                                  "Num": "1"
+                                },
+                                "children": [
+                                  "第百六十一条第一項第十三号に掲げる賞金"
+                                ]
+                              }
+                            ]
+                          },
+                          {
+                            "tag": "Column",
+                            "attr": {
+                              "Num": "2"
+                            },
+                            "children": [
+                              {
+                                "tag": "Sentence",
+                                "attr": {
+                                  "Num": "1"
+                                },
+                                "children": [
+                                  "その支払を受けるべき金額から五十万円を控除した金額"
+                                ]
+                              }
+                            ]
+                          }
+                        ]
+                      }
+                    ]
+                  },
+                  {
+                    "tag": "Item",
+                    "attr": {
+                      "Num": "5"
+                    },
+                    "children": [
+                      {
+                        "tag": "ItemTitle",
+                        "attr": {},
+                        "children": [
+                          "五"
+                        ]
+                      },
+                      {
+                        "tag": "ItemSentence",
+                        "attr": {},
+                        "children": [
+                          {
+                            "tag": "Column",
+                            "attr": {
+                              "Num": "1"
+                            },
+                            "children": [
+                              {
+                                "tag": "Sentence",
+                                "attr": {
+                                  "Num": "1"
+                                },
+                                "children": [
+                                  "第百六十一条第一項第十四号に掲げる年金"
+                                ]
+                              }
+                            ]
+                          },
+                          {
+                            "tag": "Column",
+                            "attr": {
+                              "Num": "2"
+                            },
+                            "children": [
+                              {
+                                "tag": "Sentence",
+                                "attr": {
+                                  "Num": "1"
+                                },
+                                "children": [
+                                  "同号に規定する契約に基づいて支払を受けるべき金額から当該契約に基づいて払い込まれた保険料又は掛金の額のうちその支払を受けるべき金額に対応するものとして政令で定めるところにより計算した金額を控除した金額"
+                                ]
+                              }
+                            ]
+                          }
+                        ]
+                      }
+                    ]
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "tag": "Article",
+            "attr": {
+              "Num": "170"
+            },
+            "children": [
+              {
+                "tag": "ArticleCaption",
+                "attr": {},
+                "children": [
+                  "（分離課税に係る所得税の税率）"
+                ]
+              },
+              {
+                "tag": "ArticleTitle",
+                "attr": {},
+                "children": [
+                  "第百七十条"
+                ]
+              },
+              {
+                "tag": "Paragraph",
+                "attr": {
+                  "Num": "1"
+                },
+                "children": [
+                  {
+                    "tag": "ParagraphNum",
+                    "attr": {},
+                    "children": []
+                  },
+                  {
+                    "tag": "ParagraphSentence",
+                    "attr": {},
+                    "children": [
+                      {
+                        "tag": "Sentence",
+                        "attr": {
+                          "Num": "1"
+                        },
+                        "children": [
+                          "前条に規定する所得税の額は、同条に規定する国内源泉所得の金額に百分の二十（当該国内源泉所得の金額のうち第百六十一条第一項第八号及び第十五号（国内源泉所得）に掲げる国内源泉所得に係るものについては、百分の十五）の税率を乗じて計算した金額とする。"
+                        ]
+                      }
+                    ]
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "tag": "Article",
+            "attr": {
+              "Num": "174"
+            },
+            "children": [
+              {
+                "tag": "ArticleCaption",
+                "attr": {},
+                "children": [
+                  "（内国法人に係る所得税の課税標準）"
+                ]
+              },
+              {
+                "tag": "ArticleTitle",
+                "attr": {},
+                "children": [
+                  "第百七十四条"
+                ]
+              },
+              {
+                "tag": "Paragraph",
+                "attr": {
+                  "Num": "1"
+                },
+                "children": [
+                  {
+                    "tag": "ParagraphNum",
+                    "attr": {},
+                    "children": []
+                  },
+                  {
+                    "tag": "ParagraphSentence",
+                    "attr": {},
+                    "children": [
+                      {
+                        "tag": "Sentence",
+                        "attr": {
+                          "Num": "1"
+                        },
+                        "children": [
+                          "内国法人に対して課する所得税の課税標準は、その内国法人が国内において支払を受けるべき次に掲げるものの額（第十号に掲げる賞金については、その額から政令で定める金額を控除した残額）とする。"
+                        ]
+                      }
+                    ]
+                  },
+                  {
+                    "tag": "Item",
+                    "attr": {
+                      "Num": "1"
+                    },
+                    "children": [
+                      {
+                        "tag": "ItemTitle",
+                        "attr": {},
+                        "children": [
+                          "一"
+                        ]
+                      },
+                      {
+                        "tag": "ItemSentence",
+                        "attr": {},
+                        "children": [
+                          {
+                            "tag": "Sentence",
+                            "attr": {
+                              "Num": "1"
+                            },
+                            "children": [
+                              "第二十三条第一項（利子所得）に規定する利子等"
+                            ]
+                          }
+                        ]
+                      }
+                    ]
+                  },
+                  {
+                    "tag": "Item",
+                    "attr": {
+                      "Num": "2"
+                    },
+                    "children": [
+                      {
+                        "tag": "ItemTitle",
+                        "attr": {},
+                        "children": [
+                          "二"
+                        ]
+                      },
+                      {
+                        "tag": "ItemSentence",
+                        "attr": {},
+                        "children": [
+                          {
+                            "tag": "Sentence",
+                            "attr": {
+                              "Num": "1"
+                            },
+                            "children": [
+                              "第二十四条第一項（配当所得）に規定する配当等"
+                            ]
+                          }
+                        ]
+                      }
+                    ]
+                  },
+                  {
+                    "tag": "Item",
+                    "attr": {
+                      "Num": "3"
+                    },
+                    "children": [
+                      {
+                        "tag": "ItemTitle",
+                        "attr": {},
+                        "children": [
+                          "三"
+                        ]
+                      },
+                      {
+                        "tag": "ItemSentence",
+                        "attr": {},
+                        "children": [
+                          {
+                            "tag": "Sentence",
+                            "attr": {
+                              "Num": "1"
+                            },
+                            "children": [
+                              "定期積金に係る契約に基づく給付補塡金（当該契約に基づく給付金のうちその給付を受ける金銭の額から当該契約に基づき払い込んだ掛金の額の合計額を控除した残額に相当する部分をいう。）"
+                            ]
+                          }
+                        ]
+                      }
+                    ]
+                  },
+                  {
+                    "tag": "Item",
+                    "attr": {
+                      "Num": "4"
+                    },
+                    "children": [
+                      {
+                        "tag": "ItemTitle",
+                        "attr": {},
+                        "children": [
+                          "四"
+                        ]
+                      },
+                      {
+                        "tag": "ItemSentence",
+                        "attr": {},
+                        "children": [
+                          {
+                            "tag": "Sentence",
+                            "attr": {
+                              "Num": "1"
+                            },
+                            "children": [
+                              "銀行法（昭和五十六年法律第五十九号）第二条第四項（定義等）の契約に基づく給付補塡金（当該契約に基づく給付金のうちその給付を受ける金銭の額から当該契約に基づき払い込むべき掛金の額として政令で定めるものの合計額を控除した残額に相当する部分をいう。）"
+                            ]
+                          }
+                        ]
+                      }
+                    ]
+                  },
+                  {
+                    "tag": "Item",
+                    "attr": {
+                      "Num": "5"
+                    },
+                    "children": [
+                      {
+                        "tag": "ItemTitle",
+                        "attr": {},
+                        "children": [
+                          "五"
+                        ]
+                      },
+                      {
+                        "tag": "ItemSentence",
+                        "attr": {},
+                        "children": [
+                          {
+                            "tag": "Sentence",
+                            "attr": {
+                              "Num": "1"
+                            },
+                            "children": [
+                              "抵当証券法（昭和六年法律第十五号）第一条第一項（証券の交付）に規定する抵当証券に基づき締結された当該抵当証券に記載された債権の元本及び利息の支払等に関する事項を含む契約として政令で定める契約により支払われる利息"
+                            ]
+                          }
+                        ]
+                      }
+                    ]
+                  },
+                  {
+                    "tag": "Item",
+                    "attr": {
+                      "Num": "6"
+                    },
+                    "children": [
+                      {
+                        "tag": "ItemTitle",
+                        "attr": {},
+                        "children": [
+                          "六"
+                        ]
+                      },
+                      {
+                        "tag": "ItemSentence",
+                        "attr": {},
+                        "children": [
+                          {
+                            "tag": "Sentence",
+                            "attr": {
+                              "Num": "1"
+                            },
+                            "children": [
+                              "金その他の貴金属その他これに類する物品で政令で定めるものの買入れ及び売戻しに関する契約で、当該契約に定められた期日において当該契約に定められた金額により当該物品を売り戻す旨の定めがあるものに基づく利益（当該物品の当該売戻しをした場合の当該金額から当該物品の買入れに要した金額を控除した残額をいう。）"
+                            ]
+                          }
+                        ]
+                      }
+                    ]
+                  },
+                  {
+                    "tag": "Item",
+                    "attr": {
+                      "Num": "7"
+                    },
+                    "children": [
+                      {
+                        "tag": "ItemTitle",
+                        "attr": {},
+                        "children": [
+                          "七"
+                        ]
+                      },
+                      {
+                        "tag": "ItemSentence",
+                        "attr": {},
+                        "children": [
+                          {
+                            "tag": "Sentence",
+                            "attr": {
+                              "Num": "1"
+                            },
+                            "children": [
+                              "外国通貨で表示された預貯金でその元本及び利子をあらかじめ約定した率により本邦通貨又は当該外国通貨以外の外国通貨に換算して支払うこととされているものの差益（当該換算による差益として政令で定めるものをいう。）"
+                            ]
+                          }
+                        ]
+                      }
+                    ]
+                  },
+                  {
+                    "tag": "Item",
+                    "attr": {
+                      "Num": "8"
+                    },
+                    "children": [
+                      {
+                        "tag": "ItemTitle",
+                        "attr": {},
+                        "children": [
+                          "八"
+                        ]
+                      },
+                      {
+                        "tag": "ItemSentence",
+                        "attr": {},
+                        "children": [
+                          {
+                            "tag": "Sentence",
+                            "attr": {
+                              "Num": "1"
+                            },
+                            "children": [
+                              "保険業法第二条第二項（定義）に規定する保険会社、同条第七項に規定する外国保険会社等若しくは同条第十八項に規定する少額短期保険業者の締結した保険契約若しくは旧簡易生命保険契約（郵政民営化法等の施行に伴う関係法律の整備等に関する法律第二条（法律の廃止）の規定による廃止前の簡易生命保険法第三条（政府保証）に規定する簡易生命保険契約をいう。）又はこれらに類する共済に係る契約で保険料又は掛金を一時に支払うこと（これに準ずる支払方法として政令で定めるものを含む。）その他政令で定める事項をその内容とするもののうち、保険期間又は共済期間（以下この号において「保険期間等」という。）が五年以下のもの及び保険期間等が五年を超えるものでその保険期間等の初日から五年以内に解約されたものに基づく差益（これらの契約に基づく満期保険金、満期返戻金若しくは満期共済金又は解約返戻金の金額からこれらの契約に基づき支払つた保険料又は掛金の額の合計額を控除した金額として政令で定めるところにより計算した金額をいう。）"
+                            ]
+                          }
+                        ]
+                      }
+                    ]
+                  },
+                  {
+                    "tag": "Item",
+                    "attr": {
+                      "Num": "9"
+                    },
+                    "children": [
+                      {
+                        "tag": "ItemTitle",
+                        "attr": {},
+                        "children": [
+                          "九"
+                        ]
+                      },
+                      {
+                        "tag": "ItemSentence",
+                        "attr": {},
+                        "children": [
+                          {
+                            "tag": "Sentence",
+                            "attr": {
+                              "Num": "1"
+                            },
+                            "children": [
+                              "匿名組合契約（これに準ずる契約として政令で定めるものを含む。第百七十六条第二項（信託財産に係る利子等の課税の特例）において同じ。）に基づく利益の分配"
+                            ]
+                          }
+                        ]
+                      }
+                    ]
+                  },
+                  {
+                    "tag": "Item",
+                    "attr": {
+                      "Num": "10"
+                    },
+                    "children": [
+                      {
+                        "tag": "ItemTitle",
+                        "attr": {},
+                        "children": [
+                          "十"
+                        ]
+                      },
+                      {
+                        "tag": "ItemSentence",
+                        "attr": {},
+                        "children": [
+                          {
+                            "tag": "Sentence",
+                            "attr": {
+                              "Num": "1"
+                            },
+                            "children": [
+                              "馬主が受ける競馬の賞金で政令で定めるもの"
+                            ]
+                          }
+                        ]
+                      }
+                    ]
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "tag": "Article",
+            "attr": {
+              "Num": "175"
+            },
+            "children": [
+              {
+                "tag": "ArticleCaption",
+                "attr": {},
+                "children": [
+                  "（内国法人に係る所得税の税率）"
+                ]
+              },
+              {
+                "tag": "ArticleTitle",
+                "attr": {},
+                "children": [
+                  "第百七十五条"
+                ]
+              },
+              {
+                "tag": "Paragraph",
+                "attr": {
+                  "Num": "1"
+                },
+                "children": [
+                  {
+                    "tag": "ParagraphNum",
+                    "attr": {},
+                    "children": []
+                  },
+                  {
+                    "tag": "ParagraphSentence",
+                    "attr": {},
+                    "children": [
+                      {
+                        "tag": "Sentence",
+                        "attr": {
+                          "Num": "1"
+                        },
+                        "children": [
+                          "内国法人に対して課する所得税の額は、次の各号の区分に応じ当該各号に掲げる金額とする。"
+                        ]
+                      }
+                    ]
+                  },
+                  {
+                    "tag": "Item",
+                    "attr": {
+                      "Num": "1"
+                    },
+                    "children": [
+                      {
+                        "tag": "ItemTitle",
+                        "attr": {},
+                        "children": [
+                          "一"
+                        ]
+                      },
+                      {
+                        "tag": "ItemSentence",
+                        "attr": {},
+                        "children": [
+                          {
+                            "tag": "Column",
+                            "attr": {
+                              "Num": "1"
+                            },
+                            "children": [
+                              {
+                                "tag": "Sentence",
+                                "attr": {
+                                  "Num": "1"
+                                },
+                                "children": [
+                                  "前条第一号に掲げる利子等又は同条第三号から第八号までに掲げる給付補てん金、利息、利益若しくは差益"
+                                ]
+                              }
+                            ]
+                          },
+                          {
+                            "tag": "Column",
+                            "attr": {
+                              "Num": "2"
+                            },
+                            "children": [
+                              {
+                                "tag": "Sentence",
+                                "attr": {
+                                  "Num": "1"
+                                },
+                                "children": [
+                                  "その金額に百分の十五の税率を乗じて計算した金額"
+                                ]
+                              }
+                            ]
+                          }
+                        ]
+                      }
+                    ]
+                  },
+                  {
+                    "tag": "Item",
+                    "attr": {
+                      "Num": "2"
+                    },
+                    "children": [
+                      {
+                        "tag": "ItemTitle",
+                        "attr": {},
+                        "children": [
+                          "二"
+                        ]
+                      },
+                      {
+                        "tag": "ItemSentence",
+                        "attr": {},
+                        "children": [
+                          {
+                            "tag": "Column",
+                            "attr": {
+                              "Num": "1"
+                            },
+                            "children": [
+                              {
+                                "tag": "Sentence",
+                                "attr": {
+                                  "Num": "1"
+                                },
+                                "children": [
+                                  "前条第二号に掲げる配当等又は同条第九号に掲げる利益の分配"
+                                ]
+                              }
+                            ]
+                          },
+                          {
+                            "tag": "Column",
+                            "attr": {
+                              "Num": "2"
+                            },
+                            "children": [
+                              {
+                                "tag": "Sentence",
+                                "attr": {
+                                  "Num": "1"
+                                },
+                                "children": [
+                                  "その金額に百分の二十の税率を乗じて計算した金額"
+                                ]
+                              }
+                            ]
+                          }
+                        ]
+                      }
+                    ]
+                  },
+                  {
+                    "tag": "Item",
+                    "attr": {
+                      "Num": "3"
+                    },
+                    "children": [
+                      {
+                        "tag": "ItemTitle",
+                        "attr": {},
+                        "children": [
+                          "三"
+                        ]
+                      },
+                      {
+                        "tag": "ItemSentence",
+                        "attr": {},
+                        "children": [
+                          {
+                            "tag": "Column",
+                            "attr": {
+                              "Num": "1"
+                            },
+                            "children": [
+                              {
+                                "tag": "Sentence",
+                                "attr": {
+                                  "Num": "1"
+                                },
+                                "children": [
+                                  "前条第十号に掲げる賞金"
+                                ]
+                              }
+                            ]
+                          },
+                          {
+                            "tag": "Column",
+                            "attr": {
+                              "Num": "2"
+                            },
+                            "children": [
+                              {
+                                "tag": "Sentence",
+                                "attr": {
+                                  "Num": "1"
+                                },
+                                "children": [
+                                  "その金額から政令で定める金額を控除した残額に百分の十の税率を乗じて計算した金額"
+                                ]
+                              }
+                            ]
+                          }
+                        ]
+                      }
+                    ]
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "tag": "Article",
+            "attr": {
+              "Num": "178"
+            },
+            "children": [
+              {
+                "tag": "ArticleCaption",
+                "attr": {},
+                "children": [
+                  "（外国法人に係る所得税の課税標準）"
+                ]
+              },
+              {
+                "tag": "ArticleTitle",
+                "attr": {},
+                "children": [
+                  "第百七十八条"
+                ]
+              },
+              {
+                "tag": "Paragraph",
+                "attr": {
+                  "Num": "1"
+                },
+                "children": [
+                  {
+                    "tag": "ParagraphNum",
+                    "attr": {},
+                    "children": []
+                  },
+                  {
+                    "tag": "ParagraphSentence",
+                    "attr": {},
+                    "children": [
+                      {
+                        "tag": "Sentence",
+                        "attr": {
+                          "Num": "1"
+                        },
+                        "children": [
+                          "外国法人に対して課する所得税の課税標準は、その外国法人が支払を受けるべき第百六十一条第一項第四号から第十一号まで及び第十三号から第十六号まで（国内源泉所得）に掲げる国内源泉所得（政令で定めるものを除く。）の金額（第百六十九条第一号、第二号、第四号及び第五号（分離課税に係る所得税の課税標準）に掲げる国内源泉所得については、これらの規定に定める金額）とする。"
+                        ]
+                      }
+                    ]
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "tag": "Article",
+            "attr": {
+              "Num": "179"
+            },
+            "children": [
+              {
+                "tag": "ArticleCaption",
+                "attr": {},
+                "children": [
+                  "（外国法人に係る所得税の税率）"
+                ]
+              },
+              {
+                "tag": "ArticleTitle",
+                "attr": {},
+                "children": [
+                  "第百七十九条"
+                ]
+              },
+              {
+                "tag": "Paragraph",
+                "attr": {
+                  "Num": "1"
+                },
+                "children": [
+                  {
+                    "tag": "ParagraphNum",
+                    "attr": {},
+                    "children": []
+                  },
+                  {
+                    "tag": "ParagraphSentence",
+                    "attr": {},
+                    "children": [
+                      {
+                        "tag": "Sentence",
+                        "attr": {
+                          "Num": "1"
+                        },
+                        "children": [
+                          "外国法人に対して課する所得税の額は、次の各号の区分に応じ当該各号に定める金額とする。"
+                        ]
+                      }
+                    ]
+                  },
+                  {
+                    "tag": "Item",
+                    "attr": {
+                      "Num": "1"
+                    },
+                    "children": [
+                      {
+                        "tag": "ItemTitle",
+                        "attr": {},
+                        "children": [
+                          "一"
+                        ]
+                      },
+                      {
+                        "tag": "ItemSentence",
+                        "attr": {},
+                        "children": [
+                          {
+                            "tag": "Column",
+                            "attr": {
+                              "Num": "1"
+                            },
+                            "children": [
+                              {
+                                "tag": "Sentence",
+                                "attr": {
+                                  "Num": "1"
+                                },
+                                "children": [
+                                  "前条に規定する国内源泉所得（次号及び第三号に掲げるものを除く。）"
+                                ]
+                              }
+                            ]
+                          },
+                          {
+                            "tag": "Column",
+                            "attr": {
+                              "Num": "2"
+                            },
+                            "children": [
+                              {
+                                "tag": "Sentence",
+                                "attr": {
+                                  "Num": "1"
+                                },
+                                "children": [
+                                  "その金額（第百六十九条第二号、第四号及び第五号（分離課税に係る所得税の課税標準）に掲げる国内源泉所得については、これらの規定に定める金額）に百分の二十の税率を乗じて計算した金額"
+                                ]
+                              }
+                            ]
+                          }
+                        ]
+                      }
+                    ]
+                  },
+                  {
+                    "tag": "Item",
+                    "attr": {
+                      "Num": "2"
+                    },
+                    "children": [
+                      {
+                        "tag": "ItemTitle",
+                        "attr": {},
+                        "children": [
+                          "二"
+                        ]
+                      },
+                      {
+                        "tag": "ItemSentence",
+                        "attr": {},
+                        "children": [
+                          {
+                            "tag": "Column",
+                            "attr": {
+                              "Num": "1"
+                            },
+                            "children": [
+                              {
+                                "tag": "Sentence",
+                                "attr": {
+                                  "Num": "1"
+                                },
+                                "children": [
+                                  "第百六十一条第一項第五号（国内源泉所得）に掲げる国内源泉所得"
+                                ]
+                              }
+                            ]
+                          },
+                          {
+                            "tag": "Column",
+                            "attr": {
+                              "Num": "2"
+                            },
+                            "children": [
+                              {
+                                "tag": "Sentence",
+                                "attr": {
+                                  "Num": "1"
+                                },
+                                "children": [
+                                  "その金額に百分の十の税率を乗じて計算した金額"
+                                ]
+                              }
+                            ]
+                          }
+                        ]
+                      }
+                    ]
+                  },
+                  {
+                    "tag": "Item",
+                    "attr": {
+                      "Num": "3"
+                    },
+                    "children": [
+                      {
+                        "tag": "ItemTitle",
+                        "attr": {},
+                        "children": [
+                          "三"
+                        ]
+                      },
+                      {
+                        "tag": "ItemSentence",
+                        "attr": {},
+                        "children": [
+                          {
+                            "tag": "Column",
+                            "attr": {
+                              "Num": "1"
+                            },
+                            "children": [
+                              {
+                                "tag": "Sentence",
+                                "attr": {
+                                  "Num": "1"
+                                },
+                                "children": [
+                                  "第百六十一条第一項第八号及び第十五号に掲げる国内源泉所得"
+                                ]
+                              }
+                            ]
+                          },
+                          {
+                            "tag": "Column",
+                            "attr": {
+                              "Num": "2"
+                            },
+                            "children": [
+                              {
+                                "tag": "Sentence",
+                                "attr": {
+                                  "Num": "1"
+                                },
+                                "children": [
+                                  "その金額（第百六十九条第一号に掲げる国内源泉所得については、同号に定める金額）に百分の十五の税率を乗じて計算した金額"
+                                ]
+                              }
+                            ]
+                          }
+                        ]
+                      }
+                    ]
+                  }
+                ]
+              }
+            ]
+          }
+        ]
+      }
+    ]
+  }
+}

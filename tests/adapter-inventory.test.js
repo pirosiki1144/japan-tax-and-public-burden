@@ -33,6 +33,15 @@ test("official formats, required adapters, priorities, and dependencies are expl
   assert.ok(inventory.targets.flatMap(({ sources }) => sources).filter(({ official_format }) => official_format !== "egov_law_api_json").every(({ shared_format_issue }) => shared_format_issue === 46));
 });
 
+test("every Issue 42 national tax is implemented or has a concrete hold reason", async () => {
+  const { inventory } = await inputs();
+  const national = inventory.targets.filter(({ implementation_issue }) => implementation_issue === 42);
+  assert.equal(national.length, 23);
+  assert.ok(national.every(({ implementation_status }) => ["implemented", "held"].includes(implementation_status)));
+  assert.ok(national.filter(({ implementation_status }) => implementation_status === "held").every(({ sources }) => sources.every(({ hold_reason }) => hold_reason?.length >= 20)));
+  assert.ok(national.filter(({ implementation_status }) => implementation_status === "implemented").every(({ capabilities }) => Object.values(capabilities).every((status) => status === "implemented")));
+});
+
 test("large batches are permitted only for one common official source", async () => {
   const { inventory, monitoring } = await inputs();
   const batches = new Map();

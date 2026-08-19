@@ -2,7 +2,7 @@ import { createHash } from "node:crypto";
 import { mkdir, readFile, writeFile } from "node:fs/promises";
 import { basename, dirname, join } from "node:path";
 import { fileURLToPath } from "node:url";
-import { extractEgovTaxSemantics } from "../normalize/egov-tax-semantics.js";
+import { extractEgovTaxSemantics, extractGenericNationalTaxSemantics } from "../normalize/egov-tax-semantics.js";
 import { readYaml } from "../validate/schema-validator.js";
 
 const root = fileURLToPath(new URL("../..", import.meta.url));
@@ -39,7 +39,7 @@ async function loadDocument(url, { fixtureDir, fetchImpl = globalThis.fetch, now
 
 function configuredSource(monitoring, taxId) {
   const target = monitoring.targets.find(({ tax_id }) => tax_id === taxId);
-  const source = target?.sources.find(({ change_detection }) => change_detection?.document_format === "egov_law_api_v2_json");
+  const source = target?.sources.find(({ target_url: targetUrl, change_detection }) => change_detection?.document_format === "egov_law_api_v2_json" || new URL(targetUrl).pathname.startsWith("/api/2/law_data/"));
   if (!source) throw new Error(`${taxId}: e-Gov semantic source is missing`);
   return source;
 }
@@ -49,7 +49,8 @@ export async function extractConfiguredSemanticTarget(repositoryRoot, taxId, opt
   const source = configuredSource(monitoring, taxId);
   const { document, evidence } = await loadDocument(source.target_url, options);
   try {
-    return { record: extractEgovTaxSemantics(document, taxId, source.target_url), fetches: [evidence] };
+    const extractor = ["consumption-tax", "automobile-tax"].includes(taxId) ? extractEgovTaxSemantics : extractGenericNationalTaxSemantics;
+    return { record: extractor(document, taxId, source.target_url), fetches: [evidence] };
   } catch (error) {
     error.fetches = [evidence];
     error.sourceUrl = source.target_url;

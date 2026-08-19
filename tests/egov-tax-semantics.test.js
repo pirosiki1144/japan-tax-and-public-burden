@@ -4,7 +4,7 @@ import { readFile } from "node:fs/promises";
 import { join } from "node:path";
 import { fileURLToPath } from "node:url";
 import { extractConfiguredSemantics } from "../scripts/monitoring/extract-egov-tax-semantics.js";
-import { diffSemanticValues, extractEgovTaxSemantics } from "../scripts/normalize/egov-tax-semantics.js";
+import { diffSemanticValues, extractEgovTaxSemantics, extractGenericNationalTaxSemantics } from "../scripts/normalize/egov-tax-semantics.js";
 
 const root = fileURLToPath(new URL("..", import.meta.url));
 const fixtureDir = join(root, "tests/fixtures/source-scan");
@@ -68,4 +68,27 @@ test("missing, duplicate, and unreadable legal structures fail closed", async ()
   const tableRow = findNode(automobile.law_full_text, "TableRow");
   tableRow.children[0].children = ["分類不能"];
   assert.throws(() => extractEgovTaxSemantics(automobile, "automobile-tax", "https://example.invalid/law"), /heading is unreadable/);
+});
+
+test("the common national-tax adapter extracts reviewable legal meanings", async () => {
+  const document = await fixture("347AC0000000007");
+  const record = extractGenericNationalTaxSemantics(document, "aviation-fuel-tax", "https://example.invalid/law");
+  assert.equal(record.taxpayer_rules[0].article_num, "4");
+  assert.equal(record.taxable_scope_rules[0].article_num, "3");
+  assert.equal(record.tax_base_rules[0].article_num, "10");
+  assert.match(record.rates[0].raw, /二万六千円/);
+  assert.equal(record.applicable_period.amendment_enforcement_date, document.revision_info.amendment_enforcement_date);
+});
+
+test("common national-tax value and structure changes are detected offline", async () => {
+  const document = await fixture("347AC0000000007");
+  const original = extractGenericNationalTaxSemantics(document, "aviation-fuel-tax", "https://example.invalid/law");
+  const changed = JSON.parse(JSON.stringify(document).replace("二万六千円", "二万七千円"));
+  const changedRecord = extractGenericNationalTaxSemantics(changed, "aviation-fuel-tax", "https://example.invalid/law");
+  assert.ok(diffSemanticValues(original, changedRecord).some(({ path }) => path === "rates[0].raw"));
+
+  const broken = structuredClone(document);
+  const main = findNode(broken.law_full_text, "MainProvision");
+  main.children = main.children.filter(({ attr }) => attr?.Num !== "11");
+  assert.throws(() => extractGenericNationalTaxSemantics(broken, "aviation-fuel-tax", "https://example.invalid/law"), /rates matched 0/);
 });

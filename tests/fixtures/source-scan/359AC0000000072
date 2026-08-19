@@ -1,0 +1,1056 @@
+{
+  "law_info": {
+    "law_type": "Act",
+    "law_id": "359AC0000000072",
+    "law_num": "昭和五十九年法律第七十二号",
+    "law_num_era": "Showa",
+    "law_num_year": 59,
+    "law_num_type": "Act",
+    "law_num_num": "072",
+    "promulgation_date": "1984-08-10"
+  },
+  "revision_info": {
+    "law_revision_id": "359AC0000000072_20260525_506AC0000000052",
+    "law_type": "Act",
+    "law_title": "たばこ税法",
+    "law_title_kana": "たばこぜいほう",
+    "abbrev": "",
+    "category": "国税",
+    "updated": "2025-07-11T19:57:16+09:00",
+    "amendment_promulgate_date": "2024-06-14",
+    "amendment_enforcement_date": "2026-05-25",
+    "amendment_enforcement_comment": null,
+    "amendment_scheduled_enforcement_date": null,
+    "amendment_law_id": "506AC0000000052",
+    "amendment_law_title": "事業性融資の推進等に関する法律",
+    "amendment_law_title_kana": null,
+    "amendment_law_num": "令和六年法律第五十二号",
+    "amendment_type": "3",
+    "repeal_status": "None",
+    "repeal_date": null,
+    "remain_in_force": false,
+    "mission": "New",
+    "current_revision_status": "CurrentEnforced"
+  },
+  "law_full_text": {
+    "tag": "Law",
+    "children": [
+      {
+        "tag": "MainProvision",
+        "children": [
+          {
+            "tag": "Article",
+            "attr": {
+              "Num": "3"
+            },
+            "children": [
+              {
+                "tag": "ArticleCaption",
+                "attr": {},
+                "children": [
+                  "（課税物件）"
+                ]
+              },
+              {
+                "tag": "ArticleTitle",
+                "attr": {},
+                "children": [
+                  "第三条"
+                ]
+              },
+              {
+                "tag": "Paragraph",
+                "attr": {
+                  "Num": "1"
+                },
+                "children": [
+                  {
+                    "tag": "ParagraphNum",
+                    "attr": {},
+                    "children": []
+                  },
+                  {
+                    "tag": "ParagraphSentence",
+                    "attr": {},
+                    "children": [
+                      {
+                        "tag": "Sentence",
+                        "attr": {
+                          "Num": "1",
+                          "WritingMode": "vertical"
+                        },
+                        "children": [
+                          "製造たばこには、この法律により、たばこ税を課する。"
+                        ]
+                      }
+                    ]
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "tag": "Article",
+            "attr": {
+              "Num": "4"
+            },
+            "children": [
+              {
+                "tag": "ArticleCaption",
+                "attr": {},
+                "children": [
+                  "（納税義務者）"
+                ]
+              },
+              {
+                "tag": "ArticleTitle",
+                "attr": {},
+                "children": [
+                  "第四条"
+                ]
+              },
+              {
+                "tag": "Paragraph",
+                "attr": {
+                  "Num": "1"
+                },
+                "children": [
+                  {
+                    "tag": "ParagraphNum",
+                    "attr": {},
+                    "children": []
+                  },
+                  {
+                    "tag": "ParagraphSentence",
+                    "attr": {},
+                    "children": [
+                      {
+                        "tag": "Sentence",
+                        "attr": {
+                          "Num": "1",
+                          "WritingMode": "vertical"
+                        },
+                        "children": [
+                          "製造たばこの製造者は、その製造場から移出した製造たばこにつき、たばこ税を納める義務がある。"
+                        ]
+                      }
+                    ]
+                  }
+                ]
+              },
+              {
+                "tag": "Paragraph",
+                "attr": {
+                  "Num": "2"
+                },
+                "children": [
+                  {
+                    "tag": "ParagraphNum",
+                    "attr": {},
+                    "children": [
+                      "２"
+                    ]
+                  },
+                  {
+                    "tag": "ParagraphSentence",
+                    "attr": {},
+                    "children": [
+                      {
+                        "tag": "Sentence",
+                        "attr": {
+                          "Num": "1",
+                          "WritingMode": "vertical"
+                        },
+                        "children": [
+                          "製造たばこを保税地域から引き取る者は、その引き取る製造たばこにつき、たばこ税を納める義務がある。"
+                        ]
+                      }
+                    ]
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "tag": "Article",
+            "attr": {
+              "Num": "10"
+            },
+            "children": [
+              {
+                "tag": "ArticleCaption",
+                "attr": {},
+                "children": [
+                  "（課税標準）"
+                ]
+              },
+              {
+                "tag": "ArticleTitle",
+                "attr": {},
+                "children": [
+                  "第十条"
+                ]
+              },
+              {
+                "tag": "Paragraph",
+                "attr": {
+                  "Num": "1"
+                },
+                "children": [
+                  {
+                    "tag": "ParagraphNum",
+                    "attr": {},
+                    "children": []
+                  },
+                  {
+                    "tag": "ParagraphSentence",
+                    "attr": {},
+                    "children": [
+                      {
+                        "tag": "Sentence",
+                        "attr": {
+                          "Num": "1",
+                          "WritingMode": "vertical"
+                        },
+                        "children": [
+                          "たばこ税の課税標準は、製造たばこの製造場から移出し、又は保税地域から引き取る製造たばこの本数とする。"
+                        ]
+                      }
+                    ]
+                  }
+                ]
+              },
+              {
+                "tag": "Paragraph",
+                "attr": {
+                  "Num": "2"
+                },
+                "children": [
+                  {
+                    "tag": "ParagraphNum",
+                    "attr": {},
+                    "children": [
+                      "２"
+                    ]
+                  },
+                  {
+                    "tag": "ParagraphSentence",
+                    "attr": {},
+                    "children": [
+                      {
+                        "tag": "Sentence",
+                        "attr": {
+                          "Function": "main",
+                          "Num": "1",
+                          "WritingMode": "vertical"
+                        },
+                        "children": [
+                          "前項の製造たばこ（加熱式たばこを除く。）の本数は、紙巻たばこの本数によるものとし、次の表の上欄に掲げる製造たばこの本数の算定については、同欄の区分に応じ、それぞれ当該下欄に定める重量をもつて紙巻たばこの一本に換算するものとする。"
+                        ]
+                      },
+                      {
+                        "tag": "Sentence",
+                        "attr": {
+                          "Function": "proviso",
+                          "Num": "2",
+                          "WritingMode": "vertical"
+                        },
+                        "children": [
+                          "ただし、一本当たりの重量が一グラム未満の葉巻たばこの本数の算定については、当該葉巻たばこの一本をもつて紙巻たばこの一本に換算するものとする。"
+                        ]
+                      }
+                    ]
+                  },
+                  {
+                    "tag": "TableStruct",
+                    "attr": {},
+                    "children": [
+                      {
+                        "tag": "Table",
+                        "attr": {
+                          "WritingMode": "vertical"
+                        },
+                        "children": [
+                          {
+                            "tag": "TableRow",
+                            "attr": {},
+                            "children": [
+                              {
+                                "tag": "TableColumn",
+                                "attr": {
+                                  "BorderBottom": "solid",
+                                  "BorderLeft": "solid",
+                                  "BorderRight": "solid",
+                                  "BorderTop": "solid"
+                                },
+                                "children": [
+                                  {
+                                    "tag": "Sentence",
+                                    "attr": {
+                                      "Num": "1",
+                                      "WritingMode": "vertical"
+                                    },
+                                    "children": [
+                                      "区分"
+                                    ]
+                                  }
+                                ]
+                              },
+                              {
+                                "tag": "TableColumn",
+                                "attr": {
+                                  "BorderBottom": "solid",
+                                  "BorderLeft": "solid",
+                                  "BorderRight": "solid",
+                                  "BorderTop": "solid"
+                                },
+                                "children": [
+                                  {
+                                    "tag": "Sentence",
+                                    "attr": {
+                                      "Num": "1",
+                                      "WritingMode": "vertical"
+                                    },
+                                    "children": [
+                                      "重量"
+                                    ]
+                                  }
+                                ]
+                              }
+                            ]
+                          },
+                          {
+                            "tag": "TableRow",
+                            "attr": {},
+                            "children": [
+                              {
+                                "tag": "TableColumn",
+                                "attr": {
+                                  "BorderBottom": "none",
+                                  "BorderLeft": "solid",
+                                  "BorderRight": "solid",
+                                  "BorderTop": "solid"
+                                },
+                                "children": [
+                                  {
+                                    "tag": "Sentence",
+                                    "attr": {
+                                      "Num": "1",
+                                      "WritingMode": "vertical"
+                                    },
+                                    "children": [
+                                      "一　喫煙用の製造たばこ"
+                                    ]
+                                  }
+                                ]
+                              },
+                              {
+                                "tag": "TableColumn",
+                                "attr": {
+                                  "BorderBottom": "none",
+                                  "BorderLeft": "solid",
+                                  "BorderRight": "solid",
+                                  "BorderTop": "solid"
+                                },
+                                "children": [
+                                  {
+                                    "tag": "Sentence",
+                                    "attr": {
+                                      "Num": "1",
+                                      "WritingMode": "vertical"
+                                    },
+                                    "children": [
+                                      "　"
+                                    ]
+                                  }
+                                ]
+                              }
+                            ]
+                          },
+                          {
+                            "tag": "TableRow",
+                            "attr": {},
+                            "children": [
+                              {
+                                "tag": "TableColumn",
+                                "attr": {
+                                  "BorderBottom": "none",
+                                  "BorderLeft": "solid",
+                                  "BorderRight": "solid",
+                                  "BorderTop": "none"
+                                },
+                                "children": [
+                                  {
+                                    "tag": "Sentence",
+                                    "attr": {
+                                      "Num": "1",
+                                      "WritingMode": "vertical"
+                                    },
+                                    "children": [
+                                      "（１）　葉巻たばこ"
+                                    ]
+                                  }
+                                ]
+                              },
+                              {
+                                "tag": "TableColumn",
+                                "attr": {
+                                  "BorderBottom": "none",
+                                  "BorderLeft": "solid",
+                                  "BorderRight": "solid",
+                                  "BorderTop": "none"
+                                },
+                                "children": [
+                                  {
+                                    "tag": "Sentence",
+                                    "attr": {
+                                      "Num": "1",
+                                      "WritingMode": "vertical"
+                                    },
+                                    "children": [
+                                      "一グラム"
+                                    ]
+                                  }
+                                ]
+                              }
+                            ]
+                          },
+                          {
+                            "tag": "TableRow",
+                            "attr": {},
+                            "children": [
+                              {
+                                "tag": "TableColumn",
+                                "attr": {
+                                  "BorderBottom": "none",
+                                  "BorderLeft": "solid",
+                                  "BorderRight": "solid",
+                                  "BorderTop": "none"
+                                },
+                                "children": [
+                                  {
+                                    "tag": "Sentence",
+                                    "attr": {
+                                      "Num": "1",
+                                      "WritingMode": "vertical"
+                                    },
+                                    "children": [
+                                      "（２）　パイプたばこ"
+                                    ]
+                                  }
+                                ]
+                              },
+                              {
+                                "tag": "TableColumn",
+                                "attr": {
+                                  "BorderBottom": "none",
+                                  "BorderLeft": "solid",
+                                  "BorderRight": "solid",
+                                  "BorderTop": "none"
+                                },
+                                "children": [
+                                  {
+                                    "tag": "Sentence",
+                                    "attr": {
+                                      "Num": "1",
+                                      "WritingMode": "vertical"
+                                    },
+                                    "children": [
+                                      "一グラム"
+                                    ]
+                                  }
+                                ]
+                              }
+                            ]
+                          },
+                          {
+                            "tag": "TableRow",
+                            "attr": {},
+                            "children": [
+                              {
+                                "tag": "TableColumn",
+                                "attr": {
+                                  "BorderBottom": "solid",
+                                  "BorderLeft": "solid",
+                                  "BorderRight": "solid",
+                                  "BorderTop": "none"
+                                },
+                                "children": [
+                                  {
+                                    "tag": "Sentence",
+                                    "attr": {
+                                      "Num": "1",
+                                      "WritingMode": "vertical"
+                                    },
+                                    "children": [
+                                      "（３）　刻みたばこ"
+                                    ]
+                                  }
+                                ]
+                              },
+                              {
+                                "tag": "TableColumn",
+                                "attr": {
+                                  "BorderBottom": "solid",
+                                  "BorderLeft": "solid",
+                                  "BorderRight": "solid",
+                                  "BorderTop": "none"
+                                },
+                                "children": [
+                                  {
+                                    "tag": "Sentence",
+                                    "attr": {
+                                      "Num": "1",
+                                      "WritingMode": "vertical"
+                                    },
+                                    "children": [
+                                      "二グラム"
+                                    ]
+                                  }
+                                ]
+                              }
+                            ]
+                          },
+                          {
+                            "tag": "TableRow",
+                            "attr": {},
+                            "children": [
+                              {
+                                "tag": "TableColumn",
+                                "attr": {
+                                  "BorderBottom": "solid",
+                                  "BorderLeft": "solid",
+                                  "BorderRight": "solid",
+                                  "BorderTop": "solid"
+                                },
+                                "children": [
+                                  {
+                                    "tag": "Sentence",
+                                    "attr": {
+                                      "Num": "1",
+                                      "WritingMode": "vertical"
+                                    },
+                                    "children": [
+                                      "二　かみ用の製造たばこ"
+                                    ]
+                                  }
+                                ]
+                              },
+                              {
+                                "tag": "TableColumn",
+                                "attr": {
+                                  "BorderBottom": "solid",
+                                  "BorderLeft": "solid",
+                                  "BorderRight": "solid",
+                                  "BorderTop": "solid"
+                                },
+                                "children": [
+                                  {
+                                    "tag": "Sentence",
+                                    "attr": {
+                                      "Num": "1",
+                                      "WritingMode": "vertical"
+                                    },
+                                    "children": [
+                                      "二グラム"
+                                    ]
+                                  }
+                                ]
+                              }
+                            ]
+                          },
+                          {
+                            "tag": "TableRow",
+                            "attr": {},
+                            "children": [
+                              {
+                                "tag": "TableColumn",
+                                "attr": {
+                                  "BorderBottom": "solid",
+                                  "BorderLeft": "solid",
+                                  "BorderRight": "solid",
+                                  "BorderTop": "solid"
+                                },
+                                "children": [
+                                  {
+                                    "tag": "Sentence",
+                                    "attr": {
+                                      "Num": "1",
+                                      "WritingMode": "vertical"
+                                    },
+                                    "children": [
+                                      "三　かぎ用の製造たばこ"
+                                    ]
+                                  }
+                                ]
+                              },
+                              {
+                                "tag": "TableColumn",
+                                "attr": {
+                                  "BorderBottom": "solid",
+                                  "BorderLeft": "solid",
+                                  "BorderRight": "solid",
+                                  "BorderTop": "solid"
+                                },
+                                "children": [
+                                  {
+                                    "tag": "Sentence",
+                                    "attr": {
+                                      "Num": "1",
+                                      "WritingMode": "vertical"
+                                    },
+                                    "children": [
+                                      "二グラム"
+                                    ]
+                                  }
+                                ]
+                              }
+                            ]
+                          }
+                        ]
+                      }
+                    ]
+                  }
+                ]
+              },
+              {
+                "tag": "Paragraph",
+                "attr": {
+                  "Num": "3"
+                },
+                "children": [
+                  {
+                    "tag": "ParagraphNum",
+                    "attr": {},
+                    "children": [
+                      "３"
+                    ]
+                  },
+                  {
+                    "tag": "ParagraphSentence",
+                    "attr": {},
+                    "children": [
+                      {
+                        "tag": "Sentence",
+                        "attr": {
+                          "Num": "1",
+                          "WritingMode": "vertical"
+                        },
+                        "children": [
+                          "加熱式たばこに係る第一項の製造たばこの本数は、次に掲げる方法により換算した紙巻たばこの本数の合計本数によるものとする。"
+                        ]
+                      }
+                    ]
+                  },
+                  {
+                    "tag": "Item",
+                    "attr": {
+                      "Num": "1"
+                    },
+                    "children": [
+                      {
+                        "tag": "ItemTitle",
+                        "attr": {},
+                        "children": [
+                          "一"
+                        ]
+                      },
+                      {
+                        "tag": "ItemSentence",
+                        "attr": {},
+                        "children": [
+                          {
+                            "tag": "Sentence",
+                            "attr": {
+                              "Num": "1",
+                              "WritingMode": "vertical"
+                            },
+                            "children": [
+                              "加熱式たばこの重量（フィルターその他の財務省令で定めるものに係る部分の重量を除く。）の〇・四グラムをもつて紙巻たばこの〇・五本に換算する方法"
+                            ]
+                          }
+                        ]
+                      }
+                    ]
+                  },
+                  {
+                    "tag": "Item",
+                    "attr": {
+                      "Num": "2"
+                    },
+                    "children": [
+                      {
+                        "tag": "ItemTitle",
+                        "attr": {},
+                        "children": [
+                          "二"
+                        ]
+                      },
+                      {
+                        "tag": "ItemSentence",
+                        "attr": {},
+                        "children": [
+                          {
+                            "tag": "Sentence",
+                            "attr": {
+                              "Num": "1",
+                              "WritingMode": "vertical"
+                            },
+                            "children": [
+                              "次に掲げる加熱式たばこの区分に応じ、それぞれ次に定める金額の紙巻たばこの一本の金額に相当する金額として政令で定めるところにより計算した金額をもつて紙巻たばこの〇・五本に換算する方法"
+                            ]
+                          }
+                        ]
+                      },
+                      {
+                        "tag": "Subitem1",
+                        "attr": {
+                          "Num": "1"
+                        },
+                        "children": [
+                          {
+                            "tag": "Subitem1Title",
+                            "attr": {},
+                            "children": [
+                              "イ"
+                            ]
+                          },
+                          {
+                            "tag": "Subitem1Sentence",
+                            "attr": {},
+                            "children": [
+                              {
+                                "tag": "Column",
+                                "attr": {
+                                  "Num": "1"
+                                },
+                                "children": [
+                                  {
+                                    "tag": "Sentence",
+                                    "attr": {
+                                      "Num": "1",
+                                      "WritingMode": "vertical"
+                                    },
+                                    "children": [
+                                      "製造たばこの製造場から移出され、又は保税地域から引き取られる時に小売定価（たばこ事業法第三十三条第一項又は第二項（小売定価の認可）の認可を受けた小売定価をいう。）が定められている加熱式たばこ"
+                                    ]
+                                  }
+                                ]
+                              },
+                              {
+                                "tag": "Column",
+                                "attr": {
+                                  "Num": "2"
+                                },
+                                "children": [
+                                  {
+                                    "tag": "Sentence",
+                                    "attr": {
+                                      "Num": "1",
+                                      "WritingMode": "vertical"
+                                    },
+                                    "children": [
+                                      "当該小売定価に相当する金額（消費税法（昭和六十三年法律第百八号）の規定により課されるべき消費税に相当する金額及び地方税法（昭和二十五年法律第二百二十六号）第二章第三節の規定により課されるべき地方消費税に相当する金額（ロ（１）において「消費税等相当額」という。）を除く。）"
+                                    ]
+                                  }
+                                ]
+                              }
+                            ]
+                          }
+                        ]
+                      },
+                      {
+                        "tag": "Subitem1",
+                        "attr": {
+                          "Num": "2"
+                        },
+                        "children": [
+                          {
+                            "tag": "Subitem1Title",
+                            "attr": {},
+                            "children": [
+                              "ロ"
+                            ]
+                          },
+                          {
+                            "tag": "Subitem1Sentence",
+                            "attr": {},
+                            "children": [
+                              {
+                                "tag": "Column",
+                                "attr": {
+                                  "Num": "1"
+                                },
+                                "children": [
+                                  {
+                                    "tag": "Sentence",
+                                    "attr": {
+                                      "Num": "1",
+                                      "WritingMode": "vertical"
+                                    },
+                                    "children": [
+                                      "イに掲げるもの以外の加熱式たばこ"
+                                    ]
+                                  }
+                                ]
+                              },
+                              {
+                                "tag": "Column",
+                                "attr": {
+                                  "Num": "2"
+                                },
+                                "children": [
+                                  {
+                                    "tag": "Sentence",
+                                    "attr": {
+                                      "Num": "1",
+                                      "WritingMode": "vertical"
+                                    },
+                                    "children": [
+                                      "次に掲げる加熱式たばこの区分に応じ、それぞれ次に定める金額に、当該加熱式たばこを販売する者（当該加熱式たばこの製造者を除く。）の当該販売に係る通常の利潤及び費用に相当する金額並びに当該加熱式たばこに課されるべきたばこ税、地方税法第二章第五節に規定する道府県たばこ税及び同法第三章第四節に規定する市町村たばこ税に相当する金額の合計額として政令で定めるところにより計算した金額を加算した金額"
+                                    ]
+                                  }
+                                ]
+                              }
+                            ]
+                          },
+                          {
+                            "tag": "Subitem2",
+                            "attr": {
+                              "Num": "1"
+                            },
+                            "children": [
+                              {
+                                "tag": "Subitem2Title",
+                                "attr": {},
+                                "children": [
+                                  "（１）"
+                                ]
+                              },
+                              {
+                                "tag": "Subitem2Sentence",
+                                "attr": {},
+                                "children": [
+                                  {
+                                    "tag": "Column",
+                                    "attr": {
+                                      "Num": "1"
+                                    },
+                                    "children": [
+                                      {
+                                        "tag": "Sentence",
+                                        "attr": {
+                                          "Num": "1",
+                                          "WritingMode": "vertical"
+                                        },
+                                        "children": [
+                                          "製造たばこの製造場から移出された加熱式たばこ"
+                                        ]
+                                      }
+                                    ]
+                                  },
+                                  {
+                                    "tag": "Column",
+                                    "attr": {
+                                      "Num": "2"
+                                    },
+                                    "children": [
+                                      {
+                                        "tag": "Sentence",
+                                        "attr": {
+                                          "Num": "1",
+                                          "WritingMode": "vertical"
+                                        },
+                                        "children": [
+                                          "当該加熱式たばこの製造者が当該移出した加熱式たばこの製造及び販売につき要した費用又は通常要すべき費用に、当該加熱式たばこに係る当該製造者の通常の利潤に相当する金額を加算した金額（消費税等相当額を除く。）"
+                                        ]
+                                      }
+                                    ]
+                                  }
+                                ]
+                              }
+                            ]
+                          },
+                          {
+                            "tag": "Subitem2",
+                            "attr": {
+                              "Num": "2"
+                            },
+                            "children": [
+                              {
+                                "tag": "Subitem2Title",
+                                "attr": {},
+                                "children": [
+                                  "（２）"
+                                ]
+                              },
+                              {
+                                "tag": "Subitem2Sentence",
+                                "attr": {},
+                                "children": [
+                                  {
+                                    "tag": "Column",
+                                    "attr": {
+                                      "Num": "1"
+                                    },
+                                    "children": [
+                                      {
+                                        "tag": "Sentence",
+                                        "attr": {
+                                          "Num": "1",
+                                          "WritingMode": "vertical"
+                                        },
+                                        "children": [
+                                          "保税地域から引き取られる加熱式たばこ"
+                                        ]
+                                      }
+                                    ]
+                                  },
+                                  {
+                                    "tag": "Column",
+                                    "attr": {
+                                      "Num": "2"
+                                    },
+                                    "children": [
+                                      {
+                                        "tag": "Sentence",
+                                        "attr": {
+                                          "Num": "1",
+                                          "WritingMode": "vertical"
+                                        },
+                                        "children": [
+                                          "当該加熱式たばこにつき関税定率法（明治四十三年法律第五十四号）第四条から第四条の九まで（課税価格の計算方法）の規定に準じて算出した価格に当該加熱式たばこに係る関税の額（関税法第二条第一項第四号の二に規定する附帯税の額に相当する額を除く。）に相当する金額を加算した金額"
+                                        ]
+                                      }
+                                    ]
+                                  }
+                                ]
+                              }
+                            ]
+                          }
+                        ]
+                      }
+                    ]
+                  }
+                ]
+              },
+              {
+                "tag": "Paragraph",
+                "attr": {
+                  "Num": "4"
+                },
+                "children": [
+                  {
+                    "tag": "ParagraphNum",
+                    "attr": {},
+                    "children": [
+                      "４"
+                    ]
+                  },
+                  {
+                    "tag": "ParagraphSentence",
+                    "attr": {},
+                    "children": [
+                      {
+                        "tag": "Sentence",
+                        "attr": {
+                          "Num": "1",
+                          "WritingMode": "vertical"
+                        },
+                        "children": [
+                          "前二項に定めるもののほか、これらの規定により重量又は金額を本数に換算する場合の計算、前項第二号ロに掲げる加熱式たばこに係る同号ロに定める金額の計算その他前二項の規定の適用に関し必要な事項は、政令で定める。"
+                        ]
+                      }
+                    ]
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "tag": "Article",
+            "attr": {
+              "Num": "11"
+            },
+            "children": [
+              {
+                "tag": "ArticleCaption",
+                "attr": {},
+                "children": [
+                  "（税率）"
+                ]
+              },
+              {
+                "tag": "ArticleTitle",
+                "attr": {},
+                "children": [
+                  "第十一条"
+                ]
+              },
+              {
+                "tag": "Paragraph",
+                "attr": {
+                  "Num": "1"
+                },
+                "children": [
+                  {
+                    "tag": "ParagraphNum",
+                    "attr": {},
+                    "children": []
+                  },
+                  {
+                    "tag": "ParagraphSentence",
+                    "attr": {},
+                    "children": [
+                      {
+                        "tag": "Sentence",
+                        "attr": {
+                          "Num": "1",
+                          "WritingMode": "vertical"
+                        },
+                        "children": [
+                          "たばこ税の税率は、千本につき六千八百二円とする。"
+                        ]
+                      }
+                    ]
+                  }
+                ]
+              },
+              {
+                "tag": "Paragraph",
+                "attr": {
+                  "Num": "2"
+                },
+                "children": [
+                  {
+                    "tag": "ParagraphNum",
+                    "attr": {},
+                    "children": [
+                      "２"
+                    ]
+                  },
+                  {
+                    "tag": "ParagraphSentence",
+                    "attr": {},
+                    "children": [
+                      {
+                        "tag": "Sentence",
+                        "attr": {
+                          "Num": "1",
+                          "WritingMode": "vertical"
+                        },
+                        "children": [
+                          "特定販売業者（たばこ事業法第十四条第一項（特定販売業の承継）に規定する特定販売業者をいう。以下同じ。）以外の者により保税地域から引き取られる製造たばこに係るたばこ税の税率は、前項の規定にかかわらず、千本につき一万四千四百二十四円とする。"
+                        ]
+                      }
+                    ]
+                  }
+                ]
+              }
+            ]
+          }
+        ]
+      }
+    ]
+  }
+}
