@@ -38,7 +38,7 @@ reports/      生成レポート
 - `config/sources.yaml` は巡回先と利用条件を管理する情報源レジストリです。
 - `config/monitoring.yaml` は正本制度ごとの監視可否、複数source、対象ID、抽出対象を管理します。詳細は[初期マスタ監視設定](docs/monitoring-configuration.md)を参照してください。
 - `config/adapter-inventory.yaml` は全監視targetの実装Issue、優先度、batch、公式情報形式、必要adapter、抽出可否を管理する再生成可能な棚卸しです。
-- `data/burdens`、`data/changes`、`data/events`、`data/phases`、`data/revenue`、`data/reconciliation` はレビュー後にGitで履歴管理する正本です。
+- `data/burdens`、`data/changes`、`data/events`、`data/phases`、`data/revenue`、`data/reconciliation` はレビュー後にGitで履歴管理する正本です。`data/monitoring/semantic-baseline.json`は、意味抽出値の前回レビュー済み状態であり、定期監視の項目単位比較に使用します。
 - 初期マスタの投入件数と未解決事項は[初期マスタ投入・検証レポート](docs/initial-master-import-report.md)を参照してください。
 - `data/candidates` は初期マスタへ昇格する前の調査候補です。Schema検証とGitレビューの対象ですが、確定制度マスタや配布対象として扱いません。適合性と昇格条件は[初期マスタ候補のSchema適合性確認](docs/initial-master-schema-fit.md)、税以外の候補の収集範囲は[税以外の公的負担候補の収集・照合](docs/public-burden-candidate-reconciliation.md)、統合判定は[初期マスタ投入対象の統合判定](docs/initial-master-selection.md)を参照してください。
 - 取得途中のHTML、PDF、API応答等は `.cache/` 配下の一時データとし、正本にせずGitにも保存しません。保存が必要な根拠は別Issueで対象と形式をレビューします。
@@ -55,6 +55,7 @@ npm test
 npm run validate
 npm run inventory:check
 npm run semantics:check
+npm run monitor:check
 ```
 
 `.yaml` ファイルはYAML 1.2として読み込みます。一般的なYAML記法とJSON互換記法のどちらも使用できます。`npm run validate` はYAML、JSON、CSVを対応するJSON Schemaへ照合し、必須項目、ID重複、参照整合性、URL、日付形式、追加プロパティなどを検証します。
@@ -74,6 +75,21 @@ e-Gov法令APIから消費税・自動車税の納税義務者、課税対象、
 ```bash
 npm run semantics:check
 npm run semantics:extract -- --output .cache/semantic-extraction.json
+```
+
+#31の共通運用pipelineは、`config/adapter-inventory.yaml`で実装済みになった意味抽出adapterと従来のsource差分検出を一括実行します。確定的で正本への対応先がある差分だけを#9のPR候補へ渡し、取得失敗、構造変更、対応先不明、公式source間不一致は#8の重複防止付きIssue候補へ渡します。
+
+```bash
+npm run monitor:check
+npm run monitor -- --dry-run --output .cache/source-scan-result.json
+```
+
+1件の失敗後も他targetを実行し、全結果をartifactへ残します。変更なしの場合はbranch、commit、PR、Issueを作成しません。制度固有の抽出規則は共通pipelineへ書かず、#42〜#46でregistryへadapterを登録します。
+
+意味抽出のbaselineは、実API結果を人間が確認した後だけ更新します。次のコマンドは確認済み結果から候補ファイルを生成するものであり、直接`main`へ反映せずPRで旧値・新値をレビューします。
+
+```bash
+npm run semantics:baseline -- --input .cache/source-scan-result.json --output data/monitoring/semantic-baseline.json --confirm-reviewed
 ```
 
 `.github/workflows/source-scan.yml` は毎週の定期実行と手動実行に対応し、結果JSONをartifactとして保存します。workflow自身や正本データは生成・commitしません。

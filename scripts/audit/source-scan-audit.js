@@ -17,14 +17,14 @@ function targetIdentity(difference) {
   return target ? `${target.record_id_field}:${target.record_id}:${target.path}` : difference.fact_id;
 }
 
-function finding({ code, sourceId, summary, details, urls, detectedAt, difference }) {
+function finding({ code, sourceId, summary, details, urls, detectedAt, difference, taxId, topicIdentity }) {
   const target = difference?.target ?? null;
   return {
     severity: "needs_review",
     code,
-    topic_key: topicKey([sourceId, code, difference ? targetIdentity(difference) : "source-level"]),
+    topic_key: topicKey([sourceId, code, topicIdentity ?? (difference ? targetIdentity(difference) : "source-level")]),
     source_id: sourceId,
-    tax_id: target?.record_id_field === "tax_id" ? target.record_id : null,
+    tax_id: target?.record_id_field === "tax_id" ? target.record_id : taxId ?? null,
     change_id: target?.record_id_field === "change_id" ? target.record_id : null,
     target,
     summary,
@@ -48,22 +48,23 @@ export function auditSourceScan(scan) {
         summary: `${result.source_id} の自動確認に失敗`,
         details: result.error ?? "原因不明の取得・処理失敗",
         urls,
-        detectedAt
+        detectedAt,
+        taxId: result.tax_id
       }));
       continue;
     }
-    for (const difference of result.candidate_diff ?? []) {
-      if (!difference.target) {
-        findings.push(finding({
-          code: "unmapped_official_change",
-          sourceId: result.source_id,
-          summary: `${result.source_id} で正本へ自動対応できない公式差分を検出`,
-          details: `${difference.fact_id}: ${JSON.stringify(difference.current)} → ${JSON.stringify(difference.candidate)}`,
-          urls,
-          detectedAt,
-          difference
-        }));
-      }
+    const unmapped = (result.candidate_diff ?? []).filter(({ target }) => !target);
+    if (unmapped.length) {
+      findings.push(finding({
+        code: "unmapped_official_change",
+        sourceId: result.source_id,
+        summary: `${result.source_id} で正本へ自動対応できない公式差分を検出`,
+        details: unmapped.map((difference) => `${difference.fact_id}: ${JSON.stringify(difference.current)} → ${JSON.stringify(difference.candidate)}`).join("\n"),
+        urls,
+        detectedAt,
+        taxId: result.tax_id,
+        topicIdentity: "unmapped-semantic-values"
+      }));
     }
   }
 

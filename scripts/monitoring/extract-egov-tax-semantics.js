@@ -1,3 +1,4 @@
+import { createHash } from "node:crypto";
 import { mkdir, readFile, writeFile } from "node:fs/promises";
 import { basename, dirname, join } from "node:path";
 import { fileURLToPath } from "node:url";
@@ -11,21 +12,57 @@ function option(name) {
   return index >= 0 ? process.argv[index + 1] : undefined;
 }
 
-async function loadDocument(url, fixtureDir) {
-  if (fixtureDir) return JSON.parse(await readFile(join(fixtureDir, basename(new URL(url).pathname)), "utf8"));
-  const response = await fetch(url, { headers: { accept: "application/json" }, signal: AbortSignal.timeout(30000) });
-  if (!response.ok) throw new Error(`e-Gov fetch failed (${response.status}) for ${url}`);
-  return response.json();
+async function loadDocument(url, { fixtureDir, fetchImpl = globalThis.fetch, now = () => new Date() } = {}) {
+  let bytes;
+  let contentType;
+  if (fixtureDir) {
+    bytes = await readFile(join(fixtureDir, basename(new URL(url).pathname)));
+    contentType = "application/json";
+  } else {
+    const response = await fetchImpl(url, { headers: { accept: "application/json" }, signal: AbortSignal.timeout(30000) });
+    if (!response.ok) throw new Error(`e-Gov fetch failed (${response.status}) for ${url}`);
+    contentType = response.headers.get("content-type") ?? "";
+    if (!contentType.toLowerCase().includes("json")) throw new Error(`e-Gov response is not JSON for ${url}: ${contentType || "unknown"}`);
+    bytes = Buffer.from(await response.arrayBuffer());
+  }
+  let document;
+  try {
+    document = JSON.parse(bytes.toString("utf8"));
+  } catch (error) {
+    throw new Error(`e-Gov response is unreadable for ${url}: ${error.message}`);
+  }
+  return {
+    document,
+    evidence: { source_url: url, fetched_at: now().toISOString(), sha256: createHash("sha256").update(bytes).digest("hex"), content_type: contentType }
+  };
 }
 
-export async function extractConfiguredSemantics(repositoryRoot, { fixtureDir } = {}) {
+function configuredSource(monitoring, taxId) {
+  const target = monitoring.targets.find(({ tax_id }) => tax_id === taxId);
+  const source = target?.sources.find(({ change_detection }) => change_detection?.document_format === "egov_law_api_v2_json");
+  if (!source) throw new Error(`${taxId}: e-Gov semantic source is missing`);
+  return source;
+}
+
+export async function extractConfiguredSemanticTarget(repositoryRoot, taxId, options = {}) {
+  const monitoring = options.monitoring ?? await readYaml(join(repositoryRoot, "config/monitoring.yaml"));
+  const source = configuredSource(monitoring, taxId);
+  const { document, evidence } = await loadDocument(source.target_url, options);
+  try {
+    return { record: extractEgovTaxSemantics(document, taxId, source.target_url), fetches: [evidence] };
+  } catch (error) {
+    error.fetches = [evidence];
+    error.sourceUrl = source.target_url;
+    throw error;
+  }
+}
+
+export async function extractConfiguredSemantics(repositoryRoot, options = {}) {
   const monitoring = await readYaml(join(repositoryRoot, "config/monitoring.yaml"));
   const records = [];
   for (const taxId of ["consumption-tax", "automobile-tax"]) {
-    const target = monitoring.targets.find(({ tax_id }) => tax_id === taxId);
-    const source = target?.sources.find(({ change_detection }) => change_detection?.document_format === "egov_law_api_v2_json");
-    if (!source) throw new Error(`${taxId}: e-Gov semantic source is missing`);
-    records.push(extractEgovTaxSemantics(await loadDocument(source.target_url, fixtureDir), taxId, source.target_url));
+    const { record } = await extractConfiguredSemanticTarget(repositoryRoot, taxId, { ...options, monitoring });
+    records.push(record);
   }
   return { schema_version: 1, records };
 }
