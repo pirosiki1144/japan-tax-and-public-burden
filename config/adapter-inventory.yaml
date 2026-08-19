@@ -362,8 +362,8 @@
       "official_name": "入湯税",
       "burden_type": "local_tax",
       "implementation_issue": 43,
-      "implementation_status": "planned",
-      "priority": "high",
+      "implementation_status": "implemented",
+      "priority": "completed",
       "depends_on_issues": [
         31
       ],
@@ -371,11 +371,11 @@
       "reuse_group": "egov_law_api_json:325AC0000000226",
       "municipal_scope": "issue_20",
       "capabilities": {
-        "liable_party": "needs_source_research",
-        "taxable_scope": "needs_source_research",
-        "calculation_basis": "needs_source_research",
-        "rate_or_amount": "needs_source_research",
-        "applicable_period": "needs_source_research"
+        "liable_party": "implemented",
+        "taxable_scope": "implemented",
+        "calculation_basis": "implemented",
+        "rate_or_amount": "implemented",
+        "applicable_period": "implemented"
       },
       "sources": [
         {
@@ -384,7 +384,7 @@
           "official_format": "egov_law_api_json",
           "current_adapter": "manual",
           "required_adapter": "egov_law_semantics",
-          "adapter_status": "planned",
+          "adapter_status": "implemented",
           "reuse_key": "egov_law_api_json:325AC0000000226"
         }
       ]
@@ -426,8 +426,8 @@
       "official_name": "事業所税",
       "burden_type": "local_tax",
       "implementation_issue": 43,
-      "implementation_status": "planned",
-      "priority": "high",
+      "implementation_status": "implemented",
+      "priority": "completed",
       "depends_on_issues": [
         31
       ],
@@ -435,11 +435,11 @@
       "reuse_group": "egov_law_api_json:325AC0000000226",
       "municipal_scope": "issue_20",
       "capabilities": {
-        "liable_party": "needs_source_research",
-        "taxable_scope": "needs_source_research",
-        "calculation_basis": "needs_source_research",
-        "rate_or_amount": "needs_source_research",
-        "applicable_period": "needs_source_research"
+        "liable_party": "implemented",
+        "taxable_scope": "implemented",
+        "calculation_basis": "implemented",
+        "rate_or_amount": "implemented",
+        "applicable_period": "implemented"
       },
       "sources": [
         {
@@ -448,7 +448,7 @@
           "official_format": "egov_law_api_json",
           "current_adapter": "manual",
           "required_adapter": "egov_law_semantics",
-          "adapter_status": "planned",
+          "adapter_status": "implemented",
           "reuse_key": "egov_law_api_json:325AC0000000226"
         }
       ]
@@ -490,8 +490,8 @@
       "official_name": "都市計画税",
       "burden_type": "local_tax",
       "implementation_issue": 43,
-      "implementation_status": "planned",
-      "priority": "high",
+      "implementation_status": "implemented",
+      "priority": "completed",
       "depends_on_issues": [
         31
       ],
@@ -499,11 +499,11 @@
       "reuse_group": "egov_law_api_json:325AC0000000226",
       "municipal_scope": "issue_20",
       "capabilities": {
-        "liable_party": "needs_source_research",
-        "taxable_scope": "needs_source_research",
-        "calculation_basis": "needs_source_research",
-        "rate_or_amount": "needs_source_research",
-        "applicable_period": "needs_source_research"
+        "liable_party": "implemented",
+        "taxable_scope": "implemented",
+        "calculation_basis": "implemented",
+        "rate_or_amount": "implemented",
+        "applicable_period": "implemented"
       },
       "sources": [
         {
@@ -512,7 +512,7 @@
           "official_format": "egov_law_api_json",
           "current_adapter": "manual",
           "required_adapter": "egov_law_semantics",
-          "adapter_status": "planned",
+          "adapter_status": "implemented",
           "reuse_key": "egov_law_api_json:325AC0000000226"
         }
       ]
@@ -554,8 +554,8 @@
       "official_name": "共同施設税",
       "burden_type": "local_tax",
       "implementation_issue": 43,
-      "implementation_status": "planned",
-      "priority": "high",
+      "implementation_status": "held",
+      "priority": "completed",
       "depends_on_issues": [
         31
       ],
@@ -576,8 +576,9 @@
           "official_format": "egov_law_api_json",
           "current_adapter": "manual",
           "required_adapter": "egov_law_semantics",
-          "adapter_status": "planned",
-          "reuse_key": "egov_law_api_json:325AC0000000226"
+          "adapter_status": "held",
+          "reuse_key": "egov_law_api_json:325AC0000000226",
+          "hold_reason": "水利地益税等との共通節で課税対象・負担者・算定方法が条例へ委任され、国法上の単一値を抽出できない"
         }
       ]
     },
@@ -990,8 +991,8 @@
       "official_name": "事業税",
       "burden_type": "local_tax",
       "implementation_issue": 43,
-      "implementation_status": "planned",
-      "priority": "high",
+      "implementation_status": "implemented",
+      "priority": "completed",
       "depends_on_issues": [
         31
       ],
@@ -999,11 +1000,11 @@
       "reuse_group": "egov_law_api_json:325AC0000000226",
       "municipal_scope": "issue_20",
       "capabilities": {
-        "liable_party": "needs_source_research",
-        "taxable_scope": "needs_source_research",
-        "calculation_basis": "needs_source_research",
-        "rate_or_amount": "needs_source_research",
-        "applicable_period": "needs_source_research"
+        "liable_party": "implemented",
+        "taxable_scope": "implemented",
+        "calculation_basis": "implemented",
+        "rate_or_amount": "implemented",
+        "applicable_period": "implemented"
       },
       "sources": [
         {
@@ -1012,7 +1013,7 @@
           "official_format": "egov_law_api_json",
           "current_adapter": "manual",
           "required_adapter": "egov_law_semantics",
-          "adapter_status": "planned",
+          "adapter_status": "implemented",
           "reuse_key": "egov_law_api_json:325AC0000000226"
         }
       ]
@@ -1022,8 +1023,8 @@
       "official_name": "固定資産税",
       "burden_type": "local_tax",
       "implementation_issue": 43,
-      "implementation_status": "planned",
-      "priority": "high",
+      "implementation_status": "implemented",
+      "priority": "completed",
       "depends_on_issues": [
         31
       ],
@@ -1031,11 +1032,11 @@
       "reuse_group": "egov_law_api_json:325AC0000000226",
       "municipal_scope": "issue_20",
       "capabilities": {
-        "liable_party": "needs_source_research",
-        "taxable_scope": "needs_source_research",
-        "calculation_basis": "needs_source_research",
-        "rate_or_amount": "needs_source_research",
-        "applicable_period": "needs_source_research"
+        "liable_party": "implemented",
+        "taxable_scope": "implemented",
+        "calculation_basis": "implemented",
+        "rate_or_amount": "implemented",
+        "applicable_period": "implemented"
       },
       "sources": [
         {
@@ -1044,7 +1045,7 @@
           "official_format": "egov_law_api_json",
           "current_adapter": "manual",
           "required_adapter": "egov_law_semantics",
-          "adapter_status": "planned",
+          "adapter_status": "implemented",
           "reuse_key": "egov_law_api_json:325AC0000000226"
         }
       ]
@@ -1151,8 +1152,8 @@
       "official_name": "ゴルフ場利用税",
       "burden_type": "local_tax",
       "implementation_issue": 43,
-      "implementation_status": "planned",
-      "priority": "high",
+      "implementation_status": "implemented",
+      "priority": "completed",
       "depends_on_issues": [
         31
       ],
@@ -1160,11 +1161,11 @@
       "reuse_group": "egov_law_api_json:325AC0000000226",
       "municipal_scope": "issue_20",
       "capabilities": {
-        "liable_party": "needs_source_research",
-        "taxable_scope": "needs_source_research",
-        "calculation_basis": "needs_source_research",
-        "rate_or_amount": "needs_source_research",
-        "applicable_period": "needs_source_research"
+        "liable_party": "implemented",
+        "taxable_scope": "implemented",
+        "calculation_basis": "implemented",
+        "rate_or_amount": "implemented",
+        "applicable_period": "implemented"
       },
       "sources": [
         {
@@ -1173,7 +1174,7 @@
           "official_format": "egov_law_api_json",
           "current_adapter": "manual",
           "required_adapter": "egov_law_semantics",
-          "adapter_status": "planned",
+          "adapter_status": "implemented",
           "reuse_key": "egov_law_api_json:325AC0000000226"
         }
       ]
@@ -1279,8 +1280,8 @@
       "official_name": "狩猟税",
       "burden_type": "local_tax",
       "implementation_issue": 43,
-      "implementation_status": "planned",
-      "priority": "high",
+      "implementation_status": "implemented",
+      "priority": "completed",
       "depends_on_issues": [
         31
       ],
@@ -1288,11 +1289,11 @@
       "reuse_group": "egov_law_api_json:325AC0000000226",
       "municipal_scope": "issue_20",
       "capabilities": {
-        "liable_party": "needs_source_research",
-        "taxable_scope": "needs_source_research",
-        "calculation_basis": "needs_source_research",
-        "rate_or_amount": "needs_source_research",
-        "applicable_period": "needs_source_research"
+        "liable_party": "implemented",
+        "taxable_scope": "implemented",
+        "calculation_basis": "implemented",
+        "rate_or_amount": "implemented",
+        "applicable_period": "implemented"
       },
       "sources": [
         {
@@ -1301,7 +1302,7 @@
           "official_format": "egov_law_api_json",
           "current_adapter": "manual",
           "required_adapter": "egov_law_semantics",
-          "adapter_status": "planned",
+          "adapter_status": "implemented",
           "reuse_key": "egov_law_api_json:325AC0000000226"
         }
       ]
@@ -1601,8 +1602,8 @@
       "official_name": "軽自動車税",
       "burden_type": "local_tax",
       "implementation_issue": 43,
-      "implementation_status": "planned",
-      "priority": "high",
+      "implementation_status": "implemented",
+      "priority": "completed",
       "depends_on_issues": [
         31
       ],
@@ -1610,11 +1611,11 @@
       "reuse_group": "egov_law_api_json:325AC0000000226",
       "municipal_scope": "issue_20",
       "capabilities": {
-        "liable_party": "needs_source_research",
-        "taxable_scope": "needs_source_research",
-        "calculation_basis": "needs_source_research",
-        "rate_or_amount": "needs_source_research",
-        "applicable_period": "needs_source_research"
+        "liable_party": "implemented",
+        "taxable_scope": "implemented",
+        "calculation_basis": "implemented",
+        "rate_or_amount": "implemented",
+        "applicable_period": "implemented"
       },
       "sources": [
         {
@@ -1623,7 +1624,7 @@
           "official_format": "egov_law_api_json",
           "current_adapter": "manual",
           "required_adapter": "egov_law_semantics",
-          "adapter_status": "planned",
+          "adapter_status": "implemented",
           "reuse_key": "egov_law_api_json:325AC0000000226"
         }
       ]
@@ -1633,8 +1634,8 @@
       "official_name": "軽油引取税",
       "burden_type": "local_tax",
       "implementation_issue": 43,
-      "implementation_status": "planned",
-      "priority": "high",
+      "implementation_status": "implemented",
+      "priority": "completed",
       "depends_on_issues": [
         31
       ],
@@ -1642,11 +1643,11 @@
       "reuse_group": "egov_law_api_json:325AC0000000226",
       "municipal_scope": "issue_20",
       "capabilities": {
-        "liable_party": "needs_source_research",
-        "taxable_scope": "needs_source_research",
-        "calculation_basis": "needs_source_research",
-        "rate_or_amount": "needs_source_research",
-        "applicable_period": "needs_source_research"
+        "liable_party": "implemented",
+        "taxable_scope": "implemented",
+        "calculation_basis": "implemented",
+        "rate_or_amount": "implemented",
+        "applicable_period": "implemented"
       },
       "sources": [
         {
@@ -1655,7 +1656,7 @@
           "official_format": "egov_law_api_json",
           "current_adapter": "manual",
           "required_adapter": "egov_law_semantics",
-          "adapter_status": "planned",
+          "adapter_status": "implemented",
           "reuse_key": "egov_law_api_json:325AC0000000226"
         }
       ]
@@ -1697,8 +1698,8 @@
       "official_name": "地方消費税",
       "burden_type": "local_tax",
       "implementation_issue": 43,
-      "implementation_status": "planned",
-      "priority": "high",
+      "implementation_status": "implemented",
+      "priority": "completed",
       "depends_on_issues": [
         31
       ],
@@ -1706,11 +1707,11 @@
       "reuse_group": "egov_law_api_json:325AC0000000226",
       "municipal_scope": "issue_20",
       "capabilities": {
-        "liable_party": "needs_source_research",
-        "taxable_scope": "needs_source_research",
-        "calculation_basis": "needs_source_research",
-        "rate_or_amount": "needs_source_research",
-        "applicable_period": "needs_source_research"
+        "liable_party": "implemented",
+        "taxable_scope": "implemented",
+        "calculation_basis": "implemented",
+        "rate_or_amount": "implemented",
+        "applicable_period": "implemented"
       },
       "sources": [
         {
@@ -1719,7 +1720,7 @@
           "official_format": "egov_law_api_json",
           "current_adapter": "manual",
           "required_adapter": "egov_law_semantics",
-          "adapter_status": "planned",
+          "adapter_status": "implemented",
           "reuse_key": "egov_law_api_json:325AC0000000226"
         }
       ]
@@ -1794,8 +1795,8 @@
       "official_name": "地方たばこ税",
       "burden_type": "local_tax",
       "implementation_issue": 43,
-      "implementation_status": "planned",
-      "priority": "high",
+      "implementation_status": "implemented",
+      "priority": "completed",
       "depends_on_issues": [
         31
       ],
@@ -1803,11 +1804,11 @@
       "reuse_group": "egov_law_api_json:325AC0000000226",
       "municipal_scope": "issue_20",
       "capabilities": {
-        "liable_party": "needs_source_research",
-        "taxable_scope": "needs_source_research",
-        "calculation_basis": "needs_source_research",
-        "rate_or_amount": "needs_source_research",
-        "applicable_period": "needs_source_research"
+        "liable_party": "implemented",
+        "taxable_scope": "implemented",
+        "calculation_basis": "implemented",
+        "rate_or_amount": "implemented",
+        "applicable_period": "implemented"
       },
       "sources": [
         {
@@ -1816,7 +1817,7 @@
           "official_format": "egov_law_api_json",
           "current_adapter": "manual",
           "required_adapter": "egov_law_semantics",
-          "adapter_status": "planned",
+          "adapter_status": "implemented",
           "reuse_key": "egov_law_api_json:325AC0000000226"
         }
       ]
@@ -1940,8 +1941,8 @@
       "official_name": "鉱産税",
       "burden_type": "local_tax",
       "implementation_issue": 43,
-      "implementation_status": "planned",
-      "priority": "high",
+      "implementation_status": "implemented",
+      "priority": "completed",
       "depends_on_issues": [
         31
       ],
@@ -1949,11 +1950,11 @@
       "reuse_group": "egov_law_api_json:325AC0000000226",
       "municipal_scope": "issue_20",
       "capabilities": {
-        "liable_party": "needs_source_research",
-        "taxable_scope": "needs_source_research",
-        "calculation_basis": "needs_source_research",
-        "rate_or_amount": "needs_source_research",
-        "applicable_period": "needs_source_research"
+        "liable_party": "implemented",
+        "taxable_scope": "implemented",
+        "calculation_basis": "implemented",
+        "rate_or_amount": "implemented",
+        "applicable_period": "implemented"
       },
       "sources": [
         {
@@ -1962,7 +1963,7 @@
           "official_format": "egov_law_api_json",
           "current_adapter": "manual",
           "required_adapter": "egov_law_semantics",
-          "adapter_status": "planned",
+          "adapter_status": "implemented",
           "reuse_key": "egov_law_api_json:325AC0000000226"
         }
       ]
@@ -1972,8 +1973,8 @@
       "official_name": "鉱区税",
       "burden_type": "local_tax",
       "implementation_issue": 43,
-      "implementation_status": "planned",
-      "priority": "high",
+      "implementation_status": "implemented",
+      "priority": "completed",
       "depends_on_issues": [
         31
       ],
@@ -1981,11 +1982,11 @@
       "reuse_group": "egov_law_api_json:325AC0000000226",
       "municipal_scope": "issue_20",
       "capabilities": {
-        "liable_party": "needs_source_research",
-        "taxable_scope": "needs_source_research",
-        "calculation_basis": "needs_source_research",
-        "rate_or_amount": "needs_source_research",
-        "applicable_period": "needs_source_research"
+        "liable_party": "implemented",
+        "taxable_scope": "implemented",
+        "calculation_basis": "implemented",
+        "rate_or_amount": "implemented",
+        "applicable_period": "implemented"
       },
       "sources": [
         {
@@ -1994,7 +1995,7 @@
           "official_format": "egov_law_api_json",
           "current_adapter": "manual",
           "required_adapter": "egov_law_semantics",
-          "adapter_status": "planned",
+          "adapter_status": "implemented",
           "reuse_key": "egov_law_api_json:325AC0000000226"
         }
       ]
@@ -2068,8 +2069,8 @@
       "official_name": "国民健康保険税",
       "burden_type": "local_tax",
       "implementation_issue": 43,
-      "implementation_status": "planned",
-      "priority": "high",
+      "implementation_status": "held",
+      "priority": "completed",
       "depends_on_issues": [
         31
       ],
@@ -2090,8 +2091,9 @@
           "official_format": "egov_law_api_json",
           "current_adapter": "manual",
           "required_adapter": "egov_law_semantics",
-          "adapter_status": "planned",
-          "reuse_key": "egov_law_api_json:325AC0000000226"
+          "adapter_status": "held",
+          "reuse_key": "egov_law_api_json:325AC0000000226",
+          "hold_reason": "所得割・資産割・被保険者均等割等の組合せと税率が条例で定まり、国法上の限度額だけでは実適用値にならない"
         }
       ]
     },
@@ -2100,8 +2102,8 @@
       "official_name": "法定外普通税",
       "burden_type": "local_tax",
       "implementation_issue": 43,
-      "implementation_status": "planned",
-      "priority": "high",
+      "implementation_status": "held",
+      "priority": "completed",
       "depends_on_issues": [
         31
       ],
@@ -2122,8 +2124,9 @@
           "official_format": "egov_law_api_json",
           "current_adapter": "manual",
           "required_adapter": "egov_law_semantics",
-          "adapter_status": "planned",
-          "reuse_key": "egov_law_api_json:325AC0000000226"
+          "adapter_status": "held",
+          "reuse_key": "egov_law_api_json:325AC0000000226",
+          "hold_reason": "法定外普通税は税目ではなく条例で新設される制度区分であり、自治体別税目と税率はIssue #20の対象である"
         }
       ]
     },
@@ -2132,8 +2135,8 @@
       "official_name": "法定外目的税",
       "burden_type": "local_tax",
       "implementation_issue": 43,
-      "implementation_status": "planned",
-      "priority": "high",
+      "implementation_status": "held",
+      "priority": "completed",
       "depends_on_issues": [
         31
       ],
@@ -2154,8 +2157,9 @@
           "official_format": "egov_law_api_json",
           "current_adapter": "manual",
           "required_adapter": "egov_law_semantics",
-          "adapter_status": "planned",
-          "reuse_key": "egov_law_api_json:325AC0000000226"
+          "adapter_status": "held",
+          "reuse_key": "egov_law_api_json:325AC0000000226",
+          "hold_reason": "法定外目的税は税目ではなく条例で新設される制度区分であり、自治体別税目と税率はIssue #20の対象である"
         }
       ]
     },
@@ -2717,8 +2721,8 @@
       "official_name": "不動産取得税",
       "burden_type": "local_tax",
       "implementation_issue": 43,
-      "implementation_status": "planned",
-      "priority": "high",
+      "implementation_status": "implemented",
+      "priority": "completed",
       "depends_on_issues": [
         31
       ],
@@ -2726,11 +2730,11 @@
       "reuse_group": "egov_law_api_json:325AC0000000226",
       "municipal_scope": "issue_20",
       "capabilities": {
-        "liable_party": "needs_source_research",
-        "taxable_scope": "needs_source_research",
-        "calculation_basis": "needs_source_research",
-        "rate_or_amount": "needs_source_research",
-        "applicable_period": "needs_source_research"
+        "liable_party": "implemented",
+        "taxable_scope": "implemented",
+        "calculation_basis": "implemented",
+        "rate_or_amount": "implemented",
+        "applicable_period": "implemented"
       },
       "sources": [
         {
@@ -2739,7 +2743,7 @@
           "official_format": "egov_law_api_json",
           "current_adapter": "manual",
           "required_adapter": "egov_law_semantics",
-          "adapter_status": "planned",
+          "adapter_status": "implemented",
           "reuse_key": "egov_law_api_json:325AC0000000226"
         }
       ]
@@ -2911,8 +2915,8 @@
       "official_name": "住民税",
       "burden_type": "local_tax",
       "implementation_issue": 43,
-      "implementation_status": "planned",
-      "priority": "high",
+      "implementation_status": "implemented",
+      "priority": "completed",
       "depends_on_issues": [
         31
       ],
@@ -2920,11 +2924,11 @@
       "reuse_group": "egov_law_api_json:325AC0000000226",
       "municipal_scope": "issue_20",
       "capabilities": {
-        "liable_party": "needs_source_research",
-        "taxable_scope": "needs_source_research",
-        "calculation_basis": "needs_source_research",
-        "rate_or_amount": "needs_source_research",
-        "applicable_period": "needs_source_research"
+        "liable_party": "implemented",
+        "taxable_scope": "implemented",
+        "calculation_basis": "implemented",
+        "rate_or_amount": "implemented",
+        "applicable_period": "implemented"
       },
       "sources": [
         {
@@ -2933,7 +2937,7 @@
           "official_format": "egov_law_api_json",
           "current_adapter": "manual",
           "required_adapter": "egov_law_semantics",
-          "adapter_status": "planned",
+          "adapter_status": "implemented",
           "reuse_key": "egov_law_api_json:325AC0000000226"
         }
       ]
@@ -2943,8 +2947,8 @@
       "official_name": "宅地開発税",
       "burden_type": "local_tax",
       "implementation_issue": 43,
-      "implementation_status": "planned",
-      "priority": "high",
+      "implementation_status": "held",
+      "priority": "completed",
       "depends_on_issues": [
         31
       ],
@@ -2965,8 +2969,9 @@
           "official_format": "egov_law_api_json",
           "current_adapter": "manual",
           "required_adapter": "egov_law_semantics",
-          "adapter_status": "planned",
-          "reuse_key": "egov_law_api_json:325AC0000000226"
+          "adapter_status": "held",
+          "reuse_key": "egov_law_api_json:325AC0000000226",
+          "hold_reason": "水利地益税等との共通節で課税対象・負担者・算定方法が条例へ委任され、自治体別実値はIssue #20の対象である"
         }
       ]
     },
@@ -3008,8 +3013,8 @@
       "official_name": "特別土地保有税",
       "burden_type": "local_tax",
       "implementation_issue": 43,
-      "implementation_status": "planned",
-      "priority": "high",
+      "implementation_status": "held",
+      "priority": "completed",
       "depends_on_issues": [
         31
       ],
@@ -3030,8 +3035,9 @@
           "official_format": "egov_law_api_json",
           "current_adapter": "manual",
           "required_adapter": "egov_law_semantics",
-          "adapter_status": "planned",
-          "reuse_key": "egov_law_api_json:325AC0000000226"
+          "adapter_status": "held",
+          "reuse_key": "egov_law_api_json:325AC0000000226",
+          "hold_reason": "新規課税が停止されている制度であり、本則税率だけを現行の実適用値として監視すると状態を誤認する"
         }
       ]
     },
@@ -3552,8 +3558,8 @@
       "official_name": "水利地益税",
       "burden_type": "local_tax",
       "implementation_issue": 43,
-      "implementation_status": "planned",
-      "priority": "high",
+      "implementation_status": "held",
+      "priority": "completed",
       "depends_on_issues": [
         31
       ],
@@ -3574,8 +3580,9 @@
           "official_format": "egov_law_api_json",
           "current_adapter": "manual",
           "required_adapter": "egov_law_semantics",
-          "adapter_status": "planned",
-          "reuse_key": "egov_law_api_json:325AC0000000226"
+          "adapter_status": "held",
+          "reuse_key": "egov_law_api_json:325AC0000000226",
+          "hold_reason": "共同施設税等との共通節で課税対象・負担者・算定方法が条例へ委任され、自治体別実値はIssue #20の対象である"
         }
       ]
     },

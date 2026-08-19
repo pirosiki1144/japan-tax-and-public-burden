@@ -4,7 +4,8 @@ import { readFile } from "node:fs/promises";
 import { join } from "node:path";
 import { fileURLToPath } from "node:url";
 import { extractConfiguredSemantics } from "../scripts/monitoring/extract-egov-tax-semantics.js";
-import { diffSemanticValues, extractEgovTaxSemantics, extractGenericNationalTaxSemantics } from "../scripts/normalize/egov-tax-semantics.js";
+import { diffSemanticValues, extractConfiguredLocalTaxSemantics, extractEgovTaxSemantics, extractGenericNationalTaxSemantics } from "../scripts/normalize/egov-tax-semantics.js";
+import { readYaml } from "../scripts/validate/schema-validator.js";
 
 const root = fileURLToPath(new URL("..", import.meta.url));
 const fixtureDir = join(root, "tests/fixtures/source-scan");
@@ -91,4 +92,23 @@ test("common national-tax value and structure changes are detected offline", asy
   const main = findNode(broken.law_full_text, "MainProvision");
   main.children = main.children.filter(({ attr }) => attr?.Num !== "11");
   assert.throws(() => extractGenericNationalTaxSemantics(broken, "aviation-fuel-tax", "https://example.invalid/law"), /rates matched 0/);
+});
+
+test("local-tax selectors retain national-law scope and exclude municipal actual values", async () => {
+  const [document, config] = await Promise.all([fixture("325AC0000000226"), readYaml(new URL("../config/local-tax-adapters.yaml", import.meta.url))]);
+  const profile = config.targets.find(({ tax_id }) => tax_id === "fixed-asset-tax");
+  const record = extractConfiguredLocalTaxSemantics(document, profile.tax_id, "https://example.invalid/law", profile);
+  assert.deepEqual(record.taxpayer_rules.map(({ article_num }) => article_num), ["343"]);
+  assert.deepEqual(record.taxable_scope_rules.map(({ article_num }) => article_num), ["342"]);
+  assert.deepEqual(record.rates.map(({ article_num }) => article_num), ["350"]);
+  assert.equal(record.value_scope, "national_law_standard_or_limit");
+  assert.equal(record.municipal_actual_value_included, false);
+});
+
+test("a missing configured local-tax article fails closed", async () => {
+  const [document, config] = await Promise.all([fixture("325AC0000000226"), readYaml(new URL("../config/local-tax-adapters.yaml", import.meta.url))]);
+  const profile = config.targets.find(({ tax_id }) => tax_id === "bathing-tax");
+  const main = findNode(document.law_full_text, "MainProvision");
+  main.children = main.children.filter(({ attr }) => attr?.Num !== "701_2");
+  assert.throws(() => extractConfiguredLocalTaxSemantics(document, profile.tax_id, "https://example.invalid/law", profile), /Article 701_2 matched 0/);
 });

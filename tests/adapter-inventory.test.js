@@ -42,6 +42,15 @@ test("every Issue 42 national tax is implemented or has a concrete hold reason",
   assert.ok(national.filter(({ implementation_status }) => implementation_status === "implemented").every(({ capabilities }) => Object.values(capabilities).every((status) => status === "implemented")));
 });
 
+test("every Issue 43 local tax is implemented at national-law scope or held for a concrete reason", async () => {
+  const { inventory } = await inputs();
+  const local = inventory.targets.filter(({ implementation_issue }) => implementation_issue === 43);
+  assert.equal(local.length, 22);
+  assert.equal(local.filter(({ implementation_status }) => implementation_status === "implemented").length, 15);
+  assert.equal(local.filter(({ implementation_status }) => implementation_status === "held").length, 7);
+  assert.ok(local.filter(({ implementation_status }) => implementation_status === "held").every(({ sources }) => sources.every(({ hold_reason }) => hold_reason?.length >= 20)));
+});
+
 test("large batches are permitted only for one common official source", async () => {
   const { inventory, monitoring } = await inputs();
   const batches = new Map();

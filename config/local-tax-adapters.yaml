@@ -1,0 +1,30 @@
+{
+  "schema_version": 1,
+  "verified_at": "2026-08-20T07:39:55+09:00",
+  "implementation_issue": 43,
+  "value_scope": "national_law_standard_or_limit",
+  "targets": [
+    {"tax_id":"bathing-tax","status":"implemented","articles":{"taxpayer_rules":["701"],"taxable_scope_rules":["701"],"tax_base_rules":["701_2"],"rates":["701_2"]}},
+    {"tax_id":"business-office-tax","status":"implemented","articles":{"taxpayer_rules":["701_32"],"taxable_scope_rules":["701_32"],"tax_base_rules":["701_40"],"rates":["701_42"]}},
+    {"tax_id":"city-planning-tax","status":"implemented","articles":{"taxpayer_rules":["702"],"taxable_scope_rules":["702"],"tax_base_rules":["702_3"],"rates":["702_4"]}},
+    {"tax_id":"common-facilities-tax","status":"held","hold_reason":"水利地益税等との共通節で課税対象・負担者・算定方法が条例へ委任され、国法上の単一値を抽出できない"},
+    {"tax_id":"enterprise-tax","status":"implemented","articles":{"taxpayer_rules":["72_2"],"taxable_scope_rules":["72_2"],"tax_base_rules":["72_12","72_49_11"],"rates":["72_24_7","72_49_17"]}},
+    {"tax_id":"fixed-asset-tax","status":"implemented","articles":{"taxpayer_rules":["343"],"taxable_scope_rules":["342"],"tax_base_rules":["349","349_2"],"rates":["350"]}},
+    {"tax_id":"golf-course-utilization-tax","status":"implemented","articles":{"taxpayer_rules":["75"],"taxable_scope_rules":["75"],"tax_base_rules":["76"],"rates":["76"]}},
+    {"tax_id":"hunting-tax","status":"implemented","articles":{"taxpayer_rules":["700_51"],"taxable_scope_rules":["700_51"],"tax_base_rules":["700_52"],"rates":["700_52"]}},
+    {"tax_id":"light-motor-vehicle-tax","status":"implemented","articles":{"taxpayer_rules":["443"],"taxable_scope_rules":["443"],"tax_base_rules":["448"],"rates":["448"]}},
+    {"tax_id":"light-oil-delivery-tax","status":"implemented","articles":{"taxpayer_rules":["144_2"],"taxable_scope_rules":["144_2"],"tax_base_rules":["144_10"],"rates":["144_10"]}},
+    {"tax_id":"local-consumption-tax","status":"implemented","articles":{"taxpayer_rules":["72_78"],"taxable_scope_rules":["72_78"],"tax_base_rules":["72_82"],"rates":["72_83"]}},
+    {"tax_id":"local-tobacco-tax","status":"implemented","articles":{"taxpayer_rules":["74_2","465"],"taxable_scope_rules":["74_2","465"],"tax_base_rules":["74_4","467"],"rates":["74_5","468"]}},
+    {"tax_id":"mineral-product-tax","status":"implemented","articles":{"taxpayer_rules":["519"],"taxable_scope_rules":["519"],"tax_base_rules":["520"],"rates":["520"]}},
+    {"tax_id":"mining-area-tax","status":"implemented","articles":{"taxpayer_rules":["178"],"taxable_scope_rules":["178"],"tax_base_rules":["180"],"rates":["180"]}},
+    {"tax_id":"national-health-insurance-tax","status":"held","hold_reason":"所得割・資産割・被保険者均等割等の組合せと税率が条例で定まり、国法上の限度額だけでは実適用値にならない"},
+    {"tax_id":"non-statutory-ordinary-tax-category","status":"held","hold_reason":"法定外普通税は税目ではなく条例で新設される制度区分であり、自治体別税目と税率はIssue #20の対象である"},
+    {"tax_id":"non-statutory-purpose-tax-category","status":"held","hold_reason":"法定外目的税は税目ではなく条例で新設される制度区分であり、自治体別税目と税率はIssue #20の対象である"},
+    {"tax_id":"real-estate-acquisition-tax","status":"implemented","articles":{"taxpayer_rules":["73_2"],"taxable_scope_rules":["73_2"],"tax_base_rules":["73_13"],"rates":["73_15"]}},
+    {"tax_id":"resident-tax","status":"implemented","articles":{"taxpayer_rules":["24","294"],"taxable_scope_rules":["24","294"],"tax_base_rules":["32","313"],"rates":["35","38","51","52","310","312","314_3","314_4"]}},
+    {"tax_id":"residential-land-development-tax","status":"held","hold_reason":"水利地益税等との共通節で課税対象・負担者・算定方法が条例へ委任され、自治体別実値はIssue #20の対象である"},
+    {"tax_id":"special-landholding-tax","status":"held","hold_reason":"新規課税が停止されている制度であり、本則税率だけを現行の実適用値として監視すると状態を誤認する"},
+    {"tax_id":"water-and-land-benefit-tax","status":"held","hold_reason":"共同施設税等との共通節で課税対象・負担者・算定方法が条例へ委任され、自治体別実値はIssue #20の対象である"}
+  ]
+}
