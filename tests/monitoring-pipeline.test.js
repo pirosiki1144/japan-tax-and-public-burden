@@ -32,11 +32,11 @@ test("the inventory drives source and semantic adapters through one offline pipe
   const result = await runOperationalMonitoring({ root, fetchImpl: fixtureFetch, now, dryRun: true, semanticBaselinePath });
   assert.equal(result.status, "no_change");
   assert.equal(result.registry.targets_total, 112);
-  assert.equal(result.registry.semantic_jobs_run, 16);
-  assert.deepEqual(result.registry.batches_run, ["issue-39-batch-01", "issue-42-batch-01", "issue-42-batch-02"]);
+  assert.equal(result.registry.semantic_jobs_run, 31);
+  assert.deepEqual(result.registry.batches_run, ["issue-39-batch-01", "issue-42-batch-01", "issue-43-common-source-01", "issue-42-batch-02"]);
   assert.deepEqual(result.routing, { has_changes: false, has_findings: false, pr_candidate_count: 0, issue_candidate_count: 0 });
-  assert.equal(result.results.length, 18);
-  assert.equal(result.results.filter(({ source_id }) => source_id.startsWith("semantic:")).length, 16);
+  assert.equal(result.results.length, 33);
+  assert.equal(result.results.filter(({ source_id }) => source_id.startsWith("semantic:")).length, 31);
 });
 
 test("a certain mapped change is routed to the existing PR candidate path", async () => {
@@ -61,7 +61,7 @@ test("one semantic adapter failure does not starve later targets and routes an I
       return { record: { tax_id: taxId }, fetches: evidence, candidate_diff: [] };
     }
   });
-  assert.equal(called.length, 16);
+  assert.equal(called.length, 31);
   assert.ok(called.indexOf("consumption-tax") > called.indexOf("automobile-tax"));
   assert.ok(called.includes("tonnage-tax"));
   assert.equal(result.status, "error");
@@ -117,5 +117,19 @@ test("batch selection is registry-backed and held implementation batches stay em
   assert.equal(selected.jobs.length, 2);
   const national = await loadOperationalJobs(root, { batchId: "issue-42-batch-01" });
   assert.ok(national.jobs.length > 0);
-  await assert.rejects(runOperationalMonitoring({ root, batchId: "issue-43-batch-01", sourceRunner: sourceScan([]) }), /No implemented adapter jobs/);
+  const local = await loadOperationalJobs(root, { batchId: "issue-43-common-source-01" });
+  assert.equal(local.jobs.length, 15);
+  await assert.rejects(runOperationalMonitoring({ root, batchId: "issue-44-batch-01", sourceRunner: sourceScan([]) }), /No implemented adapter jobs/);
+});
+
+test("shared local-tax law data is fetched once per monitoring run", async () => {
+  const calls = new Map();
+  const countedFetch = async (url) => {
+    calls.set(url, (calls.get(url) ?? 0) + 1);
+    return fixtureFetch(url);
+  };
+  const result = await runOperationalMonitoring({ root, fetchImpl: countedFetch, now, dryRun: true, semanticBaselinePath, sourceRunner: sourceScan([]) });
+  assert.equal(result.status, "no_change");
+  const localLawUrl = result.results.find(({ tax_id }) => tax_id === "bathing-tax").fetches[0].source_url;
+  assert.equal(calls.get(localLawUrl), 1);
 });

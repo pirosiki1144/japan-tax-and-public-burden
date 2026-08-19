@@ -102,6 +102,27 @@ export function extractGenericNationalTaxSemantics(document, taxId, sourceUrl) {
   return record;
 }
 
+export function extractConfiguredLocalTaxSemantics(document, taxId, sourceUrl, profile) {
+  const record = metadata(document, taxId, sourceUrl);
+  for (const [role, numbers] of Object.entries(profile.articles)) {
+    record[role] = numbers.map((number) => {
+      const article = mainArticle(document, number);
+      return { article_num: number, caption: articleCaption(article), raw: flattenText(article) };
+    });
+  }
+  const revision = document.revision_info ?? {};
+  record.value_scope = "national_law_standard_or_limit";
+  record.municipal_actual_value_included = false;
+  record.applicable_period = {
+    promulgation_date: document.law_info?.promulgation_date ?? null,
+    amendment_promulgate_date: revision.amendment_promulgate_date ?? null,
+    amendment_enforcement_date: revision.amendment_enforcement_date ?? null,
+    scheduled_enforcement_date: revision.amendment_scheduled_enforcement_date ?? null,
+    current_revision_status: revision.current_revision_status ?? null
+  };
+  return record;
+}
+
 function extractConsumptionTax(document, sourceUrl) {
   const liability = paragraphs(mainArticle(document, "5"));
   if (liability.length !== 2) throw new Error(`Consumption tax Article 5 expected 2 paragraphs but found ${liability.length}`);

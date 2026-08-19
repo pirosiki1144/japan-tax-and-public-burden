@@ -6,8 +6,8 @@ import { createValidators, readYaml, validateDocument } from "../validate/schema
 import { runAutomatedSources } from "./source-pipeline.js";
 
 const semanticAdapters = new Map([
-  ["egov_law_semantics", async ({ root, taxId, fetchImpl, now, monitoring, baseline }) => {
-    const extracted = await extractConfiguredSemanticTarget(root, taxId, { fetchImpl, now, monitoring });
+  ["egov_law_semantics", async ({ root, taxId, fetchImpl, now, monitoring, baseline, documentCache }) => {
+    const extracted = await extractConfiguredSemanticTarget(root, taxId, { fetchImpl, now, monitoring, documentCache });
     return { ...extracted, candidate_diff: diffAgainstSemanticBaseline(extracted.record, baseline) };
   }]
 ]);
@@ -88,10 +88,11 @@ export async function runOperationalMonitoring({
   const baseline = semanticRunner ? null : await loadSemanticBaseline(root, semanticBaselinePath);
   const sourceScan = await sourceRunner({ root, fetchImpl, now, dryRun });
   const semanticResults = [];
+  const documentCache = new Map();
   for (const job of jobs) {
     try {
       const runner = semanticRunner ?? getSemanticAdapter(job.adapter);
-      const extracted = await runner({ root, taxId: job.tax_id, job, fetchImpl, now, monitoring, baseline });
+      const extracted = await runner({ root, taxId: job.tax_id, job, fetchImpl, now, monitoring, baseline, documentCache });
       semanticResults.push({
         schema_version: 1,
         status: extracted.candidate_diff?.length ? "change_detected" : "no_change",

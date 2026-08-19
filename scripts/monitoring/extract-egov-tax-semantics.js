@@ -2,7 +2,7 @@ import { createHash } from "node:crypto";
 import { mkdir, readFile, writeFile } from "node:fs/promises";
 import { basename, dirname, join } from "node:path";
 import { fileURLToPath } from "node:url";
-import { extractEgovTaxSemantics, extractGenericNationalTaxSemantics } from "../normalize/egov-tax-semantics.js";
+import { extractConfiguredLocalTaxSemantics, extractEgovTaxSemantics, extractGenericNationalTaxSemantics } from "../normalize/egov-tax-semantics.js";
 import { readYaml } from "../validate/schema-validator.js";
 
 const root = fileURLToPath(new URL("../..", import.meta.url));
@@ -12,7 +12,7 @@ function option(name) {
   return index >= 0 ? process.argv[index + 1] : undefined;
 }
 
-async function loadDocument(url, { fixtureDir, fetchImpl = globalThis.fetch, now = () => new Date() } = {}) {
+async function loadDocumentUncached(url, { fixtureDir, fetchImpl = globalThis.fetch, now = () => new Date() } = {}) {
   let bytes;
   let contentType;
   if (fixtureDir) {
@@ -37,6 +37,12 @@ async function loadDocument(url, { fixtureDir, fetchImpl = globalThis.fetch, now
   };
 }
 
+async function loadDocument(url, options = {}) {
+  if (!options.documentCache) return loadDocumentUncached(url, options);
+  if (!options.documentCache.has(url)) options.documentCache.set(url, loadDocumentUncached(url, options));
+  return options.documentCache.get(url);
+}
+
 function configuredSource(monitoring, taxId) {
   const target = monitoring.targets.find(({ tax_id }) => tax_id === taxId);
   const source = target?.sources.find(({ target_url: targetUrl, change_detection }) => change_detection?.document_format === "egov_law_api_v2_json" || new URL(targetUrl).pathname.startsWith("/api/2/law_data/"));
@@ -46,11 +52,15 @@ function configuredSource(monitoring, taxId) {
 
 export async function extractConfiguredSemanticTarget(repositoryRoot, taxId, options = {}) {
   const monitoring = options.monitoring ?? await readYaml(join(repositoryRoot, "config/monitoring.yaml"));
+  const localAdapters = options.localAdapters ?? await readYaml(join(repositoryRoot, "config/local-tax-adapters.yaml"));
+  const localProfile = localAdapters.targets.find(({ tax_id: configuredTaxId, status }) => configuredTaxId === taxId && status === "implemented");
   const source = configuredSource(monitoring, taxId);
   const { document, evidence } = await loadDocument(source.target_url, options);
   try {
-    const extractor = ["consumption-tax", "automobile-tax"].includes(taxId) ? extractEgovTaxSemantics : extractGenericNationalTaxSemantics;
-    return { record: extractor(document, taxId, source.target_url), fetches: [evidence] };
+    const record = ["consumption-tax", "automobile-tax"].includes(taxId)
+      ? extractEgovTaxSemantics(document, taxId, source.target_url)
+      : localProfile ? extractConfiguredLocalTaxSemantics(document, taxId, source.target_url, localProfile) : extractGenericNationalTaxSemantics(document, taxId, source.target_url);
+    return { record, fetches: [evidence] };
   } catch (error) {
     error.fetches = [evidence];
     error.sourceUrl = source.target_url;
