@@ -1,0 +1,3638 @@
+{
+  "schema_version": 1,
+  "generated_at": "2026-08-19T20:13:25+09:00",
+  "batch_policy": {
+    "default_max_targets": 15,
+    "hard_max_targets": 20,
+    "common_source_exception": "one_common_source_unit"
+  },
+  "targets": [
+    {
+      "tax_id": "adverse-drug-reaction-contribution",
+      "official_name": "副作用拠出金",
+      "burden_type": "contribution",
+      "implementation_issue": 45,
+      "implementation_status": "planned",
+      "priority": "medium",
+      "depends_on_issues": [
+        31
+      ],
+      "batch_id": "issue-45-batch-03",
+      "reuse_group": "egov_law_api_json:414AC0000000192",
+      "municipal_scope": "national_only",
+      "capabilities": {
+        "liable_party": "needs_source_research",
+        "taxable_scope": "needs_source_research",
+        "calculation_basis": "needs_source_research",
+        "rate_or_amount": "needs_source_research",
+        "applicable_period": "needs_source_research"
+      },
+      "sources": [
+        {
+          "source_id": "egov-laws",
+          "target_id": "414AC0000000192",
+          "official_format": "egov_law_api_json",
+          "current_adapter": "manual",
+          "required_adapter": "egov_law_semantics",
+          "adapter_status": "planned",
+          "reuse_key": "egov_law_api_json:414AC0000000192"
+        }
+      ]
+    },
+    {
+      "tax_id": "agricultural-cooperative-savings-charge",
+      "official_name": "unknown",
+      "burden_type": "burden_charge",
+      "implementation_issue": 45,
+      "implementation_status": "planned",
+      "priority": "medium",
+      "depends_on_issues": [
+        31
+      ],
+      "batch_id": "issue-45-batch-02",
+      "reuse_group": "egov_law_api_json:348AC0000000053",
+      "municipal_scope": "national_only",
+      "capabilities": {
+        "liable_party": "needs_source_research",
+        "taxable_scope": "needs_source_research",
+        "calculation_basis": "needs_source_research",
+        "rate_or_amount": "needs_source_research",
+        "applicable_period": "needs_source_research"
+      },
+      "sources": [
+        {
+          "source_id": "egov-laws",
+          "target_id": "348AC0000000053",
+          "official_format": "egov_law_api_json",
+          "current_adapter": "manual",
+          "required_adapter": "egov_law_semantics",
+          "adapter_status": "planned",
+          "reuse_key": "egov_law_api_json:348AC0000000053"
+        }
+      ]
+    },
+    {
+      "tax_id": "agricultural-cooperative-savings-insurance-premium",
+      "official_name": "unknown",
+      "burden_type": "insurance_premium",
+      "implementation_issue": 45,
+      "implementation_status": "planned",
+      "priority": "medium",
+      "depends_on_issues": [
+        31
+      ],
+      "batch_id": "issue-45-batch-02",
+      "reuse_group": "egov_law_api_json:348AC0000000053",
+      "municipal_scope": "national_only",
+      "capabilities": {
+        "liable_party": "needs_source_research",
+        "taxable_scope": "needs_source_research",
+        "calculation_basis": "needs_source_research",
+        "rate_or_amount": "needs_source_research",
+        "applicable_period": "needs_source_research"
+      },
+      "sources": [
+        {
+          "source_id": "egov-laws",
+          "target_id": "348AC0000000053",
+          "official_format": "egov_law_api_json",
+          "current_adapter": "manual",
+          "required_adapter": "egov_law_semantics",
+          "adapter_status": "planned",
+          "reuse_key": "egov_law_api_json:348AC0000000053"
+        }
+      ]
+    },
+    {
+      "tax_id": "agricultural-cooperative-savings-special-charge",
+      "official_name": "unknown",
+      "burden_type": "burden_charge",
+      "implementation_issue": 45,
+      "implementation_status": "planned",
+      "priority": "medium",
+      "depends_on_issues": [
+        31
+      ],
+      "batch_id": "issue-45-batch-02",
+      "reuse_group": "egov_law_api_json:348AC0000000053",
+      "municipal_scope": "national_only",
+      "capabilities": {
+        "liable_party": "needs_source_research",
+        "taxable_scope": "needs_source_research",
+        "calculation_basis": "needs_source_research",
+        "rate_or_amount": "needs_source_research",
+        "applicable_period": "needs_source_research"
+      },
+      "sources": [
+        {
+          "source_id": "egov-laws",
+          "target_id": "348AC0000000053",
+          "official_format": "egov_law_api_json",
+          "current_adapter": "manual",
+          "required_adapter": "egov_law_semantics",
+          "adapter_status": "planned",
+          "reuse_key": "egov_law_api_json:348AC0000000053"
+        }
+      ]
+    },
+    {
+      "tax_id": "asbestos-relief-general-contribution",
+      "official_name": "石綿健康被害救済一般拠出金",
+      "burden_type": "contribution",
+      "implementation_issue": 45,
+      "implementation_status": "planned",
+      "priority": "medium",
+      "depends_on_issues": [
+        31
+      ],
+      "batch_id": "issue-45-batch-04",
+      "reuse_group": "egov_law_api_json:418AC0000000004",
+      "municipal_scope": "national_only",
+      "capabilities": {
+        "liable_party": "needs_source_research",
+        "taxable_scope": "needs_source_research",
+        "calculation_basis": "needs_source_research",
+        "rate_or_amount": "needs_source_research",
+        "applicable_period": "needs_source_research"
+      },
+      "sources": [
+        {
+          "source_id": "egov-laws",
+          "target_id": "418AC0000000004",
+          "official_format": "egov_law_api_json",
+          "current_adapter": "manual",
+          "required_adapter": "egov_law_semantics",
+          "adapter_status": "planned",
+          "reuse_key": "egov_law_api_json:418AC0000000004"
+        }
+      ]
+    },
+    {
+      "tax_id": "asbestos-relief-special-contribution",
+      "official_name": "石綿健康被害救済特別拠出金",
+      "burden_type": "contribution",
+      "implementation_issue": 45,
+      "implementation_status": "planned",
+      "priority": "medium",
+      "depends_on_issues": [
+        31
+      ],
+      "batch_id": "issue-45-batch-04",
+      "reuse_group": "egov_law_api_json:418AC0000000004",
+      "municipal_scope": "national_only",
+      "capabilities": {
+        "liable_party": "needs_source_research",
+        "taxable_scope": "needs_source_research",
+        "calculation_basis": "needs_source_research",
+        "rate_or_amount": "needs_source_research",
+        "applicable_period": "needs_source_research"
+      },
+      "sources": [
+        {
+          "source_id": "egov-laws",
+          "target_id": "418AC0000000004",
+          "official_format": "egov_law_api_json",
+          "current_adapter": "manual",
+          "required_adapter": "egov_law_semantics",
+          "adapter_status": "planned",
+          "reuse_key": "egov_law_api_json:418AC0000000004"
+        }
+      ]
+    },
+    {
+      "tax_id": "automobile-accident-countermeasure-levy",
+      "official_name": "自動車事故対策事業賦課金",
+      "burden_type": "levy",
+      "implementation_issue": 45,
+      "implementation_status": "planned",
+      "priority": "medium",
+      "depends_on_issues": [
+        31
+      ],
+      "batch_id": "issue-45-batch-01",
+      "reuse_group": "egov_law_api_json:330AC0000000097",
+      "municipal_scope": "national_only",
+      "capabilities": {
+        "liable_party": "needs_source_research",
+        "taxable_scope": "needs_source_research",
+        "calculation_basis": "needs_source_research",
+        "rate_or_amount": "needs_source_research",
+        "applicable_period": "needs_source_research"
+      },
+      "sources": [
+        {
+          "source_id": "egov-laws",
+          "target_id": "330AC0000000097",
+          "official_format": "egov_law_api_json",
+          "current_adapter": "manual",
+          "required_adapter": "egov_law_semantics",
+          "adapter_status": "planned",
+          "reuse_key": "egov_law_api_json:330AC0000000097"
+        }
+      ]
+    },
+    {
+      "tax_id": "automobile-tax",
+      "official_name": "自動車税",
+      "burden_type": "local_tax",
+      "implementation_issue": 39,
+      "implementation_status": "implemented_initial",
+      "priority": "completed",
+      "depends_on_issues": [],
+      "batch_id": "issue-39-batch-01",
+      "reuse_group": "egov_law_api_json:325AC0000000226",
+      "municipal_scope": "issue_20",
+      "capabilities": {
+        "liable_party": "implemented",
+        "taxable_scope": "planned",
+        "calculation_basis": "planned",
+        "rate_or_amount": "implemented",
+        "applicable_period": "planned"
+      },
+      "sources": [
+        {
+          "source_id": "egov-laws",
+          "target_id": "325AC0000000226",
+          "official_format": "egov_law_api_json",
+          "current_adapter": "manual",
+          "required_adapter": "egov_law_semantics",
+          "adapter_status": "implemented",
+          "reuse_key": "egov_law_api_json:325AC0000000226"
+        }
+      ]
+    },
+    {
+      "tax_id": "automobile-weight-tax",
+      "official_name": "自動車重量税",
+      "burden_type": "national_tax",
+      "implementation_issue": 42,
+      "implementation_status": "planned",
+      "priority": "high",
+      "depends_on_issues": [
+        31
+      ],
+      "batch_id": "issue-42-batch-01",
+      "reuse_group": "egov_law_api_json:346AC0000000089",
+      "municipal_scope": "national_only",
+      "capabilities": {
+        "liable_party": "needs_source_research",
+        "taxable_scope": "needs_source_research",
+        "calculation_basis": "needs_source_research",
+        "rate_or_amount": "needs_source_research",
+        "applicable_period": "needs_source_research"
+      },
+      "sources": [
+        {
+          "source_id": "egov-laws",
+          "target_id": "346AC0000000089",
+          "official_format": "egov_law_api_json",
+          "current_adapter": "manual",
+          "required_adapter": "egov_law_semantics",
+          "adapter_status": "planned",
+          "reuse_key": "egov_law_api_json:346AC0000000089"
+        }
+      ]
+    },
+    {
+      "tax_id": "aviation-fuel-tax",
+      "official_name": "航空機燃料税",
+      "burden_type": "national_tax",
+      "implementation_issue": 42,
+      "implementation_status": "planned",
+      "priority": "high",
+      "depends_on_issues": [
+        31
+      ],
+      "batch_id": "issue-42-batch-01",
+      "reuse_group": "egov_law_api_json:347AC0000000007",
+      "municipal_scope": "national_only",
+      "capabilities": {
+        "liable_party": "needs_source_research",
+        "taxable_scope": "needs_source_research",
+        "calculation_basis": "needs_source_research",
+        "rate_or_amount": "needs_source_research",
+        "applicable_period": "needs_source_research"
+      },
+      "sources": [
+        {
+          "source_id": "egov-laws",
+          "target_id": "347AC0000000007",
+          "official_format": "egov_law_api_json",
+          "current_adapter": "manual",
+          "required_adapter": "egov_law_semantics",
+          "adapter_status": "planned",
+          "reuse_key": "egov_law_api_json:347AC0000000007"
+        }
+      ]
+    },
+    {
+      "tax_id": "banks-shareholdings-purchase-corporation-contribution",
+      "official_name": "銀行等保有株式取得機構に対する拠出金",
+      "burden_type": "contribution",
+      "implementation_issue": 45,
+      "implementation_status": "planned",
+      "priority": "medium",
+      "depends_on_issues": [
+        31
+      ],
+      "batch_id": "issue-45-batch-03",
+      "reuse_group": "egov_law_api_json:413AC0000000131",
+      "municipal_scope": "national_only",
+      "capabilities": {
+        "liable_party": "needs_source_research",
+        "taxable_scope": "needs_source_research",
+        "calculation_basis": "needs_source_research",
+        "rate_or_amount": "needs_source_research",
+        "applicable_period": "needs_source_research"
+      },
+      "sources": [
+        {
+          "source_id": "egov-laws",
+          "target_id": "413AC0000000131",
+          "official_format": "egov_law_api_json",
+          "current_adapter": "manual",
+          "required_adapter": "egov_law_semantics",
+          "adapter_status": "planned",
+          "reuse_key": "egov_law_api_json:413AC0000000131"
+        }
+      ]
+    },
+    {
+      "tax_id": "bathing-tax",
+      "official_name": "入湯税",
+      "burden_type": "local_tax",
+      "implementation_issue": 43,
+      "implementation_status": "planned",
+      "priority": "high",
+      "depends_on_issues": [
+        31
+      ],
+      "batch_id": "issue-43-common-source-01",
+      "reuse_group": "egov_law_api_json:325AC0000000226",
+      "municipal_scope": "issue_20",
+      "capabilities": {
+        "liable_party": "needs_source_research",
+        "taxable_scope": "needs_source_research",
+        "calculation_basis": "needs_source_research",
+        "rate_or_amount": "needs_source_research",
+        "applicable_period": "needs_source_research"
+      },
+      "sources": [
+        {
+          "source_id": "egov-laws",
+          "target_id": "325AC0000000226",
+          "official_format": "egov_law_api_json",
+          "current_adapter": "manual",
+          "required_adapter": "egov_law_semantics",
+          "adapter_status": "planned",
+          "reuse_key": "egov_law_api_json:325AC0000000226"
+        }
+      ]
+    },
+    {
+      "tax_id": "broadband-service-charge",
+      "official_name": "unknown",
+      "burden_type": "burden_charge",
+      "implementation_issue": 45,
+      "implementation_status": "planned",
+      "priority": "medium",
+      "depends_on_issues": [
+        31
+      ],
+      "batch_id": "issue-45-batch-02",
+      "reuse_group": "egov_law_api_json:359AC0000000086",
+      "municipal_scope": "national_only",
+      "capabilities": {
+        "liable_party": "needs_source_research",
+        "taxable_scope": "needs_source_research",
+        "calculation_basis": "needs_source_research",
+        "rate_or_amount": "needs_source_research",
+        "applicable_period": "needs_source_research"
+      },
+      "sources": [
+        {
+          "source_id": "egov-laws",
+          "target_id": "359AC0000000086",
+          "official_format": "egov_law_api_json",
+          "current_adapter": "manual",
+          "required_adapter": "egov_law_semantics",
+          "adapter_status": "planned",
+          "reuse_key": "egov_law_api_json:359AC0000000086"
+        }
+      ]
+    },
+    {
+      "tax_id": "business-office-tax",
+      "official_name": "事業所税",
+      "burden_type": "local_tax",
+      "implementation_issue": 43,
+      "implementation_status": "planned",
+      "priority": "high",
+      "depends_on_issues": [
+        31
+      ],
+      "batch_id": "issue-43-common-source-01",
+      "reuse_group": "egov_law_api_json:325AC0000000226",
+      "municipal_scope": "issue_20",
+      "capabilities": {
+        "liable_party": "needs_source_research",
+        "taxable_scope": "needs_source_research",
+        "calculation_basis": "needs_source_research",
+        "rate_or_amount": "needs_source_research",
+        "applicable_period": "needs_source_research"
+      },
+      "sources": [
+        {
+          "source_id": "egov-laws",
+          "target_id": "325AC0000000226",
+          "official_format": "egov_law_api_json",
+          "current_adapter": "manual",
+          "required_adapter": "egov_law_semantics",
+          "adapter_status": "planned",
+          "reuse_key": "egov_law_api_json:325AC0000000226"
+        }
+      ]
+    },
+    {
+      "tax_id": "child-care-contribution",
+      "official_name": "子ども・子育て拠出金",
+      "burden_type": "contribution",
+      "implementation_issue": 45,
+      "implementation_status": "planned",
+      "priority": "medium",
+      "depends_on_issues": [
+        31
+      ],
+      "batch_id": "issue-45-batch-04",
+      "reuse_group": "egov_law_api_json:424AC0000000065",
+      "municipal_scope": "national_only",
+      "capabilities": {
+        "liable_party": "needs_source_research",
+        "taxable_scope": "needs_source_research",
+        "calculation_basis": "needs_source_research",
+        "rate_or_amount": "needs_source_research",
+        "applicable_period": "needs_source_research"
+      },
+      "sources": [
+        {
+          "source_id": "egov-laws",
+          "target_id": "424AC0000000065",
+          "official_format": "egov_law_api_json",
+          "current_adapter": "manual",
+          "required_adapter": "egov_law_semantics",
+          "adapter_status": "planned",
+          "reuse_key": "egov_law_api_json:424AC0000000065"
+        }
+      ]
+    },
+    {
+      "tax_id": "city-planning-tax",
+      "official_name": "都市計画税",
+      "burden_type": "local_tax",
+      "implementation_issue": 43,
+      "implementation_status": "planned",
+      "priority": "high",
+      "depends_on_issues": [
+        31
+      ],
+      "batch_id": "issue-43-common-source-01",
+      "reuse_group": "egov_law_api_json:325AC0000000226",
+      "municipal_scope": "issue_20",
+      "capabilities": {
+        "liable_party": "needs_source_research",
+        "taxable_scope": "needs_source_research",
+        "calculation_basis": "needs_source_research",
+        "rate_or_amount": "needs_source_research",
+        "applicable_period": "needs_source_research"
+      },
+      "sources": [
+        {
+          "source_id": "egov-laws",
+          "target_id": "325AC0000000226",
+          "official_format": "egov_law_api_json",
+          "current_adapter": "manual",
+          "required_adapter": "egov_law_semantics",
+          "adapter_status": "planned",
+          "reuse_key": "egov_law_api_json:325AC0000000226"
+        }
+      ]
+    },
+    {
+      "tax_id": "commodity-customer-protection-fund-charge",
+      "official_name": "日本商品委託者保護基金に対する負担金",
+      "burden_type": "burden_charge",
+      "implementation_issue": 45,
+      "implementation_status": "planned",
+      "priority": "medium",
+      "depends_on_issues": [
+        31
+      ],
+      "batch_id": "issue-45-batch-01",
+      "reuse_group": "egov_law_api_json:325AC0000000239",
+      "municipal_scope": "national_only",
+      "capabilities": {
+        "liable_party": "needs_source_research",
+        "taxable_scope": "needs_source_research",
+        "calculation_basis": "needs_source_research",
+        "rate_or_amount": "needs_source_research",
+        "applicable_period": "needs_source_research"
+      },
+      "sources": [
+        {
+          "source_id": "egov-laws",
+          "target_id": "325AC0000000239",
+          "official_format": "egov_law_api_json",
+          "current_adapter": "manual",
+          "required_adapter": "egov_law_semantics",
+          "adapter_status": "planned",
+          "reuse_key": "egov_law_api_json:325AC0000000239"
+        }
+      ]
+    },
+    {
+      "tax_id": "common-facilities-tax",
+      "official_name": "共同施設税",
+      "burden_type": "local_tax",
+      "implementation_issue": 43,
+      "implementation_status": "planned",
+      "priority": "high",
+      "depends_on_issues": [
+        31
+      ],
+      "batch_id": "issue-43-common-source-01",
+      "reuse_group": "egov_law_api_json:325AC0000000226",
+      "municipal_scope": "issue_20",
+      "capabilities": {
+        "liable_party": "needs_source_research",
+        "taxable_scope": "needs_source_research",
+        "calculation_basis": "needs_source_research",
+        "rate_or_amount": "needs_source_research",
+        "applicable_period": "needs_source_research"
+      },
+      "sources": [
+        {
+          "source_id": "egov-laws",
+          "target_id": "325AC0000000226",
+          "official_format": "egov_law_api_json",
+          "current_adapter": "manual",
+          "required_adapter": "egov_law_semantics",
+          "adapter_status": "planned",
+          "reuse_key": "egov_law_api_json:325AC0000000226"
+        }
+      ]
+    },
+    {
+      "tax_id": "common-utility-tunnel-charge",
+      "official_name": "unknown",
+      "burden_type": "burden_charge",
+      "implementation_issue": 45,
+      "implementation_status": "planned",
+      "priority": "medium",
+      "depends_on_issues": [
+        31
+      ],
+      "batch_id": "issue-45-batch-01",
+      "reuse_group": "egov_law_api_json:338AC0000000081",
+      "municipal_scope": "national_only",
+      "capabilities": {
+        "liable_party": "needs_source_research",
+        "taxable_scope": "needs_source_research",
+        "calculation_basis": "needs_source_research",
+        "rate_or_amount": "needs_source_research",
+        "applicable_period": "needs_source_research"
+      },
+      "sources": [
+        {
+          "source_id": "egov-laws",
+          "target_id": "338AC0000000081",
+          "official_format": "egov_law_api_json",
+          "current_adapter": "manual",
+          "required_adapter": "egov_law_semantics",
+          "adapter_status": "planned",
+          "reuse_key": "egov_law_api_json:338AC0000000081"
+        }
+      ]
+    },
+    {
+      "tax_id": "consumption-tax",
+      "official_name": "消費税",
+      "burden_type": "national_tax",
+      "implementation_issue": 39,
+      "implementation_status": "implemented_initial",
+      "priority": "completed",
+      "depends_on_issues": [],
+      "batch_id": "issue-39-batch-01",
+      "reuse_group": "egov_law_api_json:363AC0000000108+html:www.nta.go.jp+html:www.nta.go.jp",
+      "municipal_scope": "national_only",
+      "capabilities": {
+        "liable_party": "implemented",
+        "taxable_scope": "implemented",
+        "calculation_basis": "implemented",
+        "rate_or_amount": "implemented",
+        "applicable_period": "planned"
+      },
+      "sources": [
+        {
+          "source_id": "egov-laws",
+          "target_id": "363AC0000000108",
+          "official_format": "egov_law_api_json",
+          "current_adapter": "egov_law_article_facts",
+          "required_adapter": "egov_law_semantics",
+          "adapter_status": "implemented",
+          "reuse_key": "egov_law_api_json:363AC0000000108"
+        },
+        {
+          "source_id": "nta-consumption-tax-rates",
+          "target_id": "6101.htm",
+          "official_format": "html",
+          "current_adapter": "html_regex_facts",
+          "required_adapter": "html_semantics",
+          "adapter_status": "planned",
+          "reuse_key": "html:www.nta.go.jp",
+          "shared_format_issue": 46
+        },
+        {
+          "source_id": "nta-consumption-tax-rates",
+          "target_id": "nta-consumption-tax-rates-page-2",
+          "official_format": "html",
+          "current_adapter": "html_regex_facts",
+          "required_adapter": "html_semantics",
+          "adapter_status": "planned",
+          "reuse_key": "html:www.nta.go.jp",
+          "shared_format_issue": 46
+        }
+      ]
+    },
+    {
+      "tax_id": "corporation-tax",
+      "official_name": "法人税",
+      "burden_type": "national_tax",
+      "implementation_issue": 42,
+      "implementation_status": "planned",
+      "priority": "high",
+      "depends_on_issues": [
+        31
+      ],
+      "batch_id": "issue-42-batch-01",
+      "reuse_group": "egov_law_api_json:340AC0000000034",
+      "municipal_scope": "national_only",
+      "capabilities": {
+        "liable_party": "needs_source_research",
+        "taxable_scope": "needs_source_research",
+        "calculation_basis": "needs_source_research",
+        "rate_or_amount": "needs_source_research",
+        "applicable_period": "needs_source_research"
+      },
+      "sources": [
+        {
+          "source_id": "egov-laws",
+          "target_id": "340AC0000000034",
+          "official_format": "egov_law_api_json",
+          "current_adapter": "manual",
+          "required_adapter": "egov_law_semantics",
+          "adapter_status": "planned",
+          "reuse_key": "egov_law_api_json:340AC0000000034"
+        }
+      ]
+    },
+    {
+      "tax_id": "customs-duty",
+      "official_name": "関税",
+      "burden_type": "national_tax",
+      "implementation_issue": 42,
+      "implementation_status": "planned",
+      "priority": "high",
+      "depends_on_issues": [
+        31
+      ],
+      "batch_id": "issue-42-batch-01",
+      "reuse_group": "egov_law_api_json:329AC0000000061",
+      "municipal_scope": "national_only",
+      "capabilities": {
+        "liable_party": "needs_source_research",
+        "taxable_scope": "needs_source_research",
+        "calculation_basis": "needs_source_research",
+        "rate_or_amount": "needs_source_research",
+        "applicable_period": "needs_source_research"
+      },
+      "sources": [
+        {
+          "source_id": "egov-laws",
+          "target_id": "329AC0000000061",
+          "official_format": "egov_law_api_json",
+          "current_adapter": "manual",
+          "required_adapter": "egov_law_semantics",
+          "adapter_status": "planned",
+          "reuse_key": "egov_law_api_json:329AC0000000061"
+        }
+      ]
+    },
+    {
+      "tax_id": "deposit-insurance-corporation-charge",
+      "official_name": "預金保険機構に対する負担金",
+      "burden_type": "burden_charge",
+      "implementation_issue": 45,
+      "implementation_status": "planned",
+      "priority": "medium",
+      "depends_on_issues": [
+        31
+      ],
+      "batch_id": "issue-45-batch-02",
+      "reuse_group": "egov_law_api_json:346AC0000000034",
+      "municipal_scope": "national_only",
+      "capabilities": {
+        "liable_party": "needs_source_research",
+        "taxable_scope": "needs_source_research",
+        "calculation_basis": "needs_source_research",
+        "rate_or_amount": "needs_source_research",
+        "applicable_period": "needs_source_research"
+      },
+      "sources": [
+        {
+          "source_id": "egov-laws",
+          "target_id": "346AC0000000034",
+          "official_format": "egov_law_api_json",
+          "current_adapter": "manual",
+          "required_adapter": "egov_law_semantics",
+          "adapter_status": "planned",
+          "reuse_key": "egov_law_api_json:346AC0000000034"
+        }
+      ]
+    },
+    {
+      "tax_id": "deposit-insurance-corporation-special-charge",
+      "official_name": "預金保険機構に対する特定負担金",
+      "burden_type": "burden_charge",
+      "implementation_issue": 45,
+      "implementation_status": "planned",
+      "priority": "medium",
+      "depends_on_issues": [
+        31
+      ],
+      "batch_id": "issue-45-batch-02",
+      "reuse_group": "egov_law_api_json:346AC0000000034",
+      "municipal_scope": "national_only",
+      "capabilities": {
+        "liable_party": "needs_source_research",
+        "taxable_scope": "needs_source_research",
+        "calculation_basis": "needs_source_research",
+        "rate_or_amount": "needs_source_research",
+        "applicable_period": "needs_source_research"
+      },
+      "sources": [
+        {
+          "source_id": "egov-laws",
+          "target_id": "346AC0000000034",
+          "official_format": "egov_law_api_json",
+          "current_adapter": "manual",
+          "required_adapter": "egov_law_semantics",
+          "adapter_status": "planned",
+          "reuse_key": "egov_law_api_json:346AC0000000034"
+        }
+      ]
+    },
+    {
+      "tax_id": "deposit-insurance-premium",
+      "official_name": "預金保険料",
+      "burden_type": "insurance_premium",
+      "implementation_issue": 45,
+      "implementation_status": "planned",
+      "priority": "medium",
+      "depends_on_issues": [
+        31
+      ],
+      "batch_id": "issue-45-batch-02",
+      "reuse_group": "egov_law_api_json:346AC0000000034",
+      "municipal_scope": "national_only",
+      "capabilities": {
+        "liable_party": "needs_source_research",
+        "taxable_scope": "needs_source_research",
+        "calculation_basis": "needs_source_research",
+        "rate_or_amount": "needs_source_research",
+        "applicable_period": "needs_source_research"
+      },
+      "sources": [
+        {
+          "source_id": "egov-laws",
+          "target_id": "346AC0000000034",
+          "official_format": "egov_law_api_json",
+          "current_adapter": "manual",
+          "required_adapter": "egov_law_semantics",
+          "adapter_status": "planned",
+          "reuse_key": "egov_law_api_json:346AC0000000034"
+        }
+      ]
+    },
+    {
+      "tax_id": "disability-employment-levy",
+      "official_name": "障害者雇用納付金",
+      "burden_type": "payment",
+      "implementation_issue": 45,
+      "implementation_status": "planned",
+      "priority": "medium",
+      "depends_on_issues": [
+        31
+      ],
+      "batch_id": "issue-45-batch-01",
+      "reuse_group": "egov_law_api_json:335AC0000000123",
+      "municipal_scope": "national_only",
+      "capabilities": {
+        "liable_party": "needs_source_research",
+        "taxable_scope": "needs_source_research",
+        "calculation_basis": "needs_source_research",
+        "rate_or_amount": "needs_source_research",
+        "applicable_period": "needs_source_research"
+      },
+      "sources": [
+        {
+          "source_id": "egov-laws",
+          "target_id": "335AC0000000123",
+          "official_format": "egov_law_api_json",
+          "current_adapter": "manual",
+          "required_adapter": "egov_law_semantics",
+          "adapter_status": "planned",
+          "reuse_key": "egov_law_api_json:335AC0000000123"
+        }
+      ]
+    },
+    {
+      "tax_id": "east-japan-business-rehabilitation-contribution",
+      "official_name": "unknown",
+      "burden_type": "contribution",
+      "implementation_issue": 45,
+      "implementation_status": "planned",
+      "priority": "medium",
+      "depends_on_issues": [
+        31
+      ],
+      "batch_id": "issue-45-batch-04",
+      "reuse_group": "egov_law_api_json:423AC0100000113",
+      "municipal_scope": "national_only",
+      "capabilities": {
+        "liable_party": "needs_source_research",
+        "taxable_scope": "needs_source_research",
+        "calculation_basis": "needs_source_research",
+        "rate_or_amount": "needs_source_research",
+        "applicable_period": "needs_source_research"
+      },
+      "sources": [
+        {
+          "source_id": "egov-laws",
+          "target_id": "423AC0100000113",
+          "official_format": "egov_law_api_json",
+          "current_adapter": "manual",
+          "required_adapter": "egov_law_semantics",
+          "adapter_status": "planned",
+          "reuse_key": "egov_law_api_json:423AC0100000113"
+        }
+      ]
+    },
+    {
+      "tax_id": "educational-public-transmission-compensation",
+      "official_name": "授業目的公衆送信補償金",
+      "burden_type": "payment",
+      "implementation_issue": 45,
+      "implementation_status": "planned",
+      "priority": "medium",
+      "depends_on_issues": [
+        31
+      ],
+      "batch_id": "issue-45-batch-01",
+      "reuse_group": "egov_law_api_json:345AC0000000048",
+      "municipal_scope": "national_only",
+      "capabilities": {
+        "liable_party": "needs_source_research",
+        "taxable_scope": "needs_source_research",
+        "calculation_basis": "needs_source_research",
+        "rate_or_amount": "needs_source_research",
+        "applicable_period": "needs_source_research"
+      },
+      "sources": [
+        {
+          "source_id": "egov-laws",
+          "target_id": "345AC0000000048",
+          "official_format": "egov_law_api_json",
+          "current_adapter": "manual",
+          "required_adapter": "egov_law_semantics",
+          "adapter_status": "planned",
+          "reuse_key": "egov_law_api_json:345AC0000000048"
+        }
+      ]
+    },
+    {
+      "tax_id": "electricity-business-compensation-charge",
+      "official_name": "unknown",
+      "burden_type": "burden_charge",
+      "implementation_issue": 45,
+      "implementation_status": "planned",
+      "priority": "medium",
+      "depends_on_issues": [
+        31
+      ],
+      "batch_id": "issue-45-batch-03",
+      "reuse_group": "egov_law_api_json:407M50000400077",
+      "municipal_scope": "national_only",
+      "capabilities": {
+        "liable_party": "needs_source_research",
+        "taxable_scope": "needs_source_research",
+        "calculation_basis": "needs_source_research",
+        "rate_or_amount": "needs_source_research",
+        "applicable_period": "needs_source_research"
+      },
+      "sources": [
+        {
+          "source_id": "egov-laws",
+          "target_id": "407M50000400077",
+          "official_format": "egov_law_api_json",
+          "current_adapter": "manual",
+          "required_adapter": "egov_law_semantics",
+          "adapter_status": "planned",
+          "reuse_key": "egov_law_api_json:407M50000400077"
+        }
+      ]
+    },
+    {
+      "tax_id": "employment-insurance-premium",
+      "official_name": "雇用保険料",
+      "burden_type": "social_insurance_premium",
+      "implementation_issue": 44,
+      "implementation_status": "planned",
+      "priority": "high",
+      "depends_on_issues": [
+        31
+      ],
+      "batch_id": "issue-44-batch-01",
+      "reuse_group": "egov_law_api_json:349AC0000000116",
+      "municipal_scope": "national_only",
+      "capabilities": {
+        "liable_party": "needs_source_research",
+        "taxable_scope": "needs_source_research",
+        "calculation_basis": "needs_source_research",
+        "rate_or_amount": "needs_source_research",
+        "applicable_period": "needs_source_research"
+      },
+      "sources": [
+        {
+          "source_id": "egov-laws",
+          "target_id": "349AC0000000116",
+          "official_format": "egov_law_api_json",
+          "current_adapter": "manual",
+          "required_adapter": "egov_law_semantics",
+          "adapter_status": "planned",
+          "reuse_key": "egov_law_api_json:349AC0000000116"
+        }
+      ]
+    },
+    {
+      "tax_id": "enterprise-tax",
+      "official_name": "事業税",
+      "burden_type": "local_tax",
+      "implementation_issue": 43,
+      "implementation_status": "planned",
+      "priority": "high",
+      "depends_on_issues": [
+        31
+      ],
+      "batch_id": "issue-43-common-source-01",
+      "reuse_group": "egov_law_api_json:325AC0000000226",
+      "municipal_scope": "issue_20",
+      "capabilities": {
+        "liable_party": "needs_source_research",
+        "taxable_scope": "needs_source_research",
+        "calculation_basis": "needs_source_research",
+        "rate_or_amount": "needs_source_research",
+        "applicable_period": "needs_source_research"
+      },
+      "sources": [
+        {
+          "source_id": "egov-laws",
+          "target_id": "325AC0000000226",
+          "official_format": "egov_law_api_json",
+          "current_adapter": "manual",
+          "required_adapter": "egov_law_semantics",
+          "adapter_status": "planned",
+          "reuse_key": "egov_law_api_json:325AC0000000226"
+        }
+      ]
+    },
+    {
+      "tax_id": "fixed-asset-tax",
+      "official_name": "固定資産税",
+      "burden_type": "local_tax",
+      "implementation_issue": 43,
+      "implementation_status": "planned",
+      "priority": "high",
+      "depends_on_issues": [
+        31
+      ],
+      "batch_id": "issue-43-common-source-01",
+      "reuse_group": "egov_law_api_json:325AC0000000226",
+      "municipal_scope": "issue_20",
+      "capabilities": {
+        "liable_party": "needs_source_research",
+        "taxable_scope": "needs_source_research",
+        "calculation_basis": "needs_source_research",
+        "rate_or_amount": "needs_source_research",
+        "applicable_period": "needs_source_research"
+      },
+      "sources": [
+        {
+          "source_id": "egov-laws",
+          "target_id": "325AC0000000226",
+          "official_format": "egov_law_api_json",
+          "current_adapter": "manual",
+          "required_adapter": "egov_law_semantics",
+          "adapter_status": "planned",
+          "reuse_key": "egov_law_api_json:325AC0000000226"
+        }
+      ]
+    },
+    {
+      "tax_id": "forest-environment-tax",
+      "official_name": "森林環境税",
+      "burden_type": "national_tax",
+      "implementation_issue": 42,
+      "implementation_status": "planned",
+      "priority": "high",
+      "depends_on_issues": [
+        31
+      ],
+      "batch_id": "issue-42-batch-02",
+      "reuse_group": "egov_law_api_json:431AC0000000003",
+      "municipal_scope": "national_only",
+      "capabilities": {
+        "liable_party": "needs_source_research",
+        "taxable_scope": "needs_source_research",
+        "calculation_basis": "needs_source_research",
+        "rate_or_amount": "needs_source_research",
+        "applicable_period": "needs_source_research"
+      },
+      "sources": [
+        {
+          "source_id": "egov-laws",
+          "target_id": "431AC0000000003",
+          "official_format": "egov_law_api_json",
+          "current_adapter": "manual",
+          "required_adapter": "egov_law_semantics",
+          "adapter_status": "planned",
+          "reuse_key": "egov_law_api_json:431AC0000000003"
+        }
+      ]
+    },
+    {
+      "tax_id": "fossil-fuel-levy",
+      "official_name": "化石燃料賦課金",
+      "burden_type": "levy",
+      "implementation_issue": 45,
+      "implementation_status": "planned",
+      "priority": "medium",
+      "depends_on_issues": [
+        31
+      ],
+      "batch_id": "issue-45-batch-05",
+      "reuse_group": "egov_law_api_json:505AC0000000032",
+      "municipal_scope": "national_only",
+      "capabilities": {
+        "liable_party": "needs_source_research",
+        "taxable_scope": "needs_source_research",
+        "calculation_basis": "needs_source_research",
+        "rate_or_amount": "needs_source_research",
+        "applicable_period": "needs_source_research"
+      },
+      "sources": [
+        {
+          "source_id": "egov-laws",
+          "target_id": "505AC0000000032",
+          "official_format": "egov_law_api_json",
+          "current_adapter": "manual",
+          "required_adapter": "egov_law_semantics",
+          "adapter_status": "planned",
+          "reuse_key": "egov_law_api_json:505AC0000000032"
+        }
+      ]
+    },
+    {
+      "tax_id": "gasoline-tax",
+      "official_name": "揮発油税",
+      "burden_type": "national_tax",
+      "implementation_issue": 42,
+      "implementation_status": "planned",
+      "priority": "high",
+      "depends_on_issues": [
+        31
+      ],
+      "batch_id": "issue-42-batch-01",
+      "reuse_group": "egov_law_api_json:332AC0000000055",
+      "municipal_scope": "national_only",
+      "capabilities": {
+        "liable_party": "needs_source_research",
+        "taxable_scope": "needs_source_research",
+        "calculation_basis": "needs_source_research",
+        "rate_or_amount": "needs_source_research",
+        "applicable_period": "needs_source_research"
+      },
+      "sources": [
+        {
+          "source_id": "egov-laws",
+          "target_id": "332AC0000000055",
+          "official_format": "egov_law_api_json",
+          "current_adapter": "manual",
+          "required_adapter": "egov_law_semantics",
+          "adapter_status": "planned",
+          "reuse_key": "egov_law_api_json:332AC0000000055"
+        }
+      ]
+    },
+    {
+      "tax_id": "golf-course-utilization-tax",
+      "official_name": "ゴルフ場利用税",
+      "burden_type": "local_tax",
+      "implementation_issue": 43,
+      "implementation_status": "planned",
+      "priority": "high",
+      "depends_on_issues": [
+        31
+      ],
+      "batch_id": "issue-43-common-source-01",
+      "reuse_group": "egov_law_api_json:325AC0000000226",
+      "municipal_scope": "issue_20",
+      "capabilities": {
+        "liable_party": "needs_source_research",
+        "taxable_scope": "needs_source_research",
+        "calculation_basis": "needs_source_research",
+        "rate_or_amount": "needs_source_research",
+        "applicable_period": "needs_source_research"
+      },
+      "sources": [
+        {
+          "source_id": "egov-laws",
+          "target_id": "325AC0000000226",
+          "official_format": "egov_law_api_json",
+          "current_adapter": "manual",
+          "required_adapter": "egov_law_semantics",
+          "adapter_status": "planned",
+          "reuse_key": "egov_law_api_json:325AC0000000226"
+        }
+      ]
+    },
+    {
+      "tax_id": "gx-specified-business-charge",
+      "official_name": "unknown",
+      "burden_type": "burden_charge",
+      "implementation_issue": 45,
+      "implementation_status": "planned",
+      "priority": "medium",
+      "depends_on_issues": [
+        31
+      ],
+      "batch_id": "issue-45-batch-05",
+      "reuse_group": "egov_law_api_json:505AC0000000032",
+      "municipal_scope": "national_only",
+      "capabilities": {
+        "liable_party": "needs_source_research",
+        "taxable_scope": "needs_source_research",
+        "calculation_basis": "needs_source_research",
+        "rate_or_amount": "needs_source_research",
+        "applicable_period": "needs_source_research"
+      },
+      "sources": [
+        {
+          "source_id": "egov-laws",
+          "target_id": "505AC0000000032",
+          "official_format": "egov_law_api_json",
+          "current_adapter": "manual",
+          "required_adapter": "egov_law_semantics",
+          "adapter_status": "planned",
+          "reuse_key": "egov_law_api_json:505AC0000000032"
+        }
+      ]
+    },
+    {
+      "tax_id": "hepatitis-c-special-relief-contribution",
+      "official_name": "unknown",
+      "burden_type": "contribution",
+      "implementation_issue": 45,
+      "implementation_status": "planned",
+      "priority": "medium",
+      "depends_on_issues": [
+        31
+      ],
+      "batch_id": "issue-45-batch-04",
+      "reuse_group": "egov_law_api_json:420AC1000000002",
+      "municipal_scope": "national_only",
+      "capabilities": {
+        "liable_party": "needs_source_research",
+        "taxable_scope": "needs_source_research",
+        "calculation_basis": "needs_source_research",
+        "rate_or_amount": "needs_source_research",
+        "applicable_period": "needs_source_research"
+      },
+      "sources": [
+        {
+          "source_id": "egov-laws",
+          "target_id": "420AC1000000002",
+          "official_format": "egov_law_api_json",
+          "current_adapter": "manual",
+          "required_adapter": "egov_law_semantics",
+          "adapter_status": "planned",
+          "reuse_key": "egov_law_api_json:420AC1000000002"
+        }
+      ]
+    },
+    {
+      "tax_id": "high-level-waste-disposal-contribution",
+      "official_name": "unknown",
+      "burden_type": "contribution",
+      "implementation_issue": 45,
+      "implementation_status": "planned",
+      "priority": "medium",
+      "depends_on_issues": [
+        31
+      ],
+      "batch_id": "issue-45-batch-03",
+      "reuse_group": "egov_law_api_json:412AC0000000117",
+      "municipal_scope": "national_only",
+      "capabilities": {
+        "liable_party": "needs_source_research",
+        "taxable_scope": "needs_source_research",
+        "calculation_basis": "needs_source_research",
+        "rate_or_amount": "needs_source_research",
+        "applicable_period": "needs_source_research"
+      },
+      "sources": [
+        {
+          "source_id": "egov-laws",
+          "target_id": "412AC0000000117",
+          "official_format": "egov_law_api_json",
+          "current_adapter": "manual",
+          "required_adapter": "egov_law_semantics",
+          "adapter_status": "planned",
+          "reuse_key": "egov_law_api_json:412AC0000000117"
+        }
+      ]
+    },
+    {
+      "tax_id": "hunting-tax",
+      "official_name": "狩猟税",
+      "burden_type": "local_tax",
+      "implementation_issue": 43,
+      "implementation_status": "planned",
+      "priority": "high",
+      "depends_on_issues": [
+        31
+      ],
+      "batch_id": "issue-43-common-source-01",
+      "reuse_group": "egov_law_api_json:325AC0000000226",
+      "municipal_scope": "issue_20",
+      "capabilities": {
+        "liable_party": "needs_source_research",
+        "taxable_scope": "needs_source_research",
+        "calculation_basis": "needs_source_research",
+        "rate_or_amount": "needs_source_research",
+        "applicable_period": "needs_source_research"
+      },
+      "sources": [
+        {
+          "source_id": "egov-laws",
+          "target_id": "325AC0000000226",
+          "official_format": "egov_law_api_json",
+          "current_adapter": "manual",
+          "required_adapter": "egov_law_semantics",
+          "adapter_status": "planned",
+          "reuse_key": "egov_law_api_json:325AC0000000226"
+        }
+      ]
+    },
+    {
+      "tax_id": "imported-sugar-adjustment-charge",
+      "official_name": "unknown",
+      "burden_type": "adjustment_charge",
+      "implementation_issue": 45,
+      "implementation_status": "planned",
+      "priority": "medium",
+      "depends_on_issues": [
+        31
+      ],
+      "batch_id": "issue-45-batch-01",
+      "reuse_group": "egov_law_api_json:340AC0000000109",
+      "municipal_scope": "national_only",
+      "capabilities": {
+        "liable_party": "needs_source_research",
+        "taxable_scope": "needs_source_research",
+        "calculation_basis": "needs_source_research",
+        "rate_or_amount": "needs_source_research",
+        "applicable_period": "needs_source_research"
+      },
+      "sources": [
+        {
+          "source_id": "egov-laws",
+          "target_id": "340AC0000000109",
+          "official_format": "egov_law_api_json",
+          "current_adapter": "manual",
+          "required_adapter": "egov_law_semantics",
+          "adapter_status": "planned",
+          "reuse_key": "egov_law_api_json:340AC0000000109"
+        }
+      ]
+    },
+    {
+      "tax_id": "income-tax",
+      "official_name": "所得税",
+      "burden_type": "national_tax",
+      "implementation_issue": 42,
+      "implementation_status": "planned",
+      "priority": "high",
+      "depends_on_issues": [
+        31
+      ],
+      "batch_id": "issue-42-batch-01",
+      "reuse_group": "egov_law_api_json:340AC0000000033",
+      "municipal_scope": "national_only",
+      "capabilities": {
+        "liable_party": "needs_source_research",
+        "taxable_scope": "needs_source_research",
+        "calculation_basis": "needs_source_research",
+        "rate_or_amount": "needs_source_research",
+        "applicable_period": "needs_source_research"
+      },
+      "sources": [
+        {
+          "source_id": "egov-laws",
+          "target_id": "340AC0000000033",
+          "official_format": "egov_law_api_json",
+          "current_adapter": "manual",
+          "required_adapter": "egov_law_semantics",
+          "adapter_status": "planned",
+          "reuse_key": "egov_law_api_json:340AC0000000033"
+        }
+      ]
+    },
+    {
+      "tax_id": "infection-contribution",
+      "official_name": "感染拠出金",
+      "burden_type": "contribution",
+      "implementation_issue": 45,
+      "implementation_status": "planned",
+      "priority": "medium",
+      "depends_on_issues": [
+        31
+      ],
+      "batch_id": "issue-45-batch-03",
+      "reuse_group": "egov_law_api_json:414AC0000000192",
+      "municipal_scope": "national_only",
+      "capabilities": {
+        "liable_party": "needs_source_research",
+        "taxable_scope": "needs_source_research",
+        "calculation_basis": "needs_source_research",
+        "rate_or_amount": "needs_source_research",
+        "applicable_period": "needs_source_research"
+      },
+      "sources": [
+        {
+          "source_id": "egov-laws",
+          "target_id": "414AC0000000192",
+          "official_format": "egov_law_api_json",
+          "current_adapter": "manual",
+          "required_adapter": "egov_law_semantics",
+          "adapter_status": "planned",
+          "reuse_key": "egov_law_api_json:414AC0000000192"
+        }
+      ]
+    },
+    {
+      "tax_id": "inheritance-and-gift-tax",
+      "official_name": "unknown",
+      "burden_type": "national_tax",
+      "implementation_issue": 42,
+      "implementation_status": "planned",
+      "priority": "high",
+      "depends_on_issues": [
+        31
+      ],
+      "batch_id": "issue-42-batch-01",
+      "reuse_group": "egov_law_api_json:325AC0000000073",
+      "municipal_scope": "national_only",
+      "capabilities": {
+        "liable_party": "needs_source_research",
+        "taxable_scope": "needs_source_research",
+        "calculation_basis": "needs_source_research",
+        "rate_or_amount": "needs_source_research",
+        "applicable_period": "needs_source_research"
+      },
+      "sources": [
+        {
+          "source_id": "egov-laws",
+          "target_id": "325AC0000000073",
+          "official_format": "egov_law_api_json",
+          "current_adapter": "manual",
+          "required_adapter": "egov_law_semantics",
+          "adapter_status": "planned",
+          "reuse_key": "egov_law_api_json:325AC0000000073"
+        }
+      ]
+    },
+    {
+      "tax_id": "international-oil-pollution-fund-annual-contribution",
+      "official_name": "unknown",
+      "burden_type": "contribution",
+      "implementation_issue": 45,
+      "implementation_status": "planned",
+      "priority": "medium",
+      "depends_on_issues": [
+        31
+      ],
+      "batch_id": "issue-45-batch-02",
+      "reuse_group": "egov_law_api_json:350AC0000000095",
+      "municipal_scope": "national_only",
+      "capabilities": {
+        "liable_party": "needs_source_research",
+        "taxable_scope": "needs_source_research",
+        "calculation_basis": "needs_source_research",
+        "rate_or_amount": "needs_source_research",
+        "applicable_period": "needs_source_research"
+      },
+      "sources": [
+        {
+          "source_id": "egov-laws",
+          "target_id": "350AC0000000095",
+          "official_format": "egov_law_api_json",
+          "current_adapter": "manual",
+          "required_adapter": "egov_law_semantics",
+          "adapter_status": "planned",
+          "reuse_key": "egov_law_api_json:350AC0000000095"
+        }
+      ]
+    },
+    {
+      "tax_id": "international-tourist-tax",
+      "official_name": "国際観光旅客税",
+      "burden_type": "national_tax",
+      "implementation_issue": 42,
+      "implementation_status": "planned",
+      "priority": "high",
+      "depends_on_issues": [
+        31
+      ],
+      "batch_id": "issue-42-batch-02",
+      "reuse_group": "egov_law_api_json:430AC0000000016",
+      "municipal_scope": "national_only",
+      "capabilities": {
+        "liable_party": "needs_source_research",
+        "taxable_scope": "needs_source_research",
+        "calculation_basis": "needs_source_research",
+        "rate_or_amount": "needs_source_research",
+        "applicable_period": "needs_source_research"
+      },
+      "sources": [
+        {
+          "source_id": "egov-laws",
+          "target_id": "430AC0000000016",
+          "official_format": "egov_law_api_json",
+          "current_adapter": "manual",
+          "required_adapter": "egov_law_semantics",
+          "adapter_status": "planned",
+          "reuse_key": "egov_law_api_json:430AC0000000016"
+        }
+      ]
+    },
+    {
+      "tax_id": "investor-protection-fund-charge",
+      "official_name": "日本投資者保護基金に対する負担金",
+      "burden_type": "burden_charge",
+      "implementation_issue": 45,
+      "implementation_status": "planned",
+      "priority": "medium",
+      "depends_on_issues": [
+        31
+      ],
+      "batch_id": "issue-45-batch-01",
+      "reuse_group": "egov_law_api_json:323AC0000000025",
+      "municipal_scope": "national_only",
+      "capabilities": {
+        "liable_party": "needs_source_research",
+        "taxable_scope": "needs_source_research",
+        "calculation_basis": "needs_source_research",
+        "rate_or_amount": "needs_source_research",
+        "applicable_period": "needs_source_research"
+      },
+      "sources": [
+        {
+          "source_id": "egov-laws",
+          "target_id": "323AC0000000025",
+          "official_format": "egov_law_api_json",
+          "current_adapter": "manual",
+          "required_adapter": "egov_law_semantics",
+          "adapter_status": "planned",
+          "reuse_key": "egov_law_api_json:323AC0000000025"
+        }
+      ]
+    },
+    {
+      "tax_id": "irrigation-water-facility-charge",
+      "official_name": "unknown",
+      "burden_type": "burden_charge",
+      "implementation_issue": 45,
+      "implementation_status": "planned",
+      "priority": "medium",
+      "depends_on_issues": [
+        31
+      ],
+      "batch_id": "issue-45-batch-03",
+      "reuse_group": "egov_law_api_json:414AC0000000182",
+      "municipal_scope": "national_only",
+      "capabilities": {
+        "liable_party": "needs_source_research",
+        "taxable_scope": "needs_source_research",
+        "calculation_basis": "needs_source_research",
+        "rate_or_amount": "needs_source_research",
+        "applicable_period": "needs_source_research"
+      },
+      "sources": [
+        {
+          "source_id": "egov-laws",
+          "target_id": "414AC0000000182",
+          "official_format": "egov_law_api_json",
+          "current_adapter": "manual",
+          "required_adapter": "egov_law_semantics",
+          "adapter_status": "planned",
+          "reuse_key": "egov_law_api_json:414AC0000000182"
+        }
+      ]
+    },
+    {
+      "tax_id": "library-public-transmission-compensation",
+      "official_name": "図書館等公衆送信補償金",
+      "burden_type": "payment",
+      "implementation_issue": 45,
+      "implementation_status": "planned",
+      "priority": "medium",
+      "depends_on_issues": [
+        31
+      ],
+      "batch_id": "issue-45-batch-01",
+      "reuse_group": "egov_law_api_json:345AC0000000048",
+      "municipal_scope": "national_only",
+      "capabilities": {
+        "liable_party": "needs_source_research",
+        "taxable_scope": "needs_source_research",
+        "calculation_basis": "needs_source_research",
+        "rate_or_amount": "needs_source_research",
+        "applicable_period": "needs_source_research"
+      },
+      "sources": [
+        {
+          "source_id": "egov-laws",
+          "target_id": "345AC0000000048",
+          "official_format": "egov_law_api_json",
+          "current_adapter": "manual",
+          "required_adapter": "egov_law_semantics",
+          "adapter_status": "planned",
+          "reuse_key": "egov_law_api_json:345AC0000000048"
+        }
+      ]
+    },
+    {
+      "tax_id": "light-motor-vehicle-tax",
+      "official_name": "軽自動車税",
+      "burden_type": "local_tax",
+      "implementation_issue": 43,
+      "implementation_status": "planned",
+      "priority": "high",
+      "depends_on_issues": [
+        31
+      ],
+      "batch_id": "issue-43-common-source-01",
+      "reuse_group": "egov_law_api_json:325AC0000000226",
+      "municipal_scope": "issue_20",
+      "capabilities": {
+        "liable_party": "needs_source_research",
+        "taxable_scope": "needs_source_research",
+        "calculation_basis": "needs_source_research",
+        "rate_or_amount": "needs_source_research",
+        "applicable_period": "needs_source_research"
+      },
+      "sources": [
+        {
+          "source_id": "egov-laws",
+          "target_id": "325AC0000000226",
+          "official_format": "egov_law_api_json",
+          "current_adapter": "manual",
+          "required_adapter": "egov_law_semantics",
+          "adapter_status": "planned",
+          "reuse_key": "egov_law_api_json:325AC0000000226"
+        }
+      ]
+    },
+    {
+      "tax_id": "light-oil-delivery-tax",
+      "official_name": "軽油引取税",
+      "burden_type": "local_tax",
+      "implementation_issue": 43,
+      "implementation_status": "planned",
+      "priority": "high",
+      "depends_on_issues": [
+        31
+      ],
+      "batch_id": "issue-43-common-source-01",
+      "reuse_group": "egov_law_api_json:325AC0000000226",
+      "municipal_scope": "issue_20",
+      "capabilities": {
+        "liable_party": "needs_source_research",
+        "taxable_scope": "needs_source_research",
+        "calculation_basis": "needs_source_research",
+        "rate_or_amount": "needs_source_research",
+        "applicable_period": "needs_source_research"
+      },
+      "sources": [
+        {
+          "source_id": "egov-laws",
+          "target_id": "325AC0000000226",
+          "official_format": "egov_law_api_json",
+          "current_adapter": "manual",
+          "required_adapter": "egov_law_semantics",
+          "adapter_status": "planned",
+          "reuse_key": "egov_law_api_json:325AC0000000226"
+        }
+      ]
+    },
+    {
+      "tax_id": "liquor-tax",
+      "official_name": "酒税",
+      "burden_type": "national_tax",
+      "implementation_issue": 42,
+      "implementation_status": "planned",
+      "priority": "high",
+      "depends_on_issues": [
+        31
+      ],
+      "batch_id": "issue-42-batch-01",
+      "reuse_group": "egov_law_api_json:328AC0000000006",
+      "municipal_scope": "national_only",
+      "capabilities": {
+        "liable_party": "needs_source_research",
+        "taxable_scope": "needs_source_research",
+        "calculation_basis": "needs_source_research",
+        "rate_or_amount": "needs_source_research",
+        "applicable_period": "needs_source_research"
+      },
+      "sources": [
+        {
+          "source_id": "egov-laws",
+          "target_id": "328AC0000000006",
+          "official_format": "egov_law_api_json",
+          "current_adapter": "manual",
+          "required_adapter": "egov_law_semantics",
+          "adapter_status": "planned",
+          "reuse_key": "egov_law_api_json:328AC0000000006"
+        }
+      ]
+    },
+    {
+      "tax_id": "local-consumption-tax",
+      "official_name": "地方消費税",
+      "burden_type": "local_tax",
+      "implementation_issue": 43,
+      "implementation_status": "planned",
+      "priority": "high",
+      "depends_on_issues": [
+        31
+      ],
+      "batch_id": "issue-43-common-source-01",
+      "reuse_group": "egov_law_api_json:325AC0000000226",
+      "municipal_scope": "issue_20",
+      "capabilities": {
+        "liable_party": "needs_source_research",
+        "taxable_scope": "needs_source_research",
+        "calculation_basis": "needs_source_research",
+        "rate_or_amount": "needs_source_research",
+        "applicable_period": "needs_source_research"
+      },
+      "sources": [
+        {
+          "source_id": "egov-laws",
+          "target_id": "325AC0000000226",
+          "official_format": "egov_law_api_json",
+          "current_adapter": "manual",
+          "required_adapter": "egov_law_semantics",
+          "adapter_status": "planned",
+          "reuse_key": "egov_law_api_json:325AC0000000226"
+        }
+      ]
+    },
+    {
+      "tax_id": "local-corporation-tax",
+      "official_name": "地方法人税",
+      "burden_type": "national_tax",
+      "implementation_issue": 42,
+      "implementation_status": "planned",
+      "priority": "high",
+      "depends_on_issues": [
+        31
+      ],
+      "batch_id": "issue-42-batch-02",
+      "reuse_group": "egov_law_api_json:426AC0000000011",
+      "municipal_scope": "national_only",
+      "capabilities": {
+        "liable_party": "needs_source_research",
+        "taxable_scope": "needs_source_research",
+        "calculation_basis": "needs_source_research",
+        "rate_or_amount": "needs_source_research",
+        "applicable_period": "needs_source_research"
+      },
+      "sources": [
+        {
+          "source_id": "egov-laws",
+          "target_id": "426AC0000000011",
+          "official_format": "egov_law_api_json",
+          "current_adapter": "manual",
+          "required_adapter": "egov_law_semantics",
+          "adapter_status": "planned",
+          "reuse_key": "egov_law_api_json:426AC0000000011"
+        }
+      ]
+    },
+    {
+      "tax_id": "local-gasoline-tax",
+      "official_name": "地方揮発油税",
+      "burden_type": "national_tax",
+      "implementation_issue": 42,
+      "implementation_status": "planned",
+      "priority": "high",
+      "depends_on_issues": [
+        31
+      ],
+      "batch_id": "issue-42-batch-01",
+      "reuse_group": "egov_law_api_json:330AC0000000104",
+      "municipal_scope": "national_only",
+      "capabilities": {
+        "liable_party": "needs_source_research",
+        "taxable_scope": "needs_source_research",
+        "calculation_basis": "needs_source_research",
+        "rate_or_amount": "needs_source_research",
+        "applicable_period": "needs_source_research"
+      },
+      "sources": [
+        {
+          "source_id": "egov-laws",
+          "target_id": "330AC0000000104",
+          "official_format": "egov_law_api_json",
+          "current_adapter": "manual",
+          "required_adapter": "egov_law_semantics",
+          "adapter_status": "planned",
+          "reuse_key": "egov_law_api_json:330AC0000000104"
+        }
+      ]
+    },
+    {
+      "tax_id": "local-tobacco-tax",
+      "official_name": "地方たばこ税",
+      "burden_type": "local_tax",
+      "implementation_issue": 43,
+      "implementation_status": "planned",
+      "priority": "high",
+      "depends_on_issues": [
+        31
+      ],
+      "batch_id": "issue-43-common-source-01",
+      "reuse_group": "egov_law_api_json:325AC0000000226",
+      "municipal_scope": "issue_20",
+      "capabilities": {
+        "liable_party": "needs_source_research",
+        "taxable_scope": "needs_source_research",
+        "calculation_basis": "needs_source_research",
+        "rate_or_amount": "needs_source_research",
+        "applicable_period": "needs_source_research"
+      },
+      "sources": [
+        {
+          "source_id": "egov-laws",
+          "target_id": "325AC0000000226",
+          "official_format": "egov_law_api_json",
+          "current_adapter": "manual",
+          "required_adapter": "egov_law_semantics",
+          "adapter_status": "planned",
+          "reuse_key": "egov_law_api_json:325AC0000000226"
+        }
+      ]
+    },
+    {
+      "tax_id": "long-term-care-insurance-premium",
+      "official_name": "unknown",
+      "burden_type": "social_insurance_premium",
+      "implementation_issue": 44,
+      "implementation_status": "planned",
+      "priority": "high",
+      "depends_on_issues": [
+        31
+      ],
+      "batch_id": "issue-44-batch-01",
+      "reuse_group": "egov_law_api_json:409AC0000000123",
+      "municipal_scope": "national_only",
+      "capabilities": {
+        "liable_party": "needs_source_research",
+        "taxable_scope": "needs_source_research",
+        "calculation_basis": "needs_source_research",
+        "rate_or_amount": "needs_source_research",
+        "applicable_period": "needs_source_research"
+      },
+      "sources": [
+        {
+          "source_id": "egov-laws",
+          "target_id": "409AC0000000123",
+          "official_format": "egov_law_api_json",
+          "current_adapter": "manual",
+          "required_adapter": "egov_law_semantics",
+          "adapter_status": "planned",
+          "reuse_key": "egov_law_api_json:409AC0000000123"
+        }
+      ]
+    },
+    {
+      "tax_id": "medical-insurance-premium",
+      "official_name": "unknown",
+      "burden_type": "social_insurance_premium",
+      "implementation_issue": 44,
+      "implementation_status": "planned",
+      "priority": "high",
+      "depends_on_issues": [
+        31
+      ],
+      "batch_id": "issue-44-batch-01",
+      "reuse_group": "egov_law_api_json:211AC0000000070+egov_law_api_json:333AC0000000192+egov_law_api_json:357AC0000000080",
+      "municipal_scope": "national_only",
+      "capabilities": {
+        "liable_party": "needs_source_research",
+        "taxable_scope": "needs_source_research",
+        "calculation_basis": "needs_source_research",
+        "rate_or_amount": "needs_source_research",
+        "applicable_period": "needs_source_research"
+      },
+      "sources": [
+        {
+          "source_id": "egov-laws",
+          "target_id": "211AC0000000070",
+          "official_format": "egov_law_api_json",
+          "current_adapter": "manual",
+          "required_adapter": "egov_law_semantics",
+          "adapter_status": "planned",
+          "reuse_key": "egov_law_api_json:211AC0000000070"
+        },
+        {
+          "source_id": "egov-laws",
+          "target_id": "333AC0000000192",
+          "official_format": "egov_law_api_json",
+          "current_adapter": "manual",
+          "required_adapter": "egov_law_semantics",
+          "adapter_status": "planned",
+          "reuse_key": "egov_law_api_json:333AC0000000192"
+        },
+        {
+          "source_id": "egov-laws",
+          "target_id": "357AC0000000080",
+          "official_format": "egov_law_api_json",
+          "current_adapter": "manual",
+          "required_adapter": "egov_law_semantics",
+          "adapter_status": "planned",
+          "reuse_key": "egov_law_api_json:357AC0000000080"
+        }
+      ]
+    },
+    {
+      "tax_id": "minamata-specified-business-compensation-levy",
+      "official_name": "unknown",
+      "burden_type": "levy",
+      "implementation_issue": 45,
+      "implementation_status": "planned",
+      "priority": "medium",
+      "depends_on_issues": [
+        31
+      ],
+      "batch_id": "issue-45-batch-04",
+      "reuse_group": "egov_law_api_json:421AC1000000081",
+      "municipal_scope": "national_only",
+      "capabilities": {
+        "liable_party": "needs_source_research",
+        "taxable_scope": "needs_source_research",
+        "calculation_basis": "needs_source_research",
+        "rate_or_amount": "needs_source_research",
+        "applicable_period": "needs_source_research"
+      },
+      "sources": [
+        {
+          "source_id": "egov-laws",
+          "target_id": "421AC1000000081",
+          "official_format": "egov_law_api_json",
+          "current_adapter": "manual",
+          "required_adapter": "egov_law_semantics",
+          "adapter_status": "planned",
+          "reuse_key": "egov_law_api_json:421AC1000000081"
+        }
+      ]
+    },
+    {
+      "tax_id": "mineral-product-tax",
+      "official_name": "鉱産税",
+      "burden_type": "local_tax",
+      "implementation_issue": 43,
+      "implementation_status": "planned",
+      "priority": "high",
+      "depends_on_issues": [
+        31
+      ],
+      "batch_id": "issue-43-common-source-01",
+      "reuse_group": "egov_law_api_json:325AC0000000226",
+      "municipal_scope": "issue_20",
+      "capabilities": {
+        "liable_party": "needs_source_research",
+        "taxable_scope": "needs_source_research",
+        "calculation_basis": "needs_source_research",
+        "rate_or_amount": "needs_source_research",
+        "applicable_period": "needs_source_research"
+      },
+      "sources": [
+        {
+          "source_id": "egov-laws",
+          "target_id": "325AC0000000226",
+          "official_format": "egov_law_api_json",
+          "current_adapter": "manual",
+          "required_adapter": "egov_law_semantics",
+          "adapter_status": "planned",
+          "reuse_key": "egov_law_api_json:325AC0000000226"
+        }
+      ]
+    },
+    {
+      "tax_id": "mining-area-tax",
+      "official_name": "鉱区税",
+      "burden_type": "local_tax",
+      "implementation_issue": 43,
+      "implementation_status": "planned",
+      "priority": "high",
+      "depends_on_issues": [
+        31
+      ],
+      "batch_id": "issue-43-common-source-01",
+      "reuse_group": "egov_law_api_json:325AC0000000226",
+      "municipal_scope": "issue_20",
+      "capabilities": {
+        "liable_party": "needs_source_research",
+        "taxable_scope": "needs_source_research",
+        "calculation_basis": "needs_source_research",
+        "rate_or_amount": "needs_source_research",
+        "applicable_period": "needs_source_research"
+      },
+      "sources": [
+        {
+          "source_id": "egov-laws",
+          "target_id": "325AC0000000226",
+          "official_format": "egov_law_api_json",
+          "current_adapter": "manual",
+          "required_adapter": "egov_law_semantics",
+          "adapter_status": "planned",
+          "reuse_key": "egov_law_api_json:325AC0000000226"
+        }
+      ]
+    },
+    {
+      "tax_id": "mining-pollution-prevention-fund-contribution",
+      "official_name": "鉱害防止事業基金に対する拠出金",
+      "burden_type": "contribution",
+      "implementation_issue": 45,
+      "implementation_status": "planned",
+      "priority": "medium",
+      "depends_on_issues": [
+        31
+      ],
+      "batch_id": "issue-45-batch-02",
+      "reuse_group": "egov_law_api_json:348AC0000000026",
+      "municipal_scope": "national_only",
+      "capabilities": {
+        "liable_party": "needs_source_research",
+        "taxable_scope": "needs_source_research",
+        "calculation_basis": "needs_source_research",
+        "rate_or_amount": "needs_source_research",
+        "applicable_period": "needs_source_research"
+      },
+      "sources": [
+        {
+          "source_id": "egov-laws",
+          "target_id": "348AC0000000026",
+          "official_format": "egov_law_api_json",
+          "current_adapter": "manual",
+          "required_adapter": "egov_law_semantics",
+          "adapter_status": "planned",
+          "reuse_key": "egov_law_api_json:348AC0000000026"
+        }
+      ]
+    },
+    {
+      "tax_id": "multipurpose-dam-charge",
+      "official_name": "unknown",
+      "burden_type": "burden_charge",
+      "implementation_issue": 45,
+      "implementation_status": "planned",
+      "priority": "medium",
+      "depends_on_issues": [
+        31
+      ],
+      "batch_id": "issue-45-batch-01",
+      "reuse_group": "egov_law_api_json:332AC0000000035",
+      "municipal_scope": "national_only",
+      "capabilities": {
+        "liable_party": "needs_source_research",
+        "taxable_scope": "needs_source_research",
+        "calculation_basis": "needs_source_research",
+        "rate_or_amount": "needs_source_research",
+        "applicable_period": "needs_source_research"
+      },
+      "sources": [
+        {
+          "source_id": "egov-laws",
+          "target_id": "332AC0000000035",
+          "official_format": "egov_law_api_json",
+          "current_adapter": "manual",
+          "required_adapter": "egov_law_semantics",
+          "adapter_status": "planned",
+          "reuse_key": "egov_law_api_json:332AC0000000035"
+        }
+      ]
+    },
+    {
+      "tax_id": "national-health-insurance-tax",
+      "official_name": "国民健康保険税",
+      "burden_type": "local_tax",
+      "implementation_issue": 43,
+      "implementation_status": "planned",
+      "priority": "high",
+      "depends_on_issues": [
+        31
+      ],
+      "batch_id": "issue-43-common-source-01",
+      "reuse_group": "egov_law_api_json:325AC0000000226",
+      "municipal_scope": "issue_20",
+      "capabilities": {
+        "liable_party": "needs_source_research",
+        "taxable_scope": "needs_source_research",
+        "calculation_basis": "needs_source_research",
+        "rate_or_amount": "needs_source_research",
+        "applicable_period": "needs_source_research"
+      },
+      "sources": [
+        {
+          "source_id": "egov-laws",
+          "target_id": "325AC0000000226",
+          "official_format": "egov_law_api_json",
+          "current_adapter": "manual",
+          "required_adapter": "egov_law_semantics",
+          "adapter_status": "planned",
+          "reuse_key": "egov_law_api_json:325AC0000000226"
+        }
+      ]
+    },
+    {
+      "tax_id": "non-statutory-ordinary-tax-category",
+      "official_name": "法定外普通税",
+      "burden_type": "local_tax",
+      "implementation_issue": 43,
+      "implementation_status": "planned",
+      "priority": "high",
+      "depends_on_issues": [
+        31
+      ],
+      "batch_id": "issue-43-common-source-01",
+      "reuse_group": "egov_law_api_json:325AC0000000226",
+      "municipal_scope": "issue_20",
+      "capabilities": {
+        "liable_party": "needs_source_research",
+        "taxable_scope": "needs_source_research",
+        "calculation_basis": "needs_source_research",
+        "rate_or_amount": "needs_source_research",
+        "applicable_period": "needs_source_research"
+      },
+      "sources": [
+        {
+          "source_id": "egov-laws",
+          "target_id": "325AC0000000226",
+          "official_format": "egov_law_api_json",
+          "current_adapter": "manual",
+          "required_adapter": "egov_law_semantics",
+          "adapter_status": "planned",
+          "reuse_key": "egov_law_api_json:325AC0000000226"
+        }
+      ]
+    },
+    {
+      "tax_id": "non-statutory-purpose-tax-category",
+      "official_name": "法定外目的税",
+      "burden_type": "local_tax",
+      "implementation_issue": 43,
+      "implementation_status": "planned",
+      "priority": "high",
+      "depends_on_issues": [
+        31
+      ],
+      "batch_id": "issue-43-common-source-01",
+      "reuse_group": "egov_law_api_json:325AC0000000226",
+      "municipal_scope": "issue_20",
+      "capabilities": {
+        "liable_party": "needs_source_research",
+        "taxable_scope": "needs_source_research",
+        "calculation_basis": "needs_source_research",
+        "rate_or_amount": "needs_source_research",
+        "applicable_period": "needs_source_research"
+      },
+      "sources": [
+        {
+          "source_id": "egov-laws",
+          "target_id": "325AC0000000226",
+          "official_format": "egov_law_api_json",
+          "current_adapter": "manual",
+          "required_adapter": "egov_law_semantics",
+          "adapter_status": "planned",
+          "reuse_key": "egov_law_api_json:325AC0000000226"
+        }
+      ]
+    },
+    {
+      "tax_id": "nuclear-damage-support-general-charge",
+      "official_name": "unknown",
+      "burden_type": "burden_charge",
+      "implementation_issue": 45,
+      "implementation_status": "planned",
+      "priority": "medium",
+      "depends_on_issues": [
+        31
+      ],
+      "batch_id": "issue-45-batch-04",
+      "reuse_group": "egov_law_api_json:423AC0000000094",
+      "municipal_scope": "national_only",
+      "capabilities": {
+        "liable_party": "needs_source_research",
+        "taxable_scope": "needs_source_research",
+        "calculation_basis": "needs_source_research",
+        "rate_or_amount": "needs_source_research",
+        "applicable_period": "needs_source_research"
+      },
+      "sources": [
+        {
+          "source_id": "egov-laws",
+          "target_id": "423AC0000000094",
+          "official_format": "egov_law_api_json",
+          "current_adapter": "manual",
+          "required_adapter": "egov_law_semantics",
+          "adapter_status": "planned",
+          "reuse_key": "egov_law_api_json:423AC0000000094"
+        }
+      ]
+    },
+    {
+      "tax_id": "nuclear-damage-support-special-charge",
+      "official_name": "unknown",
+      "burden_type": "burden_charge",
+      "implementation_issue": 45,
+      "implementation_status": "planned",
+      "priority": "medium",
+      "depends_on_issues": [
+        31
+      ],
+      "batch_id": "issue-45-batch-04",
+      "reuse_group": "egov_law_api_json:423AC0000000094",
+      "municipal_scope": "national_only",
+      "capabilities": {
+        "liable_party": "needs_source_research",
+        "taxable_scope": "needs_source_research",
+        "calculation_basis": "needs_source_research",
+        "rate_or_amount": "needs_source_research",
+        "applicable_period": "needs_source_research"
+      },
+      "sources": [
+        {
+          "source_id": "egov-laws",
+          "target_id": "423AC0000000094",
+          "official_format": "egov_law_api_json",
+          "current_adapter": "manual",
+          "required_adapter": "egov_law_semantics",
+          "adapter_status": "planned",
+          "reuse_key": "egov_law_api_json:423AC0000000094"
+        }
+      ]
+    },
+    {
+      "tax_id": "nuclear-decommissioning-contribution",
+      "official_name": "unknown",
+      "burden_type": "contribution",
+      "implementation_issue": 45,
+      "implementation_status": "planned",
+      "priority": "medium",
+      "depends_on_issues": [
+        31
+      ],
+      "batch_id": "issue-45-batch-04",
+      "reuse_group": "egov_law_api_json:417AC0000000048",
+      "municipal_scope": "national_only",
+      "capabilities": {
+        "liable_party": "needs_source_research",
+        "taxable_scope": "needs_source_research",
+        "calculation_basis": "needs_source_research",
+        "rate_or_amount": "needs_source_research",
+        "applicable_period": "needs_source_research"
+      },
+      "sources": [
+        {
+          "source_id": "egov-laws",
+          "target_id": "417AC0000000048",
+          "official_format": "egov_law_api_json",
+          "current_adapter": "manual",
+          "required_adapter": "egov_law_semantics",
+          "adapter_status": "planned",
+          "reuse_key": "egov_law_api_json:417AC0000000048"
+        }
+      ]
+    },
+    {
+      "tax_id": "participant-protection-trust-charge",
+      "official_name": "加入者保護信託への負担金",
+      "burden_type": "burden_charge",
+      "implementation_issue": 45,
+      "implementation_status": "planned",
+      "priority": "medium",
+      "depends_on_issues": [
+        31
+      ],
+      "batch_id": "issue-45-batch-03",
+      "reuse_group": "egov_law_api_json:413AC0000000075",
+      "municipal_scope": "national_only",
+      "capabilities": {
+        "liable_party": "needs_source_research",
+        "taxable_scope": "needs_source_research",
+        "calculation_basis": "needs_source_research",
+        "rate_or_amount": "needs_source_research",
+        "applicable_period": "needs_source_research"
+      },
+      "sources": [
+        {
+          "source_id": "egov-laws",
+          "target_id": "413AC0000000075",
+          "official_format": "egov_law_api_json",
+          "current_adapter": "manual",
+          "required_adapter": "egov_law_semantics",
+          "adapter_status": "planned",
+          "reuse_key": "egov_law_api_json:413AC0000000075"
+        }
+      ]
+    },
+    {
+      "tax_id": "pension-insurance-premium",
+      "official_name": "unknown",
+      "burden_type": "social_insurance_premium",
+      "implementation_issue": 44,
+      "implementation_status": "planned",
+      "priority": "high",
+      "depends_on_issues": [
+        31
+      ],
+      "batch_id": "issue-44-batch-01",
+      "reuse_group": "egov_law_api_json:329AC0000000115+egov_law_api_json:334AC0000000141",
+      "municipal_scope": "national_only",
+      "capabilities": {
+        "liable_party": "needs_source_research",
+        "taxable_scope": "needs_source_research",
+        "calculation_basis": "needs_source_research",
+        "rate_or_amount": "needs_source_research",
+        "applicable_period": "needs_source_research"
+      },
+      "sources": [
+        {
+          "source_id": "egov-laws",
+          "target_id": "329AC0000000115",
+          "official_format": "egov_law_api_json",
+          "current_adapter": "manual",
+          "required_adapter": "egov_law_semantics",
+          "adapter_status": "planned",
+          "reuse_key": "egov_law_api_json:329AC0000000115"
+        },
+        {
+          "source_id": "egov-laws",
+          "target_id": "334AC0000000141",
+          "official_format": "egov_law_api_json",
+          "current_adapter": "manual",
+          "required_adapter": "egov_law_semantics",
+          "adapter_status": "planned",
+          "reuse_key": "egov_law_api_json:334AC0000000141"
+        }
+      ]
+    },
+    {
+      "tax_id": "petroleum-and-coal-tax",
+      "official_name": "石油石炭税",
+      "burden_type": "national_tax",
+      "implementation_issue": 42,
+      "implementation_status": "planned",
+      "priority": "high",
+      "depends_on_issues": [
+        31
+      ],
+      "batch_id": "issue-42-batch-02",
+      "reuse_group": "egov_law_api_json:353AC0000000025",
+      "municipal_scope": "national_only",
+      "capabilities": {
+        "liable_party": "needs_source_research",
+        "taxable_scope": "needs_source_research",
+        "calculation_basis": "needs_source_research",
+        "rate_or_amount": "needs_source_research",
+        "applicable_period": "needs_source_research"
+      },
+      "sources": [
+        {
+          "source_id": "egov-laws",
+          "target_id": "353AC0000000025",
+          "official_format": "egov_law_api_json",
+          "current_adapter": "manual",
+          "required_adapter": "egov_law_semantics",
+          "adapter_status": "planned",
+          "reuse_key": "egov_law_api_json:353AC0000000025"
+        }
+      ]
+    },
+    {
+      "tax_id": "petroleum-gas-tax",
+      "official_name": "石油ガス税",
+      "burden_type": "national_tax",
+      "implementation_issue": 42,
+      "implementation_status": "planned",
+      "priority": "high",
+      "depends_on_issues": [
+        31
+      ],
+      "batch_id": "issue-42-batch-01",
+      "reuse_group": "egov_law_api_json:340AC0000000156",
+      "municipal_scope": "national_only",
+      "capabilities": {
+        "liable_party": "needs_source_research",
+        "taxable_scope": "needs_source_research",
+        "calculation_basis": "needs_source_research",
+        "rate_or_amount": "needs_source_research",
+        "applicable_period": "needs_source_research"
+      },
+      "sources": [
+        {
+          "source_id": "egov-laws",
+          "target_id": "340AC0000000156",
+          "official_format": "egov_law_api_json",
+          "current_adapter": "manual",
+          "required_adapter": "egov_law_semantics",
+          "adapter_status": "planned",
+          "reuse_key": "egov_law_api_json:340AC0000000156"
+        }
+      ]
+    },
+    {
+      "tax_id": "pharmaceutical-safety-contribution",
+      "official_name": "unknown",
+      "burden_type": "contribution",
+      "implementation_issue": 45,
+      "implementation_status": "planned",
+      "priority": "medium",
+      "depends_on_issues": [
+        31
+      ],
+      "batch_id": "issue-45-batch-03",
+      "reuse_group": "egov_law_api_json:414AC0000000192",
+      "municipal_scope": "national_only",
+      "capabilities": {
+        "liable_party": "needs_source_research",
+        "taxable_scope": "needs_source_research",
+        "calculation_basis": "needs_source_research",
+        "rate_or_amount": "needs_source_research",
+        "applicable_period": "needs_source_research"
+      },
+      "sources": [
+        {
+          "source_id": "egov-laws",
+          "target_id": "414AC0000000192",
+          "official_format": "egov_law_api_json",
+          "current_adapter": "manual",
+          "required_adapter": "egov_law_semantics",
+          "adapter_status": "planned",
+          "reuse_key": "egov_law_api_json:414AC0000000192"
+        }
+      ]
+    },
+    {
+      "tax_id": "policyholder-protection-fund-charge",
+      "official_name": "unknown",
+      "burden_type": "burden_charge",
+      "implementation_issue": 45,
+      "implementation_status": "planned",
+      "priority": "medium",
+      "depends_on_issues": [
+        31
+      ],
+      "batch_id": "issue-45-batch-03",
+      "reuse_group": "egov_law_api_json:407AC0000000105",
+      "municipal_scope": "national_only",
+      "capabilities": {
+        "liable_party": "needs_source_research",
+        "taxable_scope": "needs_source_research",
+        "calculation_basis": "needs_source_research",
+        "rate_or_amount": "needs_source_research",
+        "applicable_period": "needs_source_research"
+      },
+      "sources": [
+        {
+          "source_id": "egov-laws",
+          "target_id": "407AC0000000105",
+          "official_format": "egov_law_api_json",
+          "current_adapter": "manual",
+          "required_adapter": "egov_law_semantics",
+          "adapter_status": "planned",
+          "reuse_key": "egov_law_api_json:407AC0000000105"
+        }
+      ]
+    },
+    {
+      "tax_id": "pollution-load-levy",
+      "official_name": "汚染負荷量賦課金",
+      "burden_type": "levy",
+      "implementation_issue": 45,
+      "implementation_status": "planned",
+      "priority": "medium",
+      "depends_on_issues": [
+        31
+      ],
+      "batch_id": "issue-45-batch-02",
+      "reuse_group": "egov_law_api_json:348AC0000000111",
+      "municipal_scope": "national_only",
+      "capabilities": {
+        "liable_party": "needs_source_research",
+        "taxable_scope": "needs_source_research",
+        "calculation_basis": "needs_source_research",
+        "rate_or_amount": "needs_source_research",
+        "applicable_period": "needs_source_research"
+      },
+      "sources": [
+        {
+          "source_id": "egov-laws",
+          "target_id": "348AC0000000111",
+          "official_format": "egov_law_api_json",
+          "current_adapter": "manual",
+          "required_adapter": "egov_law_semantics",
+          "adapter_status": "planned",
+          "reuse_key": "egov_law_api_json:348AC0000000111"
+        }
+      ]
+    },
+    {
+      "tax_id": "pollution-prevention-project-business-charge",
+      "official_name": "公害防止事業費事業者負担金",
+      "burden_type": "burden_charge",
+      "implementation_issue": 45,
+      "implementation_status": "planned",
+      "priority": "medium",
+      "depends_on_issues": [
+        31
+      ],
+      "batch_id": "issue-45-batch-01",
+      "reuse_group": "egov_law_api_json:345AC0000000133",
+      "municipal_scope": "national_only",
+      "capabilities": {
+        "liable_party": "needs_source_research",
+        "taxable_scope": "needs_source_research",
+        "calculation_basis": "needs_source_research",
+        "rate_or_amount": "needs_source_research",
+        "applicable_period": "needs_source_research"
+      },
+      "sources": [
+        {
+          "source_id": "egov-laws",
+          "target_id": "345AC0000000133",
+          "official_format": "egov_law_api_json",
+          "current_adapter": "manual",
+          "required_adapter": "egov_law_semantics",
+          "adapter_status": "planned",
+          "reuse_key": "egov_law_api_json:345AC0000000133"
+        }
+      ]
+    },
+    {
+      "tax_id": "port-environment-improvement-charge",
+      "official_name": "港湾環境整備負担金",
+      "burden_type": "burden_charge",
+      "implementation_issue": 45,
+      "implementation_status": "planned",
+      "priority": "medium",
+      "depends_on_issues": [
+        31
+      ],
+      "batch_id": "issue-45-batch-01",
+      "reuse_group": "egov_law_api_json:325AC0000000218",
+      "municipal_scope": "national_only",
+      "capabilities": {
+        "liable_party": "needs_source_research",
+        "taxable_scope": "needs_source_research",
+        "calculation_basis": "needs_source_research",
+        "rate_or_amount": "needs_source_research",
+        "applicable_period": "needs_source_research"
+      },
+      "sources": [
+        {
+          "source_id": "egov-laws",
+          "target_id": "325AC0000000218",
+          "official_format": "egov_law_api_json",
+          "current_adapter": "manual",
+          "required_adapter": "egov_law_semantics",
+          "adapter_status": "planned",
+          "reuse_key": "egov_law_api_json:325AC0000000218"
+        }
+      ]
+    },
+    {
+      "tax_id": "postal-network-support-contribution",
+      "official_name": "unknown",
+      "burden_type": "contribution",
+      "implementation_issue": 45,
+      "implementation_status": "planned",
+      "priority": "medium",
+      "depends_on_issues": [
+        31
+      ],
+      "batch_id": "issue-45-batch-04",
+      "reuse_group": "egov_law_api_json:417AC0000000101",
+      "municipal_scope": "national_only",
+      "capabilities": {
+        "liable_party": "needs_source_research",
+        "taxable_scope": "needs_source_research",
+        "calculation_basis": "needs_source_research",
+        "rate_or_amount": "needs_source_research",
+        "applicable_period": "needs_source_research"
+      },
+      "sources": [
+        {
+          "source_id": "egov-laws",
+          "target_id": "417AC0000000101",
+          "official_format": "egov_law_api_json",
+          "current_adapter": "manual",
+          "required_adapter": "egov_law_semantics",
+          "adapter_status": "planned",
+          "reuse_key": "egov_law_api_json:417AC0000000101"
+        }
+      ]
+    },
+    {
+      "tax_id": "postal-transport-consignment-compensation",
+      "official_name": "郵便物運送委託補償金",
+      "burden_type": "payment",
+      "implementation_issue": 45,
+      "implementation_status": "planned",
+      "priority": "medium",
+      "depends_on_issues": [
+        31
+      ],
+      "batch_id": "issue-45-batch-01",
+      "reuse_group": "egov_law_api_json:324AC0000000284",
+      "municipal_scope": "national_only",
+      "capabilities": {
+        "liable_party": "needs_source_research",
+        "taxable_scope": "needs_source_research",
+        "calculation_basis": "needs_source_research",
+        "rate_or_amount": "needs_source_research",
+        "applicable_period": "needs_source_research"
+      },
+      "sources": [
+        {
+          "source_id": "egov-laws",
+          "target_id": "324AC0000000284",
+          "official_format": "egov_law_api_json",
+          "current_adapter": "manual",
+          "required_adapter": "egov_law_semantics",
+          "adapter_status": "planned",
+          "reuse_key": "egov_law_api_json:324AC0000000284"
+        }
+      ]
+    },
+    {
+      "tax_id": "power-development-promotion-tax",
+      "official_name": "電源開発促進税",
+      "burden_type": "national_tax",
+      "implementation_issue": 42,
+      "implementation_status": "planned",
+      "priority": "high",
+      "depends_on_issues": [
+        31
+      ],
+      "batch_id": "issue-42-batch-01",
+      "reuse_group": "egov_law_api_json:349AC0000000079",
+      "municipal_scope": "national_only",
+      "capabilities": {
+        "liable_party": "needs_source_research",
+        "taxable_scope": "needs_source_research",
+        "calculation_basis": "needs_source_research",
+        "rate_or_amount": "needs_source_research",
+        "applicable_period": "needs_source_research"
+      },
+      "sources": [
+        {
+          "source_id": "egov-laws",
+          "target_id": "349AC0000000079",
+          "official_format": "egov_law_api_json",
+          "current_adapter": "manual",
+          "required_adapter": "egov_law_semantics",
+          "adapter_status": "planned",
+          "reuse_key": "egov_law_api_json:349AC0000000079"
+        }
+      ]
+    },
+    {
+      "tax_id": "private-recording-compensation",
+      "official_name": "私的録音録画補償金",
+      "burden_type": "payment",
+      "implementation_issue": 45,
+      "implementation_status": "planned",
+      "priority": "medium",
+      "depends_on_issues": [
+        31
+      ],
+      "batch_id": "issue-45-batch-01",
+      "reuse_group": "egov_law_api_json:345AC0000000048",
+      "municipal_scope": "national_only",
+      "capabilities": {
+        "liable_party": "needs_source_research",
+        "taxable_scope": "needs_source_research",
+        "calculation_basis": "needs_source_research",
+        "rate_or_amount": "needs_source_research",
+        "applicable_period": "needs_source_research"
+      },
+      "sources": [
+        {
+          "source_id": "egov-laws",
+          "target_id": "345AC0000000048",
+          "official_format": "egov_law_api_json",
+          "current_adapter": "manual",
+          "required_adapter": "egov_law_semantics",
+          "adapter_status": "planned",
+          "reuse_key": "egov_law_api_json:345AC0000000048"
+        }
+      ]
+    },
+    {
+      "tax_id": "railway-barrier-free-fee",
+      "official_name": "unknown",
+      "burden_type": "fee",
+      "implementation_issue": 45,
+      "implementation_status": "planned",
+      "priority": "medium",
+      "depends_on_issues": [
+        31
+      ],
+      "batch_id": "issue-45-batch-02",
+      "reuse_group": "egov_law_api_json:361AC0000000092",
+      "municipal_scope": "national_only",
+      "capabilities": {
+        "liable_party": "needs_source_research",
+        "taxable_scope": "needs_source_research",
+        "calculation_basis": "needs_source_research",
+        "rate_or_amount": "needs_source_research",
+        "applicable_period": "needs_source_research"
+      },
+      "sources": [
+        {
+          "source_id": "egov-laws",
+          "target_id": "361AC0000000092",
+          "official_format": "egov_law_api_json",
+          "current_adapter": "manual",
+          "required_adapter": "egov_law_semantics",
+          "adapter_status": "planned",
+          "reuse_key": "egov_law_api_json:361AC0000000092"
+        }
+      ]
+    },
+    {
+      "tax_id": "real-estate-acquisition-tax",
+      "official_name": "不動産取得税",
+      "burden_type": "local_tax",
+      "implementation_issue": 43,
+      "implementation_status": "planned",
+      "priority": "high",
+      "depends_on_issues": [
+        31
+      ],
+      "batch_id": "issue-43-common-source-01",
+      "reuse_group": "egov_law_api_json:325AC0000000226",
+      "municipal_scope": "issue_20",
+      "capabilities": {
+        "liable_party": "needs_source_research",
+        "taxable_scope": "needs_source_research",
+        "calculation_basis": "needs_source_research",
+        "rate_or_amount": "needs_source_research",
+        "applicable_period": "needs_source_research"
+      },
+      "sources": [
+        {
+          "source_id": "egov-laws",
+          "target_id": "325AC0000000226",
+          "official_format": "egov_law_api_json",
+          "current_adapter": "manual",
+          "required_adapter": "egov_law_semantics",
+          "adapter_status": "planned",
+          "reuse_key": "egov_law_api_json:325AC0000000226"
+        }
+      ]
+    },
+    {
+      "tax_id": "reconstruction-special-income-tax",
+      "official_name": "復興特別所得税",
+      "burden_type": "national_tax",
+      "implementation_issue": 42,
+      "implementation_status": "planned",
+      "priority": "high",
+      "depends_on_issues": [
+        31
+      ],
+      "batch_id": "issue-42-batch-02",
+      "reuse_group": "egov_law_api_json:423AC0000000117",
+      "municipal_scope": "national_only",
+      "capabilities": {
+        "liable_party": "needs_source_research",
+        "taxable_scope": "needs_source_research",
+        "calculation_basis": "needs_source_research",
+        "rate_or_amount": "needs_source_research",
+        "applicable_period": "needs_source_research"
+      },
+      "sources": [
+        {
+          "source_id": "egov-laws",
+          "target_id": "423AC0000000117",
+          "official_format": "egov_law_api_json",
+          "current_adapter": "manual",
+          "required_adapter": "egov_law_semantics",
+          "adapter_status": "planned",
+          "reuse_key": "egov_law_api_json:423AC0000000117"
+        }
+      ]
+    },
+    {
+      "tax_id": "regional-economy-revitalization-contribution",
+      "official_name": "unknown",
+      "burden_type": "contribution",
+      "implementation_issue": 45,
+      "implementation_status": "planned",
+      "priority": "medium",
+      "depends_on_issues": [
+        31
+      ],
+      "batch_id": "issue-45-batch-04",
+      "reuse_group": "egov_law_api_json:421AC0000000063",
+      "municipal_scope": "national_only",
+      "capabilities": {
+        "liable_party": "needs_source_research",
+        "taxable_scope": "needs_source_research",
+        "calculation_basis": "needs_source_research",
+        "rate_or_amount": "needs_source_research",
+        "applicable_period": "needs_source_research"
+      },
+      "sources": [
+        {
+          "source_id": "egov-laws",
+          "target_id": "421AC0000000063",
+          "official_format": "egov_law_api_json",
+          "current_adapter": "manual",
+          "required_adapter": "egov_law_semantics",
+          "adapter_status": "planned",
+          "reuse_key": "egov_law_api_json:421AC0000000063"
+        }
+      ]
+    },
+    {
+      "tax_id": "registration-and-license-tax",
+      "official_name": "登録免許税",
+      "burden_type": "national_tax",
+      "implementation_issue": 42,
+      "implementation_status": "planned",
+      "priority": "high",
+      "depends_on_issues": [
+        31
+      ],
+      "batch_id": "issue-42-batch-01",
+      "reuse_group": "egov_law_api_json:342AC0000000035",
+      "municipal_scope": "national_only",
+      "capabilities": {
+        "liable_party": "needs_source_research",
+        "taxable_scope": "needs_source_research",
+        "calculation_basis": "needs_source_research",
+        "rate_or_amount": "needs_source_research",
+        "applicable_period": "needs_source_research"
+      },
+      "sources": [
+        {
+          "source_id": "egov-laws",
+          "target_id": "342AC0000000035",
+          "official_format": "egov_law_api_json",
+          "current_adapter": "manual",
+          "required_adapter": "egov_law_semantics",
+          "adapter_status": "planned",
+          "reuse_key": "egov_law_api_json:342AC0000000035"
+        }
+      ]
+    },
+    {
+      "tax_id": "renewable-energy-surcharge",
+      "official_name": "再生可能エネルギー発電促進賦課金",
+      "burden_type": "levy",
+      "implementation_issue": 45,
+      "implementation_status": "planned",
+      "priority": "medium",
+      "depends_on_issues": [
+        31
+      ],
+      "batch_id": "issue-45-batch-04",
+      "reuse_group": "egov_law_api_json:423AC0000000108",
+      "municipal_scope": "national_only",
+      "capabilities": {
+        "liable_party": "needs_source_research",
+        "taxable_scope": "needs_source_research",
+        "calculation_basis": "needs_source_research",
+        "rate_or_amount": "needs_source_research",
+        "applicable_period": "needs_source_research"
+      },
+      "sources": [
+        {
+          "source_id": "egov-laws",
+          "target_id": "423AC0000000108",
+          "official_format": "egov_law_api_json",
+          "current_adapter": "manual",
+          "required_adapter": "egov_law_semantics",
+          "adapter_status": "planned",
+          "reuse_key": "egov_law_api_json:423AC0000000108"
+        }
+      ]
+    },
+    {
+      "tax_id": "reprocessing-contribution",
+      "official_name": "再処理等拠出金",
+      "burden_type": "contribution",
+      "implementation_issue": 45,
+      "implementation_status": "planned",
+      "priority": "medium",
+      "depends_on_issues": [
+        31
+      ],
+      "batch_id": "issue-45-batch-04",
+      "reuse_group": "egov_law_api_json:417AC0000000048",
+      "municipal_scope": "national_only",
+      "capabilities": {
+        "liable_party": "needs_source_research",
+        "taxable_scope": "needs_source_research",
+        "calculation_basis": "needs_source_research",
+        "rate_or_amount": "needs_source_research",
+        "applicable_period": "needs_source_research"
+      },
+      "sources": [
+        {
+          "source_id": "egov-laws",
+          "target_id": "417AC0000000048",
+          "official_format": "egov_law_api_json",
+          "current_adapter": "manual",
+          "required_adapter": "egov_law_semantics",
+          "adapter_status": "planned",
+          "reuse_key": "egov_law_api_json:417AC0000000048"
+        }
+      ]
+    },
+    {
+      "tax_id": "resident-tax",
+      "official_name": "住民税",
+      "burden_type": "local_tax",
+      "implementation_issue": 43,
+      "implementation_status": "planned",
+      "priority": "high",
+      "depends_on_issues": [
+        31
+      ],
+      "batch_id": "issue-43-common-source-01",
+      "reuse_group": "egov_law_api_json:325AC0000000226",
+      "municipal_scope": "issue_20",
+      "capabilities": {
+        "liable_party": "needs_source_research",
+        "taxable_scope": "needs_source_research",
+        "calculation_basis": "needs_source_research",
+        "rate_or_amount": "needs_source_research",
+        "applicable_period": "needs_source_research"
+      },
+      "sources": [
+        {
+          "source_id": "egov-laws",
+          "target_id": "325AC0000000226",
+          "official_format": "egov_law_api_json",
+          "current_adapter": "manual",
+          "required_adapter": "egov_law_semantics",
+          "adapter_status": "planned",
+          "reuse_key": "egov_law_api_json:325AC0000000226"
+        }
+      ]
+    },
+    {
+      "tax_id": "residential-land-development-tax",
+      "official_name": "宅地開発税",
+      "burden_type": "local_tax",
+      "implementation_issue": 43,
+      "implementation_status": "planned",
+      "priority": "high",
+      "depends_on_issues": [
+        31
+      ],
+      "batch_id": "issue-43-common-source-01",
+      "reuse_group": "egov_law_api_json:325AC0000000226",
+      "municipal_scope": "issue_20",
+      "capabilities": {
+        "liable_party": "needs_source_research",
+        "taxable_scope": "needs_source_research",
+        "calculation_basis": "needs_source_research",
+        "rate_or_amount": "needs_source_research",
+        "applicable_period": "needs_source_research"
+      },
+      "sources": [
+        {
+          "source_id": "egov-laws",
+          "target_id": "325AC0000000226",
+          "official_format": "egov_law_api_json",
+          "current_adapter": "manual",
+          "required_adapter": "egov_law_semantics",
+          "adapter_status": "planned",
+          "reuse_key": "egov_law_api_json:325AC0000000226"
+        }
+      ]
+    },
+    {
+      "tax_id": "special-corporate-enterprise-tax",
+      "official_name": "特別法人事業税",
+      "burden_type": "national_tax",
+      "implementation_issue": 42,
+      "implementation_status": "planned",
+      "priority": "high",
+      "depends_on_issues": [
+        31
+      ],
+      "batch_id": "issue-42-batch-02",
+      "reuse_group": "egov_law_api_json:431AC0000000004",
+      "municipal_scope": "national_only",
+      "capabilities": {
+        "liable_party": "needs_source_research",
+        "taxable_scope": "needs_source_research",
+        "calculation_basis": "needs_source_research",
+        "rate_or_amount": "needs_source_research",
+        "applicable_period": "needs_source_research"
+      },
+      "sources": [
+        {
+          "source_id": "egov-laws",
+          "target_id": "431AC0000000004",
+          "official_format": "egov_law_api_json",
+          "current_adapter": "manual",
+          "required_adapter": "egov_law_semantics",
+          "adapter_status": "planned",
+          "reuse_key": "egov_law_api_json:431AC0000000004"
+        }
+      ]
+    },
+    {
+      "tax_id": "special-landholding-tax",
+      "official_name": "特別土地保有税",
+      "burden_type": "local_tax",
+      "implementation_issue": 43,
+      "implementation_status": "planned",
+      "priority": "high",
+      "depends_on_issues": [
+        31
+      ],
+      "batch_id": "issue-43-common-source-01",
+      "reuse_group": "egov_law_api_json:325AC0000000226",
+      "municipal_scope": "issue_20",
+      "capabilities": {
+        "liable_party": "needs_source_research",
+        "taxable_scope": "needs_source_research",
+        "calculation_basis": "needs_source_research",
+        "rate_or_amount": "needs_source_research",
+        "applicable_period": "needs_source_research"
+      },
+      "sources": [
+        {
+          "source_id": "egov-laws",
+          "target_id": "325AC0000000226",
+          "official_format": "egov_law_api_json",
+          "current_adapter": "manual",
+          "required_adapter": "egov_law_semantics",
+          "adapter_status": "planned",
+          "reuse_key": "egov_law_api_json:325AC0000000226"
+        }
+      ]
+    },
+    {
+      "tax_id": "special-tobacco-tax",
+      "official_name": "たばこ特別税",
+      "burden_type": "national_tax",
+      "implementation_issue": 42,
+      "implementation_status": "planned",
+      "priority": "high",
+      "depends_on_issues": [
+        31
+      ],
+      "batch_id": "issue-42-batch-02",
+      "reuse_group": "egov_law_api_json:410AC0000000137",
+      "municipal_scope": "national_only",
+      "capabilities": {
+        "liable_party": "needs_source_research",
+        "taxable_scope": "needs_source_research",
+        "calculation_basis": "needs_source_research",
+        "rate_or_amount": "needs_source_research",
+        "applicable_period": "needs_source_research"
+      },
+      "sources": [
+        {
+          "source_id": "egov-laws",
+          "target_id": "410AC0000000137",
+          "official_format": "egov_law_api_json",
+          "current_adapter": "manual",
+          "required_adapter": "egov_law_semantics",
+          "adapter_status": "planned",
+          "reuse_key": "egov_law_api_json:410AC0000000137"
+        }
+      ]
+    },
+    {
+      "tax_id": "special-tonnage-tax",
+      "official_name": "特別とん税",
+      "burden_type": "national_tax",
+      "implementation_issue": 42,
+      "implementation_status": "planned",
+      "priority": "high",
+      "depends_on_issues": [
+        31
+      ],
+      "batch_id": "issue-42-batch-01",
+      "reuse_group": "egov_law_api_json:332AC0000000038",
+      "municipal_scope": "national_only",
+      "capabilities": {
+        "liable_party": "needs_source_research",
+        "taxable_scope": "needs_source_research",
+        "calculation_basis": "needs_source_research",
+        "rate_or_amount": "needs_source_research",
+        "applicable_period": "needs_source_research"
+      },
+      "sources": [
+        {
+          "source_id": "egov-laws",
+          "target_id": "332AC0000000038",
+          "official_format": "egov_law_api_json",
+          "current_adapter": "manual",
+          "required_adapter": "egov_law_semantics",
+          "adapter_status": "planned",
+          "reuse_key": "egov_law_api_json:332AC0000000038"
+        }
+      ]
+    },
+    {
+      "tax_id": "specified-pollution-levy",
+      "official_name": "unknown",
+      "burden_type": "levy",
+      "implementation_issue": 45,
+      "implementation_status": "planned",
+      "priority": "medium",
+      "depends_on_issues": [
+        31
+      ],
+      "batch_id": "issue-45-batch-02",
+      "reuse_group": "egov_law_api_json:348AC0000000111",
+      "municipal_scope": "national_only",
+      "capabilities": {
+        "liable_party": "needs_source_research",
+        "taxable_scope": "needs_source_research",
+        "calculation_basis": "needs_source_research",
+        "rate_or_amount": "needs_source_research",
+        "applicable_period": "needs_source_research"
+      },
+      "sources": [
+        {
+          "source_id": "egov-laws",
+          "target_id": "348AC0000000111",
+          "official_format": "egov_law_api_json",
+          "current_adapter": "manual",
+          "required_adapter": "egov_law_semantics",
+          "adapter_status": "planned",
+          "reuse_key": "egov_law_api_json:348AC0000000111"
+        }
+      ]
+    },
+    {
+      "tax_id": "stamp-tax",
+      "official_name": "印紙税",
+      "burden_type": "national_tax",
+      "implementation_issue": 42,
+      "implementation_status": "planned",
+      "priority": "high",
+      "depends_on_issues": [
+        31
+      ],
+      "batch_id": "issue-42-batch-01",
+      "reuse_group": "egov_law_api_json:342AC0000000023",
+      "municipal_scope": "national_only",
+      "capabilities": {
+        "liable_party": "needs_source_research",
+        "taxable_scope": "needs_source_research",
+        "calculation_basis": "needs_source_research",
+        "rate_or_amount": "needs_source_research",
+        "applicable_period": "needs_source_research"
+      },
+      "sources": [
+        {
+          "source_id": "egov-laws",
+          "target_id": "342AC0000000023",
+          "official_format": "egov_law_api_json",
+          "current_adapter": "manual",
+          "required_adapter": "egov_law_semantics",
+          "adapter_status": "planned",
+          "reuse_key": "egov_law_api_json:342AC0000000023"
+        }
+      ]
+    },
+    {
+      "tax_id": "supplementary-nuclear-damage-general-charge",
+      "official_name": "unknown",
+      "burden_type": "burden_charge",
+      "implementation_issue": 45,
+      "implementation_status": "planned",
+      "priority": "medium",
+      "depends_on_issues": [
+        31
+      ],
+      "batch_id": "issue-45-batch-05",
+      "reuse_group": "egov_law_api_json:426AC0000000133",
+      "municipal_scope": "national_only",
+      "capabilities": {
+        "liable_party": "needs_source_research",
+        "taxable_scope": "needs_source_research",
+        "calculation_basis": "needs_source_research",
+        "rate_or_amount": "needs_source_research",
+        "applicable_period": "needs_source_research"
+      },
+      "sources": [
+        {
+          "source_id": "egov-laws",
+          "target_id": "426AC0000000133",
+          "official_format": "egov_law_api_json",
+          "current_adapter": "manual",
+          "required_adapter": "egov_law_semantics",
+          "adapter_status": "planned",
+          "reuse_key": "egov_law_api_json:426AC0000000133"
+        }
+      ]
+    },
+    {
+      "tax_id": "supplementary-nuclear-damage-special-charge",
+      "official_name": "unknown",
+      "burden_type": "burden_charge",
+      "implementation_issue": 45,
+      "implementation_status": "planned",
+      "priority": "medium",
+      "depends_on_issues": [
+        31
+      ],
+      "batch_id": "issue-45-batch-05",
+      "reuse_group": "egov_law_api_json:426AC0000000133",
+      "municipal_scope": "national_only",
+      "capabilities": {
+        "liable_party": "needs_source_research",
+        "taxable_scope": "needs_source_research",
+        "calculation_basis": "needs_source_research",
+        "rate_or_amount": "needs_source_research",
+        "applicable_period": "needs_source_research"
+      },
+      "sources": [
+        {
+          "source_id": "egov-laws",
+          "target_id": "426AC0000000133",
+          "official_format": "egov_law_api_json",
+          "current_adapter": "manual",
+          "required_adapter": "egov_law_semantics",
+          "adapter_status": "planned",
+          "reuse_key": "egov_law_api_json:426AC0000000133"
+        }
+      ]
+    },
+    {
+      "tax_id": "supplementary-oil-pollution-fund-annual-contribution",
+      "official_name": "unknown",
+      "burden_type": "contribution",
+      "implementation_issue": 45,
+      "implementation_status": "planned",
+      "priority": "medium",
+      "depends_on_issues": [
+        31
+      ],
+      "batch_id": "issue-45-batch-02",
+      "reuse_group": "egov_law_api_json:350AC0000000095",
+      "municipal_scope": "national_only",
+      "capabilities": {
+        "liable_party": "needs_source_research",
+        "taxable_scope": "needs_source_research",
+        "calculation_basis": "needs_source_research",
+        "rate_or_amount": "needs_source_research",
+        "applicable_period": "needs_source_research"
+      },
+      "sources": [
+        {
+          "source_id": "egov-laws",
+          "target_id": "350AC0000000095",
+          "official_format": "egov_law_api_json",
+          "current_adapter": "manual",
+          "required_adapter": "egov_law_semantics",
+          "adapter_status": "planned",
+          "reuse_key": "egov_law_api_json:350AC0000000095"
+        }
+      ]
+    },
+    {
+      "tax_id": "taxi-center-business-charge",
+      "official_name": "unknown",
+      "burden_type": "burden_charge",
+      "implementation_issue": 45,
+      "implementation_status": "planned",
+      "priority": "medium",
+      "depends_on_issues": [
+        31
+      ],
+      "batch_id": "issue-45-batch-04",
+      "reuse_group": "egov_law_api_json:421AC0000000064",
+      "municipal_scope": "national_only",
+      "capabilities": {
+        "liable_party": "needs_source_research",
+        "taxable_scope": "needs_source_research",
+        "calculation_basis": "needs_source_research",
+        "rate_or_amount": "needs_source_research",
+        "applicable_period": "needs_source_research"
+      },
+      "sources": [
+        {
+          "source_id": "egov-laws",
+          "target_id": "421AC0000000064",
+          "official_format": "egov_law_api_json",
+          "current_adapter": "manual",
+          "required_adapter": "egov_law_semantics",
+          "adapter_status": "planned",
+          "reuse_key": "egov_law_api_json:421AC0000000064"
+        }
+      ]
+    },
+    {
+      "tax_id": "telephone-accessibility-charge",
+      "official_name": "unknown",
+      "burden_type": "burden_charge",
+      "implementation_issue": 45,
+      "implementation_status": "planned",
+      "priority": "medium",
+      "depends_on_issues": [
+        31
+      ],
+      "batch_id": "issue-45-batch-05",
+      "reuse_group": "egov_law_api_json:502AC0000000053",
+      "municipal_scope": "national_only",
+      "capabilities": {
+        "liable_party": "needs_source_research",
+        "taxable_scope": "needs_source_research",
+        "calculation_basis": "needs_source_research",
+        "rate_or_amount": "needs_source_research",
+        "applicable_period": "needs_source_research"
+      },
+      "sources": [
+        {
+          "source_id": "egov-laws",
+          "target_id": "502AC0000000053",
+          "official_format": "egov_law_api_json",
+          "current_adapter": "manual",
+          "required_adapter": "egov_law_semantics",
+          "adapter_status": "planned",
+          "reuse_key": "egov_law_api_json:502AC0000000053"
+        }
+      ]
+    },
+    {
+      "tax_id": "tobacco-tax",
+      "official_name": "たばこ税",
+      "burden_type": "national_tax",
+      "implementation_issue": 42,
+      "implementation_status": "planned",
+      "priority": "high",
+      "depends_on_issues": [
+        31
+      ],
+      "batch_id": "issue-42-batch-02",
+      "reuse_group": "egov_law_api_json:359AC0000000072",
+      "municipal_scope": "national_only",
+      "capabilities": {
+        "liable_party": "needs_source_research",
+        "taxable_scope": "needs_source_research",
+        "calculation_basis": "needs_source_research",
+        "rate_or_amount": "needs_source_research",
+        "applicable_period": "needs_source_research"
+      },
+      "sources": [
+        {
+          "source_id": "egov-laws",
+          "target_id": "359AC0000000072",
+          "official_format": "egov_law_api_json",
+          "current_adapter": "manual",
+          "required_adapter": "egov_law_semantics",
+          "adapter_status": "planned",
+          "reuse_key": "egov_law_api_json:359AC0000000072"
+        }
+      ]
+    },
+    {
+      "tax_id": "tonnage-tax",
+      "official_name": "とん税",
+      "burden_type": "national_tax",
+      "implementation_issue": 42,
+      "implementation_status": "planned",
+      "priority": "high",
+      "depends_on_issues": [
+        31
+      ],
+      "batch_id": "issue-42-batch-01",
+      "reuse_group": "egov_law_api_json:332AC0000000037",
+      "municipal_scope": "national_only",
+      "capabilities": {
+        "liable_party": "needs_source_research",
+        "taxable_scope": "needs_source_research",
+        "calculation_basis": "needs_source_research",
+        "rate_or_amount": "needs_source_research",
+        "applicable_period": "needs_source_research"
+      },
+      "sources": [
+        {
+          "source_id": "egov-laws",
+          "target_id": "332AC0000000037",
+          "official_format": "egov_law_api_json",
+          "current_adapter": "manual",
+          "required_adapter": "egov_law_semantics",
+          "adapter_status": "planned",
+          "reuse_key": "egov_law_api_json:332AC0000000037"
+        }
+      ]
+    },
+    {
+      "tax_id": "tru-waste-disposal-contribution",
+      "official_name": "unknown",
+      "burden_type": "contribution",
+      "implementation_issue": 45,
+      "implementation_status": "planned",
+      "priority": "medium",
+      "depends_on_issues": [
+        31
+      ],
+      "batch_id": "issue-45-batch-03",
+      "reuse_group": "egov_law_api_json:412AC0000000117",
+      "municipal_scope": "national_only",
+      "capabilities": {
+        "liable_party": "needs_source_research",
+        "taxable_scope": "needs_source_research",
+        "calculation_basis": "needs_source_research",
+        "rate_or_amount": "needs_source_research",
+        "applicable_period": "needs_source_research"
+      },
+      "sources": [
+        {
+          "source_id": "egov-laws",
+          "target_id": "412AC0000000117",
+          "official_format": "egov_law_api_json",
+          "current_adapter": "manual",
+          "required_adapter": "egov_law_semantics",
+          "adapter_status": "planned",
+          "reuse_key": "egov_law_api_json:412AC0000000117"
+        }
+      ]
+    },
+    {
+      "tax_id": "universal-service-fee",
+      "official_name": "unknown",
+      "burden_type": "fee",
+      "implementation_issue": 45,
+      "implementation_status": "planned",
+      "priority": "medium",
+      "depends_on_issues": [
+        31
+      ],
+      "batch_id": "issue-45-batch-02",
+      "reuse_group": "egov_law_api_json:359AC0000000086",
+      "municipal_scope": "national_only",
+      "capabilities": {
+        "liable_party": "needs_source_research",
+        "taxable_scope": "needs_source_research",
+        "calculation_basis": "needs_source_research",
+        "rate_or_amount": "needs_source_research",
+        "applicable_period": "needs_source_research"
+      },
+      "sources": [
+        {
+          "source_id": "egov-laws",
+          "target_id": "359AC0000000086",
+          "official_format": "egov_law_api_json",
+          "current_adapter": "manual",
+          "required_adapter": "egov_law_semantics",
+          "adapter_status": "planned",
+          "reuse_key": "egov_law_api_json:359AC0000000086"
+        }
+      ]
+    },
+    {
+      "tax_id": "utility-tunnel-management-charge",
+      "official_name": "unknown",
+      "burden_type": "burden_charge",
+      "implementation_issue": 45,
+      "implementation_status": "planned",
+      "priority": "medium",
+      "depends_on_issues": [
+        31
+      ],
+      "batch_id": "issue-45-batch-03",
+      "reuse_group": "egov_law_api_json:407AC0000000039",
+      "municipal_scope": "national_only",
+      "capabilities": {
+        "liable_party": "needs_source_research",
+        "taxable_scope": "needs_source_research",
+        "calculation_basis": "needs_source_research",
+        "rate_or_amount": "needs_source_research",
+        "applicable_period": "needs_source_research"
+      },
+      "sources": [
+        {
+          "source_id": "egov-laws",
+          "target_id": "407AC0000000039",
+          "official_format": "egov_law_api_json",
+          "current_adapter": "manual",
+          "required_adapter": "egov_law_semantics",
+          "adapter_status": "planned",
+          "reuse_key": "egov_law_api_json:407AC0000000039"
+        }
+      ]
+    },
+    {
+      "tax_id": "utility-tunnel-other-occupant-charge",
+      "official_name": "unknown",
+      "burden_type": "burden_charge",
+      "implementation_issue": 45,
+      "implementation_status": "planned",
+      "priority": "medium",
+      "depends_on_issues": [
+        31
+      ],
+      "batch_id": "issue-45-batch-03",
+      "reuse_group": "egov_law_api_json:407AC0000000039",
+      "municipal_scope": "national_only",
+      "capabilities": {
+        "liable_party": "needs_source_research",
+        "taxable_scope": "needs_source_research",
+        "calculation_basis": "needs_source_research",
+        "rate_or_amount": "needs_source_research",
+        "applicable_period": "needs_source_research"
+      },
+      "sources": [
+        {
+          "source_id": "egov-laws",
+          "target_id": "407AC0000000039",
+          "official_format": "egov_law_api_json",
+          "current_adapter": "manual",
+          "required_adapter": "egov_law_semantics",
+          "adapter_status": "planned",
+          "reuse_key": "egov_law_api_json:407AC0000000039"
+        }
+      ]
+    },
+    {
+      "tax_id": "utility-tunnel-planned-occupant-construction-charge",
+      "official_name": "unknown",
+      "burden_type": "burden_charge",
+      "implementation_issue": 45,
+      "implementation_status": "planned",
+      "priority": "medium",
+      "depends_on_issues": [
+        31
+      ],
+      "batch_id": "issue-45-batch-03",
+      "reuse_group": "egov_law_api_json:407AC0000000039",
+      "municipal_scope": "national_only",
+      "capabilities": {
+        "liable_party": "needs_source_research",
+        "taxable_scope": "needs_source_research",
+        "calculation_basis": "needs_source_research",
+        "rate_or_amount": "needs_source_research",
+        "applicable_period": "needs_source_research"
+      },
+      "sources": [
+        {
+          "source_id": "egov-laws",
+          "target_id": "407AC0000000039",
+          "official_format": "egov_law_api_json",
+          "current_adapter": "manual",
+          "required_adapter": "egov_law_semantics",
+          "adapter_status": "planned",
+          "reuse_key": "egov_law_api_json:407AC0000000039"
+        }
+      ]
+    },
+    {
+      "tax_id": "water-and-land-benefit-tax",
+      "official_name": "水利地益税",
+      "burden_type": "local_tax",
+      "implementation_issue": 43,
+      "implementation_status": "planned",
+      "priority": "high",
+      "depends_on_issues": [
+        31
+      ],
+      "batch_id": "issue-43-common-source-01",
+      "reuse_group": "egov_law_api_json:325AC0000000226",
+      "municipal_scope": "issue_20",
+      "capabilities": {
+        "liable_party": "needs_source_research",
+        "taxable_scope": "needs_source_research",
+        "calculation_basis": "needs_source_research",
+        "rate_or_amount": "needs_source_research",
+        "applicable_period": "needs_source_research"
+      },
+      "sources": [
+        {
+          "source_id": "egov-laws",
+          "target_id": "325AC0000000226",
+          "official_format": "egov_law_api_json",
+          "current_adapter": "manual",
+          "required_adapter": "egov_law_semantics",
+          "adapter_status": "planned",
+          "reuse_key": "egov_law_api_json:325AC0000000226"
+        }
+      ]
+    },
+    {
+      "tax_id": "water-resources-facility-user-charge",
+      "official_name": "unknown",
+      "burden_type": "burden_charge",
+      "implementation_issue": 45,
+      "implementation_status": "planned",
+      "priority": "medium",
+      "depends_on_issues": [
+        31
+      ],
+      "batch_id": "issue-45-batch-03",
+      "reuse_group": "egov_law_api_json:414AC0000000182",
+      "municipal_scope": "national_only",
+      "capabilities": {
+        "liable_party": "needs_source_research",
+        "taxable_scope": "needs_source_research",
+        "calculation_basis": "needs_source_research",
+        "rate_or_amount": "needs_source_research",
+        "applicable_period": "needs_source_research"
+      },
+      "sources": [
+        {
+          "source_id": "egov-laws",
+          "target_id": "414AC0000000182",
+          "official_format": "egov_law_api_json",
+          "current_adapter": "manual",
+          "required_adapter": "egov_law_semantics",
+          "adapter_status": "planned",
+          "reuse_key": "egov_law_api_json:414AC0000000182"
+        }
+      ]
+    },
+    {
+      "tax_id": "workers-compensation-insurance-premium",
+      "official_name": "労災保険料",
+      "burden_type": "social_insurance_premium",
+      "implementation_issue": 44,
+      "implementation_status": "planned",
+      "priority": "high",
+      "depends_on_issues": [
+        31
+      ],
+      "batch_id": "issue-44-batch-01",
+      "reuse_group": "egov_law_api_json:322AC0000000050",
+      "municipal_scope": "national_only",
+      "capabilities": {
+        "liable_party": "needs_source_research",
+        "taxable_scope": "needs_source_research",
+        "calculation_basis": "needs_source_research",
+        "rate_or_amount": "needs_source_research",
+        "applicable_period": "needs_source_research"
+      },
+      "sources": [
+        {
+          "source_id": "egov-laws",
+          "target_id": "322AC0000000050",
+          "official_format": "egov_law_api_json",
+          "current_adapter": "manual",
+          "required_adapter": "egov_law_semantics",
+          "adapter_status": "planned",
+          "reuse_key": "egov_law_api_json:322AC0000000050"
+        }
+      ]
+    }
+  ]
+}
