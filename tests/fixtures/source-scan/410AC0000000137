@@ -1,0 +1,311 @@
+{
+  "law_info": {
+    "law_type": "Act",
+    "law_id": "410AC0000000137",
+    "law_num": "平成十年法律第百三十七号",
+    "law_num_era": "Heisei",
+    "law_num_year": 10,
+    "law_num_type": "Act",
+    "law_num_num": "137",
+    "promulgation_date": "1998-10-19"
+  },
+  "revision_info": {
+    "law_revision_id": "410AC0000000137_20260525_506AC0000000052",
+    "law_type": "Act",
+    "law_title": "一般会計における債務の承継等に伴い必要な財源の確保に係る特別措置に関する法律",
+    "law_title_kana": "いっぱんかいけいにおけるさいむのしょうけいとうにともないひつようなざいげんのかくほにかかるとくべつそちにかんするほうりつ",
+    "abbrev": "",
+    "category": "財務通則",
+    "updated": "2025-11-06T19:48:31+09:00",
+    "amendment_promulgate_date": "2024-06-14",
+    "amendment_enforcement_date": "2026-05-25",
+    "amendment_enforcement_comment": null,
+    "amendment_scheduled_enforcement_date": null,
+    "amendment_law_id": "506AC0000000052",
+    "amendment_law_title": "事業性融資の推進等に関する法律",
+    "amendment_law_title_kana": null,
+    "amendment_law_num": "令和六年法律第五十二号",
+    "amendment_type": "3",
+    "repeal_status": "None",
+    "repeal_date": null,
+    "remain_in_force": false,
+    "mission": "New",
+    "current_revision_status": "CurrentEnforced"
+  },
+  "law_full_text": {
+    "tag": "Law",
+    "children": [
+      {
+        "tag": "MainProvision",
+        "children": [
+          {
+            "tag": "Article",
+            "attr": {
+              "Num": "4"
+            },
+            "children": [
+              {
+                "tag": "ArticleCaption",
+                "attr": {},
+                "children": [
+                  "（課税物件）"
+                ]
+              },
+              {
+                "tag": "ArticleTitle",
+                "attr": {},
+                "children": [
+                  "第四条"
+                ]
+              },
+              {
+                "tag": "Paragraph",
+                "attr": {
+                  "Num": "1"
+                },
+                "children": [
+                  {
+                    "tag": "ParagraphNum",
+                    "attr": {},
+                    "children": []
+                  },
+                  {
+                    "tag": "ParagraphSentence",
+                    "attr": {},
+                    "children": [
+                      {
+                        "tag": "Sentence",
+                        "attr": {
+                          "Num": "1",
+                          "WritingMode": "vertical"
+                        },
+                        "children": [
+                          "製造たばこには、この法律により、当分の間、たばこ特別税を課する。"
+                        ]
+                      }
+                    ]
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "tag": "Article",
+            "attr": {
+              "Num": "5"
+            },
+            "children": [
+              {
+                "tag": "ArticleCaption",
+                "attr": {},
+                "children": [
+                  "（納税義務者）"
+                ]
+              },
+              {
+                "tag": "ArticleTitle",
+                "attr": {},
+                "children": [
+                  "第五条"
+                ]
+              },
+              {
+                "tag": "Paragraph",
+                "attr": {
+                  "Num": "1"
+                },
+                "children": [
+                  {
+                    "tag": "ParagraphNum",
+                    "attr": {},
+                    "children": []
+                  },
+                  {
+                    "tag": "ParagraphSentence",
+                    "attr": {},
+                    "children": [
+                      {
+                        "tag": "Sentence",
+                        "attr": {
+                          "Num": "1",
+                          "WritingMode": "vertical"
+                        },
+                        "children": [
+                          "製造たばこの製造者（たばこ税法第六条第一項ただし書若しくは第七条の規定により製造たばこの製造者とみなされる者又は同法第十二条第六項若しくは第十三条第五項の規定により製造たばこ製造者とみなされる者を含む。）は、その製造場（同法第六条第五項、第十二条第六項又は第十三条第五項の規定により製造たばこの製造場とみなされる場所を含むものとし、同法第五条の規定により製造たばこの製造場でない保税地域とみなされる製造たばこの製造場を除く。）から移出した製造たばこ（同法第六条第一項の規定の適用がある場合には、その喫煙用等（同項に規定する喫煙用等をいう。次項において同じ。）に供された製造たばことし、同条第三項の規定の適用がある場合には、その換価された製造たばことし、同条第四項又は第五項の規定の適用がある場合には、その現存する製造たばことする。）につき、たばこ特別税を納める義務がある。"
+                        ]
+                      }
+                    ]
+                  }
+                ]
+              },
+              {
+                "tag": "Paragraph",
+                "attr": {
+                  "Num": "2"
+                },
+                "children": [
+                  {
+                    "tag": "ParagraphNum",
+                    "attr": {},
+                    "children": [
+                      "２"
+                    ]
+                  },
+                  {
+                    "tag": "ParagraphSentence",
+                    "attr": {},
+                    "children": [
+                      {
+                        "tag": "Sentence",
+                        "attr": {
+                          "Num": "1",
+                          "WritingMode": "vertical"
+                        },
+                        "children": [
+                          "製造たばこを保税地域（たばこ税法第五条の規定により保税地域に該当しない製造たばこの製造場とみなされるものを除く。）から引き取る者（同法第六条第二項の規定の適用がある場合には、その喫煙用等に供した者）は、その引き取る製造たばこ（同法第六条第二項の規定の適用がある場合には、その喫煙用等に供された製造たばこ）につき、たばこ特別税を納める義務がある。"
+                        ]
+                      }
+                    ]
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "tag": "Article",
+            "attr": {
+              "Num": "7"
+            },
+            "children": [
+              {
+                "tag": "ArticleCaption",
+                "attr": {},
+                "children": [
+                  "（課税標準）"
+                ]
+              },
+              {
+                "tag": "ArticleTitle",
+                "attr": {},
+                "children": [
+                  "第七条"
+                ]
+              },
+              {
+                "tag": "Paragraph",
+                "attr": {
+                  "Num": "1"
+                },
+                "children": [
+                  {
+                    "tag": "ParagraphNum",
+                    "attr": {},
+                    "children": []
+                  },
+                  {
+                    "tag": "ParagraphSentence",
+                    "attr": {},
+                    "children": [
+                      {
+                        "tag": "Sentence",
+                        "attr": {
+                          "Num": "1",
+                          "WritingMode": "vertical"
+                        },
+                        "children": [
+                          "たばこ特別税の課税標準は、たばこ税の課税標準となる製造たばこの本数とする。"
+                        ]
+                      }
+                    ]
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "tag": "Article",
+            "attr": {
+              "Num": "8"
+            },
+            "children": [
+              {
+                "tag": "ArticleCaption",
+                "attr": {},
+                "children": [
+                  "（税率）"
+                ]
+              },
+              {
+                "tag": "ArticleTitle",
+                "attr": {},
+                "children": [
+                  "第八条"
+                ]
+              },
+              {
+                "tag": "Paragraph",
+                "attr": {
+                  "Num": "1"
+                },
+                "children": [
+                  {
+                    "tag": "ParagraphNum",
+                    "attr": {},
+                    "children": []
+                  },
+                  {
+                    "tag": "ParagraphSentence",
+                    "attr": {},
+                    "children": [
+                      {
+                        "tag": "Sentence",
+                        "attr": {
+                          "Num": "1",
+                          "WritingMode": "vertical"
+                        },
+                        "children": [
+                          "たばこ特別税の税率は、千本につき八百二十円とする。"
+                        ]
+                      }
+                    ]
+                  }
+                ]
+              },
+              {
+                "tag": "Paragraph",
+                "attr": {
+                  "Num": "2"
+                },
+                "children": [
+                  {
+                    "tag": "ParagraphNum",
+                    "attr": {},
+                    "children": [
+                      "２"
+                    ]
+                  },
+                  {
+                    "tag": "ParagraphSentence",
+                    "attr": {},
+                    "children": [
+                      {
+                        "tag": "Sentence",
+                        "attr": {
+                          "Num": "1",
+                          "WritingMode": "vertical"
+                        },
+                        "children": [
+                          "租税特別措置法（昭和三十二年法律第二十六号）第八十八条の二第一項の規定の適用を受ける製造たばこに係るたばこ特別税の税率は、前項の規定にかかわらず、千本につき五百円とする。"
+                        ]
+                      }
+                    ]
+                  }
+                ]
+              }
+            ]
+          }
+        ]
+      }
+    ]
+  }
+}

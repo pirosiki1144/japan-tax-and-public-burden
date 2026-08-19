@@ -1,0 +1,311 @@
+{
+  "law_info": {
+    "law_type": "Act",
+    "law_id": "340AC0000000156",
+    "law_num": "昭和四十年法律第百五十六号",
+    "law_num_era": "Showa",
+    "law_num_year": 40,
+    "law_num_type": "Act",
+    "law_num_num": "156",
+    "promulgation_date": "1965-12-29"
+  },
+  "revision_info": {
+    "law_revision_id": "340AC0000000156_20260525_506AC0000000052",
+    "law_type": "Act",
+    "law_title": "石油ガス税法",
+    "law_title_kana": "せきゆがすぜいほう",
+    "abbrev": "",
+    "category": "国税",
+    "updated": "2025-07-11T19:53:49+09:00",
+    "amendment_promulgate_date": "2024-06-14",
+    "amendment_enforcement_date": "2026-05-25",
+    "amendment_enforcement_comment": null,
+    "amendment_scheduled_enforcement_date": null,
+    "amendment_law_id": "506AC0000000052",
+    "amendment_law_title": "事業性融資の推進等に関する法律",
+    "amendment_law_title_kana": null,
+    "amendment_law_num": "令和六年法律第五十二号",
+    "amendment_type": "3",
+    "repeal_status": "None",
+    "repeal_date": null,
+    "remain_in_force": false,
+    "mission": "New",
+    "current_revision_status": "CurrentEnforced"
+  },
+  "law_full_text": {
+    "tag": "Law",
+    "children": [
+      {
+        "tag": "MainProvision",
+        "children": [
+          {
+            "tag": "Article",
+            "attr": {
+              "Num": "3"
+            },
+            "children": [
+              {
+                "tag": "ArticleCaption",
+                "attr": {},
+                "children": [
+                  "（課税物件）"
+                ]
+              },
+              {
+                "tag": "ArticleTitle",
+                "attr": {},
+                "children": [
+                  "第三条"
+                ]
+              },
+              {
+                "tag": "Paragraph",
+                "attr": {
+                  "Num": "1"
+                },
+                "children": [
+                  {
+                    "tag": "ParagraphNum",
+                    "attr": {},
+                    "children": []
+                  },
+                  {
+                    "tag": "ParagraphSentence",
+                    "attr": {},
+                    "children": [
+                      {
+                        "tag": "Sentence",
+                        "attr": {
+                          "Num": "1",
+                          "WritingMode": "vertical"
+                        },
+                        "children": [
+                          "自動車用の石油ガス容器に充てんされている石油ガス（以下「課税石油ガス」という。）には、この法律により、石油ガス税を課する。"
+                        ]
+                      }
+                    ]
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "tag": "Article",
+            "attr": {
+              "Num": "4"
+            },
+            "children": [
+              {
+                "tag": "ArticleCaption",
+                "attr": {},
+                "children": [
+                  "（納税義務者）"
+                ]
+              },
+              {
+                "tag": "ArticleTitle",
+                "attr": {},
+                "children": [
+                  "第四条"
+                ]
+              },
+              {
+                "tag": "Paragraph",
+                "attr": {
+                  "Num": "1"
+                },
+                "children": [
+                  {
+                    "tag": "ParagraphNum",
+                    "attr": {},
+                    "children": []
+                  },
+                  {
+                    "tag": "ParagraphSentence",
+                    "attr": {},
+                    "children": [
+                      {
+                        "tag": "Sentence",
+                        "attr": {
+                          "Num": "1",
+                          "WritingMode": "vertical"
+                        },
+                        "children": [
+                          "石油ガスを自動車用の石油ガス容器に充てんする者（以下「石油ガスの充てん者」という。）は、その石油ガスの充てん場から移出された課税石油ガスにつき、石油ガス税を納める義務がある。"
+                        ]
+                      }
+                    ]
+                  }
+                ]
+              },
+              {
+                "tag": "Paragraph",
+                "attr": {
+                  "Num": "2"
+                },
+                "children": [
+                  {
+                    "tag": "ParagraphNum",
+                    "attr": {},
+                    "children": [
+                      "２"
+                    ]
+                  },
+                  {
+                    "tag": "ParagraphSentence",
+                    "attr": {},
+                    "children": [
+                      {
+                        "tag": "Sentence",
+                        "attr": {
+                          "Num": "1",
+                          "WritingMode": "vertical"
+                        },
+                        "children": [
+                          "課税石油ガスを保税地域から引き取る者は、その引き取る課税石油ガスにつき、石油ガス税を納める義務がある。"
+                        ]
+                      }
+                    ]
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "tag": "Article",
+            "attr": {
+              "Num": "9"
+            },
+            "children": [
+              {
+                "tag": "ArticleCaption",
+                "attr": {},
+                "children": [
+                  "（課税標準）"
+                ]
+              },
+              {
+                "tag": "ArticleTitle",
+                "attr": {},
+                "children": [
+                  "第九条"
+                ]
+              },
+              {
+                "tag": "Paragraph",
+                "attr": {
+                  "Num": "1"
+                },
+                "children": [
+                  {
+                    "tag": "ParagraphNum",
+                    "attr": {},
+                    "children": []
+                  },
+                  {
+                    "tag": "ParagraphSentence",
+                    "attr": {},
+                    "children": [
+                      {
+                        "tag": "Sentence",
+                        "attr": {
+                          "Num": "1",
+                          "WritingMode": "vertical"
+                        },
+                        "children": [
+                          "石油ガス税の課税標準は、石油ガスの充てん場から移出し、又は保税地域から引き取る課税石油ガスの重量とする。"
+                        ]
+                      }
+                    ]
+                  }
+                ]
+              },
+              {
+                "tag": "Paragraph",
+                "attr": {
+                  "Num": "2"
+                },
+                "children": [
+                  {
+                    "tag": "ParagraphNum",
+                    "attr": {},
+                    "children": [
+                      "２"
+                    ]
+                  },
+                  {
+                    "tag": "ParagraphSentence",
+                    "attr": {},
+                    "children": [
+                      {
+                        "tag": "Sentence",
+                        "attr": {
+                          "Num": "1",
+                          "WritingMode": "vertical"
+                        },
+                        "children": [
+                          "課税石油ガスで容量により計量されているものについての前項の重量の計算に関し必要な事項は、政令で定める。"
+                        ]
+                      }
+                    ]
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "tag": "Article",
+            "attr": {
+              "Num": "10"
+            },
+            "children": [
+              {
+                "tag": "ArticleCaption",
+                "attr": {},
+                "children": [
+                  "（税率）"
+                ]
+              },
+              {
+                "tag": "ArticleTitle",
+                "attr": {},
+                "children": [
+                  "第十条"
+                ]
+              },
+              {
+                "tag": "Paragraph",
+                "attr": {
+                  "Num": "1"
+                },
+                "children": [
+                  {
+                    "tag": "ParagraphNum",
+                    "attr": {},
+                    "children": []
+                  },
+                  {
+                    "tag": "ParagraphSentence",
+                    "attr": {},
+                    "children": [
+                      {
+                        "tag": "Sentence",
+                        "attr": {
+                          "Num": "1",
+                          "WritingMode": "vertical"
+                        },
+                        "children": [
+                          "石油ガス税の税率は、課税石油ガス一キログラムにつき、十七円五十銭とする。"
+                        ]
+                      }
+                    ]
+                  }
+                ]
+              }
+            ]
+          }
+        ]
+      }
+    ]
+  }
+}

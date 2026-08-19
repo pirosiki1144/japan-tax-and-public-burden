@@ -30,7 +30,7 @@
         "official_name": {"type": "string", "minLength": 1},
         "burden_type": {"enum": ["national_tax", "local_tax", "social_insurance_premium", "levy", "contribution", "burden_charge", "payment", "adjustment_charge", "insurance_premium", "fee", "other"]},
         "implementation_issue": {"enum": [39, 42, 43, 44, 45]},
-        "implementation_status": {"enum": ["implemented_initial", "planned"]},
+        "implementation_status": {"enum": ["implemented_initial", "implemented", "held", "planned"]},
         "priority": {"enum": ["completed", "high", "medium"]},
         "depends_on_issues": {"type": "array", "uniqueItems": true, "items": {"enum": [31, 46]}},
         "batch_id": {"type": "string", "pattern": "^issue-[0-9]+-[a-z0-9]+(?:-[a-z0-9]+)*$"},
@@ -63,8 +63,9 @@
         "official_format": {"enum": ["egov_law_api_json", "html", "pdf", "csv", "spreadsheet"]},
         "current_adapter": {"type": "string", "minLength": 1},
         "required_adapter": {"enum": ["egov_law_semantics", "html_semantics", "pdf_semantics", "csv_semantics", "spreadsheet_semantics"]},
-        "adapter_status": {"enum": ["implemented", "planned"]},
+        "adapter_status": {"enum": ["implemented", "held", "planned"]},
         "reuse_key": {"type": "string", "minLength": 1},
+        "hold_reason": {"type": "string", "minLength": 20},
         "shared_format_issue": {"const": 46}
       }
     }

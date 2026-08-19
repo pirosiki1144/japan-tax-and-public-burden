@@ -91,15 +91,19 @@ function assignBatches(targets) {
 }
 
 export async function buildAdapterInventory(repositoryRoot) {
-  const [monitoring, burdens] = await Promise.all([
+  const [monitoring, burdens, nationalAdapters] = await Promise.all([
     readYaml(join(repositoryRoot, "config/monitoring.yaml")),
-    readBurdens(repositoryRoot)
+    readBurdens(repositoryRoot),
+    readYaml(join(repositoryRoot, "config/national-tax-adapters.yaml"))
   ]);
+  const nationalById = new Map(nationalAdapters.targets.map((target) => [target.tax_id, target]));
   const burdenById = new Map(burdens.map((burden) => [burden.tax_id, burden]));
   const targets = monitoring.targets.filter(({ enabled }) => enabled).map((monitoringTarget) => {
     const burden = burdenById.get(monitoringTarget.tax_id);
     if (!burden) throw new Error(`${monitoringTarget.tax_id}: canonical burden is missing`);
     const issue = implementationIssue(burden);
+    const nationalPlan = issue === 42 ? nationalById.get(burden.tax_id) : null;
+    if (issue === 42 && !nationalPlan) throw new Error(`${burden.tax_id}: Issue #42 adapter decision is missing`);
     const sources = monitoringTarget.sources.filter(({ enabled }) => enabled).map((source) => {
       const format = sourceFormat(source.target_url);
       return {
@@ -108,8 +112,9 @@ export async function buildAdapterInventory(repositoryRoot) {
         official_format: format,
         current_adapter: source.adapter,
         required_adapter: requiredAdapter(format),
-        adapter_status: issue === 39 && format === "egov_law_api_json" ? "implemented" : "planned",
+        adapter_status: format === "egov_law_api_json" && (issue === 39 || nationalPlan?.status === "implemented") ? "implemented" : nationalPlan?.status === "held" ? "held" : "planned",
         reuse_key: reuseKey(source),
+        ...(nationalPlan?.status === "held" ? { hold_reason: nationalPlan.hold_reason } : {}),
         ...(format === "egov_law_api_json" ? {} : { shared_format_issue: 46 })
       };
     });
@@ -119,13 +124,13 @@ export async function buildAdapterInventory(repositoryRoot) {
       official_name: burden.official_name,
       burden_type: burden.burden_type,
       implementation_issue: issue,
-      implementation_status: issue === 39 ? "implemented_initial" : "planned",
-      priority: issue === 39 ? "completed" : [42, 43, 44].includes(issue) ? "high" : "medium",
+      implementation_status: issue === 39 ? "implemented_initial" : issue === 42 ? (nationalPlan.status === "implemented" ? "implemented" : "held") : "planned",
+      priority: issue === 39 || issue === 42 ? "completed" : [43, 44].includes(issue) ? "high" : "medium",
       depends_on_issues: issue === 39 ? [] : [31, ...(sources.some(({ official_format }) => official_format !== "egov_law_api_json") ? [46] : [])],
       batch_id: "pending",
       reuse_group: sources.map(({ reuse_key }) => reuse_key).sort().join("+"),
       municipal_scope: monitoringTarget.municipal_scope,
-      capabilities: capabilityPlan(burden.tax_id),
+      capabilities: issue === 42 && nationalPlan.status === "implemented" ? Object.fromEntries(Object.keys(capabilityPlan(burden.tax_id)).map((key) => [key, "implemented"])) : capabilityPlan(burden.tax_id),
       sources
     };
   }).sort((left, right) => left.tax_id.localeCompare(right.tax_id, "en"));

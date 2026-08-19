@@ -1,0 +1,311 @@
+{
+  "law_info": {
+    "law_type": "Act",
+    "law_id": "332AC0000000055",
+    "law_num": "昭和三十二年法律第五十五号",
+    "law_num_era": "Showa",
+    "law_num_year": 32,
+    "law_num_type": "Act",
+    "law_num_num": "055",
+    "promulgation_date": "1957-04-06"
+  },
+  "revision_info": {
+    "law_revision_id": "332AC0000000055_20260525_506AC0000000052",
+    "law_type": "Act",
+    "law_title": "揮発油税法",
+    "law_title_kana": "きはつゆぜいほう",
+    "abbrev": "",
+    "category": "国税",
+    "updated": "2026-04-01T12:26:30+09:00",
+    "amendment_promulgate_date": "2024-06-14",
+    "amendment_enforcement_date": "2026-05-25",
+    "amendment_enforcement_comment": null,
+    "amendment_scheduled_enforcement_date": null,
+    "amendment_law_id": "506AC0000000052",
+    "amendment_law_title": "事業性融資の推進等に関する法律",
+    "amendment_law_title_kana": null,
+    "amendment_law_num": "令和六年法律第五十二号",
+    "amendment_type": "3",
+    "repeal_status": "None",
+    "repeal_date": null,
+    "remain_in_force": false,
+    "mission": "New",
+    "current_revision_status": "CurrentEnforced"
+  },
+  "law_full_text": {
+    "tag": "Law",
+    "children": [
+      {
+        "tag": "MainProvision",
+        "children": [
+          {
+            "tag": "Article",
+            "attr": {
+              "Num": "1"
+            },
+            "children": [
+              {
+                "tag": "ArticleCaption",
+                "attr": {},
+                "children": [
+                  "（課税物件）"
+                ]
+              },
+              {
+                "tag": "ArticleTitle",
+                "attr": {},
+                "children": [
+                  "第一条"
+                ]
+              },
+              {
+                "tag": "Paragraph",
+                "attr": {
+                  "Num": "1"
+                },
+                "children": [
+                  {
+                    "tag": "ParagraphNum",
+                    "attr": {},
+                    "children": []
+                  },
+                  {
+                    "tag": "ParagraphSentence",
+                    "attr": {},
+                    "children": [
+                      {
+                        "tag": "Sentence",
+                        "attr": {
+                          "Num": "1",
+                          "WritingMode": "vertical"
+                        },
+                        "children": [
+                          "揮発油には、この法律により、揮発油税を課する。"
+                        ]
+                      }
+                    ]
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "tag": "Article",
+            "attr": {
+              "Num": "3"
+            },
+            "children": [
+              {
+                "tag": "ArticleCaption",
+                "attr": {},
+                "children": [
+                  "（納税義務者）"
+                ]
+              },
+              {
+                "tag": "ArticleTitle",
+                "attr": {},
+                "children": [
+                  "第三条"
+                ]
+              },
+              {
+                "tag": "Paragraph",
+                "attr": {
+                  "Num": "1"
+                },
+                "children": [
+                  {
+                    "tag": "ParagraphNum",
+                    "attr": {},
+                    "children": []
+                  },
+                  {
+                    "tag": "ParagraphSentence",
+                    "attr": {},
+                    "children": [
+                      {
+                        "tag": "Sentence",
+                        "attr": {
+                          "Num": "1",
+                          "WritingMode": "vertical"
+                        },
+                        "children": [
+                          "揮発油の製造者は、その製造場から移出した揮発油につき、揮発油税を納める義務がある。"
+                        ]
+                      }
+                    ]
+                  }
+                ]
+              },
+              {
+                "tag": "Paragraph",
+                "attr": {
+                  "Num": "2"
+                },
+                "children": [
+                  {
+                    "tag": "ParagraphNum",
+                    "attr": {},
+                    "children": [
+                      "２"
+                    ]
+                  },
+                  {
+                    "tag": "ParagraphSentence",
+                    "attr": {},
+                    "children": [
+                      {
+                        "tag": "Sentence",
+                        "attr": {
+                          "Num": "1",
+                          "WritingMode": "vertical"
+                        },
+                        "children": [
+                          "揮発油を保税地域から引き取る者は、その引き取る揮発油につき、揮発油税を納める義務がある。"
+                        ]
+                      }
+                    ]
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "tag": "Article",
+            "attr": {
+              "Num": "8"
+            },
+            "children": [
+              {
+                "tag": "ArticleCaption",
+                "attr": {},
+                "children": [
+                  "（課税標準）"
+                ]
+              },
+              {
+                "tag": "ArticleTitle",
+                "attr": {},
+                "children": [
+                  "第八条"
+                ]
+              },
+              {
+                "tag": "Paragraph",
+                "attr": {
+                  "Num": "1"
+                },
+                "children": [
+                  {
+                    "tag": "ParagraphNum",
+                    "attr": {},
+                    "children": []
+                  },
+                  {
+                    "tag": "ParagraphSentence",
+                    "attr": {},
+                    "children": [
+                      {
+                        "tag": "Sentence",
+                        "attr": {
+                          "Num": "1",
+                          "WritingMode": "vertical"
+                        },
+                        "children": [
+                          "揮発油税の課税標準は、揮発油の製造場から移出した揮発油又は保税地域から引き取る揮発油の数量から、消費者に販売するまでに貯蔵及び輸送により減少すべき揮発油の数量に相当する数量で政令で定めるものを控除した数量とする。"
+                        ]
+                      }
+                    ]
+                  }
+                ]
+              },
+              {
+                "tag": "Paragraph",
+                "attr": {
+                  "Num": "2"
+                },
+                "children": [
+                  {
+                    "tag": "ParagraphNum",
+                    "attr": {},
+                    "children": [
+                      "２"
+                    ]
+                  },
+                  {
+                    "tag": "ParagraphSentence",
+                    "attr": {},
+                    "children": [
+                      {
+                        "tag": "Sentence",
+                        "attr": {
+                          "Num": "1",
+                          "WritingMode": "vertical"
+                        },
+                        "children": [
+                          "第五条第一項若しくは第二項の規定により揮発油を製造場から移出したものとみなされ、若しくは保税地域から引き取るものとみなされる場合における当該揮発油又は第十六条の三第六項本文（第十六条の五第四項において準用する場合を含む。）の規定により揮発油税を直ちに徴収されることとなる揮発油に係る揮発油税の課税標準は、前項の規定にかかわらず、その消費され又は譲り渡される揮発油の数量とする。"
+                        ]
+                      }
+                    ]
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "tag": "Article",
+            "attr": {
+              "Num": "9"
+            },
+            "children": [
+              {
+                "tag": "ArticleCaption",
+                "attr": {},
+                "children": [
+                  "（税率）"
+                ]
+              },
+              {
+                "tag": "ArticleTitle",
+                "attr": {},
+                "children": [
+                  "第九条"
+                ]
+              },
+              {
+                "tag": "Paragraph",
+                "attr": {
+                  "Num": "1"
+                },
+                "children": [
+                  {
+                    "tag": "ParagraphNum",
+                    "attr": {},
+                    "children": []
+                  },
+                  {
+                    "tag": "ParagraphSentence",
+                    "attr": {},
+                    "children": [
+                      {
+                        "tag": "Sentence",
+                        "attr": {
+                          "Num": "1",
+                          "WritingMode": "vertical"
+                        },
+                        "children": [
+                          "揮発油税の税率は、揮発油一キロリットルにつき二万四千三百円とする。"
+                        ]
+                      }
+                    ]
+                  }
+                ]
+              }
+            ]
+          }
+        ]
+      }
+    ]
+  }
+}

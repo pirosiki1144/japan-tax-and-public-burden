@@ -1,0 +1,30 @@
+{
+  "schema_version": 1,
+  "verified_at": "2026-08-19T23:50:16+09:00",
+  "implementation_issue": 42,
+  "targets": [
+    {"tax_id":"automobile-weight-tax","status":"implemented"},
+    {"tax_id":"aviation-fuel-tax","status":"implemented"},
+    {"tax_id":"corporation-tax","status":"held","hold_reason":"納税義務者と複数の課税体系が多数の章に分散しており、単一の共通条文規則では対象区分を安全に確定できない"},
+    {"tax_id":"customs-duty","status":"held","hold_reason":"税率が関税法ではなく関税定率法・関税暫定措置法・条約税率・実行関税率表に分散している"},
+    {"tax_id":"forest-environment-tax","status":"held","hold_reason":"課税標準・税率・徴収は地方税法の個人住民税制度と一体で、参照法令を追加してから抽出する必要がある"},
+    {"tax_id":"gasoline-tax","status":"implemented"},
+    {"tax_id":"income-tax","status":"implemented"},
+    {"tax_id":"inheritance-and-gift-tax","status":"held","hold_reason":"相続税と贈与税で納税義務者・課税価格・税率表が分かれ、制度別selectorのレビューが必要である"},
+    {"tax_id":"international-tourist-tax","status":"held","hold_reason":"国際観光旅客等・出国・船舶航空会社の区分を含む条文名が共通規則と一致せず、専用selectorのレビューが必要である"},
+    {"tax_id":"liquor-tax","status":"implemented"},
+    {"tax_id":"local-corporation-tax","status":"held","hold_reason":"課税標準が法人税額との参照計算であり、法人税adapterとの参照整合を設計してから抽出する必要がある"},
+    {"tax_id":"local-gasoline-tax","status":"implemented"},
+    {"tax_id":"petroleum-and-coal-tax","status":"implemented"},
+    {"tax_id":"petroleum-gas-tax","status":"implemented"},
+    {"tax_id":"power-development-promotion-tax","status":"implemented"},
+    {"tax_id":"reconstruction-special-income-tax","status":"held","hold_reason":"通常の課税物件条文がなく、所得税の課税対象と源泉徴収区分を参照するため専用selectorが必要である"},
+    {"tax_id":"registration-and-license-tax","status":"held","hold_reason":"課税対象と税率が登記等の区分別表に集約されており、別表の行構造を検証する専用selectorが必要である"},
+    {"tax_id":"special-corporate-enterprise-tax","status":"held","hold_reason":"納税義務・基準法人所得割額・都道府県別税率が地方税法との参照計算であり、地方税adapterとの境界設計が必要である"},
+    {"tax_id":"special-tobacco-tax","status":"implemented"},
+    {"tax_id":"special-tonnage-tax","status":"implemented"},
+    {"tax_id":"stamp-tax","status":"implemented"},
+    {"tax_id":"tobacco-tax","status":"implemented"},
+    {"tax_id":"tonnage-tax","status":"implemented"}
+  ]
+}

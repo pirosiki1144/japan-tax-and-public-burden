@@ -1,0 +1,280 @@
+{
+  "law_info": {
+    "law_type": "Act",
+    "law_id": "330AC0000000104",
+    "law_num": "昭和三十年法律第百四号",
+    "law_num_era": "Showa",
+    "law_num_year": 30,
+    "law_num_type": "Act",
+    "law_num_num": "104",
+    "promulgation_date": "1955-07-30"
+  },
+  "revision_info": {
+    "law_revision_id": "330AC0000000104_20260401_508AC0000000012",
+    "law_type": "Act",
+    "law_title": "地方揮発油税法",
+    "law_title_kana": "ちほうきはつゆぜいほう",
+    "abbrev": "",
+    "category": "国税",
+    "updated": "2026-04-01T12:21:46+09:00",
+    "amendment_promulgate_date": "2026-03-31",
+    "amendment_enforcement_date": "2026-04-01",
+    "amendment_enforcement_comment": null,
+    "amendment_scheduled_enforcement_date": null,
+    "amendment_law_id": "508AC0000000012",
+    "amendment_law_title": "所得税法等の一部を改正する法律",
+    "amendment_law_title_kana": null,
+    "amendment_law_num": "令和八年法律第十二号",
+    "amendment_type": "3",
+    "repeal_status": "None",
+    "repeal_date": null,
+    "remain_in_force": false,
+    "mission": "New",
+    "current_revision_status": "CurrentEnforced"
+  },
+  "law_full_text": {
+    "tag": "Law",
+    "children": [
+      {
+        "tag": "MainProvision",
+        "children": [
+          {
+            "tag": "Article",
+            "attr": {
+              "Num": "1"
+            },
+            "children": [
+              {
+                "tag": "ArticleCaption",
+                "attr": {},
+                "children": [
+                  "（課税目的及び課税物件）"
+                ]
+              },
+              {
+                "tag": "ArticleTitle",
+                "attr": {},
+                "children": [
+                  "第一条"
+                ]
+              },
+              {
+                "tag": "Paragraph",
+                "attr": {
+                  "Num": "1"
+                },
+                "children": [
+                  {
+                    "tag": "ParagraphNum",
+                    "attr": {},
+                    "children": []
+                  },
+                  {
+                    "tag": "ParagraphSentence",
+                    "attr": {},
+                    "children": [
+                      {
+                        "tag": "Sentence",
+                        "attr": {
+                          "Num": "1",
+                          "WritingMode": "vertical"
+                        },
+                        "children": [
+                          "都道府県及び市町村（特別区を含む。）に対し財源を譲与するため、揮発油には、この法律により、地方揮発油税を課する。"
+                        ]
+                      }
+                    ]
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "tag": "Article",
+            "attr": {
+              "Num": "3"
+            },
+            "children": [
+              {
+                "tag": "ArticleCaption",
+                "attr": {},
+                "children": [
+                  "（課税標準）"
+                ]
+              },
+              {
+                "tag": "ArticleTitle",
+                "attr": {},
+                "children": [
+                  "第三条"
+                ]
+              },
+              {
+                "tag": "Paragraph",
+                "attr": {
+                  "Num": "1"
+                },
+                "children": [
+                  {
+                    "tag": "ParagraphNum",
+                    "attr": {},
+                    "children": []
+                  },
+                  {
+                    "tag": "ParagraphSentence",
+                    "attr": {},
+                    "children": [
+                      {
+                        "tag": "Sentence",
+                        "attr": {
+                          "Num": "1",
+                          "WritingMode": "vertical"
+                        },
+                        "children": [
+                          "地方揮発油税の課税標準は、揮発油税の課税標準となる揮発油の数量とする。"
+                        ]
+                      }
+                    ]
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "tag": "Article",
+            "attr": {
+              "Num": "4"
+            },
+            "children": [
+              {
+                "tag": "ArticleCaption",
+                "attr": {},
+                "children": [
+                  "（税率）"
+                ]
+              },
+              {
+                "tag": "ArticleTitle",
+                "attr": {},
+                "children": [
+                  "第四条"
+                ]
+              },
+              {
+                "tag": "Paragraph",
+                "attr": {
+                  "Num": "1"
+                },
+                "children": [
+                  {
+                    "tag": "ParagraphNum",
+                    "attr": {},
+                    "children": []
+                  },
+                  {
+                    "tag": "ParagraphSentence",
+                    "attr": {},
+                    "children": [
+                      {
+                        "tag": "Sentence",
+                        "attr": {
+                          "Num": "1",
+                          "WritingMode": "vertical"
+                        },
+                        "children": [
+                          "地方揮発油税の税率は、揮発油一キロリットルにつき四千四百円とする。"
+                        ]
+                      }
+                    ]
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "tag": "Article",
+            "attr": {
+              "Num": "5"
+            },
+            "children": [
+              {
+                "tag": "ArticleCaption",
+                "attr": {},
+                "children": [
+                  "（納税義務者）"
+                ]
+              },
+              {
+                "tag": "ArticleTitle",
+                "attr": {},
+                "children": [
+                  "第五条"
+                ]
+              },
+              {
+                "tag": "Paragraph",
+                "attr": {
+                  "Num": "1"
+                },
+                "children": [
+                  {
+                    "tag": "ParagraphNum",
+                    "attr": {},
+                    "children": []
+                  },
+                  {
+                    "tag": "ParagraphSentence",
+                    "attr": {},
+                    "children": [
+                      {
+                        "tag": "Sentence",
+                        "attr": {
+                          "Num": "1",
+                          "WritingMode": "vertical"
+                        },
+                        "children": [
+                          "揮発油の製造者（揮発油税法第五条第一項ただし書、第七条、第十四条第六項、第十四条の三第五項又は第十六条の三第七項（同法第十六条の五第四項において準用する場合を含む。以下この項において同じ。）の規定により揮発油の製造者とみなされる者を含む。以下同じ。）は、その揮発油の製造場（同法第五条第五項、第十四条第六項、第十四条の三第五項又は第十六条の三第七項の規定により揮発油の製造場とみなされる場所を含み、同法第四条の規定により揮発油の製造場でない保税地域とみなされる揮発油の製造場を除く。以下同じ。）から移出した揮発油（同法第五条第一項の規定の適用がある場合には、その消費される揮発油とし、同条第三項の規定の適用がある場合には、その換価される揮発油とし、同条第四項又は第五項の規定の適用がある場合には、その現存する揮発油とし、同法第十六条の三第七項の規定の適用がある場合には、その譲り渡される揮発油とする。）につき、地方揮発油税を納める義務がある。"
+                        ]
+                      }
+                    ]
+                  }
+                ]
+              },
+              {
+                "tag": "Paragraph",
+                "attr": {
+                  "Num": "2"
+                },
+                "children": [
+                  {
+                    "tag": "ParagraphNum",
+                    "attr": {},
+                    "children": [
+                      "２"
+                    ]
+                  },
+                  {
+                    "tag": "ParagraphSentence",
+                    "attr": {},
+                    "children": [
+                      {
+                        "tag": "Sentence",
+                        "attr": {
+                          "Num": "1",
+                          "WritingMode": "vertical"
+                        },
+                        "children": [
+                          "揮発油を保税地域（揮発油税法第四条の規定により保税地域に該当しない揮発油の製造場とみなされるものを除く。）から引き取る者（同法第五条第二項の規定の適用がある場合には、その消費者。以下同じ。）は、その引き取る揮発油（同項の規定の適用がある場合には、その消費される揮発油）につき、地方揮発油税を納める義務がある。"
+                        ]
+                      }
+                    ]
+                  }
+                ]
+              }
+            ]
+          }
+        ]
+      }
+    ]
+  }
+}

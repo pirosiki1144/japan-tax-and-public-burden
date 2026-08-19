@@ -1,0 +1,1699 @@
+{
+  "law_info": {
+    "law_type": "Act",
+    "law_id": "346AC0000000089",
+    "law_num": "昭和四十六年法律第八十九号",
+    "law_num_era": "Showa",
+    "law_num_year": 46,
+    "law_num_type": "Act",
+    "law_num_num": "089",
+    "promulgation_date": "1971-05-31"
+  },
+  "revision_info": {
+    "law_revision_id": "346AC0000000089_20220401_504AC0000000004",
+    "law_type": "Act",
+    "law_title": "自動車重量税法",
+    "law_title_kana": "じどうしゃじゅうりょうぜいほう",
+    "abbrev": "",
+    "category": "国税",
+    "updated": "2024-07-22T02:41:22+09:00",
+    "amendment_promulgate_date": "2022-03-31",
+    "amendment_enforcement_date": "2022-04-01",
+    "amendment_enforcement_comment": null,
+    "amendment_scheduled_enforcement_date": null,
+    "amendment_law_id": "504AC0000000004",
+    "amendment_law_title": "所得税法等の一部を改正する法律",
+    "amendment_law_title_kana": null,
+    "amendment_law_num": "令和四年法律第四号",
+    "amendment_type": "3",
+    "repeal_status": "None",
+    "repeal_date": null,
+    "remain_in_force": false,
+    "mission": "New",
+    "current_revision_status": "CurrentEnforced"
+  },
+  "law_full_text": {
+    "tag": "Law",
+    "children": [
+      {
+        "tag": "MainProvision",
+        "children": [
+          {
+            "tag": "Article",
+            "attr": {
+              "Num": "3"
+            },
+            "children": [
+              {
+                "tag": "ArticleCaption",
+                "attr": {},
+                "children": [
+                  "（課税物件）"
+                ]
+              },
+              {
+                "tag": "ArticleTitle",
+                "attr": {},
+                "children": [
+                  "第三条"
+                ]
+              },
+              {
+                "tag": "Paragraph",
+                "attr": {
+                  "Num": "1"
+                },
+                "children": [
+                  {
+                    "tag": "ParagraphNum",
+                    "attr": {},
+                    "children": []
+                  },
+                  {
+                    "tag": "ParagraphSentence",
+                    "attr": {},
+                    "children": [
+                      {
+                        "tag": "Sentence",
+                        "attr": {
+                          "Num": "1",
+                          "WritingMode": "vertical"
+                        },
+                        "children": [
+                          "検査自動車及び届出軽自動車には、この法律により、自動車重量税を課する。"
+                        ]
+                      }
+                    ]
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "tag": "Article",
+            "attr": {
+              "Num": "4"
+            },
+            "children": [
+              {
+                "tag": "ArticleCaption",
+                "attr": {},
+                "children": [
+                  "（納税義務者）"
+                ]
+              },
+              {
+                "tag": "ArticleTitle",
+                "attr": {},
+                "children": [
+                  "第四条"
+                ]
+              },
+              {
+                "tag": "Paragraph",
+                "attr": {
+                  "Num": "1"
+                },
+                "children": [
+                  {
+                    "tag": "ParagraphNum",
+                    "attr": {},
+                    "children": []
+                  },
+                  {
+                    "tag": "ParagraphSentence",
+                    "attr": {},
+                    "children": [
+                      {
+                        "tag": "Sentence",
+                        "attr": {
+                          "Num": "1",
+                          "WritingMode": "vertical"
+                        },
+                        "children": [
+                          "自動車検査証の交付等を受ける者及び車両番号の指定を受ける者は、当該検査自動車及び届出軽自動車につき、自動車重量税を納める義務がある。"
+                        ]
+                      },
+                      {
+                        "tag": "Sentence",
+                        "attr": {
+                          "Num": "2",
+                          "WritingMode": "vertical"
+                        },
+                        "children": [
+                          "この場合において、当該自動車検査証の交付等を受ける者又は車両番号の指定を受ける者が二人以上あるときは、これらの者は、連帯して自動車重量税を納付する義務を負う。"
+                        ]
+                      }
+                    ]
+                  }
+                ]
+              },
+              {
+                "tag": "Paragraph",
+                "attr": {
+                  "Num": "2"
+                },
+                "children": [
+                  {
+                    "tag": "ParagraphNum",
+                    "attr": {},
+                    "children": [
+                      "２"
+                    ]
+                  },
+                  {
+                    "tag": "ParagraphSentence",
+                    "attr": {},
+                    "children": [
+                      {
+                        "tag": "Sentence",
+                        "attr": {
+                          "Num": "1",
+                          "WritingMode": "vertical"
+                        },
+                        "children": [
+                          "前項に規定する者以外の者が当該検査自動車又は届出軽自動車の所有者（これらの自動車の売買契約において売主が所有権を留保している場合にあつては買主とし、これらの自動車が譲渡により担保の目的となつている場合にあつては当該譲渡をした者とする。）である場合には、その者は、これらの自動車につき、同項に規定する者と連帯して自動車重量税を納める義務がある。"
+                        ]
+                      }
+                    ]
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "tag": "Article",
+            "attr": {
+              "Num": "7"
+            },
+            "children": [
+              {
+                "tag": "ArticleCaption",
+                "attr": {},
+                "children": [
+                  "（課税標準及び税率）"
+                ]
+              },
+              {
+                "tag": "ArticleTitle",
+                "attr": {},
+                "children": [
+                  "第七条"
+                ]
+              },
+              {
+                "tag": "Paragraph",
+                "attr": {
+                  "Num": "1"
+                },
+                "children": [
+                  {
+                    "tag": "ParagraphNum",
+                    "attr": {},
+                    "children": []
+                  },
+                  {
+                    "tag": "ParagraphSentence",
+                    "attr": {},
+                    "children": [
+                      {
+                        "tag": "Sentence",
+                        "attr": {
+                          "Num": "1",
+                          "WritingMode": "vertical"
+                        },
+                        "children": [
+                          "自動車重量税の課税標準は、検査自動車及び届出軽自動車の数量とし、その税率は、次に掲げる自動車の区分に応じ、一両につき、次に掲げる金額（臨時検査に係る自動車にあつては、当該金額に〇・五を乗じて得た金額）とする。"
+                        ]
+                      }
+                    ]
+                  },
+                  {
+                    "tag": "Item",
+                    "attr": {
+                      "Num": "1"
+                    },
+                    "children": [
+                      {
+                        "tag": "ItemTitle",
+                        "attr": {},
+                        "children": [
+                          "一"
+                        ]
+                      },
+                      {
+                        "tag": "ItemSentence",
+                        "attr": {},
+                        "children": [
+                          {
+                            "tag": "Sentence",
+                            "attr": {
+                              "Num": "1",
+                              "WritingMode": "vertical"
+                            },
+                            "children": [
+                              "検査自動車のうち自動車検査証の有効期間が三年と定められているもの（道路運送車両法第六十一条第三項（自動車検査証の有効期間の短縮）の規定により自動車検査証の有効期間が短縮される自動車を除く。）"
+                            ]
+                          }
+                        ]
+                      },
+                      {
+                        "tag": "Subitem1",
+                        "attr": {
+                          "Num": "1"
+                        },
+                        "children": [
+                          {
+                            "tag": "Subitem1Title",
+                            "attr": {},
+                            "children": [
+                              "イ"
+                            ]
+                          },
+                          {
+                            "tag": "Subitem1Sentence",
+                            "attr": {},
+                            "children": [
+                              {
+                                "tag": "Sentence",
+                                "attr": {
+                                  "Num": "1",
+                                  "WritingMode": "vertical"
+                                },
+                                "children": [
+                                  "乗用自動車（ロ及びハに掲げる自動車を除く。）"
+                                ]
+                              }
+                            ]
+                          },
+                          {
+                            "tag": "Subitem2",
+                            "attr": {
+                              "Num": "1"
+                            },
+                            "children": [
+                              {
+                                "tag": "Subitem2Title",
+                                "attr": {},
+                                "children": [
+                                  "（１）"
+                                ]
+                              },
+                              {
+                                "tag": "Subitem2Sentence",
+                                "attr": {},
+                                "children": [
+                                  {
+                                    "tag": "Column",
+                                    "attr": {
+                                      "Num": "1"
+                                    },
+                                    "children": [
+                                      {
+                                        "tag": "Sentence",
+                                        "attr": {
+                                          "Num": "1",
+                                          "WritingMode": "vertical"
+                                        },
+                                        "children": [
+                                          "車両重量が〇・五トン以下のもの"
+                                        ]
+                                      }
+                                    ]
+                                  },
+                                  {
+                                    "tag": "Column",
+                                    "attr": {
+                                      "Num": "2"
+                                    },
+                                    "children": [
+                                      {
+                                        "tag": "Sentence",
+                                        "attr": {
+                                          "Num": "1",
+                                          "WritingMode": "vertical"
+                                        },
+                                        "children": [
+                                          "七千五百円"
+                                        ]
+                                      }
+                                    ]
+                                  }
+                                ]
+                              }
+                            ]
+                          },
+                          {
+                            "tag": "Subitem2",
+                            "attr": {
+                              "Num": "2"
+                            },
+                            "children": [
+                              {
+                                "tag": "Subitem2Title",
+                                "attr": {},
+                                "children": [
+                                  "（２）"
+                                ]
+                              },
+                              {
+                                "tag": "Subitem2Sentence",
+                                "attr": {},
+                                "children": [
+                                  {
+                                    "tag": "Column",
+                                    "attr": {
+                                      "Num": "1"
+                                    },
+                                    "children": [
+                                      {
+                                        "tag": "Sentence",
+                                        "attr": {
+                                          "Num": "1",
+                                          "WritingMode": "vertical"
+                                        },
+                                        "children": [
+                                          "車両重量が〇・五トンを超えるもの"
+                                        ]
+                                      }
+                                    ]
+                                  },
+                                  {
+                                    "tag": "Column",
+                                    "attr": {
+                                      "Num": "2"
+                                    },
+                                    "children": [
+                                      {
+                                        "tag": "Sentence",
+                                        "attr": {
+                                          "Num": "1",
+                                          "WritingMode": "vertical"
+                                        },
+                                        "children": [
+                                          "車両重量〇・五トン又はその端数ごとに七千五百円"
+                                        ]
+                                      }
+                                    ]
+                                  }
+                                ]
+                              }
+                            ]
+                          }
+                        ]
+                      },
+                      {
+                        "tag": "Subitem1",
+                        "attr": {
+                          "Num": "2"
+                        },
+                        "children": [
+                          {
+                            "tag": "Subitem1Title",
+                            "attr": {},
+                            "children": [
+                              "ロ"
+                            ]
+                          },
+                          {
+                            "tag": "Subitem1Sentence",
+                            "attr": {},
+                            "children": [
+                              {
+                                "tag": "Column",
+                                "attr": {
+                                  "Num": "1"
+                                },
+                                "children": [
+                                  {
+                                    "tag": "Sentence",
+                                    "attr": {
+                                      "Num": "1",
+                                      "WritingMode": "vertical"
+                                    },
+                                    "children": [
+                                      "軽自動車"
+                                    ]
+                                  }
+                                ]
+                              },
+                              {
+                                "tag": "Column",
+                                "attr": {
+                                  "Num": "2"
+                                },
+                                "children": [
+                                  {
+                                    "tag": "Sentence",
+                                    "attr": {
+                                      "Num": "1",
+                                      "WritingMode": "vertical"
+                                    },
+                                    "children": [
+                                      "七千五百円"
+                                    ]
+                                  }
+                                ]
+                              }
+                            ]
+                          }
+                        ]
+                      },
+                      {
+                        "tag": "Subitem1",
+                        "attr": {
+                          "Num": "3"
+                        },
+                        "children": [
+                          {
+                            "tag": "Subitem1Title",
+                            "attr": {},
+                            "children": [
+                              "ハ"
+                            ]
+                          },
+                          {
+                            "tag": "Subitem1Sentence",
+                            "attr": {},
+                            "children": [
+                              {
+                                "tag": "Column",
+                                "attr": {
+                                  "Num": "1"
+                                },
+                                "children": [
+                                  {
+                                    "tag": "Sentence",
+                                    "attr": {
+                                      "Num": "1",
+                                      "WritingMode": "vertical"
+                                    },
+                                    "children": [
+                                      "二輪の小型自動車"
+                                    ]
+                                  }
+                                ]
+                              },
+                              {
+                                "tag": "Column",
+                                "attr": {
+                                  "Num": "2"
+                                },
+                                "children": [
+                                  {
+                                    "tag": "Sentence",
+                                    "attr": {
+                                      "Num": "1",
+                                      "WritingMode": "vertical"
+                                    },
+                                    "children": [
+                                      "四千五百円"
+                                    ]
+                                  }
+                                ]
+                              }
+                            ]
+                          }
+                        ]
+                      }
+                    ]
+                  },
+                  {
+                    "tag": "Item",
+                    "attr": {
+                      "Num": "2"
+                    },
+                    "children": [
+                      {
+                        "tag": "ItemTitle",
+                        "attr": {},
+                        "children": [
+                          "二"
+                        ]
+                      },
+                      {
+                        "tag": "ItemSentence",
+                        "attr": {},
+                        "children": [
+                          {
+                            "tag": "Sentence",
+                            "attr": {
+                              "Num": "1",
+                              "WritingMode": "vertical"
+                            },
+                            "children": [
+                              "検査自動車のうち、自動車検査証の有効期間が二年と定められているもの（道路運送車両法第六十一条第三項の規定により自動車検査証の有効期間が短縮される自動車を除く。）及び自動車検査証の有効期間が三年と定められているもので同項の規定により自動車検査証の有効期間が短縮されるもの（自動車検査証の有効期間が二年未満に短縮される自動車を除く。）"
+                            ]
+                          }
+                        ]
+                      },
+                      {
+                        "tag": "Subitem1",
+                        "attr": {
+                          "Num": "1"
+                        },
+                        "children": [
+                          {
+                            "tag": "Subitem1Title",
+                            "attr": {},
+                            "children": [
+                              "イ"
+                            ]
+                          },
+                          {
+                            "tag": "Subitem1Sentence",
+                            "attr": {},
+                            "children": [
+                              {
+                                "tag": "Sentence",
+                                "attr": {
+                                  "Num": "1",
+                                  "WritingMode": "vertical"
+                                },
+                                "children": [
+                                  "乗用自動車（ハ及びニに掲げる自動車を除く。）"
+                                ]
+                              }
+                            ]
+                          },
+                          {
+                            "tag": "Subitem2",
+                            "attr": {
+                              "Num": "1"
+                            },
+                            "children": [
+                              {
+                                "tag": "Subitem2Title",
+                                "attr": {},
+                                "children": [
+                                  "（１）"
+                                ]
+                              },
+                              {
+                                "tag": "Subitem2Sentence",
+                                "attr": {},
+                                "children": [
+                                  {
+                                    "tag": "Column",
+                                    "attr": {
+                                      "Num": "1"
+                                    },
+                                    "children": [
+                                      {
+                                        "tag": "Sentence",
+                                        "attr": {
+                                          "Num": "1",
+                                          "WritingMode": "vertical"
+                                        },
+                                        "children": [
+                                          "車両重量が〇・五トン以下のもの"
+                                        ]
+                                      }
+                                    ]
+                                  },
+                                  {
+                                    "tag": "Column",
+                                    "attr": {
+                                      "Num": "2"
+                                    },
+                                    "children": [
+                                      {
+                                        "tag": "Sentence",
+                                        "attr": {
+                                          "Num": "1",
+                                          "WritingMode": "vertical"
+                                        },
+                                        "children": [
+                                          "五千円"
+                                        ]
+                                      }
+                                    ]
+                                  }
+                                ]
+                              }
+                            ]
+                          },
+                          {
+                            "tag": "Subitem2",
+                            "attr": {
+                              "Num": "2"
+                            },
+                            "children": [
+                              {
+                                "tag": "Subitem2Title",
+                                "attr": {},
+                                "children": [
+                                  "（２）"
+                                ]
+                              },
+                              {
+                                "tag": "Subitem2Sentence",
+                                "attr": {},
+                                "children": [
+                                  {
+                                    "tag": "Column",
+                                    "attr": {
+                                      "Num": "1"
+                                    },
+                                    "children": [
+                                      {
+                                        "tag": "Sentence",
+                                        "attr": {
+                                          "Num": "1",
+                                          "WritingMode": "vertical"
+                                        },
+                                        "children": [
+                                          "車両重量が〇・五トンを超えるもの"
+                                        ]
+                                      }
+                                    ]
+                                  },
+                                  {
+                                    "tag": "Column",
+                                    "attr": {
+                                      "Num": "2"
+                                    },
+                                    "children": [
+                                      {
+                                        "tag": "Sentence",
+                                        "attr": {
+                                          "Num": "1",
+                                          "WritingMode": "vertical"
+                                        },
+                                        "children": [
+                                          "車両重量〇・五トン又はその端数ごとに五千円"
+                                        ]
+                                      }
+                                    ]
+                                  }
+                                ]
+                              }
+                            ]
+                          }
+                        ]
+                      },
+                      {
+                        "tag": "Subitem1",
+                        "attr": {
+                          "Num": "2"
+                        },
+                        "children": [
+                          {
+                            "tag": "Subitem1Title",
+                            "attr": {},
+                            "children": [
+                              "ロ"
+                            ]
+                          },
+                          {
+                            "tag": "Subitem1Sentence",
+                            "attr": {},
+                            "children": [
+                              {
+                                "tag": "Sentence",
+                                "attr": {
+                                  "Num": "1",
+                                  "WritingMode": "vertical"
+                                },
+                                "children": [
+                                  "イ、ハ及びニに掲げる自動車以外の自動車"
+                                ]
+                              }
+                            ]
+                          },
+                          {
+                            "tag": "Subitem2",
+                            "attr": {
+                              "Num": "1"
+                            },
+                            "children": [
+                              {
+                                "tag": "Subitem2Title",
+                                "attr": {},
+                                "children": [
+                                  "（１）"
+                                ]
+                              },
+                              {
+                                "tag": "Subitem2Sentence",
+                                "attr": {},
+                                "children": [
+                                  {
+                                    "tag": "Column",
+                                    "attr": {
+                                      "Num": "1"
+                                    },
+                                    "children": [
+                                      {
+                                        "tag": "Sentence",
+                                        "attr": {
+                                          "Num": "1",
+                                          "WritingMode": "vertical"
+                                        },
+                                        "children": [
+                                          "車両総重量が一トン以下のもの"
+                                        ]
+                                      }
+                                    ]
+                                  },
+                                  {
+                                    "tag": "Column",
+                                    "attr": {
+                                      "Num": "2"
+                                    },
+                                    "children": [
+                                      {
+                                        "tag": "Sentence",
+                                        "attr": {
+                                          "Num": "1",
+                                          "WritingMode": "vertical"
+                                        },
+                                        "children": [
+                                          "五千円"
+                                        ]
+                                      }
+                                    ]
+                                  }
+                                ]
+                              }
+                            ]
+                          },
+                          {
+                            "tag": "Subitem2",
+                            "attr": {
+                              "Num": "2"
+                            },
+                            "children": [
+                              {
+                                "tag": "Subitem2Title",
+                                "attr": {},
+                                "children": [
+                                  "（２）"
+                                ]
+                              },
+                              {
+                                "tag": "Subitem2Sentence",
+                                "attr": {},
+                                "children": [
+                                  {
+                                    "tag": "Column",
+                                    "attr": {
+                                      "Num": "1"
+                                    },
+                                    "children": [
+                                      {
+                                        "tag": "Sentence",
+                                        "attr": {
+                                          "Num": "1",
+                                          "WritingMode": "vertical"
+                                        },
+                                        "children": [
+                                          "車両総重量が一トンを超えるもの"
+                                        ]
+                                      }
+                                    ]
+                                  },
+                                  {
+                                    "tag": "Column",
+                                    "attr": {
+                                      "Num": "2"
+                                    },
+                                    "children": [
+                                      {
+                                        "tag": "Sentence",
+                                        "attr": {
+                                          "Num": "1",
+                                          "WritingMode": "vertical"
+                                        },
+                                        "children": [
+                                          "車両総重量一トン又はその端数ごとに五千円"
+                                        ]
+                                      }
+                                    ]
+                                  }
+                                ]
+                              }
+                            ]
+                          }
+                        ]
+                      },
+                      {
+                        "tag": "Subitem1",
+                        "attr": {
+                          "Num": "3"
+                        },
+                        "children": [
+                          {
+                            "tag": "Subitem1Title",
+                            "attr": {},
+                            "children": [
+                              "ハ"
+                            ]
+                          },
+                          {
+                            "tag": "Subitem1Sentence",
+                            "attr": {},
+                            "children": [
+                              {
+                                "tag": "Column",
+                                "attr": {
+                                  "Num": "1"
+                                },
+                                "children": [
+                                  {
+                                    "tag": "Sentence",
+                                    "attr": {
+                                      "Num": "1",
+                                      "WritingMode": "vertical"
+                                    },
+                                    "children": [
+                                      "軽自動車"
+                                    ]
+                                  }
+                                ]
+                              },
+                              {
+                                "tag": "Column",
+                                "attr": {
+                                  "Num": "2"
+                                },
+                                "children": [
+                                  {
+                                    "tag": "Sentence",
+                                    "attr": {
+                                      "Num": "1",
+                                      "WritingMode": "vertical"
+                                    },
+                                    "children": [
+                                      "五千円"
+                                    ]
+                                  }
+                                ]
+                              }
+                            ]
+                          }
+                        ]
+                      },
+                      {
+                        "tag": "Subitem1",
+                        "attr": {
+                          "Num": "4"
+                        },
+                        "children": [
+                          {
+                            "tag": "Subitem1Title",
+                            "attr": {},
+                            "children": [
+                              "ニ"
+                            ]
+                          },
+                          {
+                            "tag": "Subitem1Sentence",
+                            "attr": {},
+                            "children": [
+                              {
+                                "tag": "Column",
+                                "attr": {
+                                  "Num": "1"
+                                },
+                                "children": [
+                                  {
+                                    "tag": "Sentence",
+                                    "attr": {
+                                      "Num": "1",
+                                      "WritingMode": "vertical"
+                                    },
+                                    "children": [
+                                      "二輪の小型自動車"
+                                    ]
+                                  }
+                                ]
+                              },
+                              {
+                                "tag": "Column",
+                                "attr": {
+                                  "Num": "2"
+                                },
+                                "children": [
+                                  {
+                                    "tag": "Sentence",
+                                    "attr": {
+                                      "Num": "1",
+                                      "WritingMode": "vertical"
+                                    },
+                                    "children": [
+                                      "三千円"
+                                    ]
+                                  }
+                                ]
+                              }
+                            ]
+                          }
+                        ]
+                      }
+                    ]
+                  },
+                  {
+                    "tag": "Item",
+                    "attr": {
+                      "Num": "3"
+                    },
+                    "children": [
+                      {
+                        "tag": "ItemTitle",
+                        "attr": {},
+                        "children": [
+                          "三"
+                        ]
+                      },
+                      {
+                        "tag": "ItemSentence",
+                        "attr": {},
+                        "children": [
+                          {
+                            "tag": "Sentence",
+                            "attr": {
+                              "Num": "1",
+                              "WritingMode": "vertical"
+                            },
+                            "children": [
+                              "検査自動車のうち前二号に掲げる自動車以外のもの"
+                            ]
+                          }
+                        ]
+                      },
+                      {
+                        "tag": "Subitem1",
+                        "attr": {
+                          "Num": "1"
+                        },
+                        "children": [
+                          {
+                            "tag": "Subitem1Title",
+                            "attr": {},
+                            "children": [
+                              "イ"
+                            ]
+                          },
+                          {
+                            "tag": "Subitem1Sentence",
+                            "attr": {},
+                            "children": [
+                              {
+                                "tag": "Sentence",
+                                "attr": {
+                                  "Num": "1",
+                                  "WritingMode": "vertical"
+                                },
+                                "children": [
+                                  "乗用自動車（ハ及びニに掲げる自動車を除く。）"
+                                ]
+                              }
+                            ]
+                          },
+                          {
+                            "tag": "Subitem2",
+                            "attr": {
+                              "Num": "1"
+                            },
+                            "children": [
+                              {
+                                "tag": "Subitem2Title",
+                                "attr": {},
+                                "children": [
+                                  "（１）"
+                                ]
+                              },
+                              {
+                                "tag": "Subitem2Sentence",
+                                "attr": {},
+                                "children": [
+                                  {
+                                    "tag": "Column",
+                                    "attr": {
+                                      "Num": "1"
+                                    },
+                                    "children": [
+                                      {
+                                        "tag": "Sentence",
+                                        "attr": {
+                                          "Num": "1",
+                                          "WritingMode": "vertical"
+                                        },
+                                        "children": [
+                                          "車両重量が〇・五トン以下のもの"
+                                        ]
+                                      }
+                                    ]
+                                  },
+                                  {
+                                    "tag": "Column",
+                                    "attr": {
+                                      "Num": "2"
+                                    },
+                                    "children": [
+                                      {
+                                        "tag": "Sentence",
+                                        "attr": {
+                                          "Num": "1",
+                                          "WritingMode": "vertical"
+                                        },
+                                        "children": [
+                                          "二千五百円"
+                                        ]
+                                      }
+                                    ]
+                                  }
+                                ]
+                              }
+                            ]
+                          },
+                          {
+                            "tag": "Subitem2",
+                            "attr": {
+                              "Num": "2"
+                            },
+                            "children": [
+                              {
+                                "tag": "Subitem2Title",
+                                "attr": {},
+                                "children": [
+                                  "（２）"
+                                ]
+                              },
+                              {
+                                "tag": "Subitem2Sentence",
+                                "attr": {},
+                                "children": [
+                                  {
+                                    "tag": "Column",
+                                    "attr": {
+                                      "Num": "1"
+                                    },
+                                    "children": [
+                                      {
+                                        "tag": "Sentence",
+                                        "attr": {
+                                          "Num": "1",
+                                          "WritingMode": "vertical"
+                                        },
+                                        "children": [
+                                          "車両重量が〇・五トンを超えるもの"
+                                        ]
+                                      }
+                                    ]
+                                  },
+                                  {
+                                    "tag": "Column",
+                                    "attr": {
+                                      "Num": "2"
+                                    },
+                                    "children": [
+                                      {
+                                        "tag": "Sentence",
+                                        "attr": {
+                                          "Num": "1",
+                                          "WritingMode": "vertical"
+                                        },
+                                        "children": [
+                                          "車両重量〇・五トン又はその端数ごとに二千五百円"
+                                        ]
+                                      }
+                                    ]
+                                  }
+                                ]
+                              }
+                            ]
+                          }
+                        ]
+                      },
+                      {
+                        "tag": "Subitem1",
+                        "attr": {
+                          "Num": "2"
+                        },
+                        "children": [
+                          {
+                            "tag": "Subitem1Title",
+                            "attr": {},
+                            "children": [
+                              "ロ"
+                            ]
+                          },
+                          {
+                            "tag": "Subitem1Sentence",
+                            "attr": {},
+                            "children": [
+                              {
+                                "tag": "Sentence",
+                                "attr": {
+                                  "Num": "1",
+                                  "WritingMode": "vertical"
+                                },
+                                "children": [
+                                  "イ、ハ及びニに掲げる自動車以外の自動車"
+                                ]
+                              }
+                            ]
+                          },
+                          {
+                            "tag": "Subitem2",
+                            "attr": {
+                              "Num": "1"
+                            },
+                            "children": [
+                              {
+                                "tag": "Subitem2Title",
+                                "attr": {},
+                                "children": [
+                                  "（１）"
+                                ]
+                              },
+                              {
+                                "tag": "Subitem2Sentence",
+                                "attr": {},
+                                "children": [
+                                  {
+                                    "tag": "Column",
+                                    "attr": {
+                                      "Num": "1"
+                                    },
+                                    "children": [
+                                      {
+                                        "tag": "Sentence",
+                                        "attr": {
+                                          "Num": "1",
+                                          "WritingMode": "vertical"
+                                        },
+                                        "children": [
+                                          "車両総重量が一トン以下のもの"
+                                        ]
+                                      }
+                                    ]
+                                  },
+                                  {
+                                    "tag": "Column",
+                                    "attr": {
+                                      "Num": "2"
+                                    },
+                                    "children": [
+                                      {
+                                        "tag": "Sentence",
+                                        "attr": {
+                                          "Num": "1",
+                                          "WritingMode": "vertical"
+                                        },
+                                        "children": [
+                                          "二千五百円"
+                                        ]
+                                      }
+                                    ]
+                                  }
+                                ]
+                              }
+                            ]
+                          },
+                          {
+                            "tag": "Subitem2",
+                            "attr": {
+                              "Num": "2"
+                            },
+                            "children": [
+                              {
+                                "tag": "Subitem2Title",
+                                "attr": {},
+                                "children": [
+                                  "（２）"
+                                ]
+                              },
+                              {
+                                "tag": "Subitem2Sentence",
+                                "attr": {},
+                                "children": [
+                                  {
+                                    "tag": "Column",
+                                    "attr": {
+                                      "Num": "1"
+                                    },
+                                    "children": [
+                                      {
+                                        "tag": "Sentence",
+                                        "attr": {
+                                          "Num": "1",
+                                          "WritingMode": "vertical"
+                                        },
+                                        "children": [
+                                          "車両総重量が一トンを超えるもの"
+                                        ]
+                                      }
+                                    ]
+                                  },
+                                  {
+                                    "tag": "Column",
+                                    "attr": {
+                                      "Num": "2"
+                                    },
+                                    "children": [
+                                      {
+                                        "tag": "Sentence",
+                                        "attr": {
+                                          "Num": "1",
+                                          "WritingMode": "vertical"
+                                        },
+                                        "children": [
+                                          "車両総重量一トン又はその端数ごとに二千五百円"
+                                        ]
+                                      }
+                                    ]
+                                  }
+                                ]
+                              }
+                            ]
+                          }
+                        ]
+                      },
+                      {
+                        "tag": "Subitem1",
+                        "attr": {
+                          "Num": "3"
+                        },
+                        "children": [
+                          {
+                            "tag": "Subitem1Title",
+                            "attr": {},
+                            "children": [
+                              "ハ"
+                            ]
+                          },
+                          {
+                            "tag": "Subitem1Sentence",
+                            "attr": {},
+                            "children": [
+                              {
+                                "tag": "Column",
+                                "attr": {
+                                  "Num": "1"
+                                },
+                                "children": [
+                                  {
+                                    "tag": "Sentence",
+                                    "attr": {
+                                      "Num": "1",
+                                      "WritingMode": "vertical"
+                                    },
+                                    "children": [
+                                      "軽自動車"
+                                    ]
+                                  }
+                                ]
+                              },
+                              {
+                                "tag": "Column",
+                                "attr": {
+                                  "Num": "2"
+                                },
+                                "children": [
+                                  {
+                                    "tag": "Sentence",
+                                    "attr": {
+                                      "Num": "1",
+                                      "WritingMode": "vertical"
+                                    },
+                                    "children": [
+                                      "二千五百円"
+                                    ]
+                                  }
+                                ]
+                              }
+                            ]
+                          }
+                        ]
+                      },
+                      {
+                        "tag": "Subitem1",
+                        "attr": {
+                          "Num": "4"
+                        },
+                        "children": [
+                          {
+                            "tag": "Subitem1Title",
+                            "attr": {},
+                            "children": [
+                              "ニ"
+                            ]
+                          },
+                          {
+                            "tag": "Subitem1Sentence",
+                            "attr": {},
+                            "children": [
+                              {
+                                "tag": "Column",
+                                "attr": {
+                                  "Num": "1"
+                                },
+                                "children": [
+                                  {
+                                    "tag": "Sentence",
+                                    "attr": {
+                                      "Num": "1",
+                                      "WritingMode": "vertical"
+                                    },
+                                    "children": [
+                                      "二輪の小型自動車"
+                                    ]
+                                  }
+                                ]
+                              },
+                              {
+                                "tag": "Column",
+                                "attr": {
+                                  "Num": "2"
+                                },
+                                "children": [
+                                  {
+                                    "tag": "Sentence",
+                                    "attr": {
+                                      "Num": "1",
+                                      "WritingMode": "vertical"
+                                    },
+                                    "children": [
+                                      "千五百円"
+                                    ]
+                                  }
+                                ]
+                              }
+                            ]
+                          }
+                        ]
+                      }
+                    ]
+                  },
+                  {
+                    "tag": "Item",
+                    "attr": {
+                      "Num": "4"
+                    },
+                    "children": [
+                      {
+                        "tag": "ItemTitle",
+                        "attr": {},
+                        "children": [
+                          "四"
+                        ]
+                      },
+                      {
+                        "tag": "ItemSentence",
+                        "attr": {},
+                        "children": [
+                          {
+                            "tag": "Sentence",
+                            "attr": {
+                              "Num": "1",
+                              "WritingMode": "vertical"
+                            },
+                            "children": [
+                              "届出軽自動車"
+                            ]
+                          }
+                        ]
+                      },
+                      {
+                        "tag": "Subitem1",
+                        "attr": {
+                          "Num": "1"
+                        },
+                        "children": [
+                          {
+                            "tag": "Subitem1Title",
+                            "attr": {},
+                            "children": [
+                              "イ"
+                            ]
+                          },
+                          {
+                            "tag": "Subitem1Sentence",
+                            "attr": {},
+                            "children": [
+                              {
+                                "tag": "Column",
+                                "attr": {
+                                  "Num": "1"
+                                },
+                                "children": [
+                                  {
+                                    "tag": "Sentence",
+                                    "attr": {
+                                      "Num": "1",
+                                      "WritingMode": "vertical"
+                                    },
+                                    "children": [
+                                      "ロに掲げる軽自動車以外の軽自動車"
+                                    ]
+                                  }
+                                ]
+                              },
+                              {
+                                "tag": "Column",
+                                "attr": {
+                                  "Num": "2"
+                                },
+                                "children": [
+                                  {
+                                    "tag": "Sentence",
+                                    "attr": {
+                                      "Num": "1",
+                                      "WritingMode": "vertical"
+                                    },
+                                    "children": [
+                                      "七千五百円"
+                                    ]
+                                  }
+                                ]
+                              }
+                            ]
+                          }
+                        ]
+                      },
+                      {
+                        "tag": "Subitem1",
+                        "attr": {
+                          "Num": "2"
+                        },
+                        "children": [
+                          {
+                            "tag": "Subitem1Title",
+                            "attr": {},
+                            "children": [
+                              "ロ"
+                            ]
+                          },
+                          {
+                            "tag": "Subitem1Sentence",
+                            "attr": {},
+                            "children": [
+                              {
+                                "tag": "Column",
+                                "attr": {
+                                  "Num": "1"
+                                },
+                                "children": [
+                                  {
+                                    "tag": "Sentence",
+                                    "attr": {
+                                      "Num": "1",
+                                      "WritingMode": "vertical"
+                                    },
+                                    "children": [
+                                      "二輪の軽自動車"
+                                    ]
+                                  }
+                                ]
+                              },
+                              {
+                                "tag": "Column",
+                                "attr": {
+                                  "Num": "2"
+                                },
+                                "children": [
+                                  {
+                                    "tag": "Sentence",
+                                    "attr": {
+                                      "Num": "1",
+                                      "WritingMode": "vertical"
+                                    },
+                                    "children": [
+                                      "四千円"
+                                    ]
+                                  }
+                                ]
+                              }
+                            ]
+                          }
+                        ]
+                      }
+                    ]
+                  }
+                ]
+              },
+              {
+                "tag": "Paragraph",
+                "attr": {
+                  "Num": "2"
+                },
+                "children": [
+                  {
+                    "tag": "ParagraphNum",
+                    "attr": {},
+                    "children": [
+                      "２"
+                    ]
+                  },
+                  {
+                    "tag": "ParagraphSentence",
+                    "attr": {},
+                    "children": [
+                      {
+                        "tag": "Sentence",
+                        "attr": {
+                          "Num": "1",
+                          "WritingMode": "vertical"
+                        },
+                        "children": [
+                          "前項における用語については、次に定めるところによる。"
+                        ]
+                      }
+                    ]
+                  },
+                  {
+                    "tag": "Item",
+                    "attr": {
+                      "Num": "1"
+                    },
+                    "children": [
+                      {
+                        "tag": "ItemTitle",
+                        "attr": {},
+                        "children": [
+                          "一"
+                        ]
+                      },
+                      {
+                        "tag": "ItemSentence",
+                        "attr": {},
+                        "children": [
+                          {
+                            "tag": "Sentence",
+                            "attr": {
+                              "Num": "1",
+                              "WritingMode": "vertical"
+                            },
+                            "children": [
+                              "「乗用自動車」とは、もつぱら人の運送の用に供する自動車で、政令で定めるものをいう。"
+                            ]
+                          }
+                        ]
+                      }
+                    ]
+                  },
+                  {
+                    "tag": "Item",
+                    "attr": {
+                      "Num": "2"
+                    },
+                    "children": [
+                      {
+                        "tag": "ItemTitle",
+                        "attr": {},
+                        "children": [
+                          "二"
+                        ]
+                      },
+                      {
+                        "tag": "ItemSentence",
+                        "attr": {},
+                        "children": [
+                          {
+                            "tag": "Sentence",
+                            "attr": {
+                              "Num": "1",
+                              "WritingMode": "vertical"
+                            },
+                            "children": [
+                              "「車両重量」とは、運行に必要な装備をした状態における自動車の重量をいう。"
+                            ]
+                          }
+                        ]
+                      }
+                    ]
+                  },
+                  {
+                    "tag": "Item",
+                    "attr": {
+                      "Num": "3"
+                    },
+                    "children": [
+                      {
+                        "tag": "ItemTitle",
+                        "attr": {},
+                        "children": [
+                          "三"
+                        ]
+                      },
+                      {
+                        "tag": "ItemSentence",
+                        "attr": {},
+                        "children": [
+                          {
+                            "tag": "Sentence",
+                            "attr": {
+                              "Num": "1",
+                              "WritingMode": "vertical"
+                            },
+                            "children": [
+                              "「車両総重量」とは、車両重量、最大積載量及び五十五キログラムに乗車定員を乗じて得た重量の総和をいう。"
+                            ]
+                          }
+                        ]
+                      }
+                    ]
+                  }
+                ]
+              },
+              {
+                "tag": "Paragraph",
+                "attr": {
+                  "Num": "3"
+                },
+                "children": [
+                  {
+                    "tag": "ParagraphNum",
+                    "attr": {},
+                    "children": [
+                      "３"
+                    ]
+                  },
+                  {
+                    "tag": "ParagraphSentence",
+                    "attr": {},
+                    "children": [
+                      {
+                        "tag": "Sentence",
+                        "attr": {
+                          "Num": "1",
+                          "WritingMode": "vertical"
+                        },
+                        "children": [
+                          "第一項の車両重量及び車両総重量の計算に関し必要な事項は、政令で定める。"
+                        ]
+                      }
+                    ]
+                  }
+                ]
+              }
+            ]
+          }
+        ]
+      }
+    ]
+  }
+}

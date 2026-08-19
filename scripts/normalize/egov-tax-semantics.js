@@ -66,6 +66,42 @@ function metadata(document, taxId, sourceUrl) {
   return values;
 }
 
+const nationalRoleMatchers = {
+  taxpayer_rules: /納税義務者/,
+  taxable_scope_rules: /課税物件|課税所得の範囲/,
+  tax_base_rules: /課税標準/,
+  rates: /税率/
+};
+
+function articleCaption(article) {
+  return flattenText((article.children ?? []).find(({ tag }) => tag === "ArticleCaption"));
+}
+
+function semanticArticles(document, matcher, role) {
+  const main = collect(document?.law_full_text, ({ tag }) => tag === "MainProvision");
+  if (main.length !== 1) throw new Error(`Expected one MainProvision but found ${main.length}`);
+  const matches = collect(main[0], ({ tag }) => tag === "Article")
+    .filter((article) => matcher.test(articleCaption(article)))
+    .filter((article) => role !== "tax_base_rules" || !/申告|認定|端数/.test(articleCaption(article)))
+    .map((article) => ({ article_num: article.attr?.Num, caption: articleCaption(article), raw: flattenText(article) }));
+  if (matches.length === 0) throw new Error(`${role} matched 0 MainProvision articles`);
+  return matches;
+}
+
+export function extractGenericNationalTaxSemantics(document, taxId, sourceUrl) {
+  const record = metadata(document, taxId, sourceUrl);
+  for (const [role, matcher] of Object.entries(nationalRoleMatchers)) record[role] = semanticArticles(document, matcher, role);
+  const revision = document.revision_info ?? {};
+  record.applicable_period = {
+    promulgation_date: document.law_info?.promulgation_date ?? null,
+    amendment_promulgate_date: revision.amendment_promulgate_date ?? null,
+    amendment_enforcement_date: revision.amendment_enforcement_date ?? null,
+    scheduled_enforcement_date: revision.amendment_scheduled_enforcement_date ?? null,
+    current_revision_status: revision.current_revision_status ?? null
+  };
+  return record;
+}
+
 function extractConsumptionTax(document, sourceUrl) {
   const liability = paragraphs(mainArticle(document, "5"));
   if (liability.length !== 2) throw new Error(`Consumption tax Article 5 expected 2 paragraphs but found ${liability.length}`);
