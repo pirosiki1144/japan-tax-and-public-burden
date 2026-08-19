@@ -37,7 +37,7 @@ reports/      生成レポート
 
 - `config/sources.yaml` は巡回先と利用条件を管理する情報源レジストリです。
 - `data/burdens`、`data/changes`、`data/events`、`data/phases`、`data/revenue`、`data/reconciliation` はレビュー後にGitで履歴管理する正本です。
-- `data/candidates` は初期マスタへ昇格する前の調査候補です。Schema検証とGitレビューの対象ですが、確定制度マスタや配布対象として扱いません。適合性と昇格条件は[初期マスタ候補のSchema適合性確認](docs/initial-master-schema-fit.md)、税以外の候補の収集範囲は[税以外の公的負担候補の収集・照合](docs/public-burden-candidate-reconciliation.md)を参照してください。
+- `data/candidates` は初期マスタへ昇格する前の調査候補です。Schema検証とGitレビューの対象ですが、確定制度マスタや配布対象として扱いません。適合性と昇格条件は[初期マスタ候補のSchema適合性確認](docs/initial-master-schema-fit.md)、税以外の候補の収集範囲は[税以外の公的負担候補の収集・照合](docs/public-burden-candidate-reconciliation.md)、統合判定は[初期マスタ投入対象の統合判定](docs/initial-master-selection.md)を参照してください。
 - 取得途中のHTML、PDF、API応答等は `.cache/` 配下の一時データとし、正本にせずGitにも保存しません。保存が必要な根拠は別Issueで対象と形式をレビューします。
 - `reports/` や将来の `generated/` は正本から再生成する成果物であり、直接編集しません。
 - 制度の履歴は追記型のeventとphase、およびGit履歴で保持します。既存の事実を上書きして過去の状態を失わないようにします。

@@ -12,8 +12,8 @@
     "audit": "node scripts/audit/audit-repository.js",
     "audit:scan": "node scripts/audit/audit-source-scan.js",
     "audit:issues": "node scripts/audit/publish-audit-issues.js",
-    "generate": "node scripts/generate/generate-distribution.js",
-    "generate:check": "node scripts/generate/generate-distribution.js --check"
+    "generate": "node scripts/generate/generate-distribution.js && node scripts/generate/initial-master-selection.js",
+    "generate:check": "node scripts/generate/generate-distribution.js --check && node scripts/generate/initial-master-selection.js --check"
   },
   "devDependencies": {
     "ajv": "^8.17.1",
