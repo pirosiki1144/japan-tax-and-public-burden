@@ -1,0 +1,2419 @@
+{
+  "schema_version": 1,
+  "generated_at": "2026-08-19T20:13:25+09:00",
+  "targets": [
+    {
+      "tax_id": "adverse-drug-reaction-contribution",
+      "monitoring_mode": "manual",
+      "enabled": true,
+      "cadence": "monthly",
+      "municipal_scope": "national_only",
+      "sources": [
+        {
+          "source_id": "egov-laws",
+          "target_url": "https://laws.e-gov.go.jp/api/2/law_data/414AC0000000192",
+          "enabled": true,
+          "adapter": "manual",
+          "target_id": "414AC0000000192",
+          "extraction_targets": [
+            "法令の改廃・施行状態（監視条文は#30の後続整備で確定）"
+          ]
+        }
+      ],
+      "notes": "公式URLは特定済みだが抽出adapter未実装のため手動確認する"
+    },
+    {
+      "tax_id": "agricultural-cooperative-savings-charge",
+      "monitoring_mode": "manual",
+      "enabled": true,
+      "cadence": "monthly",
+      "municipal_scope": "national_only",
+      "sources": [
+        {
+          "source_id": "egov-laws",
+          "target_url": "https://laws.e-gov.go.jp/api/2/law_data/348AC0000000053",
+          "enabled": true,
+          "adapter": "manual",
+          "target_id": "348AC0000000053",
+          "extraction_targets": [
+            "法令の改廃・施行状態（監視条文は#30の後続整備で確定）"
+          ]
+        }
+      ],
+      "notes": "公式URLは特定済みだが抽出adapter未実装のため手動確認する"
+    },
+    {
+      "tax_id": "agricultural-cooperative-savings-insurance-premium",
+      "monitoring_mode": "manual",
+      "enabled": true,
+      "cadence": "monthly",
+      "municipal_scope": "national_only",
+      "sources": [
+        {
+          "source_id": "egov-laws",
+          "target_url": "https://laws.e-gov.go.jp/api/2/law_data/348AC0000000053",
+          "enabled": true,
+          "adapter": "manual",
+          "target_id": "348AC0000000053",
+          "extraction_targets": [
+            "法令の改廃・施行状態（監視条文は#30の後続整備で確定）"
+          ]
+        }
+      ],
+      "notes": "公式URLは特定済みだが抽出adapter未実装のため手動確認する"
+    },
+    {
+      "tax_id": "agricultural-cooperative-savings-special-charge",
+      "monitoring_mode": "manual",
+      "enabled": true,
+      "cadence": "monthly",
+      "municipal_scope": "national_only",
+      "sources": [
+        {
+          "source_id": "egov-laws",
+          "target_url": "https://laws.e-gov.go.jp/api/2/law_data/348AC0000000053",
+          "enabled": true,
+          "adapter": "manual",
+          "target_id": "348AC0000000053",
+          "extraction_targets": [
+            "法令の改廃・施行状態（監視条文は#30の後続整備で確定）"
+          ]
+        }
+      ],
+      "notes": "公式URLは特定済みだが抽出adapter未実装のため手動確認する"
+    },
+    {
+      "tax_id": "asbestos-relief-general-contribution",
+      "monitoring_mode": "manual",
+      "enabled": true,
+      "cadence": "monthly",
+      "municipal_scope": "national_only",
+      "sources": [
+        {
+          "source_id": "egov-laws",
+          "target_url": "https://laws.e-gov.go.jp/api/2/law_data/418AC0000000004",
+          "enabled": true,
+          "adapter": "manual",
+          "target_id": "418AC0000000004",
+          "extraction_targets": [
+            "法令の改廃・施行状態（監視条文は#30の後続整備で確定）"
+          ]
+        }
+      ],
+      "notes": "公式URLは特定済みだが抽出adapter未実装のため手動確認する"
+    },
+    {
+      "tax_id": "asbestos-relief-special-contribution",
+      "monitoring_mode": "manual",
+      "enabled": true,
+      "cadence": "monthly",
+      "municipal_scope": "national_only",
+      "sources": [
+        {
+          "source_id": "egov-laws",
+          "target_url": "https://laws.e-gov.go.jp/api/2/law_data/418AC0000000004",
+          "enabled": true,
+          "adapter": "manual",
+          "target_id": "418AC0000000004",
+          "extraction_targets": [
+            "法令の改廃・施行状態（監視条文は#30の後続整備で確定）"
+          ]
+        }
+      ],
+      "notes": "公式URLは特定済みだが抽出adapter未実装のため手動確認する"
+    },
+    {
+      "tax_id": "automobile-accident-countermeasure-levy",
+      "monitoring_mode": "manual",
+      "enabled": true,
+      "cadence": "monthly",
+      "municipal_scope": "national_only",
+      "sources": [
+        {
+          "source_id": "egov-laws",
+          "target_url": "https://laws.e-gov.go.jp/api/2/law_data/330AC0000000097",
+          "enabled": true,
+          "adapter": "manual",
+          "target_id": "330AC0000000097",
+          "extraction_targets": [
+            "法令の改廃・施行状態（監視条文は#30の後続整備で確定）"
+          ]
+        }
+      ],
+      "notes": "公式URLは特定済みだが抽出adapter未実装のため手動確認する"
+    },
+    {
+      "tax_id": "automobile-tax",
+      "monitoring_mode": "manual",
+      "enabled": true,
+      "cadence": "monthly",
+      "municipal_scope": "issue_20",
+      "sources": [
+        {
+          "source_id": "egov-laws",
+          "target_url": "https://laws.e-gov.go.jp/api/2/law_data/325AC0000000226",
+          "enabled": true,
+          "adapter": "manual",
+          "target_id": "325AC0000000226",
+          "change_detection": {
+            "document_format": "egov_law_api_v2_json",
+            "revision_id_path": "/revision_info/law_revision_id",
+            "updated_at_path": "/revision_info/updated",
+            "comparison": "selected_nodes_sha256"
+          },
+          "extraction_targets": [
+            {
+              "target_id": "automobile-tax-definition",
+              "description": "地方税法第145条：自動車の定義",
+              "selector": {
+                "root_path": "/law_full_text",
+                "scope_tag": "MainProvision",
+                "tag": "Article",
+                "attribute": "Num",
+                "values": [
+                  "145"
+                ]
+              },
+              "comparison": "canonical_json_sha256"
+            },
+            {
+              "target_id": "automobile-tax-liability-and-exemption",
+              "description": "地方税法第146条から第148条：納税義務者、みなし課税、非課税",
+              "selector": {
+                "root_path": "/law_full_text",
+                "scope_tag": "MainProvision",
+                "tag": "Article",
+                "attribute": "Num",
+                "values": [
+                  "146",
+                  "147",
+                  "148"
+                ]
+              },
+              "comparison": "canonical_json_sha256"
+            },
+            {
+              "target_id": "automobile-tax-standard-rates",
+              "description": "地方税法第154条：車種・用途・排気量等ごとの標準税率",
+              "selector": {
+                "root_path": "/law_full_text",
+                "scope_tag": "MainProvision",
+                "tag": "Article",
+                "attribute": "Num",
+                "values": [
+                  "154"
+                ]
+              },
+              "comparison": "canonical_json_sha256"
+            },
+            {
+              "target_id": "automobile-tax-assessment-and-collection",
+              "description": "地方税法第155条から第158条：賦課期日、納期、月割、徴収方法",
+              "selector": {
+                "root_path": "/law_full_text",
+                "scope_tag": "MainProvision",
+                "tag": "Article",
+                "attribute": "Num",
+                "values": [
+                  "155",
+                  "156",
+                  "157",
+                  "158"
+                ]
+              },
+              "comparison": "canonical_json_sha256"
+            }
+          ]
+        }
+      ],
+      "notes": "国法レベルのみ。自治体条例・公式サイト・個別税率は#20で扱う"
+    },
+    {
+      "tax_id": "automobile-weight-tax",
+      "monitoring_mode": "manual",
+      "enabled": true,
+      "cadence": "monthly",
+      "municipal_scope": "national_only",
+      "sources": [
+        {
+          "source_id": "egov-laws",
+          "target_url": "https://laws.e-gov.go.jp/api/2/law_data/346AC0000000089",
+          "enabled": true,
+          "adapter": "manual",
+          "target_id": "346AC0000000089",
+          "extraction_targets": [
+            "法令の改廃・施行状態（監視条文は#30の後続整備で確定）"
+          ]
+        }
+      ],
+      "notes": "公式URLは特定済みだが抽出adapter未実装のため手動確認する"
+    },
+    {
+      "tax_id": "aviation-fuel-tax",
+      "monitoring_mode": "manual",
+      "enabled": true,
+      "cadence": "monthly",
+      "municipal_scope": "national_only",
+      "sources": [
+        {
+          "source_id": "egov-laws",
+          "target_url": "https://laws.e-gov.go.jp/api/2/law_data/347AC0000000007",
+          "enabled": true,
+          "adapter": "manual",
+          "target_id": "347AC0000000007",
+          "extraction_targets": [
+            "法令の改廃・施行状態（監視条文は#30の後続整備で確定）"
+          ]
+        }
+      ],
+      "notes": "公式URLは特定済みだが抽出adapter未実装のため手動確認する"
+    },
+    {
+      "tax_id": "banks-shareholdings-purchase-corporation-contribution",
+      "monitoring_mode": "manual",
+      "enabled": true,
+      "cadence": "monthly",
+      "municipal_scope": "national_only",
+      "sources": [
+        {
+          "source_id": "egov-laws",
+          "target_url": "https://laws.e-gov.go.jp/api/2/law_data/413AC0000000131",
+          "enabled": true,
+          "adapter": "manual",
+          "target_id": "413AC0000000131",
+          "extraction_targets": [
+            "法令の改廃・施行状態（監視条文は#30の後続整備で確定）"
+          ]
+        }
+      ],
+      "notes": "公式URLは特定済みだが抽出adapter未実装のため手動確認する"
+    },
+    {
+      "tax_id": "bathing-tax",
+      "monitoring_mode": "manual",
+      "enabled": true,
+      "cadence": "monthly",
+      "municipal_scope": "issue_20",
+      "sources": [
+        {
+          "source_id": "egov-laws",
+          "target_url": "https://laws.e-gov.go.jp/api/2/law_data/325AC0000000226",
+          "enabled": true,
+          "adapter": "manual",
+          "target_id": "325AC0000000226",
+          "extraction_targets": [
+            "法令の改廃・施行状態（監視条文は#30の後続整備で確定）"
+          ]
+        }
+      ],
+      "notes": "国法レベルのみ。自治体条例・公式サイト・個別税率は#20で扱う"
+    },
+    {
+      "tax_id": "broadband-service-charge",
+      "monitoring_mode": "manual",
+      "enabled": true,
+      "cadence": "monthly",
+      "municipal_scope": "national_only",
+      "sources": [
+        {
+          "source_id": "egov-laws",
+          "target_url": "https://laws.e-gov.go.jp/api/2/law_data/359AC0000000086",
+          "enabled": true,
+          "adapter": "manual",
+          "target_id": "359AC0000000086",
+          "extraction_targets": [
+            "法令の改廃・施行状態（監視条文は#30の後続整備で確定）"
+          ]
+        }
+      ],
+      "notes": "公式URLは特定済みだが抽出adapter未実装のため手動確認する"
+    },
+    {
+      "tax_id": "business-office-tax",
+      "monitoring_mode": "manual",
+      "enabled": true,
+      "cadence": "monthly",
+      "municipal_scope": "issue_20",
+      "sources": [
+        {
+          "source_id": "egov-laws",
+          "target_url": "https://laws.e-gov.go.jp/api/2/law_data/325AC0000000226",
+          "enabled": true,
+          "adapter": "manual",
+          "target_id": "325AC0000000226",
+          "extraction_targets": [
+            "法令の改廃・施行状態（監視条文は#30の後続整備で確定）"
+          ]
+        }
+      ],
+      "notes": "国法レベルのみ。自治体条例・公式サイト・個別税率は#20で扱う"
+    },
+    {
+      "tax_id": "child-care-contribution",
+      "monitoring_mode": "manual",
+      "enabled": true,
+      "cadence": "monthly",
+      "municipal_scope": "national_only",
+      "sources": [
+        {
+          "source_id": "egov-laws",
+          "target_url": "https://laws.e-gov.go.jp/api/2/law_data/424AC0000000065",
+          "enabled": true,
+          "adapter": "manual",
+          "target_id": "424AC0000000065",
+          "extraction_targets": [
+            "法令の改廃・施行状態（監視条文は#30の後続整備で確定）"
+          ]
+        }
+      ],
+      "notes": "公式URLは特定済みだが抽出adapter未実装のため手動確認する"
+    },
+    {
+      "tax_id": "city-planning-tax",
+      "monitoring_mode": "manual",
+      "enabled": true,
+      "cadence": "monthly",
+      "municipal_scope": "issue_20",
+      "sources": [
+        {
+          "source_id": "egov-laws",
+          "target_url": "https://laws.e-gov.go.jp/api/2/law_data/325AC0000000226",
+          "enabled": true,
+          "adapter": "manual",
+          "target_id": "325AC0000000226",
+          "extraction_targets": [
+            "法令の改廃・施行状態（監視条文は#30の後続整備で確定）"
+          ]
+        }
+      ],
+      "notes": "国法レベルのみ。自治体条例・公式サイト・個別税率は#20で扱う"
+    },
+    {
+      "tax_id": "commodity-customer-protection-fund-charge",
+      "monitoring_mode": "manual",
+      "enabled": true,
+      "cadence": "monthly",
+      "municipal_scope": "national_only",
+      "sources": [
+        {
+          "source_id": "egov-laws",
+          "target_url": "https://laws.e-gov.go.jp/api/2/law_data/325AC0000000239",
+          "enabled": true,
+          "adapter": "manual",
+          "target_id": "325AC0000000239",
+          "extraction_targets": [
+            "法令の改廃・施行状態（監視条文は#30の後続整備で確定）"
+          ]
+        }
+      ],
+      "notes": "公式URLは特定済みだが抽出adapter未実装のため手動確認する"
+    },
+    {
+      "tax_id": "common-facilities-tax",
+      "monitoring_mode": "manual",
+      "enabled": true,
+      "cadence": "monthly",
+      "municipal_scope": "issue_20",
+      "sources": [
+        {
+          "source_id": "egov-laws",
+          "target_url": "https://laws.e-gov.go.jp/api/2/law_data/325AC0000000226",
+          "enabled": true,
+          "adapter": "manual",
+          "target_id": "325AC0000000226",
+          "extraction_targets": [
+            "法令の改廃・施行状態（監視条文は#30の後続整備で確定）"
+          ]
+        }
+      ],
+      "notes": "国法レベルのみ。自治体条例・公式サイト・個別税率は#20で扱う"
+    },
+    {
+      "tax_id": "common-utility-tunnel-charge",
+      "monitoring_mode": "manual",
+      "enabled": true,
+      "cadence": "monthly",
+      "municipal_scope": "national_only",
+      "sources": [
+        {
+          "source_id": "egov-laws",
+          "target_url": "https://laws.e-gov.go.jp/api/2/law_data/338AC0000000081",
+          "enabled": true,
+          "adapter": "manual",
+          "target_id": "338AC0000000081",
+          "extraction_targets": [
+            "法令の改廃・施行状態（監視条文は#30の後続整備で確定）"
+          ]
+        }
+      ],
+      "notes": "公式URLは特定済みだが抽出adapter未実装のため手動確認する"
+    },
+    {
+      "tax_id": "consumption-tax",
+      "monitoring_mode": "automated",
+      "enabled": true,
+      "cadence": "daily",
+      "municipal_scope": "national_only",
+      "sources": [
+        {
+          "source_id": "egov-laws",
+          "target_url": "https://laws.e-gov.go.jp/api/2/law_data/363AC0000000108",
+          "enabled": true,
+          "adapter": "egov_law_article_facts",
+          "target_id": "363AC0000000108",
+          "change_detection": {
+            "document_format": "egov_law_api_v2_json",
+            "revision_id_path": "/revision_info/law_revision_id",
+            "updated_at_path": "/revision_info/updated",
+            "comparison": "selected_nodes_sha256"
+          },
+          "extraction_targets": [
+            {
+              "target_id": "consumption-tax-purpose-and-definitions",
+              "description": "消費税法第1条・第2条：制度目的、課税資産・軽減対象課税資産等の定義",
+              "selector": {
+                "root_path": "/law_full_text",
+                "scope_tag": "MainProvision",
+                "tag": "Article",
+                "attribute": "Num",
+                "values": [
+                  "1",
+                  "2"
+                ]
+              },
+              "comparison": "canonical_json_sha256"
+            },
+            {
+              "target_id": "consumption-tax-scope-liability-and-exemption",
+              "description": "消費税法第4条から第6条：課税対象、納税義務者、非課税",
+              "selector": {
+                "root_path": "/law_full_text",
+                "scope_tag": "MainProvision",
+                "tag": "Article",
+                "attribute": "Num",
+                "values": [
+                  "4",
+                  "5",
+                  "6"
+                ]
+              },
+              "comparison": "canonical_json_sha256"
+            },
+            {
+              "target_id": "consumption-tax-base-and-rate",
+              "description": "消費税法第28条・第29条：課税標準、消費税率",
+              "selector": {
+                "root_path": "/law_full_text",
+                "scope_tag": "MainProvision",
+                "tag": "Article",
+                "attribute": "Num",
+                "values": [
+                  "28",
+                  "29"
+                ]
+              },
+              "comparison": "canonical_json_sha256"
+            }
+          ]
+        },
+        {
+          "source_id": "nta-consumption-tax-rates",
+          "target_url": "https://www.nta.go.jp/taxes/shiraberu/taxanswer/shohi/6101.htm",
+          "enabled": true,
+          "adapter": "html_regex_facts",
+          "target_id": "6101.htm",
+          "extraction_targets": [
+            "法令等の確認基準日",
+            "国内取引・外国貨物の課税対象",
+            "標準税率・軽減税率と地方消費税の内訳",
+            "非課税取引の扱い"
+          ]
+        },
+        {
+          "source_id": "nta-consumption-tax-rates",
+          "target_url": "https://www.nta.go.jp/taxes/shiraberu/taxanswer/shohi/6102.htm",
+          "enabled": true,
+          "adapter": "html_regex_facts",
+          "target_id": "nta-consumption-tax-rates-page-2",
+          "extraction_targets": [
+            "法令等の確認基準日",
+            "軽減税率制度の実施日",
+            "標準税率・軽減税率と地方消費税の内訳",
+            "軽減税率の対象品目・除外・判定時期"
+          ]
+        }
+      ],
+      "notes": "実装済みadapterで自動監視する"
+    },
+    {
+      "tax_id": "corporation-tax",
+      "monitoring_mode": "manual",
+      "enabled": true,
+      "cadence": "monthly",
+      "municipal_scope": "national_only",
+      "sources": [
+        {
+          "source_id": "egov-laws",
+          "target_url": "https://laws.e-gov.go.jp/api/2/law_data/340AC0000000034",
+          "enabled": true,
+          "adapter": "manual",
+          "target_id": "340AC0000000034",
+          "extraction_targets": [
+            "法令の改廃・施行状態（監視条文は#30の後続整備で確定）"
+          ]
+        }
+      ],
+      "notes": "公式URLは特定済みだが抽出adapter未実装のため手動確認する"
+    },
+    {
+      "tax_id": "customs-duty",
+      "monitoring_mode": "manual",
+      "enabled": true,
+      "cadence": "monthly",
+      "municipal_scope": "national_only",
+      "sources": [
+        {
+          "source_id": "egov-laws",
+          "target_url": "https://laws.e-gov.go.jp/api/2/law_data/329AC0000000061",
+          "enabled": true,
+          "adapter": "manual",
+          "target_id": "329AC0000000061",
+          "extraction_targets": [
+            "法令の改廃・施行状態（監視条文は#30の後続整備で確定）"
+          ]
+        }
+      ],
+      "notes": "公式URLは特定済みだが抽出adapter未実装のため手動確認する"
+    },
+    {
+      "tax_id": "deposit-insurance-corporation-charge",
+      "monitoring_mode": "manual",
+      "enabled": true,
+      "cadence": "monthly",
+      "municipal_scope": "national_only",
+      "sources": [
+        {
+          "source_id": "egov-laws",
+          "target_url": "https://laws.e-gov.go.jp/api/2/law_data/346AC0000000034",
+          "enabled": true,
+          "adapter": "manual",
+          "target_id": "346AC0000000034",
+          "extraction_targets": [
+            "法令の改廃・施行状態（監視条文は#30の後続整備で確定）"
+          ]
+        }
+      ],
+      "notes": "公式URLは特定済みだが抽出adapter未実装のため手動確認する"
+    },
+    {
+      "tax_id": "deposit-insurance-corporation-special-charge",
+      "monitoring_mode": "manual",
+      "enabled": true,
+      "cadence": "monthly",
+      "municipal_scope": "national_only",
+      "sources": [
+        {
+          "source_id": "egov-laws",
+          "target_url": "https://laws.e-gov.go.jp/api/2/law_data/346AC0000000034",
+          "enabled": true,
+          "adapter": "manual",
+          "target_id": "346AC0000000034",
+          "extraction_targets": [
+            "法令の改廃・施行状態（監視条文は#30の後続整備で確定）"
+          ]
+        }
+      ],
+      "notes": "公式URLは特定済みだが抽出adapter未実装のため手動確認する"
+    },
+    {
+      "tax_id": "deposit-insurance-premium",
+      "monitoring_mode": "manual",
+      "enabled": true,
+      "cadence": "monthly",
+      "municipal_scope": "national_only",
+      "sources": [
+        {
+          "source_id": "egov-laws",
+          "target_url": "https://laws.e-gov.go.jp/api/2/law_data/346AC0000000034",
+          "enabled": true,
+          "adapter": "manual",
+          "target_id": "346AC0000000034",
+          "extraction_targets": [
+            "法令の改廃・施行状態（監視条文は#30の後続整備で確定）"
+          ]
+        }
+      ],
+      "notes": "公式URLは特定済みだが抽出adapter未実装のため手動確認する"
+    },
+    {
+      "tax_id": "disability-employment-levy",
+      "monitoring_mode": "manual",
+      "enabled": true,
+      "cadence": "monthly",
+      "municipal_scope": "national_only",
+      "sources": [
+        {
+          "source_id": "egov-laws",
+          "target_url": "https://laws.e-gov.go.jp/api/2/law_data/335AC0000000123",
+          "enabled": true,
+          "adapter": "manual",
+          "target_id": "335AC0000000123",
+          "extraction_targets": [
+            "法令の改廃・施行状態（監視条文は#30の後続整備で確定）"
+          ]
+        }
+      ],
+      "notes": "公式URLは特定済みだが抽出adapter未実装のため手動確認する"
+    },
+    {
+      "tax_id": "east-japan-business-rehabilitation-contribution",
+      "monitoring_mode": "manual",
+      "enabled": true,
+      "cadence": "monthly",
+      "municipal_scope": "national_only",
+      "sources": [
+        {
+          "source_id": "egov-laws",
+          "target_url": "https://laws.e-gov.go.jp/api/2/law_data/423AC0100000113",
+          "enabled": true,
+          "adapter": "manual",
+          "target_id": "423AC0100000113",
+          "extraction_targets": [
+            "法令の改廃・施行状態（監視条文は#30の後続整備で確定）"
+          ]
+        }
+      ],
+      "notes": "公式URLは特定済みだが抽出adapter未実装のため手動確認する"
+    },
+    {
+      "tax_id": "educational-public-transmission-compensation",
+      "monitoring_mode": "manual",
+      "enabled": true,
+      "cadence": "monthly",
+      "municipal_scope": "national_only",
+      "sources": [
+        {
+          "source_id": "egov-laws",
+          "target_url": "https://laws.e-gov.go.jp/api/2/law_data/345AC0000000048",
+          "enabled": true,
+          "adapter": "manual",
+          "target_id": "345AC0000000048",
+          "extraction_targets": [
+            "法令の改廃・施行状態（監視条文は#30の後続整備で確定）"
+          ]
+        }
+      ],
+      "notes": "公式URLは特定済みだが抽出adapter未実装のため手動確認する"
+    },
+    {
+      "tax_id": "electricity-business-compensation-charge",
+      "monitoring_mode": "manual",
+      "enabled": true,
+      "cadence": "monthly",
+      "municipal_scope": "national_only",
+      "sources": [
+        {
+          "source_id": "egov-laws",
+          "target_url": "https://laws.e-gov.go.jp/api/2/law_data/407M50000400077",
+          "enabled": true,
+          "adapter": "manual",
+          "target_id": "407M50000400077",
+          "extraction_targets": [
+            "法令の改廃・施行状態（監視条文は#30の後続整備で確定）"
+          ]
+        }
+      ],
+      "notes": "公式URLは特定済みだが抽出adapter未実装のため手動確認する"
+    },
+    {
+      "tax_id": "employment-insurance-premium",
+      "monitoring_mode": "manual",
+      "enabled": true,
+      "cadence": "monthly",
+      "municipal_scope": "national_only",
+      "sources": [
+        {
+          "source_id": "egov-laws",
+          "target_url": "https://laws.e-gov.go.jp/api/2/law_data/349AC0000000116",
+          "enabled": true,
+          "adapter": "manual",
+          "target_id": "349AC0000000116",
+          "extraction_targets": [
+            "法令の改廃・施行状態（監視条文は#30の後続整備で確定）"
+          ]
+        }
+      ],
+      "notes": "公式URLは特定済みだが抽出adapter未実装のため手動確認する"
+    },
+    {
+      "tax_id": "enterprise-tax",
+      "monitoring_mode": "manual",
+      "enabled": true,
+      "cadence": "monthly",
+      "municipal_scope": "issue_20",
+      "sources": [
+        {
+          "source_id": "egov-laws",
+          "target_url": "https://laws.e-gov.go.jp/api/2/law_data/325AC0000000226",
+          "enabled": true,
+          "adapter": "manual",
+          "target_id": "325AC0000000226",
+          "extraction_targets": [
+            "法令の改廃・施行状態（監視条文は#30の後続整備で確定）"
+          ]
+        }
+      ],
+      "notes": "国法レベルのみ。自治体条例・公式サイト・個別税率は#20で扱う"
+    },
+    {
+      "tax_id": "fixed-asset-tax",
+      "monitoring_mode": "manual",
+      "enabled": true,
+      "cadence": "monthly",
+      "municipal_scope": "issue_20",
+      "sources": [
+        {
+          "source_id": "egov-laws",
+          "target_url": "https://laws.e-gov.go.jp/api/2/law_data/325AC0000000226",
+          "enabled": true,
+          "adapter": "manual",
+          "target_id": "325AC0000000226",
+          "extraction_targets": [
+            "法令の改廃・施行状態（監視条文は#30の後続整備で確定）"
+          ]
+        }
+      ],
+      "notes": "国法レベルのみ。自治体条例・公式サイト・個別税率は#20で扱う"
+    },
+    {
+      "tax_id": "forest-environment-tax",
+      "monitoring_mode": "manual",
+      "enabled": true,
+      "cadence": "monthly",
+      "municipal_scope": "national_only",
+      "sources": [
+        {
+          "source_id": "egov-laws",
+          "target_url": "https://laws.e-gov.go.jp/api/2/law_data/431AC0000000003",
+          "enabled": true,
+          "adapter": "manual",
+          "target_id": "431AC0000000003",
+          "extraction_targets": [
+            "法令の改廃・施行状態（監視条文は#30の後続整備で確定）"
+          ]
+        }
+      ],
+      "notes": "公式URLは特定済みだが抽出adapter未実装のため手動確認する"
+    },
+    {
+      "tax_id": "fossil-fuel-levy",
+      "monitoring_mode": "manual",
+      "enabled": true,
+      "cadence": "monthly",
+      "municipal_scope": "national_only",
+      "sources": [
+        {
+          "source_id": "egov-laws",
+          "target_url": "https://laws.e-gov.go.jp/api/2/law_data/505AC0000000032",
+          "enabled": true,
+          "adapter": "manual",
+          "target_id": "505AC0000000032",
+          "extraction_targets": [
+            "法令の改廃・施行状態（監視条文は#30の後続整備で確定）"
+          ]
+        }
+      ],
+      "notes": "公式URLは特定済みだが抽出adapter未実装のため手動確認する"
+    },
+    {
+      "tax_id": "gasoline-tax",
+      "monitoring_mode": "manual",
+      "enabled": true,
+      "cadence": "monthly",
+      "municipal_scope": "national_only",
+      "sources": [
+        {
+          "source_id": "egov-laws",
+          "target_url": "https://laws.e-gov.go.jp/api/2/law_data/332AC0000000055",
+          "enabled": true,
+          "adapter": "manual",
+          "target_id": "332AC0000000055",
+          "extraction_targets": [
+            "法令の改廃・施行状態（監視条文は#30の後続整備で確定）"
+          ]
+        }
+      ],
+      "notes": "公式URLは特定済みだが抽出adapter未実装のため手動確認する"
+    },
+    {
+      "tax_id": "golf-course-utilization-tax",
+      "monitoring_mode": "manual",
+      "enabled": true,
+      "cadence": "monthly",
+      "municipal_scope": "issue_20",
+      "sources": [
+        {
+          "source_id": "egov-laws",
+          "target_url": "https://laws.e-gov.go.jp/api/2/law_data/325AC0000000226",
+          "enabled": true,
+          "adapter": "manual",
+          "target_id": "325AC0000000226",
+          "extraction_targets": [
+            "法令の改廃・施行状態（監視条文は#30の後続整備で確定）"
+          ]
+        }
+      ],
+      "notes": "国法レベルのみ。自治体条例・公式サイト・個別税率は#20で扱う"
+    },
+    {
+      "tax_id": "gx-specified-business-charge",
+      "monitoring_mode": "manual",
+      "enabled": true,
+      "cadence": "monthly",
+      "municipal_scope": "national_only",
+      "sources": [
+        {
+          "source_id": "egov-laws",
+          "target_url": "https://laws.e-gov.go.jp/api/2/law_data/505AC0000000032",
+          "enabled": true,
+          "adapter": "manual",
+          "target_id": "505AC0000000032",
+          "extraction_targets": [
+            "法令の改廃・施行状態（監視条文は#30の後続整備で確定）"
+          ]
+        }
+      ],
+      "notes": "公式URLは特定済みだが抽出adapter未実装のため手動確認する"
+    },
+    {
+      "tax_id": "hepatitis-c-special-relief-contribution",
+      "monitoring_mode": "manual",
+      "enabled": true,
+      "cadence": "monthly",
+      "municipal_scope": "national_only",
+      "sources": [
+        {
+          "source_id": "egov-laws",
+          "target_url": "https://laws.e-gov.go.jp/api/2/law_data/420AC1000000002",
+          "enabled": true,
+          "adapter": "manual",
+          "target_id": "420AC1000000002",
+          "extraction_targets": [
+            "法令の改廃・施行状態（監視条文は#30の後続整備で確定）"
+          ]
+        }
+      ],
+      "notes": "公式URLは特定済みだが抽出adapter未実装のため手動確認する"
+    },
+    {
+      "tax_id": "high-level-waste-disposal-contribution",
+      "monitoring_mode": "manual",
+      "enabled": true,
+      "cadence": "monthly",
+      "municipal_scope": "national_only",
+      "sources": [
+        {
+          "source_id": "egov-laws",
+          "target_url": "https://laws.e-gov.go.jp/api/2/law_data/412AC0000000117",
+          "enabled": true,
+          "adapter": "manual",
+          "target_id": "412AC0000000117",
+          "extraction_targets": [
+            "法令の改廃・施行状態（監視条文は#30の後続整備で確定）"
+          ]
+        }
+      ],
+      "notes": "公式URLは特定済みだが抽出adapter未実装のため手動確認する"
+    },
+    {
+      "tax_id": "hunting-tax",
+      "monitoring_mode": "manual",
+      "enabled": true,
+      "cadence": "monthly",
+      "municipal_scope": "issue_20",
+      "sources": [
+        {
+          "source_id": "egov-laws",
+          "target_url": "https://laws.e-gov.go.jp/api/2/law_data/325AC0000000226",
+          "enabled": true,
+          "adapter": "manual",
+          "target_id": "325AC0000000226",
+          "extraction_targets": [
+            "法令の改廃・施行状態（監視条文は#30の後続整備で確定）"
+          ]
+        }
+      ],
+      "notes": "国法レベルのみ。自治体条例・公式サイト・個別税率は#20で扱う"
+    },
+    {
+      "tax_id": "imported-sugar-adjustment-charge",
+      "monitoring_mode": "manual",
+      "enabled": true,
+      "cadence": "monthly",
+      "municipal_scope": "national_only",
+      "sources": [
+        {
+          "source_id": "egov-laws",
+          "target_url": "https://laws.e-gov.go.jp/api/2/law_data/340AC0000000109",
+          "enabled": true,
+          "adapter": "manual",
+          "target_id": "340AC0000000109",
+          "extraction_targets": [
+            "法令の改廃・施行状態（監視条文は#30の後続整備で確定）"
+          ]
+        }
+      ],
+      "notes": "公式URLは特定済みだが抽出adapter未実装のため手動確認する"
+    },
+    {
+      "tax_id": "income-tax",
+      "monitoring_mode": "manual",
+      "enabled": true,
+      "cadence": "monthly",
+      "municipal_scope": "national_only",
+      "sources": [
+        {
+          "source_id": "egov-laws",
+          "target_url": "https://laws.e-gov.go.jp/api/2/law_data/340AC0000000033",
+          "enabled": true,
+          "adapter": "manual",
+          "target_id": "340AC0000000033",
+          "extraction_targets": [
+            "法令の改廃・施行状態（監視条文は#30の後続整備で確定）"
+          ]
+        }
+      ],
+      "notes": "公式URLは特定済みだが抽出adapter未実装のため手動確認する"
+    },
+    {
+      "tax_id": "infection-contribution",
+      "monitoring_mode": "manual",
+      "enabled": true,
+      "cadence": "monthly",
+      "municipal_scope": "national_only",
+      "sources": [
+        {
+          "source_id": "egov-laws",
+          "target_url": "https://laws.e-gov.go.jp/api/2/law_data/414AC0000000192",
+          "enabled": true,
+          "adapter": "manual",
+          "target_id": "414AC0000000192",
+          "extraction_targets": [
+            "法令の改廃・施行状態（監視条文は#30の後続整備で確定）"
+          ]
+        }
+      ],
+      "notes": "公式URLは特定済みだが抽出adapter未実装のため手動確認する"
+    },
+    {
+      "tax_id": "inheritance-and-gift-tax",
+      "monitoring_mode": "manual",
+      "enabled": true,
+      "cadence": "monthly",
+      "municipal_scope": "national_only",
+      "sources": [
+        {
+          "source_id": "egov-laws",
+          "target_url": "https://laws.e-gov.go.jp/api/2/law_data/325AC0000000073",
+          "enabled": true,
+          "adapter": "manual",
+          "target_id": "325AC0000000073",
+          "extraction_targets": [
+            "法令の改廃・施行状態（監視条文は#30の後続整備で確定）"
+          ]
+        }
+      ],
+      "notes": "公式URLは特定済みだが抽出adapter未実装のため手動確認する"
+    },
+    {
+      "tax_id": "international-oil-pollution-fund-annual-contribution",
+      "monitoring_mode": "manual",
+      "enabled": true,
+      "cadence": "monthly",
+      "municipal_scope": "national_only",
+      "sources": [
+        {
+          "source_id": "egov-laws",
+          "target_url": "https://laws.e-gov.go.jp/api/2/law_data/350AC0000000095",
+          "enabled": true,
+          "adapter": "manual",
+          "target_id": "350AC0000000095",
+          "extraction_targets": [
+            "法令の改廃・施行状態（監視条文は#30の後続整備で確定）"
+          ]
+        }
+      ],
+      "notes": "公式URLは特定済みだが抽出adapter未実装のため手動確認する"
+    },
+    {
+      "tax_id": "international-tourist-tax",
+      "monitoring_mode": "manual",
+      "enabled": true,
+      "cadence": "monthly",
+      "municipal_scope": "national_only",
+      "sources": [
+        {
+          "source_id": "egov-laws",
+          "target_url": "https://laws.e-gov.go.jp/api/2/law_data/430AC0000000016",
+          "enabled": true,
+          "adapter": "manual",
+          "target_id": "430AC0000000016",
+          "extraction_targets": [
+            "法令の改廃・施行状態（監視条文は#30の後続整備で確定）"
+          ]
+        }
+      ],
+      "notes": "公式URLは特定済みだが抽出adapter未実装のため手動確認する"
+    },
+    {
+      "tax_id": "investor-protection-fund-charge",
+      "monitoring_mode": "manual",
+      "enabled": true,
+      "cadence": "monthly",
+      "municipal_scope": "national_only",
+      "sources": [
+        {
+          "source_id": "egov-laws",
+          "target_url": "https://laws.e-gov.go.jp/api/2/law_data/323AC0000000025",
+          "enabled": true,
+          "adapter": "manual",
+          "target_id": "323AC0000000025",
+          "extraction_targets": [
+            "法令の改廃・施行状態（監視条文は#30の後続整備で確定）"
+          ]
+        }
+      ],
+      "notes": "公式URLは特定済みだが抽出adapter未実装のため手動確認する"
+    },
+    {
+      "tax_id": "irrigation-water-facility-charge",
+      "monitoring_mode": "manual",
+      "enabled": true,
+      "cadence": "monthly",
+      "municipal_scope": "national_only",
+      "sources": [
+        {
+          "source_id": "egov-laws",
+          "target_url": "https://laws.e-gov.go.jp/api/2/law_data/414AC0000000182",
+          "enabled": true,
+          "adapter": "manual",
+          "target_id": "414AC0000000182",
+          "extraction_targets": [
+            "法令の改廃・施行状態（監視条文は#30の後続整備で確定）"
+          ]
+        }
+      ],
+      "notes": "公式URLは特定済みだが抽出adapter未実装のため手動確認する"
+    },
+    {
+      "tax_id": "library-public-transmission-compensation",
+      "monitoring_mode": "manual",
+      "enabled": true,
+      "cadence": "monthly",
+      "municipal_scope": "national_only",
+      "sources": [
+        {
+          "source_id": "egov-laws",
+          "target_url": "https://laws.e-gov.go.jp/api/2/law_data/345AC0000000048",
+          "enabled": true,
+          "adapter": "manual",
+          "target_id": "345AC0000000048",
+          "extraction_targets": [
+            "法令の改廃・施行状態（監視条文は#30の後続整備で確定）"
+          ]
+        }
+      ],
+      "notes": "公式URLは特定済みだが抽出adapter未実装のため手動確認する"
+    },
+    {
+      "tax_id": "light-motor-vehicle-tax",
+      "monitoring_mode": "manual",
+      "enabled": true,
+      "cadence": "monthly",
+      "municipal_scope": "issue_20",
+      "sources": [
+        {
+          "source_id": "egov-laws",
+          "target_url": "https://laws.e-gov.go.jp/api/2/law_data/325AC0000000226",
+          "enabled": true,
+          "adapter": "manual",
+          "target_id": "325AC0000000226",
+          "extraction_targets": [
+            "法令の改廃・施行状態（監視条文は#30の後続整備で確定）"
+          ]
+        }
+      ],
+      "notes": "国法レベルのみ。自治体条例・公式サイト・個別税率は#20で扱う"
+    },
+    {
+      "tax_id": "light-oil-delivery-tax",
+      "monitoring_mode": "manual",
+      "enabled": true,
+      "cadence": "monthly",
+      "municipal_scope": "issue_20",
+      "sources": [
+        {
+          "source_id": "egov-laws",
+          "target_url": "https://laws.e-gov.go.jp/api/2/law_data/325AC0000000226",
+          "enabled": true,
+          "adapter": "manual",
+          "target_id": "325AC0000000226",
+          "extraction_targets": [
+            "法令の改廃・施行状態（監視条文は#30の後続整備で確定）"
+          ]
+        }
+      ],
+      "notes": "国法レベルのみ。自治体条例・公式サイト・個別税率は#20で扱う"
+    },
+    {
+      "tax_id": "liquor-tax",
+      "monitoring_mode": "manual",
+      "enabled": true,
+      "cadence": "monthly",
+      "municipal_scope": "national_only",
+      "sources": [
+        {
+          "source_id": "egov-laws",
+          "target_url": "https://laws.e-gov.go.jp/api/2/law_data/328AC0000000006",
+          "enabled": true,
+          "adapter": "manual",
+          "target_id": "328AC0000000006",
+          "extraction_targets": [
+            "法令の改廃・施行状態（監視条文は#30の後続整備で確定）"
+          ]
+        }
+      ],
+      "notes": "公式URLは特定済みだが抽出adapter未実装のため手動確認する"
+    },
+    {
+      "tax_id": "local-consumption-tax",
+      "monitoring_mode": "manual",
+      "enabled": true,
+      "cadence": "monthly",
+      "municipal_scope": "issue_20",
+      "sources": [
+        {
+          "source_id": "egov-laws",
+          "target_url": "https://laws.e-gov.go.jp/api/2/law_data/325AC0000000226",
+          "enabled": true,
+          "adapter": "manual",
+          "target_id": "325AC0000000226",
+          "extraction_targets": [
+            "法令の改廃・施行状態（監視条文は#30の後続整備で確定）"
+          ]
+        }
+      ],
+      "notes": "国法レベルのみ。自治体条例・公式サイト・個別税率は#20で扱う"
+    },
+    {
+      "tax_id": "local-corporation-tax",
+      "monitoring_mode": "manual",
+      "enabled": true,
+      "cadence": "monthly",
+      "municipal_scope": "national_only",
+      "sources": [
+        {
+          "source_id": "egov-laws",
+          "target_url": "https://laws.e-gov.go.jp/api/2/law_data/426AC0000000011",
+          "enabled": true,
+          "adapter": "manual",
+          "target_id": "426AC0000000011",
+          "extraction_targets": [
+            "法令の改廃・施行状態（監視条文は#30の後続整備で確定）"
+          ]
+        }
+      ],
+      "notes": "公式URLは特定済みだが抽出adapter未実装のため手動確認する"
+    },
+    {
+      "tax_id": "local-gasoline-tax",
+      "monitoring_mode": "manual",
+      "enabled": true,
+      "cadence": "monthly",
+      "municipal_scope": "national_only",
+      "sources": [
+        {
+          "source_id": "egov-laws",
+          "target_url": "https://laws.e-gov.go.jp/api/2/law_data/330AC0000000104",
+          "enabled": true,
+          "adapter": "manual",
+          "target_id": "330AC0000000104",
+          "extraction_targets": [
+            "法令の改廃・施行状態（監視条文は#30の後続整備で確定）"
+          ]
+        }
+      ],
+      "notes": "公式URLは特定済みだが抽出adapter未実装のため手動確認する"
+    },
+    {
+      "tax_id": "local-tobacco-tax",
+      "monitoring_mode": "manual",
+      "enabled": true,
+      "cadence": "monthly",
+      "municipal_scope": "issue_20",
+      "sources": [
+        {
+          "source_id": "egov-laws",
+          "target_url": "https://laws.e-gov.go.jp/api/2/law_data/325AC0000000226",
+          "enabled": true,
+          "adapter": "manual",
+          "target_id": "325AC0000000226",
+          "extraction_targets": [
+            "法令の改廃・施行状態（監視条文は#30の後続整備で確定）"
+          ]
+        }
+      ],
+      "notes": "国法レベルのみ。自治体条例・公式サイト・個別税率は#20で扱う"
+    },
+    {
+      "tax_id": "long-term-care-insurance-premium",
+      "monitoring_mode": "manual",
+      "enabled": true,
+      "cadence": "monthly",
+      "municipal_scope": "national_only",
+      "sources": [
+        {
+          "source_id": "egov-laws",
+          "target_url": "https://laws.e-gov.go.jp/api/2/law_data/409AC0000000123",
+          "enabled": true,
+          "adapter": "manual",
+          "target_id": "409AC0000000123",
+          "extraction_targets": [
+            "法令の改廃・施行状態（監視条文は#30の後続整備で確定）"
+          ]
+        }
+      ],
+      "notes": "公式URLは特定済みだが抽出adapter未実装のため手動確認する"
+    },
+    {
+      "tax_id": "medical-insurance-premium",
+      "monitoring_mode": "manual",
+      "enabled": true,
+      "cadence": "monthly",
+      "municipal_scope": "national_only",
+      "sources": [
+        {
+          "source_id": "egov-laws",
+          "target_url": "https://laws.e-gov.go.jp/api/2/law_data/211AC0000000070",
+          "enabled": true,
+          "adapter": "manual",
+          "target_id": "211AC0000000070",
+          "extraction_targets": [
+            "法令の改廃・施行状態（監視条文は#30の後続整備で確定）"
+          ]
+        },
+        {
+          "source_id": "egov-laws",
+          "target_url": "https://laws.e-gov.go.jp/api/2/law_data/333AC0000000192",
+          "enabled": true,
+          "adapter": "manual",
+          "target_id": "333AC0000000192",
+          "extraction_targets": [
+            "法令の改廃・施行状態（監視条文は#30の後続整備で確定）"
+          ]
+        },
+        {
+          "source_id": "egov-laws",
+          "target_url": "https://laws.e-gov.go.jp/api/2/law_data/357AC0000000080",
+          "enabled": true,
+          "adapter": "manual",
+          "target_id": "357AC0000000080",
+          "extraction_targets": [
+            "法令の改廃・施行状態（監視条文は#30の後続整備で確定）"
+          ]
+        }
+      ],
+      "notes": "公式URLは特定済みだが抽出adapter未実装のため手動確認する"
+    },
+    {
+      "tax_id": "minamata-specified-business-compensation-levy",
+      "monitoring_mode": "manual",
+      "enabled": true,
+      "cadence": "monthly",
+      "municipal_scope": "national_only",
+      "sources": [
+        {
+          "source_id": "egov-laws",
+          "target_url": "https://laws.e-gov.go.jp/api/2/law_data/421AC1000000081",
+          "enabled": true,
+          "adapter": "manual",
+          "target_id": "421AC1000000081",
+          "extraction_targets": [
+            "法令の改廃・施行状態（監視条文は#30の後続整備で確定）"
+          ]
+        }
+      ],
+      "notes": "公式URLは特定済みだが抽出adapter未実装のため手動確認する"
+    },
+    {
+      "tax_id": "mineral-product-tax",
+      "monitoring_mode": "manual",
+      "enabled": true,
+      "cadence": "monthly",
+      "municipal_scope": "issue_20",
+      "sources": [
+        {
+          "source_id": "egov-laws",
+          "target_url": "https://laws.e-gov.go.jp/api/2/law_data/325AC0000000226",
+          "enabled": true,
+          "adapter": "manual",
+          "target_id": "325AC0000000226",
+          "extraction_targets": [
+            "法令の改廃・施行状態（監視条文は#30の後続整備で確定）"
+          ]
+        }
+      ],
+      "notes": "国法レベルのみ。自治体条例・公式サイト・個別税率は#20で扱う"
+    },
+    {
+      "tax_id": "mining-area-tax",
+      "monitoring_mode": "manual",
+      "enabled": true,
+      "cadence": "monthly",
+      "municipal_scope": "issue_20",
+      "sources": [
+        {
+          "source_id": "egov-laws",
+          "target_url": "https://laws.e-gov.go.jp/api/2/law_data/325AC0000000226",
+          "enabled": true,
+          "adapter": "manual",
+          "target_id": "325AC0000000226",
+          "extraction_targets": [
+            "法令の改廃・施行状態（監視条文は#30の後続整備で確定）"
+          ]
+        }
+      ],
+      "notes": "国法レベルのみ。自治体条例・公式サイト・個別税率は#20で扱う"
+    },
+    {
+      "tax_id": "mining-pollution-prevention-fund-contribution",
+      "monitoring_mode": "manual",
+      "enabled": true,
+      "cadence": "monthly",
+      "municipal_scope": "national_only",
+      "sources": [
+        {
+          "source_id": "egov-laws",
+          "target_url": "https://laws.e-gov.go.jp/api/2/law_data/348AC0000000026",
+          "enabled": true,
+          "adapter": "manual",
+          "target_id": "348AC0000000026",
+          "extraction_targets": [
+            "法令の改廃・施行状態（監視条文は#30の後続整備で確定）"
+          ]
+        }
+      ],
+      "notes": "公式URLは特定済みだが抽出adapter未実装のため手動確認する"
+    },
+    {
+      "tax_id": "multipurpose-dam-charge",
+      "monitoring_mode": "manual",
+      "enabled": true,
+      "cadence": "monthly",
+      "municipal_scope": "national_only",
+      "sources": [
+        {
+          "source_id": "egov-laws",
+          "target_url": "https://laws.e-gov.go.jp/api/2/law_data/332AC0000000035",
+          "enabled": true,
+          "adapter": "manual",
+          "target_id": "332AC0000000035",
+          "extraction_targets": [
+            "法令の改廃・施行状態（監視条文は#30の後続整備で確定）"
+          ]
+        }
+      ],
+      "notes": "公式URLは特定済みだが抽出adapter未実装のため手動確認する"
+    },
+    {
+      "tax_id": "national-health-insurance-tax",
+      "monitoring_mode": "manual",
+      "enabled": true,
+      "cadence": "monthly",
+      "municipal_scope": "issue_20",
+      "sources": [
+        {
+          "source_id": "egov-laws",
+          "target_url": "https://laws.e-gov.go.jp/api/2/law_data/325AC0000000226",
+          "enabled": true,
+          "adapter": "manual",
+          "target_id": "325AC0000000226",
+          "extraction_targets": [
+            "法令の改廃・施行状態（監視条文は#30の後続整備で確定）"
+          ]
+        }
+      ],
+      "notes": "国法レベルのみ。自治体条例・公式サイト・個別税率は#20で扱う"
+    },
+    {
+      "tax_id": "non-statutory-ordinary-tax-category",
+      "monitoring_mode": "manual",
+      "enabled": true,
+      "cadence": "monthly",
+      "municipal_scope": "issue_20",
+      "sources": [
+        {
+          "source_id": "egov-laws",
+          "target_url": "https://laws.e-gov.go.jp/api/2/law_data/325AC0000000226",
+          "enabled": true,
+          "adapter": "manual",
+          "target_id": "325AC0000000226",
+          "extraction_targets": [
+            "法令の改廃・施行状態（監視条文は#30の後続整備で確定）"
+          ]
+        }
+      ],
+      "notes": "国法レベルのみ。自治体条例・公式サイト・個別税率は#20で扱う"
+    },
+    {
+      "tax_id": "non-statutory-purpose-tax-category",
+      "monitoring_mode": "manual",
+      "enabled": true,
+      "cadence": "monthly",
+      "municipal_scope": "issue_20",
+      "sources": [
+        {
+          "source_id": "egov-laws",
+          "target_url": "https://laws.e-gov.go.jp/api/2/law_data/325AC0000000226",
+          "enabled": true,
+          "adapter": "manual",
+          "target_id": "325AC0000000226",
+          "extraction_targets": [
+            "法令の改廃・施行状態（監視条文は#30の後続整備で確定）"
+          ]
+        }
+      ],
+      "notes": "国法レベルのみ。自治体条例・公式サイト・個別税率は#20で扱う"
+    },
+    {
+      "tax_id": "nuclear-damage-support-general-charge",
+      "monitoring_mode": "manual",
+      "enabled": true,
+      "cadence": "monthly",
+      "municipal_scope": "national_only",
+      "sources": [
+        {
+          "source_id": "egov-laws",
+          "target_url": "https://laws.e-gov.go.jp/api/2/law_data/423AC0000000094",
+          "enabled": true,
+          "adapter": "manual",
+          "target_id": "423AC0000000094",
+          "extraction_targets": [
+            "法令の改廃・施行状態（監視条文は#30の後続整備で確定）"
+          ]
+        }
+      ],
+      "notes": "公式URLは特定済みだが抽出adapter未実装のため手動確認する"
+    },
+    {
+      "tax_id": "nuclear-damage-support-special-charge",
+      "monitoring_mode": "manual",
+      "enabled": true,
+      "cadence": "monthly",
+      "municipal_scope": "national_only",
+      "sources": [
+        {
+          "source_id": "egov-laws",
+          "target_url": "https://laws.e-gov.go.jp/api/2/law_data/423AC0000000094",
+          "enabled": true,
+          "adapter": "manual",
+          "target_id": "423AC0000000094",
+          "extraction_targets": [
+            "法令の改廃・施行状態（監視条文は#30の後続整備で確定）"
+          ]
+        }
+      ],
+      "notes": "公式URLは特定済みだが抽出adapter未実装のため手動確認する"
+    },
+    {
+      "tax_id": "nuclear-decommissioning-contribution",
+      "monitoring_mode": "manual",
+      "enabled": true,
+      "cadence": "monthly",
+      "municipal_scope": "national_only",
+      "sources": [
+        {
+          "source_id": "egov-laws",
+          "target_url": "https://laws.e-gov.go.jp/api/2/law_data/417AC0000000048",
+          "enabled": true,
+          "adapter": "manual",
+          "target_id": "417AC0000000048",
+          "extraction_targets": [
+            "法令の改廃・施行状態（監視条文は#30の後続整備で確定）"
+          ]
+        }
+      ],
+      "notes": "公式URLは特定済みだが抽出adapter未実装のため手動確認する"
+    },
+    {
+      "tax_id": "participant-protection-trust-charge",
+      "monitoring_mode": "manual",
+      "enabled": true,
+      "cadence": "monthly",
+      "municipal_scope": "national_only",
+      "sources": [
+        {
+          "source_id": "egov-laws",
+          "target_url": "https://laws.e-gov.go.jp/api/2/law_data/413AC0000000075",
+          "enabled": true,
+          "adapter": "manual",
+          "target_id": "413AC0000000075",
+          "extraction_targets": [
+            "法令の改廃・施行状態（監視条文は#30の後続整備で確定）"
+          ]
+        }
+      ],
+      "notes": "公式URLは特定済みだが抽出adapter未実装のため手動確認する"
+    },
+    {
+      "tax_id": "pension-insurance-premium",
+      "monitoring_mode": "manual",
+      "enabled": true,
+      "cadence": "monthly",
+      "municipal_scope": "national_only",
+      "sources": [
+        {
+          "source_id": "egov-laws",
+          "target_url": "https://laws.e-gov.go.jp/api/2/law_data/329AC0000000115",
+          "enabled": true,
+          "adapter": "manual",
+          "target_id": "329AC0000000115",
+          "extraction_targets": [
+            "法令の改廃・施行状態（監視条文は#30の後続整備で確定）"
+          ]
+        },
+        {
+          "source_id": "egov-laws",
+          "target_url": "https://laws.e-gov.go.jp/api/2/law_data/334AC0000000141",
+          "enabled": true,
+          "adapter": "manual",
+          "target_id": "334AC0000000141",
+          "extraction_targets": [
+            "法令の改廃・施行状態（監視条文は#30の後続整備で確定）"
+          ]
+        }
+      ],
+      "notes": "公式URLは特定済みだが抽出adapter未実装のため手動確認する"
+    },
+    {
+      "tax_id": "petroleum-and-coal-tax",
+      "monitoring_mode": "manual",
+      "enabled": true,
+      "cadence": "monthly",
+      "municipal_scope": "national_only",
+      "sources": [
+        {
+          "source_id": "egov-laws",
+          "target_url": "https://laws.e-gov.go.jp/api/2/law_data/353AC0000000025",
+          "enabled": true,
+          "adapter": "manual",
+          "target_id": "353AC0000000025",
+          "extraction_targets": [
+            "法令の改廃・施行状態（監視条文は#30の後続整備で確定）"
+          ]
+        }
+      ],
+      "notes": "公式URLは特定済みだが抽出adapter未実装のため手動確認する"
+    },
+    {
+      "tax_id": "petroleum-gas-tax",
+      "monitoring_mode": "manual",
+      "enabled": true,
+      "cadence": "monthly",
+      "municipal_scope": "national_only",
+      "sources": [
+        {
+          "source_id": "egov-laws",
+          "target_url": "https://laws.e-gov.go.jp/api/2/law_data/340AC0000000156",
+          "enabled": true,
+          "adapter": "manual",
+          "target_id": "340AC0000000156",
+          "extraction_targets": [
+            "法令の改廃・施行状態（監視条文は#30の後続整備で確定）"
+          ]
+        }
+      ],
+      "notes": "公式URLは特定済みだが抽出adapter未実装のため手動確認する"
+    },
+    {
+      "tax_id": "pharmaceutical-safety-contribution",
+      "monitoring_mode": "manual",
+      "enabled": true,
+      "cadence": "monthly",
+      "municipal_scope": "national_only",
+      "sources": [
+        {
+          "source_id": "egov-laws",
+          "target_url": "https://laws.e-gov.go.jp/api/2/law_data/414AC0000000192",
+          "enabled": true,
+          "adapter": "manual",
+          "target_id": "414AC0000000192",
+          "extraction_targets": [
+            "法令の改廃・施行状態（監視条文は#30の後続整備で確定）"
+          ]
+        }
+      ],
+      "notes": "公式URLは特定済みだが抽出adapter未実装のため手動確認する"
+    },
+    {
+      "tax_id": "policyholder-protection-fund-charge",
+      "monitoring_mode": "manual",
+      "enabled": true,
+      "cadence": "monthly",
+      "municipal_scope": "national_only",
+      "sources": [
+        {
+          "source_id": "egov-laws",
+          "target_url": "https://laws.e-gov.go.jp/api/2/law_data/407AC0000000105",
+          "enabled": true,
+          "adapter": "manual",
+          "target_id": "407AC0000000105",
+          "extraction_targets": [
+            "法令の改廃・施行状態（監視条文は#30の後続整備で確定）"
+          ]
+        }
+      ],
+      "notes": "公式URLは特定済みだが抽出adapter未実装のため手動確認する"
+    },
+    {
+      "tax_id": "pollution-load-levy",
+      "monitoring_mode": "manual",
+      "enabled": true,
+      "cadence": "monthly",
+      "municipal_scope": "national_only",
+      "sources": [
+        {
+          "source_id": "egov-laws",
+          "target_url": "https://laws.e-gov.go.jp/api/2/law_data/348AC0000000111",
+          "enabled": true,
+          "adapter": "manual",
+          "target_id": "348AC0000000111",
+          "extraction_targets": [
+            "法令の改廃・施行状態（監視条文は#30の後続整備で確定）"
+          ]
+        }
+      ],
+      "notes": "公式URLは特定済みだが抽出adapter未実装のため手動確認する"
+    },
+    {
+      "tax_id": "pollution-prevention-project-business-charge",
+      "monitoring_mode": "manual",
+      "enabled": true,
+      "cadence": "monthly",
+      "municipal_scope": "national_only",
+      "sources": [
+        {
+          "source_id": "egov-laws",
+          "target_url": "https://laws.e-gov.go.jp/api/2/law_data/345AC0000000133",
+          "enabled": true,
+          "adapter": "manual",
+          "target_id": "345AC0000000133",
+          "extraction_targets": [
+            "法令の改廃・施行状態（監視条文は#30の後続整備で確定）"
+          ]
+        }
+      ],
+      "notes": "公式URLは特定済みだが抽出adapter未実装のため手動確認する"
+    },
+    {
+      "tax_id": "port-environment-improvement-charge",
+      "monitoring_mode": "manual",
+      "enabled": true,
+      "cadence": "monthly",
+      "municipal_scope": "national_only",
+      "sources": [
+        {
+          "source_id": "egov-laws",
+          "target_url": "https://laws.e-gov.go.jp/api/2/law_data/325AC0000000218",
+          "enabled": true,
+          "adapter": "manual",
+          "target_id": "325AC0000000218",
+          "extraction_targets": [
+            "法令の改廃・施行状態（監視条文は#30の後続整備で確定）"
+          ]
+        }
+      ],
+      "notes": "公式URLは特定済みだが抽出adapter未実装のため手動確認する"
+    },
+    {
+      "tax_id": "postal-network-support-contribution",
+      "monitoring_mode": "manual",
+      "enabled": true,
+      "cadence": "monthly",
+      "municipal_scope": "national_only",
+      "sources": [
+        {
+          "source_id": "egov-laws",
+          "target_url": "https://laws.e-gov.go.jp/api/2/law_data/417AC0000000101",
+          "enabled": true,
+          "adapter": "manual",
+          "target_id": "417AC0000000101",
+          "extraction_targets": [
+            "法令の改廃・施行状態（監視条文は#30の後続整備で確定）"
+          ]
+        }
+      ],
+      "notes": "公式URLは特定済みだが抽出adapter未実装のため手動確認する"
+    },
+    {
+      "tax_id": "postal-transport-consignment-compensation",
+      "monitoring_mode": "manual",
+      "enabled": true,
+      "cadence": "monthly",
+      "municipal_scope": "national_only",
+      "sources": [
+        {
+          "source_id": "egov-laws",
+          "target_url": "https://laws.e-gov.go.jp/api/2/law_data/324AC0000000284",
+          "enabled": true,
+          "adapter": "manual",
+          "target_id": "324AC0000000284",
+          "extraction_targets": [
+            "法令の改廃・施行状態（監視条文は#30の後続整備で確定）"
+          ]
+        }
+      ],
+      "notes": "公式URLは特定済みだが抽出adapter未実装のため手動確認する"
+    },
+    {
+      "tax_id": "power-development-promotion-tax",
+      "monitoring_mode": "manual",
+      "enabled": true,
+      "cadence": "monthly",
+      "municipal_scope": "national_only",
+      "sources": [
+        {
+          "source_id": "egov-laws",
+          "target_url": "https://laws.e-gov.go.jp/api/2/law_data/349AC0000000079",
+          "enabled": true,
+          "adapter": "manual",
+          "target_id": "349AC0000000079",
+          "extraction_targets": [
+            "法令の改廃・施行状態（監視条文は#30の後続整備で確定）"
+          ]
+        }
+      ],
+      "notes": "公式URLは特定済みだが抽出adapter未実装のため手動確認する"
+    },
+    {
+      "tax_id": "private-recording-compensation",
+      "monitoring_mode": "manual",
+      "enabled": true,
+      "cadence": "monthly",
+      "municipal_scope": "national_only",
+      "sources": [
+        {
+          "source_id": "egov-laws",
+          "target_url": "https://laws.e-gov.go.jp/api/2/law_data/345AC0000000048",
+          "enabled": true,
+          "adapter": "manual",
+          "target_id": "345AC0000000048",
+          "extraction_targets": [
+            "法令の改廃・施行状態（監視条文は#30の後続整備で確定）"
+          ]
+        }
+      ],
+      "notes": "公式URLは特定済みだが抽出adapter未実装のため手動確認する"
+    },
+    {
+      "tax_id": "railway-barrier-free-fee",
+      "monitoring_mode": "manual",
+      "enabled": true,
+      "cadence": "monthly",
+      "municipal_scope": "national_only",
+      "sources": [
+        {
+          "source_id": "egov-laws",
+          "target_url": "https://laws.e-gov.go.jp/api/2/law_data/361AC0000000092",
+          "enabled": true,
+          "adapter": "manual",
+          "target_id": "361AC0000000092",
+          "extraction_targets": [
+            "法令の改廃・施行状態（監視条文は#30の後続整備で確定）"
+          ]
+        }
+      ],
+      "notes": "公式URLは特定済みだが抽出adapter未実装のため手動確認する"
+    },
+    {
+      "tax_id": "real-estate-acquisition-tax",
+      "monitoring_mode": "manual",
+      "enabled": true,
+      "cadence": "monthly",
+      "municipal_scope": "issue_20",
+      "sources": [
+        {
+          "source_id": "egov-laws",
+          "target_url": "https://laws.e-gov.go.jp/api/2/law_data/325AC0000000226",
+          "enabled": true,
+          "adapter": "manual",
+          "target_id": "325AC0000000226",
+          "extraction_targets": [
+            "法令の改廃・施行状態（監視条文は#30の後続整備で確定）"
+          ]
+        }
+      ],
+      "notes": "国法レベルのみ。自治体条例・公式サイト・個別税率は#20で扱う"
+    },
+    {
+      "tax_id": "reconstruction-special-income-tax",
+      "monitoring_mode": "manual",
+      "enabled": true,
+      "cadence": "monthly",
+      "municipal_scope": "national_only",
+      "sources": [
+        {
+          "source_id": "egov-laws",
+          "target_url": "https://laws.e-gov.go.jp/api/2/law_data/423AC0000000117",
+          "enabled": true,
+          "adapter": "manual",
+          "target_id": "423AC0000000117",
+          "extraction_targets": [
+            "法令の改廃・施行状態（監視条文は#30の後続整備で確定）"
+          ]
+        }
+      ],
+      "notes": "公式URLは特定済みだが抽出adapter未実装のため手動確認する"
+    },
+    {
+      "tax_id": "regional-economy-revitalization-contribution",
+      "monitoring_mode": "manual",
+      "enabled": true,
+      "cadence": "monthly",
+      "municipal_scope": "national_only",
+      "sources": [
+        {
+          "source_id": "egov-laws",
+          "target_url": "https://laws.e-gov.go.jp/api/2/law_data/421AC0000000063",
+          "enabled": true,
+          "adapter": "manual",
+          "target_id": "421AC0000000063",
+          "extraction_targets": [
+            "法令の改廃・施行状態（監視条文は#30の後続整備で確定）"
+          ]
+        }
+      ],
+      "notes": "公式URLは特定済みだが抽出adapter未実装のため手動確認する"
+    },
+    {
+      "tax_id": "registration-and-license-tax",
+      "monitoring_mode": "manual",
+      "enabled": true,
+      "cadence": "monthly",
+      "municipal_scope": "national_only",
+      "sources": [
+        {
+          "source_id": "egov-laws",
+          "target_url": "https://laws.e-gov.go.jp/api/2/law_data/342AC0000000035",
+          "enabled": true,
+          "adapter": "manual",
+          "target_id": "342AC0000000035",
+          "extraction_targets": [
+            "法令の改廃・施行状態（監視条文は#30の後続整備で確定）"
+          ]
+        }
+      ],
+      "notes": "公式URLは特定済みだが抽出adapter未実装のため手動確認する"
+    },
+    {
+      "tax_id": "renewable-energy-surcharge",
+      "monitoring_mode": "manual",
+      "enabled": true,
+      "cadence": "monthly",
+      "municipal_scope": "national_only",
+      "sources": [
+        {
+          "source_id": "egov-laws",
+          "target_url": "https://laws.e-gov.go.jp/api/2/law_data/423AC0000000108",
+          "enabled": true,
+          "adapter": "manual",
+          "target_id": "423AC0000000108",
+          "extraction_targets": [
+            "法令の改廃・施行状態（監視条文は#30の後続整備で確定）"
+          ]
+        }
+      ],
+      "notes": "公式URLは特定済みだが抽出adapter未実装のため手動確認する"
+    },
+    {
+      "tax_id": "reprocessing-contribution",
+      "monitoring_mode": "manual",
+      "enabled": true,
+      "cadence": "monthly",
+      "municipal_scope": "national_only",
+      "sources": [
+        {
+          "source_id": "egov-laws",
+          "target_url": "https://laws.e-gov.go.jp/api/2/law_data/417AC0000000048",
+          "enabled": true,
+          "adapter": "manual",
+          "target_id": "417AC0000000048",
+          "extraction_targets": [
+            "法令の改廃・施行状態（監視条文は#30の後続整備で確定）"
+          ]
+        }
+      ],
+      "notes": "公式URLは特定済みだが抽出adapter未実装のため手動確認する"
+    },
+    {
+      "tax_id": "resident-tax",
+      "monitoring_mode": "manual",
+      "enabled": true,
+      "cadence": "monthly",
+      "municipal_scope": "issue_20",
+      "sources": [
+        {
+          "source_id": "egov-laws",
+          "target_url": "https://laws.e-gov.go.jp/api/2/law_data/325AC0000000226",
+          "enabled": true,
+          "adapter": "manual",
+          "target_id": "325AC0000000226",
+          "extraction_targets": [
+            "法令の改廃・施行状態（監視条文は#30の後続整備で確定）"
+          ]
+        }
+      ],
+      "notes": "国法レベルのみ。自治体条例・公式サイト・個別税率は#20で扱う"
+    },
+    {
+      "tax_id": "residential-land-development-tax",
+      "monitoring_mode": "manual",
+      "enabled": true,
+      "cadence": "monthly",
+      "municipal_scope": "issue_20",
+      "sources": [
+        {
+          "source_id": "egov-laws",
+          "target_url": "https://laws.e-gov.go.jp/api/2/law_data/325AC0000000226",
+          "enabled": true,
+          "adapter": "manual",
+          "target_id": "325AC0000000226",
+          "extraction_targets": [
+            "法令の改廃・施行状態（監視条文は#30の後続整備で確定）"
+          ]
+        }
+      ],
+      "notes": "国法レベルのみ。自治体条例・公式サイト・個別税率は#20で扱う"
+    },
+    {
+      "tax_id": "special-corporate-enterprise-tax",
+      "monitoring_mode": "manual",
+      "enabled": true,
+      "cadence": "monthly",
+      "municipal_scope": "national_only",
+      "sources": [
+        {
+          "source_id": "egov-laws",
+          "target_url": "https://laws.e-gov.go.jp/api/2/law_data/431AC0000000004",
+          "enabled": true,
+          "adapter": "manual",
+          "target_id": "431AC0000000004",
+          "extraction_targets": [
+            "法令の改廃・施行状態（監視条文は#30の後続整備で確定）"
+          ]
+        }
+      ],
+      "notes": "公式URLは特定済みだが抽出adapter未実装のため手動確認する"
+    },
+    {
+      "tax_id": "special-landholding-tax",
+      "monitoring_mode": "manual",
+      "enabled": true,
+      "cadence": "monthly",
+      "municipal_scope": "issue_20",
+      "sources": [
+        {
+          "source_id": "egov-laws",
+          "target_url": "https://laws.e-gov.go.jp/api/2/law_data/325AC0000000226",
+          "enabled": true,
+          "adapter": "manual",
+          "target_id": "325AC0000000226",
+          "extraction_targets": [
+            "法令の改廃・施行状態（監視条文は#30の後続整備で確定）"
+          ]
+        }
+      ],
+      "notes": "国法レベルのみ。自治体条例・公式サイト・個別税率は#20で扱う"
+    },
+    {
+      "tax_id": "special-tobacco-tax",
+      "monitoring_mode": "manual",
+      "enabled": true,
+      "cadence": "monthly",
+      "municipal_scope": "national_only",
+      "sources": [
+        {
+          "source_id": "egov-laws",
+          "target_url": "https://laws.e-gov.go.jp/api/2/law_data/410AC0000000137",
+          "enabled": true,
+          "adapter": "manual",
+          "target_id": "410AC0000000137",
+          "extraction_targets": [
+            "法令の改廃・施行状態（監視条文は#30の後続整備で確定）"
+          ]
+        }
+      ],
+      "notes": "公式URLは特定済みだが抽出adapter未実装のため手動確認する"
+    },
+    {
+      "tax_id": "special-tonnage-tax",
+      "monitoring_mode": "manual",
+      "enabled": true,
+      "cadence": "monthly",
+      "municipal_scope": "national_only",
+      "sources": [
+        {
+          "source_id": "egov-laws",
+          "target_url": "https://laws.e-gov.go.jp/api/2/law_data/332AC0000000038",
+          "enabled": true,
+          "adapter": "manual",
+          "target_id": "332AC0000000038",
+          "extraction_targets": [
+            "法令の改廃・施行状態（監視条文は#30の後続整備で確定）"
+          ]
+        }
+      ],
+      "notes": "公式URLは特定済みだが抽出adapter未実装のため手動確認する"
+    },
+    {
+      "tax_id": "specified-pollution-levy",
+      "monitoring_mode": "manual",
+      "enabled": true,
+      "cadence": "monthly",
+      "municipal_scope": "national_only",
+      "sources": [
+        {
+          "source_id": "egov-laws",
+          "target_url": "https://laws.e-gov.go.jp/api/2/law_data/348AC0000000111",
+          "enabled": true,
+          "adapter": "manual",
+          "target_id": "348AC0000000111",
+          "extraction_targets": [
+            "法令の改廃・施行状態（監視条文は#30の後続整備で確定）"
+          ]
+        }
+      ],
+      "notes": "公式URLは特定済みだが抽出adapter未実装のため手動確認する"
+    },
+    {
+      "tax_id": "stamp-tax",
+      "monitoring_mode": "manual",
+      "enabled": true,
+      "cadence": "monthly",
+      "municipal_scope": "national_only",
+      "sources": [
+        {
+          "source_id": "egov-laws",
+          "target_url": "https://laws.e-gov.go.jp/api/2/law_data/342AC0000000023",
+          "enabled": true,
+          "adapter": "manual",
+          "target_id": "342AC0000000023",
+          "extraction_targets": [
+            "法令の改廃・施行状態（監視条文は#30の後続整備で確定）"
+          ]
+        }
+      ],
+      "notes": "公式URLは特定済みだが抽出adapter未実装のため手動確認する"
+    },
+    {
+      "tax_id": "supplementary-nuclear-damage-general-charge",
+      "monitoring_mode": "manual",
+      "enabled": true,
+      "cadence": "monthly",
+      "municipal_scope": "national_only",
+      "sources": [
+        {
+          "source_id": "egov-laws",
+          "target_url": "https://laws.e-gov.go.jp/api/2/law_data/426AC0000000133",
+          "enabled": true,
+          "adapter": "manual",
+          "target_id": "426AC0000000133",
+          "extraction_targets": [
+            "法令の改廃・施行状態（監視条文は#30の後続整備で確定）"
+          ]
+        }
+      ],
+      "notes": "公式URLは特定済みだが抽出adapter未実装のため手動確認する"
+    },
+    {
+      "tax_id": "supplementary-nuclear-damage-special-charge",
+      "monitoring_mode": "manual",
+      "enabled": true,
+      "cadence": "monthly",
+      "municipal_scope": "national_only",
+      "sources": [
+        {
+          "source_id": "egov-laws",
+          "target_url": "https://laws.e-gov.go.jp/api/2/law_data/426AC0000000133",
+          "enabled": true,
+          "adapter": "manual",
+          "target_id": "426AC0000000133",
+          "extraction_targets": [
+            "法令の改廃・施行状態（監視条文は#30の後続整備で確定）"
+          ]
+        }
+      ],
+      "notes": "公式URLは特定済みだが抽出adapter未実装のため手動確認する"
+    },
+    {
+      "tax_id": "supplementary-oil-pollution-fund-annual-contribution",
+      "monitoring_mode": "manual",
+      "enabled": true,
+      "cadence": "monthly",
+      "municipal_scope": "national_only",
+      "sources": [
+        {
+          "source_id": "egov-laws",
+          "target_url": "https://laws.e-gov.go.jp/api/2/law_data/350AC0000000095",
+          "enabled": true,
+          "adapter": "manual",
+          "target_id": "350AC0000000095",
+          "extraction_targets": [
+            "法令の改廃・施行状態（監視条文は#30の後続整備で確定）"
+          ]
+        }
+      ],
+      "notes": "公式URLは特定済みだが抽出adapter未実装のため手動確認する"
+    },
+    {
+      "tax_id": "taxi-center-business-charge",
+      "monitoring_mode": "manual",
+      "enabled": true,
+      "cadence": "monthly",
+      "municipal_scope": "national_only",
+      "sources": [
+        {
+          "source_id": "egov-laws",
+          "target_url": "https://laws.e-gov.go.jp/api/2/law_data/421AC0000000064",
+          "enabled": true,
+          "adapter": "manual",
+          "target_id": "421AC0000000064",
+          "extraction_targets": [
+            "法令の改廃・施行状態（監視条文は#30の後続整備で確定）"
+          ]
+        }
+      ],
+      "notes": "公式URLは特定済みだが抽出adapter未実装のため手動確認する"
+    },
+    {
+      "tax_id": "telephone-accessibility-charge",
+      "monitoring_mode": "manual",
+      "enabled": true,
+      "cadence": "monthly",
+      "municipal_scope": "national_only",
+      "sources": [
+        {
+          "source_id": "egov-laws",
+          "target_url": "https://laws.e-gov.go.jp/api/2/law_data/502AC0000000053",
+          "enabled": true,
+          "adapter": "manual",
+          "target_id": "502AC0000000053",
+          "extraction_targets": [
+            "法令の改廃・施行状態（監視条文は#30の後続整備で確定）"
+          ]
+        }
+      ],
+      "notes": "公式URLは特定済みだが抽出adapter未実装のため手動確認する"
+    },
+    {
+      "tax_id": "tobacco-tax",
+      "monitoring_mode": "manual",
+      "enabled": true,
+      "cadence": "monthly",
+      "municipal_scope": "national_only",
+      "sources": [
+        {
+          "source_id": "egov-laws",
+          "target_url": "https://laws.e-gov.go.jp/api/2/law_data/359AC0000000072",
+          "enabled": true,
+          "adapter": "manual",
+          "target_id": "359AC0000000072",
+          "extraction_targets": [
+            "法令の改廃・施行状態（監視条文は#30の後続整備で確定）"
+          ]
+        }
+      ],
+      "notes": "公式URLは特定済みだが抽出adapter未実装のため手動確認する"
+    },
+    {
+      "tax_id": "tonnage-tax",
+      "monitoring_mode": "manual",
+      "enabled": true,
+      "cadence": "monthly",
+      "municipal_scope": "national_only",
+      "sources": [
+        {
+          "source_id": "egov-laws",
+          "target_url": "https://laws.e-gov.go.jp/api/2/law_data/332AC0000000037",
+          "enabled": true,
+          "adapter": "manual",
+          "target_id": "332AC0000000037",
+          "extraction_targets": [
+            "法令の改廃・施行状態（監視条文は#30の後続整備で確定）"
+          ]
+        }
+      ],
+      "notes": "公式URLは特定済みだが抽出adapter未実装のため手動確認する"
+    },
+    {
+      "tax_id": "tru-waste-disposal-contribution",
+      "monitoring_mode": "manual",
+      "enabled": true,
+      "cadence": "monthly",
+      "municipal_scope": "national_only",
+      "sources": [
+        {
+          "source_id": "egov-laws",
+          "target_url": "https://laws.e-gov.go.jp/api/2/law_data/412AC0000000117",
+          "enabled": true,
+          "adapter": "manual",
+          "target_id": "412AC0000000117",
+          "extraction_targets": [
+            "法令の改廃・施行状態（監視条文は#30の後続整備で確定）"
+          ]
+        }
+      ],
+      "notes": "公式URLは特定済みだが抽出adapter未実装のため手動確認する"
+    },
+    {
+      "tax_id": "universal-service-fee",
+      "monitoring_mode": "manual",
+      "enabled": true,
+      "cadence": "monthly",
+      "municipal_scope": "national_only",
+      "sources": [
+        {
+          "source_id": "egov-laws",
+          "target_url": "https://laws.e-gov.go.jp/api/2/law_data/359AC0000000086",
+          "enabled": true,
+          "adapter": "manual",
+          "target_id": "359AC0000000086",
+          "extraction_targets": [
+            "法令の改廃・施行状態（監視条文は#30の後続整備で確定）"
+          ]
+        }
+      ],
+      "notes": "公式URLは特定済みだが抽出adapter未実装のため手動確認する"
+    },
+    {
+      "tax_id": "utility-tunnel-management-charge",
+      "monitoring_mode": "manual",
+      "enabled": true,
+      "cadence": "monthly",
+      "municipal_scope": "national_only",
+      "sources": [
+        {
+          "source_id": "egov-laws",
+          "target_url": "https://laws.e-gov.go.jp/api/2/law_data/407AC0000000039",
+          "enabled": true,
+          "adapter": "manual",
+          "target_id": "407AC0000000039",
+          "extraction_targets": [
+            "法令の改廃・施行状態（監視条文は#30の後続整備で確定）"
+          ]
+        }
+      ],
+      "notes": "公式URLは特定済みだが抽出adapter未実装のため手動確認する"
+    },
+    {
+      "tax_id": "utility-tunnel-other-occupant-charge",
+      "monitoring_mode": "manual",
+      "enabled": true,
+      "cadence": "monthly",
+      "municipal_scope": "national_only",
+      "sources": [
+        {
+          "source_id": "egov-laws",
+          "target_url": "https://laws.e-gov.go.jp/api/2/law_data/407AC0000000039",
+          "enabled": true,
+          "adapter": "manual",
+          "target_id": "407AC0000000039",
+          "extraction_targets": [
+            "法令の改廃・施行状態（監視条文は#30の後続整備で確定）"
+          ]
+        }
+      ],
+      "notes": "公式URLは特定済みだが抽出adapter未実装のため手動確認する"
+    },
+    {
+      "tax_id": "utility-tunnel-planned-occupant-construction-charge",
+      "monitoring_mode": "manual",
+      "enabled": true,
+      "cadence": "monthly",
+      "municipal_scope": "national_only",
+      "sources": [
+        {
+          "source_id": "egov-laws",
+          "target_url": "https://laws.e-gov.go.jp/api/2/law_data/407AC0000000039",
+          "enabled": true,
+          "adapter": "manual",
+          "target_id": "407AC0000000039",
+          "extraction_targets": [
+            "法令の改廃・施行状態（監視条文は#30の後続整備で確定）"
+          ]
+        }
+      ],
+      "notes": "公式URLは特定済みだが抽出adapter未実装のため手動確認する"
+    },
+    {
+      "tax_id": "water-and-land-benefit-tax",
+      "monitoring_mode": "manual",
+      "enabled": true,
+      "cadence": "monthly",
+      "municipal_scope": "issue_20",
+      "sources": [
+        {
+          "source_id": "egov-laws",
+          "target_url": "https://laws.e-gov.go.jp/api/2/law_data/325AC0000000226",
+          "enabled": true,
+          "adapter": "manual",
+          "target_id": "325AC0000000226",
+          "extraction_targets": [
+            "法令の改廃・施行状態（監視条文は#30の後続整備で確定）"
+          ]
+        }
+      ],
+      "notes": "国法レベルのみ。自治体条例・公式サイト・個別税率は#20で扱う"
+    },
+    {
+      "tax_id": "water-resources-facility-user-charge",
+      "monitoring_mode": "manual",
+      "enabled": true,
+      "cadence": "monthly",
+      "municipal_scope": "national_only",
+      "sources": [
+        {
+          "source_id": "egov-laws",
+          "target_url": "https://laws.e-gov.go.jp/api/2/law_data/414AC0000000182",
+          "enabled": true,
+          "adapter": "manual",
+          "target_id": "414AC0000000182",
+          "extraction_targets": [
+            "法令の改廃・施行状態（監視条文は#30の後続整備で確定）"
+          ]
+        }
+      ],
+      "notes": "公式URLは特定済みだが抽出adapter未実装のため手動確認する"
+    },
+    {
+      "tax_id": "workers-compensation-insurance-premium",
+      "monitoring_mode": "manual",
+      "enabled": true,
+      "cadence": "monthly",
+      "municipal_scope": "national_only",
+      "sources": [
+        {
+          "source_id": "egov-laws",
+          "target_url": "https://laws.e-gov.go.jp/api/2/law_data/322AC0000000050",
+          "enabled": true,
+          "adapter": "manual",
+          "target_id": "322AC0000000050",
+          "extraction_targets": [
+            "法令の改廃・施行状態（監視条文は#30の後続整備で確定）"
+          ]
+        }
+      ],
+      "notes": "公式URLは特定済みだが抽出adapter未実装のため手動確認する"
+    }
+  ]
+}
