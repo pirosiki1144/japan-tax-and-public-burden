@@ -20,17 +20,17 @@ export async function buildInitialMasterSelection(repositoryRoot) {
   }
   assertUnique(candidates, "candidate_id");
 
-  const burdenIds = new Set();
+  const burdensById = new Map();
   for (const entry of await readdir(join(repositoryRoot, "data/burdens"), { withFileTypes: true })) {
     if (!entry.isFile() || !/\.ya?ml$/.test(entry.name)) continue;
     const burden = await readYaml(join(repositoryRoot, "data/burdens", entry.name));
-    for (const record of Array.isArray(burden) ? burden : [burden]) burdenIds.add(record.tax_id);
+    for (const record of Array.isArray(burden) ? burden : [burden]) burdensById.set(record.tax_id, record);
   }
 
   const merges = new Map(configuration.existing_merges.map((decision) => [decision.candidate_id, decision]));
   for (const decision of merges.values()) {
     if (!candidates.some(({ candidate_id }) => candidate_id === decision.candidate_id)) throw new Error(`Unknown merge candidate ${decision.candidate_id}`);
-    if (!burdenIds.has(decision.existing_tax_id)) throw new Error(`Unknown existing tax_id ${decision.existing_tax_id}`);
+    if (!burdensById.has(decision.existing_tax_id)) throw new Error(`Unknown existing tax_id ${decision.existing_tax_id}`);
   }
   for (const review of configuration.identity_reviews) {
     for (const id of review.candidate_ids) if (!candidates.some(({ candidate_id }) => candidate_id === id)) throw new Error(`Unknown identity-review candidate ${id}`);
@@ -49,7 +49,8 @@ export async function buildInitialMasterSelection(repositoryRoot) {
   const records = candidates.map((candidate) => {
     const merge = merges.get(candidate.candidate_id);
     const lawSource = lawSources.get(candidate.candidate_id);
-    const disposition = merge ? "merge_existing" : configuration.default_decision.disposition;
+    const disposition = merge ? "merge_existing" : lawSource ? "insert" : configuration.default_decision.disposition;
+    const currentStatus = merge ? burdensById.get(merge.existing_tax_id).current_status : lawSource ? "active" : null;
     return {
       candidate_id: candidate.candidate_id,
       candidate_file: candidate.candidate_file,
@@ -59,23 +60,19 @@ export async function buildInitialMasterSelection(repositoryRoot) {
       identity_basis: merge?.reason ?? "候補間の名称完全一致はなく、候補IDを永続ID案として維持する",
       burden_type: candidate.burden_type,
       coverage_status: candidate.coverage_status,
-      current_status: candidate.current_status,
+      current_status: currentStatus,
       evidence_gaps: candidate.evidence_gaps,
-      source_urls: candidate.source_urls,
-      status_source_urls: lawSource?.source_urls ?? [],
+      source_urls: [...new Set([...candidate.source_urls, ...(lawSource?.source_urls ?? [])])],
       law_titles: lawSource?.law_titles ?? [],
       law_source_status: lawSource ? "found" : "not_found",
-      law_source_note: lawSource ? "e-Gov法令API Version 2で法令IDを確認" : "候補資料の名称からe-Gov法令API Version 2の現行法令を一意に特定できない",
-      law_sources_verified_at: lawSource ? configuration.law_sources_verified_at : null,
-      current_status_resolution: merge ? "resolved_by_existing_canonical" : lawSource ? "law_found_article_check_deferred_to_issue_30" : "law_source_not_found",
-      verified_at: candidate.verified_at,
-      decision_reason: merge?.reason ?? configuration.default_decision.reason
+      verified_at: lawSource ? configuration.law_sources_verified_at : candidate.verified_at,
+      decision_reason: merge?.reason ?? (lawSource ? "e-Gov法令APIで法令の施行を確認し、初期データでは適用中とみなす" : configuration.default_decision.reason)
     };
   }).sort((left, right) => left.candidate_id.localeCompare(right.candidate_id, "en"));
 
   const proposedNewIds = records.filter(({ disposition }) => disposition !== "merge_existing");
   assertUnique(proposedNewIds, "proposed_tax_id");
-  for (const record of proposedNewIds) if (burdenIds.has(record.proposed_tax_id)) throw new Error(`Proposed tax_id already exists: ${record.proposed_tax_id}`);
+  for (const record of proposedNewIds) if (burdensById.has(record.proposed_tax_id)) throw new Error(`Proposed tax_id already exists: ${record.proposed_tax_id}`);
 
   const count = (disposition) => records.filter((record) => record.disposition === disposition).length;
   return {
@@ -83,6 +80,7 @@ export async function buildInitialMasterSelection(repositoryRoot) {
     dataset: "initial-master-selection",
     issue: configuration.issue,
     decided_at: configuration.decided_at,
+    law_sources_verified_at: configuration.law_sources_verified_at,
     completeness_note: "収集済み候補119件に対する判定であり、日本の公的負担の完全一覧ではない",
     counts: {
       candidates: records.length,
