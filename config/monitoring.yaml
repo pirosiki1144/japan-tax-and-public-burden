@@ -155,11 +155,74 @@
           "enabled": true,
           "adapter": "manual",
           "target_id": "325AC0000000226",
+          "change_detection": {
+            "document_format": "egov_law_api_v2_json",
+            "revision_id_path": "/revision_info/law_revision_id",
+            "updated_at_path": "/revision_info/updated",
+            "comparison": "selected_nodes_sha256"
+          },
           "extraction_targets": [
-            "地方税法第145条：自動車の定義",
-            "地方税法第146条から第148条：納税義務者、みなし課税、非課税",
-            "地方税法第154条：車種・用途・排気量等ごとの標準税率",
-            "地方税法第155条から第158条：賦課期日、納期、月割、徴収方法"
+            {
+              "target_id": "automobile-tax-definition",
+              "description": "地方税法第145条：自動車の定義",
+              "selector": {
+                "root_path": "/law_full_text",
+                "scope_tag": "MainProvision",
+                "tag": "Article",
+                "attribute": "Num",
+                "values": [
+                  "145"
+                ]
+              },
+              "comparison": "canonical_json_sha256"
+            },
+            {
+              "target_id": "automobile-tax-liability-and-exemption",
+              "description": "地方税法第146条から第148条：納税義務者、みなし課税、非課税",
+              "selector": {
+                "root_path": "/law_full_text",
+                "scope_tag": "MainProvision",
+                "tag": "Article",
+                "attribute": "Num",
+                "values": [
+                  "146",
+                  "147",
+                  "148"
+                ]
+              },
+              "comparison": "canonical_json_sha256"
+            },
+            {
+              "target_id": "automobile-tax-standard-rates",
+              "description": "地方税法第154条：車種・用途・排気量等ごとの標準税率",
+              "selector": {
+                "root_path": "/law_full_text",
+                "scope_tag": "MainProvision",
+                "tag": "Article",
+                "attribute": "Num",
+                "values": [
+                  "154"
+                ]
+              },
+              "comparison": "canonical_json_sha256"
+            },
+            {
+              "target_id": "automobile-tax-assessment-and-collection",
+              "description": "地方税法第155条から第158条：賦課期日、納期、月割、徴収方法",
+              "selector": {
+                "root_path": "/law_full_text",
+                "scope_tag": "MainProvision",
+                "tag": "Article",
+                "attribute": "Num",
+                "values": [
+                  "155",
+                  "156",
+                  "157",
+                  "158"
+                ]
+              },
+              "comparison": "canonical_json_sha256"
+            }
           ]
         }
       ],
@@ -398,11 +461,59 @@
           "enabled": true,
           "adapter": "egov_law_article_facts",
           "target_id": "363AC0000000108",
+          "change_detection": {
+            "document_format": "egov_law_api_v2_json",
+            "revision_id_path": "/revision_info/law_revision_id",
+            "updated_at_path": "/revision_info/updated",
+            "comparison": "selected_nodes_sha256"
+          },
           "extraction_targets": [
-            "消費税法第1条・第2条：制度目的、課税資産・軽減対象課税資産等の定義",
-            "消費税法第4条から第6条：課税対象、納税義務者、非課税",
-            "消費税法第28条・第29条：課税標準、消費税率",
-            "消費税法別表第1・第1の2：軽減税率対象"
+            {
+              "target_id": "consumption-tax-purpose-and-definitions",
+              "description": "消費税法第1条・第2条：制度目的、課税資産・軽減対象課税資産等の定義",
+              "selector": {
+                "root_path": "/law_full_text",
+                "scope_tag": "MainProvision",
+                "tag": "Article",
+                "attribute": "Num",
+                "values": [
+                  "1",
+                  "2"
+                ]
+              },
+              "comparison": "canonical_json_sha256"
+            },
+            {
+              "target_id": "consumption-tax-scope-liability-and-exemption",
+              "description": "消費税法第4条から第6条：課税対象、納税義務者、非課税",
+              "selector": {
+                "root_path": "/law_full_text",
+                "scope_tag": "MainProvision",
+                "tag": "Article",
+                "attribute": "Num",
+                "values": [
+                  "4",
+                  "5",
+                  "6"
+                ]
+              },
+              "comparison": "canonical_json_sha256"
+            },
+            {
+              "target_id": "consumption-tax-base-and-rate",
+              "description": "消費税法第28条・第29条：課税標準、消費税率",
+              "selector": {
+                "root_path": "/law_full_text",
+                "scope_tag": "MainProvision",
+                "tag": "Article",
+                "attribute": "Num",
+                "values": [
+                  "28",
+                  "29"
+                ]
+              },
+              "comparison": "canonical_json_sha256"
+            }
           ]
         },
         {

@@ -3,6 +3,7 @@ import assert from "node:assert/strict";
 import { readFile } from "node:fs/promises";
 import { fileURLToPath } from "node:url";
 import { buildExtractionTargetReview, buildMonitoringConfig } from "../scripts/monitoring/build-monitoring-config.js";
+import { buildEgovChangeSnapshot, hasEgovSourceChanged } from "../scripts/monitoring/egov-change-detection.js";
 
 const root = fileURLToPath(new URL("..", import.meta.url));
 
@@ -42,6 +43,24 @@ test("reviewed extraction targets have official links and concrete checkboxes", 
   assert.equal(tracked, review);
   assert.equal((review.match(/^## /gm) ?? []).length, 2);
   assert.equal((review.match(/^参照先: \[.+\]\(https:\/\/.+\)$/gm) ?? []).length, 4);
-  assert.ok(review.includes("- [x] 消費税法第28条・第29条：課税標準、消費税率"));
-  assert.ok(review.includes("- [x] 地方税法第154条：車種・用途・排気量等ごとの標準税率"));
+  assert.ok(review.includes("- [x] 消費税法第28条・第29条：課税標準、消費税率（`MainProvision > Article.attr.Num` = `28`, `29`）"));
+  assert.ok(review.includes("- [x] 地方税法第154条：車種・用途・排気量等ごとの標準税率（`MainProvision > Article.attr.Num` = `154`）"));
+});
+
+test("e-Gov configuration produces machine-readable change snapshots", async () => {
+  const { targets } = await buildMonitoringConfig(root);
+  const source = targets.find(({ tax_id }) => tax_id === "automobile-tax").sources[0];
+  const article = (num, text) => ({ tag: "Article", attr: { Num: num }, children: [text] });
+  const document = {
+    revision_info: { law_revision_id: "revision-1", updated: "2026-08-19T00:00:00+09:00" },
+    law_full_text: { tag: "Law", attr: {}, children: [{ tag: "MainProvision", attr: {}, children: ["145", "146", "147", "148", "154", "155", "156", "157", "158"].map((num) => article(num, `article-${num}`)) }] }
+  };
+  const original = buildEgovChangeSnapshot(document, source);
+  const repeated = buildEgovChangeSnapshot(structuredClone(document), source);
+  assert.equal(hasEgovSourceChanged(original, repeated), false);
+
+  const changedDocument = structuredClone(document);
+  changedDocument.law_full_text.children[0].children.find(({ attr }) => attr.Num === "154").children = ["updated-rate"];
+  const changed = buildEgovChangeSnapshot(changedDocument, source);
+  assert.equal(hasEgovSourceChanged(original, changed), true);
 });
