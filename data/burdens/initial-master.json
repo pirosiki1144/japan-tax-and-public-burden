@@ -1,0 +1,4183 @@
+[
+  {
+    "tax_id": "adverse-drug-reaction-contribution",
+    "official_name": "副作用拠出金",
+    "aliases": [],
+    "burden_type": "contribution",
+    "legal_mandate_type": "mandatory_by_law",
+    "jurisdiction": "Japan",
+    "liable_party": "unknown",
+    "economic_bearer": "unknown",
+    "collectors": [
+      "医薬品医療機器総合機構"
+    ],
+    "beneficiary_or_fund": null,
+    "purpose": "",
+    "calculation_basis": "",
+    "current_status": "active",
+    "legal_bases": [
+      {
+        "law_id": "414AC0000000192",
+        "name": "独立行政法人医薬品医療機器総合機構法",
+        "article": null,
+        "source_url": "https://laws.e-gov.go.jp/api/2/law_data/414AC0000000192"
+      }
+    ],
+    "current_phases": [],
+    "pending_changes": [],
+    "source_refs": [
+      "egov-laws"
+    ],
+    "coverage_status": "candidate",
+    "evidence_gaps": [
+      "現行法・納付義務者・適用状態を確認する",
+      "経済的負担者、目的、算定基礎を個別の公式資料で確認する",
+      "公布日、施行日、適用開始日、徴収開始日を個別の公式資料で確認する"
+    ],
+    "verified_at": "2026-08-19T07:31:40+09:00"
+  },
+  {
+    "tax_id": "agricultural-cooperative-savings-charge",
+    "official_name": "unknown",
+    "aliases": [],
+    "burden_type": "burden_charge",
+    "legal_mandate_type": "mandatory_by_law",
+    "jurisdiction": "Japan",
+    "liable_party": "unknown",
+    "economic_bearer": "unknown",
+    "collectors": [
+      "農水産業協同組合貯金保険機構"
+    ],
+    "beneficiary_or_fund": null,
+    "purpose": "",
+    "calculation_basis": "",
+    "current_status": "active",
+    "legal_bases": [
+      {
+        "law_id": "348AC0000000053",
+        "name": "農水産業協同組合貯金保険法",
+        "article": null,
+        "source_url": "https://laws.e-gov.go.jp/api/2/law_data/348AC0000000053"
+      }
+    ],
+    "current_phases": [],
+    "pending_changes": [],
+    "source_refs": [
+      "egov-laws"
+    ],
+    "coverage_status": "candidate",
+    "evidence_gaps": [
+      "法令上の正式名称・納付義務者・適用状態を確認する",
+      "経済的負担者、目的、算定基礎を個別の公式資料で確認する",
+      "公布日、施行日、適用開始日、徴収開始日を個別の公式資料で確認する"
+    ],
+    "verified_at": "2026-08-19T07:31:40+09:00"
+  },
+  {
+    "tax_id": "agricultural-cooperative-savings-insurance-premium",
+    "official_name": "unknown",
+    "aliases": [],
+    "burden_type": "insurance_premium",
+    "legal_mandate_type": "mandatory_by_law",
+    "jurisdiction": "Japan",
+    "liable_party": "unknown",
+    "economic_bearer": "unknown",
+    "collectors": [
+      "農水産業協同組合貯金保険機構"
+    ],
+    "beneficiary_or_fund": null,
+    "purpose": "",
+    "calculation_basis": "",
+    "current_status": "active",
+    "legal_bases": [
+      {
+        "law_id": "348AC0000000053",
+        "name": "農水産業協同組合貯金保険法",
+        "article": null,
+        "source_url": "https://laws.e-gov.go.jp/api/2/law_data/348AC0000000053"
+      }
+    ],
+    "current_phases": [],
+    "pending_changes": [],
+    "source_refs": [
+      "egov-laws"
+    ],
+    "coverage_status": "candidate",
+    "evidence_gaps": [
+      "法令上の正式名称・納付義務者・適用状態を確認する",
+      "経済的負担者、目的、算定基礎を個別の公式資料で確認する",
+      "公布日、施行日、適用開始日、徴収開始日を個別の公式資料で確認する"
+    ],
+    "verified_at": "2026-08-19T07:31:40+09:00"
+  },
+  {
+    "tax_id": "agricultural-cooperative-savings-special-charge",
+    "official_name": "unknown",
+    "aliases": [],
+    "burden_type": "burden_charge",
+    "legal_mandate_type": "mandatory_by_law",
+    "jurisdiction": "Japan",
+    "liable_party": "unknown",
+    "economic_bearer": "unknown",
+    "collectors": [
+      "農水産業協同組合貯金保険機構"
+    ],
+    "beneficiary_or_fund": null,
+    "purpose": "",
+    "calculation_basis": "",
+    "current_status": "active",
+    "legal_bases": [
+      {
+        "law_id": "348AC0000000053",
+        "name": "農水産業協同組合貯金保険法",
+        "article": null,
+        "source_url": "https://laws.e-gov.go.jp/api/2/law_data/348AC0000000053"
+      }
+    ],
+    "current_phases": [],
+    "pending_changes": [],
+    "source_refs": [
+      "egov-laws"
+    ],
+    "coverage_status": "candidate",
+    "evidence_gaps": [
+      "法令上の正式名称・納付義務者・適用状態を確認する",
+      "経済的負担者、目的、算定基礎を個別の公式資料で確認する",
+      "公布日、施行日、適用開始日、徴収開始日を個別の公式資料で確認する"
+    ],
+    "verified_at": "2026-08-19T07:31:40+09:00"
+  },
+  {
+    "tax_id": "asbestos-relief-general-contribution",
+    "official_name": "石綿健康被害救済一般拠出金",
+    "aliases": [],
+    "burden_type": "contribution",
+    "legal_mandate_type": "unknown",
+    "jurisdiction": "Japan",
+    "liable_party": "unknown",
+    "economic_bearer": "unknown",
+    "collectors": [
+      "unknown"
+    ],
+    "beneficiary_or_fund": null,
+    "purpose": "",
+    "calculation_basis": "",
+    "current_status": "active",
+    "legal_bases": [
+      {
+        "law_id": "418AC0000000004",
+        "name": "石綿による健康被害の救済に関する法律",
+        "article": null,
+        "source_url": "https://laws.e-gov.go.jp/api/2/law_data/418AC0000000004"
+      }
+    ],
+    "current_phases": [],
+    "pending_changes": [],
+    "source_refs": [
+      "egov-laws"
+    ],
+    "coverage_status": "candidate",
+    "evidence_gaps": [
+      "現行法・納付義務者・徴収主体・適用状態を再確認する",
+      "経済的負担者、目的、算定基礎を個別の公式資料で確認する",
+      "公布日、施行日、適用開始日、徴収開始日を個別の公式資料で確認する"
+    ],
+    "verified_at": "2026-08-19T07:31:40+09:00"
+  },
+  {
+    "tax_id": "asbestos-relief-special-contribution",
+    "official_name": "石綿健康被害救済特別拠出金",
+    "aliases": [],
+    "burden_type": "contribution",
+    "legal_mandate_type": "unknown",
+    "jurisdiction": "Japan",
+    "liable_party": "unknown",
+    "economic_bearer": "unknown",
+    "collectors": [
+      "unknown"
+    ],
+    "beneficiary_or_fund": null,
+    "purpose": "",
+    "calculation_basis": "",
+    "current_status": "active",
+    "legal_bases": [
+      {
+        "law_id": "418AC0000000004",
+        "name": "石綿による健康被害の救済に関する法律",
+        "article": null,
+        "source_url": "https://laws.e-gov.go.jp/api/2/law_data/418AC0000000004"
+      }
+    ],
+    "current_phases": [],
+    "pending_changes": [],
+    "source_refs": [
+      "egov-laws"
+    ],
+    "coverage_status": "candidate",
+    "evidence_gaps": [
+      "現行法・納付義務者・徴収主体・適用状態を再確認する",
+      "経済的負担者、目的、算定基礎を個別の公式資料で確認する",
+      "公布日、施行日、適用開始日、徴収開始日を個別の公式資料で確認する"
+    ],
+    "verified_at": "2026-08-19T07:31:40+09:00"
+  },
+  {
+    "tax_id": "automobile-accident-countermeasure-levy",
+    "official_name": "自動車事故対策事業賦課金",
+    "aliases": [],
+    "burden_type": "levy",
+    "legal_mandate_type": "mandatory_by_law",
+    "jurisdiction": "Japan",
+    "liable_party": "unknown",
+    "economic_bearer": "unknown",
+    "collectors": [
+      "unknown"
+    ],
+    "beneficiary_or_fund": null,
+    "purpose": "",
+    "calculation_basis": "",
+    "current_status": "active",
+    "legal_bases": [
+      {
+        "law_id": "330AC0000000097",
+        "name": "自動車損害賠償保障法",
+        "article": null,
+        "source_url": "https://laws.e-gov.go.jp/api/2/law_data/330AC0000000097"
+      }
+    ],
+    "current_phases": [],
+    "pending_changes": [],
+    "source_refs": [
+      "egov-laws"
+    ],
+    "coverage_status": "candidate",
+    "evidence_gaps": [
+      "徴収主体・納付義務者・適用状態を確認する",
+      "経済的負担者、目的、算定基礎を個別の公式資料で確認する",
+      "公布日、施行日、適用開始日、徴収開始日を個別の公式資料で確認する"
+    ],
+    "verified_at": "2026-08-19T07:31:40+09:00"
+  },
+  {
+    "tax_id": "automobile-tax",
+    "official_name": "自動車税",
+    "aliases": [],
+    "burden_type": "local_tax",
+    "legal_mandate_type": "unknown",
+    "jurisdiction": "Japan/local-governments",
+    "liable_party": "unknown",
+    "economic_bearer": "unknown",
+    "collectors": [
+      "unknown"
+    ],
+    "beneficiary_or_fund": null,
+    "purpose": "",
+    "calculation_basis": "",
+    "current_status": "active",
+    "legal_bases": [
+      {
+        "law_id": "325AC0000000226",
+        "name": "地方税法",
+        "article": null,
+        "source_url": "https://laws.e-gov.go.jp/api/2/law_data/325AC0000000226"
+      }
+    ],
+    "current_phases": [],
+    "pending_changes": [],
+    "source_refs": [
+      "egov-laws"
+    ],
+    "coverage_status": "needs_review",
+    "evidence_gaps": [
+      "種別割・環境性能割等の制度粒度を確認する",
+      "国税の自動車重量税と別制度として扱う",
+      "適用状態を確認する",
+      "経済的負担者、目的、算定基礎を個別の公式資料で確認する",
+      "公布日、施行日、適用開始日、徴収開始日を個別の公式資料で確認する"
+    ],
+    "verified_at": "2026-08-19T07:31:40+09:00"
+  },
+  {
+    "tax_id": "automobile-weight-tax",
+    "official_name": "自動車重量税",
+    "aliases": [],
+    "burden_type": "national_tax",
+    "legal_mandate_type": "unknown",
+    "jurisdiction": "Japan",
+    "liable_party": "unknown",
+    "economic_bearer": "unknown",
+    "collectors": [
+      "unknown"
+    ],
+    "beneficiary_or_fund": null,
+    "purpose": "",
+    "calculation_basis": "",
+    "current_status": "active",
+    "legal_bases": [
+      {
+        "law_id": "346AC0000000089",
+        "name": "自動車重量税法",
+        "article": null,
+        "source_url": "https://laws.e-gov.go.jp/api/2/law_data/346AC0000000089"
+      }
+    ],
+    "current_phases": [],
+    "pending_changes": [],
+    "source_refs": [
+      "egov-laws"
+    ],
+    "coverage_status": "candidate",
+    "evidence_gaps": [
+      "本表と譲与分参考欄を二重計上しない集計関係を確認する",
+      "適用状態は個別確認する",
+      "経済的負担者、目的、算定基礎を個別の公式資料で確認する",
+      "公布日、施行日、適用開始日、徴収開始日を個別の公式資料で確認する"
+    ],
+    "verified_at": "2026-08-19T07:31:40+09:00"
+  },
+  {
+    "tax_id": "aviation-fuel-tax",
+    "official_name": "航空機燃料税",
+    "aliases": [],
+    "burden_type": "national_tax",
+    "legal_mandate_type": "unknown",
+    "jurisdiction": "Japan",
+    "liable_party": "unknown",
+    "economic_bearer": "unknown",
+    "collectors": [
+      "unknown"
+    ],
+    "beneficiary_or_fund": null,
+    "purpose": "",
+    "calculation_basis": "",
+    "current_status": "active",
+    "legal_bases": [
+      {
+        "law_id": "347AC0000000007",
+        "name": "航空機燃料税法",
+        "article": null,
+        "source_url": "https://laws.e-gov.go.jp/api/2/law_data/347AC0000000007"
+      }
+    ],
+    "current_phases": [],
+    "pending_changes": [],
+    "source_refs": [
+      "egov-laws"
+    ],
+    "coverage_status": "candidate",
+    "evidence_gaps": [
+      "本表と譲与分参考欄を二重計上しない集計関係を確認する",
+      "適用状態は個別確認する",
+      "経済的負担者、目的、算定基礎を個別の公式資料で確認する",
+      "公布日、施行日、適用開始日、徴収開始日を個別の公式資料で確認する"
+    ],
+    "verified_at": "2026-08-19T07:31:40+09:00"
+  },
+  {
+    "tax_id": "banks-shareholdings-purchase-corporation-contribution",
+    "official_name": "銀行等保有株式取得機構に対する拠出金",
+    "aliases": [],
+    "burden_type": "contribution",
+    "legal_mandate_type": "mandatory_by_law",
+    "jurisdiction": "Japan",
+    "liable_party": "unknown",
+    "economic_bearer": "unknown",
+    "collectors": [
+      "銀行等保有株式取得機構"
+    ],
+    "beneficiary_or_fund": null,
+    "purpose": "",
+    "calculation_basis": "",
+    "current_status": "active",
+    "legal_bases": [
+      {
+        "law_id": "413AC0000000131",
+        "name": "銀行等の株式等の保有の制限等に関する法律",
+        "article": null,
+        "source_url": "https://laws.e-gov.go.jp/api/2/law_data/413AC0000000131"
+      }
+    ],
+    "current_phases": [],
+    "pending_changes": [],
+    "source_refs": [
+      "egov-laws"
+    ],
+    "coverage_status": "candidate",
+    "evidence_gaps": [
+      "当初拠出金と売却時拠出金を分割するか確認する",
+      "現行法・適用状態を確認する",
+      "経済的負担者、目的、算定基礎を個別の公式資料で確認する",
+      "公布日、施行日、適用開始日、徴収開始日を個別の公式資料で確認する"
+    ],
+    "verified_at": "2026-08-19T07:31:40+09:00"
+  },
+  {
+    "tax_id": "bathing-tax",
+    "official_name": "入湯税",
+    "aliases": [],
+    "burden_type": "local_tax",
+    "legal_mandate_type": "unknown",
+    "jurisdiction": "Japan/local-governments",
+    "liable_party": "unknown",
+    "economic_bearer": "unknown",
+    "collectors": [
+      "unknown"
+    ],
+    "beneficiary_or_fund": null,
+    "purpose": "",
+    "calculation_basis": "",
+    "current_status": "active",
+    "legal_bases": [
+      {
+        "law_id": "325AC0000000226",
+        "name": "地方税法",
+        "article": null,
+        "source_url": "https://laws.e-gov.go.jp/api/2/law_data/325AC0000000226"
+      }
+    ],
+    "current_phases": [],
+    "pending_changes": [],
+    "source_refs": [
+      "egov-laws"
+    ],
+    "coverage_status": "candidate",
+    "evidence_gaps": [
+      "根拠条項・納税義務者・徴収主体・適用状態を確認する",
+      "経済的負担者、目的、算定基礎を個別の公式資料で確認する",
+      "公布日、施行日、適用開始日、徴収開始日を個別の公式資料で確認する"
+    ],
+    "verified_at": "2026-08-19T07:31:40+09:00"
+  },
+  {
+    "tax_id": "broadband-service-charge",
+    "official_name": "unknown",
+    "aliases": [],
+    "burden_type": "burden_charge",
+    "legal_mandate_type": "mandatory_by_law",
+    "jurisdiction": "Japan",
+    "liable_party": "unknown",
+    "economic_bearer": "unknown",
+    "collectors": [
+      "unknown"
+    ],
+    "beneficiary_or_fund": null,
+    "purpose": "",
+    "calculation_basis": "",
+    "current_status": "active",
+    "legal_bases": [
+      {
+        "law_id": "359AC0000000086",
+        "name": "電気通信事業法",
+        "article": null,
+        "source_url": "https://laws.e-gov.go.jp/api/2/law_data/359AC0000000086"
+      }
+    ],
+    "current_phases": [],
+    "pending_changes": [],
+    "source_refs": [
+      "egov-laws"
+    ],
+    "coverage_status": "needs_review",
+    "evidence_gaps": [
+      "政府答弁時は関連省令を検討中としており現行制度・施行・徴収開始を再確認する",
+      "正式名称・徴収主体を確認する",
+      "経済的負担者、目的、算定基礎を個別の公式資料で確認する",
+      "公布日、施行日、適用開始日、徴収開始日を個別の公式資料で確認する"
+    ],
+    "verified_at": "2026-08-19T07:31:40+09:00"
+  },
+  {
+    "tax_id": "business-office-tax",
+    "official_name": "事業所税",
+    "aliases": [],
+    "burden_type": "local_tax",
+    "legal_mandate_type": "unknown",
+    "jurisdiction": "Japan/local-governments",
+    "liable_party": "unknown",
+    "economic_bearer": "unknown",
+    "collectors": [
+      "unknown"
+    ],
+    "beneficiary_or_fund": null,
+    "purpose": "",
+    "calculation_basis": "",
+    "current_status": "active",
+    "legal_bases": [
+      {
+        "law_id": "325AC0000000226",
+        "name": "地方税法",
+        "article": null,
+        "source_url": "https://laws.e-gov.go.jp/api/2/law_data/325AC0000000226"
+      }
+    ],
+    "current_phases": [],
+    "pending_changes": [],
+    "source_refs": [
+      "egov-laws"
+    ],
+    "coverage_status": "candidate",
+    "evidence_gaps": [
+      "課税団体の範囲・根拠条項・納税義務者・適用状態を確認する",
+      "経済的負担者、目的、算定基礎を個別の公式資料で確認する",
+      "公布日、施行日、適用開始日、徴収開始日を個別の公式資料で確認する"
+    ],
+    "verified_at": "2026-08-19T07:31:40+09:00"
+  },
+  {
+    "tax_id": "child-care-contribution",
+    "official_name": "子ども・子育て拠出金",
+    "aliases": [],
+    "burden_type": "contribution",
+    "legal_mandate_type": "unknown",
+    "jurisdiction": "Japan",
+    "liable_party": "unknown",
+    "economic_bearer": "unknown",
+    "collectors": [
+      "unknown"
+    ],
+    "beneficiary_or_fund": null,
+    "purpose": "",
+    "calculation_basis": "",
+    "current_status": "active",
+    "legal_bases": [
+      {
+        "law_id": "424AC0000000065",
+        "name": "子ども・子育て支援法",
+        "article": null,
+        "source_url": "https://laws.e-gov.go.jp/api/2/law_data/424AC0000000065"
+      }
+    ],
+    "current_phases": [],
+    "pending_changes": [],
+    "source_refs": [
+      "egov-laws"
+    ],
+    "coverage_status": "candidate",
+    "evidence_gaps": [
+      "現行法・納付義務者・徴収主体・適用状態を再確認する",
+      "経済的負担者、目的、算定基礎を個別の公式資料で確認する",
+      "公布日、施行日、適用開始日、徴収開始日を個別の公式資料で確認する"
+    ],
+    "verified_at": "2026-08-19T07:31:40+09:00"
+  },
+  {
+    "tax_id": "city-planning-tax",
+    "official_name": "都市計画税",
+    "aliases": [],
+    "burden_type": "local_tax",
+    "legal_mandate_type": "unknown",
+    "jurisdiction": "Japan/local-governments",
+    "liable_party": "unknown",
+    "economic_bearer": "unknown",
+    "collectors": [
+      "unknown"
+    ],
+    "beneficiary_or_fund": null,
+    "purpose": "",
+    "calculation_basis": "",
+    "current_status": "active",
+    "legal_bases": [
+      {
+        "law_id": "325AC0000000226",
+        "name": "地方税法",
+        "article": null,
+        "source_url": "https://laws.e-gov.go.jp/api/2/law_data/325AC0000000226"
+      }
+    ],
+    "current_phases": [],
+    "pending_changes": [],
+    "source_refs": [
+      "egov-laws"
+    ],
+    "coverage_status": "candidate",
+    "evidence_gaps": [
+      "課税団体・対象区域・根拠条項・適用状態を確認する",
+      "経済的負担者、目的、算定基礎を個別の公式資料で確認する",
+      "公布日、施行日、適用開始日、徴収開始日を個別の公式資料で確認する"
+    ],
+    "verified_at": "2026-08-19T07:31:40+09:00"
+  },
+  {
+    "tax_id": "commodity-customer-protection-fund-charge",
+    "official_name": "日本商品委託者保護基金に対する負担金",
+    "aliases": [],
+    "burden_type": "burden_charge",
+    "legal_mandate_type": "mandatory_by_law",
+    "jurisdiction": "Japan",
+    "liable_party": "unknown",
+    "economic_bearer": "unknown",
+    "collectors": [
+      "日本商品委託者保護基金"
+    ],
+    "beneficiary_or_fund": null,
+    "purpose": "",
+    "calculation_basis": "",
+    "current_status": "active",
+    "legal_bases": [
+      {
+        "law_id": "325AC0000000239",
+        "name": "商品先物取引法",
+        "article": null,
+        "source_url": "https://laws.e-gov.go.jp/api/2/law_data/325AC0000000239"
+      }
+    ],
+    "current_phases": [],
+    "pending_changes": [],
+    "source_refs": [
+      "egov-laws"
+    ],
+    "coverage_status": "candidate",
+    "evidence_gaps": [
+      "現行法・納付義務者・適用状態を確認する",
+      "経済的負担者、目的、算定基礎を個別の公式資料で確認する",
+      "公布日、施行日、適用開始日、徴収開始日を個別の公式資料で確認する"
+    ],
+    "verified_at": "2026-08-19T07:31:40+09:00"
+  },
+  {
+    "tax_id": "common-facilities-tax",
+    "official_name": "共同施設税",
+    "aliases": [],
+    "burden_type": "local_tax",
+    "legal_mandate_type": "unknown",
+    "jurisdiction": "Japan/local-governments",
+    "liable_party": "unknown",
+    "economic_bearer": "unknown",
+    "collectors": [
+      "unknown"
+    ],
+    "beneficiary_or_fund": null,
+    "purpose": "",
+    "calculation_basis": "",
+    "current_status": "active",
+    "legal_bases": [
+      {
+        "law_id": "325AC0000000226",
+        "name": "地方税法",
+        "article": null,
+        "source_url": "https://laws.e-gov.go.jp/api/2/law_data/325AC0000000226"
+      }
+    ],
+    "current_phases": [],
+    "pending_changes": [],
+    "source_refs": [
+      "egov-laws"
+    ],
+    "coverage_status": "candidate",
+    "evidence_gaps": [
+      "課税団体・根拠条項・納税義務者・適用状態を確認する",
+      "経済的負担者、目的、算定基礎を個別の公式資料で確認する",
+      "公布日、施行日、適用開始日、徴収開始日を個別の公式資料で確認する"
+    ],
+    "verified_at": "2026-08-19T07:31:40+09:00"
+  },
+  {
+    "tax_id": "common-utility-tunnel-charge",
+    "official_name": "unknown",
+    "aliases": [],
+    "burden_type": "burden_charge",
+    "legal_mandate_type": "mandatory_by_law",
+    "jurisdiction": "Japan",
+    "liable_party": "unknown",
+    "economic_bearer": "unknown",
+    "collectors": [
+      "unknown"
+    ],
+    "beneficiary_or_fund": null,
+    "purpose": "",
+    "calculation_basis": "",
+    "current_status": "active",
+    "legal_bases": [
+      {
+        "law_id": "338AC0000000081",
+        "name": "共同溝の整備等に関する特別措置法",
+        "article": null,
+        "source_url": "https://laws.e-gov.go.jp/api/2/law_data/338AC0000000081"
+      }
+    ],
+    "current_phases": [],
+    "pending_changes": [],
+    "source_refs": [
+      "egov-laws"
+    ],
+    "coverage_status": "needs_review",
+    "evidence_gaps": [
+      "条項別負担金の制度粒度・徴収主体・適用状態を確認する",
+      "経済的負担者、目的、算定基礎を個別の公式資料で確認する",
+      "公布日、施行日、適用開始日、徴収開始日を個別の公式資料で確認する"
+    ],
+    "verified_at": "2026-08-19T07:31:40+09:00"
+  },
+  {
+    "tax_id": "corporation-tax",
+    "official_name": "法人税",
+    "aliases": [],
+    "burden_type": "national_tax",
+    "legal_mandate_type": "unknown",
+    "jurisdiction": "Japan",
+    "liable_party": "unknown",
+    "economic_bearer": "unknown",
+    "collectors": [
+      "unknown"
+    ],
+    "beneficiary_or_fund": null,
+    "purpose": "",
+    "calculation_basis": "",
+    "current_status": "active",
+    "legal_bases": [
+      {
+        "law_id": "340AC0000000034",
+        "name": "法人税法",
+        "article": null,
+        "source_url": "https://laws.e-gov.go.jp/api/2/law_data/340AC0000000034"
+      }
+    ],
+    "current_phases": [],
+    "pending_changes": [],
+    "source_refs": [
+      "egov-laws"
+    ],
+    "coverage_status": "candidate",
+    "evidence_gaps": [
+      "根拠法令・納税義務者・徴収主体・適用状態は個別の公式資料で確認する",
+      "経済的負担者、目的、算定基礎を個別の公式資料で確認する",
+      "公布日、施行日、適用開始日、徴収開始日を個別の公式資料で確認する"
+    ],
+    "verified_at": "2026-08-19T07:31:40+09:00"
+  },
+  {
+    "tax_id": "customs-duty",
+    "official_name": "関税",
+    "aliases": [],
+    "burden_type": "national_tax",
+    "legal_mandate_type": "unknown",
+    "jurisdiction": "Japan",
+    "liable_party": "unknown",
+    "economic_bearer": "unknown",
+    "collectors": [
+      "unknown"
+    ],
+    "beneficiary_or_fund": null,
+    "purpose": "",
+    "calculation_basis": "",
+    "current_status": "active",
+    "legal_bases": [
+      {
+        "law_id": "329AC0000000061",
+        "name": "関税法",
+        "article": null,
+        "source_url": "https://laws.e-gov.go.jp/api/2/law_data/329AC0000000061"
+      }
+    ],
+    "current_phases": [],
+    "pending_changes": [],
+    "source_refs": [
+      "egov-laws"
+    ],
+    "coverage_status": "candidate",
+    "evidence_gaps": [
+      "品目別税率ではなく制度マスタとしての粒度を確認する",
+      "適用状態は個別確認する",
+      "経済的負担者、目的、算定基礎を個別の公式資料で確認する",
+      "公布日、施行日、適用開始日、徴収開始日を個別の公式資料で確認する"
+    ],
+    "verified_at": "2026-08-19T07:31:40+09:00"
+  },
+  {
+    "tax_id": "deposit-insurance-corporation-charge",
+    "official_name": "預金保険機構に対する負担金",
+    "aliases": [],
+    "burden_type": "burden_charge",
+    "legal_mandate_type": "mandatory_by_law",
+    "jurisdiction": "Japan",
+    "liable_party": "unknown",
+    "economic_bearer": "unknown",
+    "collectors": [
+      "預金保険機構"
+    ],
+    "beneficiary_or_fund": null,
+    "purpose": "",
+    "calculation_basis": "",
+    "current_status": "active",
+    "legal_bases": [
+      {
+        "law_id": "346AC0000000034",
+        "name": "預金保険法",
+        "article": null,
+        "source_url": "https://laws.e-gov.go.jp/api/2/law_data/346AC0000000034"
+      }
+    ],
+    "current_phases": [],
+    "pending_changes": [],
+    "source_refs": [
+      "egov-laws"
+    ],
+    "coverage_status": "candidate",
+    "evidence_gaps": [
+      "現行法・納付義務者・適用状態を再確認する",
+      "経済的負担者、目的、算定基礎を個別の公式資料で確認する",
+      "公布日、施行日、適用開始日、徴収開始日を個別の公式資料で確認する"
+    ],
+    "verified_at": "2026-08-19T07:31:40+09:00"
+  },
+  {
+    "tax_id": "deposit-insurance-corporation-special-charge",
+    "official_name": "預金保険機構に対する特定負担金",
+    "aliases": [],
+    "burden_type": "burden_charge",
+    "legal_mandate_type": "mandatory_by_law",
+    "jurisdiction": "Japan",
+    "liable_party": "unknown",
+    "economic_bearer": "unknown",
+    "collectors": [
+      "預金保険機構"
+    ],
+    "beneficiary_or_fund": null,
+    "purpose": "",
+    "calculation_basis": "",
+    "current_status": "active",
+    "legal_bases": [
+      {
+        "law_id": "346AC0000000034",
+        "name": "預金保険法",
+        "article": null,
+        "source_url": "https://laws.e-gov.go.jp/api/2/law_data/346AC0000000034"
+      }
+    ],
+    "current_phases": [],
+    "pending_changes": [],
+    "source_refs": [
+      "egov-laws"
+    ],
+    "coverage_status": "candidate",
+    "evidence_gaps": [
+      "現行法・納付義務者・適用状態を再確認する",
+      "経済的負担者、目的、算定基礎を個別の公式資料で確認する",
+      "公布日、施行日、適用開始日、徴収開始日を個別の公式資料で確認する"
+    ],
+    "verified_at": "2026-08-19T07:31:40+09:00"
+  },
+  {
+    "tax_id": "deposit-insurance-premium",
+    "official_name": "預金保険料",
+    "aliases": [],
+    "burden_type": "insurance_premium",
+    "legal_mandate_type": "unknown",
+    "jurisdiction": "Japan",
+    "liable_party": "unknown",
+    "economic_bearer": "unknown",
+    "collectors": [
+      "unknown"
+    ],
+    "beneficiary_or_fund": null,
+    "purpose": "",
+    "calculation_basis": "",
+    "current_status": "active",
+    "legal_bases": [
+      {
+        "law_id": "346AC0000000034",
+        "name": "預金保険法",
+        "article": null,
+        "source_url": "https://laws.e-gov.go.jp/api/2/law_data/346AC0000000034"
+      }
+    ],
+    "current_phases": [],
+    "pending_changes": [],
+    "source_refs": [
+      "egov-laws"
+    ],
+    "coverage_status": "candidate",
+    "evidence_gaps": [
+      "現行法・納付義務者・徴収主体・適用状態を再確認する",
+      "経済的負担者、目的、算定基礎を個別の公式資料で確認する",
+      "公布日、施行日、適用開始日、徴収開始日を個別の公式資料で確認する"
+    ],
+    "verified_at": "2026-08-19T07:31:40+09:00"
+  },
+  {
+    "tax_id": "disability-employment-levy",
+    "official_name": "障害者雇用納付金",
+    "aliases": [],
+    "burden_type": "payment",
+    "legal_mandate_type": "unknown",
+    "jurisdiction": "Japan",
+    "liable_party": "unknown",
+    "economic_bearer": "unknown",
+    "collectors": [
+      "unknown"
+    ],
+    "beneficiary_or_fund": null,
+    "purpose": "",
+    "calculation_basis": "",
+    "current_status": "active",
+    "legal_bases": [
+      {
+        "law_id": "335AC0000000123",
+        "name": "障害者の雇用の促進等に関する法律",
+        "article": null,
+        "source_url": "https://laws.e-gov.go.jp/api/2/law_data/335AC0000000123"
+      }
+    ],
+    "current_phases": [],
+    "pending_changes": [],
+    "source_refs": [
+      "egov-laws"
+    ],
+    "coverage_status": "candidate",
+    "evidence_gaps": [
+      "現行法・納付義務者・徴収主体・適用状態を確認する",
+      "経済的負担者、目的、算定基礎を個別の公式資料で確認する",
+      "公布日、施行日、適用開始日、徴収開始日を個別の公式資料で確認する"
+    ],
+    "verified_at": "2026-08-19T07:31:40+09:00"
+  },
+  {
+    "tax_id": "east-japan-business-rehabilitation-contribution",
+    "official_name": "unknown",
+    "aliases": [],
+    "burden_type": "contribution",
+    "legal_mandate_type": "unknown",
+    "jurisdiction": "Japan",
+    "liable_party": "unknown",
+    "economic_bearer": "unknown",
+    "collectors": [
+      "unknown"
+    ],
+    "beneficiary_or_fund": null,
+    "purpose": "",
+    "calculation_basis": "",
+    "current_status": "active",
+    "legal_bases": [
+      {
+        "law_id": "423AC0100000113",
+        "name": "株式会社東日本大震災事業者再生支援機構法",
+        "article": null,
+        "source_url": "https://laws.e-gov.go.jp/api/2/law_data/423AC0100000113"
+      }
+    ],
+    "current_phases": [],
+    "pending_changes": [],
+    "source_refs": [
+      "egov-laws"
+    ],
+    "coverage_status": "candidate",
+    "evidence_gaps": [
+      "法令上の正式名称・徴収主体・適用状態を再確認する",
+      "経済的負担者、目的、算定基礎を個別の公式資料で確認する",
+      "公布日、施行日、適用開始日、徴収開始日を個別の公式資料で確認する"
+    ],
+    "verified_at": "2026-08-19T07:31:40+09:00"
+  },
+  {
+    "tax_id": "educational-public-transmission-compensation",
+    "official_name": "授業目的公衆送信補償金",
+    "aliases": [],
+    "burden_type": "payment",
+    "legal_mandate_type": "unknown",
+    "jurisdiction": "Japan",
+    "liable_party": "unknown",
+    "economic_bearer": "unknown",
+    "collectors": [
+      "unknown"
+    ],
+    "beneficiary_or_fund": null,
+    "purpose": "",
+    "calculation_basis": "",
+    "current_status": "active",
+    "legal_bases": [
+      {
+        "law_id": "345AC0000000048",
+        "name": "著作権法",
+        "article": null,
+        "source_url": "https://laws.e-gov.go.jp/api/2/law_data/345AC0000000048"
+      }
+    ],
+    "current_phases": [],
+    "pending_changes": [],
+    "source_refs": [
+      "egov-laws"
+    ],
+    "coverage_status": "candidate",
+    "evidence_gaps": [
+      "現行法・納付義務者・徴収主体・適用状態を確認する",
+      "経済的負担者、目的、算定基礎を個別の公式資料で確認する",
+      "公布日、施行日、適用開始日、徴収開始日を個別の公式資料で確認する"
+    ],
+    "verified_at": "2026-08-19T07:31:40+09:00"
+  },
+  {
+    "tax_id": "electricity-business-compensation-charge",
+    "official_name": "unknown",
+    "aliases": [],
+    "burden_type": "burden_charge",
+    "legal_mandate_type": "mandatory_by_regulation",
+    "jurisdiction": "Japan",
+    "liable_party": "unknown",
+    "economic_bearer": "unknown",
+    "collectors": [
+      "unknown"
+    ],
+    "beneficiary_or_fund": null,
+    "purpose": "",
+    "calculation_basis": "",
+    "current_status": "active",
+    "legal_bases": [
+      {
+        "law_id": "407M50000400077",
+        "name": "電気事業法施行規則",
+        "article": null,
+        "source_url": "https://laws.e-gov.go.jp/api/2/law_data/407M50000400077"
+      }
+    ],
+    "current_phases": [],
+    "pending_changes": [],
+    "source_refs": [
+      "egov-laws"
+    ],
+    "coverage_status": "needs_review",
+    "evidence_gaps": [
+      "現行規則の条項・正式名称・料金転嫁・適用状態を確認する",
+      "経済的負担者、目的、算定基礎を個別の公式資料で確認する",
+      "公布日、施行日、適用開始日、徴収開始日を個別の公式資料で確認する"
+    ],
+    "verified_at": "2026-08-19T07:31:40+09:00"
+  },
+  {
+    "tax_id": "employment-insurance-premium",
+    "official_name": "雇用保険料",
+    "aliases": [],
+    "burden_type": "social_insurance_premium",
+    "legal_mandate_type": "unknown",
+    "jurisdiction": "Japan",
+    "liable_party": "unknown",
+    "economic_bearer": "unknown",
+    "collectors": [
+      "unknown"
+    ],
+    "beneficiary_or_fund": null,
+    "purpose": "",
+    "calculation_basis": "",
+    "current_status": "active",
+    "legal_bases": [
+      {
+        "law_id": "349AC0000000116",
+        "name": "雇用保険法",
+        "article": null,
+        "source_url": "https://laws.e-gov.go.jp/api/2/law_data/349AC0000000116"
+      }
+    ],
+    "current_phases": [],
+    "pending_changes": [],
+    "source_refs": [
+      "egov-laws"
+    ],
+    "coverage_status": "candidate",
+    "evidence_gaps": [
+      "労働保険料徴収法との関係・納付義務者・徴収主体・適用状態を確認する",
+      "経済的負担者、目的、算定基礎を個別の公式資料で確認する",
+      "公布日、施行日、適用開始日、徴収開始日を個別の公式資料で確認する"
+    ],
+    "verified_at": "2026-08-19T07:31:40+09:00"
+  },
+  {
+    "tax_id": "enterprise-tax",
+    "official_name": "事業税",
+    "aliases": [],
+    "burden_type": "local_tax",
+    "legal_mandate_type": "unknown",
+    "jurisdiction": "Japan/local-governments",
+    "liable_party": "unknown",
+    "economic_bearer": "unknown",
+    "collectors": [
+      "unknown"
+    ],
+    "beneficiary_or_fund": null,
+    "purpose": "",
+    "calculation_basis": "",
+    "current_status": "active",
+    "legal_bases": [
+      {
+        "law_id": "325AC0000000226",
+        "name": "地方税法",
+        "article": null,
+        "source_url": "https://laws.e-gov.go.jp/api/2/law_data/325AC0000000226"
+      }
+    ],
+    "current_phases": [],
+    "pending_changes": [],
+    "source_refs": [
+      "egov-laws"
+    ],
+    "coverage_status": "needs_review",
+    "evidence_gaps": [
+      "個人事業税・法人事業税の制度粒度と特別法人事業税との関係を確認する",
+      "根拠条項・徴収主体・適用状態を確認する",
+      "経済的負担者、目的、算定基礎を個別の公式資料で確認する",
+      "公布日、施行日、適用開始日、徴収開始日を個別の公式資料で確認する"
+    ],
+    "verified_at": "2026-08-19T07:31:40+09:00"
+  },
+  {
+    "tax_id": "fixed-asset-tax",
+    "official_name": "固定資産税",
+    "aliases": [],
+    "burden_type": "local_tax",
+    "legal_mandate_type": "unknown",
+    "jurisdiction": "Japan/local-governments",
+    "liable_party": "unknown",
+    "economic_bearer": "unknown",
+    "collectors": [
+      "unknown"
+    ],
+    "beneficiary_or_fund": null,
+    "purpose": "",
+    "calculation_basis": "",
+    "current_status": "active",
+    "legal_bases": [
+      {
+        "law_id": "325AC0000000226",
+        "name": "地方税法",
+        "article": null,
+        "source_url": "https://laws.e-gov.go.jp/api/2/law_data/325AC0000000226"
+      }
+    ],
+    "current_phases": [],
+    "pending_changes": [],
+    "source_refs": [
+      "egov-laws"
+    ],
+    "coverage_status": "candidate",
+    "evidence_gaps": [
+      "土地・家屋・償却資産等の対象区分と根拠条項・適用状態を確認する",
+      "経済的負担者、目的、算定基礎を個別の公式資料で確認する",
+      "公布日、施行日、適用開始日、徴収開始日を個別の公式資料で確認する"
+    ],
+    "verified_at": "2026-08-19T07:31:40+09:00"
+  },
+  {
+    "tax_id": "forest-environment-tax",
+    "official_name": "森林環境税",
+    "aliases": [],
+    "burden_type": "national_tax",
+    "legal_mandate_type": "unknown",
+    "jurisdiction": "Japan",
+    "liable_party": "unknown",
+    "economic_bearer": "unknown",
+    "collectors": [
+      "unknown"
+    ],
+    "beneficiary_or_fund": null,
+    "purpose": "",
+    "calculation_basis": "",
+    "current_status": "active",
+    "legal_bases": [
+      {
+        "law_id": "431AC0000000003",
+        "name": "森林環境税及び森林環境譲与税に関する法律",
+        "article": null,
+        "source_url": "https://laws.e-gov.go.jp/api/2/law_data/431AC0000000003"
+      }
+    ],
+    "current_phases": [],
+    "pending_changes": [],
+    "source_refs": [
+      "egov-laws"
+    ],
+    "coverage_status": "candidate",
+    "evidence_gaps": [
+      "市町村による賦課徴収と国税としての帰属を分けて確認する",
+      "適用状態は個別の公式資料で確認する",
+      "経済的負担者、目的、算定基礎を個別の公式資料で確認する",
+      "公布日、施行日、適用開始日、徴収開始日を個別の公式資料で確認する"
+    ],
+    "verified_at": "2026-08-19T07:31:40+09:00"
+  },
+  {
+    "tax_id": "fossil-fuel-levy",
+    "official_name": "化石燃料賦課金",
+    "aliases": [],
+    "burden_type": "levy",
+    "legal_mandate_type": "unknown",
+    "jurisdiction": "Japan",
+    "liable_party": "unknown",
+    "economic_bearer": "unknown",
+    "collectors": [
+      "unknown"
+    ],
+    "beneficiary_or_fund": null,
+    "purpose": "",
+    "calculation_basis": "",
+    "current_status": "active",
+    "legal_bases": [
+      {
+        "law_id": "505AC0000000032",
+        "name": "脱炭素成長型経済構造への円滑な移行の推進に関する法律",
+        "article": null,
+        "source_url": "https://laws.e-gov.go.jp/api/2/law_data/505AC0000000032"
+      }
+    ],
+    "current_phases": [],
+    "pending_changes": [],
+    "source_refs": [
+      "egov-laws"
+    ],
+    "coverage_status": "needs_review",
+    "evidence_gaps": [
+      "公布・施行・適用開始・徴収開始を分離して確認する",
+      "納付義務者・徴収主体を確認する",
+      "経済的負担者、目的、算定基礎を個別の公式資料で確認する",
+      "公布日、施行日、適用開始日、徴収開始日を個別の公式資料で確認する"
+    ],
+    "verified_at": "2026-08-19T07:31:40+09:00"
+  },
+  {
+    "tax_id": "gasoline-tax",
+    "official_name": "揮発油税",
+    "aliases": [],
+    "burden_type": "national_tax",
+    "legal_mandate_type": "unknown",
+    "jurisdiction": "Japan",
+    "liable_party": "unknown",
+    "economic_bearer": "unknown",
+    "collectors": [
+      "unknown"
+    ],
+    "beneficiary_or_fund": null,
+    "purpose": "",
+    "calculation_basis": "",
+    "current_status": "active",
+    "legal_bases": [
+      {
+        "law_id": "332AC0000000055",
+        "name": "揮発油税法",
+        "article": null,
+        "source_url": "https://laws.e-gov.go.jp/api/2/law_data/332AC0000000055"
+      }
+    ],
+    "current_phases": [],
+    "pending_changes": [],
+    "source_refs": [
+      "egov-laws"
+    ],
+    "coverage_status": "candidate",
+    "evidence_gaps": [
+      "地方揮発油税と別制度として根拠・帰属を確認する",
+      "適用状態は個別確認する",
+      "経済的負担者、目的、算定基礎を個別の公式資料で確認する",
+      "公布日、施行日、適用開始日、徴収開始日を個別の公式資料で確認する"
+    ],
+    "verified_at": "2026-08-19T07:31:40+09:00"
+  },
+  {
+    "tax_id": "golf-course-utilization-tax",
+    "official_name": "ゴルフ場利用税",
+    "aliases": [],
+    "burden_type": "local_tax",
+    "legal_mandate_type": "unknown",
+    "jurisdiction": "Japan/local-governments",
+    "liable_party": "unknown",
+    "economic_bearer": "unknown",
+    "collectors": [
+      "unknown"
+    ],
+    "beneficiary_or_fund": null,
+    "purpose": "",
+    "calculation_basis": "",
+    "current_status": "active",
+    "legal_bases": [
+      {
+        "law_id": "325AC0000000226",
+        "name": "地方税法",
+        "article": null,
+        "source_url": "https://laws.e-gov.go.jp/api/2/law_data/325AC0000000226"
+      }
+    ],
+    "current_phases": [],
+    "pending_changes": [],
+    "source_refs": [
+      "egov-laws"
+    ],
+    "coverage_status": "candidate",
+    "evidence_gaps": [
+      "根拠条項・納税義務者・徴収主体・適用状態を確認する",
+      "経済的負担者、目的、算定基礎を個別の公式資料で確認する",
+      "公布日、施行日、適用開始日、徴収開始日を個別の公式資料で確認する"
+    ],
+    "verified_at": "2026-08-19T07:31:40+09:00"
+  },
+  {
+    "tax_id": "gx-specified-business-charge",
+    "official_name": "unknown",
+    "aliases": [
+      "特定事業者負担金"
+    ],
+    "burden_type": "burden_charge",
+    "legal_mandate_type": "unknown",
+    "jurisdiction": "Japan",
+    "liable_party": "unknown",
+    "economic_bearer": "unknown",
+    "collectors": [
+      "unknown"
+    ],
+    "beneficiary_or_fund": null,
+    "purpose": "",
+    "calculation_basis": "",
+    "current_status": "active",
+    "legal_bases": [
+      {
+        "law_id": "505AC0000000032",
+        "name": "脱炭素成長型経済構造への円滑な移行の推進に関する法律",
+        "article": null,
+        "source_url": "https://laws.e-gov.go.jp/api/2/law_data/505AC0000000032"
+      }
+    ],
+    "current_phases": [],
+    "pending_changes": [],
+    "source_refs": [
+      "egov-laws"
+    ],
+    "coverage_status": "needs_review",
+    "evidence_gaps": [
+      "公布・施行・適用開始・徴収開始を分離して確認する",
+      "正式名称・徴収主体を確認する",
+      "経済的負担者、目的、算定基礎を個別の公式資料で確認する",
+      "公布日、施行日、適用開始日、徴収開始日を個別の公式資料で確認する"
+    ],
+    "verified_at": "2026-08-19T07:31:40+09:00"
+  },
+  {
+    "tax_id": "hepatitis-c-special-relief-contribution",
+    "official_name": "unknown",
+    "aliases": [
+      "特定救済拠出金"
+    ],
+    "burden_type": "contribution",
+    "legal_mandate_type": "mandatory_by_law",
+    "jurisdiction": "Japan",
+    "liable_party": "unknown",
+    "economic_bearer": "unknown",
+    "collectors": [
+      "unknown"
+    ],
+    "beneficiary_or_fund": null,
+    "purpose": "",
+    "calculation_basis": "",
+    "current_status": "active",
+    "legal_bases": [
+      {
+        "law_id": "420AC1000000002",
+        "name": "特定フィブリノゲン製剤及び特定血液凝固第ＩＸ因子製剤によるＣ型肝炎感染被害者を救済するための給付金の支給に関する特別措置法",
+        "article": null,
+        "source_url": "https://laws.e-gov.go.jp/api/2/law_data/420AC1000000002"
+      }
+    ],
+    "current_phases": [],
+    "pending_changes": [],
+    "source_refs": [
+      "egov-laws"
+    ],
+    "coverage_status": "candidate",
+    "evidence_gaps": [
+      "法令の正式名称・徴収主体・納付義務者・適用状態を確認する",
+      "経済的負担者、目的、算定基礎を個別の公式資料で確認する",
+      "公布日、施行日、適用開始日、徴収開始日を個別の公式資料で確認する"
+    ],
+    "verified_at": "2026-08-19T07:31:40+09:00"
+  },
+  {
+    "tax_id": "high-level-waste-disposal-contribution",
+    "official_name": "unknown",
+    "aliases": [],
+    "burden_type": "contribution",
+    "legal_mandate_type": "unknown",
+    "jurisdiction": "Japan",
+    "liable_party": "unknown",
+    "economic_bearer": "unknown",
+    "collectors": [
+      "unknown"
+    ],
+    "beneficiary_or_fund": null,
+    "purpose": "",
+    "calculation_basis": "",
+    "current_status": "active",
+    "legal_bases": [
+      {
+        "law_id": "412AC0000000117",
+        "name": "特定放射性廃棄物の最終処分に関する法律",
+        "article": null,
+        "source_url": "https://laws.e-gov.go.jp/api/2/law_data/412AC0000000117"
+      }
+    ],
+    "current_phases": [],
+    "pending_changes": [],
+    "source_refs": [
+      "egov-laws"
+    ],
+    "coverage_status": "candidate",
+    "evidence_gaps": [
+      "正式名称・条項・徴収主体・適用状態を再確認する",
+      "経済的負担者、目的、算定基礎を個別の公式資料で確認する",
+      "公布日、施行日、適用開始日、徴収開始日を個別の公式資料で確認する"
+    ],
+    "verified_at": "2026-08-19T07:31:40+09:00"
+  },
+  {
+    "tax_id": "hunting-tax",
+    "official_name": "狩猟税",
+    "aliases": [],
+    "burden_type": "local_tax",
+    "legal_mandate_type": "unknown",
+    "jurisdiction": "Japan/local-governments",
+    "liable_party": "unknown",
+    "economic_bearer": "unknown",
+    "collectors": [
+      "unknown"
+    ],
+    "beneficiary_or_fund": null,
+    "purpose": "",
+    "calculation_basis": "",
+    "current_status": "active",
+    "legal_bases": [
+      {
+        "law_id": "325AC0000000226",
+        "name": "地方税法",
+        "article": null,
+        "source_url": "https://laws.e-gov.go.jp/api/2/law_data/325AC0000000226"
+      }
+    ],
+    "current_phases": [],
+    "pending_changes": [],
+    "source_refs": [
+      "egov-laws"
+    ],
+    "coverage_status": "candidate",
+    "evidence_gaps": [
+      "根拠条項・納税義務者・徴収主体・適用状態を確認する",
+      "経済的負担者、目的、算定基礎を個別の公式資料で確認する",
+      "公布日、施行日、適用開始日、徴収開始日を個別の公式資料で確認する"
+    ],
+    "verified_at": "2026-08-19T07:31:40+09:00"
+  },
+  {
+    "tax_id": "imported-sugar-adjustment-charge",
+    "official_name": "unknown",
+    "aliases": [],
+    "burden_type": "adjustment_charge",
+    "legal_mandate_type": "unknown",
+    "jurisdiction": "Japan",
+    "liable_party": "unknown",
+    "economic_bearer": "unknown",
+    "collectors": [
+      "unknown"
+    ],
+    "beneficiary_or_fund": null,
+    "purpose": "",
+    "calculation_basis": "",
+    "current_status": "active",
+    "legal_bases": [
+      {
+        "law_id": "340AC0000000109",
+        "name": "砂糖及びでん粉の価格調整に関する法律",
+        "article": null,
+        "source_url": "https://laws.e-gov.go.jp/api/2/law_data/340AC0000000109"
+      }
+    ],
+    "current_phases": [],
+    "pending_changes": [],
+    "source_refs": [
+      "egov-laws"
+    ],
+    "coverage_status": "candidate",
+    "evidence_gaps": [
+      "正式名称・条項・納付義務者・徴収主体・適用状態を確認する",
+      "経済的負担者、目的、算定基礎を個別の公式資料で確認する",
+      "公布日、施行日、適用開始日、徴収開始日を個別の公式資料で確認する"
+    ],
+    "verified_at": "2026-08-19T07:31:40+09:00"
+  },
+  {
+    "tax_id": "income-tax",
+    "official_name": "所得税",
+    "aliases": [],
+    "burden_type": "national_tax",
+    "legal_mandate_type": "unknown",
+    "jurisdiction": "Japan",
+    "liable_party": "unknown",
+    "economic_bearer": "unknown",
+    "collectors": [
+      "unknown"
+    ],
+    "beneficiary_or_fund": null,
+    "purpose": "",
+    "calculation_basis": "",
+    "current_status": "active",
+    "legal_bases": [
+      {
+        "law_id": "340AC0000000033",
+        "name": "所得税法",
+        "article": null,
+        "source_url": "https://laws.e-gov.go.jp/api/2/law_data/340AC0000000033"
+      }
+    ],
+    "current_phases": [],
+    "pending_changes": [],
+    "source_refs": [
+      "egov-laws"
+    ],
+    "coverage_status": "candidate",
+    "evidence_gaps": [
+      "根拠法令・納税義務者・徴収主体・適用状態は個別の公式資料で確認する",
+      "経済的負担者、目的、算定基礎を個別の公式資料で確認する",
+      "公布日、施行日、適用開始日、徴収開始日を個別の公式資料で確認する"
+    ],
+    "verified_at": "2026-08-19T07:31:40+09:00"
+  },
+  {
+    "tax_id": "infection-contribution",
+    "official_name": "感染拠出金",
+    "aliases": [],
+    "burden_type": "contribution",
+    "legal_mandate_type": "mandatory_by_law",
+    "jurisdiction": "Japan",
+    "liable_party": "unknown",
+    "economic_bearer": "unknown",
+    "collectors": [
+      "医薬品医療機器総合機構"
+    ],
+    "beneficiary_or_fund": null,
+    "purpose": "",
+    "calculation_basis": "",
+    "current_status": "active",
+    "legal_bases": [
+      {
+        "law_id": "414AC0000000192",
+        "name": "独立行政法人医薬品医療機器総合機構法",
+        "article": null,
+        "source_url": "https://laws.e-gov.go.jp/api/2/law_data/414AC0000000192"
+      }
+    ],
+    "current_phases": [],
+    "pending_changes": [],
+    "source_refs": [
+      "egov-laws"
+    ],
+    "coverage_status": "candidate",
+    "evidence_gaps": [
+      "現行法・納付義務者・適用状態を確認する",
+      "経済的負担者、目的、算定基礎を個別の公式資料で確認する",
+      "公布日、施行日、適用開始日、徴収開始日を個別の公式資料で確認する"
+    ],
+    "verified_at": "2026-08-19T07:31:40+09:00"
+  },
+  {
+    "tax_id": "inheritance-and-gift-tax",
+    "official_name": "unknown",
+    "aliases": [],
+    "burden_type": "national_tax",
+    "legal_mandate_type": "unknown",
+    "jurisdiction": "Japan",
+    "liable_party": "unknown",
+    "economic_bearer": "unknown",
+    "collectors": [
+      "unknown"
+    ],
+    "beneficiary_or_fund": null,
+    "purpose": "",
+    "calculation_basis": "",
+    "current_status": "active",
+    "legal_bases": [
+      {
+        "law_id": "325AC0000000073",
+        "name": "相続税法",
+        "article": null,
+        "source_url": "https://laws.e-gov.go.jp/api/2/law_data/325AC0000000073"
+      }
+    ],
+    "current_phases": [],
+    "pending_changes": [],
+    "source_refs": [
+      "egov-laws"
+    ],
+    "coverage_status": "needs_review",
+    "evidence_gaps": [
+      "財務省税目一覧の複合表記を一制度とするか相続税と贈与税へ分割するか確認する",
+      "歳入資料は相続税の行のみで贈与税の包含関係を確認する",
+      "経済的負担者、目的、算定基礎を個別の公式資料で確認する",
+      "公布日、施行日、適用開始日、徴収開始日を個別の公式資料で確認する"
+    ],
+    "verified_at": "2026-08-19T07:31:40+09:00"
+  },
+  {
+    "tax_id": "international-oil-pollution-fund-annual-contribution",
+    "official_name": "unknown",
+    "aliases": [],
+    "burden_type": "contribution",
+    "legal_mandate_type": "mandatory_by_law",
+    "jurisdiction": "Japan",
+    "liable_party": "unknown",
+    "economic_bearer": "unknown",
+    "collectors": [
+      "unknown"
+    ],
+    "beneficiary_or_fund": null,
+    "purpose": "",
+    "calculation_basis": "",
+    "current_status": "active",
+    "legal_bases": [
+      {
+        "law_id": "350AC0000000095",
+        "name": "船舶油濁等損害賠償保障法",
+        "article": null,
+        "source_url": "https://laws.e-gov.go.jp/api/2/law_data/350AC0000000095"
+      }
+    ],
+    "current_phases": [],
+    "pending_changes": [],
+    "source_refs": [
+      "egov-laws"
+    ],
+    "coverage_status": "candidate",
+    "evidence_gaps": [
+      "基金・徴収主体・納付義務者・適用状態を確認する",
+      "経済的負担者、目的、算定基礎を個別の公式資料で確認する",
+      "公布日、施行日、適用開始日、徴収開始日を個別の公式資料で確認する"
+    ],
+    "verified_at": "2026-08-19T07:31:40+09:00"
+  },
+  {
+    "tax_id": "international-tourist-tax",
+    "official_name": "国際観光旅客税",
+    "aliases": [],
+    "burden_type": "national_tax",
+    "legal_mandate_type": "unknown",
+    "jurisdiction": "Japan",
+    "liable_party": "unknown",
+    "economic_bearer": "unknown",
+    "collectors": [
+      "unknown"
+    ],
+    "beneficiary_or_fund": null,
+    "purpose": "",
+    "calculation_basis": "",
+    "current_status": "active",
+    "legal_bases": [
+      {
+        "law_id": "430AC0000000016",
+        "name": "国際観光旅客税法",
+        "article": null,
+        "source_url": "https://laws.e-gov.go.jp/api/2/law_data/430AC0000000016"
+      }
+    ],
+    "current_phases": [],
+    "pending_changes": [],
+    "source_refs": [
+      "egov-laws"
+    ],
+    "coverage_status": "candidate",
+    "evidence_gaps": [
+      "根拠法令・納税義務者・徴収主体・適用状態は個別の公式資料で確認する",
+      "経済的負担者、目的、算定基礎を個別の公式資料で確認する",
+      "公布日、施行日、適用開始日、徴収開始日を個別の公式資料で確認する"
+    ],
+    "verified_at": "2026-08-19T07:31:40+09:00"
+  },
+  {
+    "tax_id": "investor-protection-fund-charge",
+    "official_name": "日本投資者保護基金に対する負担金",
+    "aliases": [],
+    "burden_type": "burden_charge",
+    "legal_mandate_type": "unknown",
+    "jurisdiction": "Japan",
+    "liable_party": "unknown",
+    "economic_bearer": "unknown",
+    "collectors": [
+      "日本投資者保護基金"
+    ],
+    "beneficiary_or_fund": null,
+    "purpose": "",
+    "calculation_basis": "",
+    "current_status": "active",
+    "legal_bases": [
+      {
+        "law_id": "323AC0000000025",
+        "name": "金融商品取引法",
+        "article": null,
+        "source_url": "https://laws.e-gov.go.jp/api/2/law_data/323AC0000000025"
+      }
+    ],
+    "current_phases": [],
+    "pending_changes": [],
+    "source_refs": [
+      "egov-laws"
+    ],
+    "coverage_status": "candidate",
+    "evidence_gaps": [
+      "現行法・納付義務者・適用状態を再確認する",
+      "経済的負担者、目的、算定基礎を個別の公式資料で確認する",
+      "公布日、施行日、適用開始日、徴収開始日を個別の公式資料で確認する"
+    ],
+    "verified_at": "2026-08-19T07:31:40+09:00"
+  },
+  {
+    "tax_id": "irrigation-water-facility-charge",
+    "official_name": "unknown",
+    "aliases": [],
+    "burden_type": "burden_charge",
+    "legal_mandate_type": "mandatory_by_law",
+    "jurisdiction": "Japan",
+    "liable_party": "unknown",
+    "economic_bearer": "unknown",
+    "collectors": [
+      "水資源機構"
+    ],
+    "beneficiary_or_fund": null,
+    "purpose": "",
+    "calculation_basis": "",
+    "current_status": "active",
+    "legal_bases": [
+      {
+        "law_id": "414AC0000000182",
+        "name": "独立行政法人水資源機構法",
+        "article": null,
+        "source_url": "https://laws.e-gov.go.jp/api/2/law_data/414AC0000000182"
+      }
+    ],
+    "current_phases": [],
+    "pending_changes": [],
+    "source_refs": [
+      "egov-laws"
+    ],
+    "coverage_status": "candidate",
+    "evidence_gaps": [
+      "正式名称・納付義務者・適用状態を確認する",
+      "経済的負担者、目的、算定基礎を個別の公式資料で確認する",
+      "公布日、施行日、適用開始日、徴収開始日を個別の公式資料で確認する"
+    ],
+    "verified_at": "2026-08-19T07:31:40+09:00"
+  },
+  {
+    "tax_id": "library-public-transmission-compensation",
+    "official_name": "図書館等公衆送信補償金",
+    "aliases": [],
+    "burden_type": "payment",
+    "legal_mandate_type": "unknown",
+    "jurisdiction": "Japan",
+    "liable_party": "unknown",
+    "economic_bearer": "unknown",
+    "collectors": [
+      "unknown"
+    ],
+    "beneficiary_or_fund": null,
+    "purpose": "",
+    "calculation_basis": "",
+    "current_status": "active",
+    "legal_bases": [
+      {
+        "law_id": "345AC0000000048",
+        "name": "著作権法",
+        "article": null,
+        "source_url": "https://laws.e-gov.go.jp/api/2/law_data/345AC0000000048"
+      }
+    ],
+    "current_phases": [],
+    "pending_changes": [],
+    "source_refs": [
+      "egov-laws"
+    ],
+    "coverage_status": "candidate",
+    "evidence_gaps": [
+      "現行法・納付義務者・徴収主体・適用状態を確認する",
+      "経済的負担者、目的、算定基礎を個別の公式資料で確認する",
+      "公布日、施行日、適用開始日、徴収開始日を個別の公式資料で確認する"
+    ],
+    "verified_at": "2026-08-19T07:31:40+09:00"
+  },
+  {
+    "tax_id": "light-motor-vehicle-tax",
+    "official_name": "軽自動車税",
+    "aliases": [],
+    "burden_type": "local_tax",
+    "legal_mandate_type": "unknown",
+    "jurisdiction": "Japan/local-governments",
+    "liable_party": "unknown",
+    "economic_bearer": "unknown",
+    "collectors": [
+      "unknown"
+    ],
+    "beneficiary_or_fund": null,
+    "purpose": "",
+    "calculation_basis": "",
+    "current_status": "active",
+    "legal_bases": [
+      {
+        "law_id": "325AC0000000226",
+        "name": "地方税法",
+        "article": null,
+        "source_url": "https://laws.e-gov.go.jp/api/2/law_data/325AC0000000226"
+      }
+    ],
+    "current_phases": [],
+    "pending_changes": [],
+    "source_refs": [
+      "egov-laws"
+    ],
+    "coverage_status": "needs_review",
+    "evidence_gaps": [
+      "種別割・環境性能割等の制度粒度を確認する",
+      "根拠条項・徴収主体・適用状態を確認する",
+      "経済的負担者、目的、算定基礎を個別の公式資料で確認する",
+      "公布日、施行日、適用開始日、徴収開始日を個別の公式資料で確認する"
+    ],
+    "verified_at": "2026-08-19T07:31:40+09:00"
+  },
+  {
+    "tax_id": "light-oil-delivery-tax",
+    "official_name": "軽油引取税",
+    "aliases": [],
+    "burden_type": "local_tax",
+    "legal_mandate_type": "unknown",
+    "jurisdiction": "Japan/local-governments",
+    "liable_party": "unknown",
+    "economic_bearer": "unknown",
+    "collectors": [
+      "unknown"
+    ],
+    "beneficiary_or_fund": null,
+    "purpose": "",
+    "calculation_basis": "",
+    "current_status": "active",
+    "legal_bases": [
+      {
+        "law_id": "325AC0000000226",
+        "name": "地方税法",
+        "article": null,
+        "source_url": "https://laws.e-gov.go.jp/api/2/law_data/325AC0000000226"
+      }
+    ],
+    "current_phases": [],
+    "pending_changes": [],
+    "source_refs": [
+      "egov-laws"
+    ],
+    "coverage_status": "candidate",
+    "evidence_gaps": [
+      "根拠条項・納税義務者・徴収主体・適用状態を確認する",
+      "経済的負担者、目的、算定基礎を個別の公式資料で確認する",
+      "公布日、施行日、適用開始日、徴収開始日を個別の公式資料で確認する"
+    ],
+    "verified_at": "2026-08-19T07:31:40+09:00"
+  },
+  {
+    "tax_id": "liquor-tax",
+    "official_name": "酒税",
+    "aliases": [],
+    "burden_type": "national_tax",
+    "legal_mandate_type": "unknown",
+    "jurisdiction": "Japan",
+    "liable_party": "unknown",
+    "economic_bearer": "unknown",
+    "collectors": [
+      "unknown"
+    ],
+    "beneficiary_or_fund": null,
+    "purpose": "",
+    "calculation_basis": "",
+    "current_status": "active",
+    "legal_bases": [
+      {
+        "law_id": "328AC0000000006",
+        "name": "酒税法",
+        "article": null,
+        "source_url": "https://laws.e-gov.go.jp/api/2/law_data/328AC0000000006"
+      }
+    ],
+    "current_phases": [],
+    "pending_changes": [],
+    "source_refs": [
+      "egov-laws"
+    ],
+    "coverage_status": "candidate",
+    "evidence_gaps": [
+      "根拠法令・納税義務者・徴収主体・適用状態は個別の公式資料で確認する",
+      "経済的負担者、目的、算定基礎を個別の公式資料で確認する",
+      "公布日、施行日、適用開始日、徴収開始日を個別の公式資料で確認する"
+    ],
+    "verified_at": "2026-08-19T07:31:40+09:00"
+  },
+  {
+    "tax_id": "local-consumption-tax",
+    "official_name": "地方消費税",
+    "aliases": [],
+    "burden_type": "local_tax",
+    "legal_mandate_type": "unknown",
+    "jurisdiction": "Japan/local-governments",
+    "liable_party": "unknown",
+    "economic_bearer": "unknown",
+    "collectors": [
+      "unknown"
+    ],
+    "beneficiary_or_fund": null,
+    "purpose": "",
+    "calculation_basis": "",
+    "current_status": "active",
+    "legal_bases": [
+      {
+        "law_id": "325AC0000000226",
+        "name": "地方税法",
+        "article": null,
+        "source_url": "https://laws.e-gov.go.jp/api/2/law_data/325AC0000000226"
+      }
+    ],
+    "current_phases": [],
+    "pending_changes": [],
+    "source_refs": [
+      "egov-laws"
+    ],
+    "coverage_status": "candidate",
+    "evidence_gaps": [
+      "国税の消費税と別制度として徴収・清算・帰属を確認する",
+      "合計税率を重複登録しない",
+      "適用状態を確認する",
+      "経済的負担者、目的、算定基礎を個別の公式資料で確認する",
+      "公布日、施行日、適用開始日、徴収開始日を個別の公式資料で確認する"
+    ],
+    "verified_at": "2026-08-19T07:31:40+09:00"
+  },
+  {
+    "tax_id": "local-corporation-tax",
+    "official_name": "地方法人税",
+    "aliases": [],
+    "burden_type": "national_tax",
+    "legal_mandate_type": "unknown",
+    "jurisdiction": "Japan",
+    "liable_party": "unknown",
+    "economic_bearer": "unknown",
+    "collectors": [
+      "unknown"
+    ],
+    "beneficiary_or_fund": null,
+    "purpose": "",
+    "calculation_basis": "",
+    "current_status": "active",
+    "legal_bases": [
+      {
+        "law_id": "426AC0000000011",
+        "name": "地方法人税法",
+        "article": null,
+        "source_url": "https://laws.e-gov.go.jp/api/2/law_data/426AC0000000011"
+      }
+    ],
+    "current_phases": [],
+    "pending_changes": [],
+    "source_refs": [
+      "egov-laws"
+    ],
+    "coverage_status": "candidate",
+    "evidence_gaps": [
+      "名称に地方を含むが国税であることと地方交付税原資等の関係を正本で明示する",
+      "適用状態は個別確認する",
+      "経済的負担者、目的、算定基礎を個別の公式資料で確認する",
+      "公布日、施行日、適用開始日、徴収開始日を個別の公式資料で確認する"
+    ],
+    "verified_at": "2026-08-19T07:31:40+09:00"
+  },
+  {
+    "tax_id": "local-gasoline-tax",
+    "official_name": "地方揮発油税",
+    "aliases": [],
+    "burden_type": "national_tax",
+    "legal_mandate_type": "unknown",
+    "jurisdiction": "Japan",
+    "liable_party": "unknown",
+    "economic_bearer": "unknown",
+    "collectors": [
+      "unknown"
+    ],
+    "beneficiary_or_fund": null,
+    "purpose": "",
+    "calculation_basis": "",
+    "current_status": "active",
+    "legal_bases": [
+      {
+        "law_id": "330AC0000000104",
+        "name": "地方揮発油税法",
+        "article": null,
+        "source_url": "https://laws.e-gov.go.jp/api/2/law_data/330AC0000000104"
+      }
+    ],
+    "current_phases": [],
+    "pending_changes": [],
+    "source_refs": [
+      "egov-laws"
+    ],
+    "coverage_status": "candidate",
+    "evidence_gaps": [
+      "名称に地方を含むが国税であることと譲与分を区別する",
+      "適用状態は個別確認する",
+      "経済的負担者、目的、算定基礎を個別の公式資料で確認する",
+      "公布日、施行日、適用開始日、徴収開始日を個別の公式資料で確認する"
+    ],
+    "verified_at": "2026-08-19T07:31:40+09:00"
+  },
+  {
+    "tax_id": "local-tobacco-tax",
+    "official_name": "地方たばこ税",
+    "aliases": [],
+    "burden_type": "local_tax",
+    "legal_mandate_type": "unknown",
+    "jurisdiction": "Japan/local-governments",
+    "liable_party": "unknown",
+    "economic_bearer": "unknown",
+    "collectors": [
+      "unknown"
+    ],
+    "beneficiary_or_fund": null,
+    "purpose": "",
+    "calculation_basis": "",
+    "current_status": "active",
+    "legal_bases": [
+      {
+        "law_id": "325AC0000000226",
+        "name": "地方税法",
+        "article": null,
+        "source_url": "https://laws.e-gov.go.jp/api/2/law_data/325AC0000000226"
+      }
+    ],
+    "current_phases": [],
+    "pending_changes": [],
+    "source_refs": [
+      "egov-laws"
+    ],
+    "coverage_status": "needs_review",
+    "evidence_gaps": [
+      "道府県たばこ税と市町村たばこ税の制度粒度を確認する",
+      "国税のたばこ税と別制度として帰属・適用状態を確認する",
+      "経済的負担者、目的、算定基礎を個別の公式資料で確認する",
+      "公布日、施行日、適用開始日、徴収開始日を個別の公式資料で確認する"
+    ],
+    "verified_at": "2026-08-19T07:31:40+09:00"
+  },
+  {
+    "tax_id": "long-term-care-insurance-premium",
+    "official_name": "unknown",
+    "aliases": [],
+    "burden_type": "social_insurance_premium",
+    "legal_mandate_type": "unknown",
+    "jurisdiction": "Japan",
+    "liable_party": "unknown",
+    "economic_bearer": "unknown",
+    "collectors": [
+      "unknown"
+    ],
+    "beneficiary_or_fund": null,
+    "purpose": "",
+    "calculation_basis": "",
+    "current_status": "active",
+    "legal_bases": [
+      {
+        "law_id": "409AC0000000123",
+        "name": "介護保険法",
+        "article": null,
+        "source_url": "https://laws.e-gov.go.jp/api/2/law_data/409AC0000000123"
+      }
+    ],
+    "current_phases": [],
+    "pending_changes": [],
+    "source_refs": [
+      "egov-laws"
+    ],
+    "coverage_status": "needs_review",
+    "evidence_gaps": [
+      "被保険者区分等の制度粒度・納付義務者・徴収主体・適用状態を確認する",
+      "経済的負担者、目的、算定基礎を個別の公式資料で確認する",
+      "公布日、施行日、適用開始日、徴収開始日を個別の公式資料で確認する"
+    ],
+    "verified_at": "2026-08-19T07:31:40+09:00"
+  },
+  {
+    "tax_id": "medical-insurance-premium",
+    "official_name": "unknown",
+    "aliases": [],
+    "burden_type": "social_insurance_premium",
+    "legal_mandate_type": "unknown",
+    "jurisdiction": "Japan",
+    "liable_party": "unknown",
+    "economic_bearer": "unknown",
+    "collectors": [
+      "unknown"
+    ],
+    "beneficiary_or_fund": null,
+    "purpose": "",
+    "calculation_basis": "",
+    "current_status": "active",
+    "legal_bases": [
+      {
+        "law_id": "211AC0000000070",
+        "name": "健康保険法",
+        "article": null,
+        "source_url": "https://laws.e-gov.go.jp/api/2/law_data/211AC0000000070"
+      },
+      {
+        "law_id": "333AC0000000192",
+        "name": "国民健康保険法",
+        "article": null,
+        "source_url": "https://laws.e-gov.go.jp/api/2/law_data/333AC0000000192"
+      },
+      {
+        "law_id": "357AC0000000080",
+        "name": "高齢者の医療の確保に関する法律",
+        "article": null,
+        "source_url": "https://laws.e-gov.go.jp/api/2/law_data/357AC0000000080"
+      }
+    ],
+    "current_phases": [],
+    "pending_changes": [],
+    "source_refs": [
+      "egov-laws"
+    ],
+    "coverage_status": "needs_review",
+    "evidence_gaps": [
+      "健康保険・国民健康保険・後期高齢者医療等の個別制度へ分割する",
+      "国民健康保険税と混同しない",
+      "経済的負担者、目的、算定基礎を個別の公式資料で確認する",
+      "公布日、施行日、適用開始日、徴収開始日を個別の公式資料で確認する"
+    ],
+    "verified_at": "2026-08-19T07:31:40+09:00"
+  },
+  {
+    "tax_id": "minamata-specified-business-compensation-levy",
+    "official_name": "unknown",
+    "aliases": [
+      "補償賦課金"
+    ],
+    "burden_type": "levy",
+    "legal_mandate_type": "mandatory_by_law",
+    "jurisdiction": "Japan",
+    "liable_party": "unknown",
+    "economic_bearer": "unknown",
+    "collectors": [
+      "unknown"
+    ],
+    "beneficiary_or_fund": null,
+    "purpose": "",
+    "calculation_basis": "",
+    "current_status": "active",
+    "legal_bases": [
+      {
+        "law_id": "421AC1000000081",
+        "name": "水俣病被害者の救済及び水俣病問題の解決に関する特別措置法",
+        "article": null,
+        "source_url": "https://laws.e-gov.go.jp/api/2/law_data/421AC1000000081"
+      }
+    ],
+    "current_phases": [],
+    "pending_changes": [],
+    "source_refs": [
+      "egov-laws"
+    ],
+    "coverage_status": "candidate",
+    "evidence_gaps": [
+      "法令の正式名称・徴収主体・適用状態を確認する",
+      "経済的負担者、目的、算定基礎を個別の公式資料で確認する",
+      "公布日、施行日、適用開始日、徴収開始日を個別の公式資料で確認する"
+    ],
+    "verified_at": "2026-08-19T07:31:40+09:00"
+  },
+  {
+    "tax_id": "mineral-product-tax",
+    "official_name": "鉱産税",
+    "aliases": [],
+    "burden_type": "local_tax",
+    "legal_mandate_type": "unknown",
+    "jurisdiction": "Japan/local-governments",
+    "liable_party": "unknown",
+    "economic_bearer": "unknown",
+    "collectors": [
+      "unknown"
+    ],
+    "beneficiary_or_fund": null,
+    "purpose": "",
+    "calculation_basis": "",
+    "current_status": "active",
+    "legal_bases": [
+      {
+        "law_id": "325AC0000000226",
+        "name": "地方税法",
+        "article": null,
+        "source_url": "https://laws.e-gov.go.jp/api/2/law_data/325AC0000000226"
+      }
+    ],
+    "current_phases": [],
+    "pending_changes": [],
+    "source_refs": [
+      "egov-laws"
+    ],
+    "coverage_status": "candidate",
+    "evidence_gaps": [
+      "根拠条項・納税義務者・徴収主体・適用状態を確認する",
+      "経済的負担者、目的、算定基礎を個別の公式資料で確認する",
+      "公布日、施行日、適用開始日、徴収開始日を個別の公式資料で確認する"
+    ],
+    "verified_at": "2026-08-19T07:31:40+09:00"
+  },
+  {
+    "tax_id": "mining-area-tax",
+    "official_name": "鉱区税",
+    "aliases": [],
+    "burden_type": "local_tax",
+    "legal_mandate_type": "unknown",
+    "jurisdiction": "Japan/local-governments",
+    "liable_party": "unknown",
+    "economic_bearer": "unknown",
+    "collectors": [
+      "unknown"
+    ],
+    "beneficiary_or_fund": null,
+    "purpose": "",
+    "calculation_basis": "",
+    "current_status": "active",
+    "legal_bases": [
+      {
+        "law_id": "325AC0000000226",
+        "name": "地方税法",
+        "article": null,
+        "source_url": "https://laws.e-gov.go.jp/api/2/law_data/325AC0000000226"
+      }
+    ],
+    "current_phases": [],
+    "pending_changes": [],
+    "source_refs": [
+      "egov-laws"
+    ],
+    "coverage_status": "candidate",
+    "evidence_gaps": [
+      "根拠条項・納税義務者・徴収主体・適用状態を確認する",
+      "経済的負担者、目的、算定基礎を個別の公式資料で確認する",
+      "公布日、施行日、適用開始日、徴収開始日を個別の公式資料で確認する"
+    ],
+    "verified_at": "2026-08-19T07:31:40+09:00"
+  },
+  {
+    "tax_id": "mining-pollution-prevention-fund-contribution",
+    "official_name": "鉱害防止事業基金に対する拠出金",
+    "aliases": [],
+    "burden_type": "contribution",
+    "legal_mandate_type": "mandatory_by_law",
+    "jurisdiction": "Japan",
+    "liable_party": "unknown",
+    "economic_bearer": "unknown",
+    "collectors": [
+      "unknown"
+    ],
+    "beneficiary_or_fund": null,
+    "purpose": "",
+    "calculation_basis": "",
+    "current_status": "active",
+    "legal_bases": [
+      {
+        "law_id": "348AC0000000026",
+        "name": "金属鉱業等鉱害対策特別措置法",
+        "article": null,
+        "source_url": "https://laws.e-gov.go.jp/api/2/law_data/348AC0000000026"
+      }
+    ],
+    "current_phases": [],
+    "pending_changes": [],
+    "source_refs": [
+      "egov-laws"
+    ],
+    "coverage_status": "candidate",
+    "evidence_gaps": [
+      "徴収主体・納付義務者・適用状態を確認する",
+      "経済的負担者、目的、算定基礎を個別の公式資料で確認する",
+      "公布日、施行日、適用開始日、徴収開始日を個別の公式資料で確認する"
+    ],
+    "verified_at": "2026-08-19T07:31:40+09:00"
+  },
+  {
+    "tax_id": "multipurpose-dam-charge",
+    "official_name": "unknown",
+    "aliases": [],
+    "burden_type": "burden_charge",
+    "legal_mandate_type": "mandatory_by_law",
+    "jurisdiction": "Japan",
+    "liable_party": "unknown",
+    "economic_bearer": "unknown",
+    "collectors": [
+      "unknown"
+    ],
+    "beneficiary_or_fund": null,
+    "purpose": "",
+    "calculation_basis": "",
+    "current_status": "active",
+    "legal_bases": [
+      {
+        "law_id": "332AC0000000035",
+        "name": "特定多目的ダム法",
+        "article": null,
+        "source_url": "https://laws.e-gov.go.jp/api/2/law_data/332AC0000000035"
+      }
+    ],
+    "current_phases": [],
+    "pending_changes": [],
+    "source_refs": [
+      "egov-laws"
+    ],
+    "coverage_status": "needs_review",
+    "evidence_gaps": [
+      "複数条項の負担金とダム使用権者負担金を分割するか確認する",
+      "徴収主体・適用状態を確認する",
+      "経済的負担者、目的、算定基礎を個別の公式資料で確認する",
+      "公布日、施行日、適用開始日、徴収開始日を個別の公式資料で確認する"
+    ],
+    "verified_at": "2026-08-19T07:31:40+09:00"
+  },
+  {
+    "tax_id": "national-health-insurance-tax",
+    "official_name": "国民健康保険税",
+    "aliases": [],
+    "burden_type": "local_tax",
+    "legal_mandate_type": "unknown",
+    "jurisdiction": "Japan/local-governments",
+    "liable_party": "unknown",
+    "economic_bearer": "unknown",
+    "collectors": [
+      "unknown"
+    ],
+    "beneficiary_or_fund": null,
+    "purpose": "",
+    "calculation_basis": "",
+    "current_status": "active",
+    "legal_bases": [
+      {
+        "law_id": "325AC0000000226",
+        "name": "地方税法",
+        "article": null,
+        "source_url": "https://laws.e-gov.go.jp/api/2/law_data/325AC0000000226"
+      }
+    ],
+    "current_phases": [],
+    "pending_changes": [],
+    "source_refs": [
+      "egov-laws"
+    ],
+    "coverage_status": "needs_review",
+    "evidence_gaps": [
+      "国民健康保険料と混同せず自治体の採用方式・根拠・制度粒度を確認する",
+      "適用状態を確認する",
+      "経済的負担者、目的、算定基礎を個別の公式資料で確認する",
+      "公布日、施行日、適用開始日、徴収開始日を個別の公式資料で確認する"
+    ],
+    "verified_at": "2026-08-19T07:31:40+09:00"
+  },
+  {
+    "tax_id": "non-statutory-ordinary-tax-category",
+    "official_name": "法定外普通税",
+    "aliases": [],
+    "burden_type": "local_tax",
+    "legal_mandate_type": "unknown",
+    "jurisdiction": "Japan/local-governments",
+    "liable_party": "unknown",
+    "economic_bearer": "unknown",
+    "collectors": [
+      "unknown"
+    ],
+    "beneficiary_or_fund": null,
+    "purpose": "",
+    "calculation_basis": "",
+    "current_status": "active",
+    "legal_bases": [
+      {
+        "law_id": "325AC0000000226",
+        "name": "地方税法",
+        "article": null,
+        "source_url": "https://laws.e-gov.go.jp/api/2/law_data/325AC0000000226"
+      }
+    ],
+    "current_phases": [],
+    "pending_changes": [],
+    "source_refs": [
+      "egov-laws"
+    ],
+    "coverage_status": "needs_review",
+    "evidence_gaps": [
+      "個別税ではなく制度区分として登録する粒度を#28で確認する",
+      "経済的負担者、目的、算定基礎を個別の公式資料で確認する",
+      "公布日、施行日、適用開始日、徴収開始日を個別の公式資料で確認する"
+    ],
+    "verified_at": "2026-08-19T07:31:40+09:00"
+  },
+  {
+    "tax_id": "non-statutory-purpose-tax-category",
+    "official_name": "法定外目的税",
+    "aliases": [],
+    "burden_type": "local_tax",
+    "legal_mandate_type": "unknown",
+    "jurisdiction": "Japan/local-governments",
+    "liable_party": "unknown",
+    "economic_bearer": "unknown",
+    "collectors": [
+      "unknown"
+    ],
+    "beneficiary_or_fund": null,
+    "purpose": "",
+    "calculation_basis": "",
+    "current_status": "active",
+    "legal_bases": [
+      {
+        "law_id": "325AC0000000226",
+        "name": "地方税法",
+        "article": null,
+        "source_url": "https://laws.e-gov.go.jp/api/2/law_data/325AC0000000226"
+      }
+    ],
+    "current_phases": [],
+    "pending_changes": [],
+    "source_refs": [
+      "egov-laws"
+    ],
+    "coverage_status": "needs_review",
+    "evidence_gaps": [
+      "個別税ではなく制度区分として登録する粒度を#28で確認する",
+      "経済的負担者、目的、算定基礎を個別の公式資料で確認する",
+      "公布日、施行日、適用開始日、徴収開始日を個別の公式資料で確認する"
+    ],
+    "verified_at": "2026-08-19T07:31:40+09:00"
+  },
+  {
+    "tax_id": "nuclear-damage-support-general-charge",
+    "official_name": "unknown",
+    "aliases": [
+      "一般負担金"
+    ],
+    "burden_type": "burden_charge",
+    "legal_mandate_type": "unknown",
+    "jurisdiction": "Japan",
+    "liable_party": "unknown",
+    "economic_bearer": "unknown",
+    "collectors": [
+      "原子力損害賠償・廃炉等支援機構"
+    ],
+    "beneficiary_or_fund": null,
+    "purpose": "",
+    "calculation_basis": "",
+    "current_status": "active",
+    "legal_bases": [
+      {
+        "law_id": "423AC0000000094",
+        "name": "原子力損害賠償・廃炉等支援機構法",
+        "article": null,
+        "source_url": "https://laws.e-gov.go.jp/api/2/law_data/423AC0000000094"
+      }
+    ],
+    "current_phases": [],
+    "pending_changes": [],
+    "source_refs": [
+      "egov-laws"
+    ],
+    "coverage_status": "candidate",
+    "evidence_gaps": [
+      "正式名称・条項・納付義務者・適用状態を再確認する",
+      "経済的負担者、目的、算定基礎を個別の公式資料で確認する",
+      "公布日、施行日、適用開始日、徴収開始日を個別の公式資料で確認する"
+    ],
+    "verified_at": "2026-08-19T07:31:40+09:00"
+  },
+  {
+    "tax_id": "nuclear-damage-support-special-charge",
+    "official_name": "unknown",
+    "aliases": [
+      "特別負担金"
+    ],
+    "burden_type": "burden_charge",
+    "legal_mandate_type": "unknown",
+    "jurisdiction": "Japan",
+    "liable_party": "unknown",
+    "economic_bearer": "unknown",
+    "collectors": [
+      "原子力損害賠償・廃炉等支援機構"
+    ],
+    "beneficiary_or_fund": null,
+    "purpose": "",
+    "calculation_basis": "",
+    "current_status": "active",
+    "legal_bases": [
+      {
+        "law_id": "423AC0000000094",
+        "name": "原子力損害賠償・廃炉等支援機構法",
+        "article": null,
+        "source_url": "https://laws.e-gov.go.jp/api/2/law_data/423AC0000000094"
+      }
+    ],
+    "current_phases": [],
+    "pending_changes": [],
+    "source_refs": [
+      "egov-laws"
+    ],
+    "coverage_status": "candidate",
+    "evidence_gaps": [
+      "正式名称・条項・納付義務者・適用状態を再確認する",
+      "経済的負担者、目的、算定基礎を個別の公式資料で確認する",
+      "公布日、施行日、適用開始日、徴収開始日を個別の公式資料で確認する"
+    ],
+    "verified_at": "2026-08-19T07:31:40+09:00"
+  },
+  {
+    "tax_id": "nuclear-decommissioning-contribution",
+    "official_name": "unknown",
+    "aliases": [
+      "廃炉拠出金"
+    ],
+    "burden_type": "contribution",
+    "legal_mandate_type": "unknown",
+    "jurisdiction": "Japan",
+    "liable_party": "unknown",
+    "economic_bearer": "unknown",
+    "collectors": [
+      "unknown"
+    ],
+    "beneficiary_or_fund": null,
+    "purpose": "",
+    "calculation_basis": "",
+    "current_status": "active",
+    "legal_bases": [
+      {
+        "law_id": "417AC0000000048",
+        "name": "原子力発電における使用済燃料の再処理等の実施及び廃炉の推進に関する法律",
+        "article": null,
+        "source_url": "https://laws.e-gov.go.jp/api/2/law_data/417AC0000000048"
+      }
+    ],
+    "current_phases": [],
+    "pending_changes": [],
+    "source_refs": [
+      "egov-laws"
+    ],
+    "coverage_status": "candidate",
+    "evidence_gaps": [
+      "正式名称・条項・徴収主体・適用状態を再確認する",
+      "経済的負担者、目的、算定基礎を個別の公式資料で確認する",
+      "公布日、施行日、適用開始日、徴収開始日を個別の公式資料で確認する"
+    ],
+    "verified_at": "2026-08-19T07:31:40+09:00"
+  },
+  {
+    "tax_id": "participant-protection-trust-charge",
+    "official_name": "加入者保護信託への負担金",
+    "aliases": [],
+    "burden_type": "burden_charge",
+    "legal_mandate_type": "mandatory_by_law",
+    "jurisdiction": "Japan",
+    "liable_party": "unknown",
+    "economic_bearer": "unknown",
+    "collectors": [
+      "unknown"
+    ],
+    "beneficiary_or_fund": null,
+    "purpose": "",
+    "calculation_basis": "",
+    "current_status": "active",
+    "legal_bases": [
+      {
+        "law_id": "413AC0000000075",
+        "name": "社債、株式等の振替に関する法律",
+        "article": null,
+        "source_url": "https://laws.e-gov.go.jp/api/2/law_data/413AC0000000075"
+      }
+    ],
+    "current_phases": [],
+    "pending_changes": [],
+    "source_refs": [
+      "egov-laws"
+    ],
+    "coverage_status": "candidate",
+    "evidence_gaps": [
+      "徴収主体・現行法・納付義務者・適用状態を確認する",
+      "経済的負担者、目的、算定基礎を個別の公式資料で確認する",
+      "公布日、施行日、適用開始日、徴収開始日を個別の公式資料で確認する"
+    ],
+    "verified_at": "2026-08-19T07:31:40+09:00"
+  },
+  {
+    "tax_id": "pension-insurance-premium",
+    "official_name": "unknown",
+    "aliases": [],
+    "burden_type": "social_insurance_premium",
+    "legal_mandate_type": "unknown",
+    "jurisdiction": "Japan",
+    "liable_party": "unknown",
+    "economic_bearer": "unknown",
+    "collectors": [
+      "unknown"
+    ],
+    "beneficiary_or_fund": null,
+    "purpose": "",
+    "calculation_basis": "",
+    "current_status": "active",
+    "legal_bases": [
+      {
+        "law_id": "329AC0000000115",
+        "name": "厚生年金保険法",
+        "article": null,
+        "source_url": "https://laws.e-gov.go.jp/api/2/law_data/329AC0000000115"
+      },
+      {
+        "law_id": "334AC0000000141",
+        "name": "国民年金法",
+        "article": null,
+        "source_url": "https://laws.e-gov.go.jp/api/2/law_data/334AC0000000141"
+      }
+    ],
+    "current_phases": [],
+    "pending_changes": [],
+    "source_refs": [
+      "egov-laws"
+    ],
+    "coverage_status": "needs_review",
+    "evidence_gaps": [
+      "厚生年金・国民年金等の個別制度へ分割する",
+      "納付義務者・徴収主体・適用状態を確認する",
+      "経済的負担者、目的、算定基礎を個別の公式資料で確認する",
+      "公布日、施行日、適用開始日、徴収開始日を個別の公式資料で確認する"
+    ],
+    "verified_at": "2026-08-19T07:31:40+09:00"
+  },
+  {
+    "tax_id": "petroleum-and-coal-tax",
+    "official_name": "石油石炭税",
+    "aliases": [],
+    "burden_type": "national_tax",
+    "legal_mandate_type": "unknown",
+    "jurisdiction": "Japan",
+    "liable_party": "unknown",
+    "economic_bearer": "unknown",
+    "collectors": [
+      "unknown"
+    ],
+    "beneficiary_or_fund": null,
+    "purpose": "",
+    "calculation_basis": "",
+    "current_status": "active",
+    "legal_bases": [
+      {
+        "law_id": "353AC0000000025",
+        "name": "石油石炭税法",
+        "article": null,
+        "source_url": "https://laws.e-gov.go.jp/api/2/law_data/353AC0000000025"
+      }
+    ],
+    "current_phases": [],
+    "pending_changes": [],
+    "source_refs": [
+      "egov-laws"
+    ],
+    "coverage_status": "candidate",
+    "evidence_gaps": [
+      "根拠法令・納税義務者・徴収主体・適用状態は個別の公式資料で確認する",
+      "経済的負担者、目的、算定基礎を個別の公式資料で確認する",
+      "公布日、施行日、適用開始日、徴収開始日を個別の公式資料で確認する"
+    ],
+    "verified_at": "2026-08-19T07:31:40+09:00"
+  },
+  {
+    "tax_id": "petroleum-gas-tax",
+    "official_name": "石油ガス税",
+    "aliases": [],
+    "burden_type": "national_tax",
+    "legal_mandate_type": "unknown",
+    "jurisdiction": "Japan",
+    "liable_party": "unknown",
+    "economic_bearer": "unknown",
+    "collectors": [
+      "unknown"
+    ],
+    "beneficiary_or_fund": null,
+    "purpose": "",
+    "calculation_basis": "",
+    "current_status": "active",
+    "legal_bases": [
+      {
+        "law_id": "340AC0000000156",
+        "name": "石油ガス税法",
+        "article": null,
+        "source_url": "https://laws.e-gov.go.jp/api/2/law_data/340AC0000000156"
+      }
+    ],
+    "current_phases": [],
+    "pending_changes": [],
+    "source_refs": [
+      "egov-laws"
+    ],
+    "coverage_status": "candidate",
+    "evidence_gaps": [
+      "本表と譲与分参考欄を二重計上しない集計関係を確認する",
+      "適用状態は個別確認する",
+      "経済的負担者、目的、算定基礎を個別の公式資料で確認する",
+      "公布日、施行日、適用開始日、徴収開始日を個別の公式資料で確認する"
+    ],
+    "verified_at": "2026-08-19T07:31:40+09:00"
+  },
+  {
+    "tax_id": "pharmaceutical-safety-contribution",
+    "official_name": "unknown",
+    "aliases": [],
+    "burden_type": "contribution",
+    "legal_mandate_type": "mandatory_by_law",
+    "jurisdiction": "Japan",
+    "liable_party": "unknown",
+    "economic_bearer": "unknown",
+    "collectors": [
+      "医薬品医療機器総合機構"
+    ],
+    "beneficiary_or_fund": null,
+    "purpose": "",
+    "calculation_basis": "",
+    "current_status": "active",
+    "legal_bases": [
+      {
+        "law_id": "414AC0000000192",
+        "name": "独立行政法人医薬品医療機器総合機構法",
+        "article": null,
+        "source_url": "https://laws.e-gov.go.jp/api/2/law_data/414AC0000000192"
+      }
+    ],
+    "current_phases": [],
+    "pending_changes": [],
+    "source_refs": [
+      "egov-laws"
+    ],
+    "coverage_status": "candidate",
+    "evidence_gaps": [
+      "法令上の正式名称・納付義務者・適用状態を確認する",
+      "経済的負担者、目的、算定基礎を個別の公式資料で確認する",
+      "公布日、施行日、適用開始日、徴収開始日を個別の公式資料で確認する"
+    ],
+    "verified_at": "2026-08-19T07:31:40+09:00"
+  },
+  {
+    "tax_id": "policyholder-protection-fund-charge",
+    "official_name": "unknown",
+    "aliases": [],
+    "burden_type": "burden_charge",
+    "legal_mandate_type": "unknown",
+    "jurisdiction": "Japan",
+    "liable_party": "unknown",
+    "economic_bearer": "unknown",
+    "collectors": [
+      "unknown"
+    ],
+    "beneficiary_or_fund": null,
+    "purpose": "",
+    "calculation_basis": "",
+    "current_status": "active",
+    "legal_bases": [
+      {
+        "law_id": "407AC0000000105",
+        "name": "保険業法",
+        "article": null,
+        "source_url": "https://laws.e-gov.go.jp/api/2/law_data/407AC0000000105"
+      }
+    ],
+    "current_phases": [],
+    "pending_changes": [],
+    "source_refs": [
+      "egov-laws"
+    ],
+    "coverage_status": "needs_review",
+    "evidence_gaps": [
+      "生命保険契約者保護機構と損害保険契約者保護機構を別制度へ分割するか確認する",
+      "現行法・適用状態を再確認する",
+      "経済的負担者、目的、算定基礎を個別の公式資料で確認する",
+      "公布日、施行日、適用開始日、徴収開始日を個別の公式資料で確認する"
+    ],
+    "verified_at": "2026-08-19T07:31:40+09:00"
+  },
+  {
+    "tax_id": "pollution-load-levy",
+    "official_name": "汚染負荷量賦課金",
+    "aliases": [],
+    "burden_type": "levy",
+    "legal_mandate_type": "unknown",
+    "jurisdiction": "Japan",
+    "liable_party": "unknown",
+    "economic_bearer": "unknown",
+    "collectors": [
+      "unknown"
+    ],
+    "beneficiary_or_fund": null,
+    "purpose": "",
+    "calculation_basis": "",
+    "current_status": "active",
+    "legal_bases": [
+      {
+        "law_id": "348AC0000000111",
+        "name": "公害健康被害の補償等に関する法律",
+        "article": null,
+        "source_url": "https://laws.e-gov.go.jp/api/2/law_data/348AC0000000111"
+      }
+    ],
+    "current_phases": [],
+    "pending_changes": [],
+    "source_refs": [
+      "egov-laws"
+    ],
+    "coverage_status": "candidate",
+    "evidence_gaps": [
+      "現行法・納付義務者・徴収主体・適用状態を再確認する",
+      "経済的負担者、目的、算定基礎を個別の公式資料で確認する",
+      "公布日、施行日、適用開始日、徴収開始日を個別の公式資料で確認する"
+    ],
+    "verified_at": "2026-08-19T07:31:40+09:00"
+  },
+  {
+    "tax_id": "pollution-prevention-project-business-charge",
+    "official_name": "公害防止事業費事業者負担金",
+    "aliases": [],
+    "burden_type": "burden_charge",
+    "legal_mandate_type": "mandatory_by_law",
+    "jurisdiction": "Japan",
+    "liable_party": "unknown",
+    "economic_bearer": "unknown",
+    "collectors": [
+      "unknown"
+    ],
+    "beneficiary_or_fund": null,
+    "purpose": "",
+    "calculation_basis": "",
+    "current_status": "active",
+    "legal_bases": [
+      {
+        "law_id": "345AC0000000133",
+        "name": "公害防止事業費事業者負担法",
+        "article": null,
+        "source_url": "https://laws.e-gov.go.jp/api/2/law_data/345AC0000000133"
+      }
+    ],
+    "current_phases": [],
+    "pending_changes": [],
+    "source_refs": [
+      "egov-laws"
+    ],
+    "coverage_status": "candidate",
+    "evidence_gaps": [
+      "徴収主体・納付義務者・適用状態を確認する",
+      "経済的負担者、目的、算定基礎を個別の公式資料で確認する",
+      "公布日、施行日、適用開始日、徴収開始日を個別の公式資料で確認する"
+    ],
+    "verified_at": "2026-08-19T07:31:40+09:00"
+  },
+  {
+    "tax_id": "port-environment-improvement-charge",
+    "official_name": "港湾環境整備負担金",
+    "aliases": [],
+    "burden_type": "burden_charge",
+    "legal_mandate_type": "unknown",
+    "jurisdiction": "Japan",
+    "liable_party": "unknown",
+    "economic_bearer": "unknown",
+    "collectors": [
+      "unknown"
+    ],
+    "beneficiary_or_fund": null,
+    "purpose": "",
+    "calculation_basis": "",
+    "current_status": "active",
+    "legal_bases": [
+      {
+        "law_id": "325AC0000000218",
+        "name": "港湾法",
+        "article": null,
+        "source_url": "https://laws.e-gov.go.jp/api/2/law_data/325AC0000000218"
+      }
+    ],
+    "current_phases": [],
+    "pending_changes": [],
+    "source_refs": [
+      "egov-laws"
+    ],
+    "coverage_status": "candidate",
+    "evidence_gaps": [
+      "現行法・納付義務者・徴収主体・適用状態を確認する",
+      "経済的負担者、目的、算定基礎を個別の公式資料で確認する",
+      "公布日、施行日、適用開始日、徴収開始日を個別の公式資料で確認する"
+    ],
+    "verified_at": "2026-08-19T07:31:40+09:00"
+  },
+  {
+    "tax_id": "postal-network-support-contribution",
+    "official_name": "unknown",
+    "aliases": [],
+    "burden_type": "contribution",
+    "legal_mandate_type": "unknown",
+    "jurisdiction": "Japan",
+    "liable_party": "unknown",
+    "economic_bearer": "unknown",
+    "collectors": [
+      "unknown"
+    ],
+    "beneficiary_or_fund": null,
+    "purpose": "",
+    "calculation_basis": "",
+    "current_status": "active",
+    "legal_bases": [
+      {
+        "law_id": "417AC0000000101",
+        "name": "独立行政法人郵便貯金簡易生命保険管理・郵便局ネットワーク支援機構法",
+        "article": null,
+        "source_url": "https://laws.e-gov.go.jp/api/2/law_data/417AC0000000101"
+      }
+    ],
+    "current_phases": [],
+    "pending_changes": [],
+    "source_refs": [
+      "egov-laws"
+    ],
+    "coverage_status": "candidate",
+    "evidence_gaps": [
+      "現行の法令名・正式名称・徴収主体・適用状態を確認する",
+      "経済的負担者、目的、算定基礎を個別の公式資料で確認する",
+      "公布日、施行日、適用開始日、徴収開始日を個別の公式資料で確認する"
+    ],
+    "verified_at": "2026-08-19T07:31:40+09:00"
+  },
+  {
+    "tax_id": "postal-transport-consignment-compensation",
+    "official_name": "郵便物運送委託補償金",
+    "aliases": [],
+    "burden_type": "payment",
+    "legal_mandate_type": "mandatory_by_law",
+    "jurisdiction": "Japan",
+    "liable_party": "unknown",
+    "economic_bearer": "unknown",
+    "collectors": [
+      "unknown"
+    ],
+    "beneficiary_or_fund": null,
+    "purpose": "",
+    "calculation_basis": "",
+    "current_status": "active",
+    "legal_bases": [
+      {
+        "law_id": "324AC0000000284",
+        "name": "郵便物運送委託法",
+        "article": null,
+        "source_url": "https://laws.e-gov.go.jp/api/2/law_data/324AC0000000284"
+      }
+    ],
+    "current_phases": [],
+    "pending_changes": [],
+    "source_refs": [
+      "egov-laws"
+    ],
+    "coverage_status": "candidate",
+    "evidence_gaps": [
+      "支払方向・当事者・徴収主体・適用状態を確認する",
+      "経済的負担者、目的、算定基礎を個別の公式資料で確認する",
+      "公布日、施行日、適用開始日、徴収開始日を個別の公式資料で確認する"
+    ],
+    "verified_at": "2026-08-19T07:31:40+09:00"
+  },
+  {
+    "tax_id": "power-development-promotion-tax",
+    "official_name": "電源開発促進税",
+    "aliases": [],
+    "burden_type": "national_tax",
+    "legal_mandate_type": "unknown",
+    "jurisdiction": "Japan",
+    "liable_party": "unknown",
+    "economic_bearer": "unknown",
+    "collectors": [
+      "unknown"
+    ],
+    "beneficiary_or_fund": null,
+    "purpose": "",
+    "calculation_basis": "",
+    "current_status": "active",
+    "legal_bases": [
+      {
+        "law_id": "349AC0000000079",
+        "name": "電源開発促進税法",
+        "article": null,
+        "source_url": "https://laws.e-gov.go.jp/api/2/law_data/349AC0000000079"
+      }
+    ],
+    "current_phases": [],
+    "pending_changes": [],
+    "source_refs": [
+      "egov-laws"
+    ],
+    "coverage_status": "candidate",
+    "evidence_gaps": [
+      "根拠法令・納税義務者・徴収主体・適用状態は個別の公式資料で確認する",
+      "経済的負担者、目的、算定基礎を個別の公式資料で確認する",
+      "公布日、施行日、適用開始日、徴収開始日を個別の公式資料で確認する"
+    ],
+    "verified_at": "2026-08-19T07:31:40+09:00"
+  },
+  {
+    "tax_id": "private-recording-compensation",
+    "official_name": "私的録音録画補償金",
+    "aliases": [],
+    "burden_type": "payment",
+    "legal_mandate_type": "unknown",
+    "jurisdiction": "Japan",
+    "liable_party": "unknown",
+    "economic_bearer": "unknown",
+    "collectors": [
+      "unknown"
+    ],
+    "beneficiary_or_fund": null,
+    "purpose": "",
+    "calculation_basis": "",
+    "current_status": "active",
+    "legal_bases": [
+      {
+        "law_id": "345AC0000000048",
+        "name": "著作権法",
+        "article": null,
+        "source_url": "https://laws.e-gov.go.jp/api/2/law_data/345AC0000000048"
+      }
+    ],
+    "current_phases": [],
+    "pending_changes": [],
+    "source_refs": [
+      "egov-laws"
+    ],
+    "coverage_status": "candidate",
+    "evidence_gaps": [
+      "録音と録画の制度粒度・徴収主体・適用状態を確認する",
+      "経済的負担者、目的、算定基礎を個別の公式資料で確認する",
+      "公布日、施行日、適用開始日、徴収開始日を個別の公式資料で確認する"
+    ],
+    "verified_at": "2026-08-19T07:31:40+09:00"
+  },
+  {
+    "tax_id": "railway-barrier-free-fee",
+    "official_name": "unknown",
+    "aliases": [],
+    "burden_type": "fee",
+    "legal_mandate_type": "unknown",
+    "jurisdiction": "Japan",
+    "liable_party": "unknown",
+    "economic_bearer": "unknown",
+    "collectors": [
+      "鉄道事業者"
+    ],
+    "beneficiary_or_fund": null,
+    "purpose": "",
+    "calculation_basis": "",
+    "current_status": "active",
+    "legal_bases": [
+      {
+        "law_id": "361AC0000000092",
+        "name": "鉄道事業法",
+        "article": null,
+        "source_url": "https://laws.e-gov.go.jp/api/2/law_data/361AC0000000092"
+      }
+    ],
+    "current_phases": [],
+    "pending_changes": [],
+    "source_refs": [
+      "egov-laws"
+    ],
+    "coverage_status": "needs_review",
+    "evidence_gaps": [
+      "制度名と個別料金を分ける粒度・料金転嫁・適用事業者を確認する",
+      "経済的負担者、目的、算定基礎を個別の公式資料で確認する",
+      "公布日、施行日、適用開始日、徴収開始日を個別の公式資料で確認する"
+    ],
+    "verified_at": "2026-08-19T07:31:40+09:00"
+  },
+  {
+    "tax_id": "real-estate-acquisition-tax",
+    "official_name": "不動産取得税",
+    "aliases": [],
+    "burden_type": "local_tax",
+    "legal_mandate_type": "unknown",
+    "jurisdiction": "Japan/local-governments",
+    "liable_party": "unknown",
+    "economic_bearer": "unknown",
+    "collectors": [
+      "unknown"
+    ],
+    "beneficiary_or_fund": null,
+    "purpose": "",
+    "calculation_basis": "",
+    "current_status": "active",
+    "legal_bases": [
+      {
+        "law_id": "325AC0000000226",
+        "name": "地方税法",
+        "article": null,
+        "source_url": "https://laws.e-gov.go.jp/api/2/law_data/325AC0000000226"
+      }
+    ],
+    "current_phases": [],
+    "pending_changes": [],
+    "source_refs": [
+      "egov-laws"
+    ],
+    "coverage_status": "candidate",
+    "evidence_gaps": [
+      "根拠条項・納税義務者・徴収主体・適用状態を確認する",
+      "経済的負担者、目的、算定基礎を個別の公式資料で確認する",
+      "公布日、施行日、適用開始日、徴収開始日を個別の公式資料で確認する"
+    ],
+    "verified_at": "2026-08-19T07:31:40+09:00"
+  },
+  {
+    "tax_id": "reconstruction-special-income-tax",
+    "official_name": "復興特別所得税",
+    "aliases": [],
+    "burden_type": "national_tax",
+    "legal_mandate_type": "unknown",
+    "jurisdiction": "Japan",
+    "liable_party": "unknown",
+    "economic_bearer": "unknown",
+    "collectors": [
+      "unknown"
+    ],
+    "beneficiary_or_fund": null,
+    "purpose": "",
+    "calculation_basis": "",
+    "current_status": "active",
+    "legal_bases": [
+      {
+        "law_id": "423AC0000000117",
+        "name": "東日本大震災からの復興のための施策を実施するために必要な財源の確保に関する特別措置法",
+        "article": null,
+        "source_url": "https://laws.e-gov.go.jp/api/2/law_data/423AC0000000117"
+      }
+    ],
+    "current_phases": [],
+    "pending_changes": [],
+    "source_refs": [
+      "egov-laws"
+    ],
+    "coverage_status": "candidate",
+    "evidence_gaps": [
+      "根拠法令・納税義務者・徴収主体・適用状態は個別の公式資料で確認する",
+      "経済的負担者、目的、算定基礎を個別の公式資料で確認する",
+      "公布日、施行日、適用開始日、徴収開始日を個別の公式資料で確認する"
+    ],
+    "verified_at": "2026-08-19T07:31:40+09:00"
+  },
+  {
+    "tax_id": "regional-economy-revitalization-contribution",
+    "official_name": "unknown",
+    "aliases": [],
+    "burden_type": "contribution",
+    "legal_mandate_type": "unknown",
+    "jurisdiction": "Japan",
+    "liable_party": "unknown",
+    "economic_bearer": "unknown",
+    "collectors": [
+      "unknown"
+    ],
+    "beneficiary_or_fund": null,
+    "purpose": "",
+    "calculation_basis": "",
+    "current_status": "active",
+    "legal_bases": [
+      {
+        "law_id": "421AC0000000063",
+        "name": "株式会社地域経済活性化支援機構法",
+        "article": null,
+        "source_url": "https://laws.e-gov.go.jp/api/2/law_data/421AC0000000063"
+      }
+    ],
+    "current_phases": [],
+    "pending_changes": [],
+    "source_refs": [
+      "egov-laws"
+    ],
+    "coverage_status": "candidate",
+    "evidence_gaps": [
+      "法令上の正式名称・徴収主体・適用状態を再確認する",
+      "経済的負担者、目的、算定基礎を個別の公式資料で確認する",
+      "公布日、施行日、適用開始日、徴収開始日を個別の公式資料で確認する"
+    ],
+    "verified_at": "2026-08-19T07:31:40+09:00"
+  },
+  {
+    "tax_id": "registration-and-license-tax",
+    "official_name": "登録免許税",
+    "aliases": [],
+    "burden_type": "national_tax",
+    "legal_mandate_type": "unknown",
+    "jurisdiction": "Japan",
+    "liable_party": "unknown",
+    "economic_bearer": "unknown",
+    "collectors": [
+      "unknown"
+    ],
+    "beneficiary_or_fund": null,
+    "purpose": "",
+    "calculation_basis": "",
+    "current_status": "active",
+    "legal_bases": [
+      {
+        "law_id": "342AC0000000035",
+        "name": "登録免許税法",
+        "article": null,
+        "source_url": "https://laws.e-gov.go.jp/api/2/law_data/342AC0000000035"
+      }
+    ],
+    "current_phases": [],
+    "pending_changes": [],
+    "source_refs": [
+      "egov-laws"
+    ],
+    "coverage_status": "candidate",
+    "evidence_gaps": [
+      "両歳入資料に個別行がなく一般会計のその他等への包含を確認する",
+      "適用状態は個別確認する",
+      "経済的負担者、目的、算定基礎を個別の公式資料で確認する",
+      "公布日、施行日、適用開始日、徴収開始日を個別の公式資料で確認する"
+    ],
+    "verified_at": "2026-08-19T07:31:40+09:00"
+  },
+  {
+    "tax_id": "renewable-energy-surcharge",
+    "official_name": "再生可能エネルギー発電促進賦課金",
+    "aliases": [
+      "再エネ賦課金"
+    ],
+    "burden_type": "levy",
+    "legal_mandate_type": "unknown",
+    "jurisdiction": "Japan",
+    "liable_party": "unknown",
+    "economic_bearer": "unknown",
+    "collectors": [
+      "unknown"
+    ],
+    "beneficiary_or_fund": null,
+    "purpose": "",
+    "calculation_basis": "",
+    "current_status": "active",
+    "legal_bases": [
+      {
+        "law_id": "423AC0000000108",
+        "name": "再生可能エネルギー電気の利用の促進に関する特別措置法",
+        "article": null,
+        "source_url": "https://laws.e-gov.go.jp/api/2/law_data/423AC0000000108"
+      }
+    ],
+    "current_phases": [],
+    "pending_changes": [],
+    "source_refs": [
+      "egov-laws"
+    ],
+    "coverage_status": "candidate",
+    "evidence_gaps": [
+      "現行法・料金転嫁・徴収主体・適用状態を再確認する",
+      "経済的負担者、目的、算定基礎を個別の公式資料で確認する",
+      "公布日、施行日、適用開始日、徴収開始日を個別の公式資料で確認する"
+    ],
+    "verified_at": "2026-08-19T07:31:40+09:00"
+  },
+  {
+    "tax_id": "reprocessing-contribution",
+    "official_name": "再処理等拠出金",
+    "aliases": [],
+    "burden_type": "contribution",
+    "legal_mandate_type": "unknown",
+    "jurisdiction": "Japan",
+    "liable_party": "unknown",
+    "economic_bearer": "unknown",
+    "collectors": [
+      "unknown"
+    ],
+    "beneficiary_or_fund": null,
+    "purpose": "",
+    "calculation_basis": "",
+    "current_status": "active",
+    "legal_bases": [
+      {
+        "law_id": "417AC0000000048",
+        "name": "原子力発電における使用済燃料の再処理等の実施及び廃炉の推進に関する法律",
+        "article": null,
+        "source_url": "https://laws.e-gov.go.jp/api/2/law_data/417AC0000000048"
+      }
+    ],
+    "current_phases": [],
+    "pending_changes": [],
+    "source_refs": [
+      "egov-laws"
+    ],
+    "coverage_status": "candidate",
+    "evidence_gaps": [
+      "現行法・納付義務者・徴収主体・適用状態を再確認する",
+      "経済的負担者、目的、算定基礎を個別の公式資料で確認する",
+      "公布日、施行日、適用開始日、徴収開始日を個別の公式資料で確認する"
+    ],
+    "verified_at": "2026-08-19T07:31:40+09:00"
+  },
+  {
+    "tax_id": "resident-tax",
+    "official_name": "住民税",
+    "aliases": [],
+    "burden_type": "local_tax",
+    "legal_mandate_type": "unknown",
+    "jurisdiction": "Japan/local-governments",
+    "liable_party": "unknown",
+    "economic_bearer": "unknown",
+    "collectors": [
+      "unknown"
+    ],
+    "beneficiary_or_fund": null,
+    "purpose": "",
+    "calculation_basis": "",
+    "current_status": "active",
+    "legal_bases": [
+      {
+        "law_id": "325AC0000000226",
+        "name": "地方税法",
+        "article": null,
+        "source_url": "https://laws.e-gov.go.jp/api/2/law_data/325AC0000000226"
+      }
+    ],
+    "current_phases": [],
+    "pending_changes": [],
+    "source_refs": [
+      "egov-laws"
+    ],
+    "coverage_status": "needs_review",
+    "evidence_gaps": [
+      "道府県民税・市町村民税および個人・法人の制度粒度を確認する",
+      "根拠条項・納税義務者・徴収主体・適用状態を確認する",
+      "経済的負担者、目的、算定基礎を個別の公式資料で確認する",
+      "公布日、施行日、適用開始日、徴収開始日を個別の公式資料で確認する"
+    ],
+    "verified_at": "2026-08-19T07:31:40+09:00"
+  },
+  {
+    "tax_id": "residential-land-development-tax",
+    "official_name": "宅地開発税",
+    "aliases": [],
+    "burden_type": "local_tax",
+    "legal_mandate_type": "unknown",
+    "jurisdiction": "Japan/local-governments",
+    "liable_party": "unknown",
+    "economic_bearer": "unknown",
+    "collectors": [
+      "unknown"
+    ],
+    "beneficiary_or_fund": null,
+    "purpose": "",
+    "calculation_basis": "",
+    "current_status": "active",
+    "legal_bases": [
+      {
+        "law_id": "325AC0000000226",
+        "name": "地方税法",
+        "article": null,
+        "source_url": "https://laws.e-gov.go.jp/api/2/law_data/325AC0000000226"
+      }
+    ],
+    "current_phases": [],
+    "pending_changes": [],
+    "source_refs": [
+      "egov-laws"
+    ],
+    "coverage_status": "candidate",
+    "evidence_gaps": [
+      "課税団体・根拠条項・納税義務者・適用状態を確認する",
+      "経済的負担者、目的、算定基礎を個別の公式資料で確認する",
+      "公布日、施行日、適用開始日、徴収開始日を個別の公式資料で確認する"
+    ],
+    "verified_at": "2026-08-19T07:31:40+09:00"
+  },
+  {
+    "tax_id": "special-corporate-enterprise-tax",
+    "official_name": "特別法人事業税",
+    "aliases": [],
+    "burden_type": "national_tax",
+    "legal_mandate_type": "unknown",
+    "jurisdiction": "Japan",
+    "liable_party": "unknown",
+    "economic_bearer": "unknown",
+    "collectors": [
+      "unknown"
+    ],
+    "beneficiary_or_fund": null,
+    "purpose": "",
+    "calculation_basis": "",
+    "current_status": "active",
+    "legal_bases": [
+      {
+        "law_id": "431AC0000000004",
+        "name": "特別法人事業税及び特別法人事業譲与税に関する法律",
+        "article": null,
+        "source_url": "https://laws.e-gov.go.jp/api/2/law_data/431AC0000000004"
+      }
+    ],
+    "current_phases": [],
+    "pending_changes": [],
+    "source_refs": [
+      "egov-laws"
+    ],
+    "coverage_status": "candidate",
+    "evidence_gaps": [
+      "都道府県による賦課徴収と国税としての帰属を分けて確認する",
+      "適用状態は個別確認する",
+      "経済的負担者、目的、算定基礎を個別の公式資料で確認する",
+      "公布日、施行日、適用開始日、徴収開始日を個別の公式資料で確認する"
+    ],
+    "verified_at": "2026-08-19T07:31:40+09:00"
+  },
+  {
+    "tax_id": "special-landholding-tax",
+    "official_name": "特別土地保有税",
+    "aliases": [],
+    "burden_type": "local_tax",
+    "legal_mandate_type": "unknown",
+    "jurisdiction": "Japan/local-governments",
+    "liable_party": "unknown",
+    "economic_bearer": "unknown",
+    "collectors": [
+      "unknown"
+    ],
+    "beneficiary_or_fund": null,
+    "purpose": "",
+    "calculation_basis": "",
+    "current_status": "active",
+    "legal_bases": [
+      {
+        "law_id": "325AC0000000226",
+        "name": "地方税法",
+        "article": null,
+        "source_url": "https://laws.e-gov.go.jp/api/2/law_data/325AC0000000226"
+      }
+    ],
+    "current_phases": [],
+    "pending_changes": [],
+    "source_refs": [
+      "egov-laws"
+    ],
+    "coverage_status": "needs_review",
+    "evidence_gaps": [
+      "新規課税停止と既存制度の法的状態を区別しcurrent_statusを確認する",
+      "根拠条項・徴収主体を確認する",
+      "経済的負担者、目的、算定基礎を個別の公式資料で確認する",
+      "公布日、施行日、適用開始日、徴収開始日を個別の公式資料で確認する"
+    ],
+    "verified_at": "2026-08-19T07:31:40+09:00"
+  },
+  {
+    "tax_id": "special-tobacco-tax",
+    "official_name": "たばこ特別税",
+    "aliases": [],
+    "burden_type": "national_tax",
+    "legal_mandate_type": "unknown",
+    "jurisdiction": "Japan",
+    "liable_party": "unknown",
+    "economic_bearer": "unknown",
+    "collectors": [
+      "unknown"
+    ],
+    "beneficiary_or_fund": null,
+    "purpose": "",
+    "calculation_basis": "",
+    "current_status": "active",
+    "legal_bases": [
+      {
+        "law_id": "410AC0000000137",
+        "name": "一般会計における債務の承継等に伴い必要な財源の確保に係る特別措置に関する法律",
+        "article": null,
+        "source_url": "https://laws.e-gov.go.jp/api/2/law_data/410AC0000000137"
+      }
+    ],
+    "current_phases": [],
+    "pending_changes": [],
+    "source_refs": [
+      "egov-laws"
+    ],
+    "coverage_status": "candidate",
+    "evidence_gaps": [
+      "根拠法令・納税義務者・徴収主体・適用状態は個別の公式資料で確認する",
+      "経済的負担者、目的、算定基礎を個別の公式資料で確認する",
+      "公布日、施行日、適用開始日、徴収開始日を個別の公式資料で確認する"
+    ],
+    "verified_at": "2026-08-19T07:31:40+09:00"
+  },
+  {
+    "tax_id": "special-tonnage-tax",
+    "official_name": "特別とん税",
+    "aliases": [],
+    "burden_type": "national_tax",
+    "legal_mandate_type": "unknown",
+    "jurisdiction": "Japan",
+    "liable_party": "unknown",
+    "economic_bearer": "unknown",
+    "collectors": [
+      "unknown"
+    ],
+    "beneficiary_or_fund": null,
+    "purpose": "",
+    "calculation_basis": "",
+    "current_status": "active",
+    "legal_bases": [
+      {
+        "law_id": "332AC0000000038",
+        "name": "特別とん税法",
+        "article": null,
+        "source_url": "https://laws.e-gov.go.jp/api/2/law_data/332AC0000000038"
+      }
+    ],
+    "current_phases": [],
+    "pending_changes": [],
+    "source_refs": [
+      "egov-laws"
+    ],
+    "coverage_status": "candidate",
+    "evidence_gaps": [
+      "とん税と別制度として根拠・帰属を確認する",
+      "適用状態は個別確認する",
+      "経済的負担者、目的、算定基礎を個別の公式資料で確認する",
+      "公布日、施行日、適用開始日、徴収開始日を個別の公式資料で確認する"
+    ],
+    "verified_at": "2026-08-19T07:31:40+09:00"
+  },
+  {
+    "tax_id": "specified-pollution-levy",
+    "official_name": "unknown",
+    "aliases": [
+      "特定賦課金"
+    ],
+    "burden_type": "levy",
+    "legal_mandate_type": "unknown",
+    "jurisdiction": "Japan",
+    "liable_party": "unknown",
+    "economic_bearer": "unknown",
+    "collectors": [
+      "unknown"
+    ],
+    "beneficiary_or_fund": null,
+    "purpose": "",
+    "calculation_basis": "",
+    "current_status": "active",
+    "legal_bases": [
+      {
+        "law_id": "348AC0000000111",
+        "name": "公害健康被害の補償等に関する法律",
+        "article": null,
+        "source_url": "https://laws.e-gov.go.jp/api/2/law_data/348AC0000000111"
+      }
+    ],
+    "current_phases": [],
+    "pending_changes": [],
+    "source_refs": [
+      "egov-laws"
+    ],
+    "coverage_status": "candidate",
+    "evidence_gaps": [
+      "正式名称・条項・納付義務者・徴収主体・適用状態を確認する",
+      "経済的負担者、目的、算定基礎を個別の公式資料で確認する",
+      "公布日、施行日、適用開始日、徴収開始日を個別の公式資料で確認する"
+    ],
+    "verified_at": "2026-08-19T07:31:40+09:00"
+  },
+  {
+    "tax_id": "stamp-tax",
+    "official_name": "印紙税",
+    "aliases": [],
+    "burden_type": "national_tax",
+    "legal_mandate_type": "unknown",
+    "jurisdiction": "Japan",
+    "liable_party": "unknown",
+    "economic_bearer": "unknown",
+    "collectors": [
+      "unknown"
+    ],
+    "beneficiary_or_fund": null,
+    "purpose": "",
+    "calculation_basis": "",
+    "current_status": "active",
+    "legal_bases": [
+      {
+        "law_id": "342AC0000000023",
+        "name": "印紙税法",
+        "article": null,
+        "source_url": "https://laws.e-gov.go.jp/api/2/law_data/342AC0000000023"
+      }
+    ],
+    "current_phases": [],
+    "pending_changes": [],
+    "source_refs": [
+      "egov-laws"
+    ],
+    "coverage_status": "candidate",
+    "evidence_gaps": [
+      "歳入資料の印紙収入と印紙税の範囲が同一か確認する",
+      "適用状態は個別確認する",
+      "経済的負担者、目的、算定基礎を個別の公式資料で確認する",
+      "公布日、施行日、適用開始日、徴収開始日を個別の公式資料で確認する"
+    ],
+    "verified_at": "2026-08-19T07:31:40+09:00"
+  },
+  {
+    "tax_id": "supplementary-nuclear-damage-general-charge",
+    "official_name": "unknown",
+    "aliases": [],
+    "burden_type": "burden_charge",
+    "legal_mandate_type": "mandatory_by_law",
+    "jurisdiction": "Japan",
+    "liable_party": "unknown",
+    "economic_bearer": "unknown",
+    "collectors": [
+      "unknown"
+    ],
+    "beneficiary_or_fund": null,
+    "purpose": "",
+    "calculation_basis": "",
+    "current_status": "active",
+    "legal_bases": [
+      {
+        "law_id": "426AC0000000133",
+        "name": "原子力損害の補完的な補償に関する条約の実施に伴う原子力損害賠償資金の補助等に関する法律",
+        "article": null,
+        "source_url": "https://laws.e-gov.go.jp/api/2/law_data/426AC0000000133"
+      }
+    ],
+    "current_phases": [],
+    "pending_changes": [],
+    "source_refs": [
+      "egov-laws"
+    ],
+    "coverage_status": "candidate",
+    "evidence_gaps": [
+      "法令上の正式名称・徴収主体・納付義務者・適用状態を確認する",
+      "経済的負担者、目的、算定基礎を個別の公式資料で確認する",
+      "公布日、施行日、適用開始日、徴収開始日を個別の公式資料で確認する"
+    ],
+    "verified_at": "2026-08-19T07:31:40+09:00"
+  },
+  {
+    "tax_id": "supplementary-nuclear-damage-special-charge",
+    "official_name": "unknown",
+    "aliases": [],
+    "burden_type": "burden_charge",
+    "legal_mandate_type": "mandatory_by_law",
+    "jurisdiction": "Japan",
+    "liable_party": "unknown",
+    "economic_bearer": "unknown",
+    "collectors": [
+      "unknown"
+    ],
+    "beneficiary_or_fund": null,
+    "purpose": "",
+    "calculation_basis": "",
+    "current_status": "active",
+    "legal_bases": [
+      {
+        "law_id": "426AC0000000133",
+        "name": "原子力損害の補完的な補償に関する条約の実施に伴う原子力損害賠償資金の補助等に関する法律",
+        "article": null,
+        "source_url": "https://laws.e-gov.go.jp/api/2/law_data/426AC0000000133"
+      }
+    ],
+    "current_phases": [],
+    "pending_changes": [],
+    "source_refs": [
+      "egov-laws"
+    ],
+    "coverage_status": "candidate",
+    "evidence_gaps": [
+      "法令上の正式名称・徴収主体・納付義務者・適用状態を確認する",
+      "経済的負担者、目的、算定基礎を個別の公式資料で確認する",
+      "公布日、施行日、適用開始日、徴収開始日を個別の公式資料で確認する"
+    ],
+    "verified_at": "2026-08-19T07:31:40+09:00"
+  },
+  {
+    "tax_id": "supplementary-oil-pollution-fund-annual-contribution",
+    "official_name": "unknown",
+    "aliases": [],
+    "burden_type": "contribution",
+    "legal_mandate_type": "mandatory_by_law",
+    "jurisdiction": "Japan",
+    "liable_party": "unknown",
+    "economic_bearer": "unknown",
+    "collectors": [
+      "unknown"
+    ],
+    "beneficiary_or_fund": null,
+    "purpose": "",
+    "calculation_basis": "",
+    "current_status": "active",
+    "legal_bases": [
+      {
+        "law_id": "350AC0000000095",
+        "name": "船舶油濁等損害賠償保障法",
+        "article": null,
+        "source_url": "https://laws.e-gov.go.jp/api/2/law_data/350AC0000000095"
+      }
+    ],
+    "current_phases": [],
+    "pending_changes": [],
+    "source_refs": [
+      "egov-laws"
+    ],
+    "coverage_status": "candidate",
+    "evidence_gaps": [
+      "基金・徴収主体・納付義務者・適用状態を確認する",
+      "経済的負担者、目的、算定基礎を個別の公式資料で確認する",
+      "公布日、施行日、適用開始日、徴収開始日を個別の公式資料で確認する"
+    ],
+    "verified_at": "2026-08-19T07:31:40+09:00"
+  },
+  {
+    "tax_id": "taxi-center-business-charge",
+    "official_name": "unknown",
+    "aliases": [],
+    "burden_type": "burden_charge",
+    "legal_mandate_type": "unknown",
+    "jurisdiction": "Japan",
+    "liable_party": "unknown",
+    "economic_bearer": "unknown",
+    "collectors": [
+      "東京タクシーセンター等"
+    ],
+    "beneficiary_or_fund": null,
+    "purpose": "",
+    "calculation_basis": "",
+    "current_status": "active",
+    "legal_bases": [
+      {
+        "law_id": "421AC0000000064",
+        "name": "特定地域及び準特定地域における一般乗用旅客自動車運送事業の適正化及び活性化に関する特別措置法",
+        "article": null,
+        "source_url": "https://laws.e-gov.go.jp/api/2/law_data/421AC0000000064"
+      }
+    ],
+    "current_phases": [],
+    "pending_changes": [],
+    "source_refs": [
+      "egov-laws"
+    ],
+    "coverage_status": "needs_review",
+    "evidence_gaps": [
+      "等に含まれる機関と地域ごとの制度粒度・法的根拠・適用状態を確認する",
+      "経済的負担者、目的、算定基礎を個別の公式資料で確認する",
+      "公布日、施行日、適用開始日、徴収開始日を個別の公式資料で確認する"
+    ],
+    "verified_at": "2026-08-19T07:31:40+09:00"
+  },
+  {
+    "tax_id": "telephone-accessibility-charge",
+    "official_name": "unknown",
+    "aliases": [],
+    "burden_type": "burden_charge",
+    "legal_mandate_type": "mandatory_by_law",
+    "jurisdiction": "Japan",
+    "liable_party": "unknown",
+    "economic_bearer": "unknown",
+    "collectors": [
+      "unknown"
+    ],
+    "beneficiary_or_fund": null,
+    "purpose": "",
+    "calculation_basis": "",
+    "current_status": "active",
+    "legal_bases": [
+      {
+        "law_id": "502AC0000000053",
+        "name": "聴覚障害者等による電話の利用の円滑化に関する法律",
+        "article": null,
+        "source_url": "https://laws.e-gov.go.jp/api/2/law_data/502AC0000000053"
+      }
+    ],
+    "current_phases": [],
+    "pending_changes": [],
+    "source_refs": [
+      "egov-laws"
+    ],
+    "coverage_status": "candidate",
+    "evidence_gaps": [
+      "法令上の正式名称・徴収主体・納付義務者・適用状態を確認する",
+      "経済的負担者、目的、算定基礎を個別の公式資料で確認する",
+      "公布日、施行日、適用開始日、徴収開始日を個別の公式資料で確認する"
+    ],
+    "verified_at": "2026-08-19T07:31:40+09:00"
+  },
+  {
+    "tax_id": "tobacco-tax",
+    "official_name": "たばこ税",
+    "aliases": [],
+    "burden_type": "national_tax",
+    "legal_mandate_type": "unknown",
+    "jurisdiction": "Japan",
+    "liable_party": "unknown",
+    "economic_bearer": "unknown",
+    "collectors": [
+      "unknown"
+    ],
+    "beneficiary_or_fund": null,
+    "purpose": "",
+    "calculation_basis": "",
+    "current_status": "active",
+    "legal_bases": [
+      {
+        "law_id": "359AC0000000072",
+        "name": "たばこ税法",
+        "article": null,
+        "source_url": "https://laws.e-gov.go.jp/api/2/law_data/359AC0000000072"
+      }
+    ],
+    "current_phases": [],
+    "pending_changes": [],
+    "source_refs": [
+      "egov-laws"
+    ],
+    "coverage_status": "candidate",
+    "evidence_gaps": [
+      "地方たばこ税と別制度として根拠・税率・帰属を確認する",
+      "適用状態は個別確認する",
+      "経済的負担者、目的、算定基礎を個別の公式資料で確認する",
+      "公布日、施行日、適用開始日、徴収開始日を個別の公式資料で確認する"
+    ],
+    "verified_at": "2026-08-19T07:31:40+09:00"
+  },
+  {
+    "tax_id": "tonnage-tax",
+    "official_name": "とん税",
+    "aliases": [],
+    "burden_type": "national_tax",
+    "legal_mandate_type": "unknown",
+    "jurisdiction": "Japan",
+    "liable_party": "unknown",
+    "economic_bearer": "unknown",
+    "collectors": [
+      "unknown"
+    ],
+    "beneficiary_or_fund": null,
+    "purpose": "",
+    "calculation_basis": "",
+    "current_status": "active",
+    "legal_bases": [
+      {
+        "law_id": "332AC0000000037",
+        "name": "とん税法",
+        "article": null,
+        "source_url": "https://laws.e-gov.go.jp/api/2/law_data/332AC0000000037"
+      }
+    ],
+    "current_phases": [],
+    "pending_changes": [],
+    "source_refs": [
+      "egov-laws"
+    ],
+    "coverage_status": "candidate",
+    "evidence_gaps": [
+      "特別とん税と別制度として根拠・帰属を確認する",
+      "適用状態は個別確認する",
+      "経済的負担者、目的、算定基礎を個別の公式資料で確認する",
+      "公布日、施行日、適用開始日、徴収開始日を個別の公式資料で確認する"
+    ],
+    "verified_at": "2026-08-19T07:31:40+09:00"
+  },
+  {
+    "tax_id": "tru-waste-disposal-contribution",
+    "official_name": "unknown",
+    "aliases": [],
+    "burden_type": "contribution",
+    "legal_mandate_type": "unknown",
+    "jurisdiction": "Japan",
+    "liable_party": "unknown",
+    "economic_bearer": "unknown",
+    "collectors": [
+      "unknown"
+    ],
+    "beneficiary_or_fund": null,
+    "purpose": "",
+    "calculation_basis": "",
+    "current_status": "active",
+    "legal_bases": [
+      {
+        "law_id": "412AC0000000117",
+        "name": "特定放射性廃棄物の最終処分に関する法律",
+        "article": null,
+        "source_url": "https://laws.e-gov.go.jp/api/2/law_data/412AC0000000117"
+      }
+    ],
+    "current_phases": [],
+    "pending_changes": [],
+    "source_refs": [
+      "egov-laws"
+    ],
+    "coverage_status": "candidate",
+    "evidence_gaps": [
+      "正式名称・条項・徴収主体・適用状態を再確認する",
+      "経済的負担者、目的、算定基礎を個別の公式資料で確認する",
+      "公布日、施行日、適用開始日、徴収開始日を個別の公式資料で確認する"
+    ],
+    "verified_at": "2026-08-19T07:31:40+09:00"
+  },
+  {
+    "tax_id": "universal-service-fee",
+    "official_name": "unknown",
+    "aliases": [],
+    "burden_type": "fee",
+    "legal_mandate_type": "unknown",
+    "jurisdiction": "Japan",
+    "liable_party": "unknown",
+    "economic_bearer": "unknown",
+    "collectors": [
+      "unknown"
+    ],
+    "beneficiary_or_fund": null,
+    "purpose": "",
+    "calculation_basis": "",
+    "current_status": "active",
+    "legal_bases": [
+      {
+        "law_id": "359AC0000000086",
+        "name": "電気通信事業法",
+        "article": null,
+        "source_url": "https://laws.e-gov.go.jp/api/2/law_data/359AC0000000086"
+      }
+    ],
+    "current_phases": [],
+    "pending_changes": [],
+    "source_refs": [
+      "egov-laws"
+    ],
+    "coverage_status": "needs_review",
+    "evidence_gaps": [
+      "法令上の第一種負担金と利用者向け料金表示の制度関係を確認する",
+      "適用状態を確認する",
+      "経済的負担者、目的、算定基礎を個別の公式資料で確認する",
+      "公布日、施行日、適用開始日、徴収開始日を個別の公式資料で確認する"
+    ],
+    "verified_at": "2026-08-19T07:31:40+09:00"
+  },
+  {
+    "tax_id": "utility-tunnel-management-charge",
+    "official_name": "unknown",
+    "aliases": [
+      "管理負担金"
+    ],
+    "burden_type": "burden_charge",
+    "legal_mandate_type": "mandatory_by_law",
+    "jurisdiction": "Japan",
+    "liable_party": "unknown",
+    "economic_bearer": "unknown",
+    "collectors": [
+      "unknown"
+    ],
+    "beneficiary_or_fund": null,
+    "purpose": "",
+    "calculation_basis": "",
+    "current_status": "active",
+    "legal_bases": [
+      {
+        "law_id": "407AC0000000039",
+        "name": "電線共同溝の整備等に関する特別措置法",
+        "article": null,
+        "source_url": "https://laws.e-gov.go.jp/api/2/law_data/407AC0000000039"
+      }
+    ],
+    "current_phases": [],
+    "pending_changes": [],
+    "source_refs": [
+      "egov-laws"
+    ],
+    "coverage_status": "candidate",
+    "evidence_gaps": [
+      "正式名称・徴収主体・納付義務者・適用状態を確認する",
+      "経済的負担者、目的、算定基礎を個別の公式資料で確認する",
+      "公布日、施行日、適用開始日、徴収開始日を個別の公式資料で確認する"
+    ],
+    "verified_at": "2026-08-19T07:31:40+09:00"
+  },
+  {
+    "tax_id": "utility-tunnel-other-occupant-charge",
+    "official_name": "unknown",
+    "aliases": [
+      "占用負担金"
+    ],
+    "burden_type": "burden_charge",
+    "legal_mandate_type": "mandatory_by_law",
+    "jurisdiction": "Japan",
+    "liable_party": "unknown",
+    "economic_bearer": "unknown",
+    "collectors": [
+      "unknown"
+    ],
+    "beneficiary_or_fund": null,
+    "purpose": "",
+    "calculation_basis": "",
+    "current_status": "active",
+    "legal_bases": [
+      {
+        "law_id": "407AC0000000039",
+        "name": "電線共同溝の整備等に関する特別措置法",
+        "article": null,
+        "source_url": "https://laws.e-gov.go.jp/api/2/law_data/407AC0000000039"
+      }
+    ],
+    "current_phases": [],
+    "pending_changes": [],
+    "source_refs": [
+      "egov-laws"
+    ],
+    "coverage_status": "candidate",
+    "evidence_gaps": [
+      "正式名称・徴収主体・納付義務者・適用状態を確認する",
+      "経済的負担者、目的、算定基礎を個別の公式資料で確認する",
+      "公布日、施行日、適用開始日、徴収開始日を個別の公式資料で確認する"
+    ],
+    "verified_at": "2026-08-19T07:31:40+09:00"
+  },
+  {
+    "tax_id": "utility-tunnel-planned-occupant-construction-charge",
+    "official_name": "unknown",
+    "aliases": [
+      "建設負担金"
+    ],
+    "burden_type": "burden_charge",
+    "legal_mandate_type": "mandatory_by_law",
+    "jurisdiction": "Japan",
+    "liable_party": "unknown",
+    "economic_bearer": "unknown",
+    "collectors": [
+      "unknown"
+    ],
+    "beneficiary_or_fund": null,
+    "purpose": "",
+    "calculation_basis": "",
+    "current_status": "active",
+    "legal_bases": [
+      {
+        "law_id": "407AC0000000039",
+        "name": "電線共同溝の整備等に関する特別措置法",
+        "article": null,
+        "source_url": "https://laws.e-gov.go.jp/api/2/law_data/407AC0000000039"
+      }
+    ],
+    "current_phases": [],
+    "pending_changes": [],
+    "source_refs": [
+      "egov-laws"
+    ],
+    "coverage_status": "candidate",
+    "evidence_gaps": [
+      "正式名称・徴収主体・納付義務者・適用状態を確認する",
+      "経済的負担者、目的、算定基礎を個別の公式資料で確認する",
+      "公布日、施行日、適用開始日、徴収開始日を個別の公式資料で確認する"
+    ],
+    "verified_at": "2026-08-19T07:31:40+09:00"
+  },
+  {
+    "tax_id": "water-and-land-benefit-tax",
+    "official_name": "水利地益税",
+    "aliases": [],
+    "burden_type": "local_tax",
+    "legal_mandate_type": "unknown",
+    "jurisdiction": "Japan/local-governments",
+    "liable_party": "unknown",
+    "economic_bearer": "unknown",
+    "collectors": [
+      "unknown"
+    ],
+    "beneficiary_or_fund": null,
+    "purpose": "",
+    "calculation_basis": "",
+    "current_status": "active",
+    "legal_bases": [
+      {
+        "law_id": "325AC0000000226",
+        "name": "地方税法",
+        "article": null,
+        "source_url": "https://laws.e-gov.go.jp/api/2/law_data/325AC0000000226"
+      }
+    ],
+    "current_phases": [],
+    "pending_changes": [],
+    "source_refs": [
+      "egov-laws"
+    ],
+    "coverage_status": "candidate",
+    "evidence_gaps": [
+      "課税団体・根拠条項・納税義務者・適用状態を確認する",
+      "経済的負担者、目的、算定基礎を個別の公式資料で確認する",
+      "公布日、施行日、適用開始日、徴収開始日を個別の公式資料で確認する"
+    ],
+    "verified_at": "2026-08-19T07:31:40+09:00"
+  },
+  {
+    "tax_id": "water-resources-facility-user-charge",
+    "official_name": "unknown",
+    "aliases": [],
+    "burden_type": "burden_charge",
+    "legal_mandate_type": "mandatory_by_law",
+    "jurisdiction": "Japan",
+    "liable_party": "unknown",
+    "economic_bearer": "unknown",
+    "collectors": [
+      "水資源機構"
+    ],
+    "beneficiary_or_fund": null,
+    "purpose": "",
+    "calculation_basis": "",
+    "current_status": "active",
+    "legal_bases": [
+      {
+        "law_id": "414AC0000000182",
+        "name": "独立行政法人水資源機構法",
+        "article": null,
+        "source_url": "https://laws.e-gov.go.jp/api/2/law_data/414AC0000000182"
+      }
+    ],
+    "current_phases": [],
+    "pending_changes": [],
+    "source_refs": [
+      "egov-laws"
+    ],
+    "coverage_status": "candidate",
+    "evidence_gaps": [
+      "正式名称・納付義務者区分・適用状態を確認する",
+      "経済的負担者、目的、算定基礎を個別の公式資料で確認する",
+      "公布日、施行日、適用開始日、徴収開始日を個別の公式資料で確認する"
+    ],
+    "verified_at": "2026-08-19T07:31:40+09:00"
+  },
+  {
+    "tax_id": "workers-compensation-insurance-premium",
+    "official_name": "労災保険料",
+    "aliases": [],
+    "burden_type": "social_insurance_premium",
+    "legal_mandate_type": "unknown",
+    "jurisdiction": "Japan",
+    "liable_party": "unknown",
+    "economic_bearer": "unknown",
+    "collectors": [
+      "unknown"
+    ],
+    "beneficiary_or_fund": null,
+    "purpose": "",
+    "calculation_basis": "",
+    "current_status": "active",
+    "legal_bases": [
+      {
+        "law_id": "322AC0000000050",
+        "name": "労働者災害補償保険法",
+        "article": null,
+        "source_url": "https://laws.e-gov.go.jp/api/2/law_data/322AC0000000050"
+      }
+    ],
+    "current_phases": [],
+    "pending_changes": [],
+    "source_refs": [
+      "egov-laws"
+    ],
+    "coverage_status": "candidate",
+    "evidence_gaps": [
+      "労働保険料徴収法との関係・納付義務者・徴収主体・適用状態を確認する",
+      "経済的負担者、目的、算定基礎を個別の公式資料で確認する",
+      "公布日、施行日、適用開始日、徴収開始日を個別の公式資料で確認する"
+    ],
+    "verified_at": "2026-08-19T07:31:40+09:00"
+  }
+]

@@ -15,6 +15,10 @@ purpose: 消費一般に広く負担を求める間接税
 calculation_basis: 課税資産の譲渡等の対価の額等
 current_status: active
 legal_bases:
+  - law_id: 363AC0000000108
+    name: 消費税法
+    article: null
+    source_url: https://laws.e-gov.go.jp/api/2/law_data/363AC0000000108
   - law_id: null
     name: 消費税法等
     article: 消法29等
@@ -24,7 +28,8 @@ current_phases:
   - consumption-tax-reduced-rate-2019
 pending_changes: []
 source_refs:
+  - egov-laws
   - nta-consumption-tax-rates
 coverage_status: confirmed
 evidence_gaps: []
-verified_at: 2026-08-17T00:12:24+09:00
+verified_at: 2026-08-19T07:31:40+09:00
