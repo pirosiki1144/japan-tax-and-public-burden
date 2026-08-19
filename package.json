@@ -17,7 +17,9 @@
     "initial-master:generate": "node scripts/initial-master/build-burdens.js",
     "initial-master:check": "node scripts/initial-master/build-burdens.js --check",
     "monitoring:generate": "node scripts/monitoring/build-monitoring-config.js",
-    "monitoring:check": "node scripts/monitoring/build-monitoring-config.js --check"
+    "monitoring:check": "node scripts/monitoring/build-monitoring-config.js --check",
+    "semantics:extract": "node scripts/monitoring/extract-egov-tax-semantics.js",
+    "semantics:check": "node scripts/monitoring/extract-egov-tax-semantics.js --fixture-dir tests/fixtures/source-scan --expected tests/fixtures/semantic-extraction/expected.json"
   },
   "devDependencies": {
     "ajv": "^8.17.1",

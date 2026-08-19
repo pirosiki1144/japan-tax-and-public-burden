@@ -19,6 +19,7 @@ test("validation workflow runs only for pull requests", async () => {
   const workflow = parse(await readFile(new URL("../.github/workflows/validate.yml", import.meta.url), "utf8"));
   assert.ok(Object.hasOwn(workflow.on, "pull_request"));
   assert.ok(!Object.hasOwn(workflow.on, "push"));
+  assert.ok(workflow.jobs.validate.steps.some(({ run }) => run === "npm run semantics:check"));
   assert.ok(workflow.jobs.validate.steps.some(({ run }) => run === "npm run generate:check"));
 });
 
@@ -43,6 +44,7 @@ test("source scan workflow is fixed, scheduled, and manually runnable", async ()
   assert.ok(scanCommands.includes("npm run validate"));
   assert.ok(scanCommands.includes("npm run generate:check"));
   assert.ok(scanCommands.some((command) => command.includes("npm run audit")));
+  assert.ok(scanCommands.some((command) => command.includes("npm run semantics:extract")));
   assert.ok(scanCommands.some((command) => command.includes("--all")));
   assert.ok(scanCommands.some((command) => command.includes("npm run audit:scan")));
   assert.ok(updateCommands.some((command) => command.includes("npm run prepare-update")));
