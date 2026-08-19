@@ -13,7 +13,9 @@
     "audit:scan": "node scripts/audit/audit-source-scan.js",
     "audit:issues": "node scripts/audit/publish-audit-issues.js",
     "generate": "node scripts/generate/generate-distribution.js && node scripts/generate/initial-master-selection.js",
-    "generate:check": "node scripts/generate/generate-distribution.js --check && node scripts/generate/initial-master-selection.js --check"
+    "generate:check": "node scripts/generate/generate-distribution.js --check && node scripts/generate/initial-master-selection.js --check",
+    "initial-master:generate": "node scripts/initial-master/build-burdens.js",
+    "initial-master:check": "node scripts/initial-master/build-burdens.js --check"
   },
   "devDependencies": {
     "ajv": "^8.17.1",

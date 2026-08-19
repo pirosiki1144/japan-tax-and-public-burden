@@ -17,10 +17,11 @@ test("current and history outputs use the requested point in time", async () => 
   const artifacts = await buildDistributionArtifacts(root, { asOf: "2018-01-01" });
   const current = JSON.parse(artifacts.get("current.json"));
   const history = JSON.parse(artifacts.get("history.json"));
+  const consumptionTax = current.records.find(({ tax_id }) => tax_id === "consumption-tax");
   assert.equal(current.as_of, "2018-01-01");
-  assert.equal(current.records[0].current_status, "not_applied");
-  assert.deepEqual(current.records[0].active_phases, []);
-  assert.deepEqual(current.records[0].pending_changes.map(({ change_id }) => change_id), ["consumption-tax-2019-rate"]);
+  assert.equal(consumptionTax.current_status, "not_applied");
+  assert.deepEqual(consumptionTax.active_phases, []);
+  assert.deepEqual(consumptionTax.pending_changes.map(({ change_id }) => change_id), ["consumption-tax-2019-rate"]);
   assert.equal(history.phases.length, 2);
   assert.equal(history.events.length, 1);
   assert.ok(history.sources.some(({ source_id }) => source_id === "nta-consumption-tax-rates"));
@@ -28,7 +29,7 @@ test("current and history outputs use the requested point in time", async () => 
 
 test("CSV outputs preserve rate metadata and full history payloads", async () => {
   const artifacts = await buildDistributionArtifacts(root);
-  const currentRows = parse(artifacts.get("current.csv"), { columns: true, skip_empty_lines: true });
+  const currentRows = parse(artifacts.get("current.csv"), { columns: true, skip_empty_lines: true }).filter(({ tax_id }) => tax_id === "consumption-tax");
   const historyRows = parse(artifacts.get("history.csv"), { columns: true, skip_empty_lines: true });
   assert.deepEqual(currentRows.map(({ numeric_value, unit, value_status }) => ({ numeric_value, unit, value_status })), [
     { numeric_value: "6.24", unit: "percent", value_status: "confirmed" },
