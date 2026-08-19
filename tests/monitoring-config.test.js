@@ -2,7 +2,7 @@ import test from "node:test";
 import assert from "node:assert/strict";
 import { readFile } from "node:fs/promises";
 import { fileURLToPath } from "node:url";
-import { buildMonitoringConfig } from "../scripts/monitoring/build-monitoring-config.js";
+import { buildExtractionTargetReview, buildMonitoringConfig } from "../scripts/monitoring/build-monitoring-config.js";
 
 const root = fileURLToPath(new URL("..", import.meta.url));
 
@@ -33,4 +33,15 @@ test("multiple law sources and municipal scope remain explicit", async () => {
   assert.equal(byId.get("medical-insurance-premium").sources.length, 3);
   assert.equal(byId.get("local-consumption-tax").municipal_scope, "issue_20");
   assert.match(byId.get("local-consumption-tax").notes, /#20/);
+});
+
+test("unconfirmed extraction targets have official links and review checkboxes", async () => {
+  const review = await buildExtractionTargetReview(root);
+  const tracked = await readFile(new URL("../docs/monitoring-extraction-target-review.md", import.meta.url), "utf8");
+
+  assert.equal(tracked, review);
+  assert.equal((review.match(/^## /gm) ?? []).length, 112);
+  assert.equal((review.match(/^- 参照先: \[.+\]\(https:\/\/.+\)$/gm) ?? []).length, 116);
+  assert.ok(review.includes("- [ ] 税率・金額・算定基礎・上限下限"));
+  assert.ok(review.includes("- [ ] 公布日・施行日・適用開始日・徴収開始日"));
 });

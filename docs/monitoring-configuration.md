@@ -16,6 +16,8 @@
 
 `manual`は監視不能を意味しない。公式URLを人が月次確認できるが、構造変更や誤抽出を安全に検知する制度固有adapterが未実装であることを表す。adapterを追加する際は、対象条文、期待文書、抽出規則、fixture、失敗時の扱いをレビューしてから`automated`へ変更する。
 
+対象条文が未確定の制度は、[監視抽出対象の設定候補](monitoring-extraction-target-review.md)に制度ごとの公式リンクと確認用チェックボックスを列挙する。この一覧は候補のレビュー用であり、チェック結果と条文番号の確認後に`config/monitoring.yaml`へ反映する。
+
 地方税23制度は国法レベルの地方税法を監視対象とする。自治体条例、自治体公式サイト、個別税率、法定外税の個別監視は#20へ分離し、`municipal_scope: issue_20`で識別する。
 
 `npm run monitoring:check`は正本・source設定から監視設定を再構築し、制度追加・削除、source URL、監視区分等の差異を検出する。`npm run validate`は全正本IDとsource IDの参照、重複、必須項目、URL形式を検証する。
