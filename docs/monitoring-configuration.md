@@ -45,3 +45,17 @@ npm run inventory:check
 - #31（#19-9）: #39の正規化結果と#41のregistryを共通pipelineへ接続し、定期監視、PR候補、不確実事項Issueへ連携する。意味抽出規則は再実装しない。
 
 実装順は `#30 → #39 → #41 → #31 → #42〜#46 → #47` とする。
+
+## 共通運用pipeline
+
+`npm run monitor`は#10のsource差分検出と、#41のregistryで`adapter_status: implemented`となった意味抽出jobを同じ`results[]`契約で実行する。現在は#39の消費税・自動車税が対象であり、#42〜#46は`required_adapter`に対応する実装を共通registryへ追加する。
+
+監視結果は次の経路へ排他的に振り分ける。
+
+- 対応先が一意で、取得・構造・source間整合に問題がない差分: #9の人間レビュー用PR候補
+- 取得失敗、構造変更、対応先不明、公式source間不一致: #8の重複防止付きIssue候補
+- 変更なし: GitHubへの書き込みなし
+
+意味抽出jobはtarget単位で失敗を捕捉するため、1件の失敗で後続targetを停止しない。全体statusは非成功にし、成功分を含む取得時刻・原文SHA-256・正規化結果・失敗理由を固定workflowのartifactへ保存する。正本の直接更新、`main`への直接push、自動mergeは行わない。
+
+`data/monitoring/semantic-baseline.json`には、e-Gov実APIで確認しPRレビューを通した意味値を保存する。比較時は法令の改正ID・更新日時そのものではなく、納税義務者、課税対象、課税標準、率・金額等の意味部分を項目単位で比較する。意味変更は旧値・新値付きの未対応差分としてIssue経路へ渡し、推測でbaselineや正本を更新しない。baseline候補の生成には`--confirm-reviewed`を必須とし、更新後も人間レビュー用PRを経由する。

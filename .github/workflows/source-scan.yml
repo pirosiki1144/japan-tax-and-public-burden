@@ -30,17 +30,17 @@ jobs:
       - run: npm ci
       - run: npm test
       - run: npm run validate
+      - run: npm run inventory:check
       - run: npm run generate:check
       - run: npm run audit -- --output .cache/repository-audit.json
-      - run: npm run semantics:extract -- --output .cache/semantic-extraction.json
       - id: scan
         run: |
           set +e
-          npm run scan -- --all --output .cache/source-scan-result.json
+          npm run monitor -- --output .cache/source-scan-result.json
           scan_exit=$?
           set -e
           npm run audit:scan -- --scan .cache/source-scan-result.json --report .cache/source-audit-report.json
-          node -e 'const scan = require("./.cache/source-scan-result.json"); const audit = require("./.cache/source-audit-report.json"); process.stdout.write(`has_changes=${scan.status === "change_detected"}\nhas_findings=${audit.issue_candidates.length > 0}\nscan_failed=${scan.status === "error"}\n`)' >> "$GITHUB_OUTPUT"
+          node -e 'const scan = require("./.cache/source-scan-result.json"); const audit = require("./.cache/source-audit-report.json"); process.stdout.write(`has_changes=${scan.routing?.has_changes === true}\nhas_findings=${audit.issue_candidates.length > 0}\nscan_failed=${scan.status === "error"}\n`)' >> "$GITHUB_OUTPUT"
           echo "scan_exit=$scan_exit"
       - if: always()
         uses: actions/upload-artifact@v4
@@ -50,7 +50,6 @@ jobs:
             .cache/source-scan-result.json
             .cache/source-audit-report.json
             .cache/repository-audit.json
-            .cache/semantic-extraction.json
           if-no-files-found: error
       - if: steps.scan.outputs.scan_failed == 'true'
         run: exit 1
