@@ -32,6 +32,7 @@ jobs:
       - run: npm run validate
       - run: npm run generate:check
       - run: npm run audit -- --output .cache/repository-audit.json
+      - run: npm run semantics:extract -- --output .cache/semantic-extraction.json
       - id: scan
         run: |
           set +e
@@ -49,6 +50,7 @@ jobs:
             .cache/source-scan-result.json
             .cache/source-audit-report.json
             .cache/repository-audit.json
+            .cache/semantic-extraction.json
           if-no-files-found: error
       - if: steps.scan.outputs.scan_failed == 'true'
         run: exit 1

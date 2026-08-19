@@ -1,37 +1,28 @@
 {
   "law_info": {"law_id": "325AC0000000226"},
-  "revision_info": {"law_title": "地方税法"},
-  "law_full_text": {
-    "tag": "Law",
-    "attr": {},
-    "children": [
-      {
-        "tag": "MainProvision",
-        "attr": {},
-        "children": [
-          {
-            "tag": "Article",
-            "attr": {"Num": "72_83"},
-            "children": [
-              {"tag": "ArticleCaption", "attr": {}, "children": ["（地方消費税の税率）"]},
-              {"tag": "ArticleTitle", "attr": {}, "children": ["第七十二条の八十三"]},
-              {
-                "tag": "Paragraph",
-                "attr": {"Num": "1"},
-                "children": [
-                  {
-                    "tag": "ParagraphSentence",
-                    "attr": {},
-                    "children": [
-                      {"tag": "Sentence", "attr": {"Num": "1"}, "children": ["地方消費税の税率は、七十八分の二十二とする。"]}
-                    ]
-                  }
-                ]
-              }
-            ]
-          }
-        ]
-      }
-    ]
-  }
+  "revision_info": {"law_title": "地方税法", "law_revision_id": "325AC0000000226_fixture", "updated": "2026-08-19T00:00:00+09:00"},
+  "law_full_text": {"tag": "Law", "attr": {}, "children": [{"tag": "MainProvision", "attr": {}, "children": [
+    {"tag": "Article", "attr": {"Num": "72_83"}, "children": [
+      {"tag": "ArticleCaption", "attr": {}, "children": ["（地方消費税の税率）"]},
+      {"tag": "Paragraph", "attr": {"Num": "1"}, "children": ["地方消費税の税率は、七十八分の二十二とする。"]}
+    ]},
+    {"tag": "Article", "attr": {"Num": "146"}, "children": [
+      {"tag": "Paragraph", "attr": {"Num": "1"}, "children": ["自動車税は、自動車の主たる定置場所在の道府県において、その所有者に課する。"]},
+      {"tag": "Paragraph", "attr": {"Num": "2"}, "children": ["所有者に課することができない場合は、当該自動車の使用者に課する。"]}
+    ]},
+    {"tag": "Article", "attr": {"Num": "154"}, "children": [
+      {"tag": "Paragraph", "attr": {"Num": "1"}, "children": [
+        {"tag": "TableRow", "attr": {}, "children": [{"tag": "TableColumn", "attr": {}, "children": ["一　乗用車"]}]},
+        {"tag": "TableRow", "attr": {}, "children": [{"tag": "TableColumn", "attr": {}, "children": ["イ　営業用"]}]},
+        {"tag": "TableRow", "attr": {}, "children": [{"tag": "TableColumn", "attr": {}, "children": ["（１）　総排気量が一リットル以下のもの"]}, {"tag": "TableColumn", "attr": {}, "children": ["年額"]}, {"tag": "TableColumn", "attr": {}, "children": ["七千五百円"]}]},
+        {"tag": "TableRow", "attr": {}, "children": [{"tag": "TableColumn", "attr": {}, "children": ["ロ　自家用"]}]},
+        {"tag": "TableRow", "attr": {}, "children": [{"tag": "TableColumn", "attr": {}, "children": ["（１）　総排気量が一リットル以下のもの"]}, {"tag": "TableColumn", "attr": {}, "children": ["年額"]}, {"tag": "TableColumn", "attr": {}, "children": ["二万五千円"]}]},
+        {"tag": "TableRow", "attr": {}, "children": [{"tag": "TableColumn", "attr": {}, "children": ["二　トラック"]}]},
+        {"tag": "TableRow", "attr": {}, "children": [{"tag": "TableColumn", "attr": {}, "children": ["イ　営業用"]}]},
+        {"tag": "TableRow", "attr": {}, "children": [{"tag": "TableColumn", "attr": {}, "children": ["（１）　最大積載量が一トン以下のもの"]}, {"tag": "TableColumn", "attr": {}, "children": ["年額"]}, {"tag": "TableColumn", "attr": {}, "children": ["六千五百円"]}]}
+      ]},
+      {"tag": "Paragraph", "attr": {"Num": "2"}, "children": ["一定のトラックには区分に応じた額を加算する。"]},
+      {"tag": "Paragraph", "attr": {"Num": "4"}, "children": ["道府県は標準税率の一・五倍を超える税率で課することができない。"]}
+    ]}
+  ]}]}
 }

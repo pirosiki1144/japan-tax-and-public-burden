@@ -52,6 +52,7 @@ Node.js 20以降で実行できます。最初に検証用パッケージをイ�
 npm ci
 npm test
 npm run validate
+npm run semantics:check
 ```
 
 `.yaml` ファイルはYAML 1.2として読み込みます。一般的なYAML記法とJSON互換記法のどちらも使用できます。`npm run validate` はYAML、JSON、CSVを対応するJSON Schemaへ照合し、必須項目、ID重複、参照整合性、URL、日付形式、追加プロパティなどを検証します。
@@ -65,6 +66,13 @@ npm run scan -- --all --dry-run --output .cache/source-scan-result.json
 ```
 
 パイプラインは取得、正規化、検証、正本との意味的差分検出を順に行い、`no_change`、`change_detected`、`error` の機械可読JSONを出力します。取得URL、取得日時、原文バイトのSHA-256も記録します。Phase 2のパイプラインは正本を書き換えず、候補差分はstdoutまたはGit管理外の`.cache/`にだけ出力します。取得失敗や必須構造の欠落時は非0で終了し、部分データは採用しません。
+
+e-Gov法令APIから消費税・自動車税の納税義務者、課税対象、課税標準、税率を意味抽出する検証は次のように実行します。PR CIでは縮小fixtureを使うため外部通信を行いません。実API検証は定期workflowまたは手動実行で行い、結果JSONをartifactに保存します。
+
+```bash
+npm run semantics:check
+npm run semantics:extract -- --output .cache/semantic-extraction.json
+```
 
 `.github/workflows/source-scan.yml` は毎週の定期実行と手動実行に対応し、結果JSONをartifactとして保存します。workflow自身や正本データは生成・commitしません。
 
