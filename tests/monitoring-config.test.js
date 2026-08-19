@@ -35,13 +35,13 @@ test("multiple law sources and municipal scope remain explicit", async () => {
   assert.match(byId.get("local-consumption-tax").notes, /#20/);
 });
 
-test("unconfirmed extraction targets have official links and review checkboxes", async () => {
+test("reviewed extraction targets have official links and concrete checkboxes", async () => {
   const review = await buildExtractionTargetReview(root);
   const tracked = await readFile(new URL("../docs/monitoring-extraction-target-review.md", import.meta.url), "utf8");
 
   assert.equal(tracked, review);
-  assert.equal((review.match(/^## /gm) ?? []).length, 112);
-  assert.equal((review.match(/^- 参照先: \[.+\]\(https:\/\/.+\)$/gm) ?? []).length, 116);
-  assert.ok(review.includes("- [ ] 税率・金額・算定基礎・上限下限"));
-  assert.ok(review.includes("- [ ] 公布日・施行日・適用開始日・徴収開始日"));
+  assert.equal((review.match(/^## /gm) ?? []).length, 2);
+  assert.equal((review.match(/^参照先: \[.+\]\(https:\/\/.+\)$/gm) ?? []).length, 4);
+  assert.ok(review.includes("- [x] 消費税法第28条・第29条：課税標準、消費税率"));
+  assert.ok(review.includes("- [x] 地方税法第154条：車種・用途・排気量等ごとの標準税率"));
 });

@@ -7,6 +7,36 @@ const root = fileURLToPath(new URL("../..", import.meta.url));
 const outputPath = join(root, "config/monitoring.yaml");
 const reviewPath = join(root, "docs/monitoring-extraction-target-review.md");
 const GENERATED_AT = "2026-08-19T20:13:25+09:00";
+const REVIEWED_EXTRACTION_TARGETS = {
+  "consumption-tax": {
+    "363AC0000000108": [
+      "消費税法第1条・第2条：制度目的、課税資産・軽減対象課税資産等の定義",
+      "消費税法第4条から第6条：課税対象、納税義務者、非課税",
+      "消費税法第28条・第29条：課税標準、消費税率",
+      "消費税法別表第1・第1の2：軽減税率対象"
+    ],
+    "6101.htm": [
+      "法令等の確認基準日",
+      "国内取引・外国貨物の課税対象",
+      "標準税率・軽減税率と地方消費税の内訳",
+      "非課税取引の扱い"
+    ],
+    "nta-consumption-tax-rates-page-2": [
+      "法令等の確認基準日",
+      "軽減税率制度の実施日",
+      "標準税率・軽減税率と地方消費税の内訳",
+      "軽減税率の対象品目・除外・判定時期"
+    ]
+  },
+  "automobile-tax": {
+    "325AC0000000226": [
+      "地方税法第145条：自動車の定義",
+      "地方税法第146条から第148条：納税義務者、みなし課税、非課税",
+      "地方税法第154条：車種・用途・排気量等ごとの標準税率",
+      "地方税法第155条から第158条：賦課期日、納期、月割、徴収方法"
+    ]
+  }
+};
 
 function sourceForUrl(sources, url) {
   return sources.find(({ base_url }) => url.startsWith(base_url));
@@ -41,7 +71,7 @@ export async function buildMonitoringConfig(repositoryRoot) {
         enabled: true,
         adapter: automated ? registered.adapter : "manual",
         target_id: targetId(base),
-        extraction_targets: base.article ? [`条文 ${base.article}`] : ["法令の改廃・施行状態（監視条文は#30の後続整備で確定）"]
+        extraction_targets: REVIEWED_EXTRACTION_TARGETS[burden.tax_id]?.[targetId(base)] ?? (base.article ? [`条文 ${base.article}`] : ["法令の改廃・施行状態（監視条文は#30の後続整備で確定）"])
       };
     });
     if (automated) {
@@ -54,7 +84,7 @@ export async function buildMonitoringConfig(repositoryRoot) {
           enabled: true,
           adapter: nta.adapter,
           target_id: `${nta.source_id}-page-${index + 1}`,
-          extraction_targets: index === 0 ? ["納税義務者・負担者・標準税率"] : ["標準税率・軽減税率・適用対象・開始日"]
+          extraction_targets: REVIEWED_EXTRACTION_TARGETS[burden.tax_id][`${index === 0 ? "6101.htm" : `${nta.source_id}-page-${index + 1}`}`]
         });
       }
     }
@@ -72,35 +102,25 @@ export async function buildMonitoringConfig(repositoryRoot) {
 }
 
 export async function buildExtractionTargetReview(repositoryRoot) {
-  const burdens = (await readBurdens(repositoryRoot)).sort((left, right) => left.tax_id.localeCompare(right.tax_id, "en"));
+  const burdens = await readBurdens(repositoryRoot);
+  const config = await buildMonitoringConfig(repositoryRoot);
+  const names = new Map(burdens.map(({ tax_id, official_name }) => [tax_id, official_name]));
   const lines = [
     "# 監視抽出対象の設定候補",
     "",
     "- 対応Issue: #30（親Issue: #19）",
     `- 生成日時: ${GENERATED_AT}`,
-    "- 確認方法: 各公式リンクを開き、その制度について監視する項目にチェックを付ける。条文番号を特定できた場合はPRコメントで指定する。",
-    "- 注意: チェック前の項目は候補であり、`config/monitoring.yaml` の確定設定ではない。日付や条文を推測で補完しない。",
+    "- 対象: レビュー指定の消費税と自動車税",
+    "- 確認方法: 公式リンクと、`config/monitoring.yaml`へ反映した監視文面候補を照合する。",
+    "- 注意: チェック済みは設定への反映済みを表す。事実値を確定したことは意味せず、取得時に公式本文と構造を検証する。",
     ""
   ];
-  for (const burden of burdens) {
-    const name = burden.official_name === "unknown" ? "正式名称未確認" : burden.official_name;
-    lines.push(`## ${name} \`${burden.tax_id}\``, "");
-    for (const base of burden.legal_bases) {
-      const article = base.article ? `（現行候補: ${base.article}）` : "（対象条文未確定）";
-      lines.push(`- 参照先: [${base.name}${article}](${base.source_url})`);
-    }
-    lines.push(
-      "- [ ] 制度の定義・正式名称",
-      "- [ ] 納付義務者・課税対象・負担者",
-      "- [ ] 税率・金額・算定基礎・上限下限",
-      "- [ ] 非課税・免除・減免・特例",
-      "- [ ] 公布日・施行日・適用開始日・徴収開始日",
-      "- [ ] 改廃状態・経過措置・段階適用",
-      ""
-    );
-    if (burden.evidence_gaps.length > 0) {
-      lines.push("正本に記録済みの根拠不足:", "");
-      for (const gap of burden.evidence_gaps) lines.push(`- [ ] ${gap}`);
+  for (const taxId of ["consumption-tax", "automobile-tax"]) {
+    const target = config.targets.find(({ tax_id }) => tax_id === taxId);
+    lines.push(`## ${names.get(taxId)} \`${taxId}\``, "");
+    for (const source of target.sources) {
+      lines.push(`参照先: [${source.source_id} / ${source.target_id}](${source.target_url})`, "");
+      for (const extractionTarget of source.extraction_targets) lines.push(`- [x] ${extractionTarget}`);
       lines.push("");
     }
   }
