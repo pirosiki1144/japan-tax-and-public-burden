@@ -72,11 +72,15 @@ async function readBurdens(repositoryRoot) {
 }
 
 export async function buildMonitoringConfig(repositoryRoot) {
-  const registry = await readYaml(join(repositoryRoot, "config/sources.yaml"));
-  const burdens = await readBurdens(repositoryRoot);
+  const [registry, burdens, socialAdapters] = await Promise.all([
+    readYaml(join(repositoryRoot, "config/sources.yaml")),
+    readBurdens(repositoryRoot),
+    readYaml(join(repositoryRoot, "config/social-insurance-adapters.yaml"))
+  ]);
+  const automatedSocial = new Set(socialAdapters.targets.filter(({ status }) => status === "implemented").map(({ tax_id: taxId }) => taxId));
 
   const targets = burdens.map((burden) => {
-    const automated = burden.tax_id === "consumption-tax";
+    const automated = burden.tax_id === "consumption-tax" || automatedSocial.has(burden.tax_id);
     const sources = burden.legal_bases.map((base) => {
       const registered = sourceForUrl(registry.sources, base.source_url);
       if (!registered) throw new Error(`${burden.tax_id}: no registered source for ${base.source_url}`);
@@ -93,27 +97,32 @@ export async function buildMonitoringConfig(repositoryRoot) {
       };
     });
     if (automated) {
-      const nta = registry.sources.find(({ source_id }) => source_id === "nta-consumption-tax-rates");
-      for (const [index, url] of nta.entry_urls.entries()) {
-        if (sources.some(({ target_url }) => target_url === url)) continue;
-        sources.push({
-          source_id: nta.source_id,
-          target_url: url,
-          enabled: true,
-          adapter: nta.adapter,
-          target_id: `${nta.source_id}-page-${index + 1}`,
-          extraction_targets: REVIEWED_EXTRACTION_TARGETS[burden.tax_id][`${index === 0 ? "6101.htm" : `${nta.source_id}-page-${index + 1}`}`]
-        });
+      const supplementalSources = registry.sources.filter(({ monitoring_tax_ids: taxIds = [] }) => taxIds.includes(burden.tax_id));
+      if (burden.tax_id === "consumption-tax") supplementalSources.push(registry.sources.find(({ source_id }) => source_id === "nta-consumption-tax-rates"));
+      for (const supplemental of supplementalSources) {
+        for (const [index, url] of supplemental.entry_urls.entries()) {
+          if (sources.some(({ target_url }) => target_url === url)) continue;
+          sources.push({
+            source_id: supplemental.source_id,
+            target_url: url,
+            enabled: true,
+            adapter: supplemental.adapter,
+            target_id: `${supplemental.source_id}-page-${index + 1}`,
+            extraction_targets: burden.tax_id === "consumption-tax"
+              ? REVIEWED_EXTRACTION_TARGETS[burden.tax_id][`${index === 0 ? "6101.htm" : `${supplemental.source_id}-page-${index + 1}`}`]
+              : [supplemental.scope]
+          });
+        }
       }
     }
     return {
       tax_id: burden.tax_id,
       monitoring_mode: automated ? "automated" : "manual",
       enabled: true,
-      cadence: automated ? "daily" : "monthly",
+      cadence: automatedSocial.has(burden.tax_id) ? "annual" : automated ? "daily" : "monthly",
       municipal_scope: burden.burden_type === "local_tax" ? "issue_20" : "national_only",
       sources,
-      notes: burden.burden_type === "local_tax" ? "国法レベルのみ。自治体条例・公式サイト・個別税率は#20で扱う" : automated ? "実装済みadapterで自動監視する" : "公式URLは特定済みだが抽出adapter未実装のため手動確認する"
+      notes: burden.burden_type === "local_tax" ? "国法レベルのみ。自治体条例・公式サイト・個別税率は#20で扱う" : automatedSocial.has(burden.tax_id) ? "実装済みadapterで年次監視する。固定年度資料の次年度URLは公式一覧ページを手動確認して更新する" : automated ? "実装済みadapterで自動監視する" : "公式URLは特定済みだが抽出adapter未実装のため手動確認する"
     };
   }).sort((left, right) => left.tax_id.localeCompare(right.tax_id, "en"));
   return { schema_version: 1, generated_at: GENERATED_AT, targets };

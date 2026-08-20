@@ -959,30 +959,42 @@
       "official_name": "雇用保険料",
       "burden_type": "social_insurance_premium",
       "implementation_issue": 44,
-      "implementation_status": "planned",
-      "priority": "high",
+      "implementation_status": "implemented",
+      "priority": "completed",
       "depends_on_issues": [
-        31
+        31,
+        46
       ],
       "batch_id": "issue-44-batch-01",
-      "reuse_group": "egov_law_api_json:349AC0000000116",
+      "reuse_group": "egov_law_api_json:349AC0000000116+pdf:www.mhlw.go.jp",
       "municipal_scope": "national_only",
       "capabilities": {
-        "liable_party": "needs_source_research",
-        "taxable_scope": "needs_source_research",
-        "calculation_basis": "needs_source_research",
-        "rate_or_amount": "needs_source_research",
-        "applicable_period": "needs_source_research"
+        "liable_party": "implemented",
+        "taxable_scope": "implemented",
+        "calculation_basis": "implemented",
+        "rate_or_amount": "implemented",
+        "applicable_period": "implemented"
       },
       "sources": [
         {
           "source_id": "egov-laws",
           "target_id": "349AC0000000116",
           "official_format": "egov_law_api_json",
-          "current_adapter": "manual",
+          "current_adapter": "egov_law_article_facts",
           "required_adapter": "egov_law_semantics",
-          "adapter_status": "planned",
-          "reuse_key": "egov_law_api_json:349AC0000000116"
+          "adapter_status": "held",
+          "reuse_key": "egov_law_api_json:349AC0000000116",
+          "hold_reason": "制度根拠法令は保持するが、現行の率・金額は実装済みの年度別公式資料sourceから抽出する"
+        },
+        {
+          "source_id": "mhlw-employment-insurance-rates",
+          "target_id": "mhlw-employment-insurance-rates-page-1",
+          "official_format": "pdf",
+          "current_adapter": "pdf_regex_facts",
+          "required_adapter": "pdf_semantics",
+          "adapter_status": "implemented",
+          "reuse_key": "pdf:www.mhlw.go.jp",
+          "shared_format_issue": 46
         }
       ]
     },
@@ -1827,8 +1839,8 @@
       "official_name": "unknown",
       "burden_type": "social_insurance_premium",
       "implementation_issue": 44,
-      "implementation_status": "planned",
-      "priority": "high",
+      "implementation_status": "held",
+      "priority": "completed",
       "depends_on_issues": [
         31
       ],
@@ -1849,8 +1861,9 @@
           "official_format": "egov_law_api_json",
           "current_adapter": "manual",
           "required_adapter": "egov_law_semantics",
-          "adapter_status": "planned",
-          "reuse_key": "egov_law_api_json:409AC0000000123"
+          "adapter_status": "held",
+          "reuse_key": "egov_law_api_json:409AC0000000123",
+          "hold_reason": "第1号は市町村・所得段階別、第2号は加入医療保険別であり、全国一律値として扱わず保険者別網羅を別Issueで設計する必要がある"
         }
       ]
     },
@@ -1859,8 +1872,8 @@
       "official_name": "unknown",
       "burden_type": "social_insurance_premium",
       "implementation_issue": 44,
-      "implementation_status": "planned",
-      "priority": "high",
+      "implementation_status": "held",
+      "priority": "completed",
       "depends_on_issues": [
         31
       ],
@@ -1881,8 +1894,9 @@
           "official_format": "egov_law_api_json",
           "current_adapter": "manual",
           "required_adapter": "egov_law_semantics",
-          "adapter_status": "planned",
-          "reuse_key": "egov_law_api_json:211AC0000000070"
+          "adapter_status": "held",
+          "reuse_key": "egov_law_api_json:211AC0000000070",
+          "hold_reason": "健康保険・国民健康保険・後期高齢者医療を束ねた総称で、保険者・都道府県・市町村別の率を単一の全国値として安全に抽出できない"
         },
         {
           "source_id": "egov-laws",
@@ -1890,8 +1904,9 @@
           "official_format": "egov_law_api_json",
           "current_adapter": "manual",
           "required_adapter": "egov_law_semantics",
-          "adapter_status": "planned",
-          "reuse_key": "egov_law_api_json:333AC0000000192"
+          "adapter_status": "held",
+          "reuse_key": "egov_law_api_json:333AC0000000192",
+          "hold_reason": "健康保険・国民健康保険・後期高齢者医療を束ねた総称で、保険者・都道府県・市町村別の率を単一の全国値として安全に抽出できない"
         },
         {
           "source_id": "egov-laws",
@@ -1899,8 +1914,9 @@
           "official_format": "egov_law_api_json",
           "current_adapter": "manual",
           "required_adapter": "egov_law_semantics",
-          "adapter_status": "planned",
-          "reuse_key": "egov_law_api_json:357AC0000000080"
+          "adapter_status": "held",
+          "reuse_key": "egov_law_api_json:357AC0000000080",
+          "hold_reason": "健康保険・国民健康保険・後期高齢者医療を束ねた総称で、保険者・都道府県・市町村別の率を単一の全国値として安全に抽出できない"
         }
       ]
     },
@@ -2296,39 +2312,62 @@
       "official_name": "unknown",
       "burden_type": "social_insurance_premium",
       "implementation_issue": 44,
-      "implementation_status": "planned",
-      "priority": "high",
+      "implementation_status": "implemented",
+      "priority": "completed",
       "depends_on_issues": [
-        31
+        31,
+        46
       ],
       "batch_id": "issue-44-batch-01",
-      "reuse_group": "egov_law_api_json:329AC0000000115+egov_law_api_json:334AC0000000141",
+      "reuse_group": "egov_law_api_json:329AC0000000115+egov_law_api_json:334AC0000000141+html:www.nenkin.go.jp+html:www.nenkin.go.jp",
       "municipal_scope": "national_only",
       "capabilities": {
-        "liable_party": "needs_source_research",
-        "taxable_scope": "needs_source_research",
-        "calculation_basis": "needs_source_research",
-        "rate_or_amount": "needs_source_research",
-        "applicable_period": "needs_source_research"
+        "liable_party": "implemented",
+        "taxable_scope": "implemented",
+        "calculation_basis": "implemented",
+        "rate_or_amount": "implemented",
+        "applicable_period": "implemented"
       },
       "sources": [
         {
           "source_id": "egov-laws",
           "target_id": "329AC0000000115",
           "official_format": "egov_law_api_json",
-          "current_adapter": "manual",
+          "current_adapter": "egov_law_article_facts",
           "required_adapter": "egov_law_semantics",
-          "adapter_status": "planned",
-          "reuse_key": "egov_law_api_json:329AC0000000115"
+          "adapter_status": "held",
+          "reuse_key": "egov_law_api_json:329AC0000000115",
+          "hold_reason": "制度根拠法令は保持するが、現行の率・金額は実装済みの年度別公式資料sourceから抽出する"
         },
         {
           "source_id": "egov-laws",
           "target_id": "334AC0000000141",
           "official_format": "egov_law_api_json",
-          "current_adapter": "manual",
+          "current_adapter": "egov_law_article_facts",
           "required_adapter": "egov_law_semantics",
-          "adapter_status": "planned",
-          "reuse_key": "egov_law_api_json:334AC0000000141"
+          "adapter_status": "held",
+          "reuse_key": "egov_law_api_json:334AC0000000141",
+          "hold_reason": "制度根拠法令は保持するが、現行の率・金額は実装済みの年度別公式資料sourceから抽出する"
+        },
+        {
+          "source_id": "nenkin-pension-premiums",
+          "target_id": "nenkin-pension-premiums-page-1",
+          "official_format": "html",
+          "current_adapter": "html_regex_facts",
+          "required_adapter": "html_semantics",
+          "adapter_status": "implemented",
+          "reuse_key": "html:www.nenkin.go.jp",
+          "shared_format_issue": 46
+        },
+        {
+          "source_id": "nenkin-pension-premiums",
+          "target_id": "nenkin-pension-premiums-page-2",
+          "official_format": "html",
+          "current_adapter": "html_regex_facts",
+          "required_adapter": "html_semantics",
+          "adapter_status": "implemented",
+          "reuse_key": "html:www.nenkin.go.jp",
+          "shared_format_issue": 46
         }
       ]
     },
@@ -3623,8 +3662,8 @@
       "official_name": "労災保険料",
       "burden_type": "social_insurance_premium",
       "implementation_issue": 44,
-      "implementation_status": "planned",
-      "priority": "high",
+      "implementation_status": "held",
+      "priority": "completed",
       "depends_on_issues": [
         31
       ],
@@ -3645,8 +3684,9 @@
           "official_format": "egov_law_api_json",
           "current_adapter": "manual",
           "required_adapter": "egov_law_semantics",
-          "adapter_status": "planned",
-          "reuse_key": "egov_law_api_json:322AC0000000050"
+          "adapter_status": "held",
+          "reuse_key": "egov_law_api_json:322AC0000000050",
+          "hold_reason": "労災保険率は事業種類別の率表とメリット制で変動し、PDF表の行対応と個別適用率を単一値にせず別Issueで整備する必要がある"
         }
       ]
     }

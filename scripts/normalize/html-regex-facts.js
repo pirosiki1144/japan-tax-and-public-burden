@@ -49,7 +49,7 @@ export function normalizeHtmlRegexFacts(source, pages) {
     const match = text?.match(compile(fact.pattern, fact.fact_id));
     const raw = match?.[fact.capture_group];
     if (raw === undefined) throw new Error(`Source structure changed: ${fact.fact_id} was not found`);
-    return { fact_id: fact.fact_id, raw, value: transforms[fact.transform](raw), target: fact.target };
+    return { fact_id: fact.fact_id, raw, value: transforms[fact.transform](raw), expected_value: fact.expected_value, target: fact.target };
   });
   return { source_id: source.source_id, facts };
 }

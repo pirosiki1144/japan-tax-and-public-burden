@@ -1,0 +1,22 @@
+%PDF-1.4
+1 0 obj
+<< /Type /Catalog /Pages 2 0 R >>
+endobj
+2 0 obj
+<< /Type /Pages /Kids [3 0 R] /Count 1 >>
+endobj
+3 0 obj
+<< /Type /Page /Parent 2 0 R /MediaBox [0 0 900 792] /Resources << /Font << /F1 4 0 R >> >> /Contents 5 0 R >>
+endobj
+4 0 obj
+<< /Type /Font /Subtype /Type1 /BaseFont /Helvetica >>
+endobj
+5 0 obj
+<< /Length 240 >>
+stream
+BT /F1 10 Tf 20 720 Td (2026-04-01 to 2027-03-31) Tj 0 -20 Td (G 5/1,000 8.5/1,000 5/1,000 3.5/1,000 13.5/1,000) Tj 0 -20 Td (A 6/1,000 9.5/1,000 6/1,000 3.5/1,000 15.5/1,000) Tj 0 -20 Td (C 6/1,000 10.5/1,000 6/1,000 4.5/1,000 16.5/1,000) Tj ET
+endstream
+endobj
+trailer
+<< /Root 1 0 R >>
+%%EOF

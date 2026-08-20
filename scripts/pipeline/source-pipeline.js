@@ -10,7 +10,7 @@ export async function runSourcePipeline({ root, sourceId, source: configuredSour
   const pages = await fetchSourcePages(source, { fetchImpl, now });
   const fetches = pages.map(({ body: _body, bytes: _bytes, ...metadata }) => metadata);
   try {
-    const normalized = validateNormalizedSource(adapter.normalize(source, pages));
+    const normalized = validateNormalizedSource(await adapter.normalize(source, pages));
     const candidateDiff = await detectCanonicalDiff(root, normalized);
     return {
       schema_version: 1,

@@ -88,6 +88,148 @@
       "notes": ""
     },
     {
+      "source_id": "mhlw-employment-insurance-rates",
+      "name": "厚生労働省 令和8年度雇用保険料率",
+      "authority": "厚生労働省",
+      "base_url": "https://www.mhlw.go.jp/",
+      "entry_urls": [
+        "https://www.mhlw.go.jp/content/001692566.pdf"
+      ],
+      "source_type": "ministry",
+      "scope": "雇用保険料率の事業区分別合計、労働者負担、事業主負担、適用期間",
+      "jurisdiction": "Japan",
+      "priority": 1,
+      "cadence": "annual",
+      "enabled": true,
+      "automation_enabled": true,
+      "monitoring_tax_ids": [
+        "employment-insurance-premium"
+      ],
+      "adapter": "pdf_regex_facts",
+      "accepted_content_types": [
+        "application/pdf"
+      ],
+      "extraction": {
+        "expected_pages": 1,
+        "required_markers": [
+          {
+            "page_index": 0,
+            "label": "fiscal application period",
+            "pattern": "2026[^0-9]+0?4[^0-9]+0?1[^0-9]+.*2027[^0-9]+0?3[^0-9]+31"
+          },
+          {
+            "page_index": 0,
+            "label": "general business rates",
+            "pattern": "5/1,0008\\.5/1,0005/1,0003\\.5/1,00013\\.5/1,000"
+          },
+          {
+            "page_index": 0,
+            "label": "agriculture rates",
+            "pattern": "6/1,0009\\.5/1,0006/1,0003\\.5/1,00015\\.5/1,000"
+          },
+          {
+            "page_index": 0,
+            "label": "construction rates",
+            "pattern": "6/1,00010\\.5/1,0006/1,0004\\.5/1,00016\\.5/1,000"
+          }
+        ],
+        "facts": [
+          {
+            "fact_id": "employment-period-start",
+            "page_index": 0,
+            "pattern": "(2026)[^0-9]+(0?4)[^0-9]+(0?1)",
+            "capture_group": 1,
+            "transform": "iso_date_components",
+            "expected_value": "2026-04-01"
+          },
+          {
+            "fact_id": "employment-period-end",
+            "page_index": 0,
+            "pattern": "(2027)[^0-9]+(0?3)[^0-9]+(31)",
+            "capture_group": 1,
+            "transform": "iso_date_components",
+            "expected_value": "2027-03-31"
+          },
+          {
+            "fact_id": "employment-general-worker",
+            "page_index": 0,
+            "pattern": "[^0-9.]([0-9.]+)/1,0008\\.5/1,0005/1,0003\\.5/1,00013\\.5/1,000",
+            "capture_group": 1,
+            "transform": "number",
+            "expected_value": 5
+          },
+          {
+            "fact_id": "employment-general-employer",
+            "page_index": 0,
+            "pattern": "5/1,000([0-9.]+)/1,0005/1,0003\\.5/1,00013\\.5/1,000",
+            "capture_group": 1,
+            "transform": "number",
+            "expected_value": 8.5
+          },
+          {
+            "fact_id": "employment-general-total",
+            "page_index": 0,
+            "pattern": "5/1,0008\\.5/1,0005/1,0003\\.5/1,000([0-9.]+)/1,000",
+            "capture_group": 1,
+            "transform": "number",
+            "expected_value": 13.5
+          },
+          {
+            "fact_id": "employment-agriculture-worker",
+            "page_index": 0,
+            "pattern": "[^0-9.]([0-9.]+)/1,0009\\.5/1,0006/1,0003\\.5/1,00015\\.5/1,000",
+            "capture_group": 1,
+            "transform": "number",
+            "expected_value": 6
+          },
+          {
+            "fact_id": "employment-agriculture-employer",
+            "page_index": 0,
+            "pattern": "6/1,000([0-9.]+)/1,0006/1,0003\\.5/1,00015\\.5/1,000",
+            "capture_group": 1,
+            "transform": "number",
+            "expected_value": 9.5
+          },
+          {
+            "fact_id": "employment-agriculture-total",
+            "page_index": 0,
+            "pattern": "6/1,0009\\.5/1,0006/1,0003\\.5/1,000([0-9.]+)/1,000",
+            "capture_group": 1,
+            "transform": "number",
+            "expected_value": 15.5
+          },
+          {
+            "fact_id": "employment-construction-worker",
+            "page_index": 0,
+            "pattern": "[^0-9.]([0-9.]+)/1,00010\\.5/1,0006/1,0004\\.5/1,00016\\.5/1,000",
+            "capture_group": 1,
+            "transform": "number",
+            "expected_value": 6
+          },
+          {
+            "fact_id": "employment-construction-employer",
+            "page_index": 0,
+            "pattern": "6/1,000([0-9.]+)/1,0006/1,0004\\.5/1,00016\\.5/1,000",
+            "capture_group": 1,
+            "transform": "number",
+            "expected_value": 10.5
+          },
+          {
+            "fact_id": "employment-construction-total",
+            "page_index": 0,
+            "pattern": "6/1,00010\\.5/1,0006/1,0004\\.5/1,000([0-9.]+)/1,000",
+            "capture_group": 1,
+            "transform": "number",
+            "expected_value": 16.5
+          }
+        ]
+      },
+      "rate_limit": "サイトの利用条件に従う",
+      "terms_url": "https://www.mhlw.go.jp/chosakuken/index.html",
+      "last_verified_at": "2026-08-21T06:34:11+09:00",
+      "notes": "固定年度PDFの内容を年次監視する。令和8年4月1日から令和9年3月31日まで。次年度PDF URLへの切替は公式一覧ページを年次手動確認してconfigをレビューする。fixtureでは縮小PDFを使用する"
+    },
+    {
       "source_id": "mof-national-burden",
       "name": "財務省 国民負担率",
       "authority": "財務省",
@@ -126,6 +268,72 @@
       "terms_url": "https://kokkai.ndl.go.jp/api.html",
       "last_verified_at": "2026-08-16T12:20:19+09:00",
       "notes": "公開までの時間差を考慮する"
+    },
+    {
+      "source_id": "nenkin-pension-premiums",
+      "name": "日本年金機構 厚生年金・国民年金保険料",
+      "authority": "日本年金機構",
+      "base_url": "https://www.nenkin.go.jp/",
+      "entry_urls": [
+        "https://www.nenkin.go.jp/service/kounen/hokenryo/hoshu/20150515-01.html",
+        "https://www.nenkin.go.jp/section/faq/kokunen/seido/hokenryo/seidosetsumei/20150331.html"
+      ],
+      "source_type": "public_agency",
+      "scope": "厚生年金の保険料率・労使折半・算定基礎と令和8年度国民年金月額",
+      "jurisdiction": "Japan",
+      "priority": 1,
+      "cadence": "annual",
+      "enabled": true,
+      "automation_enabled": true,
+      "monitoring_tax_ids": [
+        "pension-insurance-premium"
+      ],
+      "adapter": "html_regex_facts",
+      "accepted_content_types": [
+        "text/html"
+      ],
+      "extraction": {
+        "expected_pages": 2,
+        "required_markers": [
+          {
+            "page_index": 0,
+            "label": "employees pension shared burden",
+            "pattern": "事業主と被保険者とが半分ずつ負担"
+          },
+          {
+            "page_index": 0,
+            "label": "employees pension calculation basis",
+            "pattern": "標準報酬月額 × 保険料率"
+          },
+          {
+            "page_index": 1,
+            "label": "national pension fiscal period",
+            "pattern": "令和8年度（令和8年4月～令和9年3月まで）"
+          }
+        ],
+        "facts": [
+          {
+            "fact_id": "employees-pension-total",
+            "page_index": 0,
+            "pattern": "厚生年金保険料率は([0-9]+(?:\\.[0-9]+)?)％で固定",
+            "capture_group": 1,
+            "transform": "number",
+            "expected_value": 18.3
+          },
+          {
+            "fact_id": "national-pension-monthly-amount",
+            "page_index": 1,
+            "pattern": "月額([0-9,]+)円です",
+            "capture_group": 1,
+            "transform": "string",
+            "expected_value": "17,920"
+          }
+        ]
+      },
+      "rate_limit": "サイトの利用条件に従う",
+      "terms_url": "https://www.nenkin.go.jp/riyoukiyaku/index.html",
+      "last_verified_at": "2026-08-21T06:34:11+09:00",
+      "notes": "厚生年金は18.3%を労使折半。国民年金は令和8年度月額を別componentとして扱う"
     },
     {
       "source_id": "nta-consumption-tax-rates",

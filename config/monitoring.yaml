@@ -727,23 +727,33 @@
     },
     {
       "tax_id": "employment-insurance-premium",
-      "monitoring_mode": "manual",
+      "monitoring_mode": "automated",
       "enabled": true,
-      "cadence": "monthly",
+      "cadence": "annual",
       "municipal_scope": "national_only",
       "sources": [
         {
           "source_id": "egov-laws",
           "target_url": "https://laws.e-gov.go.jp/api/2/law_data/349AC0000000116",
           "enabled": true,
-          "adapter": "manual",
+          "adapter": "egov_law_article_facts",
           "target_id": "349AC0000000116",
           "extraction_targets": [
             "法令の改廃・施行状態（監視条文は#30の後続整備で確定）"
           ]
+        },
+        {
+          "source_id": "mhlw-employment-insurance-rates",
+          "target_url": "https://www.mhlw.go.jp/content/001692566.pdf",
+          "enabled": true,
+          "adapter": "pdf_regex_facts",
+          "target_id": "mhlw-employment-insurance-rates-page-1",
+          "extraction_targets": [
+            "雇用保険料率の事業区分別合計、労働者負担、事業主負担、適用期間"
+          ]
         }
       ],
-      "notes": "公式URLは特定済みだが抽出adapter未実装のため手動確認する"
+      "notes": "実装済みadapterで年次監視する。固定年度資料の次年度URLは公式一覧ページを手動確認して更新する"
     },
     {
       "tax_id": "enterprise-tax",
@@ -1567,16 +1577,16 @@
     },
     {
       "tax_id": "pension-insurance-premium",
-      "monitoring_mode": "manual",
+      "monitoring_mode": "automated",
       "enabled": true,
-      "cadence": "monthly",
+      "cadence": "annual",
       "municipal_scope": "national_only",
       "sources": [
         {
           "source_id": "egov-laws",
           "target_url": "https://laws.e-gov.go.jp/api/2/law_data/329AC0000000115",
           "enabled": true,
-          "adapter": "manual",
+          "adapter": "egov_law_article_facts",
           "target_id": "329AC0000000115",
           "extraction_targets": [
             "法令の改廃・施行状態（監視条文は#30の後続整備で確定）"
@@ -1586,14 +1596,34 @@
           "source_id": "egov-laws",
           "target_url": "https://laws.e-gov.go.jp/api/2/law_data/334AC0000000141",
           "enabled": true,
-          "adapter": "manual",
+          "adapter": "egov_law_article_facts",
           "target_id": "334AC0000000141",
           "extraction_targets": [
             "法令の改廃・施行状態（監視条文は#30の後続整備で確定）"
           ]
+        },
+        {
+          "source_id": "nenkin-pension-premiums",
+          "target_url": "https://www.nenkin.go.jp/service/kounen/hokenryo/hoshu/20150515-01.html",
+          "enabled": true,
+          "adapter": "html_regex_facts",
+          "target_id": "nenkin-pension-premiums-page-1",
+          "extraction_targets": [
+            "厚生年金の保険料率・労使折半・算定基礎と令和8年度国民年金月額"
+          ]
+        },
+        {
+          "source_id": "nenkin-pension-premiums",
+          "target_url": "https://www.nenkin.go.jp/section/faq/kokunen/seido/hokenryo/seidosetsumei/20150331.html",
+          "enabled": true,
+          "adapter": "html_regex_facts",
+          "target_id": "nenkin-pension-premiums-page-2",
+          "extraction_targets": [
+            "厚生年金の保険料率・労使折半・算定基礎と令和8年度国民年金月額"
+          ]
         }
       ],
-      "notes": "公式URLは特定済みだが抽出adapter未実装のため手動確認する"
+      "notes": "実装済みadapterで年次監視する。固定年度資料の次年度URLは公式一覧ページを手動確認して更新する"
     },
     {
       "tax_id": "petroleum-and-coal-tax",

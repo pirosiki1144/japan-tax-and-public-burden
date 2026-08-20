@@ -12,8 +12,10 @@ const now = () => new Date("2026-08-17T01:02:03+09:00");
 
 function fixtureFetch(transform = (body) => body) {
   return async (url) => {
-    const body = transform(await readFile(join(fixtureRoot, basename(new URL(url).pathname)), "utf8"), url);
-    const contentType = body.trimStart().startsWith("{") ? "application/json" : "text/html; charset=UTF-8";
+    const name = basename(new URL(url).pathname);
+    const bytes = await readFile(join(fixtureRoot, name));
+    const body = name.endsWith(".pdf") ? bytes : transform(bytes.toString("utf8"), url);
+    const contentType = name.endsWith(".pdf") ? "application/pdf" : body.trimStart().startsWith("{") ? "application/json" : "text/html; charset=UTF-8";
     return new Response(body, { status: 200, headers: { "content-type": contentType } });
   };
 }
@@ -42,7 +44,7 @@ test("a normalized value change creates a machine-readable candidate diff", asyn
 test("all configured automated sources run through one shared pipeline", async () => {
   const result = await runAutomatedSources({ root, fetchImpl: fixtureFetch(), now, dryRun: true });
   assert.equal(result.status, "no_change");
-  assert.deepEqual(result.results.map(({ source_id }) => source_id), ["egov-laws", "nta-consumption-tax-rates"]);
+  assert.deepEqual(result.results.map(({ source_id }) => source_id), ["egov-laws", "nta-consumption-tax-rates", "mhlw-employment-insurance-rates", "nenkin-pension-premiums"]);
 });
 
 test("e-Gov fixtures confirm the statutory consumption-tax rates", async () => {
