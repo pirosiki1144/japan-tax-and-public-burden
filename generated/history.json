@@ -68,6 +68,58 @@
       "notes": "法案審議の早期検知には国会情報を併用する"
     },
     {
+      "source_id": "jeed-disability-employment-levy",
+      "name": "JEED 障害者雇用納付金制度の概要",
+      "authority": "独立行政法人高齢・障害・求職者雇用支援機構",
+      "base_url": "https://www.jeed.go.jp/",
+      "entry_urls": [
+        "https://www.jeed.go.jp/disability/about_levy_grant_system.html"
+      ],
+      "source_type": "public_agency",
+      "scope": "障害者雇用納付金の対象事業主、算定基礎、1人当たり月額",
+      "jurisdiction": "Japan",
+      "priority": 1,
+      "cadence": "monthly",
+      "enabled": true,
+      "automation_enabled": true,
+      "monitoring_tax_ids": [
+        "disability-employment-levy"
+      ],
+      "adapter": "html_regex_facts",
+      "accepted_content_types": [
+        "text/html"
+      ],
+      "extraction": {
+        "expected_pages": 1,
+        "required_markers": [
+          {
+            "page_index": 0,
+            "label": "liable employer scope",
+            "pattern": "常時雇用している労働者数が[0-9０-９]+人を超える事業主"
+          },
+          {
+            "page_index": 0,
+            "label": "statutory shortfall basis",
+            "pattern": "法定雇用障害者数に不足する障害者数に応じて"
+          }
+        ],
+        "facts": [
+          {
+            "fact_id": "monthly-levy-amount",
+            "page_index": 0,
+            "pattern": "1人当たり月額([0-9０-９,，]+)円",
+            "capture_group": 1,
+            "transform": "japanese_number",
+            "expected_value": 50000
+          }
+        ]
+      },
+      "rate_limit": "サイトの利用条件に従う",
+      "terms_url": "https://www.jeed.go.jp/general/terms.html",
+      "last_verified_at": "2026-08-21T08:30:00+09:00",
+      "notes": "制度概要に明記された現行の納付金額を監視する。適用開始日は概要ページで確認できないため推測せずnullとする"
+    },
+    {
       "source_id": "kanpo",
       "name": "官報発行サイト",
       "authority": "国立印刷局",

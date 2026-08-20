@@ -25,6 +25,12 @@ const transforms = {
     if (!Number.isFinite(value)) throw new Error(`Extracted value is not a finite number: ${raw}`);
     return value;
   },
+  japanese_number: (raw) => {
+    const ascii = raw.normalize("NFKC").replaceAll(",", "");
+    const value = Number(ascii);
+    if (!Number.isFinite(value)) throw new Error(`Extracted value is not a finite Japanese number: ${raw}`);
+    return value;
+  },
   japanese_date: (raw) => {
     const match = raw.match(/^令和(元|[0-9]+)年([0-9]+)月([0-9]+)日$/);
     if (!match) throw new Error(`Unsupported Japanese date: ${raw}`);

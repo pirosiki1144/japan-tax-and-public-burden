@@ -12,8 +12,8 @@
       "official_name": "副作用拠出金",
       "burden_type": "contribution",
       "implementation_issue": 45,
-      "implementation_status": "planned",
-      "priority": "medium",
+      "implementation_status": "held",
+      "priority": "completed",
       "depends_on_issues": [
         31
       ],
@@ -34,8 +34,9 @@
           "official_format": "egov_law_api_json",
           "current_adapter": "manual",
           "required_adapter": "egov_law_semantics",
-          "adapter_status": "planned",
-          "reuse_key": "egov_law_api_json:414AC0000000192"
+          "adapter_status": "held",
+          "reuse_key": "egov_law_api_json:414AC0000000192",
+          "hold_reason": "拠出対象、算定基礎または負担割合が製品区分、機関別通知、施設計画、占用関係もしくは個別事業計画に依存し、単一の法令selectorでは現行値を確定できない"
         }
       ]
     },
@@ -44,8 +45,8 @@
       "official_name": "unknown",
       "burden_type": "burden_charge",
       "implementation_issue": 45,
-      "implementation_status": "planned",
-      "priority": "medium",
+      "implementation_status": "held",
+      "priority": "completed",
       "depends_on_issues": [
         31
       ],
@@ -66,8 +67,9 @@
           "official_format": "egov_law_api_json",
           "current_adapter": "manual",
           "required_adapter": "egov_law_semantics",
-          "adapter_status": "planned",
-          "reuse_key": "egov_law_api_json:348AC0000000053"
+          "adapter_status": "held",
+          "reuse_key": "egov_law_api_json:348AC0000000053",
+          "hold_reason": "率または額が年度、事業者、契約者数、業種、認可内容もしくは国際基金の通知で変動するため、適用単位を持つ公式表を追加してから抽出する必要がある"
         }
       ]
     },
@@ -76,8 +78,8 @@
       "official_name": "unknown",
       "burden_type": "insurance_premium",
       "implementation_issue": 45,
-      "implementation_status": "planned",
-      "priority": "medium",
+      "implementation_status": "held",
+      "priority": "completed",
       "depends_on_issues": [
         31
       ],
@@ -98,8 +100,9 @@
           "official_format": "egov_law_api_json",
           "current_adapter": "manual",
           "required_adapter": "egov_law_semantics",
-          "adapter_status": "planned",
-          "reuse_key": "egov_law_api_json:348AC0000000053"
+          "adapter_status": "held",
+          "reuse_key": "egov_law_api_json:348AC0000000053",
+          "hold_reason": "率または額が年度、事業者、契約者数、業種、認可内容もしくは国際基金の通知で変動するため、適用単位を持つ公式表を追加してから抽出する必要がある"
         }
       ]
     },
@@ -108,8 +111,8 @@
       "official_name": "unknown",
       "burden_type": "burden_charge",
       "implementation_issue": 45,
-      "implementation_status": "planned",
-      "priority": "medium",
+      "implementation_status": "held",
+      "priority": "completed",
       "depends_on_issues": [
         31
       ],
@@ -130,8 +133,9 @@
           "official_format": "egov_law_api_json",
           "current_adapter": "manual",
           "required_adapter": "egov_law_semantics",
-          "adapter_status": "planned",
-          "reuse_key": "egov_law_api_json:348AC0000000053"
+          "adapter_status": "held",
+          "reuse_key": "egov_law_api_json:348AC0000000053",
+          "hold_reason": "率または額が年度、事業者、契約者数、業種、認可内容もしくは国際基金の通知で変動するため、適用単位を持つ公式表を追加してから抽出する必要がある"
         }
       ]
     },
@@ -140,8 +144,8 @@
       "official_name": "石綿健康被害救済一般拠出金",
       "burden_type": "contribution",
       "implementation_issue": 45,
-      "implementation_status": "planned",
-      "priority": "medium",
+      "implementation_status": "held",
+      "priority": "completed",
       "depends_on_issues": [
         31
       ],
@@ -162,8 +166,9 @@
           "official_format": "egov_law_api_json",
           "current_adapter": "manual",
           "required_adapter": "egov_law_semantics",
-          "adapter_status": "planned",
-          "reuse_key": "egov_law_api_json:418AC0000000004"
+          "adapter_status": "held",
+          "reuse_key": "egov_law_api_json:418AC0000000004",
+          "hold_reason": "現行値が年度告示、予算、認可、所管機関の算定結果または事業者別決定に依存するため、公式な年度資料と適用期間を対応付ける専用adapterが必要である"
         }
       ]
     },
@@ -172,8 +177,8 @@
       "official_name": "石綿健康被害救済特別拠出金",
       "burden_type": "contribution",
       "implementation_issue": 45,
-      "implementation_status": "planned",
-      "priority": "medium",
+      "implementation_status": "held",
+      "priority": "completed",
       "depends_on_issues": [
         31
       ],
@@ -194,8 +199,9 @@
           "official_format": "egov_law_api_json",
           "current_adapter": "manual",
           "required_adapter": "egov_law_semantics",
-          "adapter_status": "planned",
-          "reuse_key": "egov_law_api_json:418AC0000000004"
+          "adapter_status": "held",
+          "reuse_key": "egov_law_api_json:418AC0000000004",
+          "hold_reason": "現行値が年度告示、予算、認可、所管機関の算定結果または事業者別決定に依存するため、公式な年度資料と適用期間を対応付ける専用adapterが必要である"
         }
       ]
     },
@@ -204,8 +210,8 @@
       "official_name": "自動車事故対策事業賦課金",
       "burden_type": "levy",
       "implementation_issue": 45,
-      "implementation_status": "planned",
-      "priority": "medium",
+      "implementation_status": "held",
+      "priority": "completed",
       "depends_on_issues": [
         31
       ],
@@ -226,8 +232,9 @@
           "official_format": "egov_law_api_json",
           "current_adapter": "manual",
           "required_adapter": "egov_law_semantics",
-          "adapter_status": "planned",
-          "reuse_key": "egov_law_api_json:330AC0000000097"
+          "adapter_status": "held",
+          "reuse_key": "egov_law_api_json:330AC0000000097",
+          "hold_reason": "法令は負担義務または算定枠組みを定めるが、現行額は個別認可、契約、事業費、指定団体規程または年度資料で決まり、法令本文だけから全国共通値を安全に確定できない"
         }
       ]
     },
@@ -330,8 +337,8 @@
       "official_name": "銀行等保有株式取得機構に対する拠出金",
       "burden_type": "contribution",
       "implementation_issue": 45,
-      "implementation_status": "planned",
-      "priority": "medium",
+      "implementation_status": "held",
+      "priority": "completed",
       "depends_on_issues": [
         31
       ],
@@ -352,8 +359,9 @@
           "official_format": "egov_law_api_json",
           "current_adapter": "manual",
           "required_adapter": "egov_law_semantics",
-          "adapter_status": "planned",
-          "reuse_key": "egov_law_api_json:413AC0000000131"
+          "adapter_status": "held",
+          "reuse_key": "egov_law_api_json:413AC0000000131",
+          "hold_reason": "拠出対象、算定基礎または負担割合が製品区分、機関別通知、施設計画、占用関係もしくは個別事業計画に依存し、単一の法令selectorでは現行値を確定できない"
         }
       ]
     },
@@ -394,8 +402,8 @@
       "official_name": "unknown",
       "burden_type": "burden_charge",
       "implementation_issue": 45,
-      "implementation_status": "planned",
-      "priority": "medium",
+      "implementation_status": "held",
+      "priority": "completed",
       "depends_on_issues": [
         31
       ],
@@ -416,8 +424,9 @@
           "official_format": "egov_law_api_json",
           "current_adapter": "manual",
           "required_adapter": "egov_law_semantics",
-          "adapter_status": "planned",
-          "reuse_key": "egov_law_api_json:359AC0000000086"
+          "adapter_status": "held",
+          "reuse_key": "egov_law_api_json:359AC0000000086",
+          "hold_reason": "率または額が年度、事業者、契約者数、業種、認可内容もしくは国際基金の通知で変動するため、適用単位を持つ公式表を追加してから抽出する必要がある"
         }
       ]
     },
@@ -458,8 +467,8 @@
       "official_name": "子ども・子育て拠出金",
       "burden_type": "contribution",
       "implementation_issue": 45,
-      "implementation_status": "planned",
-      "priority": "medium",
+      "implementation_status": "held",
+      "priority": "completed",
       "depends_on_issues": [
         31
       ],
@@ -480,8 +489,9 @@
           "official_format": "egov_law_api_json",
           "current_adapter": "manual",
           "required_adapter": "egov_law_semantics",
-          "adapter_status": "planned",
-          "reuse_key": "egov_law_api_json:424AC0000000065"
+          "adapter_status": "held",
+          "reuse_key": "egov_law_api_json:424AC0000000065",
+          "hold_reason": "現行値が年度告示、予算、認可、所管機関の算定結果または事業者別決定に依存するため、公式な年度資料と適用期間を対応付ける専用adapterが必要である"
         }
       ]
     },
@@ -522,8 +532,8 @@
       "official_name": "日本商品委託者保護基金に対する負担金",
       "burden_type": "burden_charge",
       "implementation_issue": 45,
-      "implementation_status": "planned",
-      "priority": "medium",
+      "implementation_status": "held",
+      "priority": "completed",
       "depends_on_issues": [
         31
       ],
@@ -544,8 +554,9 @@
           "official_format": "egov_law_api_json",
           "current_adapter": "manual",
           "required_adapter": "egov_law_semantics",
-          "adapter_status": "planned",
-          "reuse_key": "egov_law_api_json:325AC0000000239"
+          "adapter_status": "held",
+          "reuse_key": "egov_law_api_json:325AC0000000239",
+          "hold_reason": "法令は負担義務または算定枠組みを定めるが、現行額は個別認可、契約、事業費、指定団体規程または年度資料で決まり、法令本文だけから全国共通値を安全に確定できない"
         }
       ]
     },
@@ -587,8 +598,8 @@
       "official_name": "unknown",
       "burden_type": "burden_charge",
       "implementation_issue": 45,
-      "implementation_status": "planned",
-      "priority": "medium",
+      "implementation_status": "held",
+      "priority": "completed",
       "depends_on_issues": [
         31
       ],
@@ -609,8 +620,9 @@
           "official_format": "egov_law_api_json",
           "current_adapter": "manual",
           "required_adapter": "egov_law_semantics",
-          "adapter_status": "planned",
-          "reuse_key": "egov_law_api_json:338AC0000000081"
+          "adapter_status": "held",
+          "reuse_key": "egov_law_api_json:338AC0000000081",
+          "hold_reason": "法令は負担義務または算定枠組みを定めるが、現行額は個別認可、契約、事業費、指定団体規程または年度資料で決まり、法令本文だけから全国共通値を安全に確定できない"
         }
       ]
     },
@@ -735,8 +747,8 @@
       "official_name": "預金保険機構に対する負担金",
       "burden_type": "burden_charge",
       "implementation_issue": 45,
-      "implementation_status": "planned",
-      "priority": "medium",
+      "implementation_status": "held",
+      "priority": "completed",
       "depends_on_issues": [
         31
       ],
@@ -757,8 +769,9 @@
           "official_format": "egov_law_api_json",
           "current_adapter": "manual",
           "required_adapter": "egov_law_semantics",
-          "adapter_status": "planned",
-          "reuse_key": "egov_law_api_json:346AC0000000034"
+          "adapter_status": "held",
+          "reuse_key": "egov_law_api_json:346AC0000000034",
+          "hold_reason": "率または額が年度、事業者、契約者数、業種、認可内容もしくは国際基金の通知で変動するため、適用単位を持つ公式表を追加してから抽出する必要がある"
         }
       ]
     },
@@ -767,8 +780,8 @@
       "official_name": "預金保険機構に対する特定負担金",
       "burden_type": "burden_charge",
       "implementation_issue": 45,
-      "implementation_status": "planned",
-      "priority": "medium",
+      "implementation_status": "held",
+      "priority": "completed",
       "depends_on_issues": [
         31
       ],
@@ -789,8 +802,9 @@
           "official_format": "egov_law_api_json",
           "current_adapter": "manual",
           "required_adapter": "egov_law_semantics",
-          "adapter_status": "planned",
-          "reuse_key": "egov_law_api_json:346AC0000000034"
+          "adapter_status": "held",
+          "reuse_key": "egov_law_api_json:346AC0000000034",
+          "hold_reason": "率または額が年度、事業者、契約者数、業種、認可内容もしくは国際基金の通知で変動するため、適用単位を持つ公式表を追加してから抽出する必要がある"
         }
       ]
     },
@@ -799,8 +813,8 @@
       "official_name": "預金保険料",
       "burden_type": "insurance_premium",
       "implementation_issue": 45,
-      "implementation_status": "planned",
-      "priority": "medium",
+      "implementation_status": "held",
+      "priority": "completed",
       "depends_on_issues": [
         31
       ],
@@ -821,8 +835,9 @@
           "official_format": "egov_law_api_json",
           "current_adapter": "manual",
           "required_adapter": "egov_law_semantics",
-          "adapter_status": "planned",
-          "reuse_key": "egov_law_api_json:346AC0000000034"
+          "adapter_status": "held",
+          "reuse_key": "egov_law_api_json:346AC0000000034",
+          "hold_reason": "率または額が年度、事業者、契約者数、業種、認可内容もしくは国際基金の通知で変動するため、適用単位を持つ公式表を追加してから抽出する必要がある"
         }
       ]
     },
@@ -831,30 +846,42 @@
       "official_name": "障害者雇用納付金",
       "burden_type": "payment",
       "implementation_issue": 45,
-      "implementation_status": "planned",
-      "priority": "medium",
+      "implementation_status": "implemented",
+      "priority": "completed",
       "depends_on_issues": [
-        31
+        31,
+        46
       ],
       "batch_id": "issue-45-batch-01",
-      "reuse_group": "egov_law_api_json:335AC0000000123",
+      "reuse_group": "egov_law_api_json:335AC0000000123+html:www.jeed.go.jp",
       "municipal_scope": "national_only",
       "capabilities": {
-        "liable_party": "needs_source_research",
-        "taxable_scope": "needs_source_research",
-        "calculation_basis": "needs_source_research",
-        "rate_or_amount": "needs_source_research",
-        "applicable_period": "needs_source_research"
+        "liable_party": "implemented",
+        "taxable_scope": "implemented",
+        "calculation_basis": "implemented",
+        "rate_or_amount": "implemented",
+        "applicable_period": "implemented"
       },
       "sources": [
         {
           "source_id": "egov-laws",
           "target_id": "335AC0000000123",
           "official_format": "egov_law_api_json",
-          "current_adapter": "manual",
+          "current_adapter": "egov_law_article_facts",
           "required_adapter": "egov_law_semantics",
-          "adapter_status": "planned",
-          "reuse_key": "egov_law_api_json:335AC0000000123"
+          "adapter_status": "held",
+          "reuse_key": "egov_law_api_json:335AC0000000123",
+          "hold_reason": "現行値は実装済みの公式資料sourceから抽出する"
+        },
+        {
+          "source_id": "jeed-disability-employment-levy",
+          "target_id": "jeed-disability-employment-levy-page-1",
+          "official_format": "html",
+          "current_adapter": "html_regex_facts",
+          "required_adapter": "html_semantics",
+          "adapter_status": "implemented",
+          "reuse_key": "html:www.jeed.go.jp",
+          "shared_format_issue": 46
         }
       ]
     },
@@ -863,8 +890,8 @@
       "official_name": "unknown",
       "burden_type": "contribution",
       "implementation_issue": 45,
-      "implementation_status": "planned",
-      "priority": "medium",
+      "implementation_status": "held",
+      "priority": "completed",
       "depends_on_issues": [
         31
       ],
@@ -885,8 +912,9 @@
           "official_format": "egov_law_api_json",
           "current_adapter": "manual",
           "required_adapter": "egov_law_semantics",
-          "adapter_status": "planned",
-          "reuse_key": "egov_law_api_json:423AC0100000113"
+          "adapter_status": "held",
+          "reuse_key": "egov_law_api_json:423AC0100000113",
+          "hold_reason": "現行値が年度告示、予算、認可、所管機関の算定結果または事業者別決定に依存するため、公式な年度資料と適用期間を対応付ける専用adapterが必要である"
         }
       ]
     },
@@ -895,8 +923,8 @@
       "official_name": "授業目的公衆送信補償金",
       "burden_type": "payment",
       "implementation_issue": 45,
-      "implementation_status": "planned",
-      "priority": "medium",
+      "implementation_status": "held",
+      "priority": "completed",
       "depends_on_issues": [
         31
       ],
@@ -917,8 +945,9 @@
           "official_format": "egov_law_api_json",
           "current_adapter": "manual",
           "required_adapter": "egov_law_semantics",
-          "adapter_status": "planned",
-          "reuse_key": "egov_law_api_json:345AC0000000048"
+          "adapter_status": "held",
+          "reuse_key": "egov_law_api_json:345AC0000000048",
+          "hold_reason": "法令は負担義務または算定枠組みを定めるが、現行額は個別認可、契約、事業費、指定団体規程または年度資料で決まり、法令本文だけから全国共通値を安全に確定できない"
         }
       ]
     },
@@ -927,8 +956,8 @@
       "official_name": "unknown",
       "burden_type": "burden_charge",
       "implementation_issue": 45,
-      "implementation_status": "planned",
-      "priority": "medium",
+      "implementation_status": "held",
+      "priority": "completed",
       "depends_on_issues": [
         31
       ],
@@ -949,8 +978,9 @@
           "official_format": "egov_law_api_json",
           "current_adapter": "manual",
           "required_adapter": "egov_law_semantics",
-          "adapter_status": "planned",
-          "reuse_key": "egov_law_api_json:407M50000400077"
+          "adapter_status": "held",
+          "reuse_key": "egov_law_api_json:407M50000400077",
+          "hold_reason": "拠出対象、算定基礎または負担割合が製品区分、機関別通知、施設計画、占用関係もしくは個別事業計画に依存し、単一の法令selectorでは現行値を確定できない"
         }
       ]
     },
@@ -1100,8 +1130,8 @@
       "official_name": "化石燃料賦課金",
       "burden_type": "levy",
       "implementation_issue": 45,
-      "implementation_status": "planned",
-      "priority": "medium",
+      "implementation_status": "held",
+      "priority": "completed",
       "depends_on_issues": [
         31
       ],
@@ -1122,8 +1152,9 @@
           "official_format": "egov_law_api_json",
           "current_adapter": "manual",
           "required_adapter": "egov_law_semantics",
-          "adapter_status": "planned",
-          "reuse_key": "egov_law_api_json:505AC0000000032"
+          "adapter_status": "held",
+          "reuse_key": "egov_law_api_json:505AC0000000032",
+          "hold_reason": "施行前の制度または個別認可額を含み、現在適用中の全国共通値として扱えないため、施行日と初回の公式算定結果を確認するまで保留する"
         }
       ]
     },
@@ -1196,8 +1227,8 @@
       "official_name": "unknown",
       "burden_type": "burden_charge",
       "implementation_issue": 45,
-      "implementation_status": "planned",
-      "priority": "medium",
+      "implementation_status": "held",
+      "priority": "completed",
       "depends_on_issues": [
         31
       ],
@@ -1218,8 +1249,9 @@
           "official_format": "egov_law_api_json",
           "current_adapter": "manual",
           "required_adapter": "egov_law_semantics",
-          "adapter_status": "planned",
-          "reuse_key": "egov_law_api_json:505AC0000000032"
+          "adapter_status": "held",
+          "reuse_key": "egov_law_api_json:505AC0000000032",
+          "hold_reason": "施行前の制度または個別認可額を含み、現在適用中の全国共通値として扱えないため、施行日と初回の公式算定結果を確認するまで保留する"
         }
       ]
     },
@@ -1228,8 +1260,8 @@
       "official_name": "unknown",
       "burden_type": "contribution",
       "implementation_issue": 45,
-      "implementation_status": "planned",
-      "priority": "medium",
+      "implementation_status": "held",
+      "priority": "completed",
       "depends_on_issues": [
         31
       ],
@@ -1250,8 +1282,9 @@
           "official_format": "egov_law_api_json",
           "current_adapter": "manual",
           "required_adapter": "egov_law_semantics",
-          "adapter_status": "planned",
-          "reuse_key": "egov_law_api_json:420AC1000000002"
+          "adapter_status": "held",
+          "reuse_key": "egov_law_api_json:420AC1000000002",
+          "hold_reason": "現行値が年度告示、予算、認可、所管機関の算定結果または事業者別決定に依存するため、公式な年度資料と適用期間を対応付ける専用adapterが必要である"
         }
       ]
     },
@@ -1260,8 +1293,8 @@
       "official_name": "unknown",
       "burden_type": "contribution",
       "implementation_issue": 45,
-      "implementation_status": "planned",
-      "priority": "medium",
+      "implementation_status": "held",
+      "priority": "completed",
       "depends_on_issues": [
         31
       ],
@@ -1282,8 +1315,9 @@
           "official_format": "egov_law_api_json",
           "current_adapter": "manual",
           "required_adapter": "egov_law_semantics",
-          "adapter_status": "planned",
-          "reuse_key": "egov_law_api_json:412AC0000000117"
+          "adapter_status": "held",
+          "reuse_key": "egov_law_api_json:412AC0000000117",
+          "hold_reason": "拠出対象、算定基礎または負担割合が製品区分、機関別通知、施設計画、占用関係もしくは個別事業計画に依存し、単一の法令selectorでは現行値を確定できない"
         }
       ]
     },
@@ -1324,8 +1358,8 @@
       "official_name": "unknown",
       "burden_type": "adjustment_charge",
       "implementation_issue": 45,
-      "implementation_status": "planned",
-      "priority": "medium",
+      "implementation_status": "held",
+      "priority": "completed",
       "depends_on_issues": [
         31
       ],
@@ -1346,8 +1380,9 @@
           "official_format": "egov_law_api_json",
           "current_adapter": "manual",
           "required_adapter": "egov_law_semantics",
-          "adapter_status": "planned",
-          "reuse_key": "egov_law_api_json:340AC0000000109"
+          "adapter_status": "held",
+          "reuse_key": "egov_law_api_json:340AC0000000109",
+          "hold_reason": "法令は負担義務または算定枠組みを定めるが、現行額は個別認可、契約、事業費、指定団体規程または年度資料で決まり、法令本文だけから全国共通値を安全に確定できない"
         }
       ]
     },
@@ -1388,8 +1423,8 @@
       "official_name": "感染拠出金",
       "burden_type": "contribution",
       "implementation_issue": 45,
-      "implementation_status": "planned",
-      "priority": "medium",
+      "implementation_status": "held",
+      "priority": "completed",
       "depends_on_issues": [
         31
       ],
@@ -1410,8 +1445,9 @@
           "official_format": "egov_law_api_json",
           "current_adapter": "manual",
           "required_adapter": "egov_law_semantics",
-          "adapter_status": "planned",
-          "reuse_key": "egov_law_api_json:414AC0000000192"
+          "adapter_status": "held",
+          "reuse_key": "egov_law_api_json:414AC0000000192",
+          "hold_reason": "拠出対象、算定基礎または負担割合が製品区分、機関別通知、施設計画、占用関係もしくは個別事業計画に依存し、単一の法令selectorでは現行値を確定できない"
         }
       ]
     },
@@ -1453,8 +1489,8 @@
       "official_name": "unknown",
       "burden_type": "contribution",
       "implementation_issue": 45,
-      "implementation_status": "planned",
-      "priority": "medium",
+      "implementation_status": "held",
+      "priority": "completed",
       "depends_on_issues": [
         31
       ],
@@ -1475,8 +1511,9 @@
           "official_format": "egov_law_api_json",
           "current_adapter": "manual",
           "required_adapter": "egov_law_semantics",
-          "adapter_status": "planned",
-          "reuse_key": "egov_law_api_json:350AC0000000095"
+          "adapter_status": "held",
+          "reuse_key": "egov_law_api_json:350AC0000000095",
+          "hold_reason": "率または額が年度、事業者、契約者数、業種、認可内容もしくは国際基金の通知で変動するため、適用単位を持つ公式表を追加してから抽出する必要がある"
         }
       ]
     },
@@ -1518,8 +1555,8 @@
       "official_name": "日本投資者保護基金に対する負担金",
       "burden_type": "burden_charge",
       "implementation_issue": 45,
-      "implementation_status": "planned",
-      "priority": "medium",
+      "implementation_status": "held",
+      "priority": "completed",
       "depends_on_issues": [
         31
       ],
@@ -1540,8 +1577,9 @@
           "official_format": "egov_law_api_json",
           "current_adapter": "manual",
           "required_adapter": "egov_law_semantics",
-          "adapter_status": "planned",
-          "reuse_key": "egov_law_api_json:323AC0000000025"
+          "adapter_status": "held",
+          "reuse_key": "egov_law_api_json:323AC0000000025",
+          "hold_reason": "法令は負担義務または算定枠組みを定めるが、現行額は個別認可、契約、事業費、指定団体規程または年度資料で決まり、法令本文だけから全国共通値を安全に確定できない"
         }
       ]
     },
@@ -1550,8 +1588,8 @@
       "official_name": "unknown",
       "burden_type": "burden_charge",
       "implementation_issue": 45,
-      "implementation_status": "planned",
-      "priority": "medium",
+      "implementation_status": "held",
+      "priority": "completed",
       "depends_on_issues": [
         31
       ],
@@ -1572,8 +1610,9 @@
           "official_format": "egov_law_api_json",
           "current_adapter": "manual",
           "required_adapter": "egov_law_semantics",
-          "adapter_status": "planned",
-          "reuse_key": "egov_law_api_json:414AC0000000182"
+          "adapter_status": "held",
+          "reuse_key": "egov_law_api_json:414AC0000000182",
+          "hold_reason": "拠出対象、算定基礎または負担割合が製品区分、機関別通知、施設計画、占用関係もしくは個別事業計画に依存し、単一の法令selectorでは現行値を確定できない"
         }
       ]
     },
@@ -1582,8 +1621,8 @@
       "official_name": "図書館等公衆送信補償金",
       "burden_type": "payment",
       "implementation_issue": 45,
-      "implementation_status": "planned",
-      "priority": "medium",
+      "implementation_status": "held",
+      "priority": "completed",
       "depends_on_issues": [
         31
       ],
@@ -1604,8 +1643,9 @@
           "official_format": "egov_law_api_json",
           "current_adapter": "manual",
           "required_adapter": "egov_law_semantics",
-          "adapter_status": "planned",
-          "reuse_key": "egov_law_api_json:345AC0000000048"
+          "adapter_status": "held",
+          "reuse_key": "egov_law_api_json:345AC0000000048",
+          "hold_reason": "法令は負担義務または算定枠組みを定めるが、現行額は個別認可、契約、事業費、指定団体規程または年度資料で決まり、法令本文だけから全国共通値を安全に確定できない"
         }
       ]
     },
@@ -1925,8 +1965,8 @@
       "official_name": "unknown",
       "burden_type": "levy",
       "implementation_issue": 45,
-      "implementation_status": "planned",
-      "priority": "medium",
+      "implementation_status": "held",
+      "priority": "completed",
       "depends_on_issues": [
         31
       ],
@@ -1947,8 +1987,9 @@
           "official_format": "egov_law_api_json",
           "current_adapter": "manual",
           "required_adapter": "egov_law_semantics",
-          "adapter_status": "planned",
-          "reuse_key": "egov_law_api_json:421AC1000000081"
+          "adapter_status": "held",
+          "reuse_key": "egov_law_api_json:421AC1000000081",
+          "hold_reason": "現行値が年度告示、予算、認可、所管機関の算定結果または事業者別決定に依存するため、公式な年度資料と適用期間を対応付ける専用adapterが必要である"
         }
       ]
     },
@@ -2021,8 +2062,8 @@
       "official_name": "鉱害防止事業基金に対する拠出金",
       "burden_type": "contribution",
       "implementation_issue": 45,
-      "implementation_status": "planned",
-      "priority": "medium",
+      "implementation_status": "held",
+      "priority": "completed",
       "depends_on_issues": [
         31
       ],
@@ -2043,8 +2084,9 @@
           "official_format": "egov_law_api_json",
           "current_adapter": "manual",
           "required_adapter": "egov_law_semantics",
-          "adapter_status": "planned",
-          "reuse_key": "egov_law_api_json:348AC0000000026"
+          "adapter_status": "held",
+          "reuse_key": "egov_law_api_json:348AC0000000026",
+          "hold_reason": "率または額が年度、事業者、契約者数、業種、認可内容もしくは国際基金の通知で変動するため、適用単位を持つ公式表を追加してから抽出する必要がある"
         }
       ]
     },
@@ -2053,8 +2095,8 @@
       "official_name": "unknown",
       "burden_type": "burden_charge",
       "implementation_issue": 45,
-      "implementation_status": "planned",
-      "priority": "medium",
+      "implementation_status": "held",
+      "priority": "completed",
       "depends_on_issues": [
         31
       ],
@@ -2075,8 +2117,9 @@
           "official_format": "egov_law_api_json",
           "current_adapter": "manual",
           "required_adapter": "egov_law_semantics",
-          "adapter_status": "planned",
-          "reuse_key": "egov_law_api_json:332AC0000000035"
+          "adapter_status": "held",
+          "reuse_key": "egov_law_api_json:332AC0000000035",
+          "hold_reason": "法令は負担義務または算定枠組みを定めるが、現行額は個別認可、契約、事業費、指定団体規程または年度資料で決まり、法令本文だけから全国共通値を安全に確定できない"
         }
       ]
     },
@@ -2184,8 +2227,8 @@
       "official_name": "unknown",
       "burden_type": "burden_charge",
       "implementation_issue": 45,
-      "implementation_status": "planned",
-      "priority": "medium",
+      "implementation_status": "held",
+      "priority": "completed",
       "depends_on_issues": [
         31
       ],
@@ -2206,8 +2249,9 @@
           "official_format": "egov_law_api_json",
           "current_adapter": "manual",
           "required_adapter": "egov_law_semantics",
-          "adapter_status": "planned",
-          "reuse_key": "egov_law_api_json:423AC0000000094"
+          "adapter_status": "held",
+          "reuse_key": "egov_law_api_json:423AC0000000094",
+          "hold_reason": "現行値が年度告示、予算、認可、所管機関の算定結果または事業者別決定に依存するため、公式な年度資料と適用期間を対応付ける専用adapterが必要である"
         }
       ]
     },
@@ -2216,8 +2260,8 @@
       "official_name": "unknown",
       "burden_type": "burden_charge",
       "implementation_issue": 45,
-      "implementation_status": "planned",
-      "priority": "medium",
+      "implementation_status": "held",
+      "priority": "completed",
       "depends_on_issues": [
         31
       ],
@@ -2238,8 +2282,9 @@
           "official_format": "egov_law_api_json",
           "current_adapter": "manual",
           "required_adapter": "egov_law_semantics",
-          "adapter_status": "planned",
-          "reuse_key": "egov_law_api_json:423AC0000000094"
+          "adapter_status": "held",
+          "reuse_key": "egov_law_api_json:423AC0000000094",
+          "hold_reason": "現行値が年度告示、予算、認可、所管機関の算定結果または事業者別決定に依存するため、公式な年度資料と適用期間を対応付ける専用adapterが必要である"
         }
       ]
     },
@@ -2248,8 +2293,8 @@
       "official_name": "unknown",
       "burden_type": "contribution",
       "implementation_issue": 45,
-      "implementation_status": "planned",
-      "priority": "medium",
+      "implementation_status": "held",
+      "priority": "completed",
       "depends_on_issues": [
         31
       ],
@@ -2270,8 +2315,9 @@
           "official_format": "egov_law_api_json",
           "current_adapter": "manual",
           "required_adapter": "egov_law_semantics",
-          "adapter_status": "planned",
-          "reuse_key": "egov_law_api_json:417AC0000000048"
+          "adapter_status": "held",
+          "reuse_key": "egov_law_api_json:417AC0000000048",
+          "hold_reason": "現行値が年度告示、予算、認可、所管機関の算定結果または事業者別決定に依存するため、公式な年度資料と適用期間を対応付ける専用adapterが必要である"
         }
       ]
     },
@@ -2280,8 +2326,8 @@
       "official_name": "加入者保護信託への負担金",
       "burden_type": "burden_charge",
       "implementation_issue": 45,
-      "implementation_status": "planned",
-      "priority": "medium",
+      "implementation_status": "held",
+      "priority": "completed",
       "depends_on_issues": [
         31
       ],
@@ -2302,8 +2348,9 @@
           "official_format": "egov_law_api_json",
           "current_adapter": "manual",
           "required_adapter": "egov_law_semantics",
-          "adapter_status": "planned",
-          "reuse_key": "egov_law_api_json:413AC0000000075"
+          "adapter_status": "held",
+          "reuse_key": "egov_law_api_json:413AC0000000075",
+          "hold_reason": "拠出対象、算定基礎または負担割合が製品区分、機関別通知、施設計画、占用関係もしくは個別事業計画に依存し、単一の法令selectorでは現行値を確定できない"
         }
       ]
     },
@@ -2440,8 +2487,8 @@
       "official_name": "unknown",
       "burden_type": "contribution",
       "implementation_issue": 45,
-      "implementation_status": "planned",
-      "priority": "medium",
+      "implementation_status": "held",
+      "priority": "completed",
       "depends_on_issues": [
         31
       ],
@@ -2462,8 +2509,9 @@
           "official_format": "egov_law_api_json",
           "current_adapter": "manual",
           "required_adapter": "egov_law_semantics",
-          "adapter_status": "planned",
-          "reuse_key": "egov_law_api_json:414AC0000000192"
+          "adapter_status": "held",
+          "reuse_key": "egov_law_api_json:414AC0000000192",
+          "hold_reason": "拠出対象、算定基礎または負担割合が製品区分、機関別通知、施設計画、占用関係もしくは個別事業計画に依存し、単一の法令selectorでは現行値を確定できない"
         }
       ]
     },
@@ -2472,8 +2520,8 @@
       "official_name": "unknown",
       "burden_type": "burden_charge",
       "implementation_issue": 45,
-      "implementation_status": "planned",
-      "priority": "medium",
+      "implementation_status": "held",
+      "priority": "completed",
       "depends_on_issues": [
         31
       ],
@@ -2494,8 +2542,9 @@
           "official_format": "egov_law_api_json",
           "current_adapter": "manual",
           "required_adapter": "egov_law_semantics",
-          "adapter_status": "planned",
-          "reuse_key": "egov_law_api_json:407AC0000000105"
+          "adapter_status": "held",
+          "reuse_key": "egov_law_api_json:407AC0000000105",
+          "hold_reason": "拠出対象、算定基礎または負担割合が製品区分、機関別通知、施設計画、占用関係もしくは個別事業計画に依存し、単一の法令selectorでは現行値を確定できない"
         }
       ]
     },
@@ -2504,8 +2553,8 @@
       "official_name": "汚染負荷量賦課金",
       "burden_type": "levy",
       "implementation_issue": 45,
-      "implementation_status": "planned",
-      "priority": "medium",
+      "implementation_status": "held",
+      "priority": "completed",
       "depends_on_issues": [
         31
       ],
@@ -2526,8 +2575,9 @@
           "official_format": "egov_law_api_json",
           "current_adapter": "manual",
           "required_adapter": "egov_law_semantics",
-          "adapter_status": "planned",
-          "reuse_key": "egov_law_api_json:348AC0000000111"
+          "adapter_status": "held",
+          "reuse_key": "egov_law_api_json:348AC0000000111",
+          "hold_reason": "率または額が年度、事業者、契約者数、業種、認可内容もしくは国際基金の通知で変動するため、適用単位を持つ公式表を追加してから抽出する必要がある"
         }
       ]
     },
@@ -2536,8 +2586,8 @@
       "official_name": "公害防止事業費事業者負担金",
       "burden_type": "burden_charge",
       "implementation_issue": 45,
-      "implementation_status": "planned",
-      "priority": "medium",
+      "implementation_status": "held",
+      "priority": "completed",
       "depends_on_issues": [
         31
       ],
@@ -2558,8 +2608,9 @@
           "official_format": "egov_law_api_json",
           "current_adapter": "manual",
           "required_adapter": "egov_law_semantics",
-          "adapter_status": "planned",
-          "reuse_key": "egov_law_api_json:345AC0000000133"
+          "adapter_status": "held",
+          "reuse_key": "egov_law_api_json:345AC0000000133",
+          "hold_reason": "法令は負担義務または算定枠組みを定めるが、現行額は個別認可、契約、事業費、指定団体規程または年度資料で決まり、法令本文だけから全国共通値を安全に確定できない"
         }
       ]
     },
@@ -2568,8 +2619,8 @@
       "official_name": "港湾環境整備負担金",
       "burden_type": "burden_charge",
       "implementation_issue": 45,
-      "implementation_status": "planned",
-      "priority": "medium",
+      "implementation_status": "held",
+      "priority": "completed",
       "depends_on_issues": [
         31
       ],
@@ -2590,8 +2641,9 @@
           "official_format": "egov_law_api_json",
           "current_adapter": "manual",
           "required_adapter": "egov_law_semantics",
-          "adapter_status": "planned",
-          "reuse_key": "egov_law_api_json:325AC0000000218"
+          "adapter_status": "held",
+          "reuse_key": "egov_law_api_json:325AC0000000218",
+          "hold_reason": "法令は負担義務または算定枠組みを定めるが、現行額は個別認可、契約、事業費、指定団体規程または年度資料で決まり、法令本文だけから全国共通値を安全に確定できない"
         }
       ]
     },
@@ -2600,8 +2652,8 @@
       "official_name": "unknown",
       "burden_type": "contribution",
       "implementation_issue": 45,
-      "implementation_status": "planned",
-      "priority": "medium",
+      "implementation_status": "held",
+      "priority": "completed",
       "depends_on_issues": [
         31
       ],
@@ -2622,8 +2674,9 @@
           "official_format": "egov_law_api_json",
           "current_adapter": "manual",
           "required_adapter": "egov_law_semantics",
-          "adapter_status": "planned",
-          "reuse_key": "egov_law_api_json:417AC0000000101"
+          "adapter_status": "held",
+          "reuse_key": "egov_law_api_json:417AC0000000101",
+          "hold_reason": "現行値が年度告示、予算、認可、所管機関の算定結果または事業者別決定に依存するため、公式な年度資料と適用期間を対応付ける専用adapterが必要である"
         }
       ]
     },
@@ -2632,8 +2685,8 @@
       "official_name": "郵便物運送委託補償金",
       "burden_type": "payment",
       "implementation_issue": 45,
-      "implementation_status": "planned",
-      "priority": "medium",
+      "implementation_status": "held",
+      "priority": "completed",
       "depends_on_issues": [
         31
       ],
@@ -2654,8 +2707,9 @@
           "official_format": "egov_law_api_json",
           "current_adapter": "manual",
           "required_adapter": "egov_law_semantics",
-          "adapter_status": "planned",
-          "reuse_key": "egov_law_api_json:324AC0000000284"
+          "adapter_status": "held",
+          "reuse_key": "egov_law_api_json:324AC0000000284",
+          "hold_reason": "法令は負担義務または算定枠組みを定めるが、現行額は個別認可、契約、事業費、指定団体規程または年度資料で決まり、法令本文だけから全国共通値を安全に確定できない"
         }
       ]
     },
@@ -2696,8 +2750,8 @@
       "official_name": "私的録音録画補償金",
       "burden_type": "payment",
       "implementation_issue": 45,
-      "implementation_status": "planned",
-      "priority": "medium",
+      "implementation_status": "held",
+      "priority": "completed",
       "depends_on_issues": [
         31
       ],
@@ -2718,8 +2772,9 @@
           "official_format": "egov_law_api_json",
           "current_adapter": "manual",
           "required_adapter": "egov_law_semantics",
-          "adapter_status": "planned",
-          "reuse_key": "egov_law_api_json:345AC0000000048"
+          "adapter_status": "held",
+          "reuse_key": "egov_law_api_json:345AC0000000048",
+          "hold_reason": "法令は負担義務または算定枠組みを定めるが、現行額は個別認可、契約、事業費、指定団体規程または年度資料で決まり、法令本文だけから全国共通値を安全に確定できない"
         }
       ]
     },
@@ -2728,8 +2783,8 @@
       "official_name": "unknown",
       "burden_type": "fee",
       "implementation_issue": 45,
-      "implementation_status": "planned",
-      "priority": "medium",
+      "implementation_status": "held",
+      "priority": "completed",
       "depends_on_issues": [
         31
       ],
@@ -2750,8 +2805,9 @@
           "official_format": "egov_law_api_json",
           "current_adapter": "manual",
           "required_adapter": "egov_law_semantics",
-          "adapter_status": "planned",
-          "reuse_key": "egov_law_api_json:361AC0000000092"
+          "adapter_status": "held",
+          "reuse_key": "egov_law_api_json:361AC0000000092",
+          "hold_reason": "率または額が年度、事業者、契約者数、業種、認可内容もしくは国際基金の通知で変動するため、適用単位を持つ公式表を追加してから抽出する必要がある"
         }
       ]
     },
@@ -2825,8 +2881,8 @@
       "official_name": "unknown",
       "burden_type": "contribution",
       "implementation_issue": 45,
-      "implementation_status": "planned",
-      "priority": "medium",
+      "implementation_status": "held",
+      "priority": "completed",
       "depends_on_issues": [
         31
       ],
@@ -2847,8 +2903,9 @@
           "official_format": "egov_law_api_json",
           "current_adapter": "manual",
           "required_adapter": "egov_law_semantics",
-          "adapter_status": "planned",
-          "reuse_key": "egov_law_api_json:421AC0000000063"
+          "adapter_status": "held",
+          "reuse_key": "egov_law_api_json:421AC0000000063",
+          "hold_reason": "現行値が年度告示、予算、認可、所管機関の算定結果または事業者別決定に依存するため、公式な年度資料と適用期間を対応付ける専用adapterが必要である"
         }
       ]
     },
@@ -2890,8 +2947,8 @@
       "official_name": "再生可能エネルギー発電促進賦課金",
       "burden_type": "levy",
       "implementation_issue": 45,
-      "implementation_status": "planned",
-      "priority": "medium",
+      "implementation_status": "held",
+      "priority": "completed",
       "depends_on_issues": [
         31
       ],
@@ -2912,8 +2969,9 @@
           "official_format": "egov_law_api_json",
           "current_adapter": "manual",
           "required_adapter": "egov_law_semantics",
-          "adapter_status": "planned",
-          "reuse_key": "egov_law_api_json:423AC0000000108"
+          "adapter_status": "held",
+          "reuse_key": "egov_law_api_json:423AC0000000108",
+          "hold_reason": "現行値が年度告示、予算、認可、所管機関の算定結果または事業者別決定に依存するため、公式な年度資料と適用期間を対応付ける専用adapterが必要である"
         }
       ]
     },
@@ -2922,8 +2980,8 @@
       "official_name": "再処理等拠出金",
       "burden_type": "contribution",
       "implementation_issue": 45,
-      "implementation_status": "planned",
-      "priority": "medium",
+      "implementation_status": "held",
+      "priority": "completed",
       "depends_on_issues": [
         31
       ],
@@ -2944,8 +3002,9 @@
           "official_format": "egov_law_api_json",
           "current_adapter": "manual",
           "required_adapter": "egov_law_semantics",
-          "adapter_status": "planned",
-          "reuse_key": "egov_law_api_json:417AC0000000048"
+          "adapter_status": "held",
+          "reuse_key": "egov_law_api_json:417AC0000000048",
+          "hold_reason": "現行値が年度告示、予算、認可、所管機関の算定結果または事業者別決定に依存するため、公式な年度資料と適用期間を対応付ける専用adapterが必要である"
         }
       ]
     },
@@ -3149,8 +3208,8 @@
       "official_name": "unknown",
       "burden_type": "levy",
       "implementation_issue": 45,
-      "implementation_status": "planned",
-      "priority": "medium",
+      "implementation_status": "held",
+      "priority": "completed",
       "depends_on_issues": [
         31
       ],
@@ -3171,8 +3230,9 @@
           "official_format": "egov_law_api_json",
           "current_adapter": "manual",
           "required_adapter": "egov_law_semantics",
-          "adapter_status": "planned",
-          "reuse_key": "egov_law_api_json:348AC0000000111"
+          "adapter_status": "held",
+          "reuse_key": "egov_law_api_json:348AC0000000111",
+          "hold_reason": "率または額が年度、事業者、契約者数、業種、認可内容もしくは国際基金の通知で変動するため、適用単位を持つ公式表を追加してから抽出する必要がある"
         }
       ]
     },
@@ -3213,8 +3273,8 @@
       "official_name": "unknown",
       "burden_type": "burden_charge",
       "implementation_issue": 45,
-      "implementation_status": "planned",
-      "priority": "medium",
+      "implementation_status": "held",
+      "priority": "completed",
       "depends_on_issues": [
         31
       ],
@@ -3235,8 +3295,9 @@
           "official_format": "egov_law_api_json",
           "current_adapter": "manual",
           "required_adapter": "egov_law_semantics",
-          "adapter_status": "planned",
-          "reuse_key": "egov_law_api_json:426AC0000000133"
+          "adapter_status": "held",
+          "reuse_key": "egov_law_api_json:426AC0000000133",
+          "hold_reason": "施行前の制度または個別認可額を含み、現在適用中の全国共通値として扱えないため、施行日と初回の公式算定結果を確認するまで保留する"
         }
       ]
     },
@@ -3245,8 +3306,8 @@
       "official_name": "unknown",
       "burden_type": "burden_charge",
       "implementation_issue": 45,
-      "implementation_status": "planned",
-      "priority": "medium",
+      "implementation_status": "held",
+      "priority": "completed",
       "depends_on_issues": [
         31
       ],
@@ -3267,8 +3328,9 @@
           "official_format": "egov_law_api_json",
           "current_adapter": "manual",
           "required_adapter": "egov_law_semantics",
-          "adapter_status": "planned",
-          "reuse_key": "egov_law_api_json:426AC0000000133"
+          "adapter_status": "held",
+          "reuse_key": "egov_law_api_json:426AC0000000133",
+          "hold_reason": "施行前の制度または個別認可額を含み、現在適用中の全国共通値として扱えないため、施行日と初回の公式算定結果を確認するまで保留する"
         }
       ]
     },
@@ -3277,8 +3339,8 @@
       "official_name": "unknown",
       "burden_type": "contribution",
       "implementation_issue": 45,
-      "implementation_status": "planned",
-      "priority": "medium",
+      "implementation_status": "held",
+      "priority": "completed",
       "depends_on_issues": [
         31
       ],
@@ -3299,8 +3361,9 @@
           "official_format": "egov_law_api_json",
           "current_adapter": "manual",
           "required_adapter": "egov_law_semantics",
-          "adapter_status": "planned",
-          "reuse_key": "egov_law_api_json:350AC0000000095"
+          "adapter_status": "held",
+          "reuse_key": "egov_law_api_json:350AC0000000095",
+          "hold_reason": "率または額が年度、事業者、契約者数、業種、認可内容もしくは国際基金の通知で変動するため、適用単位を持つ公式表を追加してから抽出する必要がある"
         }
       ]
     },
@@ -3309,8 +3372,8 @@
       "official_name": "unknown",
       "burden_type": "burden_charge",
       "implementation_issue": 45,
-      "implementation_status": "planned",
-      "priority": "medium",
+      "implementation_status": "held",
+      "priority": "completed",
       "depends_on_issues": [
         31
       ],
@@ -3331,8 +3394,9 @@
           "official_format": "egov_law_api_json",
           "current_adapter": "manual",
           "required_adapter": "egov_law_semantics",
-          "adapter_status": "planned",
-          "reuse_key": "egov_law_api_json:421AC0000000064"
+          "adapter_status": "held",
+          "reuse_key": "egov_law_api_json:421AC0000000064",
+          "hold_reason": "現行値が年度告示、予算、認可、所管機関の算定結果または事業者別決定に依存するため、公式な年度資料と適用期間を対応付ける専用adapterが必要である"
         }
       ]
     },
@@ -3341,8 +3405,8 @@
       "official_name": "unknown",
       "burden_type": "burden_charge",
       "implementation_issue": 45,
-      "implementation_status": "planned",
-      "priority": "medium",
+      "implementation_status": "held",
+      "priority": "completed",
       "depends_on_issues": [
         31
       ],
@@ -3363,8 +3427,9 @@
           "official_format": "egov_law_api_json",
           "current_adapter": "manual",
           "required_adapter": "egov_law_semantics",
-          "adapter_status": "planned",
-          "reuse_key": "egov_law_api_json:502AC0000000053"
+          "adapter_status": "held",
+          "reuse_key": "egov_law_api_json:502AC0000000053",
+          "hold_reason": "施行前の制度または個別認可額を含み、現在適用中の全国共通値として扱えないため、施行日と初回の公式算定結果を確認するまで保留する"
         }
       ]
     },
@@ -3437,8 +3502,8 @@
       "official_name": "unknown",
       "burden_type": "contribution",
       "implementation_issue": 45,
-      "implementation_status": "planned",
-      "priority": "medium",
+      "implementation_status": "held",
+      "priority": "completed",
       "depends_on_issues": [
         31
       ],
@@ -3459,8 +3524,9 @@
           "official_format": "egov_law_api_json",
           "current_adapter": "manual",
           "required_adapter": "egov_law_semantics",
-          "adapter_status": "planned",
-          "reuse_key": "egov_law_api_json:412AC0000000117"
+          "adapter_status": "held",
+          "reuse_key": "egov_law_api_json:412AC0000000117",
+          "hold_reason": "拠出対象、算定基礎または負担割合が製品区分、機関別通知、施設計画、占用関係もしくは個別事業計画に依存し、単一の法令selectorでは現行値を確定できない"
         }
       ]
     },
@@ -3469,8 +3535,8 @@
       "official_name": "unknown",
       "burden_type": "fee",
       "implementation_issue": 45,
-      "implementation_status": "planned",
-      "priority": "medium",
+      "implementation_status": "held",
+      "priority": "completed",
       "depends_on_issues": [
         31
       ],
@@ -3491,8 +3557,9 @@
           "official_format": "egov_law_api_json",
           "current_adapter": "manual",
           "required_adapter": "egov_law_semantics",
-          "adapter_status": "planned",
-          "reuse_key": "egov_law_api_json:359AC0000000086"
+          "adapter_status": "held",
+          "reuse_key": "egov_law_api_json:359AC0000000086",
+          "hold_reason": "率または額が年度、事業者、契約者数、業種、認可内容もしくは国際基金の通知で変動するため、適用単位を持つ公式表を追加してから抽出する必要がある"
         }
       ]
     },
@@ -3501,8 +3568,8 @@
       "official_name": "unknown",
       "burden_type": "burden_charge",
       "implementation_issue": 45,
-      "implementation_status": "planned",
-      "priority": "medium",
+      "implementation_status": "held",
+      "priority": "completed",
       "depends_on_issues": [
         31
       ],
@@ -3523,8 +3590,9 @@
           "official_format": "egov_law_api_json",
           "current_adapter": "manual",
           "required_adapter": "egov_law_semantics",
-          "adapter_status": "planned",
-          "reuse_key": "egov_law_api_json:407AC0000000039"
+          "adapter_status": "held",
+          "reuse_key": "egov_law_api_json:407AC0000000039",
+          "hold_reason": "拠出対象、算定基礎または負担割合が製品区分、機関別通知、施設計画、占用関係もしくは個別事業計画に依存し、単一の法令selectorでは現行値を確定できない"
         }
       ]
     },
@@ -3533,8 +3601,8 @@
       "official_name": "unknown",
       "burden_type": "burden_charge",
       "implementation_issue": 45,
-      "implementation_status": "planned",
-      "priority": "medium",
+      "implementation_status": "held",
+      "priority": "completed",
       "depends_on_issues": [
         31
       ],
@@ -3555,8 +3623,9 @@
           "official_format": "egov_law_api_json",
           "current_adapter": "manual",
           "required_adapter": "egov_law_semantics",
-          "adapter_status": "planned",
-          "reuse_key": "egov_law_api_json:407AC0000000039"
+          "adapter_status": "held",
+          "reuse_key": "egov_law_api_json:407AC0000000039",
+          "hold_reason": "拠出対象、算定基礎または負担割合が製品区分、機関別通知、施設計画、占用関係もしくは個別事業計画に依存し、単一の法令selectorでは現行値を確定できない"
         }
       ]
     },
@@ -3565,8 +3634,8 @@
       "official_name": "unknown",
       "burden_type": "burden_charge",
       "implementation_issue": 45,
-      "implementation_status": "planned",
-      "priority": "medium",
+      "implementation_status": "held",
+      "priority": "completed",
       "depends_on_issues": [
         31
       ],
@@ -3587,8 +3656,9 @@
           "official_format": "egov_law_api_json",
           "current_adapter": "manual",
           "required_adapter": "egov_law_semantics",
-          "adapter_status": "planned",
-          "reuse_key": "egov_law_api_json:407AC0000000039"
+          "adapter_status": "held",
+          "reuse_key": "egov_law_api_json:407AC0000000039",
+          "hold_reason": "拠出対象、算定基礎または負担割合が製品区分、機関別通知、施設計画、占用関係もしくは個別事業計画に依存し、単一の法令selectorでは現行値を確定できない"
         }
       ]
     },
@@ -3630,8 +3700,8 @@
       "official_name": "unknown",
       "burden_type": "burden_charge",
       "implementation_issue": 45,
-      "implementation_status": "planned",
-      "priority": "medium",
+      "implementation_status": "held",
+      "priority": "completed",
       "depends_on_issues": [
         31
       ],
@@ -3652,8 +3722,9 @@
           "official_format": "egov_law_api_json",
           "current_adapter": "manual",
           "required_adapter": "egov_law_semantics",
-          "adapter_status": "planned",
-          "reuse_key": "egov_law_api_json:414AC0000000182"
+          "adapter_status": "held",
+          "reuse_key": "egov_law_api_json:414AC0000000182",
+          "hold_reason": "拠出対象、算定基礎または負担割合が製品区分、機関別通知、施設計画、占用関係もしくは個別事業計画に依存し、単一の法令selectorでは現行値を確定できない"
         }
       ]
     },
