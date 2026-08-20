@@ -31,6 +31,7 @@ test("official formats, required adapters, priorities, and dependencies are expl
   assert.ok(inventory.targets.every(({ priority, capabilities, sources }) => priority && Object.values(capabilities).every(Boolean) && sources.every(({ official_format, required_adapter, reuse_key }) => official_format && required_adapter && reuse_key)));
   assert.ok(inventory.targets.filter(({ implementation_issue }) => implementation_issue !== 39).every(({ depends_on_issues }) => depends_on_issues.includes(31)));
   assert.ok(inventory.targets.flatMap(({ sources }) => sources).filter(({ official_format }) => official_format !== "egov_law_api_json").every(({ shared_format_issue }) => shared_format_issue === 46));
+  assert.ok(inventory.targets.flatMap(({ sources }) => sources).filter(({ official_format }) => ["html", "pdf", "csv"].includes(official_format)).every(({ adapter_status }) => adapter_status === "implemented"));
 });
 
 test("every Issue 42 national tax is implemented or has a concrete hold reason", async () => {

@@ -648,7 +648,7 @@
           "official_format": "html",
           "current_adapter": "html_regex_facts",
           "required_adapter": "html_semantics",
-          "adapter_status": "planned",
+          "adapter_status": "implemented",
           "reuse_key": "html:www.nta.go.jp",
           "shared_format_issue": 46
         },
@@ -658,7 +658,7 @@
           "official_format": "html",
           "current_adapter": "html_regex_facts",
           "required_adapter": "html_semantics",
-          "adapter_status": "planned",
+          "adapter_status": "implemented",
           "reuse_key": "html:www.nta.go.jp",
           "shared_format_issue": 46
         }

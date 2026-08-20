@@ -37,7 +37,10 @@ export async function loadOperationalJobs(root, { batchId } = {}) {
   const jobs = [];
   for (const target of inventory.targets) {
     if (batchId && target.batch_id !== batchId) continue;
-    for (const source of target.sources.filter(({ adapter_status }) => adapter_status === "implemented")) {
+    // Sources with a concrete source adapter already run through sourceRunner.
+    // The semantic job list is reserved for registry entries that still use the
+    // manual source adapter and need the shared semantic pipeline.
+    for (const source of target.sources.filter(({ adapter_status, current_adapter: currentAdapter, official_format: officialFormat }) => adapter_status === "implemented" && (currentAdapter === "manual" || officialFormat === "egov_law_api_json"))) {
       const monitoredTarget = monitoringByTaxId.get(target.tax_id);
       const monitoredSource = monitoredTarget?.sources.find(({ target_id: targetId }) => targetId === source.target_id);
       if (!monitoredSource) throw new Error(`${target.tax_id}/${source.target_id}: monitoring source is missing`);
