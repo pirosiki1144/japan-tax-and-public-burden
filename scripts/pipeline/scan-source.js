@@ -1,5 +1,5 @@
 import { mkdir, readFile, rename, writeFile } from "node:fs/promises";
-import { basename, dirname, join } from "node:path";
+import { basename, dirname, extname, join } from "node:path";
 import { fileURLToPath } from "node:url";
 import { runAutomatedSources, runSourcePipeline } from "./source-pipeline.js";
 
@@ -17,8 +17,9 @@ const dryRun = args.includes("--dry-run");
 
 async function fixtureFetch(url) {
   const path = join(fixtureDir, basename(new URL(url).pathname));
-  const body = await readFile(path, "utf8");
-  const contentType = body.trimStart().startsWith("{") ? "application/json" : "text/html; charset=UTF-8";
+  const body = await readFile(path);
+  const extension = extname(new URL(url).pathname).toLowerCase();
+  const contentType = extension === ".pdf" ? "application/pdf" : body.toString("utf8", 0, Math.min(body.length, 32)).trimStart().startsWith("{") ? "application/json" : "text/html; charset=UTF-8";
   return new Response(body, { status: 200, headers: { "content-type": contentType } });
 }
 

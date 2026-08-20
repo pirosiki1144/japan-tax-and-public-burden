@@ -52,6 +52,16 @@ test("every Issue 43 local tax is implemented at national-law scope or held for 
   assert.ok(local.filter(({ implementation_status }) => implementation_status === "held").every(({ sources }) => sources.every(({ hold_reason }) => hold_reason?.length >= 20)));
 });
 
+test("Issue 44 implements nationwide reviewable values and holds variable scopes", async () => {
+  const { inventory } = await inputs();
+  const social = inventory.targets.filter(({ implementation_issue }) => implementation_issue === 44);
+  assert.equal(social.length, 5);
+  assert.equal(social.filter(({ implementation_status }) => implementation_status === "implemented").length, 2);
+  assert.equal(social.filter(({ implementation_status }) => implementation_status === "held").length, 3);
+  assert.ok(social.filter(({ implementation_status }) => implementation_status === "held").every(({ sources }) => sources.every(({ hold_reason }) => hold_reason?.length >= 20)));
+  assert.ok(social.filter(({ implementation_status }) => implementation_status === "implemented").every(({ sources }) => sources.some(({ adapter_status }) => adapter_status === "implemented")));
+});
+
 test("large batches are permitted only for one common official source", async () => {
   const { inventory, monitoring } = await inputs();
   const batches = new Map();

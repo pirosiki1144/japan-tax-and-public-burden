@@ -11,8 +11,9 @@ const semanticBaselinePath = join(root, "tests/fixtures/semantic-extraction/expe
 const now = () => new Date("2026-08-19T12:34:56+09:00");
 
 async function fixtureFetch(url) {
-  const body = await readFile(join(fixtureRoot, basename(new URL(url).pathname)));
-  const contentType = body.toString("utf8", 0, Math.min(body.length, 32)).trimStart().startsWith("{") ? "application/json" : "text/html; charset=UTF-8";
+  const name = basename(new URL(url).pathname);
+  const body = await readFile(join(fixtureRoot, name));
+  const contentType = name.endsWith(".pdf") ? "application/pdf" : body.toString("utf8", 0, Math.min(body.length, 32)).trimStart().startsWith("{") ? "application/json" : "text/html; charset=UTF-8";
   return new Response(body, { status: 200, headers: { "content-type": contentType } });
 }
 
@@ -35,7 +36,7 @@ test("the inventory drives source and semantic adapters through one offline pipe
   assert.equal(result.registry.semantic_jobs_run, 31);
   assert.deepEqual(result.registry.batches_run, ["issue-39-batch-01", "issue-42-batch-01", "issue-43-common-source-01", "issue-42-batch-02"]);
   assert.deepEqual(result.routing, { has_changes: false, has_findings: false, pr_candidate_count: 0, issue_candidate_count: 0 });
-  assert.equal(result.results.length, 33);
+  assert.equal(result.results.length, 35);
   assert.equal(result.results.filter(({ source_id }) => source_id.startsWith("semantic:")).length, 31);
 });
 
