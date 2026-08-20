@@ -697,7 +697,7 @@
     },
     {
       "tax_id": "educational-public-transmission-compensation",
-      "monitoring_mode": "manual",
+      "monitoring_mode": "automated",
       "enabled": true,
       "cadence": "monthly",
       "municipal_scope": "national_only",
@@ -706,14 +706,24 @@
           "source_id": "egov-laws",
           "target_url": "https://laws.e-gov.go.jp/api/2/law_data/345AC0000000048",
           "enabled": true,
-          "adapter": "manual",
+          "adapter": "egov_law_article_facts",
           "target_id": "345AC0000000048",
           "extraction_targets": [
             "法令の改廃・施行状態（監視条文は#30の後続整備で確定）"
           ]
+        },
+        {
+          "source_id": "mext-educational-public-transmission-compensation",
+          "target_url": "https://www.mext.go.jp/a_menu/coronavirus/mext_00042.html",
+          "enabled": true,
+          "adapter": "html_regex_facts",
+          "target_id": "mext-educational-public-transmission-compensation-page-1",
+          "extraction_targets": [
+            "授業目的公衆送信補償金の支払主体、対象、学校種別の児童生徒等1人当たり認可額"
+          ]
         }
       ],
-      "notes": "公式URLは特定済みだが抽出adapter未実装のため手動確認する"
+      "notes": "#45の実装済みadapterで月次監視する。概要ページにない適用開始日は推測しない"
     },
     {
       "tax_id": "electricity-business-compensation-charge",

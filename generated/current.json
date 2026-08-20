@@ -140,6 +140,87 @@
       "notes": ""
     },
     {
+      "source_id": "mext-educational-public-transmission-compensation",
+      "name": "文部科学省 授業目的公衆送信補償金制度Q&A",
+      "authority": "文部科学省",
+      "base_url": "https://www.mext.go.jp/",
+      "entry_urls": [
+        "https://www.mext.go.jp/a_menu/coronavirus/mext_00042.html"
+      ],
+      "source_type": "ministry",
+      "scope": "授業目的公衆送信補償金の支払主体、対象、学校種別の児童生徒等1人当たり認可額",
+      "jurisdiction": "Japan",
+      "priority": 1,
+      "cadence": "annual",
+      "enabled": true,
+      "automation_enabled": true,
+      "monitoring_tax_ids": [
+        "educational-public-transmission-compensation"
+      ],
+      "adapter": "html_regex_facts",
+      "accepted_content_types": [
+        "text/html"
+      ],
+      "extraction": {
+        "expected_pages": 1,
+        "required_markers": [
+          {
+            "page_index": 0,
+            "label": "education provider payment",
+            "pattern": "学校の設置者が一括して補償金を支払う"
+          },
+          {
+            "page_index": 0,
+            "label": "approved compensation",
+            "pattern": "補償金の額は、文化庁長官によって認可"
+          },
+          {
+            "page_index": 0,
+            "label": "scope limitation",
+            "pattern": "その他の学校種や減免条件、都度支払いの料金体系"
+          }
+        ],
+        "facts": [
+          {
+            "fact_id": "elementary-school-amount",
+            "page_index": 0,
+            "pattern": "小学校([0-9０-９,，]+)円",
+            "capture_group": 1,
+            "transform": "japanese_number",
+            "expected_value": 120
+          },
+          {
+            "fact_id": "junior-high-school-amount",
+            "page_index": 0,
+            "pattern": "中学校([0-9０-９,，]+)円",
+            "capture_group": 1,
+            "transform": "japanese_number",
+            "expected_value": 180
+          },
+          {
+            "fact_id": "high-school-amount",
+            "page_index": 0,
+            "pattern": "高等学校([0-9０-９,，]+)円",
+            "capture_group": 1,
+            "transform": "japanese_number",
+            "expected_value": 420
+          },
+          {
+            "fact_id": "university-amount",
+            "page_index": 0,
+            "pattern": "大学([0-9０-９,，]+)円",
+            "capture_group": 1,
+            "transform": "japanese_number",
+            "expected_value": 720
+          }
+        ]
+      },
+      "rate_limit": "サイトの利用条件に従う",
+      "terms_url": "https://www.mext.go.jp/b_menu/1351168.htm",
+      "last_verified_at": "2026-08-21T09:45:00+09:00",
+      "notes": "学校種別の例示4値を監視する。その他の学校種、減免、都度払いは規程に依存するため、このsourceの4値へ集約しない。ページにない適用開始日は推測しない"
+    },
+    {
       "source_id": "mhlw-employment-insurance-rates",
       "name": "厚生労働省 令和8年度雇用保険料率",
       "authority": "厚生労働省",
