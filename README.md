@@ -42,6 +42,7 @@ reports/      生成レポート
 - 初期マスタの投入件数と未解決事項は[初期マスタ投入・検証レポート](docs/initial-master-import-report.md)を参照してください。
 - `data/candidates` は初期マスタへ昇格する前の調査候補です。Schema検証とGitレビューの対象ですが、確定制度マスタや配布対象として扱いません。適合性と昇格条件は[初期マスタ候補のSchema適合性確認](docs/initial-master-schema-fit.md)、税以外の候補の収集範囲は[税以外の公的負担候補の収集・照合](docs/public-burden-candidate-reconciliation.md)、統合判定は[初期マスタ投入対象の統合判定](docs/initial-master-selection.md)を参照してください。
 - 取得途中のHTML、PDF、API応答等は `.cache/` 配下の一時データとし、正本にせずGitにも保存しません。保存が必要な根拠は別Issueで対象と形式をレビューします。
+- 公式HTML・PDF・CSVは `scripts/formats/official-document.js` で原文バイトから形式検証・共通表現化し、制度固有の意味抽出規則は別の設定またはnormalize層へ置きます。共通表現は公式URL、取得日時、原文SHA-256、文書版を保持します。PDFの読取不能、CSVの必須列不足、HTMLの本文欠落、意味抽出の0件・複数件一致は構造変更として失敗させます。PR CIは縮小fixtureだけを使用して外部通信せず、実URLへの疎通は固定の定期・手動workflowで行います。
 - `reports/` や将来の `generated/` は正本から再生成する成果物であり、直接編集しません。
 - 制度の履歴は追記型のeventとphase、およびGit履歴で保持します。既存の事実を上書きして過去の状態を失わないようにします。
 

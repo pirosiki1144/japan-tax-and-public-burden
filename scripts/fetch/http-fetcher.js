@@ -56,10 +56,12 @@ export async function fetchSourcePages(source, { fetchImpl = globalThis.fetch, n
     const bytes = new Uint8Array(await response.arrayBuffer());
     if (bytes.length === 0) throw new SourceFetchError(`Empty response for ${sourceUrl}`, { code: "source_structure_changed", sourceUrl });
     let body;
-    try {
-      body = new TextDecoder("utf-8", { fatal: true }).decode(bytes);
-    } catch (error) {
-      throw new SourceFetchError(`Response is not valid UTF-8 for ${sourceUrl}`, { code: "source_structure_changed", sourceUrl, cause: error });
+    if (!contentType.toLowerCase().includes("application/pdf")) {
+      try {
+        body = new TextDecoder("utf-8", { fatal: true }).decode(bytes);
+      } catch (error) {
+        throw new SourceFetchError(`Response is not valid UTF-8 for ${sourceUrl}`, { code: "source_structure_changed", sourceUrl, cause: error });
+      }
     }
     pages.push({
       source_url: sourceUrl,
@@ -67,6 +69,7 @@ export async function fetchSourcePages(source, { fetchImpl = globalThis.fetch, n
       fetched_at: now().toISOString(),
       content_type: contentType,
       sha256: createHash("sha256").update(bytes).digest("hex"),
+      bytes,
       body
     });
   }

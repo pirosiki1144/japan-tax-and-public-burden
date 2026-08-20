@@ -117,7 +117,7 @@ export async function buildAdapterInventory(repositoryRoot) {
         official_format: format,
         current_adapter: source.adapter,
         required_adapter: requiredAdapter(format),
-        adapter_status: format === "egov_law_api_json" && (issue === 39 || implementationPlan?.status === "implemented") ? "implemented" : implementationPlan?.status === "held" ? "held" : "planned",
+        adapter_status: (["html", "pdf", "csv"].includes(format) || (format === "egov_law_api_json" && (issue === 39 || implementationPlan?.status === "implemented"))) ? "implemented" : implementationPlan?.status === "held" ? "held" : "planned",
         reuse_key: reuseKey(source),
         ...(implementationPlan?.status === "held" ? { hold_reason: implementationPlan.hold_reason } : {}),
         ...(format === "egov_law_api_json" ? {} : { shared_format_issue: 46 })

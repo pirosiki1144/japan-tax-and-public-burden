@@ -1,0 +1,36 @@
+{
+  "schema_version": 1,
+  "formats": [
+    {
+      "format": "html",
+      "adapter": "official_html_document",
+      "status": "implemented",
+      "mime_types": ["text/html", "application/xhtml+xml"],
+      "implementation": "scripts/formats/official-document.js",
+      "test_fixture": "tests/fixtures/format-adapters/sample.html"
+    },
+    {
+      "format": "pdf",
+      "adapter": "official_pdf_document",
+      "status": "implemented",
+      "mime_types": ["application/pdf"],
+      "implementation": "scripts/formats/official-document.js",
+      "test_fixture": "tests/fixtures/format-adapters/sample.pdf"
+    },
+    {
+      "format": "csv",
+      "adapter": "official_csv_document",
+      "status": "implemented",
+      "mime_types": ["text/csv", "application/csv", "application/vnd.ms-excel"],
+      "implementation": "scripts/formats/official-document.js",
+      "test_fixture": "tests/fixtures/format-adapters/sample.csv"
+    },
+    {
+      "format": "spreadsheet",
+      "adapter": "manual",
+      "status": "manual",
+      "mime_types": ["application/vnd.openxmlformats-officedocument.spreadsheetml.sheet", "application/vnd.ms-excel"],
+      "manual_reason": "棚卸し時点で監視対象がなく、セル結合・数式・複数sheetの意味解釈方針が未確定のため、対象追加時に別Issueでレビューする"
+    }
+  ]
+}
