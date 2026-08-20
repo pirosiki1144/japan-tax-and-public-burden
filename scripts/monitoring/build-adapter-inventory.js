@@ -91,16 +91,21 @@ function assignBatches(targets) {
 }
 
 export async function buildAdapterInventory(repositoryRoot) {
-  const [monitoring, burdens, nationalAdapters, localAdapters, socialAdapters] = await Promise.all([
+  const [monitoring, burdens, nationalAdapters, localAdapters, socialAdapters, publicAdapters] = await Promise.all([
     readYaml(join(repositoryRoot, "config/monitoring.yaml")),
     readBurdens(repositoryRoot),
     readYaml(join(repositoryRoot, "config/national-tax-adapters.yaml")),
     readYaml(join(repositoryRoot, "config/local-tax-adapters.yaml")),
-    readYaml(join(repositoryRoot, "config/social-insurance-adapters.yaml"))
+    readYaml(join(repositoryRoot, "config/social-insurance-adapters.yaml")),
+    readYaml(join(repositoryRoot, "config/public-burden-adapters.yaml"))
   ]);
   const nationalById = new Map(nationalAdapters.targets.map((target) => [target.tax_id, target]));
   const localById = new Map(localAdapters.targets.map((target) => [target.tax_id, target]));
   const socialById = new Map(socialAdapters.targets.map((target) => [target.tax_id, target]));
+  const publicById = new Map([
+    ...publicAdapters.implemented_targets.map((target) => [target.tax_id, { ...target, status: "implemented" }]),
+    ...publicAdapters.held_groups.flatMap((group) => group.tax_ids.map((taxId) => [taxId, { tax_id: taxId, status: "held", hold_reason: group.hold_reason }]))
+  ]);
   const burdenById = new Map(burdens.map((burden) => [burden.tax_id, burden]));
   const targets = monitoring.targets.filter(({ enabled }) => enabled).map((monitoringTarget) => {
     const burden = burdenById.get(monitoringTarget.tax_id);
@@ -109,25 +114,29 @@ export async function buildAdapterInventory(repositoryRoot) {
     const nationalPlan = issue === 42 ? nationalById.get(burden.tax_id) : null;
     const localPlan = issue === 43 ? localById.get(burden.tax_id) : null;
     const socialPlan = issue === 44 ? socialById.get(burden.tax_id) : null;
+    const publicPlan = issue === 45 ? publicById.get(burden.tax_id) : null;
     if (issue === 42 && !nationalPlan) throw new Error(`${burden.tax_id}: Issue #42 adapter decision is missing`);
     if (issue === 43 && !localPlan) throw new Error(`${burden.tax_id}: Issue #43 adapter decision is missing`);
     if (issue === 44 && !socialPlan) throw new Error(`${burden.tax_id}: Issue #44 adapter decision is missing`);
-    const implementationPlan = nationalPlan ?? localPlan ?? socialPlan;
+    if (issue === 45 && !publicPlan) throw new Error(`${burden.tax_id}: Issue #45 adapter decision is missing`);
+    const implementationPlan = nationalPlan ?? localPlan ?? socialPlan ?? publicPlan;
     const sources = monitoringTarget.sources.filter(({ enabled }) => enabled).map((source) => {
       const format = sourceFormat(source.target_url);
       const socialImplemented = issue === 44 && socialPlan.status === "implemented" && socialPlan.source_ids.includes(source.source_id);
       const socialHoldReason = issue === 44 && !socialImplemented
         ? socialPlan.hold_reason ?? "制度根拠法令は保持するが、現行の率・金額は実装済みの年度別公式資料sourceから抽出する"
         : null;
+      const publicImplemented = issue === 45 && publicPlan.status === "implemented" && publicPlan.source_ids.includes(source.source_id);
+      const publicHoldReason = issue === 45 && !publicImplemented ? publicPlan.hold_reason ?? "現行値は実装済みの公式資料sourceから抽出する" : null;
       return {
         source_id: source.source_id,
         target_id: source.target_id,
         official_format: format,
         current_adapter: source.adapter,
         required_adapter: requiredAdapter(format),
-        adapter_status: socialImplemented || (issue !== 44 && (["html", "pdf", "csv"].includes(format) || (format === "egov_law_api_json" && (issue === 39 || implementationPlan?.status === "implemented")))) ? "implemented" : implementationPlan?.status === "held" || issue === 44 ? "held" : "planned",
+        adapter_status: socialImplemented || publicImplemented || (![44,45].includes(issue) && (["html", "pdf", "csv"].includes(format) || (format === "egov_law_api_json" && (issue === 39 || implementationPlan?.status === "implemented")))) ? "implemented" : implementationPlan?.status === "held" || [44,45].includes(issue) ? "held" : "planned",
         reuse_key: reuseKey(source),
-        ...(implementationPlan?.status === "held" || socialHoldReason ? { hold_reason: socialHoldReason ?? implementationPlan.hold_reason } : {}),
+        ...(implementationPlan?.status === "held" || socialHoldReason || publicHoldReason ? { hold_reason: socialHoldReason ?? publicHoldReason ?? implementationPlan.hold_reason } : {}),
         ...(format === "egov_law_api_json" ? {} : { shared_format_issue: 46 })
       };
     });
@@ -137,13 +146,13 @@ export async function buildAdapterInventory(repositoryRoot) {
       official_name: burden.official_name,
       burden_type: burden.burden_type,
       implementation_issue: issue,
-      implementation_status: issue === 39 ? "implemented_initial" : [42, 43, 44].includes(issue) ? (implementationPlan.status === "implemented" ? "implemented" : "held") : "planned",
-      priority: issue === 39 || [42, 43, 44].includes(issue) ? "completed" : "medium",
+      implementation_status: issue === 39 ? "implemented_initial" : [42, 43, 44, 45].includes(issue) ? (implementationPlan.status === "implemented" ? "implemented" : "held") : "planned",
+      priority: issue === 39 || [42, 43, 44, 45].includes(issue) ? "completed" : "medium",
       depends_on_issues: issue === 39 ? [] : [31, ...(sources.some(({ official_format }) => official_format !== "egov_law_api_json") ? [46] : [])],
       batch_id: "pending",
       reuse_group: sources.map(({ reuse_key }) => reuse_key).sort().join("+"),
       municipal_scope: monitoringTarget.municipal_scope,
-      capabilities: [42, 43, 44].includes(issue) && implementationPlan.status === "implemented" ? Object.fromEntries(Object.keys(capabilityPlan(burden.tax_id)).map((key) => [key, "implemented"])) : capabilityPlan(burden.tax_id),
+      capabilities: [42, 43, 44, 45].includes(issue) && implementationPlan.status === "implemented" ? Object.fromEntries(Object.keys(capabilityPlan(burden.tax_id)).map((key) => [key, "implemented"])) : capabilityPlan(burden.tax_id),
       sources
     };
   }).sort((left, right) => left.tax_id.localeCompare(right.tax_id, "en"));

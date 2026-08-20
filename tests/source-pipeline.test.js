@@ -44,7 +44,7 @@ test("a normalized value change creates a machine-readable candidate diff", asyn
 test("all configured automated sources run through one shared pipeline", async () => {
   const result = await runAutomatedSources({ root, fetchImpl: fixtureFetch(), now, dryRun: true });
   assert.equal(result.status, "no_change");
-  assert.deepEqual(result.results.map(({ source_id }) => source_id), ["egov-laws", "nta-consumption-tax-rates", "mhlw-employment-insurance-rates", "nenkin-pension-premiums"]);
+  assert.deepEqual(result.results.map(({ source_id }) => source_id), ["egov-laws", "nta-consumption-tax-rates", "mhlw-employment-insurance-rates", "jeed-disability-employment-levy", "nenkin-pension-premiums"]);
 });
 
 test("e-Gov fixtures confirm the statutory consumption-tax rates", async () => {

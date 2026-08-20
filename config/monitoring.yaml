@@ -647,7 +647,7 @@
     },
     {
       "tax_id": "disability-employment-levy",
-      "monitoring_mode": "manual",
+      "monitoring_mode": "automated",
       "enabled": true,
       "cadence": "monthly",
       "municipal_scope": "national_only",
@@ -656,14 +656,24 @@
           "source_id": "egov-laws",
           "target_url": "https://laws.e-gov.go.jp/api/2/law_data/335AC0000000123",
           "enabled": true,
-          "adapter": "manual",
+          "adapter": "egov_law_article_facts",
           "target_id": "335AC0000000123",
           "extraction_targets": [
             "法令の改廃・施行状態（監視条文は#30の後続整備で確定）"
           ]
+        },
+        {
+          "source_id": "jeed-disability-employment-levy",
+          "target_url": "https://www.jeed.go.jp/disability/about_levy_grant_system.html",
+          "enabled": true,
+          "adapter": "html_regex_facts",
+          "target_id": "jeed-disability-employment-levy-page-1",
+          "extraction_targets": [
+            "障害者雇用納付金の対象事業主、算定基礎、1人当たり月額"
+          ]
         }
       ],
-      "notes": "公式URLは特定済みだが抽出adapter未実装のため手動確認する"
+      "notes": "#45の実装済みadapterで月次監視する。概要ページにない適用開始日は推測しない"
     },
     {
       "tax_id": "east-japan-business-rehabilitation-contribution",

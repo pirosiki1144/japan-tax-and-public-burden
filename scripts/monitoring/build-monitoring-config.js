@@ -72,15 +72,17 @@ async function readBurdens(repositoryRoot) {
 }
 
 export async function buildMonitoringConfig(repositoryRoot) {
-  const [registry, burdens, socialAdapters] = await Promise.all([
+  const [registry, burdens, socialAdapters, publicAdapters] = await Promise.all([
     readYaml(join(repositoryRoot, "config/sources.yaml")),
     readBurdens(repositoryRoot),
-    readYaml(join(repositoryRoot, "config/social-insurance-adapters.yaml"))
+    readYaml(join(repositoryRoot, "config/social-insurance-adapters.yaml")),
+    readYaml(join(repositoryRoot, "config/public-burden-adapters.yaml"))
   ]);
   const automatedSocial = new Set(socialAdapters.targets.filter(({ status }) => status === "implemented").map(({ tax_id: taxId }) => taxId));
+  const automatedPublic = new Set(publicAdapters.implemented_targets.map(({ tax_id: taxId }) => taxId));
 
   const targets = burdens.map((burden) => {
-    const automated = burden.tax_id === "consumption-tax" || automatedSocial.has(burden.tax_id);
+    const automated = burden.tax_id === "consumption-tax" || automatedSocial.has(burden.tax_id) || automatedPublic.has(burden.tax_id);
     const sources = burden.legal_bases.map((base) => {
       const registered = sourceForUrl(registry.sources, base.source_url);
       if (!registered) throw new Error(`${burden.tax_id}: no registered source for ${base.source_url}`);
@@ -119,10 +121,10 @@ export async function buildMonitoringConfig(repositoryRoot) {
       tax_id: burden.tax_id,
       monitoring_mode: automated ? "automated" : "manual",
       enabled: true,
-      cadence: automatedSocial.has(burden.tax_id) ? "annual" : automated ? "daily" : "monthly",
+      cadence: automatedSocial.has(burden.tax_id) ? "annual" : automatedPublic.has(burden.tax_id) ? "monthly" : automated ? "daily" : "monthly",
       municipal_scope: burden.burden_type === "local_tax" ? "issue_20" : "national_only",
       sources,
-      notes: burden.burden_type === "local_tax" ? "国法レベルのみ。自治体条例・公式サイト・個別税率は#20で扱う" : automatedSocial.has(burden.tax_id) ? "実装済みadapterで年次監視する。固定年度資料の次年度URLは公式一覧ページを手動確認して更新する" : automated ? "実装済みadapterで自動監視する" : "公式URLは特定済みだが抽出adapter未実装のため手動確認する"
+      notes: burden.burden_type === "local_tax" ? "国法レベルのみ。自治体条例・公式サイト・個別税率は#20で扱う" : automatedSocial.has(burden.tax_id) ? "実装済みadapterで年次監視する。固定年度資料の次年度URLは公式一覧ページを手動確認して更新する" : automatedPublic.has(burden.tax_id) ? "#45の実装済みadapterで月次監視する。概要ページにない適用開始日は推測しない" : automated ? "実装済みadapterで自動監視する" : "公式URLは特定済みだが抽出adapter未実装のため手動確認する"
     };
   }).sort((left, right) => left.tax_id.localeCompare(right.tax_id, "en"));
   return { schema_version: 1, generated_at: GENERATED_AT, targets };

@@ -1,0 +1,57 @@
+{
+  "schema_version": 1,
+  "verified_at": "2026-08-21T08:30:00+09:00",
+  "implementation_issue": 45,
+  "implemented_targets": [
+    {
+      "tax_id": "disability-employment-levy",
+      "source_ids": ["jeed-disability-employment-levy"],
+      "components": [
+        {
+          "component_id": "statutory-shortfall-monthly-levy",
+          "liable_party_role": "employer",
+          "subject_scope": "常用雇用労働者数が100人を超え、法定雇用率を未達成の事業主",
+          "calculation_basis": "法定雇用障害者数に不足する障害者数の各月合計",
+          "calculation_kind": "fixed_amount_per_unit",
+          "numeric_value": 50000,
+          "unit": "yen_per_person_month",
+          "aggregation_role": "standalone",
+          "included_in_total": false,
+          "period_start": null,
+          "period_end": null,
+          "period_precision": "current_rule_no_effective_date_on_overview",
+          "value_status": "official_current",
+          "source_id": "jeed-disability-employment-levy",
+          "fact_id": "monthly-levy-amount"
+        }
+      ]
+    }
+  ],
+  "held_groups": [
+    {
+      "group_id": "batch-01-individual-formulas",
+      "tax_ids": ["automobile-accident-countermeasure-levy","commodity-customer-protection-fund-charge","common-utility-tunnel-charge","educational-public-transmission-compensation","imported-sugar-adjustment-charge","investor-protection-fund-charge","library-public-transmission-compensation","multipurpose-dam-charge","pollution-prevention-project-business-charge","port-environment-improvement-charge","postal-transport-consignment-compensation","private-recording-compensation"],
+      "hold_reason": "法令は負担義務または算定枠組みを定めるが、現行額は個別認可、契約、事業費、指定団体規程または年度資料で決まり、法令本文だけから全国共通値を安全に確定できない"
+    },
+    {
+      "group_id": "batch-02-rates-by-entity-or-year",
+      "tax_ids": ["agricultural-cooperative-savings-charge","agricultural-cooperative-savings-insurance-premium","agricultural-cooperative-savings-special-charge","broadband-service-charge","deposit-insurance-corporation-charge","deposit-insurance-corporation-special-charge","deposit-insurance-premium","international-oil-pollution-fund-annual-contribution","mining-pollution-prevention-fund-contribution","pollution-load-levy","railway-barrier-free-fee","specified-pollution-levy","supplementary-oil-pollution-fund-annual-contribution","universal-service-fee"],
+      "hold_reason": "率または額が年度、事業者、契約者数、業種、認可内容もしくは国際基金の通知で変動するため、適用単位を持つ公式表を追加してから抽出する必要がある"
+    },
+    {
+      "group_id": "batch-03-specialized-assessments",
+      "tax_ids": ["adverse-drug-reaction-contribution","banks-shareholdings-purchase-corporation-contribution","electricity-business-compensation-charge","high-level-waste-disposal-contribution","infection-contribution","irrigation-water-facility-charge","participant-protection-trust-charge","pharmaceutical-safety-contribution","policyholder-protection-fund-charge","tru-waste-disposal-contribution","utility-tunnel-management-charge","utility-tunnel-other-occupant-charge","utility-tunnel-planned-occupant-construction-charge","water-resources-facility-user-charge"],
+      "hold_reason": "拠出対象、算定基礎または負担割合が製品区分、機関別通知、施設計画、占用関係もしくは個別事業計画に依存し、単一の法令selectorでは現行値を確定できない"
+    },
+    {
+      "group_id": "batch-04-budget-and-sector-decisions",
+      "tax_ids": ["asbestos-relief-general-contribution","asbestos-relief-special-contribution","child-care-contribution","east-japan-business-rehabilitation-contribution","hepatitis-c-special-relief-contribution","minamata-specified-business-compensation-levy","nuclear-damage-support-general-charge","nuclear-damage-support-special-charge","nuclear-decommissioning-contribution","postal-network-support-contribution","regional-economy-revitalization-contribution","renewable-energy-surcharge","reprocessing-contribution","taxi-center-business-charge"],
+      "hold_reason": "現行値が年度告示、予算、認可、所管機関の算定結果または事業者別決定に依存するため、公式な年度資料と適用期間を対応付ける専用adapterが必要である"
+    },
+    {
+      "group_id": "batch-05-future-or-individual-charges",
+      "tax_ids": ["fossil-fuel-levy","gx-specified-business-charge","supplementary-nuclear-damage-general-charge","supplementary-nuclear-damage-special-charge","telephone-accessibility-charge"],
+      "hold_reason": "施行前の制度または個別認可額を含み、現在適用中の全国共通値として扱えないため、施行日と初回の公式算定結果を確認するまで保留する"
+    }
+  ]
+}

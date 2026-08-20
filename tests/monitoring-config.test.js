@@ -21,8 +21,8 @@ test("automation is enabled only where an adapter and extraction targets exist",
   const automated = targets.filter(({ monitoring_mode }) => monitoring_mode === "automated");
   const manual = targets.filter(({ monitoring_mode }) => monitoring_mode === "manual");
 
-  assert.deepEqual(automated.map(({ tax_id }) => tax_id), ["consumption-tax", "employment-insurance-premium", "pension-insurance-premium"]);
-  assert.equal(manual.length, 109);
+  assert.deepEqual(automated.map(({ tax_id }) => tax_id), ["consumption-tax", "disability-employment-levy", "employment-insurance-premium", "pension-insurance-premium"]);
+  assert.equal(manual.length, 108);
   assert.ok(automated.every(({ sources }) => sources.length > 1));
   assert.ok(automated.find(({ tax_id }) => tax_id === "employment-insurance-premium").sources.some(({ adapter }) => adapter === "pdf_regex_facts"));
   assert.ok(targets.every(({ sources }) => sources.every(({ target_url, extraction_targets }) => target_url.startsWith("https://") && extraction_targets.length > 0)));
