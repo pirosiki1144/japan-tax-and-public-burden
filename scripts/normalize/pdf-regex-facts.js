@@ -16,7 +16,10 @@ export async function normalizePdfRegexFacts(source, pages) {
     const raw = match?.[fact.capture_group];
     if (raw === undefined) throw new Error(`Source structure changed: ${fact.fact_id} was not found`);
     const value = fact.transform === "number" ? Number(raw) : fact.transform === "iso_date_components"
-      ? `${match[1]}-${match[2].padStart(2, "0")}-${match[3].padStart(2, "0")}` : raw;
+      ? `${match[1]}-${match[2].padStart(2, "0")}-${match[3].padStart(2, "0")}`
+      : fact.transform === "fiscal_year_start" ? `${raw}-04-01`
+      : fact.transform === "fiscal_year_end" ? `${Number(raw) + 1}-03-31`
+      : raw;
     if (typeof value === "number" && !Number.isFinite(value)) throw new Error(`Source structure changed: ${fact.fact_id} is not numeric`);
     return { fact_id: fact.fact_id, raw, value, expected_value: fact.expected_value, target: fact.target };
   });

@@ -12,31 +12,42 @@
       "official_name": "副作用拠出金",
       "burden_type": "contribution",
       "implementation_issue": 45,
-      "implementation_status": "held",
+      "implementation_status": "implemented",
       "priority": "completed",
       "depends_on_issues": [
-        31
+        31,
+        46
       ],
       "batch_id": "issue-45-batch-03",
-      "reuse_group": "egov_law_api_json:414AC0000000192",
+      "reuse_group": "egov_law_api_json:414AC0000000192+pdf:www.pmda.go.jp",
       "municipal_scope": "national_only",
       "capabilities": {
-        "liable_party": "needs_source_research",
-        "taxable_scope": "needs_source_research",
-        "calculation_basis": "needs_source_research",
-        "rate_or_amount": "needs_source_research",
-        "applicable_period": "needs_source_research"
+        "liable_party": "implemented",
+        "taxable_scope": "implemented",
+        "calculation_basis": "implemented",
+        "rate_or_amount": "implemented",
+        "applicable_period": "implemented"
       },
       "sources": [
         {
           "source_id": "egov-laws",
           "target_id": "414AC0000000192",
           "official_format": "egov_law_api_json",
-          "current_adapter": "manual",
+          "current_adapter": "egov_law_article_facts",
           "required_adapter": "egov_law_semantics",
           "adapter_status": "held",
           "reuse_key": "egov_law_api_json:414AC0000000192",
-          "hold_reason": "拠出対象、算定基礎または負担割合が製品区分、機関別通知、施設計画、占用関係もしくは個別事業計画に依存し、単一の法令selectorでは現行値を確定できない"
+          "hold_reason": "現行値は実装済みの公式資料sourceから抽出する"
+        },
+        {
+          "source_id": "pmda-adverse-reaction-contribution-2026",
+          "target_id": "pmda-adverse-reaction-contribution-2026-page-1",
+          "official_format": "pdf",
+          "current_adapter": "pdf_regex_facts",
+          "required_adapter": "pdf_semantics",
+          "adapter_status": "implemented",
+          "reuse_key": "pdf:www.pmda.go.jp",
+          "shared_format_issue": 46
         }
       ]
     },
@@ -361,7 +372,7 @@
           "required_adapter": "egov_law_semantics",
           "adapter_status": "held",
           "reuse_key": "egov_law_api_json:413AC0000000131",
-          "hold_reason": "拠出対象、算定基礎または負担割合が製品区分、機関別通知、施設計画、占用関係もしくは個別事業計画に依存し、単一の法令selectorでは現行値を確定できない"
+          "hold_reason": "機構の現行业務規程と会員別通知額を公開資料へ対応付けていない。解除条件: 当初拠出金と売却時拠出金の現行規程を特定する、会員・通知・対象取引・期間の安定キーを定義する。再確認: annual"
         }
       ]
     },
@@ -991,7 +1002,7 @@
           "required_adapter": "egov_law_semantics",
           "adapter_status": "held",
           "reuse_key": "egov_law_api_json:407M50000400077",
-          "hold_reason": "拠出対象、算定基礎または負担割合が製品区分、機関別通知、施設計画、占用関係もしくは個別事業計画に依存し、単一の法令selectorでは現行値を確定できない"
+          "hold_reason": "正式な負担名称、現行適用条項、事業者別算定・認可資料を一意に確認できていない。解除条件: 経済産業省の現行認可・算定資料と該当条項を特定する、事業者・区域・算定期間の安定キーを定義する。再確認: annual"
         }
       ]
     },
@@ -1328,7 +1339,7 @@
           "required_adapter": "egov_law_semantics",
           "adapter_status": "held",
           "reuse_key": "egov_law_api_json:412AC0000000117",
-          "hold_reason": "拠出対象、算定基礎または負担割合が製品区分、機関別通知、施設計画、占用関係もしくは個別事業計画に依存し、単一の法令selectorでは現行値を確定できない"
+          "hold_reason": "現行年度の拠出単価告示と事業者別通知額を機械可読に対応付けていない。解除条件: 経済産業省またはNUMOの年度別拠出単価資料を特定する、廃棄物区分・発電量・単価・年度の行キーを定義する。再確認: annual"
         }
       ]
     },
@@ -1434,31 +1445,42 @@
       "official_name": "感染拠出金",
       "burden_type": "contribution",
       "implementation_issue": 45,
-      "implementation_status": "held",
+      "implementation_status": "implemented",
       "priority": "completed",
       "depends_on_issues": [
-        31
+        31,
+        46
       ],
       "batch_id": "issue-45-batch-03",
-      "reuse_group": "egov_law_api_json:414AC0000000192",
+      "reuse_group": "egov_law_api_json:414AC0000000192+pdf:www.pmda.go.jp",
       "municipal_scope": "national_only",
       "capabilities": {
-        "liable_party": "needs_source_research",
-        "taxable_scope": "needs_source_research",
-        "calculation_basis": "needs_source_research",
-        "rate_or_amount": "needs_source_research",
-        "applicable_period": "needs_source_research"
+        "liable_party": "implemented",
+        "taxable_scope": "implemented",
+        "calculation_basis": "implemented",
+        "rate_or_amount": "implemented",
+        "applicable_period": "implemented"
       },
       "sources": [
         {
           "source_id": "egov-laws",
           "target_id": "414AC0000000192",
           "official_format": "egov_law_api_json",
-          "current_adapter": "manual",
+          "current_adapter": "egov_law_article_facts",
           "required_adapter": "egov_law_semantics",
           "adapter_status": "held",
           "reuse_key": "egov_law_api_json:414AC0000000192",
-          "hold_reason": "拠出対象、算定基礎または負担割合が製品区分、機関別通知、施設計画、占用関係もしくは個別事業計画に依存し、単一の法令selectorでは現行値を確定できない"
+          "hold_reason": "現行値は実装済みの公式資料sourceから抽出する"
+        },
+        {
+          "source_id": "pmda-infection-contribution-2026",
+          "target_id": "pmda-infection-contribution-2026-page-1",
+          "official_format": "pdf",
+          "current_adapter": "pdf_regex_facts",
+          "required_adapter": "pdf_semantics",
+          "adapter_status": "implemented",
+          "reuse_key": "pdf:www.pmda.go.jp",
+          "shared_format_issue": 46
         }
       ]
     },
@@ -1623,7 +1645,7 @@
           "required_adapter": "egov_law_semantics",
           "adapter_status": "held",
           "reuse_key": "egov_law_api_json:414AC0000000182",
-          "hold_reason": "拠出対象、算定基礎または負担割合が製品区分、機関別通知、施設計画、占用関係もしくは個別事業計画に依存し、単一の法令selectorでは現行値を確定できない"
+          "hold_reason": "水資源機構の施設別事業計画、負担割合、納付期間を対応付けていない。解除条件: 対象施設と利用者の安定IDを設計する、施設別計画・費用・配賦割合・期間の公式資料を特定する。再確認: annual"
         }
       ]
     },
@@ -2361,7 +2383,7 @@
           "required_adapter": "egov_law_semantics",
           "adapter_status": "held",
           "reuse_key": "egov_law_api_json:413AC0000000075",
-          "hold_reason": "拠出対象、算定基礎または負担割合が製品区分、機関別通知、施設計画、占用関係もしくは個別事業計画に依存し、単一の法令selectorでは現行値を確定できない"
+          "hold_reason": "現行信託契約・業務規程と加入者別算定方法を公開資料で確認できていない。解除条件: 振替機関の現行业務規程と信託契約の公開状態を確認する、加入者区分・算定基礎・期間を定義する。再確認: annual"
         }
       ]
     },
@@ -2522,7 +2544,7 @@
           "required_adapter": "egov_law_semantics",
           "adapter_status": "held",
           "reuse_key": "egov_law_api_json:414AC0000000192",
-          "hold_reason": "拠出対象、算定基礎または負担割合が製品区分、機関別通知、施設計画、占用関係もしくは個別事業計画に依存し、単一の法令selectorでは現行値を確定できない"
+          "hold_reason": "現行手引の全製品区分、係数、率、適用除外を正本componentへ対応付けていない。解除条件: PMDA現行手引から全製品区分の算定表を抽出する、製品区分・係数・率・適用期間の行キーを定義する。再確認: annual"
         }
       ]
     },
@@ -2555,7 +2577,7 @@
           "required_adapter": "egov_law_semantics",
           "adapter_status": "held",
           "reuse_key": "egov_law_api_json:407AC0000000105",
-          "hold_reason": "拠出対象、算定基礎または負担割合が製品区分、機関別通知、施設計画、占用関係もしくは個別事業計画に依存し、単一の法令selectorでは現行値を確定できない"
+          "hold_reason": "各機構の現行业務規程、認可済み負担金率、会員別算定を対応付けていない。解除条件: 生命保険と損害保険の制度を別componentへ分割する、各機構の認可済み規程・率・期間を特定する。再確認: annual"
         }
       ]
     },
@@ -3537,7 +3559,7 @@
           "required_adapter": "egov_law_semantics",
           "adapter_status": "held",
           "reuse_key": "egov_law_api_json:412AC0000000117",
-          "hold_reason": "拠出対象、算定基礎または負担割合が製品区分、機関別通知、施設計画、占用関係もしくは個別事業計画に依存し、単一の法令selectorでは現行値を確定できない"
+          "hold_reason": "現行年度のTRU廃棄物向け拠出単価と事業者別通知を機械可読に対応付けていない。解除条件: TRU廃棄物に対応する年度別公式算定資料を特定する、廃棄物区分・数量・単価・年度の行キーを定義する。再確認: annual"
         }
       ]
     },
@@ -3614,7 +3636,7 @@
           "required_adapter": "egov_law_semantics",
           "adapter_status": "held",
           "reuse_key": "egov_law_api_json:407AC0000000039",
-          "hold_reason": "拠出対象、算定基礎または負担割合が製品区分、機関別通知、施設計画、占用関係もしくは個別事業計画に依存し、単一の法令selectorでは現行値を確定できない"
+          "hold_reason": "個別共同溝の管理計画、管理費、占用者別配賦資料が未対応。解除条件: 共同溝・道路管理者・占用者の安定IDを設計する、管理計画・費用・配賦割合・期間の公式資料を特定する。再確認: annual"
         }
       ]
     },
@@ -3647,7 +3669,7 @@
           "required_adapter": "egov_law_semantics",
           "adapter_status": "held",
           "reuse_key": "egov_law_api_json:407AC0000000039",
-          "hold_reason": "拠出対象、算定基礎または負担割合が製品区分、機関別通知、施設計画、占用関係もしくは個別事業計画に依存し、単一の法令selectorでは現行値を確定できない"
+          "hold_reason": "個別許可の占用区間、占用者、負担額算定資料を対応付けていない。解除条件: 共同溝・占用許可・占用者の安定IDを設計する、個別占用許可の費用・割合・期間を特定する。再確認: annual"
         }
       ]
     },
@@ -3680,7 +3702,7 @@
           "required_adapter": "egov_law_semantics",
           "adapter_status": "held",
           "reuse_key": "egov_law_api_json:407AC0000000039",
-          "hold_reason": "拠出対象、算定基礎または負担割合が製品区分、機関別通知、施設計画、占用関係もしくは個別事業計画に依存し、単一の法令selectorでは現行値を確定できない"
+          "hold_reason": "個別建設計画、予定占用者、工事費配賦資料を対応付けていない。解除条件: 共同溝・建設計画・予定占用者の安定IDを設計する、工事費・配賦割合・工期の公式資料を特定する。再確認: annual"
         }
       ]
     },
@@ -3746,7 +3768,7 @@
           "required_adapter": "egov_law_semantics",
           "adapter_status": "held",
           "reuse_key": "egov_law_api_json:414AC0000000182",
-          "hold_reason": "拠出対象、算定基礎または負担割合が製品区分、機関別通知、施設計画、占用関係もしくは個別事業計画に依存し、単一の法令selectorでは現行値を確定できない"
+          "hold_reason": "施設別事業計画、水道・工業用水等の用途別負担割合、納付期間が未対応。解除条件: 施設・用途・利用者の安定IDを設計する、事業費・用途別配賦割合・期間の公式資料を特定する。再確認: annual"
         }
       ]
     },

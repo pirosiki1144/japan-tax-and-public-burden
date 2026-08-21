@@ -11,8 +11,10 @@ const fixtureRoot = join(root, "tests/fixtures/source-scan");
 const now = () => new Date("2026-08-21T08:30:00+09:00");
 
 async function fixtureFetch(url) {
-  const body = await readFile(join(fixtureRoot, basename(new URL(url).pathname)));
-  return new Response(body, { status: 200, headers: { "content-type": "text/html; charset=UTF-8" } });
+  const name = basename(new URL(url).pathname);
+  const body = await readFile(join(fixtureRoot, name));
+  const contentType = name.endsWith(".pdf") ? "application/pdf" : "text/html; charset=UTF-8";
+  return new Response(body, { status: 200, headers: { "content-type": contentType } });
 }
 
 test("all Issue 45 targets have exactly one implementation or concrete hold decision", async () => {
@@ -30,8 +32,8 @@ test("all Issue 45 targets have exactly one implementation or concrete hold deci
   assert.equal(new Set(decisions).size, decisions.length);
   assert.deepEqual(decisions.toSorted(), issueTargets.map(({ tax_id }) => tax_id).toSorted());
   assert.ok(plan.held_groups.every(({ hold_reason }) => hold_reason.length >= 30));
-  assert.equal(issueTargets.filter(({ implementation_status }) => implementation_status === "implemented").length, 3);
-  assert.equal(issueTargets.filter(({ implementation_status }) => implementation_status === "held").length, 57);
+  assert.equal(issueTargets.filter(({ implementation_status }) => implementation_status === "implemented").length, 5);
+  assert.equal(issueTargets.filter(({ implementation_status }) => implementation_status === "held").length, 55);
 });
 
 test("Issue 56 targets are implemented or have actionable manual review metadata", async () => {
@@ -115,6 +117,51 @@ test("universal service value changes and missing carrier scope fail closed", as
       return new Response((await response.text()).replace("現在ご利用（ご契約）の電話会社が支払う", "負担主体の記載なし"), { status: 200, headers: { "content-type": "text/html" } });
     }
   }), /carrier liability was not found/);
+});
+
+test("Issue 58 targets are implemented or have actionable scope-specific manual metadata", async () => {
+  const plan = await readYaml(new URL("../config/public-burden-adapters.yaml", import.meta.url));
+  const issue58 = new Set(["adverse-drug-reaction-contribution","banks-shareholdings-purchase-corporation-contribution","electricity-business-compensation-charge","high-level-waste-disposal-contribution","infection-contribution","irrigation-water-facility-charge","participant-protection-trust-charge","pharmaceutical-safety-contribution","policyholder-protection-fund-charge","tru-waste-disposal-contribution","utility-tunnel-management-charge","utility-tunnel-other-occupant-charge","utility-tunnel-planned-occupant-construction-charge","water-resources-facility-user-charge"]);
+  const implemented = plan.implemented_targets.filter(({ tax_id }) => issue58.has(tax_id));
+  const manual = plan.manual_targets.filter(({ tax_id }) => issue58.has(tax_id));
+  assert.deepEqual(implemented.map(({ tax_id }) => tax_id), ["adverse-drug-reaction-contribution", "infection-contribution"]);
+  assert.equal(manual.length, 12);
+  assert.equal(new Set([...implemented, ...manual].map(({ tax_id }) => tax_id)).size, 14);
+  assert.ok(manual.every(({ official_source_url, value_scope, evidence_gap, release_conditions }) => official_source_url.startsWith("https://") && value_scope.length >= 20 && evidence_gap.length >= 20 && release_conditions.length >= 2));
+  assert.ok(manual.every(({ value_scope }) => /単一値として集計しない|合算しない|統合しない/.test(value_scope)));
+});
+
+test("PMDA contribution rates, notification formulas, and fiscal periods reproduce offline", async () => {
+  const plan = await readYaml(new URL("../config/public-burden-adapters.yaml", import.meta.url));
+  const cases = [
+    { sourceId: "pmda-adverse-reaction-contribution-2026", taxId: "adverse-drug-reaction-contribution", rate: 0.27, formula: "1/4" },
+    { sourceId: "pmda-infection-contribution-2026", taxId: "infection-contribution", rate: 0.05, formula: "1/3" }
+  ];
+  for (const { sourceId, taxId, rate, formula } of cases) {
+    const result = await runSourcePipeline({ root, sourceId, fetchImpl: fixtureFetch, now, dryRun: true });
+    assert.equal(result.status, "no_change");
+    const target = plan.implemented_targets.find(({ tax_id }) => tax_id === taxId);
+    assert.deepEqual(target.components.map(({ period_start, period_end }) => [period_start, period_end]), [["2026-04-01", "2027-03-31"], ["2026-04-01", "2027-03-31"]]);
+    assert.equal(target.components[0].numeric_value, rate);
+    assert.match(target.components[1].formula_raw, new RegExp(formula.replace("/", "\\/")));
+    assert.equal(target.components[0].included_in_total, false);
+    assert.equal(target.components[1].included_in_total, false);
+  }
+});
+
+test("PMDA shared legal family never distributes one contribution's facts to another", async () => {
+  const adverse = await runSourcePipeline({ root, sourceId: "pmda-adverse-reaction-contribution-2026", fetchImpl: fixtureFetch, now, dryRun: true });
+  const infection = await runSourcePipeline({ root, sourceId: "pmda-infection-contribution-2026", fetchImpl: fixtureFetch, now, dryRun: true });
+  assert.ok(adverse.normalized.facts.every(({ fact_id }) => fact_id.startsWith("adverse-")));
+  assert.ok(infection.normalized.facts.every(({ fact_id }) => fact_id.startsWith("infection-")));
+  await assert.rejects(runSourcePipeline({
+    root, sourceId: "pmda-adverse-reaction-contribution-2026", now, dryRun: true,
+    fetchImpl: async () => fixtureFetch("https://www.pmda.go.jp/files/000281003.pdf")
+  }), /adverse reaction general rate was not found/);
+  await assert.rejects(runSourcePipeline({
+    root, sourceId: "pmda-infection-contribution-2026", now, dryRun: true,
+    fetchImpl: async () => fixtureFetch("https://www.pmda.go.jp/files/000281001.pdf")
+  }), /infection general rate was not found/);
 });
 
 test("disability employment levy amount is reproducible offline", async () => {

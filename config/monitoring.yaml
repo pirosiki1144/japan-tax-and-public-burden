@@ -4,7 +4,7 @@
   "targets": [
     {
       "tax_id": "adverse-drug-reaction-contribution",
-      "monitoring_mode": "manual",
+      "monitoring_mode": "automated",
       "enabled": true,
       "cadence": "monthly",
       "municipal_scope": "national_only",
@@ -13,14 +13,24 @@
           "source_id": "egov-laws",
           "target_url": "https://laws.e-gov.go.jp/api/2/law_data/414AC0000000192",
           "enabled": true,
-          "adapter": "manual",
+          "adapter": "egov_law_article_facts",
           "target_id": "414AC0000000192",
           "extraction_targets": [
             "法令の改廃・施行状態（監視条文は#30の後続整備で確定）"
           ]
+        },
+        {
+          "source_id": "pmda-adverse-reaction-contribution-2026",
+          "target_url": "https://www.pmda.go.jp/files/000281001.pdf",
+          "enabled": true,
+          "adapter": "pdf_regex_facts",
+          "target_id": "pmda-adverse-reaction-contribution-2026-page-1",
+          "extraction_targets": [
+            "副作用一般拠出金の納付義務者、算定基礎、率、付加拠出金算式、令和8年度の適用期間"
+          ]
         }
       ],
-      "notes": "公式URLは特定済みだが抽出adapter未実装のため手動確認する"
+      "notes": "#45の実装済みadapterで月次監視する。概要ページにない適用開始日は推測しない"
     },
     {
       "tax_id": "agricultural-cooperative-savings-charge",
@@ -1017,7 +1027,7 @@
     },
     {
       "tax_id": "infection-contribution",
-      "monitoring_mode": "manual",
+      "monitoring_mode": "automated",
       "enabled": true,
       "cadence": "monthly",
       "municipal_scope": "national_only",
@@ -1026,14 +1036,24 @@
           "source_id": "egov-laws",
           "target_url": "https://laws.e-gov.go.jp/api/2/law_data/414AC0000000192",
           "enabled": true,
-          "adapter": "manual",
+          "adapter": "egov_law_article_facts",
           "target_id": "414AC0000000192",
           "extraction_targets": [
             "法令の改廃・施行状態（監視条文は#30の後続整備で確定）"
           ]
+        },
+        {
+          "source_id": "pmda-infection-contribution-2026",
+          "target_url": "https://www.pmda.go.jp/files/000281003.pdf",
+          "enabled": true,
+          "adapter": "pdf_regex_facts",
+          "target_id": "pmda-infection-contribution-2026-page-1",
+          "extraction_targets": [
+            "感染一般拠出金の納付義務者、算定基礎、率、付加拠出金算式、令和8年度の適用期間"
+          ]
         }
       ],
-      "notes": "公式URLは特定済みだが抽出adapter未実装のため手動確認する"
+      "notes": "#45の実装済みadapterで月次監視する。概要ページにない適用開始日は推測しない"
     },
     {
       "tax_id": "inheritance-and-gift-tax",
