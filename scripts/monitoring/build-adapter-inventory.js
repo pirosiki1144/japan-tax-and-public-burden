@@ -104,6 +104,11 @@ export async function buildAdapterInventory(repositoryRoot) {
   const socialById = new Map(socialAdapters.targets.map((target) => [target.tax_id, target]));
   const publicById = new Map([
     ...publicAdapters.implemented_targets.map((target) => [target.tax_id, { ...target, status: "implemented" }]),
+    ...publicAdapters.manual_targets.map((target) => [target.tax_id, {
+      ...target,
+      status: "held",
+      hold_reason: `${target.evidence_gap}。解除条件: ${target.release_conditions.join("、")}。再確認: ${target.recheck_cadence}`
+    }]),
     ...publicAdapters.held_groups.flatMap((group) => group.tax_ids.map((taxId) => [taxId, { tax_id: taxId, status: "held", hold_reason: group.hold_reason }]))
   ]);
   const burdenById = new Map(burdens.map((burden) => [burden.tax_id, burden]));

@@ -234,7 +234,7 @@
           "required_adapter": "egov_law_semantics",
           "adapter_status": "held",
           "reuse_key": "egov_law_api_json:330AC0000000097",
-          "hold_reason": "法令は負担義務または算定枠組みを定めるが、現行額は個別認可、契約、事業費、指定団体規程または年度資料で決まり、法令本文だけから全国共通値を安全に確定できない"
+          "hold_reason": "現行の契約区分別賦課金表と適用期間を公式資料で一意に対応付けていない。解除条件: 国土交通省または関係機構の現行賦課金表を特定する、車種・契約区分・適用期間の行キーを定義する。再確認: annual"
         }
       ]
     },
@@ -556,7 +556,7 @@
           "required_adapter": "egov_law_semantics",
           "adapter_status": "held",
           "reuse_key": "egov_law_api_json:325AC0000000239",
-          "hold_reason": "法令は負担義務または算定枠組みを定めるが、現行額は個別認可、契約、事業費、指定団体規程または年度資料で決まり、法令本文だけから全国共通値を安全に確定できない"
+          "hold_reason": "認可済み業務規程と現行会員別算定資料を確認できていない。解除条件: 基金の現行业務規程と認可情報を特定する、会員区分・算定基礎・免除条件を定義する。再確認: annual"
         }
       ]
     },
@@ -622,7 +622,7 @@
           "required_adapter": "egov_law_semantics",
           "adapter_status": "held",
           "reuse_key": "egov_law_api_json:338AC0000000081",
-          "hold_reason": "法令は負担義務または算定枠組みを定めるが、現行額は個別認可、契約、事業費、指定団体規程または年度資料で決まり、法令本文だけから全国共通値を安全に確定できない"
+          "hold_reason": "個別共同溝の事業費・負担割合・占用関係を示す公式資料が未対応。解除条件: 対象共同溝と管理主体の安定IDを設計する、個別事業費・負担割合・期間の公式資料を特定する。再確認: annual"
         }
       ]
     },
@@ -923,31 +923,42 @@
       "official_name": "授業目的公衆送信補償金",
       "burden_type": "payment",
       "implementation_issue": 45,
-      "implementation_status": "held",
+      "implementation_status": "implemented",
       "priority": "completed",
       "depends_on_issues": [
-        31
+        31,
+        46
       ],
       "batch_id": "issue-45-batch-01",
-      "reuse_group": "egov_law_api_json:345AC0000000048",
+      "reuse_group": "egov_law_api_json:345AC0000000048+html:www.mext.go.jp",
       "municipal_scope": "national_only",
       "capabilities": {
-        "liable_party": "needs_source_research",
-        "taxable_scope": "needs_source_research",
-        "calculation_basis": "needs_source_research",
-        "rate_or_amount": "needs_source_research",
-        "applicable_period": "needs_source_research"
+        "liable_party": "implemented",
+        "taxable_scope": "implemented",
+        "calculation_basis": "implemented",
+        "rate_or_amount": "implemented",
+        "applicable_period": "implemented"
       },
       "sources": [
         {
           "source_id": "egov-laws",
           "target_id": "345AC0000000048",
           "official_format": "egov_law_api_json",
-          "current_adapter": "manual",
+          "current_adapter": "egov_law_article_facts",
           "required_adapter": "egov_law_semantics",
           "adapter_status": "held",
           "reuse_key": "egov_law_api_json:345AC0000000048",
-          "hold_reason": "法令は負担義務または算定枠組みを定めるが、現行額は個別認可、契約、事業費、指定団体規程または年度資料で決まり、法令本文だけから全国共通値を安全に確定できない"
+          "hold_reason": "現行値は実装済みの公式資料sourceから抽出する"
+        },
+        {
+          "source_id": "mext-educational-public-transmission-compensation",
+          "target_id": "mext-educational-public-transmission-compensation-page-1",
+          "official_format": "html",
+          "current_adapter": "html_regex_facts",
+          "required_adapter": "html_semantics",
+          "adapter_status": "implemented",
+          "reuse_key": "html:www.mext.go.jp",
+          "shared_format_issue": 46
         }
       ]
     },
@@ -1382,7 +1393,7 @@
           "required_adapter": "egov_law_semantics",
           "adapter_status": "held",
           "reuse_key": "egov_law_api_json:340AC0000000109",
-          "hold_reason": "法令は負担義務または算定枠組みを定めるが、現行額は個別認可、契約、事業費、指定団体規程または年度資料で決まり、法令本文だけから全国共通値を安全に確定できない"
+          "hold_reason": "現行の機構売買価格・調整率と適用日を公式資料へ対応付けていない。解除条件: 農畜産業振興機構の現行算定資料を特定する、糖種・期間・単位を持つ表adapterを整備する。再確認: monthly"
         }
       ]
     },
@@ -1579,7 +1590,7 @@
           "required_adapter": "egov_law_semantics",
           "adapter_status": "held",
           "reuse_key": "egov_law_api_json:323AC0000000025",
-          "hold_reason": "法令は負担義務または算定枠組みを定めるが、現行額は個別認可、契約、事業費、指定団体規程または年度資料で決まり、法令本文だけから全国共通値を安全に確定できない"
+          "hold_reason": "認可済み業務規程と現行会員別算定資料を確認できていない。解除条件: 基金の現行业務規程と認可情報を特定する、会員区分・算定基礎・期間を定義する。再確認: annual"
         }
       ]
     },
@@ -1645,7 +1656,7 @@
           "required_adapter": "egov_law_semantics",
           "adapter_status": "held",
           "reuse_key": "egov_law_api_json:345AC0000000048",
-          "hold_reason": "法令は負担義務または算定枠組みを定めるが、現行額は個別認可、契約、事業費、指定団体規程または年度資料で決まり、法令本文だけから全国共通値を安全に確定できない"
+          "hold_reason": "認可料金表の全区分と現行改訂状態を機械可読に対応付けていない。解除条件: 文化庁認可資料と指定管理団体の現行規程を照合する、資料種別・送信方法・数量の行キーを定義する。再確認: annual"
         }
       ]
     },
@@ -2119,7 +2130,7 @@
           "required_adapter": "egov_law_semantics",
           "adapter_status": "held",
           "reuse_key": "egov_law_api_json:332AC0000000035",
-          "hold_reason": "法令は負担義務または算定枠組みを定めるが、現行額は個別認可、契約、事業費、指定団体規程または年度資料で決まり、法令本文だけから全国共通値を安全に確定できない"
+          "hold_reason": "個別ダムの事業費、負担割合、撤退精算等を示す公式資料が未対応。解除条件: ダムと使用権者の安定IDを設計する、個別事業費・負担割合・期間の公式資料を特定する。再確認: annual"
         }
       ]
     },
@@ -2610,7 +2621,7 @@
           "required_adapter": "egov_law_semantics",
           "adapter_status": "held",
           "reuse_key": "egov_law_api_json:345AC0000000133",
-          "hold_reason": "法令は負担義務または算定枠組みを定めるが、現行額は個別認可、契約、事業費、指定団体規程または年度資料で決まり、法令本文だけから全国共通値を安全に確定できない"
+          "hold_reason": "個別事業計画と事業者負担割合の公式決定資料が未対応。解除条件: 事業計画と負担事業者の安定IDを設計する、個別決定の費用・割合・期間を特定する。再確認: annual"
         }
       ]
     },
@@ -2643,7 +2654,7 @@
           "required_adapter": "egov_law_semantics",
           "adapter_status": "held",
           "reuse_key": "egov_law_api_json:325AC0000000218",
-          "hold_reason": "法令は負担義務または算定枠組みを定めるが、現行額は個別認可、契約、事業費、指定団体規程または年度資料で決まり、法令本文だけから全国共通値を安全に確定できない"
+          "hold_reason": "港湾管理者ごとの負担対象区域・事業費・負担割合が未対応。解除条件: 港湾管理者と対象事業の安定IDを設計する、管理者の公式決定資料を特定する。再確認: annual"
         }
       ]
     },
@@ -2709,7 +2720,7 @@
           "required_adapter": "egov_law_semantics",
           "adapter_status": "held",
           "reuse_key": "egov_law_api_json:324AC0000000284",
-          "hold_reason": "法令は負担義務または算定枠組みを定めるが、現行額は個別認可、契約、事業費、指定団体規程または年度資料で決まり、法令本文だけから全国共通値を安全に確定できない"
+          "hold_reason": "現行委託契約の補償条件と金額は一般公開資料から確認できていない。解除条件: 日本郵便等の公開契約・調達資料で補償条件を確認する、公開されない場合は非公開契約値としてmanualを維持する。再確認: annual"
         }
       ]
     },
@@ -2774,7 +2785,7 @@
           "required_adapter": "egov_law_semantics",
           "adapter_status": "held",
           "reuse_key": "egov_law_api_json:345AC0000000048",
-          "hold_reason": "法令は負担義務または算定枠組みを定めるが、現行額は個別認可、契約、事業費、指定団体規程または年度資料で決まり、法令本文だけから全国共通値を安全に確定できない"
+          "hold_reason": "対象機器・媒体別の現行認可額と指定管理団体の状態を機械可読に対応付けていない。解除条件: 文化庁の指定対象と認可額を確認する、機器・媒体・率または額・期間の行キーを定義する。再確認: annual"
         }
       ]
     },

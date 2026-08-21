@@ -25,14 +25,32 @@
           "fact_id": "monthly-levy-amount"
         }
       ]
+    },
+    {
+      "tax_id": "educational-public-transmission-compensation",
+      "source_ids": ["mext-educational-public-transmission-compensation"],
+      "components": [
+        {"component_id":"elementary-school-annual","liable_party_role":"education_provider","subject_scope":"小学校の児童","calculation_basis":"授業目的公衆送信を受ける児童1人当たりの年間包括料金","calculation_kind":"fixed_amount_per_unit","numeric_value":120,"unit":"yen_per_student_year","aggregation_role":"standalone","included_in_total":false,"period_start":null,"period_end":null,"period_precision":"current_rule_no_effective_date_on_overview","value_status":"official_current","source_id":"mext-educational-public-transmission-compensation","fact_id":"elementary-school-amount"},
+        {"component_id":"junior-high-school-annual","liable_party_role":"education_provider","subject_scope":"中学校の生徒","calculation_basis":"授業目的公衆送信を受ける生徒1人当たりの年間包括料金","calculation_kind":"fixed_amount_per_unit","numeric_value":180,"unit":"yen_per_student_year","aggregation_role":"standalone","included_in_total":false,"period_start":null,"period_end":null,"period_precision":"current_rule_no_effective_date_on_overview","value_status":"official_current","source_id":"mext-educational-public-transmission-compensation","fact_id":"junior-high-school-amount"},
+        {"component_id":"high-school-annual","liable_party_role":"education_provider","subject_scope":"高等学校の生徒","calculation_basis":"授業目的公衆送信を受ける生徒1人当たりの年間包括料金","calculation_kind":"fixed_amount_per_unit","numeric_value":420,"unit":"yen_per_student_year","aggregation_role":"standalone","included_in_total":false,"period_start":null,"period_end":null,"period_precision":"current_rule_no_effective_date_on_overview","value_status":"official_current","source_id":"mext-educational-public-transmission-compensation","fact_id":"high-school-amount"},
+        {"component_id":"university-annual","liable_party_role":"education_provider","subject_scope":"大学の学生","calculation_basis":"授業目的公衆送信を受ける学生1人当たりの年間包括料金","calculation_kind":"fixed_amount_per_unit","numeric_value":720,"unit":"yen_per_student_year","aggregation_role":"standalone","included_in_total":false,"period_start":null,"period_end":null,"period_precision":"current_rule_no_effective_date_on_overview","value_status":"official_current","source_id":"mext-educational-public-transmission-compensation","fact_id":"university-amount"}
+      ]
     }
   ],
+  "manual_targets": [
+    {"tax_id":"automobile-accident-countermeasure-levy","official_source_url":"https://laws.e-gov.go.jp/law/330AC0000000097","value_scope":"契約区分・車種等に応じる個別賦課であり全国単一値として集計しない","evidence_gap":"現行の契約区分別賦課金表と適用期間を公式資料で一意に対応付けていない","release_conditions":["国土交通省または関係機構の現行賦課金表を特定する","車種・契約区分・適用期間の行キーを定義する"],"recheck_cadence":"annual"},
+    {"tax_id":"commodity-customer-protection-fund-charge","official_source_url":"https://laws.e-gov.go.jp/law/325AC0000000239","value_scope":"会員・基金業務規程ごとの負担金であり全国単一値として集計しない","evidence_gap":"認可済み業務規程と現行会員別算定資料を確認できていない","release_conditions":["基金の現行业務規程と認可情報を特定する","会員区分・算定基礎・免除条件を定義する"],"recheck_cadence":"annual"},
+    {"tax_id":"common-utility-tunnel-charge","official_source_url":"https://laws.e-gov.go.jp/law/338AC0000000081","value_scope":"共同溝・占用者・事業計画ごとの負担額であり全国単一値として集計しない","evidence_gap":"個別共同溝の事業費・負担割合・占用関係を示す公式資料が未対応","release_conditions":["対象共同溝と管理主体の安定IDを設計する","個別事業費・負担割合・期間の公式資料を特定する"],"recheck_cadence":"annual"},
+    {"tax_id":"imported-sugar-adjustment-charge","official_source_url":"https://laws.e-gov.go.jp/law/340AC0000000109","value_scope":"輸入申告・糖種・時期等に応じる調整金であり単一固定額として集計しない","evidence_gap":"現行の機構売買価格・調整率と適用日を公式資料へ対応付けていない","release_conditions":["農畜産業振興機構の現行算定資料を特定する","糖種・期間・単位を持つ表adapterを整備する"],"recheck_cadence":"monthly"},
+    {"tax_id":"investor-protection-fund-charge","official_source_url":"https://laws.e-gov.go.jp/law/323AC0000000025","value_scope":"基金会員・業務規程ごとの負担金であり全国単一値として集計しない","evidence_gap":"認可済み業務規程と現行会員別算定資料を確認できていない","release_conditions":["基金の現行业務規程と認可情報を特定する","会員区分・算定基礎・期間を定義する"],"recheck_cadence":"annual"},
+    {"tax_id":"library-public-transmission-compensation","official_source_url":"https://www.bunka.go.jp/koho_hodo_oshirase/hodohappyo/pdf/93860201_01.pdf","value_scope":"資料種別・送信方法・ページ数等による認可料金であり単一額として集計しない","evidence_gap":"認可料金表の全区分と現行改訂状態を機械可読に対応付けていない","release_conditions":["文化庁認可資料と指定管理団体の現行規程を照合する","資料種別・送信方法・数量の行キーを定義する"],"recheck_cadence":"annual"},
+    {"tax_id":"multipurpose-dam-charge","official_source_url":"https://laws.e-gov.go.jp/law/332CO0000000188","value_scope":"ダム・使用権設定予定者・用途別の事業費負担であり全国単一値として集計しない","evidence_gap":"個別ダムの事業費、負担割合、撤退精算等を示す公式資料が未対応","release_conditions":["ダムと使用権者の安定IDを設計する","個別事業費・負担割合・期間の公式資料を特定する"],"recheck_cadence":"annual"},
+    {"tax_id":"pollution-prevention-project-business-charge","official_source_url":"https://laws.e-gov.go.jp/law/345AC0000000133","value_scope":"公害防止事業・原因事業者ごとの費用負担であり全国単一値として集計しない","evidence_gap":"個別事業計画と事業者負担割合の公式決定資料が未対応","release_conditions":["事業計画と負担事業者の安定IDを設計する","個別決定の費用・割合・期間を特定する"],"recheck_cadence":"annual"},
+    {"tax_id":"port-environment-improvement-charge","official_source_url":"https://laws.e-gov.go.jp/law/325AC0000000218","value_scope":"港湾・区域・原因事業者ごとの環境整備費負担であり全国単一値として集計しない","evidence_gap":"港湾管理者ごとの負担対象区域・事業費・負担割合が未対応","release_conditions":["港湾管理者と対象事業の安定IDを設計する","管理者の公式決定資料を特定する"],"recheck_cadence":"annual"},
+    {"tax_id":"postal-transport-consignment-compensation","official_source_url":"https://laws.e-gov.go.jp/law/324AC0000000284","value_scope":"郵便運送委託契約ごとの補償であり公的負担の全国単一値として集計しない","evidence_gap":"現行委託契約の補償条件と金額は一般公開資料から確認できていない","release_conditions":["日本郵便等の公開契約・調達資料で補償条件を確認する","公開されない場合は非公開契約値としてmanualを維持する"],"recheck_cadence":"annual"},
+    {"tax_id":"private-recording-compensation","official_source_url":"https://www.bunka.go.jp/seisaku/chosakuken/kakushushitei/94237803.html","value_scope":"指定機器・媒体と指定管理団体の認可額に依存し単一額として集計しない","evidence_gap":"対象機器・媒体別の現行認可額と指定管理団体の状態を機械可読に対応付けていない","release_conditions":["文化庁の指定対象と認可額を確認する","機器・媒体・率または額・期間の行キーを定義する"],"recheck_cadence":"annual"}
+  ],
   "held_groups": [
-    {
-      "group_id": "batch-01-individual-formulas",
-      "tax_ids": ["automobile-accident-countermeasure-levy","commodity-customer-protection-fund-charge","common-utility-tunnel-charge","educational-public-transmission-compensation","imported-sugar-adjustment-charge","investor-protection-fund-charge","library-public-transmission-compensation","multipurpose-dam-charge","pollution-prevention-project-business-charge","port-environment-improvement-charge","postal-transport-consignment-compensation","private-recording-compensation"],
-      "hold_reason": "法令は負担義務または算定枠組みを定めるが、現行額は個別認可、契約、事業費、指定団体規程または年度資料で決まり、法令本文だけから全国共通値を安全に確定できない"
-    },
     {
       "group_id": "batch-02-rates-by-entity-or-year",
       "tax_ids": ["agricultural-cooperative-savings-charge","agricultural-cooperative-savings-insurance-premium","agricultural-cooperative-savings-special-charge","broadband-service-charge","deposit-insurance-corporation-charge","deposit-insurance-corporation-special-charge","deposit-insurance-premium","international-oil-pollution-fund-annual-contribution","mining-pollution-prevention-fund-contribution","pollution-load-levy","railway-barrier-free-fee","specified-pollution-levy","supplementary-oil-pollution-fund-annual-contribution","universal-service-fee"],
