@@ -30,8 +30,8 @@ test("all Issue 45 targets have exactly one implementation or concrete hold deci
   assert.equal(new Set(decisions).size, decisions.length);
   assert.deepEqual(decisions.toSorted(), issueTargets.map(({ tax_id }) => tax_id).toSorted());
   assert.ok(plan.held_groups.every(({ hold_reason }) => hold_reason.length >= 30));
-  assert.equal(issueTargets.filter(({ implementation_status }) => implementation_status === "implemented").length, 2);
-  assert.equal(issueTargets.filter(({ implementation_status }) => implementation_status === "held").length, 58);
+  assert.equal(issueTargets.filter(({ implementation_status }) => implementation_status === "implemented").length, 3);
+  assert.equal(issueTargets.filter(({ implementation_status }) => implementation_status === "held").length, 57);
 });
 
 test("Issue 56 targets are implemented or have actionable manual review metadata", async () => {
@@ -71,6 +71,50 @@ test("educational compensation changes and missing approval markers fail closed"
       return new Response((await response.text()).replace("補償金の額は、文化庁長官によって認可", "認可情報なし"), { status: 200, headers: { "content-type": "text/html" } });
     }
   }), /approved compensation was not found/);
+});
+
+test("Issue 57 targets retain variable scopes or one reviewable official value", async () => {
+  const plan = await readYaml(new URL("../config/public-burden-adapters.yaml", import.meta.url));
+  const issue57 = new Set(["agricultural-cooperative-savings-charge","agricultural-cooperative-savings-insurance-premium","agricultural-cooperative-savings-special-charge","broadband-service-charge","deposit-insurance-corporation-charge","deposit-insurance-corporation-special-charge","deposit-insurance-premium","international-oil-pollution-fund-annual-contribution","mining-pollution-prevention-fund-contribution","pollution-load-levy","railway-barrier-free-fee","specified-pollution-levy","supplementary-oil-pollution-fund-annual-contribution","universal-service-fee"]);
+  const implemented = plan.implemented_targets.filter(({ tax_id }) => issue57.has(tax_id));
+  const manual = plan.manual_targets.filter(({ tax_id }) => issue57.has(tax_id));
+  assert.deepEqual(implemented.map(({ tax_id }) => tax_id), ["universal-service-fee"]);
+  assert.equal(manual.length, 13);
+  assert.equal(new Set([...implemented, ...manual].map(({ tax_id }) => tax_id)).size, 14);
+  assert.ok(manual.every(({ value_scope, evidence_gap, release_conditions, recheck_cadence }) => value_scope.length >= 20 && evidence_gap.length >= 20 && release_conditions.length >= 1 && ["monthly","quarterly","annual"].includes(recheck_cadence)));
+  assert.ok(manual.every(({ value_scope }) => /単一|合算しない|二重計上しない/.test(value_scope)));
+});
+
+test("universal service number price and application month are reproduced offline", async () => {
+  const plan = await readYaml(new URL("../config/public-burden-adapters.yaml", import.meta.url));
+  const result = await runSourcePipeline({ root, sourceId: "tca-universal-service-number-price", fetchImpl: fixtureFetch, now, dryRun: true });
+  assert.equal(result.status, "no_change");
+  const facts = new Map(result.normalized.facts.map(({ fact_id, value }) => [fact_id, value]));
+  assert.equal(facts.get("universal-service-period-start"), "2026-01-01");
+  assert.equal(facts.get("universal-service-number-price"), 2);
+  const component = plan.implemented_targets.find(({ tax_id }) => tax_id === "universal-service-fee").components[0];
+  assert.equal(component.period_start, "2026-01-01");
+  assert.equal(component.period_precision, "month");
+  assert.equal(component.numeric_value, 2);
+  assert.equal(component.unit, "yen_per_number_month");
+  assert.equal(component.included_in_total, false);
+});
+
+test("universal service value changes and missing carrier scope fail closed", async () => {
+  const changedFetch = async (url) => {
+    const response = await fixtureFetch(url);
+    return new Response((await response.text()).replace("1番号当たり2円", "1番号当たり3円"), { status: 200, headers: { "content-type": "text/html" } });
+  };
+  const changed = await runSourcePipeline({ root, sourceId: "tca-universal-service-number-price", fetchImpl: changedFetch, now, dryRun: true });
+  assert.equal(changed.status, "change_detected");
+  assert.deepEqual(changed.candidate_diff.map(({ fact_id, current, candidate }) => ({ fact_id, current, candidate })), [{ fact_id: "universal-service-number-price", current: 2, candidate: 3 }]);
+  await assert.rejects(runSourcePipeline({
+    root, sourceId: "tca-universal-service-number-price", now, dryRun: true,
+    fetchImpl: async (url) => {
+      const response = await fixtureFetch(url);
+      return new Response((await response.text()).replace("現在ご利用（ご契約）の電話会社が支払う", "負担主体の記載なし"), { status: 200, headers: { "content-type": "text/html" } });
+    }
+  }), /carrier liability was not found/);
 });
 
 test("disability employment levy amount is reproducible offline", async () => {

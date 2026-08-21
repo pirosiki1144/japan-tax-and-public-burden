@@ -590,6 +590,66 @@
       "terms_url": "https://www.shugiin.go.jp/",
       "last_verified_at": "2026-08-16T12:20:19+09:00",
       "notes": ""
+    },
+    {
+      "source_id": "tca-universal-service-number-price",
+      "name": "電気通信事業者協会 電話ユニバーサルサービス番号単価Q&A",
+      "authority": "一般社団法人電気通信事業者協会（総務大臣指定支援機関）",
+      "base_url": "https://www.tca.or.jp/",
+      "entry_urls": [
+        "https://www.tca.or.jp/universalservice/qa/frequency.html"
+      ],
+      "source_type": "public_agency",
+      "scope": "電話ユニバーサルサービスの負担主体、算定対象番号、適用月、1番号当たり月額",
+      "jurisdiction": "Japan",
+      "priority": 1,
+      "cadence": "semiannual",
+      "enabled": true,
+      "automation_enabled": true,
+      "monitoring_tax_ids": [
+        "universal-service-fee"
+      ],
+      "adapter": "html_regex_facts",
+      "accepted_content_types": [
+        "text/html"
+      ],
+      "extraction": {
+        "expected_pages": 1,
+        "required_markers": [
+          {
+            "page_index": 0,
+            "label": "carrier liability",
+            "pattern": "現在ご利用（ご契約）の電話会社が支払う"
+          },
+          {
+            "page_index": 0,
+            "label": "number calculation basis",
+            "pattern": "ご利用になる電話番号の数に応じた費用"
+          }
+        ],
+        "facts": [
+          {
+            "fact_id": "universal-service-period-start",
+            "page_index": 0,
+            "pattern": "(令和8年1月)から1番号当たり",
+            "capture_group": 1,
+            "transform": "japanese_year_month",
+            "expected_value": "2026-01-01"
+          },
+          {
+            "fact_id": "universal-service-number-price",
+            "page_index": 0,
+            "pattern": "令和8年1月から1番号当たり([0-9０-９,，]+)円／月",
+            "capture_group": 1,
+            "transform": "japanese_number",
+            "expected_value": 2
+          }
+        ]
+      },
+      "rate_limit": "サイトの利用条件に従う",
+      "terms_url": "https://www.tca.or.jp/information/",
+      "last_verified_at": "2026-08-21T18:20:00+09:00",
+      "notes": "令和8年1月からの番号単価を監視する。電話会社の第一種負担金と利用者向け料金を同一主体の負担として二重計上しない。次期単価は公式番号単価一覧を確認してconfigを更新する"
     }
   ],
   "records": [
