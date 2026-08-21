@@ -1,0 +1,22 @@
+%PDF-1.4
+1 0 obj
+<< /Type /Catalog /Pages 2 0 R >>
+endobj
+2 0 obj
+<< /Type /Pages /Kids [3 0 R] /Count 1 >>
+endobj
+3 0 obj
+<< /Type /Page /Parent 2 0 R /MediaBox [0 0 900 792] /Resources << /Font << /F1 4 0 R >> >> /Contents 5 0 R >>
+endobj
+4 0 obj
+<< /Type /Font /Subtype /Type1 /BaseFont /Helvetica >>
+endobj
+5 0 obj
+<< /Length 125 >>
+stream
+BT /F1 10 Tf 20 720 Td (PMDA 2026 adverse general contribution rate 0.27/1000) Tj 0 -20 Td (additional contribution formula 1/4) Tj ET
+endstream
+endobj
+trailer
+<< /Root 1 0 R >>
+%%EOF
