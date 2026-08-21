@@ -36,7 +36,7 @@ test("the inventory drives source and semantic adapters through one offline pipe
   assert.equal(result.registry.semantic_jobs_run, 31);
   assert.deepEqual(result.registry.batches_run, ["issue-39-batch-01", "issue-42-batch-01", "issue-43-common-source-01", "issue-42-batch-02"]);
   assert.deepEqual(result.routing, { has_changes: false, has_findings: false, pr_candidate_count: 0, issue_candidate_count: 0 });
-  assert.equal(result.results.length, 37);
+  assert.equal(result.results.length, 38);
   assert.equal(result.results.filter(({ source_id }) => source_id.startsWith("semantic:")).length, 31);
 });
 

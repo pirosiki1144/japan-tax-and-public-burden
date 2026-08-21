@@ -36,6 +36,12 @@ const transforms = {
     if (!match) throw new Error(`Unsupported Japanese date: ${raw}`);
     const year = match[1] === "元" ? 2019 : 2018 + Number(match[1]);
     return `${year}-${match[2].padStart(2, "0")}-${match[3].padStart(2, "0")}`;
+  },
+  japanese_year_month: (raw) => {
+    const match = raw.match(/^令和(元|[0-9]+)年([0-9]+)月$/);
+    if (!match) throw new Error(`Unsupported Japanese year-month: ${raw}`);
+    const year = match[1] === "元" ? 2019 : 2018 + Number(match[1]);
+    return `${year}-${match[2].padStart(2, "0")}-01`;
   }
 };
 
