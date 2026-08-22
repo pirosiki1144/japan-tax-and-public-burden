@@ -42,6 +42,18 @@ const transforms = {
     if (!match) throw new Error(`Unsupported Japanese year-month: ${raw}`);
     const year = match[1] === "元" ? 2019 : 2018 + Number(match[1]);
     return `${year}-${match[2].padStart(2, "0")}-01`;
+  },
+  japanese_fiscal_year_start: (raw) => {
+    const match = raw.match(/^令和(元|[0-9]+)年度$/);
+    if (!match) throw new Error(`Unsupported Japanese fiscal year: ${raw}`);
+    const year = match[1] === "元" ? 2019 : 2018 + Number(match[1]);
+    return `${year}-04-01`;
+  },
+  japanese_fiscal_year_end: (raw) => {
+    const match = raw.match(/^令和(元|[0-9]+)年度$/);
+    if (!match) throw new Error(`Unsupported Japanese fiscal year: ${raw}`);
+    const year = match[1] === "元" ? 2019 : 2018 + Number(match[1]);
+    return `${year + 1}-03-31`;
   }
 };
 

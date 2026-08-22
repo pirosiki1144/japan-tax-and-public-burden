@@ -1,6 +1,6 @@
 {
   "schema_version": 1,
-  "verified_at": "2026-08-21T08:30:00+09:00",
+  "verified_at": "2026-08-22T20:45:29+09:00",
   "implementation_issue": 45,
   "implemented_targets": [
     {
@@ -58,6 +58,13 @@
         {"component_id":"general-contribution-2026","liable_party_role":"product_marketing_authorization_holder","subject_scope":"許可生物由来製品または感染救済給付に係る許可再生医療等製品の製造販売業者","calculation_basis":"前年度の品目別出荷数量、単価および製品区分別係数から算出する算定基礎取引額","calculation_kind":"rate","numeric_value":0.05,"unit":"per_thousand","aggregation_role":"standalone","included_in_total":false,"period_start":"2026-04-01","period_end":"2027-03-31","period_precision":"fiscal_year","value_status":"official_current","source_id":"pmda-infection-contribution-2026","fact_id":"infection-general-rate"},
         {"component_id":"additional-contribution-2026","liable_party_role":"product_marketing_authorization_holder","subject_scope":"前年度に感染救済給付の原因となった製品についてPMDAから現価相当額の通知を受けた製造販売業者","calculation_basis":"通知された救済給付の現価相当額合計。ただし前年度出荷額の1/100を上限とする","calculation_kind":"formula","formula_raw":"現価相当額の合計 × 1/3","unit":"ratio","aggregation_role":"standalone","included_in_total":false,"period_start":"2026-04-01","period_end":"2027-03-31","period_precision":"fiscal_year","value_status":"official_current","source_id":"pmda-infection-contribution-2026","fact_id":"infection-additional-formula"}
       ]
+    },
+    {
+      "tax_id": "child-care-contribution",
+      "source_ids": ["nenkin-child-care-contribution-2026"],
+      "components": [
+        {"component_id":"employer-contribution-rate-2026","liable_party_role":"employer","subject_scope":"厚生年金保険の適用事業所の事業主","calculation_basis":"厚生年金保険の標準報酬月額および標準賞与額","calculation_kind":"rate","numeric_value":3.6,"unit":"per_thousand","aggregation_role":"standalone","included_in_total":false,"period_start":"2026-04-01","period_end":"2027-03-31","period_precision":"fiscal_year","value_status":"official_current","source_id":"nenkin-child-care-contribution-2026","fact_id":"child-care-contribution-rate"}
+      ]
     }
   ],
   "manual_targets": [
@@ -96,14 +103,22 @@
     {"tax_id":"utility-tunnel-management-charge","official_source_url":"https://laws.e-gov.go.jp/law/407AC0000000039","value_scope":"電線共同溝・道路管理者・占用者別の管理費用負担であり他の建設・占用負担へ合算しない","evidence_gap":"個別共同溝の管理計画、管理費、占用者別配賦資料が未対応","release_conditions":["共同溝・道路管理者・占用者の安定IDを設計する","管理計画・費用・配賦割合・期間の公式資料を特定する"],"recheck_cadence":"annual"},
     {"tax_id":"utility-tunnel-other-occupant-charge","official_source_url":"https://laws.e-gov.go.jp/law/407AC0000000039","value_scope":"占用予定者以外の占用者・共同溝・占用区間別負担であり建設負担金へ合算しない","evidence_gap":"個別許可の占用区間、占用者、負担額算定資料を対応付けていない","release_conditions":["共同溝・占用許可・占用者の安定IDを設計する","個別占用許可の費用・割合・期間を特定する"],"recheck_cadence":"annual"},
     {"tax_id":"utility-tunnel-planned-occupant-construction-charge","official_source_url":"https://laws.e-gov.go.jp/law/407AC0000000039","value_scope":"占用予定者・共同溝・建設計画別の工事費負担であり管理・後発占用負担へ合算しない","evidence_gap":"個別建設計画、予定占用者、工事費配賦資料を対応付けていない","release_conditions":["共同溝・建設計画・予定占用者の安定IDを設計する","工事費・配賦割合・工期の公式資料を特定する"],"recheck_cadence":"annual"},
-    {"tax_id":"water-resources-facility-user-charge","official_source_url":"https://laws.e-gov.go.jp/law/414AC0000000182","value_scope":"水資源開発施設・用途・利用者・事業費配賦ごとの負担でありかんがい分と合算しない","evidence_gap":"施設別事業計画、水道・工業用水等の用途別負担割合、納付期間が未対応","release_conditions":["施設・用途・利用者の安定IDを設計する","事業費・用途別配賦割合・期間の公式資料を特定する"],"recheck_cadence":"annual"}
+    {"tax_id":"water-resources-facility-user-charge","official_source_url":"https://laws.e-gov.go.jp/law/414AC0000000182","value_scope":"水資源開発施設・用途・利用者・事業費配賦ごとの負担でありかんがい分と合算しない","evidence_gap":"施設別事業計画、水道・工業用水等の用途別負担割合、納付期間が未対応","release_conditions":["施設・用途・利用者の安定IDを設計する","事業費・用途別配賦割合・期間の公式資料を特定する"],"recheck_cadence":"annual"},
+    {"tax_id":"asbestos-relief-general-contribution","official_source_url":"https://www.env.go.jp/air/asbestos/laws_kyusai.html","value_scope":"全労災保険適用事業主の賃金総額に対する一般拠出金率であり特別拠出金へ合算しない","evidence_gap":"現行告示率は確認できるが年度資料と申告対象賃金年度・徴収開始日の対応を一つの公式資料で確認できていない","release_conditions":["環境省告示と厚生労働省の現行年度申告案内を対応付ける","賃金年度・申告期間・徴収開始日を別フィールドで定義する"],"recheck_cadence":"annual"},
+    {"tax_id":"asbestos-relief-special-contribution","official_source_url":"https://laws.e-gov.go.jp/law/418AC0000000004","value_scope":"特別事業主ごとに機構が決定・通知する額であり一般拠出金へ合算しない","evidence_gap":"事業主別の現行決定額、通知日、納付期限は公開された全国一覧として確認できていない","release_conditions":["環境再生保全機構の年度別決定資料の公開有無を確認する","非公開通知の場合は事業主別非公開値としてmanualを維持する"],"recheck_cadence":"annual"},
+    {"tax_id":"east-japan-business-rehabilitation-contribution","official_source_url":"https://laws.e-gov.go.jp/law/423AC0100000113","value_scope":"対象金融機関等と認可された事業計画・年度算定に依存し全国単一値として集計しない","evidence_gap":"現行の拠出義務、対象者、年度別算定結果および終了状態を公式年度資料へ対応付けていない","release_conditions":["所管機関の現行事業計画・決算・認可資料を特定する","対象者・算定基礎・期間・終了状態の安定キーを定義する"],"recheck_cadence":"annual"},
+    {"tax_id":"hepatitis-c-special-relief-contribution","official_source_url":"https://laws.e-gov.go.jp/law/420AC1000000002","value_scope":"対象製造販売業者等の個別合意・通知額に依存し全国単一値として集計しない","evidence_gap":"現行年度の対象者別拠出額、算定根拠、納付期限を公開公式資料で確認できていない","release_conditions":["厚生労働省またはPMDAの年度別拠出決定資料を特定する","公開されない個別合意額の場合はmanualを維持する"],"recheck_cadence":"annual"},
+    {"tax_id":"minamata-specified-business-compensation-levy","official_source_url":"https://laws.e-gov.go.jp/law/421AC1000000081","value_scope":"指定事業者の補償費用・年度決定に基づく賦課であり他の水俣病給付費と合算しない","evidence_gap":"現行の対象事業者、年度賦課額、算定式、納付期間を示す公開公式資料を確認できていない","release_conditions":["環境省の年度別補償・賦課決定資料を特定する","対象事業者・総額・内訳・期間の集計関係を定義する"],"recheck_cadence":"annual"},
+    {"tax_id":"nuclear-damage-support-general-charge","official_source_url":"https://www.meti.go.jp/press/archive_202603.html","value_scope":"原子力事業者別の一般負担金率・年度総額であり特別負担金や廃炉関連額へ合算しない","evidence_gap":"令和7事業年度認可結果の事業者別率・総額・算定範囲を正本componentへ対応付けていない","release_conditions":["経済産業省の年度認可本文と添付資料を取得する","事業者・率・年度総額・内訳の行キーを定義する"],"recheck_cadence":"annual"},
+    {"tax_id":"nuclear-damage-support-special-charge","official_source_url":"https://www.meti.go.jp/press/archive_202603.html","value_scope":"対象原子力事業者に認可された特別負担金額であり一般負担金へ合算しない","evidence_gap":"令和7事業年度認可結果の対象事業者別額・納付期間・一般負担金との集計関係を対応付けていない","release_conditions":["経済産業省の年度認可本文と添付資料を取得する","対象事業者・個別額・期間・集計関係を定義する"],"recheck_cadence":"annual"},
+    {"tax_id":"nuclear-decommissioning-contribution","official_source_url":"https://www.meti.go.jp/press/archive_202603.html","value_scope":"年度認可された廃炉関連額・事業者別内訳であり一般・特別負担金へ合算しない","evidence_gap":"法令上の廃炉等積立金と候補名の廃炉拠出金の対応、および年度認可額の集計範囲を確定できていない","release_conditions":["法令上の正式名称と候補tax_idの対応を確定する","年度認可資料の総額・事業者別内訳・期間を定義する"],"recheck_cadence":"annual"},
+    {"tax_id":"postal-network-support-contribution","official_source_url":"https://laws.e-gov.go.jp/law/417AC0000000101","value_scope":"郵便局ネットワーク支援機構の年度算定と対象事業者別通知に依存し全国単一値として集計しない","evidence_gap":"現行年度の拠出金算定資料、対象事業者、算定基礎、納付期間を公開公式資料へ対応付けていない","release_conditions":["総務省または支援機構の年度別算定・認可資料を特定する","事業者・算定基礎・率または額・期間を定義する"],"recheck_cadence":"annual"},
+    {"tax_id":"regional-economy-revitalization-contribution","official_source_url":"https://laws.e-gov.go.jp/law/421AC0000000063","value_scope":"地域経済活性化支援機構の出資者・年度・業務規程に依存し全国単一値として集計しない","evidence_gap":"現行の拠出義務と年度別決定額、対象者、納付期間を公開公式資料で確認できていない","release_conditions":["所管省庁または機構の現行业務規程・年度資料を特定する","対象者・算定基礎・期間・終了条件を定義する"],"recheck_cadence":"annual"},
+    {"tax_id":"renewable-energy-surcharge","official_source_url":"https://www.meti.go.jp/press/2025/03/20260319004/20260319004.html","value_scope":"電気使用量に対する年度別全国一律単価であり買取費用総額や需要家モデル額を重複集計しない","evidence_gap":"2026年度単価と検針期間は確認したが公式ページが自動取得を拒否し安定したfixture更新経路を確立できていない","release_conditions":["METI公式ページを許容される方法で定期取得できる経路を確立する","単価・検針開始月・終了月・算定内訳の年度切替adapterを整備する"],"recheck_cadence":"annual"},
+    {"tax_id":"reprocessing-contribution","official_source_url":"https://laws.e-gov.go.jp/law/417AC0000000048","value_scope":"原子力事業者・再処理等数量・年度単価または通知額に基づき廃炉関連額へ合算しない","evidence_gap":"現行年度の再処理等拠出金単価、対象数量、事業者別通知額を公式年度資料へ対応付けていない","release_conditions":["経済産業省または使用済燃料再処理機構の年度算定資料を特定する","事業者・数量・単価・総額・期間の行キーを定義する"],"recheck_cadence":"annual"},
+    {"tax_id":"taxi-center-business-charge","official_source_url":"https://laws.e-gov.go.jp/law/421AC0000000064","value_scope":"指定地域・タクシーセンター・事業者別の業務負担金であり地域横断の単一値として集計しない","evidence_gap":"東京・大阪等の指定機関ごとの現行負担金規程、認可、車両・回数等の算定単位を対応付けていない","release_conditions":["各指定タクシーセンターの認可済み現行規程を特定する","地域・機関・事業者・算定単位・期間の安定キーを定義する"],"recheck_cadence":"annual"}
   ],
   "held_groups": [
-    {
-      "group_id": "batch-04-budget-and-sector-decisions",
-      "tax_ids": ["asbestos-relief-general-contribution","asbestos-relief-special-contribution","child-care-contribution","east-japan-business-rehabilitation-contribution","hepatitis-c-special-relief-contribution","minamata-specified-business-compensation-levy","nuclear-damage-support-general-charge","nuclear-damage-support-special-charge","nuclear-decommissioning-contribution","postal-network-support-contribution","regional-economy-revitalization-contribution","renewable-energy-surcharge","reprocessing-contribution","taxi-center-business-charge"],
-      "hold_reason": "現行値が年度告示、予算、認可、所管機関の算定結果または事業者別決定に依存するため、公式な年度資料と適用期間を対応付ける専用adapterが必要である"
-    },
     {
       "group_id": "batch-05-future-or-individual-charges",
       "tax_ids": ["fossil-fuel-levy","gx-specified-business-charge","supplementary-nuclear-damage-general-charge","supplementary-nuclear-damage-special-charge","telephone-accessibility-charge"],

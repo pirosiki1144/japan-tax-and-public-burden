@@ -32,8 +32,8 @@ test("all Issue 45 targets have exactly one implementation or concrete hold deci
   assert.equal(new Set(decisions).size, decisions.length);
   assert.deepEqual(decisions.toSorted(), issueTargets.map(({ tax_id }) => tax_id).toSorted());
   assert.ok(plan.held_groups.every(({ hold_reason }) => hold_reason.length >= 30));
-  assert.equal(issueTargets.filter(({ implementation_status }) => implementation_status === "implemented").length, 5);
-  assert.equal(issueTargets.filter(({ implementation_status }) => implementation_status === "held").length, 55);
+  assert.equal(issueTargets.filter(({ implementation_status }) => implementation_status === "implemented").length, 6);
+  assert.equal(issueTargets.filter(({ implementation_status }) => implementation_status === "held").length, 54);
 });
 
 test("Issue 56 targets are implemented or have actionable manual review metadata", async () => {
@@ -129,6 +129,63 @@ test("Issue 58 targets are implemented or have actionable scope-specific manual 
   assert.equal(new Set([...implemented, ...manual].map(({ tax_id }) => tax_id)).size, 14);
   assert.ok(manual.every(({ official_source_url, value_scope, evidence_gap, release_conditions }) => official_source_url.startsWith("https://") && value_scope.length >= 20 && evidence_gap.length >= 20 && release_conditions.length >= 2));
   assert.ok(manual.every(({ value_scope }) => /単一値として集計しない|合算しない|統合しない/.test(value_scope)));
+});
+
+test("Issue 59 targets are implemented or have evidence-specific annual manual metadata", async () => {
+  const plan = await readYaml(new URL("../config/public-burden-adapters.yaml", import.meta.url));
+  const issue59 = new Set(["asbestos-relief-general-contribution","asbestos-relief-special-contribution","child-care-contribution","east-japan-business-rehabilitation-contribution","hepatitis-c-special-relief-contribution","minamata-specified-business-compensation-levy","nuclear-damage-support-general-charge","nuclear-damage-support-special-charge","nuclear-decommissioning-contribution","postal-network-support-contribution","regional-economy-revitalization-contribution","renewable-energy-surcharge","reprocessing-contribution","taxi-center-business-charge"]);
+  const implemented = plan.implemented_targets.filter(({ tax_id }) => issue59.has(tax_id));
+  const manual = plan.manual_targets.filter(({ tax_id }) => issue59.has(tax_id));
+  assert.deepEqual(implemented.map(({ tax_id }) => tax_id), ["child-care-contribution"]);
+  assert.equal(manual.length, 13);
+  assert.equal(new Set([...implemented, ...manual].map(({ tax_id }) => tax_id)).size, 14);
+  assert.ok(manual.every(({ official_source_url, value_scope, evidence_gap, release_conditions, recheck_cadence }) => official_source_url.startsWith("https://") && value_scope.length >= 20 && evidence_gap.length >= 20 && release_conditions.length >= 2 && recheck_cadence === "annual"));
+  assert.ok(manual.every(({ value_scope }) => /集計しない|合算しない/.test(value_scope)));
+});
+
+test("2026 child care contribution rate and fiscal period reproduce offline", async () => {
+  const plan = await readYaml(new URL("../config/public-burden-adapters.yaml", import.meta.url));
+  const result = await runSourcePipeline({ root, sourceId: "nenkin-child-care-contribution-2026", fetchImpl: fixtureFetch, now, dryRun: true });
+  assert.equal(result.status, "no_change");
+  const facts = new Map(result.normalized.facts.map(({ fact_id, value }) => [fact_id, value]));
+  assert.equal(facts.get("child-care-period-start"), "2026-04-01");
+  assert.equal(facts.get("child-care-period-end"), "2027-03-31");
+  assert.equal(facts.get("child-care-contribution-rate"), 3.6);
+  const component = plan.implemented_targets.find(({ tax_id }) => tax_id === "child-care-contribution").components[0];
+  assert.deepEqual([component.period_start, component.period_end], ["2026-04-01", "2027-03-31"]);
+  assert.equal(component.numeric_value, 3.6);
+  assert.equal(component.unit, "per_thousand");
+  assert.equal(component.aggregation_role, "standalone");
+  assert.equal(component.included_in_total, false);
+});
+
+test("child care contribution annual changes are detected and missing scope fails closed", async () => {
+  const changedFetch = async (url) => {
+    const response = await fixtureFetch(url);
+    return new Response((await response.text()).replace("1,000分の3.6（0.36%）", "1,000分の3.7（0.36%）"), { status: 200, headers: { "content-type": "text/html" } });
+  };
+  const changed = await runSourcePipeline({ root, sourceId: "nenkin-child-care-contribution-2026", fetchImpl: changedFetch, now, dryRun: true });
+  assert.equal(changed.status, "change_detected");
+  assert.deepEqual(changed.candidate_diff.map(({ fact_id, current, candidate }) => ({ fact_id, current, candidate })), [{ fact_id: "child-care-contribution-rate", current: 3.6, candidate: 3.7 }]);
+  const rollover = await runSourcePipeline({
+    root, sourceId: "nenkin-child-care-contribution-2026", now, dryRun: true,
+    fetchImpl: async (url) => {
+      const response = await fixtureFetch(url);
+      return new Response((await response.text()).replace("令和8年度の子ども", "令和9年度の子ども"), { status: 200, headers: { "content-type": "text/html" } });
+    }
+  });
+  assert.equal(rollover.status, "change_detected");
+  assert.deepEqual(rollover.candidate_diff.map(({ fact_id, candidate }) => ({ fact_id, candidate })), [
+    { fact_id: "child-care-period-start", candidate: "2027-04-01" },
+    { fact_id: "child-care-period-end", candidate: "2028-03-31" }
+  ]);
+  await assert.rejects(runSourcePipeline({
+    root, sourceId: "nenkin-child-care-contribution-2026", now, dryRun: true,
+    fetchImpl: async (url) => {
+      const response = await fixtureFetch(url);
+      return new Response((await response.text()).replace("子ども・子育て拠出金率", "対象制度の記載なし"), { status: 200, headers: { "content-type": "text/html" } });
+    }
+  }), /child care contribution label was not found/);
 });
 
 test("PMDA contribution rates, notification formulas, and fiscal periods reproduce offline", async () => {

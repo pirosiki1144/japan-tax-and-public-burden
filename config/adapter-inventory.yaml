@@ -179,7 +179,7 @@
           "required_adapter": "egov_law_semantics",
           "adapter_status": "held",
           "reuse_key": "egov_law_api_json:418AC0000000004",
-          "hold_reason": "現行値が年度告示、予算、認可、所管機関の算定結果または事業者別決定に依存するため、公式な年度資料と適用期間を対応付ける専用adapterが必要である"
+          "hold_reason": "現行告示率は確認できるが年度資料と申告対象賃金年度・徴収開始日の対応を一つの公式資料で確認できていない。解除条件: 環境省告示と厚生労働省の現行年度申告案内を対応付ける、賃金年度・申告期間・徴収開始日を別フィールドで定義する。再確認: annual"
         }
       ]
     },
@@ -212,7 +212,7 @@
           "required_adapter": "egov_law_semantics",
           "adapter_status": "held",
           "reuse_key": "egov_law_api_json:418AC0000000004",
-          "hold_reason": "現行値が年度告示、予算、認可、所管機関の算定結果または事業者別決定に依存するため、公式な年度資料と適用期間を対応付ける専用adapterが必要である"
+          "hold_reason": "事業主別の現行決定額、通知日、納付期限は公開された全国一覧として確認できていない。解除条件: 環境再生保全機構の年度別決定資料の公開有無を確認する、非公開通知の場合は事業主別非公開値としてmanualを維持する。再確認: annual"
         }
       ]
     },
@@ -478,31 +478,42 @@
       "official_name": "子ども・子育て拠出金",
       "burden_type": "contribution",
       "implementation_issue": 45,
-      "implementation_status": "held",
+      "implementation_status": "implemented",
       "priority": "completed",
       "depends_on_issues": [
-        31
+        31,
+        46
       ],
       "batch_id": "issue-45-batch-04",
-      "reuse_group": "egov_law_api_json:424AC0000000065",
+      "reuse_group": "egov_law_api_json:424AC0000000065+html:www.nenkin.go.jp",
       "municipal_scope": "national_only",
       "capabilities": {
-        "liable_party": "needs_source_research",
-        "taxable_scope": "needs_source_research",
-        "calculation_basis": "needs_source_research",
-        "rate_or_amount": "needs_source_research",
-        "applicable_period": "needs_source_research"
+        "liable_party": "implemented",
+        "taxable_scope": "implemented",
+        "calculation_basis": "implemented",
+        "rate_or_amount": "implemented",
+        "applicable_period": "implemented"
       },
       "sources": [
         {
           "source_id": "egov-laws",
           "target_id": "424AC0000000065",
           "official_format": "egov_law_api_json",
-          "current_adapter": "manual",
+          "current_adapter": "egov_law_article_facts",
           "required_adapter": "egov_law_semantics",
           "adapter_status": "held",
           "reuse_key": "egov_law_api_json:424AC0000000065",
-          "hold_reason": "現行値が年度告示、予算、認可、所管機関の算定結果または事業者別決定に依存するため、公式な年度資料と適用期間を対応付ける専用adapterが必要である"
+          "hold_reason": "現行値は実装済みの公式資料sourceから抽出する"
+        },
+        {
+          "source_id": "nenkin-child-care-contribution-2026",
+          "target_id": "nenkin-child-care-contribution-2026-page-1",
+          "official_format": "html",
+          "current_adapter": "html_regex_facts",
+          "required_adapter": "html_semantics",
+          "adapter_status": "implemented",
+          "reuse_key": "html:www.nenkin.go.jp",
+          "shared_format_issue": 46
         }
       ]
     },
@@ -925,7 +936,7 @@
           "required_adapter": "egov_law_semantics",
           "adapter_status": "held",
           "reuse_key": "egov_law_api_json:423AC0100000113",
-          "hold_reason": "現行値が年度告示、予算、認可、所管機関の算定結果または事業者別決定に依存するため、公式な年度資料と適用期間を対応付ける専用adapterが必要である"
+          "hold_reason": "現行の拠出義務、対象者、年度別算定結果および終了状態を公式年度資料へ対応付けていない。解除条件: 所管機関の現行事業計画・決算・認可資料を特定する、対象者・算定基礎・期間・終了状態の安定キーを定義する。再確認: annual"
         }
       ]
     },
@@ -1306,7 +1317,7 @@
           "required_adapter": "egov_law_semantics",
           "adapter_status": "held",
           "reuse_key": "egov_law_api_json:420AC1000000002",
-          "hold_reason": "現行値が年度告示、予算、認可、所管機関の算定結果または事業者別決定に依存するため、公式な年度資料と適用期間を対応付ける専用adapterが必要である"
+          "hold_reason": "現行年度の対象者別拠出額、算定根拠、納付期限を公開公式資料で確認できていない。解除条件: 厚生労働省またはPMDAの年度別拠出決定資料を特定する、公開されない個別合意額の場合はmanualを維持する。再確認: annual"
         }
       ]
     },
@@ -2022,7 +2033,7 @@
           "required_adapter": "egov_law_semantics",
           "adapter_status": "held",
           "reuse_key": "egov_law_api_json:421AC1000000081",
-          "hold_reason": "現行値が年度告示、予算、認可、所管機関の算定結果または事業者別決定に依存するため、公式な年度資料と適用期間を対応付ける専用adapterが必要である"
+          "hold_reason": "現行の対象事業者、年度賦課額、算定式、納付期間を示す公開公式資料を確認できていない。解除条件: 環境省の年度別補償・賦課決定資料を特定する、対象事業者・総額・内訳・期間の集計関係を定義する。再確認: annual"
         }
       ]
     },
@@ -2284,7 +2295,7 @@
           "required_adapter": "egov_law_semantics",
           "adapter_status": "held",
           "reuse_key": "egov_law_api_json:423AC0000000094",
-          "hold_reason": "現行値が年度告示、予算、認可、所管機関の算定結果または事業者別決定に依存するため、公式な年度資料と適用期間を対応付ける専用adapterが必要である"
+          "hold_reason": "令和7事業年度認可結果の事業者別率・総額・算定範囲を正本componentへ対応付けていない。解除条件: 経済産業省の年度認可本文と添付資料を取得する、事業者・率・年度総額・内訳の行キーを定義する。再確認: annual"
         }
       ]
     },
@@ -2317,7 +2328,7 @@
           "required_adapter": "egov_law_semantics",
           "adapter_status": "held",
           "reuse_key": "egov_law_api_json:423AC0000000094",
-          "hold_reason": "現行値が年度告示、予算、認可、所管機関の算定結果または事業者別決定に依存するため、公式な年度資料と適用期間を対応付ける専用adapterが必要である"
+          "hold_reason": "令和7事業年度認可結果の対象事業者別額・納付期間・一般負担金との集計関係を対応付けていない。解除条件: 経済産業省の年度認可本文と添付資料を取得する、対象事業者・個別額・期間・集計関係を定義する。再確認: annual"
         }
       ]
     },
@@ -2350,7 +2361,7 @@
           "required_adapter": "egov_law_semantics",
           "adapter_status": "held",
           "reuse_key": "egov_law_api_json:417AC0000000048",
-          "hold_reason": "現行値が年度告示、予算、認可、所管機関の算定結果または事業者別決定に依存するため、公式な年度資料と適用期間を対応付ける専用adapterが必要である"
+          "hold_reason": "法令上の廃炉等積立金と候補名の廃炉拠出金の対応、および年度認可額の集計範囲を確定できていない。解除条件: 法令上の正式名称と候補tax_idの対応を確定する、年度認可資料の総額・事業者別内訳・期間を定義する。再確認: annual"
         }
       ]
     },
@@ -2709,7 +2720,7 @@
           "required_adapter": "egov_law_semantics",
           "adapter_status": "held",
           "reuse_key": "egov_law_api_json:417AC0000000101",
-          "hold_reason": "現行値が年度告示、予算、認可、所管機関の算定結果または事業者別決定に依存するため、公式な年度資料と適用期間を対応付ける専用adapterが必要である"
+          "hold_reason": "現行年度の拠出金算定資料、対象事業者、算定基礎、納付期間を公開公式資料へ対応付けていない。解除条件: 総務省または支援機構の年度別算定・認可資料を特定する、事業者・算定基礎・率または額・期間を定義する。再確認: annual"
         }
       ]
     },
@@ -2938,7 +2949,7 @@
           "required_adapter": "egov_law_semantics",
           "adapter_status": "held",
           "reuse_key": "egov_law_api_json:421AC0000000063",
-          "hold_reason": "現行値が年度告示、予算、認可、所管機関の算定結果または事業者別決定に依存するため、公式な年度資料と適用期間を対応付ける専用adapterが必要である"
+          "hold_reason": "現行の拠出義務と年度別決定額、対象者、納付期間を公開公式資料で確認できていない。解除条件: 所管省庁または機構の現行业務規程・年度資料を特定する、対象者・算定基礎・期間・終了条件を定義する。再確認: annual"
         }
       ]
     },
@@ -3004,7 +3015,7 @@
           "required_adapter": "egov_law_semantics",
           "adapter_status": "held",
           "reuse_key": "egov_law_api_json:423AC0000000108",
-          "hold_reason": "現行値が年度告示、予算、認可、所管機関の算定結果または事業者別決定に依存するため、公式な年度資料と適用期間を対応付ける専用adapterが必要である"
+          "hold_reason": "2026年度単価と検針期間は確認したが公式ページが自動取得を拒否し安定したfixture更新経路を確立できていない。解除条件: METI公式ページを許容される方法で定期取得できる経路を確立する、単価・検針開始月・終了月・算定内訳の年度切替adapterを整備する。再確認: annual"
         }
       ]
     },
@@ -3037,7 +3048,7 @@
           "required_adapter": "egov_law_semantics",
           "adapter_status": "held",
           "reuse_key": "egov_law_api_json:417AC0000000048",
-          "hold_reason": "現行値が年度告示、予算、認可、所管機関の算定結果または事業者別決定に依存するため、公式な年度資料と適用期間を対応付ける専用adapterが必要である"
+          "hold_reason": "現行年度の再処理等拠出金単価、対象数量、事業者別通知額を公式年度資料へ対応付けていない。解除条件: 経済産業省または使用済燃料再処理機構の年度算定資料を特定する、事業者・数量・単価・総額・期間の行キーを定義する。再確認: annual"
         }
       ]
     },
@@ -3429,7 +3440,7 @@
           "required_adapter": "egov_law_semantics",
           "adapter_status": "held",
           "reuse_key": "egov_law_api_json:421AC0000000064",
-          "hold_reason": "現行値が年度告示、予算、認可、所管機関の算定結果または事業者別決定に依存するため、公式な年度資料と適用期間を対応付ける専用adapterが必要である"
+          "hold_reason": "東京・大阪等の指定機関ごとの現行負担金規程、認可、車両・回数等の算定単位を対応付けていない。解除条件: 各指定タクシーセンターの認可済み現行規程を特定する、地域・機関・事業者・算定単位・期間の安定キーを定義する。再確認: annual"
         }
       ]
     },

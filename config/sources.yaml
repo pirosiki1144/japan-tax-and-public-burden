@@ -406,6 +406,39 @@
       "notes": "令和8年度固定PDFを年次監視する。一般拠出金と、個別通知を受ける付加拠出金を別componentにし、副作用拠出金へfactを流用しない。次年度は公式手引一覧を確認してURLとfixtureを更新する"
     },
     {
+      "source_id": "nenkin-child-care-contribution-2026",
+      "name": "日本年金機構 令和8年度子ども・子育て拠出金率",
+      "authority": "日本年金機構",
+      "base_url": "https://www.nenkin.go.jp/",
+      "entry_urls": ["https://www.nenkin.go.jp/service/kounen/hokenryo/ryogaku/ryogakuhyo/20200825.html"],
+      "source_type": "public_agency",
+      "scope": "令和8年度の子ども・子育て拠出金率、年度適用期間、事業主負担の算定率",
+      "jurisdiction": "Japan",
+      "priority": 1,
+      "cadence": "annual",
+      "enabled": true,
+      "automation_enabled": true,
+      "monitoring_tax_ids": ["child-care-contribution"],
+      "adapter": "html_regex_facts",
+      "accepted_content_types": ["text/html"],
+      "extraction": {
+        "expected_pages": 1,
+        "required_markers": [
+          {"page_index":0,"label":"child care contribution label","pattern":"子ども・子育て拠出金率"},
+          {"page_index":0,"label":"prior fiscal year comparison","pattern":"令和[0-9]+年度と同様"}
+        ],
+        "facts": [
+          {"fact_id":"child-care-period-start","page_index":0,"pattern":"(令和[0-9]+年度)の子ども・子育て拠出金率","capture_group":1,"transform":"japanese_fiscal_year_start","expected_value":"2026-04-01"},
+          {"fact_id":"child-care-period-end","page_index":0,"pattern":"(令和[0-9]+年度)の子ども・子育て拠出金率","capture_group":1,"transform":"japanese_fiscal_year_end","expected_value":"2027-03-31"},
+          {"fact_id":"child-care-contribution-rate","page_index":0,"pattern":"1,000分の([0-9]+(?:\\.[0-9]+)?)（[0-9]+(?:\\.[0-9]+)?%）","capture_group":1,"transform":"number","expected_value":3.6}
+        ]
+      },
+      "rate_limit": "サイトの利用条件に従う",
+      "terms_url": "https://www.nenkin.go.jp/riyoukiyaku/index.html",
+      "last_verified_at": "2026-08-22T20:45:29+09:00",
+      "notes": "令和8年度の公式率を年次監視する。年度は適用期間として正規化するが、公布日・施行日・徴収開始日はこのページから推測しない。次年度は同じ公式一覧ページの年度表示と率を確認する"
+    },
+    {
       "source_id": "nenkin-pension-premiums",
       "name": "日本年金機構 厚生年金・国民年金保険料",
       "authority": "日本年金機構",
