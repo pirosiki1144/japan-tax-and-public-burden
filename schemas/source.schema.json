@@ -72,7 +72,7 @@
         "page_index": {"type": "integer", "minimum": 0},
         "pattern": {"type": "string", "minLength": 1},
         "capture_group": {"type": "integer", "minimum": 1},
-        "transform": {"enum": ["string", "number", "japanese_number", "japanese_date", "japanese_year_month", "iso_date_components", "fiscal_year_start", "fiscal_year_end"]},
+        "transform": {"enum": ["string", "number", "japanese_number", "japanese_date", "japanese_year_month", "japanese_fiscal_year_start", "japanese_fiscal_year_end", "iso_date_components", "fiscal_year_start", "fiscal_year_end"]},
         "article_num": {"type": "string", "minLength": 1},
         "article_caption": {"type": "string", "minLength": 1},
         "item_num": {"type": "string", "minLength": 1},
