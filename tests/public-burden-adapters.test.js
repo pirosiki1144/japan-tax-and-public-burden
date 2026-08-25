@@ -32,8 +32,8 @@ test("all Issue 45 targets have exactly one implementation or concrete hold deci
   assert.equal(new Set(decisions).size, decisions.length);
   assert.deepEqual(decisions.toSorted(), issueTargets.map(({ tax_id }) => tax_id).toSorted());
   assert.ok(plan.held_groups.every(({ hold_reason }) => hold_reason.length >= 30));
-  assert.equal(issueTargets.filter(({ implementation_status }) => implementation_status === "implemented").length, 5);
-  assert.equal(issueTargets.filter(({ implementation_status }) => implementation_status === "held").length, 55);
+  assert.equal(issueTargets.filter(({ implementation_status }) => implementation_status === "implemented").length, 6);
+  assert.equal(issueTargets.filter(({ implementation_status }) => implementation_status === "held").length, 54);
 });
 
 test("Issue 56 targets are implemented or have actionable manual review metadata", async () => {
@@ -162,6 +162,43 @@ test("PMDA shared legal family never distributes one contribution's facts to ano
     root, sourceId: "pmda-infection-contribution-2026", now, dryRun: true,
     fetchImpl: async () => fixtureFetch("https://www.pmda.go.jp/files/000281001.pdf")
   }), /infection general rate was not found/);
+});
+
+test("Issue 59 targets have one official annual value or actionable manual metadata", async () => {
+  const plan = await readYaml(new URL("../config/public-burden-adapters.yaml", import.meta.url));
+  const issue59 = new Set(["asbestos-relief-general-contribution","asbestos-relief-special-contribution","child-care-contribution","east-japan-business-rehabilitation-contribution","hepatitis-c-special-relief-contribution","minamata-specified-business-compensation-levy","nuclear-damage-support-general-charge","nuclear-damage-support-special-charge","nuclear-decommissioning-contribution","postal-network-support-contribution","regional-economy-revitalization-contribution","renewable-energy-surcharge","reprocessing-contribution","taxi-center-business-charge"]);
+  const implemented = plan.implemented_targets.filter(({ tax_id }) => issue59.has(tax_id));
+  const manual = plan.manual_targets.filter(({ tax_id }) => issue59.has(tax_id));
+  assert.deepEqual(implemented.map(({ tax_id }) => tax_id), ["child-care-contribution"]);
+  assert.equal(manual.length, 13);
+  assert.equal(new Set([...implemented, ...manual].map(({ tax_id }) => tax_id)).size, 14);
+  assert.ok(manual.every(({ official_source_url, value_scope, evidence_gap, release_conditions, recheck_cadence }) => official_source_url.startsWith("https://") && value_scope.length >= 20 && evidence_gap.length >= 20 && release_conditions.length >= 2 && recheck_cadence === "annual"));
+  assert.ok(manual.every(({ value_scope }) => /単一値として集計しない|合算しない/.test(value_scope)));
+});
+
+test("Issue 59 child-care annual value and period reproduce offline without conflation", async () => {
+  const plan = await readYaml(new URL("../config/public-burden-adapters.yaml", import.meta.url));
+  const child = await runSourcePipeline({ root, sourceId: "cfa-child-care-contribution-2026", fetchImpl: fixtureFetch, now, dryRun: true });
+  assert.equal(child.status, "no_change");
+  const childFacts = new Map(child.normalized.facts.map(({ fact_id, value }) => [fact_id, value]));
+  assert.deepEqual([...childFacts.values()], ["2026-04-01", "2027-03-31", 0.36]);
+  const childComponent = plan.implemented_targets.find(({ tax_id }) => tax_id === "child-care-contribution").components[0];
+  assert.equal(childComponent.liable_party_role, "employer");
+  assert.equal(childComponent.numeric_value, 0.36);
+  assert.equal(childComponent.unit, "percent");
+  assert.doesNotMatch(childComponent.subject_scope, /支援金/);
+});
+
+test("Issue 59 child-care annual changes are detected and missing period markers fail closed", async () => {
+  const changedChild = await runSourcePipeline({
+    root, sourceId: "cfa-child-care-contribution-2026", now, dryRun: true,
+    fetchImpl: async (url) => new Response((await (await fixtureFetch(url)).text()).replace("0.36％", "0.37％"), { status: 200, headers: { "content-type": "text/html" } })
+  });
+  assert.deepEqual(changedChild.candidate_diff.map(({ fact_id, current, candidate }) => ({ fact_id, current, candidate })), [{ fact_id: "child-care-contribution-rate", current: 0.36, candidate: 0.37 }]);
+  await assert.rejects(runSourcePipeline({
+    root, sourceId: "cfa-child-care-contribution-2026", now, dryRun: true,
+    fetchImpl: async (url) => new Response((await (await fixtureFetch(url)).text()).replaceAll("令和8年度", "年度未確認"), { status: 200, headers: { "content-type": "text/html" } })
+  }), /child-care-period-start was not found/);
 });
 
 test("disability employment levy amount is reproducible offline", async () => {

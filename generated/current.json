@@ -4,6 +4,69 @@
   "as_of": "2026-08-18",
   "sources": [
     {
+      "source_id": "cfa-child-care-contribution-2026",
+      "name": "こども家庭庁 令和8年度子ども・子育て拠出金率",
+      "authority": "こども家庭庁",
+      "base_url": "https://www.cfa.go.jp/",
+      "entry_urls": [
+        "https://www.cfa.go.jp/policies/budget/tokubetsukaikei/kodomokosodate-r08"
+      ],
+      "source_type": "ministry",
+      "scope": "令和8年度の子ども・子育て拠出金率と適用年度",
+      "jurisdiction": "Japan",
+      "priority": 1,
+      "cadence": "annual",
+      "enabled": true,
+      "automation_enabled": true,
+      "monitoring_tax_ids": [
+        "child-care-contribution"
+      ],
+      "adapter": "html_regex_facts",
+      "accepted_content_types": [
+        "text/html"
+      ],
+      "extraction": {
+        "expected_pages": 1,
+        "required_markers": [
+          {
+            "page_index": 0,
+            "label": "child care contribution heading",
+            "pattern": "子ども・子育て拠出金率"
+          }
+        ],
+        "facts": [
+          {
+            "fact_id": "child-care-period-start",
+            "page_index": 0,
+            "pattern": "(令和8年度)の子ども・子育て拠出金率",
+            "capture_group": 1,
+            "transform": "japanese_fiscal_year_start",
+            "expected_value": "2026-04-01"
+          },
+          {
+            "fact_id": "child-care-period-end",
+            "page_index": 0,
+            "pattern": "(令和8年度)の子ども・子育て拠出金率",
+            "capture_group": 1,
+            "transform": "japanese_fiscal_year_end",
+            "expected_value": "2027-03-31"
+          },
+          {
+            "fact_id": "child-care-contribution-rate",
+            "page_index": 0,
+            "pattern": "令和8年度の子ども・子育て拠出金率[　 ]*([0-9]+(?:\\.[0-9]+)?)％",
+            "capture_group": 1,
+            "transform": "number",
+            "expected_value": 0.36
+          }
+        ]
+      },
+      "rate_limit": "サイトの利用条件に従う",
+      "terms_url": "https://www.cfa.go.jp/terms",
+      "last_verified_at": "2026-08-24T12:00:00+09:00",
+      "notes": "令和8年度固定ページの率と年度を監視する。厚生年金保険の標準報酬月額・標準賞与額を算定基礎とする法令上の負担主体・算式はe-Gov法令sourceで分離して確認する。子ども・子育て支援金率と混同しない。次年度は公式特別会計ページを確認してURLとfixtureを更新する"
+    },
+    {
       "source_id": "egov-laws",
       "name": "e-Gov法令検索",
       "authority": "デジタル庁",
