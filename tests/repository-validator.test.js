@@ -20,6 +20,7 @@ test("validation workflow runs only for pull requests", async () => {
   assert.ok(Object.hasOwn(workflow.on, "pull_request"));
   assert.ok(!Object.hasOwn(workflow.on, "push"));
   assert.ok(workflow.jobs.validate.steps.some(({ run }) => run === "npm run inventory:check"));
+  assert.ok(workflow.jobs.validate.steps.some(({ run }) => run === "npm run audit:coverage"));
   assert.ok(workflow.jobs.validate.steps.some(({ run }) => run === "npm run semantics:check"));
   assert.ok(workflow.jobs.validate.steps.some(({ run }) => run === "npm run monitor:check"));
   assert.ok(workflow.jobs.validate.steps.some(({ run }) => run === "npm run generate:check"));
