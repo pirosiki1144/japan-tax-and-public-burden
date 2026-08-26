@@ -1187,7 +1187,7 @@
           "required_adapter": "egov_law_semantics",
           "adapter_status": "held",
           "reuse_key": "egov_law_api_json:505AC0000000032",
-          "hold_reason": "施行前の制度または個別認可額を含み、現在適用中の全国共通値として扱えないため、施行日と初回の公式算定結果を確認するまで保留する"
+          "hold_reason": "令和10年度からの徴収は法律で確定しているが、初年度単価を定める政令と具体的な徴収日は未公表。解除条件: 令和10年度の単価を定める政令を確認する、徴収期間・納期限・原油等区分別係数を公式資料へ対応付ける。再確認: quarterly"
         }
       ]
     },
@@ -1284,7 +1284,7 @@
           "required_adapter": "egov_law_semantics",
           "adapter_status": "held",
           "reuse_key": "egov_law_api_json:505AC0000000032",
-          "hold_reason": "施行前の制度または個別認可額を含み、現在適用中の全国共通値として扱えないため、施行日と初回の公式算定結果を確認するまで保留する"
+          "hold_reason": "令和15年度からの徴収は法律で確定しているが、初回入札、単価、対象期間および具体的徴収日は未公表。解除条件: 令和15年度の初回入札と単価決定を確認する、対象事業者・排出枠・納期限を公式資料へ対応付ける。再確認: annual"
         }
       ]
     },
@@ -3341,7 +3341,7 @@
           "required_adapter": "egov_law_semantics",
           "adapter_status": "held",
           "reuse_key": "egov_law_api_json:426AC0000000133",
-          "hold_reason": "施行前の制度または個別認可額を含み、現在適用中の全国共通値として扱えないため、施行日と初回の公式算定結果を確認するまで保留する"
+          "hold_reason": "制度は施行済みだが、現行年度の事業者別算定額と納付日を公開資料へ一意に対応付けていない。解除条件: 文部科学省の現行年度算定・徴収資料を特定する、事業者・原子炉熱出力・算定期間・金額を定義する。再確認: annual"
         }
       ]
     },
@@ -3374,7 +3374,7 @@
           "required_adapter": "egov_law_semantics",
           "adapter_status": "held",
           "reuse_key": "egov_law_api_json:426AC0000000133",
-          "hold_reason": "施行前の制度または個別認可額を含み、現在適用中の全国共通値として扱えないため、施行日と初回の公式算定結果を確認するまで保留する"
+          "hold_reason": "制度は施行済みだが、事故条件が発生しない限り全国共通の現行額は存在せず、個別徴収開始日も未確定。解除条件: 政令基準を超える原子力損害の公式確認を検知する、対象事業者・弁済額等・特別負担金額・納期限を対応付ける。再確認: annual"
         }
       ]
     },
@@ -3449,31 +3449,42 @@
       "official_name": "unknown",
       "burden_type": "burden_charge",
       "implementation_issue": 45,
-      "implementation_status": "held",
+      "implementation_status": "implemented",
       "priority": "completed",
       "depends_on_issues": [
-        31
+        31,
+        46
       ],
       "batch_id": "issue-45-batch-05",
-      "reuse_group": "egov_law_api_json:502AC0000000053",
+      "reuse_group": "egov_law_api_json:502AC0000000053+html:www.tca.or.jp",
       "municipal_scope": "national_only",
       "capabilities": {
-        "liable_party": "needs_source_research",
-        "taxable_scope": "needs_source_research",
-        "calculation_basis": "needs_source_research",
-        "rate_or_amount": "needs_source_research",
-        "applicable_period": "needs_source_research"
+        "liable_party": "implemented",
+        "taxable_scope": "implemented",
+        "calculation_basis": "implemented",
+        "rate_or_amount": "implemented",
+        "applicable_period": "implemented"
       },
       "sources": [
         {
           "source_id": "egov-laws",
           "target_id": "502AC0000000053",
           "official_format": "egov_law_api_json",
-          "current_adapter": "manual",
+          "current_adapter": "egov_law_article_facts",
           "required_adapter": "egov_law_semantics",
           "adapter_status": "held",
           "reuse_key": "egov_law_api_json:502AC0000000053",
-          "hold_reason": "施行前の制度または個別認可額を含み、現在適用中の全国共通値として扱えないため、施行日と初回の公式算定結果を確認するまで保留する"
+          "hold_reason": "現行値は実装済みの公式資料sourceから抽出する"
+        },
+        {
+          "source_id": "tca-telephone-relay-number-price-2026",
+          "target_id": "tca-telephone-relay-number-price-2026-page-1",
+          "official_format": "html",
+          "current_adapter": "html_regex_facts",
+          "required_adapter": "html_semantics",
+          "adapter_status": "implemented",
+          "reuse_key": "html:www.tca.or.jp",
+          "shared_format_issue": 46
         }
       ]
     },
