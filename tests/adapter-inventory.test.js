@@ -92,3 +92,16 @@ test("missing, duplicate, and municipal-scope mistakes fail coverage validation"
   municipality.targets.find(({ burden_type }) => burden_type === "local_tax").municipal_scope = "national_only";
   assert.ok(validateInventoryCoverage(municipality, monitoring).some((error) => /Issue #20/.test(error)));
 });
+
+test("implemented assignments and manual reasons cannot silently disappear", async () => {
+  const { inventory, monitoring } = await inputs();
+  const implemented = structuredClone(inventory);
+  const implementedTarget = implemented.targets.find(({ implementation_status }) => implementation_status === "implemented");
+  implementedTarget.sources.forEach((source) => { source.adapter_status = "held"; source.hold_reason = "根拠付きmanualへ移行するための一時的な確認理由を記録する"; });
+  assert.ok(validateInventoryCoverage(implemented, monitoring).some((error) => /implemented target has no implemented source/.test(error)));
+
+  const manual = structuredClone(inventory);
+  const manualTarget = manual.targets.find(({ implementation_status }) => implementation_status === "held");
+  delete manualTarget.sources.find(({ adapter_status }) => adapter_status === "held").hold_reason;
+  assert.ok(validateInventoryCoverage(manual, monitoring).some((error) => /manual reason is missing/.test(error)));
+});

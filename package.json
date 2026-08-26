@@ -13,6 +13,7 @@
     "semantics:baseline": "node scripts/monitoring/write-semantic-baseline.js",
     "prepare-update": "node scripts/automation/prepare-update.js",
     "audit": "node scripts/audit/audit-repository.js",
+    "audit:coverage": "node scripts/audit/adapter-coverage-audit.js",
     "audit:scan": "node scripts/audit/audit-source-scan.js",
     "audit:issues": "node scripts/audit/publish-audit-issues.js",
     "generate": "node scripts/generate/generate-distribution.js && node scripts/generate/initial-master-selection.js",
