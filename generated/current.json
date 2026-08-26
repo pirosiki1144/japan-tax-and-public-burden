@@ -817,6 +817,74 @@
       "notes": ""
     },
     {
+      "source_id": "tca-telephone-relay-number-price-2026",
+      "name": "電気通信事業者協会 令和8年度電話リレーサービス番号単価",
+      "authority": "一般社団法人電気通信事業者協会（総務大臣指定支援機関）",
+      "base_url": "https://www.tca.or.jp/",
+      "entry_urls": [
+        "https://www.tca.or.jp/telephonerelay_service_support/qa/"
+      ],
+      "source_type": "public_agency",
+      "scope": "電話リレーサービス負担金の負担主体、番号数による算定基礎、令和8年度番号単価",
+      "jurisdiction": "Japan",
+      "priority": 1,
+      "cadence": "annual",
+      "enabled": true,
+      "automation_enabled": true,
+      "monitoring_tax_ids": [
+        "telephone-accessibility-charge"
+      ],
+      "adapter": "html_regex_facts",
+      "accepted_content_types": [
+        "text/html"
+      ],
+      "extraction": {
+        "expected_pages": 1,
+        "required_markers": [
+          {
+            "page_index": 0,
+            "label": "relay carrier liability",
+            "pattern": "特定電話提供事業者である各電話会社が、サービス提供に用いている電話番号の使用数に応じて"
+          },
+          {
+            "page_index": 0,
+            "label": "twelve monthly prices",
+            "pattern": "1円 1円 1円 1円 1円 1円 1円 1円 1円 1円 1円 1円"
+          }
+        ],
+        "facts": [
+          {
+            "fact_id": "telephone-relay-period-start",
+            "page_index": 0,
+            "pattern": "(令和8年度)の番号単価",
+            "capture_group": 1,
+            "transform": "japanese_fiscal_year_start",
+            "expected_value": "2026-04-01"
+          },
+          {
+            "fact_id": "telephone-relay-period-end",
+            "page_index": 0,
+            "pattern": "(令和8年度)の番号単価",
+            "capture_group": 1,
+            "transform": "japanese_fiscal_year_end",
+            "expected_value": "2027-03-31"
+          },
+          {
+            "fact_id": "telephone-relay-number-price",
+            "page_index": 0,
+            "pattern": "1円 1円 1円 1円 1円 1円 1円 1円 1円 1円 1円 ([0-9０-９]+)円",
+            "capture_group": 1,
+            "transform": "japanese_number",
+            "expected_value": 1
+          }
+        ]
+      },
+      "rate_limit": "サイトの利用条件に従う",
+      "terms_url": "https://www.tca.or.jp/information/",
+      "last_verified_at": "2026-08-26T12:00:00+09:00",
+      "notes": "令和8年度の12か月がすべて1番号当たり月額1円であることを構造マーカーで確認する。法定負担主体である特定電話提供事業者の負担金と、各社が利用者へ設定する電話リレーサービス料を二重計上しない。次年度は公式Q&Aと認可発表を確認してURLとfixtureを更新する"
+    },
+    {
       "source_id": "tca-universal-service-number-price",
       "name": "電気通信事業者協会 電話ユニバーサルサービス番号単価Q&A",
       "authority": "一般社団法人電気通信事業者協会（総務大臣指定支援機関）",

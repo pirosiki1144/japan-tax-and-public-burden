@@ -32,8 +32,8 @@ test("all Issue 45 targets have exactly one implementation or concrete hold deci
   assert.equal(new Set(decisions).size, decisions.length);
   assert.deepEqual(decisions.toSorted(), issueTargets.map(({ tax_id }) => tax_id).toSorted());
   assert.ok(plan.held_groups.every(({ hold_reason }) => hold_reason.length >= 30));
-  assert.equal(issueTargets.filter(({ implementation_status }) => implementation_status === "implemented").length, 6);
-  assert.equal(issueTargets.filter(({ implementation_status }) => implementation_status === "held").length, 54);
+  assert.equal(issueTargets.filter(({ implementation_status }) => implementation_status === "implemented").length, 7);
+  assert.equal(issueTargets.filter(({ implementation_status }) => implementation_status === "held").length, 53);
 });
 
 test("Issue 56 targets are implemented or have actionable manual review metadata", async () => {
@@ -199,6 +199,40 @@ test("Issue 59 child-care annual changes are detected and missing period markers
     root, sourceId: "cfa-child-care-contribution-2026", now, dryRun: true,
     fetchImpl: async (url) => new Response((await (await fixtureFetch(url)).text()).replaceAll("令和8年度", "年度未確認"), { status: 200, headers: { "content-type": "text/html" } })
   }), /child-care-period-start was not found/);
+});
+
+test("Issue 60 separates pre-enforcement, active conditional, and active annual-value states", async () => {
+  const plan = await readYaml(new URL("../config/public-burden-adapters.yaml", import.meta.url));
+  const issue60 = new Set(["fossil-fuel-levy","gx-specified-business-charge","supplementary-nuclear-damage-general-charge","supplementary-nuclear-damage-special-charge","telephone-accessibility-charge"]);
+  const implemented = plan.implemented_targets.filter(({ tax_id }) => issue60.has(tax_id));
+  const manual = plan.manual_targets.filter(({ tax_id }) => issue60.has(tax_id));
+  assert.deepEqual(implemented.map(({ tax_id }) => tax_id), ["telephone-accessibility-charge"]);
+  assert.equal(manual.length, 4);
+  assert.equal(new Set([...implemented, ...manual].map(({ tax_id }) => tax_id)).size, 5);
+  const byId = new Map([...implemented, ...manual].map((target) => [target.tax_id, target]));
+  assert.equal(byId.get("fossil-fuel-levy").lifecycle.current_state, "pre_enforcement");
+  assert.equal(byId.get("fossil-fuel-levy").lifecycle.collection_start.value, "2028-04-01");
+  assert.equal(byId.get("fossil-fuel-levy").lifecycle.collection_start.precision, "fiscal_year");
+  assert.equal(byId.get("gx-specified-business-charge").lifecycle.collection_start.value, "2033-04-01");
+  assert.equal(byId.get("supplementary-nuclear-damage-general-charge").lifecycle.current_state, "active_individual_decision");
+  assert.equal(byId.get("supplementary-nuclear-damage-special-charge").lifecycle.current_state, "active_conditional");
+  assert.equal(byId.get("telephone-accessibility-charge").lifecycle.current_state, "active_official_value");
+  assert.ok([...implemented, ...manual].every(({ lifecycle }) => lifecycle && lifecycle.promulgation.raw && lifecycle.enforcement.raw && lifecycle.application_start.raw && lifecycle.collection_start.raw && lifecycle.release_events.length > 0));
+});
+
+test("Issue 60 telephone relay annual price reproduces offline and changes fail closed", async () => {
+  const plan = await readYaml(new URL("../config/public-burden-adapters.yaml", import.meta.url));
+  const result = await runSourcePipeline({ root, sourceId: "tca-telephone-relay-number-price-2026", fetchImpl: fixtureFetch, now, dryRun: true });
+  assert.equal(result.status, "no_change");
+  assert.deepEqual(result.normalized.facts.map(({ value }) => value), ["2026-04-01", "2027-03-31", 1]);
+  const component = plan.implemented_targets.find(({ tax_id }) => tax_id === "telephone-accessibility-charge").components[0];
+  assert.equal(component.numeric_value, 1);
+  assert.equal(component.unit, "yen_per_number_month");
+  assert.equal(component.included_in_total, false);
+  await assert.rejects(runSourcePipeline({
+    root, sourceId: "tca-telephone-relay-number-price-2026", now, dryRun: true,
+    fetchImpl: async (url) => new Response((await (await fixtureFetch(url)).text()).replaceAll("1円", "2円"), { status: 200, headers: { "content-type": "text/html" } })
+  }), /twelve monthly prices was not found/);
 });
 
 test("disability employment levy amount is reproducible offline", async () => {
