@@ -1,0 +1,64 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://github.com/pirosiki1144/japan-tax-and-public-burden/schemas/monitoring-manifest.schema.json",
+  "title": "Canonical monitoring manifest",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["schema_version", "metadata", "targets"],
+  "properties": {
+    "schema_version": {"const": 1},
+    "metadata": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["monitoring_generated_at", "adapter_inventory_generated_at", "decision_profiles"],
+      "properties": {
+        "monitoring_generated_at": {"type": "string", "format": "date-time"},
+        "adapter_inventory_generated_at": {"type": "string", "format": "date-time"},
+        "decision_profiles": {
+          "type": "object",
+          "additionalProperties": false,
+          "required": ["39", "42", "43", "44", "45"],
+          "properties": {
+            "39": {"$ref": "#/$defs/profile"},
+            "42": {"$ref": "#/$defs/profile"},
+            "43": {"$ref": "#/$defs/profile"},
+            "44": {"$ref": "#/$defs/profile"},
+            "45": {"$ref": "#/$defs/profile"}
+          }
+        }
+      }
+    },
+    "targets": {
+      "type": "array",
+      "minItems": 1,
+      "items": {"$ref": "#/$defs/target"}
+    }
+  },
+  "$defs": {
+    "profile": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["verified_at"],
+      "properties": {
+        "verified_at": {"type": "string", "format": "date-time"},
+        "value_scope": {"type": "string", "minLength": 1}
+      }
+    },
+    "target": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["tax_id", "implementation_issue", "implementation_status", "decision_kind", "monitoring_mode", "cadence", "municipal_scope", "decision"],
+      "properties": {
+        "tax_id": {"type": "string", "pattern": "^[a-z0-9]+(?:-[a-z0-9]+)*$"},
+        "implementation_issue": {"enum": [39, 42, 43, 44, 45]},
+        "implementation_status": {"enum": ["implemented_initial", "implemented", "held"]},
+        "decision_kind": {"enum": ["initial", "standard", "public_implemented", "public_manual", "public_grouped_hold"]},
+        "projection_order": {"type": "integer", "minimum": 0},
+        "monitoring_mode": {"enum": ["automated", "manual", "out_of_scope"]},
+        "cadence": {"type": "string", "minLength": 1},
+        "municipal_scope": {"enum": ["national_only", "issue_20"]},
+        "decision": {"type": "object"}
+      }
+    }
+  }
+}

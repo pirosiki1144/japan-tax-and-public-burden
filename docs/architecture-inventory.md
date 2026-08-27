@@ -30,7 +30,7 @@
 
 - Git管理ファイル数と責務別件数
 - JavaScriptファイル数、相対import辺、循環import
-- 112件中110件の`tax_id`がmonitoring、inventory、制度別判断表へ重複し、消費税・自動車税だけが別経路にある状態
+- canonical manifest 112件から、monitoring、inventory、制度別互換投影を一方向生成する状態
 - filesystemを直接importするファイルと、`writeFile` + `rename`による原子的書込みの重複実装
 - 現状と#71後の制度追加時変更面
 
@@ -41,10 +41,11 @@
 | 対象 | 判断 | 根拠 | 実施Issue |
 | --- | --- | --- | --- |
 | `config/sources.yaml` | 維持 | 巡回URLの唯一の正本 | #71 |
-| 制度別adapter判断表4件 | 統合候補 | 共通構造で同一生成処理へ入力される | #71 |
-| `config/monitoring.yaml` | 派生物として維持または統合 | runtime向け投影だがinventoryと重複 | #71 |
-| `config/adapter-inventory.yaml` | 派生物として維持または統合 | coverage向け投影だがmonitoringと重複 | #71 |
-| 対応する制度別Schema4件 | 共通化候補 | 共通フィールドを別Schemaで管理 | #74 |
+| `config/monitoring-manifest.yaml` | 正本として維持 | 全112制度の監視・実装判断を一意に保持 | #71完了 |
+| 制度別adapter判断表4件 | 削除 | canonical manifestへ統合し、必要なviewはメモリ上で生成 | #71完了 |
+| `config/monitoring.yaml` | 派生物として維持 | sourceを展開したruntime契約としてconsumerが利用 | #71完了 |
+| `config/adapter-inventory.yaml` | 派生物として維持 | batch・形式・capabilityを展開したcoverage/runtime契約 | #71完了 |
+| 対応する制度別Schema4件 | 維持 | manifestから生成する制度群viewの詳細制約を維持し、共通化は#74で実施 | #74 |
 | source/document/semantic adapter | Registryへ統合 | 選択契約を一箇所で検証する | #72 |
 | pipeline/generate/automation | applicationとして維持・再配置 | ユースケース単位の独立責務がある | #73 |
 | CLIのファイルI/O | 共通adapterへ統合 | 読込み・検証・原子的書込みが重複 | #73 |

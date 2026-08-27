@@ -2,6 +2,7 @@ import { mkdir, readFile, readdir, rename, writeFile } from "node:fs/promises";
 import { basename, dirname, extname, join } from "node:path";
 import { fileURLToPath } from "node:url";
 import { readYaml } from "../validate/schema-validator.js";
+import { loadMonitoringManifest, targetDecisions } from "./monitoring-manifest.js";
 
 const root = fileURLToPath(new URL("../..", import.meta.url));
 const outputPath = join(root, "config/adapter-inventory.yaml");
@@ -91,48 +92,37 @@ function assignBatches(targets) {
 }
 
 export async function buildAdapterInventory(repositoryRoot) {
-  const [monitoring, burdens, nationalAdapters, localAdapters, socialAdapters, publicAdapters] = await Promise.all([
+  const [monitoring, burdens, manifest] = await Promise.all([
     readYaml(join(repositoryRoot, "config/monitoring.yaml")),
     readBurdens(repositoryRoot),
-    readYaml(join(repositoryRoot, "config/national-tax-adapters.yaml")),
-    readYaml(join(repositoryRoot, "config/local-tax-adapters.yaml")),
-    readYaml(join(repositoryRoot, "config/social-insurance-adapters.yaml")),
-    readYaml(join(repositoryRoot, "config/public-burden-adapters.yaml"))
+    loadMonitoringManifest(repositoryRoot)
   ]);
-  const nationalById = new Map(nationalAdapters.targets.map((target) => [target.tax_id, target]));
-  const localById = new Map(localAdapters.targets.map((target) => [target.tax_id, target]));
-  const socialById = new Map(socialAdapters.targets.map((target) => [target.tax_id, target]));
-  const publicById = new Map([
-    ...publicAdapters.implemented_targets.map((target) => [target.tax_id, { ...target, status: "implemented" }]),
-    ...publicAdapters.manual_targets.map((target) => [target.tax_id, {
-      ...target,
-      status: "held",
-      hold_reason: `${target.evidence_gap}。解除条件: ${target.release_conditions.join("、")}。再確認: ${target.recheck_cadence}`
-    }]),
-    ...publicAdapters.held_groups.flatMap((group) => group.tax_ids.map((taxId) => [taxId, { tax_id: taxId, status: "held", hold_reason: group.hold_reason }]))
-  ]);
+  const decisions = targetDecisions(manifest);
   const burdenById = new Map(burdens.map((burden) => [burden.tax_id, burden]));
   const targets = monitoring.targets.filter(({ enabled }) => enabled).map((monitoringTarget) => {
     const burden = burdenById.get(monitoringTarget.tax_id);
     if (!burden) throw new Error(`${monitoringTarget.tax_id}: canonical burden is missing`);
-    const issue = implementationIssue(burden);
-    const nationalPlan = issue === 42 ? nationalById.get(burden.tax_id) : null;
-    const localPlan = issue === 43 ? localById.get(burden.tax_id) : null;
-    const socialPlan = issue === 44 ? socialById.get(burden.tax_id) : null;
-    const publicPlan = issue === 45 ? publicById.get(burden.tax_id) : null;
-    if (issue === 42 && !nationalPlan) throw new Error(`${burden.tax_id}: Issue #42 adapter decision is missing`);
-    if (issue === 43 && !localPlan) throw new Error(`${burden.tax_id}: Issue #43 adapter decision is missing`);
-    if (issue === 44 && !socialPlan) throw new Error(`${burden.tax_id}: Issue #44 adapter decision is missing`);
-    if (issue === 45 && !publicPlan) throw new Error(`${burden.tax_id}: Issue #45 adapter decision is missing`);
-    const implementationPlan = nationalPlan ?? localPlan ?? socialPlan ?? publicPlan;
+    const expectedIssue = implementationIssue(burden);
+    const canonical = decisions.get(burden.tax_id);
+    if (!canonical) throw new Error(`${burden.tax_id}: canonical adapter decision is missing`);
+    if (canonical.implementation_issue !== expectedIssue) throw new Error(`${burden.tax_id}: implementation issue must be ${expectedIssue}`);
+    const issue = canonical.implementation_issue;
+    const implementationPlan = {
+      tax_id: canonical.tax_id,
+      status: canonical.implementation_status === "implemented_initial" ? "implemented" : canonical.implementation_status,
+      ...canonical.decision,
+      ...(canonical.decision_kind === "public_manual" ? {
+        hold_reason: `${canonical.decision.evidence_gap}。解除条件: ${canonical.decision.release_conditions.join("、")}。再確認: ${canonical.decision.recheck_cadence}`
+      } : {})
+    };
     const sources = monitoringTarget.sources.filter(({ enabled }) => enabled).map((source) => {
       const format = sourceFormat(source.target_url);
-      const socialImplemented = issue === 44 && socialPlan.status === "implemented" && socialPlan.source_ids.includes(source.source_id);
+      const socialImplemented = issue === 44 && implementationPlan.status === "implemented" && implementationPlan.source_ids.includes(source.source_id);
       const socialHoldReason = issue === 44 && !socialImplemented
-        ? socialPlan.hold_reason ?? "制度根拠法令は保持するが、現行の率・金額は実装済みの年度別公式資料sourceから抽出する"
+        ? implementationPlan.hold_reason ?? "制度根拠法令は保持するが、現行の率・金額は実装済みの年度別公式資料sourceから抽出する"
         : null;
-      const publicImplemented = issue === 45 && publicPlan.status === "implemented" && publicPlan.source_ids.includes(source.source_id);
-      const publicHoldReason = issue === 45 && !publicImplemented ? publicPlan.hold_reason ?? "現行値は実装済みの公式資料sourceから抽出する" : null;
+      const publicImplemented = issue === 45 && implementationPlan.status === "implemented" && implementationPlan.source_ids.includes(source.source_id);
+      const publicHoldReason = issue === 45 && !publicImplemented ? implementationPlan.hold_reason ?? "現行値は実装済みの公式資料sourceから抽出する" : null;
       return {
         source_id: source.source_id,
         target_id: source.target_id,
@@ -151,7 +141,7 @@ export async function buildAdapterInventory(repositoryRoot) {
       official_name: burden.official_name,
       burden_type: burden.burden_type,
       implementation_issue: issue,
-      implementation_status: issue === 39 ? "implemented_initial" : [42, 43, 44, 45].includes(issue) ? (implementationPlan.status === "implemented" ? "implemented" : "held") : "planned",
+      implementation_status: canonical.implementation_status,
       priority: issue === 39 || [42, 43, 44, 45].includes(issue) ? "completed" : "medium",
       depends_on_issues: issue === 39 ? [] : [31, ...(sources.some(({ official_format }) => official_format !== "egov_law_api_json") ? [46] : [])],
       batch_id: "pending",
@@ -164,7 +154,7 @@ export async function buildAdapterInventory(repositoryRoot) {
   assignBatches(targets);
   return {
     schema_version: 1,
-    generated_at: monitoring.generated_at,
+    generated_at: manifest.metadata.adapter_inventory_generated_at,
     batch_policy: { default_max_targets: DEFAULT_BATCH_SIZE, hard_max_targets: MAX_BATCH_SIZE, common_source_exception: "one_common_source_unit" },
     targets
   };

@@ -1,11 +1,11 @@
 {
   "schema_version": 1,
   "scope": "tracked repository files",
-  "baseline_commit": "473d05b2ab4d5a34e62fc4863045a8a6a6cad8f8",
+  "baseline_commit": "4a29cd5cd76d6f5bcb4492ebc637d735f5590320",
   "totals": {
     "tracked_files": 182,
-    "javascript_files": 66,
-    "import_edges": 91
+    "javascript_files": 68,
+    "import_edges": 98
   },
   "responsibilities": {
     "adapter": 4,
@@ -13,11 +13,11 @@
     "cli": 16,
     "derived_artifact": 12,
     "documentation": 12,
-    "domain": 14,
+    "domain": 15,
     "fixture": 42,
     "repository_support": 8,
-    "source_of_truth": 42,
-    "test": 27
+    "source_of_truth": 40,
+    "test": 28
   },
   "files": [
     {
@@ -73,24 +73,12 @@
       "responsibility": "source_of_truth"
     },
     {
-      "path": "config/local-tax-adapters.yaml",
+      "path": "config/monitoring-manifest.yaml",
       "responsibility": "source_of_truth"
     },
     {
       "path": "config/monitoring.yaml",
       "responsibility": "derived_artifact"
-    },
-    {
-      "path": "config/national-tax-adapters.yaml",
-      "responsibility": "source_of_truth"
-    },
-    {
-      "path": "config/public-burden-adapters.yaml",
-      "responsibility": "source_of_truth"
-    },
-    {
-      "path": "config/social-insurance-adapters.yaml",
-      "responsibility": "source_of_truth"
     },
     {
       "path": "config/sources.yaml",
@@ -301,6 +289,10 @@
       "responsibility": "source_of_truth"
     },
     {
+      "path": "schemas/monitoring-manifest.schema.json",
+      "responsibility": "source_of_truth"
+    },
+    {
       "path": "schemas/monitoring.schema.json",
       "responsibility": "source_of_truth"
     },
@@ -427,6 +419,10 @@
     {
       "path": "scripts/monitoring/extract-egov-tax-semantics.js",
       "responsibility": "cli"
+    },
+    {
+      "path": "scripts/monitoring/monitoring-manifest.js",
+      "responsibility": "domain"
     },
     {
       "path": "scripts/monitoring/semantic-baseline.js",
@@ -701,6 +697,10 @@
       "responsibility": "test"
     },
     {
+      "path": "tests/monitoring-manifest.test.js",
+      "responsibility": "test"
+    },
+    {
       "path": "tests/monitoring-pipeline.test.js",
       "responsibility": "test"
     },
@@ -797,14 +797,21 @@
         "scripts/validate/schema-validator.js"
       ],
       "scripts/monitoring/build-adapter-inventory.js": [
-        "scripts/validate/schema-validator.js"
+        "scripts/validate/schema-validator.js",
+        "scripts/monitoring/monitoring-manifest.js"
       ],
       "scripts/monitoring/build-monitoring-config.js": [
-        "scripts/validate/schema-validator.js"
+        "scripts/validate/schema-validator.js",
+        "scripts/monitoring/build-adapter-inventory.js",
+        "scripts/monitoring/monitoring-manifest.js"
       ],
       "scripts/monitoring/egov-change-detection.js": [],
       "scripts/monitoring/extract-egov-tax-semantics.js": [
         "scripts/normalize/egov-tax-semantics.js",
+        "scripts/validate/schema-validator.js",
+        "scripts/monitoring/monitoring-manifest.js"
+      ],
+      "scripts/monitoring/monitoring-manifest.js": [
         "scripts/validate/schema-validator.js"
       ],
       "scripts/monitoring/semantic-baseline.js": [
@@ -886,6 +893,7 @@
       ],
       "tests/egov-tax-semantics.test.js": [
         "scripts/monitoring/extract-egov-tax-semantics.js",
+        "scripts/monitoring/monitoring-manifest.js",
         "scripts/normalize/egov-tax-semantics.js",
         "scripts/validate/schema-validator.js"
       ],
@@ -913,6 +921,9 @@
         "scripts/monitoring/build-monitoring-config.js",
         "scripts/monitoring/egov-change-detection.js"
       ],
+      "tests/monitoring-manifest.test.js": [
+        "scripts/monitoring/monitoring-manifest.js"
+      ],
       "tests/monitoring-pipeline.test.js": [
         "scripts/pipeline/monitoring-pipeline.js"
       ],
@@ -923,7 +934,7 @@
       "tests/public-burden-adapters.test.js": [
         "scripts/validate/schema-validator.js",
         "scripts/pipeline/source-pipeline.js",
-        "config/adapter-inventory.yaml"
+        "scripts/monitoring/monitoring-manifest.js"
       ],
       "tests/public-burden-candidates.test.js": [
         "scripts/validate/schema-validator.js",
@@ -944,7 +955,7 @@
       "tests/social-insurance-adapters.test.js": [
         "scripts/validate/schema-validator.js",
         "scripts/pipeline/source-pipeline.js",
-        "config/sources.yaml",
+        "scripts/monitoring/monitoring-manifest.js",
         "config/adapter-inventory.yaml"
       ],
       "tests/source-pipeline.test.js": [
@@ -964,9 +975,10 @@
   "configuration_overlap": {
     "monitoring_targets": 112,
     "inventory_targets": 112,
-    "decision_targets": 110,
-    "tax_ids_repeated_in_all_three_layers": 110,
-    "inventory_targets_outside_decision_files": [
+    "canonical_manifest_targets": 112,
+    "post_initial_decision_targets": 110,
+    "tax_ids_repeated_in_canonical_and_two_derived_layers": 112,
+    "initial_implementation_targets": [
       "automobile-tax",
       "consumption-tax"
     ],
@@ -975,7 +987,8 @@
       "municipal_scope",
       "sources"
     ],
-    "manually_edited_decision_files": 4,
+    "manually_edited_decision_files": 1,
+    "canonical_target_file": "config/monitoring-manifest.yaml",
     "derived_target_files": [
       "config/monitoring.yaml",
       "config/adapter-inventory.yaml"
@@ -1039,7 +1052,7 @@
   "change_surface": {
     "current_automated_existing_target_manual_edits": [
       "config/sources.yaml",
-      "one category adapter decision file"
+      "config/monitoring-manifest.yaml"
     ],
     "current_derived_files_regenerated": [
       "config/monitoring.yaml",

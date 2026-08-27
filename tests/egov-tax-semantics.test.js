@@ -4,11 +4,13 @@ import { readFile } from "node:fs/promises";
 import { join } from "node:path";
 import { fileURLToPath } from "node:url";
 import { extractConfiguredSemantics } from "../scripts/monitoring/extract-egov-tax-semantics.js";
+import { buildDecisionProjections, loadMonitoringManifest } from "../scripts/monitoring/monitoring-manifest.js";
 import { diffSemanticValues, extractConfiguredLocalTaxSemantics, extractEgovTaxSemantics, extractGenericNationalTaxSemantics } from "../scripts/normalize/egov-tax-semantics.js";
 import { readYaml } from "../scripts/validate/schema-validator.js";
 
 const root = fileURLToPath(new URL("..", import.meta.url));
 const fixtureDir = join(root, "tests/fixtures/source-scan");
+const localPlan = async () => buildDecisionProjections(await loadMonitoringManifest(root))["local-tax-adapters"];
 
 async function fixture(name) {
   return JSON.parse(await readFile(join(fixtureDir, name), "utf8"));
@@ -95,7 +97,7 @@ test("common national-tax value and structure changes are detected offline", asy
 });
 
 test("local-tax selectors retain national-law scope and exclude municipal actual values", async () => {
-  const [document, config] = await Promise.all([fixture("325AC0000000226"), readYaml(new URL("../config/local-tax-adapters.yaml", import.meta.url))]);
+  const [document, config] = await Promise.all([fixture("325AC0000000226"), localPlan()]);
   const profile = config.targets.find(({ tax_id }) => tax_id === "fixed-asset-tax");
   const record = extractConfiguredLocalTaxSemantics(document, profile.tax_id, "https://example.invalid/law", profile);
   assert.deepEqual(record.taxpayer_rules.map(({ article_num }) => article_num), ["343"]);
@@ -106,7 +108,7 @@ test("local-tax selectors retain national-law scope and exclude municipal actual
 });
 
 test("a missing configured local-tax article fails closed", async () => {
-  const [document, config] = await Promise.all([fixture("325AC0000000226"), readYaml(new URL("../config/local-tax-adapters.yaml", import.meta.url))]);
+  const [document, config] = await Promise.all([fixture("325AC0000000226"), localPlan()]);
   const profile = config.targets.find(({ tax_id }) => tax_id === "bathing-tax");
   const main = findNode(document.law_full_text, "MainProvision");
   main.children = main.children.filter(({ attr }) => attr?.Num !== "701_2");

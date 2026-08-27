@@ -4,6 +4,7 @@ import { basename, dirname, join } from "node:path";
 import { fileURLToPath } from "node:url";
 import { extractConfiguredLocalTaxSemantics, extractEgovTaxSemantics, extractGenericNationalTaxSemantics } from "../normalize/egov-tax-semantics.js";
 import { readYaml } from "../validate/schema-validator.js";
+import { buildDecisionProjections, loadMonitoringManifest } from "./monitoring-manifest.js";
 
 const root = fileURLToPath(new URL("../..", import.meta.url));
 
@@ -52,7 +53,7 @@ function configuredSource(monitoring, taxId) {
 
 export async function extractConfiguredSemanticTarget(repositoryRoot, taxId, options = {}) {
   const monitoring = options.monitoring ?? await readYaml(join(repositoryRoot, "config/monitoring.yaml"));
-  const localAdapters = options.localAdapters ?? await readYaml(join(repositoryRoot, "config/local-tax-adapters.yaml"));
+  const localAdapters = options.localAdapters ?? buildDecisionProjections(await loadMonitoringManifest(repositoryRoot))["local-tax-adapters"];
   const localProfile = localAdapters.targets.find(({ tax_id: configuredTaxId, status }) => configuredTaxId === taxId && status === "implemented");
   const source = configuredSource(monitoring, taxId);
   const { document, evidence } = await loadDocument(source.target_url, options);

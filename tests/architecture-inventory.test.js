@@ -16,9 +16,11 @@ test("the baseline inventory detects dependency and configuration duplication", 
   assert.deepEqual(report.import_graph.cycles, []);
   assert.equal(report.configuration_overlap.monitoring_targets, 112);
   assert.equal(report.configuration_overlap.inventory_targets, 112);
-  assert.equal(report.configuration_overlap.decision_targets, 110);
-  assert.equal(report.configuration_overlap.tax_ids_repeated_in_all_three_layers, 110);
-  assert.deepEqual(report.configuration_overlap.inventory_targets_outside_decision_files, ["automobile-tax", "consumption-tax"]);
+  assert.equal(report.configuration_overlap.canonical_manifest_targets, 112);
+  assert.equal(report.configuration_overlap.post_initial_decision_targets, 110);
+  assert.equal(report.configuration_overlap.tax_ids_repeated_in_canonical_and_two_derived_layers, 112);
+  assert.deepEqual(report.configuration_overlap.initial_implementation_targets, ["automobile-tax", "consumption-tax"]);
+  assert.equal(report.configuration_overlap.manually_edited_decision_files, 1);
   assert.ok(report.io_duplication.atomic_write_implementations > 1);
 });
 

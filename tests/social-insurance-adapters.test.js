@@ -5,10 +5,12 @@ import { basename, join } from "node:path";
 import { fileURLToPath } from "node:url";
 import { readYaml } from "../scripts/validate/schema-validator.js";
 import { runSourcePipeline } from "../scripts/pipeline/source-pipeline.js";
+import { buildDecisionProjections, loadMonitoringManifest } from "../scripts/monitoring/monitoring-manifest.js";
 
 const root = fileURLToPath(new URL("..", import.meta.url));
 const fixtureRoot = join(root, "tests/fixtures/source-scan");
 const now = () => new Date("2026-08-21T06:34:11+09:00");
+const socialPlan = async () => buildDecisionProjections(await loadMonitoringManifest(root))["social-insurance-adapters"];
 
 async function fixtureFetch(url) {
   const name = basename(new URL(url).pathname);
@@ -19,7 +21,7 @@ async function fixtureFetch(url) {
 
 test("all five social-insurance targets are implemented or have a concrete hold reason", async () => {
   const [registry, sources, inventory] = await Promise.all([
-    readYaml(new URL("../config/social-insurance-adapters.yaml", import.meta.url)),
+    socialPlan(),
     readYaml(new URL("../config/sources.yaml", import.meta.url)),
     readYaml(new URL("../config/adapter-inventory.yaml", import.meta.url))
   ]);
@@ -36,7 +38,7 @@ test("all five social-insurance targets are implemented or have a concrete hold 
 });
 
 test("contribution totals and payer parts cannot be double-counted", async () => {
-  const registry = await readYaml(new URL("../config/social-insurance-adapters.yaml", import.meta.url));
+  const registry = await socialPlan();
   for (const target of registry.targets.filter(({ status }) => status === "implemented")) {
     const byScope = Map.groupBy(target.components, ({ scope }) => scope);
     for (const components of byScope.values()) {
@@ -56,7 +58,7 @@ test("contribution totals and payer parts cannot be double-counted", async () =>
 });
 
 test("pension and employment values are reproducible with offline official-format fixtures", async () => {
-  const registry = await readYaml(new URL("../config/social-insurance-adapters.yaml", import.meta.url));
+  const registry = await socialPlan();
   for (const sourceId of ["mhlw-employment-insurance-rates", "nenkin-pension-premiums"]) {
     const result = await runSourcePipeline({ root, sourceId, fetchImpl: fixtureFetch, now, dryRun: true });
     assert.equal(result.status, "no_change");

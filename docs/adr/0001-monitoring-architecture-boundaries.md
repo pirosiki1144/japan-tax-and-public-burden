@@ -33,9 +33,9 @@ adapter選択にはStrategy + Registryを使い、依存の組立ては単一com
 
 ## 設定の正本
 
-URLの正本は引き続き`config/sources.yaml`とする。制度ごとの監視判断、capability、manual理由、解除条件、再確認方法については、#71で一つのcanonical monitoring manifestを決定する。
+URLの正本は引き続き`config/sources.yaml`とする。制度ごとの監視判断、capability、manual理由、解除条件、再確認方法は、#71で`config/monitoring-manifest.yaml`へ統合した。
 
-`config/monitoring.yaml`と`config/adapter-inventory.yaml`は派生投影とし、手編集しない。両方を残すか統合するかは、既存consumerの必要フィールドを#71で確認して決める。事実値、公式根拠、確認日時、4種類の日付、自治体境界は変更しない。
+`config/monitoring.yaml`はsource URLと抽出対象を展開するruntime契約、`config/adapter-inventory.yaml`はbatch・形式・capabilityを展開するruntime/coverage契約であり、consumerが異なるため派生投影として両方残す。制度群別adapter判断表4件はcanonical manifestへ統合して削除し、必要な制度群viewはメモリ上で決定的に生成する。既存の制度群別Schemaは詳細制約を弱めないため、そのviewの検証契約として#74まで維持する。3成果物は`npm run monitoring:generate`で一括生成し、`npm run monitoring:check`で差分を検知する。事実値、公式根拠、確認日時、4種類の日付、自治体境界は変更しない。
 
 ## 依存ルール
 
