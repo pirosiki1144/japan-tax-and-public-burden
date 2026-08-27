@@ -60,6 +60,8 @@ URLの正本は引き続き`config/sources.yaml`とする。制度ごとの監�
 
 #71は設定境界、#72は実行時のadapter境界なので統合しない。#73までは既存npm scriptsを維持する。#75まで新規workflowを作成しない。
 
+`PROJECT_SPEC.md`はプロジェクトの基になった資料であり、新構成へ追従更新しない。#16で、確定した要求がIssue、Schema、テスト、運用文書へ反映済みであることを照合した後に削除する。#69の後続IssueではREADME、ADR、現行の運用文書だけを更新対象とする。
+
 ## 制度追加時の変更面
 
 現状、既存制度を自動監視へ移す場合は`config/sources.yaml`と制度群別adapter判断表を手編集し、`monitoring.yaml`、`adapter-inventory.yaml`、抽出対象レビューを再生成する。新しい抽出方式ではregistryコードとcontract testも必要になる。
