@@ -20,6 +20,7 @@ test("validation workflow runs only for pull requests", async () => {
   assert.ok(Object.hasOwn(workflow.on, "pull_request"));
   assert.ok(!Object.hasOwn(workflow.on, "push"));
   assert.ok(workflow.jobs.validate.steps.some(({ run }) => run === "npm run inventory:check"));
+  assert.ok(workflow.jobs.validate.steps.some(({ run }) => run === "npm run audit:coverage"));
   assert.ok(workflow.jobs.validate.steps.some(({ run }) => run === "npm run semantics:check"));
   assert.ok(workflow.jobs.validate.steps.some(({ run }) => run === "npm run monitor:check"));
   assert.ok(workflow.jobs.validate.steps.some(({ run }) => run === "npm run generate:check"));
@@ -49,6 +50,12 @@ test("source scan workflow is fixed, scheduled, and manually runnable", async ()
   assert.ok(scanCommands.some((command) => command.includes("npm run audit")));
   assert.ok(scanCommands.some((command) => command.includes("npm run monitor")));
   assert.ok(scanCommands.some((command) => command.includes("npm run audit:scan")));
+  assert.equal(workflow.jobs["coverage-audit"].strategy["fail-fast"], false);
+  assert.match(workflow.jobs["coverage-audit"].strategy.matrix.batch, /fromJSON/);
+  assert.equal(workflow.jobs.scan.needs, "coverage-audit");
+  assert.equal(workflow.jobs.scan.if, "always()");
+  assert.ok(workflow.jobs["coverage-plan"].steps.some(({ run }) => run?.includes("audit:coverage")));
+  assert.ok(workflow.jobs["coverage-audit"].steps.some(({ uses }) => uses === "actions/upload-artifact@v4"));
   assert.ok(updateCommands.some((command) => command.includes("npm run prepare-update")));
   assert.ok(updateCommands.some((command) => command.includes("npm run generate") && command.includes("git add data generated")));
   assert.ok(updateCommands.some((command) => command.includes("gh pr list") && command.includes("gh pr edit") && command.includes("gh pr create")));

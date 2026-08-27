@@ -190,6 +190,11 @@ export function validateInventoryCoverage(inventory, monitoring) {
   }
   for (const target of inventory.targets) {
     if (target.burden_type === "local_tax" && target.municipal_scope !== "issue_20") errors.push(`${target.tax_id}: local tax municipality scope must remain in Issue #20`);
+    const implemented = target.sources.filter(({ adapter_status: status }) => status === "implemented");
+    const held = target.sources.filter(({ adapter_status: status }) => status === "held");
+    if (target.implementation_status === "implemented" && implemented.length === 0) errors.push(`${target.tax_id}: implemented target has no implemented source`);
+    if (target.implementation_status === "held" && held.length === 0) errors.push(`${target.tax_id}: manual target has no held source`);
+    for (const source of held) if (!source.hold_reason || source.hold_reason.length < 20) errors.push(`${target.tax_id}/${source.target_id}: manual reason is missing`);
   }
   return errors;
 }

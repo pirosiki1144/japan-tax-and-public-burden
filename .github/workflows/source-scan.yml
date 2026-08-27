@@ -13,7 +13,55 @@ concurrency:
   cancel-in-progress: false
 
 jobs:
+  coverage-plan:
+    runs-on: ubuntu-latest
+    outputs:
+      matrix: ${{ steps.plan.outputs.matrix }}
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: main
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+          cache: npm
+      - run: npm ci
+      - id: plan
+        run: echo "matrix=$(npm run --silent audit:coverage -- --matrix)" >> "$GITHUB_OUTPUT"
+      - run: npm run audit:coverage -- --output .cache/adapter-coverage-all.json
+      - uses: actions/upload-artifact@v4
+        with:
+          name: adapter-coverage-summary
+          path: .cache/adapter-coverage-all.json
+          if-no-files-found: error
+
+  coverage-audit:
+    needs: coverage-plan
+    strategy:
+      fail-fast: false
+      matrix:
+        batch: ${{ fromJSON(needs.coverage-plan.outputs.matrix) }}
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: main
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+          cache: npm
+      - run: npm ci
+      - run: npm run audit:coverage -- --batch "${{ matrix.batch }}" --output ".cache/adapter-coverage-${{ matrix.batch }}.json"
+      - if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: adapter-coverage-${{ matrix.batch }}
+          path: .cache/adapter-coverage-${{ matrix.batch }}.json
+          if-no-files-found: error
+
   scan:
+    needs: coverage-audit
+    if: always()
     runs-on: ubuntu-latest
     outputs:
       has_changes: ${{ steps.scan.outputs.has_changes }}
