@@ -1,0 +1,1054 @@
+{
+  "schema_version": 1,
+  "scope": "tracked repository files",
+  "baseline_commit": "473d05b2ab4d5a34e62fc4863045a8a6a6cad8f8",
+  "totals": {
+    "tracked_files": 182,
+    "javascript_files": 66,
+    "import_edges": 91
+  },
+  "responsibilities": {
+    "adapter": 4,
+    "application": 5,
+    "cli": 16,
+    "derived_artifact": 12,
+    "documentation": 12,
+    "domain": 14,
+    "fixture": 42,
+    "repository_support": 8,
+    "source_of_truth": 42,
+    "test": 27
+  },
+  "files": [
+    {
+      "path": ".github/ISSUE_TEMPLATE/development.yml",
+      "responsibility": "repository_support"
+    },
+    {
+      "path": ".github/ISSUE_TEMPLATE/news-detection.yml",
+      "responsibility": "repository_support"
+    },
+    {
+      "path": ".github/pull_request_template.md",
+      "responsibility": "repository_support"
+    },
+    {
+      "path": ".github/workflows/source-scan.yml",
+      "responsibility": "repository_support"
+    },
+    {
+      "path": ".github/workflows/validate.yml",
+      "responsibility": "repository_support"
+    },
+    {
+      "path": ".gitignore",
+      "responsibility": "repository_support"
+    },
+    {
+      "path": "AGENTS.md",
+      "responsibility": "documentation"
+    },
+    {
+      "path": "PROJECT_SPEC.md",
+      "responsibility": "documentation"
+    },
+    {
+      "path": "README.md",
+      "responsibility": "documentation"
+    },
+    {
+      "path": "config/adapter-inventory.yaml",
+      "responsibility": "derived_artifact"
+    },
+    {
+      "path": "config/distribution.yaml",
+      "responsibility": "source_of_truth"
+    },
+    {
+      "path": "config/format-adapters.yaml",
+      "responsibility": "source_of_truth"
+    },
+    {
+      "path": "config/initial-master-selection.yaml",
+      "responsibility": "source_of_truth"
+    },
+    {
+      "path": "config/local-tax-adapters.yaml",
+      "responsibility": "source_of_truth"
+    },
+    {
+      "path": "config/monitoring.yaml",
+      "responsibility": "derived_artifact"
+    },
+    {
+      "path": "config/national-tax-adapters.yaml",
+      "responsibility": "source_of_truth"
+    },
+    {
+      "path": "config/public-burden-adapters.yaml",
+      "responsibility": "source_of_truth"
+    },
+    {
+      "path": "config/social-insurance-adapters.yaml",
+      "responsibility": "source_of_truth"
+    },
+    {
+      "path": "config/sources.yaml",
+      "responsibility": "source_of_truth"
+    },
+    {
+      "path": "data/burdens/.gitkeep",
+      "responsibility": "fixture"
+    },
+    {
+      "path": "data/burdens/consumption-tax.yaml",
+      "responsibility": "source_of_truth"
+    },
+    {
+      "path": "data/burdens/initial-master.json",
+      "responsibility": "derived_artifact"
+    },
+    {
+      "path": "data/candidates/.gitkeep",
+      "responsibility": "fixture"
+    },
+    {
+      "path": "data/candidates/local-taxes.yaml",
+      "responsibility": "source_of_truth"
+    },
+    {
+      "path": "data/candidates/national-taxes.yaml",
+      "responsibility": "source_of_truth"
+    },
+    {
+      "path": "data/candidates/public-burdens-government-additions.yaml",
+      "responsibility": "source_of_truth"
+    },
+    {
+      "path": "data/candidates/public-burdens-question-39.yaml",
+      "responsibility": "source_of_truth"
+    },
+    {
+      "path": "data/changes/.gitkeep",
+      "responsibility": "fixture"
+    },
+    {
+      "path": "data/changes/consumption-tax-2019-rate.yaml",
+      "responsibility": "source_of_truth"
+    },
+    {
+      "path": "data/events/.gitkeep",
+      "responsibility": "fixture"
+    },
+    {
+      "path": "data/events/consumption-tax-2019-application-started.yaml",
+      "responsibility": "source_of_truth"
+    },
+    {
+      "path": "data/monitoring/semantic-baseline.json",
+      "responsibility": "source_of_truth"
+    },
+    {
+      "path": "data/phases/.gitkeep",
+      "responsibility": "fixture"
+    },
+    {
+      "path": "data/phases/consumption-tax.yaml",
+      "responsibility": "source_of_truth"
+    },
+    {
+      "path": "data/reconciliation/national-burden-ratio-mapping.yaml",
+      "responsibility": "source_of_truth"
+    },
+    {
+      "path": "data/reconciliation/national-burden-ratio.csv",
+      "responsibility": "source_of_truth"
+    },
+    {
+      "path": "data/revenue/actuals.csv",
+      "responsibility": "source_of_truth"
+    },
+    {
+      "path": "docs/adr/0001-monitoring-architecture-boundaries.md",
+      "responsibility": "documentation"
+    },
+    {
+      "path": "docs/architecture-inventory.md",
+      "responsibility": "documentation"
+    },
+    {
+      "path": "docs/initial-master-import-report.md",
+      "responsibility": "documentation"
+    },
+    {
+      "path": "docs/initial-master-schema-fit.md",
+      "responsibility": "documentation"
+    },
+    {
+      "path": "docs/initial-master-scope.md",
+      "responsibility": "documentation"
+    },
+    {
+      "path": "docs/initial-master-selection.md",
+      "responsibility": "documentation"
+    },
+    {
+      "path": "docs/monitoring-configuration.md",
+      "responsibility": "documentation"
+    },
+    {
+      "path": "docs/monitoring-extraction-target-review.md",
+      "responsibility": "derived_artifact"
+    },
+    {
+      "path": "docs/public-burden-candidate-reconciliation.md",
+      "responsibility": "documentation"
+    },
+    {
+      "path": "docs/tax-candidate-reconciliation.md",
+      "responsibility": "documentation"
+    },
+    {
+      "path": "generated/current.csv",
+      "responsibility": "derived_artifact"
+    },
+    {
+      "path": "generated/current.json",
+      "responsibility": "derived_artifact"
+    },
+    {
+      "path": "generated/history.csv",
+      "responsibility": "derived_artifact"
+    },
+    {
+      "path": "generated/history.json",
+      "responsibility": "derived_artifact"
+    },
+    {
+      "path": "generated/summary.csv",
+      "responsibility": "derived_artifact"
+    },
+    {
+      "path": "generated/summary.json",
+      "responsibility": "derived_artifact"
+    },
+    {
+      "path": "package-lock.json",
+      "responsibility": "repository_support"
+    },
+    {
+      "path": "package.json",
+      "responsibility": "repository_support"
+    },
+    {
+      "path": "reports/.gitkeep",
+      "responsibility": "fixture"
+    },
+    {
+      "path": "reports/architecture-inventory.json",
+      "responsibility": "derived_artifact"
+    },
+    {
+      "path": "reports/initial-master-selection.json",
+      "responsibility": "derived_artifact"
+    },
+    {
+      "path": "schemas/adapter-inventory.schema.json",
+      "responsibility": "source_of_truth"
+    },
+    {
+      "path": "schemas/burden.schema.json",
+      "responsibility": "source_of_truth"
+    },
+    {
+      "path": "schemas/change.schema.json",
+      "responsibility": "source_of_truth"
+    },
+    {
+      "path": "schemas/distribution-config.schema.json",
+      "responsibility": "source_of_truth"
+    },
+    {
+      "path": "schemas/distribution-current.schema.json",
+      "responsibility": "source_of_truth"
+    },
+    {
+      "path": "schemas/distribution-history.schema.json",
+      "responsibility": "source_of_truth"
+    },
+    {
+      "path": "schemas/distribution-summary.schema.json",
+      "responsibility": "source_of_truth"
+    },
+    {
+      "path": "schemas/event.schema.json",
+      "responsibility": "source_of_truth"
+    },
+    {
+      "path": "schemas/format-adapters.schema.json",
+      "responsibility": "source_of_truth"
+    },
+    {
+      "path": "schemas/initial-master-candidate.schema.json",
+      "responsibility": "source_of_truth"
+    },
+    {
+      "path": "schemas/initial-master-selection.schema.json",
+      "responsibility": "source_of_truth"
+    },
+    {
+      "path": "schemas/local-tax-adapters.schema.json",
+      "responsibility": "source_of_truth"
+    },
+    {
+      "path": "schemas/monitoring.schema.json",
+      "responsibility": "source_of_truth"
+    },
+    {
+      "path": "schemas/national-burden-ratio-mapping.schema.json",
+      "responsibility": "source_of_truth"
+    },
+    {
+      "path": "schemas/national-burden-ratio.schema.json",
+      "responsibility": "source_of_truth"
+    },
+    {
+      "path": "schemas/national-tax-adapters.schema.json",
+      "responsibility": "source_of_truth"
+    },
+    {
+      "path": "schemas/phase.schema.json",
+      "responsibility": "source_of_truth"
+    },
+    {
+      "path": "schemas/public-burden-adapters.schema.json",
+      "responsibility": "source_of_truth"
+    },
+    {
+      "path": "schemas/revenue.schema.json",
+      "responsibility": "source_of_truth"
+    },
+    {
+      "path": "schemas/semantic-baseline.schema.json",
+      "responsibility": "source_of_truth"
+    },
+    {
+      "path": "schemas/social-insurance-adapters.schema.json",
+      "responsibility": "source_of_truth"
+    },
+    {
+      "path": "schemas/source.schema.json",
+      "responsibility": "source_of_truth"
+    },
+    {
+      "path": "scripts/audit/adapter-coverage-audit.js",
+      "responsibility": "cli"
+    },
+    {
+      "path": "scripts/audit/architecture-inventory.js",
+      "responsibility": "cli"
+    },
+    {
+      "path": "scripts/audit/audit-repository.js",
+      "responsibility": "cli"
+    },
+    {
+      "path": "scripts/audit/audit-source-scan.js",
+      "responsibility": "cli"
+    },
+    {
+      "path": "scripts/audit/publish-audit-issues.js",
+      "responsibility": "cli"
+    },
+    {
+      "path": "scripts/audit/repository-audit.js",
+      "responsibility": "domain"
+    },
+    {
+      "path": "scripts/audit/source-scan-audit.js",
+      "responsibility": "domain"
+    },
+    {
+      "path": "scripts/automation/candidate-update.js",
+      "responsibility": "application"
+    },
+    {
+      "path": "scripts/automation/prepare-update.js",
+      "responsibility": "cli"
+    },
+    {
+      "path": "scripts/diff/canonical-diff.js",
+      "responsibility": "domain"
+    },
+    {
+      "path": "scripts/fetch/.gitkeep",
+      "responsibility": "fixture"
+    },
+    {
+      "path": "scripts/fetch/http-fetcher.js",
+      "responsibility": "adapter"
+    },
+    {
+      "path": "scripts/fetch/source-registry.js",
+      "responsibility": "adapter"
+    },
+    {
+      "path": "scripts/formats/official-document.js",
+      "responsibility": "adapter"
+    },
+    {
+      "path": "scripts/generate/distribution-generator.js",
+      "responsibility": "application"
+    },
+    {
+      "path": "scripts/generate/generate-distribution.js",
+      "responsibility": "cli"
+    },
+    {
+      "path": "scripts/generate/initial-master-selection.js",
+      "responsibility": "cli"
+    },
+    {
+      "path": "scripts/initial-master/build-burdens.js",
+      "responsibility": "cli"
+    },
+    {
+      "path": "scripts/monitoring/build-adapter-inventory.js",
+      "responsibility": "cli"
+    },
+    {
+      "path": "scripts/monitoring/build-monitoring-config.js",
+      "responsibility": "cli"
+    },
+    {
+      "path": "scripts/monitoring/egov-change-detection.js",
+      "responsibility": "domain"
+    },
+    {
+      "path": "scripts/monitoring/extract-egov-tax-semantics.js",
+      "responsibility": "cli"
+    },
+    {
+      "path": "scripts/monitoring/semantic-baseline.js",
+      "responsibility": "domain"
+    },
+    {
+      "path": "scripts/monitoring/write-semantic-baseline.js",
+      "responsibility": "cli"
+    },
+    {
+      "path": "scripts/normalize/declarative-document-facts.js",
+      "responsibility": "domain"
+    },
+    {
+      "path": "scripts/normalize/derive-status.js",
+      "responsibility": "domain"
+    },
+    {
+      "path": "scripts/normalize/egov-law-article-facts.js",
+      "responsibility": "domain"
+    },
+    {
+      "path": "scripts/normalize/egov-tax-semantics.js",
+      "responsibility": "domain"
+    },
+    {
+      "path": "scripts/normalize/html-regex-facts.js",
+      "responsibility": "domain"
+    },
+    {
+      "path": "scripts/normalize/normalized-source-validator.js",
+      "responsibility": "domain"
+    },
+    {
+      "path": "scripts/normalize/pdf-regex-facts.js",
+      "responsibility": "domain"
+    },
+    {
+      "path": "scripts/pipeline/monitoring-pipeline.js",
+      "responsibility": "application"
+    },
+    {
+      "path": "scripts/pipeline/run-monitoring.js",
+      "responsibility": "cli"
+    },
+    {
+      "path": "scripts/pipeline/scan-source.js",
+      "responsibility": "cli"
+    },
+    {
+      "path": "scripts/pipeline/source-adapters.js",
+      "responsibility": "application"
+    },
+    {
+      "path": "scripts/pipeline/source-pipeline.js",
+      "responsibility": "application"
+    },
+    {
+      "path": "scripts/report/.gitkeep",
+      "responsibility": "fixture"
+    },
+    {
+      "path": "scripts/validate/integrity-validator.js",
+      "responsibility": "domain"
+    },
+    {
+      "path": "scripts/validate/repository-validator.js",
+      "responsibility": "domain"
+    },
+    {
+      "path": "scripts/validate/schema-validator.js",
+      "responsibility": "adapter"
+    },
+    {
+      "path": "scripts/validate/validate-data.js",
+      "responsibility": "cli"
+    },
+    {
+      "path": "tests/adapter-coverage-audit.test.js",
+      "responsibility": "test"
+    },
+    {
+      "path": "tests/adapter-inventory.test.js",
+      "responsibility": "test"
+    },
+    {
+      "path": "tests/architecture-inventory.test.js",
+      "responsibility": "test"
+    },
+    {
+      "path": "tests/candidate-update.test.js",
+      "responsibility": "test"
+    },
+    {
+      "path": "tests/date-evidence.test.js",
+      "responsibility": "test"
+    },
+    {
+      "path": "tests/derive-status.test.js",
+      "responsibility": "test"
+    },
+    {
+      "path": "tests/distribution-generator.test.js",
+      "responsibility": "test"
+    },
+    {
+      "path": "tests/egov-tax-semantics.test.js",
+      "responsibility": "test"
+    },
+    {
+      "path": "tests/fixtures/format-adapters/sample.csv",
+      "responsibility": "fixture"
+    },
+    {
+      "path": "tests/fixtures/format-adapters/sample.html",
+      "responsibility": "fixture"
+    },
+    {
+      "path": "tests/fixtures/format-adapters/sample.pdf",
+      "responsibility": "fixture"
+    },
+    {
+      "path": "tests/fixtures/invalid-burden.yaml",
+      "responsibility": "fixture"
+    },
+    {
+      "path": "tests/fixtures/semantic-extraction/expected-baseline.json",
+      "responsibility": "fixture"
+    },
+    {
+      "path": "tests/fixtures/semantic-extraction/expected.json",
+      "responsibility": "fixture"
+    },
+    {
+      "path": "tests/fixtures/source-scan/000281001.pdf",
+      "responsibility": "fixture"
+    },
+    {
+      "path": "tests/fixtures/source-scan/000281003.pdf",
+      "responsibility": "fixture"
+    },
+    {
+      "path": "tests/fixtures/source-scan/001692566.pdf",
+      "responsibility": "fixture"
+    },
+    {
+      "path": "tests/fixtures/source-scan/20150331.html",
+      "responsibility": "fixture"
+    },
+    {
+      "path": "tests/fixtures/source-scan/20150515-01.html",
+      "responsibility": "fixture"
+    },
+    {
+      "path": "tests/fixtures/source-scan/325AC0000000226",
+      "responsibility": "fixture"
+    },
+    {
+      "path": "tests/fixtures/source-scan/328AC0000000006",
+      "responsibility": "fixture"
+    },
+    {
+      "path": "tests/fixtures/source-scan/330AC0000000104",
+      "responsibility": "fixture"
+    },
+    {
+      "path": "tests/fixtures/source-scan/332AC0000000037",
+      "responsibility": "fixture"
+    },
+    {
+      "path": "tests/fixtures/source-scan/332AC0000000038",
+      "responsibility": "fixture"
+    },
+    {
+      "path": "tests/fixtures/source-scan/332AC0000000055",
+      "responsibility": "fixture"
+    },
+    {
+      "path": "tests/fixtures/source-scan/340AC0000000033",
+      "responsibility": "fixture"
+    },
+    {
+      "path": "tests/fixtures/source-scan/340AC0000000156",
+      "responsibility": "fixture"
+    },
+    {
+      "path": "tests/fixtures/source-scan/342AC0000000023",
+      "responsibility": "fixture"
+    },
+    {
+      "path": "tests/fixtures/source-scan/346AC0000000089",
+      "responsibility": "fixture"
+    },
+    {
+      "path": "tests/fixtures/source-scan/347AC0000000007",
+      "responsibility": "fixture"
+    },
+    {
+      "path": "tests/fixtures/source-scan/349AC0000000079",
+      "responsibility": "fixture"
+    },
+    {
+      "path": "tests/fixtures/source-scan/353AC0000000025",
+      "responsibility": "fixture"
+    },
+    {
+      "path": "tests/fixtures/source-scan/359AC0000000072",
+      "responsibility": "fixture"
+    },
+    {
+      "path": "tests/fixtures/source-scan/363AC0000000108",
+      "responsibility": "fixture"
+    },
+    {
+      "path": "tests/fixtures/source-scan/410AC0000000137",
+      "responsibility": "fixture"
+    },
+    {
+      "path": "tests/fixtures/source-scan/6101.htm",
+      "responsibility": "fixture"
+    },
+    {
+      "path": "tests/fixtures/source-scan/6102.htm",
+      "responsibility": "fixture"
+    },
+    {
+      "path": "tests/fixtures/source-scan/about_levy_grant_system.html",
+      "responsibility": "fixture"
+    },
+    {
+      "path": "tests/fixtures/source-scan/frequency.html",
+      "responsibility": "fixture"
+    },
+    {
+      "path": "tests/fixtures/source-scan/kodomokosodate-r08",
+      "responsibility": "fixture"
+    },
+    {
+      "path": "tests/fixtures/source-scan/mext_00042.html",
+      "responsibility": "fixture"
+    },
+    {
+      "path": "tests/fixtures/source-scan/qa",
+      "responsibility": "fixture"
+    },
+    {
+      "path": "tests/format-adapter-registry.test.js",
+      "responsibility": "test"
+    },
+    {
+      "path": "tests/http-fetcher.test.js",
+      "responsibility": "test"
+    },
+    {
+      "path": "tests/initial-master-candidate-schema.test.js",
+      "responsibility": "test"
+    },
+    {
+      "path": "tests/initial-master-data.test.js",
+      "responsibility": "test"
+    },
+    {
+      "path": "tests/initial-master-selection.test.js",
+      "responsibility": "test"
+    },
+    {
+      "path": "tests/integrity-validator.test.js",
+      "responsibility": "test"
+    },
+    {
+      "path": "tests/monitoring-config.test.js",
+      "responsibility": "test"
+    },
+    {
+      "path": "tests/monitoring-pipeline.test.js",
+      "responsibility": "test"
+    },
+    {
+      "path": "tests/official-document-adapters.test.js",
+      "responsibility": "test"
+    },
+    {
+      "path": "tests/public-burden-adapters.test.js",
+      "responsibility": "test"
+    },
+    {
+      "path": "tests/public-burden-candidates.test.js",
+      "responsibility": "test"
+    },
+    {
+      "path": "tests/repository-audit.test.js",
+      "responsibility": "test"
+    },
+    {
+      "path": "tests/repository-validator.test.js",
+      "responsibility": "test"
+    },
+    {
+      "path": "tests/schema-naming.test.js",
+      "responsibility": "test"
+    },
+    {
+      "path": "tests/schema-validator.test.js",
+      "responsibility": "test"
+    },
+    {
+      "path": "tests/social-insurance-adapters.test.js",
+      "responsibility": "test"
+    },
+    {
+      "path": "tests/source-pipeline.test.js",
+      "responsibility": "test"
+    },
+    {
+      "path": "tests/source-scan-audit.test.js",
+      "responsibility": "test"
+    },
+    {
+      "path": "tests/tax-candidates.test.js",
+      "responsibility": "test"
+    }
+  ],
+  "import_graph": {
+    "cycles": [],
+    "adjacency": {
+      "scripts/audit/adapter-coverage-audit.js": [
+        "scripts/validate/schema-validator.js",
+        "scripts/monitoring/build-adapter-inventory.js"
+      ],
+      "scripts/audit/architecture-inventory.js": [],
+      "scripts/audit/audit-repository.js": [
+        "scripts/validate/repository-validator.js",
+        "scripts/audit/repository-audit.js"
+      ],
+      "scripts/audit/audit-source-scan.js": [
+        "scripts/audit/source-scan-audit.js"
+      ],
+      "scripts/audit/publish-audit-issues.js": [],
+      "scripts/audit/repository-audit.js": [
+        "scripts/normalize/derive-status.js"
+      ],
+      "scripts/audit/source-scan-audit.js": [],
+      "scripts/automation/candidate-update.js": [],
+      "scripts/automation/prepare-update.js": [
+        "scripts/automation/candidate-update.js"
+      ],
+      "scripts/diff/canonical-diff.js": [
+        "scripts/validate/schema-validator.js"
+      ],
+      "scripts/fetch/http-fetcher.js": [],
+      "scripts/fetch/source-registry.js": [
+        "scripts/validate/schema-validator.js"
+      ],
+      "scripts/formats/official-document.js": [],
+      "scripts/generate/distribution-generator.js": [
+        "scripts/normalize/derive-status.js",
+        "scripts/validate/repository-validator.js",
+        "scripts/validate/schema-validator.js"
+      ],
+      "scripts/generate/generate-distribution.js": [
+        "scripts/generate/distribution-generator.js"
+      ],
+      "scripts/generate/initial-master-selection.js": [
+        "scripts/validate/schema-validator.js"
+      ],
+      "scripts/initial-master/build-burdens.js": [
+        "scripts/generate/initial-master-selection.js",
+        "scripts/validate/schema-validator.js"
+      ],
+      "scripts/monitoring/build-adapter-inventory.js": [
+        "scripts/validate/schema-validator.js"
+      ],
+      "scripts/monitoring/build-monitoring-config.js": [
+        "scripts/validate/schema-validator.js"
+      ],
+      "scripts/monitoring/egov-change-detection.js": [],
+      "scripts/monitoring/extract-egov-tax-semantics.js": [
+        "scripts/normalize/egov-tax-semantics.js",
+        "scripts/validate/schema-validator.js"
+      ],
+      "scripts/monitoring/semantic-baseline.js": [
+        "scripts/normalize/egov-tax-semantics.js",
+        "scripts/validate/schema-validator.js"
+      ],
+      "scripts/monitoring/write-semantic-baseline.js": [
+        "scripts/monitoring/semantic-baseline.js"
+      ],
+      "scripts/normalize/declarative-document-facts.js": [],
+      "scripts/normalize/derive-status.js": [],
+      "scripts/normalize/egov-law-article-facts.js": [],
+      "scripts/normalize/egov-tax-semantics.js": [],
+      "scripts/normalize/html-regex-facts.js": [],
+      "scripts/normalize/normalized-source-validator.js": [],
+      "scripts/normalize/pdf-regex-facts.js": [
+        "scripts/formats/official-document.js"
+      ],
+      "scripts/pipeline/monitoring-pipeline.js": [
+        "scripts/audit/source-scan-audit.js",
+        "scripts/monitoring/extract-egov-tax-semantics.js",
+        "scripts/monitoring/semantic-baseline.js",
+        "scripts/validate/schema-validator.js",
+        "scripts/pipeline/source-pipeline.js"
+      ],
+      "scripts/pipeline/run-monitoring.js": [
+        "scripts/pipeline/monitoring-pipeline.js"
+      ],
+      "scripts/pipeline/scan-source.js": [
+        "scripts/pipeline/source-pipeline.js"
+      ],
+      "scripts/pipeline/source-adapters.js": [
+        "scripts/normalize/html-regex-facts.js",
+        "scripts/normalize/egov-law-article-facts.js",
+        "scripts/normalize/pdf-regex-facts.js"
+      ],
+      "scripts/pipeline/source-pipeline.js": [
+        "scripts/fetch/source-registry.js",
+        "scripts/fetch/http-fetcher.js",
+        "scripts/normalize/normalized-source-validator.js",
+        "scripts/diff/canonical-diff.js",
+        "scripts/pipeline/source-adapters.js"
+      ],
+      "scripts/validate/integrity-validator.js": [],
+      "scripts/validate/repository-validator.js": [
+        "scripts/validate/schema-validator.js",
+        "scripts/validate/integrity-validator.js"
+      ],
+      "scripts/validate/schema-validator.js": [],
+      "scripts/validate/validate-data.js": [
+        "scripts/validate/schema-validator.js",
+        "scripts/validate/repository-validator.js"
+      ],
+      "tests/adapter-coverage-audit.test.js": [
+        "scripts/audit/adapter-coverage-audit.js"
+      ],
+      "tests/adapter-inventory.test.js": [
+        "scripts/monitoring/build-adapter-inventory.js",
+        "scripts/validate/schema-validator.js",
+        "config/monitoring.yaml"
+      ],
+      "tests/architecture-inventory.test.js": [
+        "scripts/audit/architecture-inventory.js"
+      ],
+      "tests/candidate-update.test.js": [
+        "scripts/automation/candidate-update.js"
+      ],
+      "tests/date-evidence.test.js": [
+        "scripts/validate/schema-validator.js",
+        "schemas/burden.schema.json",
+        "data/changes/consumption-tax-2019-rate.yaml",
+        "data/burdens/consumption-tax.yaml"
+      ],
+      "tests/derive-status.test.js": [
+        "scripts/normalize/derive-status.js"
+      ],
+      "tests/distribution-generator.test.js": [
+        "scripts/generate/distribution-generator.js"
+      ],
+      "tests/egov-tax-semantics.test.js": [
+        "scripts/monitoring/extract-egov-tax-semantics.js",
+        "scripts/normalize/egov-tax-semantics.js",
+        "scripts/validate/schema-validator.js"
+      ],
+      "tests/format-adapter-registry.test.js": [
+        "scripts/validate/schema-validator.js",
+        "config/adapter-inventory.yaml"
+      ],
+      "tests/http-fetcher.test.js": [
+        "scripts/fetch/http-fetcher.js"
+      ],
+      "tests/initial-master-candidate-schema.test.js": [
+        "scripts/validate/schema-validator.js"
+      ],
+      "tests/initial-master-data.test.js": [
+        "scripts/initial-master/build-burdens.js",
+        "scripts/generate/initial-master-selection.js"
+      ],
+      "tests/initial-master-selection.test.js": [
+        "scripts/generate/initial-master-selection.js"
+      ],
+      "tests/integrity-validator.test.js": [
+        "scripts/validate/integrity-validator.js"
+      ],
+      "tests/monitoring-config.test.js": [
+        "scripts/monitoring/build-monitoring-config.js",
+        "scripts/monitoring/egov-change-detection.js"
+      ],
+      "tests/monitoring-pipeline.test.js": [
+        "scripts/pipeline/monitoring-pipeline.js"
+      ],
+      "tests/official-document-adapters.test.js": [
+        "scripts/formats/official-document.js",
+        "scripts/normalize/declarative-document-facts.js"
+      ],
+      "tests/public-burden-adapters.test.js": [
+        "scripts/validate/schema-validator.js",
+        "scripts/pipeline/source-pipeline.js",
+        "config/adapter-inventory.yaml"
+      ],
+      "tests/public-burden-candidates.test.js": [
+        "scripts/validate/schema-validator.js",
+        "data/candidates/public-burdens-government-additions.yaml"
+      ],
+      "tests/repository-audit.test.js": [
+        "scripts/audit/repository-audit.js"
+      ],
+      "tests/repository-validator.test.js": [
+        "scripts/validate/repository-validator.js",
+        "scripts/validate/schema-validator.js"
+      ],
+      "tests/schema-naming.test.js": [],
+      "tests/schema-validator.test.js": [
+        "scripts/validate/schema-validator.js",
+        "tests/fixtures/invalid-burden.yaml"
+      ],
+      "tests/social-insurance-adapters.test.js": [
+        "scripts/validate/schema-validator.js",
+        "scripts/pipeline/source-pipeline.js",
+        "config/sources.yaml",
+        "config/adapter-inventory.yaml"
+      ],
+      "tests/source-pipeline.test.js": [
+        "scripts/fetch/source-registry.js",
+        "scripts/pipeline/source-pipeline.js"
+      ],
+      "tests/source-scan-audit.test.js": [
+        "scripts/audit/source-scan-audit.js",
+        "scripts/audit/publish-audit-issues.js"
+      ],
+      "tests/tax-candidates.test.js": [
+        "scripts/validate/schema-validator.js",
+        "data/candidates/local-taxes.yaml"
+      ]
+    }
+  },
+  "configuration_overlap": {
+    "monitoring_targets": 112,
+    "inventory_targets": 112,
+    "decision_targets": 110,
+    "tax_ids_repeated_in_all_three_layers": 110,
+    "inventory_targets_outside_decision_files": [
+      "automobile-tax",
+      "consumption-tax"
+    ],
+    "monitoring_inventory_shared_target_fields": [
+      "tax_id",
+      "municipal_scope",
+      "sources"
+    ],
+    "manually_edited_decision_files": 4,
+    "derived_target_files": [
+      "config/monitoring.yaml",
+      "config/adapter-inventory.yaml"
+    ]
+  },
+  "io_duplication": {
+    "filesystem_importing_files": 35,
+    "atomic_write_implementations": 12,
+    "filesystem_users": [
+      "scripts/audit/adapter-coverage-audit.js",
+      "scripts/audit/architecture-inventory.js",
+      "scripts/audit/audit-repository.js",
+      "scripts/audit/audit-source-scan.js",
+      "scripts/audit/publish-audit-issues.js",
+      "scripts/automation/candidate-update.js",
+      "scripts/automation/prepare-update.js",
+      "scripts/generate/distribution-generator.js",
+      "scripts/generate/generate-distribution.js",
+      "scripts/generate/initial-master-selection.js",
+      "scripts/initial-master/build-burdens.js",
+      "scripts/monitoring/build-adapter-inventory.js",
+      "scripts/monitoring/build-monitoring-config.js",
+      "scripts/monitoring/extract-egov-tax-semantics.js",
+      "scripts/monitoring/semantic-baseline.js",
+      "scripts/monitoring/write-semantic-baseline.js",
+      "scripts/pipeline/run-monitoring.js",
+      "scripts/pipeline/scan-source.js",
+      "scripts/validate/repository-validator.js",
+      "scripts/validate/schema-validator.js",
+      "tests/adapter-inventory.test.js",
+      "tests/candidate-update.test.js",
+      "tests/date-evidence.test.js",
+      "tests/egov-tax-semantics.test.js",
+      "tests/format-adapter-registry.test.js",
+      "tests/initial-master-data.test.js",
+      "tests/initial-master-selection.test.js",
+      "tests/monitoring-config.test.js",
+      "tests/monitoring-pipeline.test.js",
+      "tests/official-document-adapters.test.js",
+      "tests/public-burden-adapters.test.js",
+      "tests/repository-validator.test.js",
+      "tests/schema-naming.test.js",
+      "tests/social-insurance-adapters.test.js",
+      "tests/source-pipeline.test.js"
+    ],
+    "atomic_writers": [
+      "scripts/audit/adapter-coverage-audit.js",
+      "scripts/audit/audit-repository.js",
+      "scripts/audit/audit-source-scan.js",
+      "scripts/automation/candidate-update.js",
+      "scripts/generate/generate-distribution.js",
+      "scripts/generate/initial-master-selection.js",
+      "scripts/initial-master/build-burdens.js",
+      "scripts/monitoring/build-adapter-inventory.js",
+      "scripts/monitoring/build-monitoring-config.js",
+      "scripts/monitoring/write-semantic-baseline.js",
+      "scripts/pipeline/run-monitoring.js",
+      "scripts/pipeline/scan-source.js"
+    ]
+  },
+  "change_surface": {
+    "current_automated_existing_target_manual_edits": [
+      "config/sources.yaml",
+      "one category adapter decision file"
+    ],
+    "current_derived_files_regenerated": [
+      "config/monitoring.yaml",
+      "config/adapter-inventory.yaml",
+      "docs/monitoring-extraction-target-review.md"
+    ],
+    "target_after_issue_71_manual_edits": [
+      "config/sources.yaml",
+      "one canonical monitoring manifest"
+    ]
+  }
+}
