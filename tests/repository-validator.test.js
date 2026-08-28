@@ -19,7 +19,8 @@ test("validation workflow runs only for pull requests", async () => {
   const workflow = parse(await readFile(new URL("../.github/workflows/validate.yml", import.meta.url), "utf8"));
   assert.ok(Object.hasOwn(workflow.on, "pull_request"));
   assert.ok(!Object.hasOwn(workflow.on, "push"));
-  assert.ok(workflow.jobs.validate.steps.some(({ run }) => run === "npm run inventory:check"));
+  assert.ok(workflow.jobs.validate.steps.some(({ run }) => run === "npm run monitoring:check"));
+  assert.ok(workflow.jobs.validate.steps.some(({ run }) => run === "npm run monitoring:plan:check"));
   assert.ok(workflow.jobs.validate.steps.some(({ run }) => run === "npm run audit:coverage"));
   assert.ok(workflow.jobs.validate.steps.some(({ run }) => run === "npm run semantics:check"));
   assert.ok(workflow.jobs.validate.steps.some(({ run }) => run === "npm run monitor:check"));
@@ -45,7 +46,8 @@ test("source scan workflow is fixed, scheduled, and manually runnable", async ()
   const updateCommands = workflow.jobs["update-pr"].steps.map(({ run }) => run).filter(Boolean);
   assert.ok(scanCommands.includes("npm test"));
   assert.ok(scanCommands.includes("npm run validate"));
-  assert.ok(scanCommands.includes("npm run inventory:check"));
+  assert.ok(scanCommands.includes("npm run monitoring:check"));
+  assert.ok(scanCommands.includes("npm run monitoring:plan:check"));
   assert.ok(scanCommands.includes("npm run generate:check"));
   assert.ok(scanCommands.some((command) => command.includes("npm run audit")));
   assert.ok(scanCommands.some((command) => command.includes("npm run monitor")));

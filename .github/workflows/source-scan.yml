@@ -78,7 +78,8 @@ jobs:
       - run: npm ci
       - run: npm test
       - run: npm run validate
-      - run: npm run inventory:check
+      - run: npm run monitoring:check
+      - run: npm run monitoring:plan:check
       - run: npm run generate:check
       - run: npm run audit -- --output .cache/repository-audit.json
       - id: scan

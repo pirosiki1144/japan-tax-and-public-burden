@@ -6,11 +6,11 @@
 
 ## 文脈
 
-#19で監視対象112制度の初期基盤を構築した結果、工程ごとの安全なレビューを優先して設定、Schema、CLI、処理を追加した。現在の検証は正常だが、同じ`tax_id`が制度別判断表、`monitoring.yaml`、`adapter-inventory.yaml`の3層すべてに112件ずつ現れ、取得・変換・意味抽出・実行制御の境界もフォルダ名だけでは判断しにくい。
+#19で監視対象112制度の初期基盤を構築した結果、工程ごとの安全なレビューを優先して設定、Schema、CLI、処理を追加した。検証は正常だったが、同じ`tax_id`が制度別判断表、runtime監視設定、adapter棚卸しの3層に重複し、取得・変換・意味抽出・実行制御の境界もフォルダ名だけでは判断しにくかった。
 
 一方、このリポジトリは小規模なNode.js ES Modulesプロジェクトである。一般的なHexagonal Architectureのディレクトリをすべて作ると、今回問題となった小ファイルと階層をさらに増やす。
 
-実測では、112件のうち110件の`tax_id`が制度別判断表、`monitoring.yaml`、`adapter-inventory.yaml`の3層すべてに現れる。消費税と自動車税は初号実装の別経路にあり、この例外自体も正本境界が不明瞭であることを示す。実測値と全ファイルの分類は[`reports/architecture-inventory.json`](../../reports/architecture-inventory.json)を正本とする。`npm run architecture:audit`で更新し、`npm run architecture:check`でドリフトを検査できる。
+変更前の実測では、112件のうち110件の`tax_id`が3層すべてに現れた。消費税と自動車税は初号実装の別経路にあり、この例外自体も正本境界が不明瞭であることを示した。現在の実測値と全ファイルの分類は[`reports/architecture-inventory.json`](../../reports/architecture-inventory.json)を正本とする。`npm run architecture:audit`で更新し、`npm run architecture:check`でドリフトを検査できる。
 
 ## 決定
 
@@ -33,9 +33,9 @@ adapter選択にはStrategy + Registryを使い、依存の組立ては単一com
 
 ## 設定の正本
 
-URLの正本は引き続き`config/sources.yaml`とする。制度ごとの監視判断、capability、manual理由、解除条件、再確認方法については、#71で一つのcanonical monitoring manifestを決定する。
+URLの正本は引き続き`config/sources.yaml`とする。制度ごとの監視判断、capability、manual理由、解除条件、再確認方法は、#71で`config/monitoring.yaml`へ統合した。
 
-`config/monitoring.yaml`と`config/adapter-inventory.yaml`は派生投影とし、手編集しない。両方を残すか統合するかは、既存consumerの必要フィールドを#71で確認して決める。事実値、公式根拠、確認日時、4種類の日付、自治体境界は変更しない。
+`config/monitoring.yaml`を唯一の監視設定とする。source URLと抽出対象を展開するruntime監視計画、batch・形式・capabilityを展開する実行・coverage計画、制度群別判断viewはconsumerごとにメモリ上で決定的に生成し、類似したYAMLを保存しない。各viewのSchemaは生成結果の契約検証に使用する。`npm run monitoring:generate`が保存する派生物は人間向け抽出対象レビューだけとする。事実値、公式根拠、確認日時、4種類の日付、自治体境界は変更しない。
 
 ## 依存ルール
 
@@ -52,7 +52,7 @@ URLの正本は引き続き`config/sources.yaml`とする。制度ごとの監�
 
 依存関係を明確にするため、#70 → #71 → #72 → #73 → #74 → #75の直列を維持する。
 
-- #71: 正本manifestを決め、重複する派生設定を一方向生成にする
+- #71: 正本registryを決め、重複する派生設定をメモリ上で一方向生成する
 - #72: 最小Port、Strategy Registry、composition rootを導入する
 - #73: CLIとapplicationを分離し、共通I/Oを集約する
 - #74: 永続化境界のSchemaとunit/contract/integration testを整理する
@@ -64,12 +64,12 @@ URLの正本は引き続き`config/sources.yaml`とする。制度ごとの監�
 
 ## 制度追加時の変更面
 
-現状、既存制度を自動監視へ移す場合は`config/sources.yaml`と制度群別adapter判断表を手編集し、`monitoring.yaml`、`adapter-inventory.yaml`、抽出対象レビューを再生成する。新しい抽出方式ではregistryコードとcontract testも必要になる。
+既存制度を自動監視へ移す場合は`config/sources.yaml`と`config/monitoring.yaml`を手編集し、抽出対象レビューを再生成する。runtime監視計画と実行計画は保存せず、consumerが正本から生成する。新しい抽出方式ではregistryコードとcontract testも必要になる。
 
 目標は、既存Strategyを使う制度では次の2箇所だけを手編集することとする。
 
 1. `config/sources.yaml`の公式取得先
-2. canonical monitoring manifestの制度判断
+2. `config/monitoring.yaml`の制度判断
 
 派生物は一括生成する。新Strategyが必要な場合だけ、Strategy実装とcontract testを追加する。
 

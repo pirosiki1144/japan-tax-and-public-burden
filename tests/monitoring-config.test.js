@@ -2,22 +2,19 @@ import test from "node:test";
 import assert from "node:assert/strict";
 import { readFile } from "node:fs/promises";
 import { fileURLToPath } from "node:url";
-import { buildExtractionTargetReview, buildMonitoringConfig } from "../scripts/monitoring/build-monitoring-config.js";
+import { buildExtractionTargetReview, buildRuntimeMonitoringPlan } from "../scripts/monitoring/build-monitoring-config.js";
 import { buildEgovChangeSnapshot, hasEgovSourceChanged } from "../scripts/monitoring/egov-change-detection.js";
 
 const root = fileURLToPath(new URL("..", import.meta.url));
 
 test("every canonical burden has one reproducible monitoring decision", async () => {
-  const expected = await buildMonitoringConfig(root);
-  const tracked = JSON.parse(await readFile(new URL("../config/monitoring.yaml", import.meta.url), "utf8"));
-
-  assert.deepEqual(tracked, expected);
-  assert.equal(tracked.targets.length, 112);
-  assert.equal(new Set(tracked.targets.map(({ tax_id }) => tax_id)).size, 112);
+  const runtime = await buildRuntimeMonitoringPlan(root);
+  assert.equal(runtime.targets.length, 112);
+  assert.equal(new Set(runtime.targets.map(({ tax_id }) => tax_id)).size, 112);
 });
 
 test("automation is enabled only where an adapter and extraction targets exist", async () => {
-  const { targets } = await buildMonitoringConfig(root);
+  const { targets } = await buildRuntimeMonitoringPlan(root);
   const automated = targets.filter(({ monitoring_mode }) => monitoring_mode === "automated");
   const manual = targets.filter(({ monitoring_mode }) => monitoring_mode === "manual");
 
@@ -29,7 +26,7 @@ test("automation is enabled only where an adapter and extraction targets exist",
 });
 
 test("multiple law sources and municipal scope remain explicit", async () => {
-  const { targets } = await buildMonitoringConfig(root);
+  const { targets } = await buildRuntimeMonitoringPlan(root);
   const byId = new Map(targets.map((target) => [target.tax_id, target]));
 
   assert.equal(byId.get("medical-insurance-premium").sources.length, 3);
@@ -49,7 +46,7 @@ test("reviewed extraction targets have official links and concrete checkboxes", 
 });
 
 test("e-Gov configuration produces machine-readable change snapshots", async () => {
-  const { targets } = await buildMonitoringConfig(root);
+  const { targets } = await buildRuntimeMonitoringPlan(root);
   const source = targets.find(({ tax_id }) => tax_id === "automobile-tax").sources[0];
   const article = (num, text) => ({ tag: "Article", attr: { Num: num }, children: [text] });
   const document = {

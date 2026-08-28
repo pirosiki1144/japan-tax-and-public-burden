@@ -1,24 +1,21 @@
 import test from "node:test";
 import assert from "node:assert/strict";
-import { readFile } from "node:fs/promises";
 import { fileURLToPath } from "node:url";
-import { buildAdapterInventory, validateInventoryCoverage } from "../scripts/monitoring/build-adapter-inventory.js";
-import { readYaml } from "../scripts/validate/schema-validator.js";
+import { buildRuntimeMonitoringPlan } from "../scripts/monitoring/build-monitoring-config.js";
+import { buildMonitoringExecutionPlan, validateExecutionCoverage } from "../scripts/monitoring/build-monitoring-execution-plan.js";
 
 const root = fileURLToPath(new URL("..", import.meta.url));
 
 async function inputs() {
   return {
-    inventory: await buildAdapterInventory(root),
-    monitoring: await readYaml(new URL("../config/monitoring.yaml", import.meta.url))
+    inventory: await buildMonitoringExecutionPlan(root),
+    monitoring: await buildRuntimeMonitoringPlan(root)
   };
 }
 
 test("every enabled monitoring target has one deterministic adapter assignment", async () => {
   const { inventory, monitoring } = await inputs();
-  const tracked = JSON.parse(await readFile(new URL("../config/adapter-inventory.yaml", import.meta.url), "utf8"));
-  assert.deepEqual(tracked, inventory);
-  assert.deepEqual(validateInventoryCoverage(inventory, monitoring), []);
+  assert.deepEqual(validateExecutionCoverage(inventory, monitoring), []);
   assert.equal(inventory.targets.length, 112);
   assert.equal(new Set(inventory.targets.map(({ tax_id }) => tax_id)).size, 112);
   assert.deepEqual(Object.fromEntries([39, 42, 43, 44, 45].map((issue) => [issue, inventory.targets.filter(({ implementation_issue }) => implementation_issue === issue).length])), {
@@ -75,22 +72,22 @@ test("large batches are permitted only for one common official source", async ()
 
   const invalid = structuredClone(inventory);
   invalid.targets.slice(0, 21).forEach((target) => { target.batch_id = "issue-45-invalid-batch"; });
-  assert.ok(validateInventoryCoverage(invalid, monitoring).some((error) => /exceed the batch limit/.test(error)));
+  assert.ok(validateExecutionCoverage(invalid, monitoring).some((error) => /exceed the batch limit/.test(error)));
 });
 
 test("missing, duplicate, and municipal-scope mistakes fail coverage validation", async () => {
   const { inventory, monitoring } = await inputs();
   const missing = structuredClone(inventory);
   missing.targets.pop();
-  assert.ok(validateInventoryCoverage(missing, monitoring).some((error) => /unassigned targets/.test(error)));
+  assert.ok(validateExecutionCoverage(missing, monitoring).some((error) => /unassigned targets/.test(error)));
 
   const duplicate = structuredClone(inventory);
   duplicate.targets.push(structuredClone(duplicate.targets[0]));
-  assert.ok(validateInventoryCoverage(duplicate, monitoring).some((error) => /duplicate tax_id/.test(error)));
+  assert.ok(validateExecutionCoverage(duplicate, monitoring).some((error) => /duplicate tax_id/.test(error)));
 
   const municipality = structuredClone(inventory);
   municipality.targets.find(({ burden_type }) => burden_type === "local_tax").municipal_scope = "national_only";
-  assert.ok(validateInventoryCoverage(municipality, monitoring).some((error) => /Issue #20/.test(error)));
+  assert.ok(validateExecutionCoverage(municipality, monitoring).some((error) => /Issue #20/.test(error)));
 });
 
 test("implemented assignments and manual reasons cannot silently disappear", async () => {
@@ -98,10 +95,10 @@ test("implemented assignments and manual reasons cannot silently disappear", asy
   const implemented = structuredClone(inventory);
   const implementedTarget = implemented.targets.find(({ implementation_status }) => implementation_status === "implemented");
   implementedTarget.sources.forEach((source) => { source.adapter_status = "held"; source.hold_reason = "根拠付きmanualへ移行するための一時的な確認理由を記録する"; });
-  assert.ok(validateInventoryCoverage(implemented, monitoring).some((error) => /implemented target has no implemented source/.test(error)));
+  assert.ok(validateExecutionCoverage(implemented, monitoring).some((error) => /implemented target has no implemented source/.test(error)));
 
   const manual = structuredClone(inventory);
   const manualTarget = manual.targets.find(({ implementation_status }) => implementation_status === "held");
   delete manualTarget.sources.find(({ adapter_status }) => adapter_status === "held").hold_reason;
-  assert.ok(validateInventoryCoverage(manual, monitoring).some((error) => /manual reason is missing/.test(error)));
+  assert.ok(validateExecutionCoverage(manual, monitoring).some((error) => /manual reason is missing/.test(error)));
 });

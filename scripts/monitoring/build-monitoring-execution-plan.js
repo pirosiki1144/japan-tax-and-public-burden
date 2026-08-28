@@ -1,10 +1,11 @@
-import { mkdir, readFile, readdir, rename, writeFile } from "node:fs/promises";
-import { basename, dirname, extname, join } from "node:path";
+import { readdir } from "node:fs/promises";
+import { basename, extname, join } from "node:path";
 import { fileURLToPath } from "node:url";
 import { readYaml } from "../validate/schema-validator.js";
+import { buildRuntimeMonitoringPlan } from "./build-monitoring-config.js";
+import { loadMonitoringRegistry, registryByTaxId } from "./monitoring-registry.js";
 
 const root = fileURLToPath(new URL("../..", import.meta.url));
-const outputPath = join(root, "config/adapter-inventory.yaml");
 const DEFAULT_BATCH_SIZE = 15;
 const MAX_BATCH_SIZE = 20;
 
@@ -90,49 +91,38 @@ function assignBatches(targets) {
   }
 }
 
-export async function buildAdapterInventory(repositoryRoot) {
-  const [monitoring, burdens, nationalAdapters, localAdapters, socialAdapters, publicAdapters] = await Promise.all([
-    readYaml(join(repositoryRoot, "config/monitoring.yaml")),
+export async function buildMonitoringExecutionPlan(repositoryRoot) {
+  const [monitoring, burdens, registry] = await Promise.all([
+    buildRuntimeMonitoringPlan(repositoryRoot),
     readBurdens(repositoryRoot),
-    readYaml(join(repositoryRoot, "config/national-tax-adapters.yaml")),
-    readYaml(join(repositoryRoot, "config/local-tax-adapters.yaml")),
-    readYaml(join(repositoryRoot, "config/social-insurance-adapters.yaml")),
-    readYaml(join(repositoryRoot, "config/public-burden-adapters.yaml"))
+    loadMonitoringRegistry(repositoryRoot)
   ]);
-  const nationalById = new Map(nationalAdapters.targets.map((target) => [target.tax_id, target]));
-  const localById = new Map(localAdapters.targets.map((target) => [target.tax_id, target]));
-  const socialById = new Map(socialAdapters.targets.map((target) => [target.tax_id, target]));
-  const publicById = new Map([
-    ...publicAdapters.implemented_targets.map((target) => [target.tax_id, { ...target, status: "implemented" }]),
-    ...publicAdapters.manual_targets.map((target) => [target.tax_id, {
-      ...target,
-      status: "held",
-      hold_reason: `${target.evidence_gap}。解除条件: ${target.release_conditions.join("、")}。再確認: ${target.recheck_cadence}`
-    }]),
-    ...publicAdapters.held_groups.flatMap((group) => group.tax_ids.map((taxId) => [taxId, { tax_id: taxId, status: "held", hold_reason: group.hold_reason }]))
-  ]);
+  const decisions = registryByTaxId(registry);
   const burdenById = new Map(burdens.map((burden) => [burden.tax_id, burden]));
   const targets = monitoring.targets.filter(({ enabled }) => enabled).map((monitoringTarget) => {
     const burden = burdenById.get(monitoringTarget.tax_id);
     if (!burden) throw new Error(`${monitoringTarget.tax_id}: canonical burden is missing`);
-    const issue = implementationIssue(burden);
-    const nationalPlan = issue === 42 ? nationalById.get(burden.tax_id) : null;
-    const localPlan = issue === 43 ? localById.get(burden.tax_id) : null;
-    const socialPlan = issue === 44 ? socialById.get(burden.tax_id) : null;
-    const publicPlan = issue === 45 ? publicById.get(burden.tax_id) : null;
-    if (issue === 42 && !nationalPlan) throw new Error(`${burden.tax_id}: Issue #42 adapter decision is missing`);
-    if (issue === 43 && !localPlan) throw new Error(`${burden.tax_id}: Issue #43 adapter decision is missing`);
-    if (issue === 44 && !socialPlan) throw new Error(`${burden.tax_id}: Issue #44 adapter decision is missing`);
-    if (issue === 45 && !publicPlan) throw new Error(`${burden.tax_id}: Issue #45 adapter decision is missing`);
-    const implementationPlan = nationalPlan ?? localPlan ?? socialPlan ?? publicPlan;
+    const expectedIssue = implementationIssue(burden);
+    const canonical = decisions.get(burden.tax_id);
+    if (!canonical) throw new Error(`${burden.tax_id}: canonical adapter decision is missing`);
+    if (canonical.implementation_issue !== expectedIssue) throw new Error(`${burden.tax_id}: implementation issue must be ${expectedIssue}`);
+    const issue = canonical.implementation_issue;
+    const implementationPlan = {
+      tax_id: canonical.tax_id,
+      status: canonical.implementation_status === "implemented_initial" ? "implemented" : canonical.implementation_status,
+      ...canonical.decision,
+      ...(canonical.decision_kind === "public_manual" ? {
+        hold_reason: `${canonical.decision.evidence_gap}。解除条件: ${canonical.decision.release_conditions.join("、")}。再確認: ${canonical.decision.recheck_cadence}`
+      } : {})
+    };
     const sources = monitoringTarget.sources.filter(({ enabled }) => enabled).map((source) => {
       const format = sourceFormat(source.target_url);
-      const socialImplemented = issue === 44 && socialPlan.status === "implemented" && socialPlan.source_ids.includes(source.source_id);
+      const socialImplemented = issue === 44 && implementationPlan.status === "implemented" && implementationPlan.source_ids.includes(source.source_id);
       const socialHoldReason = issue === 44 && !socialImplemented
-        ? socialPlan.hold_reason ?? "制度根拠法令は保持するが、現行の率・金額は実装済みの年度別公式資料sourceから抽出する"
+        ? implementationPlan.hold_reason ?? "制度根拠法令は保持するが、現行の率・金額は実装済みの年度別公式資料sourceから抽出する"
         : null;
-      const publicImplemented = issue === 45 && publicPlan.status === "implemented" && publicPlan.source_ids.includes(source.source_id);
-      const publicHoldReason = issue === 45 && !publicImplemented ? publicPlan.hold_reason ?? "現行値は実装済みの公式資料sourceから抽出する" : null;
+      const publicImplemented = issue === 45 && implementationPlan.status === "implemented" && implementationPlan.source_ids.includes(source.source_id);
+      const publicHoldReason = issue === 45 && !publicImplemented ? implementationPlan.hold_reason ?? "現行値は実装済みの公式資料sourceから抽出する" : null;
       return {
         source_id: source.source_id,
         target_id: source.target_id,
@@ -151,7 +141,7 @@ export async function buildAdapterInventory(repositoryRoot) {
       official_name: burden.official_name,
       burden_type: burden.burden_type,
       implementation_issue: issue,
-      implementation_status: issue === 39 ? "implemented_initial" : [42, 43, 44, 45].includes(issue) ? (implementationPlan.status === "implemented" ? "implemented" : "held") : "planned",
+      implementation_status: canonical.implementation_status,
       priority: issue === 39 || [42, 43, 44, 45].includes(issue) ? "completed" : "medium",
       depends_on_issues: issue === 39 ? [] : [31, ...(sources.some(({ official_format }) => official_format !== "egov_law_api_json") ? [46] : [])],
       batch_id: "pending",
@@ -164,23 +154,23 @@ export async function buildAdapterInventory(repositoryRoot) {
   assignBatches(targets);
   return {
     schema_version: 1,
-    generated_at: monitoring.generated_at,
+    generated_at: registry.metadata.execution_plan_generated_at,
     batch_policy: { default_max_targets: DEFAULT_BATCH_SIZE, hard_max_targets: MAX_BATCH_SIZE, common_source_exception: "one_common_source_unit" },
     targets
   };
 }
 
-export function validateInventoryCoverage(inventory, monitoring) {
+export function validateExecutionCoverage(executionPlan, monitoring) {
   const errors = [];
   const enabled = monitoring.targets.filter(({ enabled }) => enabled).map(({ tax_id }) => tax_id).sort();
-  const inventoried = inventory.targets.map(({ tax_id }) => tax_id).sort();
-  if (new Set(inventoried).size !== inventoried.length) errors.push("adapter inventory contains duplicate tax_id values");
+  const inventoried = executionPlan.targets.map(({ tax_id }) => tax_id).sort();
+  if (new Set(inventoried).size !== inventoried.length) errors.push("monitoring execution plan contains duplicate tax_id values");
   const missing = enabled.filter((taxId) => !inventoried.includes(taxId));
   const extra = inventoried.filter((taxId) => !enabled.includes(taxId));
-  if (missing.length) errors.push(`adapter inventory has unassigned targets: ${missing.join(", ")}`);
-  if (extra.length) errors.push(`adapter inventory has unknown targets: ${extra.join(", ")}`);
+  if (missing.length) errors.push(`monitoring execution plan has unassigned targets: ${missing.join(", ")}`);
+  if (extra.length) errors.push(`monitoring execution plan has unknown targets: ${extra.join(", ")}`);
   const batches = new Map();
-  for (const target of inventory.targets) {
+  for (const target of executionPlan.targets) {
     if (!batches.has(target.batch_id)) batches.set(target.batch_id, []);
     batches.get(target.batch_id).push(target);
   }
@@ -188,7 +178,7 @@ export function validateInventoryCoverage(inventory, monitoring) {
     if (targets.length <= MAX_BATCH_SIZE) continue;
     if (new Set(targets.map(({ reuse_group }) => reuse_group)).size !== 1) errors.push(`${batchId}: ${targets.length} targets exceed the batch limit without one common source`);
   }
-  for (const target of inventory.targets) {
+  for (const target of executionPlan.targets) {
     if (target.burden_type === "local_tax" && target.municipal_scope !== "issue_20") errors.push(`${target.tax_id}: local tax municipality scope must remain in Issue #20`);
     const implemented = target.sources.filter(({ adapter_status: status }) => status === "implemented");
     const held = target.sources.filter(({ adapter_status: status }) => status === "held");
@@ -200,22 +190,11 @@ export function validateInventoryCoverage(inventory, monitoring) {
 }
 
 async function run() {
-  const check = process.argv.includes("--check");
-  const inventory = await buildAdapterInventory(root);
-  const monitoring = await readYaml(join(root, "config/monitoring.yaml"));
-  const coverageErrors = validateInventoryCoverage(inventory, monitoring);
+  const executionPlan = await buildMonitoringExecutionPlan(root);
+  const monitoring = await buildRuntimeMonitoringPlan(root);
+  const coverageErrors = validateExecutionCoverage(executionPlan, monitoring);
   if (coverageErrors.length) throw new Error(coverageErrors.join("\n"));
-  const content = `${JSON.stringify(inventory, null, 2)}\n`;
-  if (check) {
-    if (await readFile(outputPath, "utf8") !== content) throw new Error("config/adapter-inventory.yaml differs from canonical monitoring targets");
-    console.log(JSON.stringify({ status: "clean", targets: inventory.targets.length, batches: new Set(inventory.targets.map(({ batch_id }) => batch_id)).size }));
-    return;
-  }
-  await mkdir(dirname(outputPath), { recursive: true });
-  const temporary = `${outputPath}.tmp`;
-  await writeFile(temporary, content, "utf8");
-  await rename(temporary, outputPath);
-  console.log(JSON.stringify({ status: "generated", targets: inventory.targets.length }));
+  console.log(JSON.stringify({ status: "clean", targets: executionPlan.targets.length, batches: new Set(executionPlan.targets.map(({ batch_id }) => batch_id)).size }));
 }
 
 if (process.argv[1] && basename(process.argv[1]) === basename(fileURLToPath(import.meta.url))) {

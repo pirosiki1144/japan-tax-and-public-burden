@@ -2,17 +2,19 @@
 
 - 対応Issue: #30（親Issue: #19）
 - 対象: 正本112制度
-- 設定: `config/monitoring.yaml`
+- 正本: `config/monitoring.yaml`
+- メモリ上の派生view: runtime監視計画、実行・coverage計画、制度群別判断
+- 保存する派生成果物: 監視抽出対象レビュー
 
 ## 判定結果
 
 | 監視区分 | 件数 | 内容 |
 | --- | ---: | --- |
-| `automated` | 1 | 消費税。実装済みe-Gov・国税庁adapterを利用 |
-| `manual` | 111 | 公式法令URLは特定済みだが、制度固有の抽出adapter・監視条文は未実装 |
+| `automated` | 10 | 実装済みのsource・semantic adapterを利用 |
+| `manual` | 102 | 公式根拠、根拠不足、解除条件、再確認方法を保持して人が確認 |
 | `out_of_scope` | 0 | 正本制度にはなし |
 
-各制度は有効状態、cadence、監視区分、1件以上の公式source、対象URL、adapter、対象ID、抽出対象を持つ。複数法令にまたがる医療保険料等は複数sourceを個別に保存する。URLは設定ファイルと正本の根拠データだけに置き、プログラムへ巡回URLを直書きしない。
+正本は全112制度を重複なく持ち、実装Issue、実装状態、監視区分、cadence、自治体境界、制度固有の抽出判断を管理する。複数法令にまたがるsourceと対象URLは`config/sources.yaml`および制度マスタの公式根拠から派生させ、プログラムへ巡回URLを直書きしない。
 
 `manual`は監視不能を意味しない。公式URLを人が月次確認できるが、構造変更や誤抽出を安全に検知する制度固有adapterが未実装であることを表す。adapterを追加する際は、対象条文、期待文書、抽出規則、fixture、失敗時の扱いをレビューしてから`automated`へ変更する。
 
@@ -20,22 +22,22 @@
 
 地方税23制度は国法レベルの地方税法を監視対象とする。自治体条例、自治体公式サイト、個別税率、法定外税の個別監視は#20へ分離し、`municipal_scope: issue_20`で識別する。
 
-`npm run monitoring:check`は正本・source設定から監視設定を再構築し、制度追加・削除、source URL、監視区分等の差異を検出する。`npm run validate`は全正本IDとsource IDの参照、重複、必須項目、URL形式を検証する。
+`npm run monitoring:generate`は正本・制度マスタ・source設定から監視抽出対象レビューを再生成する。`npm run monitoring:check`はruntime監視計画をメモリ上で生成・検証し、レビュー文書の差分を比較する。`npm run validate`は全正本IDとsource IDの参照、重複、必須項目、URL形式を検証する。
 
 ## 全制度adapter棚卸し
 
-`config/adapter-inventory.yaml`は正本112制度を重複なく実装先へ割り当てる再生成可能なregistryである。内訳は#39の初号2制度、#42の国税23制度、#43の地方税22制度、#44の社会保険料5制度、#45のその他公的負担60制度となる。消費税・自動車税を含めると国税24制度、地方税23制度を網羅する。
+実行・coverage計画は正本の112制度を重複なく実装先へ割り当てるメモリ上のviewである。内訳は#39の初号2制度、#42の国税23制度、#43の地方税22制度、#44の社会保険料5制度、#45のその他公的負担60制度となる。消費税・自動車税を含めると国税24制度、地方税23制度を網羅する。
 
 各targetは優先度、依存Issue、batch、共通source再利用キー、自治体範囲、納税義務者・課税対象・算定基礎・率／金額・適用期間の抽出可否を持つ。各公式sourceには`source_id`と`target_id`、形式、現在のadapter、必要な意味抽出adapter、実装状態を記録する。巡回URLは複製せず既存のsource・監視設定から参照する。e-Gov以外の形式は#46の共通形式adapterへも関連付ける。
 
 通常batchは15制度以下とし、20制度を超えるのは同一の共通法令・sourceを再利用する単位だけに限定する。地方税法を共有する地方税22制度がこの例外に該当する。自治体条例と自治体別実税率は引き続き#20で扱う。
 
 ```bash
-npm run inventory:generate
-npm run inventory:check
+npm run monitoring:plan
+npm run monitoring:plan:check
 ```
 
-`inventory:check`は`config/monitoring.yaml`から棚卸しを再生成してbyte単位で比較し、未割当、未知target、重複、batch上限違反、地方税の#20分離違反を失敗にする。PR CIでも実行する。
+実行計画はファイルへ保存せず、各consumerが同じbuilderから決定的に生成する。`monitoring:plan:check`は未割当、未知target、重複、batch上限違反、地方税の#20分離違反を失敗にする。旧`inventory:*`コマンドは互換aliasとして当面維持する。PR CIでも実行する。
 
 ## 後続工程との責務境界
 

@@ -3,6 +3,8 @@ import { auditSourceScan } from "../audit/source-scan-audit.js";
 import { extractConfiguredSemanticTarget } from "../monitoring/extract-egov-tax-semantics.js";
 import { diffAgainstSemanticBaseline, loadSemanticBaseline } from "../monitoring/semantic-baseline.js";
 import { createValidators, readYaml, validateDocument } from "../validate/schema-validator.js";
+import { buildRuntimeMonitoringPlan } from "../monitoring/build-monitoring-config.js";
+import { buildMonitoringExecutionPlan } from "../monitoring/build-monitoring-execution-plan.js";
 import { runAutomatedSources } from "./source-pipeline.js";
 
 const semanticAdapters = new Map([
@@ -20,16 +22,16 @@ export function getSemanticAdapter(name) {
 
 export async function loadOperationalJobs(root, { batchId } = {}) {
   const [inventory, monitoring] = await Promise.all([
-    readYaml(join(root, "config/adapter-inventory.yaml")),
-    readYaml(join(root, "config/monitoring.yaml"))
+    buildMonitoringExecutionPlan(root),
+    buildRuntimeMonitoringPlan(root)
   ]);
   const validators = await createValidators({
-    inventory: join(root, "schemas/adapter-inventory.schema.json"),
-    monitoring: join(root, "schemas/monitoring.schema.json")
+    inventory: join(root, "schemas/monitoring-execution-plan.schema.json"),
+    monitoring: join(root, "schemas/monitoring-runtime.schema.json")
   });
   const errors = [
-    ...validateDocument(validators.inventory, inventory, "config/adapter-inventory.yaml"),
-    ...validateDocument(validators.monitoring, monitoring, "config/monitoring.yaml")
+    ...validateDocument(validators.inventory, inventory, "generated monitoring execution plan"),
+    ...validateDocument(validators.monitoring, monitoring, "generated monitoring runtime plan")
   ];
   if (errors.length) throw new Error(`Monitoring registry is invalid: ${errors.join("; ")}`);
 

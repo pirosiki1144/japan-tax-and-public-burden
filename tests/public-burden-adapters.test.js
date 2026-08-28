@@ -5,10 +5,13 @@ import { basename, join } from "node:path";
 import { fileURLToPath } from "node:url";
 import { readYaml } from "../scripts/validate/schema-validator.js";
 import { runSourcePipeline } from "../scripts/pipeline/source-pipeline.js";
+import { buildMonitoringExecutionPlan } from "../scripts/monitoring/build-monitoring-execution-plan.js";
+import { buildDecisionViews, loadMonitoringRegistry } from "../scripts/monitoring/monitoring-registry.js";
 
 const root = fileURLToPath(new URL("..", import.meta.url));
 const fixtureRoot = join(root, "tests/fixtures/source-scan");
 const now = () => new Date("2026-08-21T08:30:00+09:00");
+const publicPlan = async () => buildDecisionViews(await loadMonitoringRegistry(root))["public-burden-adapters"];
 
 async function fixtureFetch(url) {
   const name = basename(new URL(url).pathname);
@@ -19,8 +22,8 @@ async function fixtureFetch(url) {
 
 test("all Issue 45 targets have exactly one implementation or concrete hold decision", async () => {
   const [plan, inventory] = await Promise.all([
-    readYaml(new URL("../config/public-burden-adapters.yaml", import.meta.url)),
-    readYaml(new URL("../config/adapter-inventory.yaml", import.meta.url))
+    publicPlan(),
+    buildMonitoringExecutionPlan(root)
   ]);
   const issueTargets = inventory.targets.filter(({ implementation_issue }) => implementation_issue === 45);
   const decisions = [
@@ -37,7 +40,7 @@ test("all Issue 45 targets have exactly one implementation or concrete hold deci
 });
 
 test("Issue 56 targets are implemented or have actionable manual review metadata", async () => {
-  const plan = await readYaml(new URL("../config/public-burden-adapters.yaml", import.meta.url));
+  const plan = await publicPlan();
   const issue56 = new Set(["automobile-accident-countermeasure-levy","commodity-customer-protection-fund-charge","common-utility-tunnel-charge","educational-public-transmission-compensation","imported-sugar-adjustment-charge","investor-protection-fund-charge","library-public-transmission-compensation","multipurpose-dam-charge","pollution-prevention-project-business-charge","port-environment-improvement-charge","postal-transport-consignment-compensation","private-recording-compensation"]);
   const implemented = plan.implemented_targets.filter(({ tax_id }) => issue56.has(tax_id));
   const manual = plan.manual_targets.filter(({ tax_id }) => issue56.has(tax_id));
@@ -49,7 +52,7 @@ test("Issue 56 targets are implemented or have actionable manual review metadata
 });
 
 test("educational public transmission values are reproduced offline and stay separate", async () => {
-  const plan = await readYaml(new URL("../config/public-burden-adapters.yaml", import.meta.url));
+  const plan = await publicPlan();
   const result = await runSourcePipeline({ root, sourceId: "mext-educational-public-transmission-compensation", fetchImpl: fixtureFetch, now, dryRun: true });
   assert.equal(result.status, "no_change");
   const facts = new Map(result.normalized.facts.map(({ fact_id, value }) => [fact_id, value]));
@@ -76,7 +79,7 @@ test("educational compensation changes and missing approval markers fail closed"
 });
 
 test("Issue 57 targets retain variable scopes or one reviewable official value", async () => {
-  const plan = await readYaml(new URL("../config/public-burden-adapters.yaml", import.meta.url));
+  const plan = await publicPlan();
   const issue57 = new Set(["agricultural-cooperative-savings-charge","agricultural-cooperative-savings-insurance-premium","agricultural-cooperative-savings-special-charge","broadband-service-charge","deposit-insurance-corporation-charge","deposit-insurance-corporation-special-charge","deposit-insurance-premium","international-oil-pollution-fund-annual-contribution","mining-pollution-prevention-fund-contribution","pollution-load-levy","railway-barrier-free-fee","specified-pollution-levy","supplementary-oil-pollution-fund-annual-contribution","universal-service-fee"]);
   const implemented = plan.implemented_targets.filter(({ tax_id }) => issue57.has(tax_id));
   const manual = plan.manual_targets.filter(({ tax_id }) => issue57.has(tax_id));
@@ -88,7 +91,7 @@ test("Issue 57 targets retain variable scopes or one reviewable official value",
 });
 
 test("universal service number price and application month are reproduced offline", async () => {
-  const plan = await readYaml(new URL("../config/public-burden-adapters.yaml", import.meta.url));
+  const plan = await publicPlan();
   const result = await runSourcePipeline({ root, sourceId: "tca-universal-service-number-price", fetchImpl: fixtureFetch, now, dryRun: true });
   assert.equal(result.status, "no_change");
   const facts = new Map(result.normalized.facts.map(({ fact_id, value }) => [fact_id, value]));
@@ -120,7 +123,7 @@ test("universal service value changes and missing carrier scope fail closed", as
 });
 
 test("Issue 58 targets are implemented or have actionable scope-specific manual metadata", async () => {
-  const plan = await readYaml(new URL("../config/public-burden-adapters.yaml", import.meta.url));
+  const plan = await publicPlan();
   const issue58 = new Set(["adverse-drug-reaction-contribution","banks-shareholdings-purchase-corporation-contribution","electricity-business-compensation-charge","high-level-waste-disposal-contribution","infection-contribution","irrigation-water-facility-charge","participant-protection-trust-charge","pharmaceutical-safety-contribution","policyholder-protection-fund-charge","tru-waste-disposal-contribution","utility-tunnel-management-charge","utility-tunnel-other-occupant-charge","utility-tunnel-planned-occupant-construction-charge","water-resources-facility-user-charge"]);
   const implemented = plan.implemented_targets.filter(({ tax_id }) => issue58.has(tax_id));
   const manual = plan.manual_targets.filter(({ tax_id }) => issue58.has(tax_id));
@@ -132,7 +135,7 @@ test("Issue 58 targets are implemented or have actionable scope-specific manual 
 });
 
 test("PMDA contribution rates, notification formulas, and fiscal periods reproduce offline", async () => {
-  const plan = await readYaml(new URL("../config/public-burden-adapters.yaml", import.meta.url));
+  const plan = await publicPlan();
   const cases = [
     { sourceId: "pmda-adverse-reaction-contribution-2026", taxId: "adverse-drug-reaction-contribution", rate: 0.27, formula: "1/4" },
     { sourceId: "pmda-infection-contribution-2026", taxId: "infection-contribution", rate: 0.05, formula: "1/3" }
@@ -165,7 +168,7 @@ test("PMDA shared legal family never distributes one contribution's facts to ano
 });
 
 test("Issue 59 targets have one official annual value or actionable manual metadata", async () => {
-  const plan = await readYaml(new URL("../config/public-burden-adapters.yaml", import.meta.url));
+  const plan = await publicPlan();
   const issue59 = new Set(["asbestos-relief-general-contribution","asbestos-relief-special-contribution","child-care-contribution","east-japan-business-rehabilitation-contribution","hepatitis-c-special-relief-contribution","minamata-specified-business-compensation-levy","nuclear-damage-support-general-charge","nuclear-damage-support-special-charge","nuclear-decommissioning-contribution","postal-network-support-contribution","regional-economy-revitalization-contribution","renewable-energy-surcharge","reprocessing-contribution","taxi-center-business-charge"]);
   const implemented = plan.implemented_targets.filter(({ tax_id }) => issue59.has(tax_id));
   const manual = plan.manual_targets.filter(({ tax_id }) => issue59.has(tax_id));
@@ -177,7 +180,7 @@ test("Issue 59 targets have one official annual value or actionable manual metad
 });
 
 test("Issue 59 child-care annual value and period reproduce offline without conflation", async () => {
-  const plan = await readYaml(new URL("../config/public-burden-adapters.yaml", import.meta.url));
+  const plan = await publicPlan();
   const child = await runSourcePipeline({ root, sourceId: "cfa-child-care-contribution-2026", fetchImpl: fixtureFetch, now, dryRun: true });
   assert.equal(child.status, "no_change");
   const childFacts = new Map(child.normalized.facts.map(({ fact_id, value }) => [fact_id, value]));
@@ -202,7 +205,7 @@ test("Issue 59 child-care annual changes are detected and missing period markers
 });
 
 test("Issue 60 separates pre-enforcement, active conditional, and active annual-value states", async () => {
-  const plan = await readYaml(new URL("../config/public-burden-adapters.yaml", import.meta.url));
+  const plan = await publicPlan();
   const issue60 = new Set(["fossil-fuel-levy","gx-specified-business-charge","supplementary-nuclear-damage-general-charge","supplementary-nuclear-damage-special-charge","telephone-accessibility-charge"]);
   const implemented = plan.implemented_targets.filter(({ tax_id }) => issue60.has(tax_id));
   const manual = plan.manual_targets.filter(({ tax_id }) => issue60.has(tax_id));
@@ -221,7 +224,7 @@ test("Issue 60 separates pre-enforcement, active conditional, and active annual-
 });
 
 test("Issue 60 telephone relay annual price reproduces offline and changes fail closed", async () => {
-  const plan = await readYaml(new URL("../config/public-burden-adapters.yaml", import.meta.url));
+  const plan = await publicPlan();
   const result = await runSourcePipeline({ root, sourceId: "tca-telephone-relay-number-price-2026", fetchImpl: fixtureFetch, now, dryRun: true });
   assert.equal(result.status, "no_change");
   assert.deepEqual(result.normalized.facts.map(({ value }) => value), ["2026-04-01", "2027-03-31", 1]);
@@ -236,11 +239,11 @@ test("Issue 60 telephone relay annual price reproduces offline and changes fail 
 });
 
 test("disability employment levy amount is reproducible offline", async () => {
-  const plan = await readYaml(new URL("../config/public-burden-adapters.yaml", import.meta.url));
+  const plan = await publicPlan();
   const result = await runSourcePipeline({ root, sourceId: "jeed-disability-employment-levy", fetchImpl: fixtureFetch, now, dryRun: true });
   assert.equal(result.status, "no_change");
   assert.match(result.fetches[0].sha256, /^[a-f0-9]{64}$/);
-  const component = plan.implemented_targets[0].components[0];
+  const component = plan.implemented_targets.find(({ tax_id: taxId }) => taxId === "disability-employment-levy").components[0];
   const fact = result.normalized.facts.find(({ fact_id }) => fact_id === component.fact_id);
   assert.equal(fact.value, 50000);
   assert.equal(component.period_start, null);

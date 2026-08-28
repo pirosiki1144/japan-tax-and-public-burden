@@ -3,7 +3,8 @@ import { mkdir, readFile, writeFile } from "node:fs/promises";
 import { basename, dirname, join } from "node:path";
 import { fileURLToPath } from "node:url";
 import { extractConfiguredLocalTaxSemantics, extractEgovTaxSemantics, extractGenericNationalTaxSemantics } from "../normalize/egov-tax-semantics.js";
-import { readYaml } from "../validate/schema-validator.js";
+import { buildRuntimeMonitoringPlan } from "./build-monitoring-config.js";
+import { buildDecisionViews, loadMonitoringRegistry } from "./monitoring-registry.js";
 
 const root = fileURLToPath(new URL("../..", import.meta.url));
 
@@ -51,8 +52,8 @@ function configuredSource(monitoring, taxId) {
 }
 
 export async function extractConfiguredSemanticTarget(repositoryRoot, taxId, options = {}) {
-  const monitoring = options.monitoring ?? await readYaml(join(repositoryRoot, "config/monitoring.yaml"));
-  const localAdapters = options.localAdapters ?? await readYaml(join(repositoryRoot, "config/local-tax-adapters.yaml"));
+  const monitoring = options.monitoring ?? await buildRuntimeMonitoringPlan(repositoryRoot);
+  const localAdapters = options.localAdapters ?? buildDecisionViews(await loadMonitoringRegistry(repositoryRoot))["local-tax-adapters"];
   const localProfile = localAdapters.targets.find(({ tax_id: configuredTaxId, status }) => configuredTaxId === taxId && status === "implemented");
   const source = configuredSource(monitoring, taxId);
   const { document, evidence } = await loadDocument(source.target_url, options);
@@ -69,7 +70,7 @@ export async function extractConfiguredSemanticTarget(repositoryRoot, taxId, opt
 }
 
 export async function extractConfiguredSemantics(repositoryRoot, options = {}) {
-  const monitoring = await readYaml(join(repositoryRoot, "config/monitoring.yaml"));
+  const monitoring = await buildRuntimeMonitoringPlan(repositoryRoot);
   const records = [];
   for (const taxId of ["consumption-tax", "automobile-tax"]) {
     const { record } = await extractConfiguredSemanticTarget(repositoryRoot, taxId, { ...options, monitoring });
