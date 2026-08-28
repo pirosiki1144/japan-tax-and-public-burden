@@ -61,6 +61,18 @@ export function validateIntegrity(collections) {
     requireReference(indexes.changes, event.change_id, `${event.event_id}.change_id`, errors);
   }
 
+  for (const source of collections.sources ?? []) {
+    for (const taxId of source.monitoring_tax_ids ?? []) {
+      requireReference(indexes.burdens, taxId, `${source.source_id}.monitoring_tax_ids`, errors);
+    }
+  }
+
+  for (const baseline of collections.semanticBaselines ?? []) {
+    for (const record of baseline.records ?? []) {
+      requireReference(indexes.burdens, record.tax_id, `${record.tax_id}.semantic_baseline.tax_id`, errors);
+    }
+  }
+
   for (const revenue of collections.revenues ?? []) {
     requireReference(indexes.burdens, revenue.tax_id, `${revenue.record_id}.tax_id`, errors);
     validateDateOrder(revenue, "period_start", "period_end", revenue.record_id, errors);
