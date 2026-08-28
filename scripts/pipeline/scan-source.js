@@ -1,7 +1,9 @@
-import { mkdir, readFile, rename, writeFile } from "node:fs/promises";
-import { basename, dirname, extname, join } from "node:path";
+import { readFile } from "node:fs/promises";
+import { basename, extname, join } from "node:path";
 import { fileURLToPath } from "node:url";
 import { runAutomatedSources, runSourcePipeline } from "./source-pipeline.js";
+import { scanSources } from "../application/repository-operations.js";
+import { writeJsonAtomic } from "../adapters/filesystem-store.js";
 
 const root = fileURLToPath(new URL("../..", import.meta.url));
 const args = process.argv.slice(2);
@@ -23,26 +25,19 @@ async function fixtureFetch(url) {
   return new Response(body, { status: 200, headers: { "content-type": contentType } });
 }
 
-async function writeResult(path, result) {
-  await mkdir(dirname(path), { recursive: true });
-  const temporary = `${path}.tmp`;
-  await writeFile(temporary, `${JSON.stringify(result, null, 2)}\n`, "utf8");
-  await rename(temporary, path);
-}
-
 if ((!sourceId && !scanAll) || (sourceId && scanAll)) {
   console.error("Specify exactly one of --source or --all");
   process.exitCode = 2;
 } else {
   try {
     const options = { root, fetchImpl: fixtureDir ? fixtureFetch : globalThis.fetch, dryRun };
-    const result = scanAll ? await runAutomatedSources(options) : await runSourcePipeline({ ...options, sourceId });
-    if (output) await writeResult(output, result);
+    const result = await scanSources({ ...options, sourceId, scanAll, runAll: runAutomatedSources, runOne: runSourcePipeline });
+    if (output) await writeJsonAtomic(output, result);
     console.log(JSON.stringify(result));
     if (result.status === "error") process.exitCode = 1;
   } catch (error) {
     const result = { schema_version: 1, status: "error", dry_run: dryRun, source_id: sourceId ?? "all", error: error.message };
-    if (output) await writeResult(output, result);
+    if (output) await writeJsonAtomic(output, result);
     console.error(JSON.stringify(result));
     process.exitCode = 1;
   }

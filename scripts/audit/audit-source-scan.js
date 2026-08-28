@@ -1,6 +1,5 @@
-import { mkdir, readFile, rename, writeFile } from "node:fs/promises";
-import { dirname } from "node:path";
-import { auditSourceScan, issueCandidatesFromAudit } from "./source-scan-audit.js";
+import { auditScan } from "../application/repository-operations.js";
+import { readJson, writeJsonAtomic } from "../adapters/filesystem-store.js";
 
 const args = process.argv.slice(2);
 const option = (name) => {
@@ -15,13 +14,8 @@ if (!scanPath || !reportPath) {
   process.exitCode = 2;
 } else {
   try {
-    const scan = JSON.parse(await readFile(scanPath, "utf8"));
-    const report = auditSourceScan(scan);
-    report.issue_candidates = issueCandidatesFromAudit(report);
-    await mkdir(dirname(reportPath), { recursive: true });
-    const temporary = `${reportPath}.tmp`;
-    await writeFile(temporary, `${JSON.stringify(report, null, 2)}\n`, "utf8");
-    await rename(temporary, reportPath);
+    const report = auditScan(await readJson(scanPath));
+    await writeJsonAtomic(reportPath, report);
     console.log(JSON.stringify({ status: report.status, findings: report.findings.length }));
   } catch (error) {
     console.error(JSON.stringify({ status: "error", error: error.message }));

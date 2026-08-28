@@ -1,8 +1,9 @@
-import { mkdir, readFile, readdir, rename, writeFile } from "node:fs/promises";
-import { dirname, join } from "node:path";
+import { readdir } from "node:fs/promises";
+import { join } from "node:path";
 import { fileURLToPath } from "node:url";
 import { readYaml } from "../validate/schema-validator.js";
 import { loadMonitoringRegistry, registryByTaxId } from "./monitoring-registry.js";
+import { readText, writeTextAtomic } from "../adapters/filesystem-store.js";
 
 const root = fileURLToPath(new URL("../..", import.meta.url));
 const reviewPath = join(root, "docs/monitoring-extraction-target-review.md");
@@ -170,14 +171,11 @@ async function run() {
   const monitoring = await buildRuntimeMonitoringPlan(root);
   const review = await buildExtractionTargetReview(root);
   if (check) {
-    if (await readFile(reviewPath, "utf8") !== review) throw new Error("monitoring extraction target review differs from canonical burdens");
+    if (await readText(reviewPath) !== review) throw new Error("monitoring extraction target review differs from canonical burdens");
     console.log(JSON.stringify({ status: "clean", targets: monitoring.targets.length, tracked_artifacts: 1 }));
     return;
   }
-  await mkdir(dirname(reviewPath), { recursive: true });
-  const temporaryReview = `${reviewPath}.tmp`;
-  await writeFile(temporaryReview, review, "utf8");
-  await rename(temporaryReview, reviewPath);
+  await writeTextAtomic(reviewPath, review);
   console.log(JSON.stringify({ status: "generated", targets: monitoring.targets.length, tracked_artifacts: 1 }));
 }
 
