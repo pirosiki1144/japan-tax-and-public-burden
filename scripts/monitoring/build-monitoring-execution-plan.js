@@ -1,11 +1,11 @@
-import { mkdir, readFile, readdir, rename, writeFile } from "node:fs/promises";
-import { basename, dirname, extname, join } from "node:path";
+import { readdir } from "node:fs/promises";
+import { basename, extname, join } from "node:path";
 import { fileURLToPath } from "node:url";
 import { readYaml } from "../validate/schema-validator.js";
-import { loadMonitoringManifest, targetDecisions } from "./monitoring-manifest.js";
+import { buildRuntimeMonitoringPlan } from "./build-monitoring-config.js";
+import { loadMonitoringRegistry, registryByTaxId } from "./monitoring-registry.js";
 
 const root = fileURLToPath(new URL("../..", import.meta.url));
-const outputPath = join(root, "config/adapter-inventory.yaml");
 const DEFAULT_BATCH_SIZE = 15;
 const MAX_BATCH_SIZE = 20;
 
@@ -91,13 +91,13 @@ function assignBatches(targets) {
   }
 }
 
-export async function buildAdapterInventory(repositoryRoot) {
-  const [monitoring, burdens, manifest] = await Promise.all([
-    readYaml(join(repositoryRoot, "config/monitoring.yaml")),
+export async function buildMonitoringExecutionPlan(repositoryRoot) {
+  const [monitoring, burdens, registry] = await Promise.all([
+    buildRuntimeMonitoringPlan(repositoryRoot),
     readBurdens(repositoryRoot),
-    loadMonitoringManifest(repositoryRoot)
+    loadMonitoringRegistry(repositoryRoot)
   ]);
-  const decisions = targetDecisions(manifest);
+  const decisions = registryByTaxId(registry);
   const burdenById = new Map(burdens.map((burden) => [burden.tax_id, burden]));
   const targets = monitoring.targets.filter(({ enabled }) => enabled).map((monitoringTarget) => {
     const burden = burdenById.get(monitoringTarget.tax_id);
@@ -154,23 +154,23 @@ export async function buildAdapterInventory(repositoryRoot) {
   assignBatches(targets);
   return {
     schema_version: 1,
-    generated_at: manifest.metadata.adapter_inventory_generated_at,
+    generated_at: registry.metadata.execution_plan_generated_at,
     batch_policy: { default_max_targets: DEFAULT_BATCH_SIZE, hard_max_targets: MAX_BATCH_SIZE, common_source_exception: "one_common_source_unit" },
     targets
   };
 }
 
-export function validateInventoryCoverage(inventory, monitoring) {
+export function validateExecutionCoverage(executionPlan, monitoring) {
   const errors = [];
   const enabled = monitoring.targets.filter(({ enabled }) => enabled).map(({ tax_id }) => tax_id).sort();
-  const inventoried = inventory.targets.map(({ tax_id }) => tax_id).sort();
-  if (new Set(inventoried).size !== inventoried.length) errors.push("adapter inventory contains duplicate tax_id values");
+  const inventoried = executionPlan.targets.map(({ tax_id }) => tax_id).sort();
+  if (new Set(inventoried).size !== inventoried.length) errors.push("monitoring execution plan contains duplicate tax_id values");
   const missing = enabled.filter((taxId) => !inventoried.includes(taxId));
   const extra = inventoried.filter((taxId) => !enabled.includes(taxId));
-  if (missing.length) errors.push(`adapter inventory has unassigned targets: ${missing.join(", ")}`);
-  if (extra.length) errors.push(`adapter inventory has unknown targets: ${extra.join(", ")}`);
+  if (missing.length) errors.push(`monitoring execution plan has unassigned targets: ${missing.join(", ")}`);
+  if (extra.length) errors.push(`monitoring execution plan has unknown targets: ${extra.join(", ")}`);
   const batches = new Map();
-  for (const target of inventory.targets) {
+  for (const target of executionPlan.targets) {
     if (!batches.has(target.batch_id)) batches.set(target.batch_id, []);
     batches.get(target.batch_id).push(target);
   }
@@ -178,7 +178,7 @@ export function validateInventoryCoverage(inventory, monitoring) {
     if (targets.length <= MAX_BATCH_SIZE) continue;
     if (new Set(targets.map(({ reuse_group }) => reuse_group)).size !== 1) errors.push(`${batchId}: ${targets.length} targets exceed the batch limit without one common source`);
   }
-  for (const target of inventory.targets) {
+  for (const target of executionPlan.targets) {
     if (target.burden_type === "local_tax" && target.municipal_scope !== "issue_20") errors.push(`${target.tax_id}: local tax municipality scope must remain in Issue #20`);
     const implemented = target.sources.filter(({ adapter_status: status }) => status === "implemented");
     const held = target.sources.filter(({ adapter_status: status }) => status === "held");
@@ -190,22 +190,11 @@ export function validateInventoryCoverage(inventory, monitoring) {
 }
 
 async function run() {
-  const check = process.argv.includes("--check");
-  const inventory = await buildAdapterInventory(root);
-  const monitoring = await readYaml(join(root, "config/monitoring.yaml"));
-  const coverageErrors = validateInventoryCoverage(inventory, monitoring);
+  const executionPlan = await buildMonitoringExecutionPlan(root);
+  const monitoring = await buildRuntimeMonitoringPlan(root);
+  const coverageErrors = validateExecutionCoverage(executionPlan, monitoring);
   if (coverageErrors.length) throw new Error(coverageErrors.join("\n"));
-  const content = `${JSON.stringify(inventory, null, 2)}\n`;
-  if (check) {
-    if (await readFile(outputPath, "utf8") !== content) throw new Error("config/adapter-inventory.yaml differs from canonical monitoring targets");
-    console.log(JSON.stringify({ status: "clean", targets: inventory.targets.length, batches: new Set(inventory.targets.map(({ batch_id }) => batch_id)).size }));
-    return;
-  }
-  await mkdir(dirname(outputPath), { recursive: true });
-  const temporary = `${outputPath}.tmp`;
-  await writeFile(temporary, content, "utf8");
-  await rename(temporary, outputPath);
-  console.log(JSON.stringify({ status: "generated", targets: inventory.targets.length }));
+  console.log(JSON.stringify({ status: "clean", targets: executionPlan.targets.length, batches: new Set(executionPlan.targets.map(({ batch_id }) => batch_id)).size }));
 }
 
 if (process.argv[1] && basename(process.argv[1]) === basename(fileURLToPath(import.meta.url))) {

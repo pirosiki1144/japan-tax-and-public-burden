@@ -4,13 +4,13 @@ import { readFile } from "node:fs/promises";
 import { join } from "node:path";
 import { fileURLToPath } from "node:url";
 import { extractConfiguredSemantics } from "../scripts/monitoring/extract-egov-tax-semantics.js";
-import { buildDecisionProjections, loadMonitoringManifest } from "../scripts/monitoring/monitoring-manifest.js";
+import { buildDecisionViews, loadMonitoringRegistry } from "../scripts/monitoring/monitoring-registry.js";
 import { diffSemanticValues, extractConfiguredLocalTaxSemantics, extractEgovTaxSemantics, extractGenericNationalTaxSemantics } from "../scripts/normalize/egov-tax-semantics.js";
 import { readYaml } from "../scripts/validate/schema-validator.js";
 
 const root = fileURLToPath(new URL("..", import.meta.url));
 const fixtureDir = join(root, "tests/fixtures/source-scan");
-const localPlan = async () => buildDecisionProjections(await loadMonitoringManifest(root))["local-tax-adapters"];
+const localPlan = async () => buildDecisionViews(await loadMonitoringRegistry(root))["local-tax-adapters"];
 
 async function fixture(name) {
   return JSON.parse(await readFile(join(fixtureDir, name), "utf8"));

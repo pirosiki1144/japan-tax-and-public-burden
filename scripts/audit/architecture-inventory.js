@@ -8,8 +8,6 @@ import { parse } from "yaml";
 const ROOT = join(dirname(fileURLToPath(import.meta.url)), "../..");
 const DEFAULT_OUTPUT = "reports/architecture-inventory.json";
 const DERIVED = new Set([
-  "config/adapter-inventory.yaml",
-  "config/monitoring.yaml",
   "data/burdens/initial-master.json",
   "docs/monitoring-extraction-target-review.md",
   "generated/current.csv",
@@ -21,7 +19,7 @@ const DERIVED = new Set([
   "reports/initial-master-selection.json",
   "reports/architecture-inventory.json"
 ]);
-const CLI_NAMES = /^(audit-repository|audit-source-scan|publish-audit-issues|adapter-coverage-audit|prepare-update|generate-distribution|initial-master-selection|build-burdens|build-adapter-inventory|build-monitoring-config|extract-egov-tax-semantics|write-semantic-baseline|run-monitoring|scan-source|validate-data|architecture-inventory)\.js$/;
+const CLI_NAMES = /^(audit-repository|audit-source-scan|publish-audit-issues|adapter-coverage-audit|prepare-update|generate-distribution|initial-master-selection|build-burdens|build-monitoring-execution-plan|build-monitoring-config|extract-egov-tax-semantics|write-semantic-baseline|run-monitoring|scan-source|validate-data|architecture-inventory)\.js$/;
 
 function trackedFiles(root) {
   return execFileSync("git", ["ls-files", "--cached", "--others", "--exclude-standard"], { cwd: root, encoding: "utf8" })
@@ -81,25 +79,17 @@ async function yaml(root, path) {
 }
 
 async function configurationMetrics(root) {
-  const monitoring = await yaml(root, "config/monitoring.yaml");
-  const inventory = await yaml(root, "config/adapter-inventory.yaml");
-  const manifest = await yaml(root, "config/monitoring-manifest.yaml");
-  const monitoringIds = new Set(monitoring.targets.map(({ tax_id: id }) => id));
-  const inventoryIds = new Set(inventory.targets.map(({ tax_id: id }) => id));
-  const manifestIds = new Set(manifest.targets.map(({ tax_id: id }) => id));
-  const decisionIds = new Set(manifest.targets.filter(({ implementation_issue: issue }) => issue !== 39).map(({ tax_id: id }) => id));
-  const common = [...monitoringIds].filter((id) => inventoryIds.has(id) && manifestIds.has(id));
+  const registry = await yaml(root, "config/monitoring.yaml");
+  const registryIds = new Set(registry.targets.map(({ tax_id: id }) => id));
+  const decisionIds = new Set(registry.targets.filter(({ implementation_issue: issue }) => issue !== 39).map(({ tax_id: id }) => id));
   return {
-    monitoring_targets: monitoringIds.size,
-    inventory_targets: inventoryIds.size,
-    canonical_manifest_targets: manifestIds.size,
+    canonical_registry_targets: registryIds.size,
     post_initial_decision_targets: decisionIds.size,
-    tax_ids_repeated_in_canonical_and_two_derived_layers: common.length,
-    initial_implementation_targets: [...inventoryIds].filter((id) => !decisionIds.has(id)).sort(),
-    monitoring_inventory_shared_target_fields: ["tax_id", "municipal_scope", "sources"],
+    initial_implementation_targets: [...registryIds].filter((id) => !decisionIds.has(id)).sort(),
     manually_edited_decision_files: 1,
-    canonical_target_file: "config/monitoring-manifest.yaml",
-    derived_target_files: ["config/monitoring.yaml", "config/adapter-inventory.yaml"]
+    canonical_target_file: "config/monitoring.yaml",
+    persisted_derived_target_files: [],
+    in_memory_views: ["runtime monitoring plan", "monitoring execution plan", "category decision views"]
   };
 }
 
@@ -137,9 +127,9 @@ export async function buildArchitectureInventory(root = ROOT) {
       atomic_writers: atomicWriters
     },
     change_surface: {
-      current_automated_existing_target_manual_edits: ["config/sources.yaml", "config/monitoring-manifest.yaml"],
-      current_derived_files_regenerated: ["config/monitoring.yaml", "config/adapter-inventory.yaml", "docs/monitoring-extraction-target-review.md"],
-      target_after_issue_71_manual_edits: ["config/sources.yaml", "one canonical monitoring manifest"]
+      current_automated_existing_target_manual_edits: ["config/sources.yaml", "config/monitoring.yaml"],
+      current_derived_files_regenerated: ["docs/monitoring-extraction-target-review.md"],
+      target_after_issue_71_manual_edits: ["config/sources.yaml", "config/monitoring.yaml"]
     }
   };
 }

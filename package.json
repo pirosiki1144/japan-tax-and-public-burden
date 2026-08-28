@@ -24,8 +24,10 @@
     "initial-master:check": "node scripts/initial-master/build-burdens.js --check",
     "monitoring:generate": "node scripts/monitoring/build-monitoring-config.js",
     "monitoring:check": "node scripts/monitoring/build-monitoring-config.js --check",
-    "inventory:generate": "node scripts/monitoring/build-adapter-inventory.js",
-    "inventory:check": "node scripts/monitoring/build-adapter-inventory.js --check",
+    "monitoring:plan": "node scripts/monitoring/build-monitoring-execution-plan.js",
+    "monitoring:plan:check": "node scripts/monitoring/build-monitoring-execution-plan.js --check",
+    "inventory:generate": "node scripts/monitoring/build-monitoring-execution-plan.js",
+    "inventory:check": "node scripts/monitoring/build-monitoring-execution-plan.js --check",
     "semantics:extract": "node scripts/monitoring/extract-egov-tax-semantics.js",
     "semantics:check": "node scripts/monitoring/extract-egov-tax-semantics.js --fixture-dir tests/fixtures/source-scan --expected tests/fixtures/semantic-extraction/expected.json"
   },

@@ -5,12 +5,13 @@ import { basename, join } from "node:path";
 import { fileURLToPath } from "node:url";
 import { readYaml } from "../scripts/validate/schema-validator.js";
 import { runSourcePipeline } from "../scripts/pipeline/source-pipeline.js";
-import { buildDecisionProjections, loadMonitoringManifest } from "../scripts/monitoring/monitoring-manifest.js";
+import { buildMonitoringExecutionPlan } from "../scripts/monitoring/build-monitoring-execution-plan.js";
+import { buildDecisionViews, loadMonitoringRegistry } from "../scripts/monitoring/monitoring-registry.js";
 
 const root = fileURLToPath(new URL("..", import.meta.url));
 const fixtureRoot = join(root, "tests/fixtures/source-scan");
 const now = () => new Date("2026-08-21T06:34:11+09:00");
-const socialPlan = async () => buildDecisionProjections(await loadMonitoringManifest(root))["social-insurance-adapters"];
+const socialPlan = async () => buildDecisionViews(await loadMonitoringRegistry(root))["social-insurance-adapters"];
 
 async function fixtureFetch(url) {
   const name = basename(new URL(url).pathname);
@@ -23,7 +24,7 @@ test("all five social-insurance targets are implemented or have a concrete hold 
   const [registry, sources, inventory] = await Promise.all([
     socialPlan(),
     readYaml(new URL("../config/sources.yaml", import.meta.url)),
-    readYaml(new URL("../config/adapter-inventory.yaml", import.meta.url))
+    buildMonitoringExecutionPlan(root)
   ]);
   assert.equal(registry.targets.length, 5);
   assert.deepEqual(registry.targets.filter(({ status }) => status === "implemented").map(({ tax_id }) => tax_id).sort(), ["employment-insurance-premium", "pension-insurance-premium"]);

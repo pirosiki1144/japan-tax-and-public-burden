@@ -3,13 +3,14 @@ import assert from "node:assert/strict";
 import { access } from "node:fs/promises";
 import { fileURLToPath } from "node:url";
 import { readYaml } from "../scripts/validate/schema-validator.js";
+import { buildMonitoringExecutionPlan } from "../scripts/monitoring/build-monitoring-execution-plan.js";
 
 const root = fileURLToPath(new URL("..", import.meta.url));
 
 test("every inventoried non-e-Gov format has an implementation or a concrete manual reason", async () => {
   const [registry, inventory] = await Promise.all([
     readYaml(new URL("../config/format-adapters.yaml", import.meta.url)),
-    readYaml(new URL("../config/adapter-inventory.yaml", import.meta.url))
+    buildMonitoringExecutionPlan(root)
   ]);
   const byFormat = new Map(registry.formats.map((entry) => [entry.format, entry]));
   assert.deepEqual([...byFormat.keys()].sort(), ["csv", "html", "pdf", "spreadsheet"]);

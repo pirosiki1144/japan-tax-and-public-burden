@@ -2,12 +2,9 @@ import { mkdir, readFile, readdir, rename, writeFile } from "node:fs/promises";
 import { dirname, join } from "node:path";
 import { fileURLToPath } from "node:url";
 import { readYaml } from "../validate/schema-validator.js";
-import { buildAdapterInventory, validateInventoryCoverage } from "./build-adapter-inventory.js";
-import { loadMonitoringManifest, targetDecisions } from "./monitoring-manifest.js";
+import { loadMonitoringRegistry, registryByTaxId } from "./monitoring-registry.js";
 
 const root = fileURLToPath(new URL("../..", import.meta.url));
-const outputPath = join(root, "config/monitoring.yaml");
-const inventoryPath = join(root, "config/adapter-inventory.yaml");
 const reviewPath = join(root, "docs/monitoring-extraction-target-review.md");
 const REVIEWED_EXTRACTION_TARGETS = {
   "consumption-tax": {
@@ -73,20 +70,20 @@ async function readBurdens(repositoryRoot) {
   return burdens;
 }
 
-export async function buildMonitoringConfig(repositoryRoot) {
-  const [registry, burdens, manifest] = await Promise.all([
+export async function buildRuntimeMonitoringPlan(repositoryRoot) {
+  const [sourcesRegistry, burdens, monitoringRegistry] = await Promise.all([
     readYaml(join(repositoryRoot, "config/sources.yaml")),
     readBurdens(repositoryRoot),
-    loadMonitoringManifest(repositoryRoot)
+    loadMonitoringRegistry(repositoryRoot)
   ]);
-  const decisions = targetDecisions(manifest);
+  const decisions = registryByTaxId(monitoringRegistry);
 
   const targets = burdens.map((burden) => {
     const decision = decisions.get(burden.tax_id);
     if (!decision) throw new Error(`${burden.tax_id}: canonical monitoring decision is missing`);
     const automated = decision.monitoring_mode === "automated";
     const sources = burden.legal_bases.map((base) => {
-      const registered = sourceForUrl(registry.sources, base.source_url);
+      const registered = sourceForUrl(sourcesRegistry.sources, base.source_url);
       if (!registered) throw new Error(`${burden.tax_id}: no registered source for ${base.source_url}`);
       const extractionTargets = REVIEWED_EXTRACTION_TARGETS[burden.tax_id]?.[targetId(base)] ?? (base.article ? [`条文 ${base.article}`] : ["法令の改廃・施行状態（監視条文は#30の後続整備で確定）"]);
       const structured = extractionTargets.every((target) => typeof target === "object");
@@ -101,8 +98,8 @@ export async function buildMonitoringConfig(repositoryRoot) {
       };
     });
     if (automated) {
-      const supplementalSources = registry.sources.filter(({ monitoring_tax_ids: taxIds = [] }) => taxIds.includes(burden.tax_id));
-      if (burden.tax_id === "consumption-tax") supplementalSources.push(registry.sources.find(({ source_id }) => source_id === "nta-consumption-tax-rates"));
+      const supplementalSources = sourcesRegistry.sources.filter(({ monitoring_tax_ids: taxIds = [] }) => taxIds.includes(burden.tax_id));
+      if (burden.tax_id === "consumption-tax") supplementalSources.push(sourcesRegistry.sources.find(({ source_id }) => source_id === "nta-consumption-tax-rates"));
       for (const supplemental of supplementalSources) {
         for (const [index, url] of supplemental.entry_urls.entries()) {
           if (sources.some(({ target_url }) => target_url === url)) continue;
@@ -129,12 +126,12 @@ export async function buildMonitoringConfig(repositoryRoot) {
       notes: burden.burden_type === "local_tax" ? "国法レベルのみ。自治体条例・公式サイト・個別税率は#20で扱う" : decision.implementation_issue === 44 && automated ? "実装済みadapterで年次監視する。固定年度資料の次年度URLは公式一覧ページを手動確認して更新する" : decision.implementation_issue === 45 && automated ? "#45の実装済みadapterで月次監視する。概要ページにない適用開始日は推測しない" : automated ? "実装済みadapterで自動監視する" : "公式URLは特定済みだが抽出adapter未実装のため手動確認する"
     };
   }).sort((left, right) => left.tax_id.localeCompare(right.tax_id, "en"));
-  return { schema_version: 1, generated_at: manifest.metadata.monitoring_generated_at, targets };
+  return { schema_version: 1, generated_at: monitoringRegistry.metadata.monitoring_generated_at, targets };
 }
 
 export async function buildExtractionTargetReview(repositoryRoot) {
   const burdens = await readBurdens(repositoryRoot);
-  const config = await buildMonitoringConfig(repositoryRoot);
+  const config = await buildRuntimeMonitoringPlan(repositoryRoot);
   const names = new Map(burdens.map(({ tax_id, official_name }) => [tax_id, official_name]));
   const lines = [
     "# 監視抽出対象の設定候補",
@@ -142,7 +139,7 @@ export async function buildExtractionTargetReview(repositoryRoot) {
     "- 対応Issue: #30（親Issue: #19）",
     `- 生成日時: ${config.generated_at}`,
     "- 対象: レビュー指定の消費税と自動車税",
-    "- 確認方法: 公式リンクと、`config/monitoring.yaml`へ反映した監視文面候補を照合する。",
+    "- 確認方法: 公式リンクと、`config/monitoring.yaml`から生成したruntime planの監視文面候補を照合する。",
     "- 注意: チェック済みは設定への反映済みを表す。事実値を確定したことは意味せず、取得時に公式本文と構造を検証する。",
     "- 後続: 納税義務者・課税対象・課税標準・税率の値抽出とCIは#39、定期運用とPR／Issue連携は#31で扱う。",
     ""
@@ -169,34 +166,19 @@ export async function buildExtractionTargetReview(repositoryRoot) {
 
 async function run() {
   const check = process.argv.includes("--check");
-  await loadMonitoringManifest(root);
-  const monitoring = await buildMonitoringConfig(root);
-  const content = `${JSON.stringify(monitoring, null, 2)}\n`;
+  await loadMonitoringRegistry(root);
+  const monitoring = await buildRuntimeMonitoringPlan(root);
   const review = await buildExtractionTargetReview(root);
   if (check) {
-    if (await readFile(outputPath, "utf8") !== content) throw new Error("config/monitoring.yaml differs from canonical burdens and sources");
     if (await readFile(reviewPath, "utf8") !== review) throw new Error("monitoring extraction target review differs from canonical burdens");
-    const inventory = await buildAdapterInventory(root);
-    const coverageErrors = validateInventoryCoverage(inventory, monitoring);
-    if (coverageErrors.length) throw new Error(coverageErrors.join("\n"));
-    if (await readFile(inventoryPath, "utf8") !== `${JSON.stringify(inventory, null, 2)}\n`) throw new Error("config/adapter-inventory.yaml differs from the canonical monitoring manifest");
-    console.log(JSON.stringify({ status: "clean", targets: monitoring.targets.length, artifacts: 3 }));
+    console.log(JSON.stringify({ status: "clean", targets: monitoring.targets.length, tracked_artifacts: 1 }));
     return;
   }
-  await mkdir(dirname(outputPath), { recursive: true });
-  const temporary = `${outputPath}.tmp`;
-  await writeFile(temporary, content, "utf8");
-  await rename(temporary, outputPath);
+  await mkdir(dirname(reviewPath), { recursive: true });
   const temporaryReview = `${reviewPath}.tmp`;
   await writeFile(temporaryReview, review, "utf8");
   await rename(temporaryReview, reviewPath);
-  const inventory = await buildAdapterInventory(root);
-  const coverageErrors = validateInventoryCoverage(inventory, monitoring);
-  if (coverageErrors.length) throw new Error(coverageErrors.join("\n"));
-  const temporaryInventory = `${inventoryPath}.tmp`;
-  await writeFile(temporaryInventory, `${JSON.stringify(inventory, null, 2)}\n`, "utf8");
-  await rename(temporaryInventory, inventoryPath);
-  console.log(JSON.stringify({ status: "generated", targets: monitoring.targets.length, artifacts: 3 }));
+  console.log(JSON.stringify({ status: "generated", targets: monitoring.targets.length, tracked_artifacts: 1 }));
 }
 
 if (process.argv[1] && fileURLToPath(import.meta.url) === fileURLToPath(new URL(`file://${process.argv[1]}`))) {

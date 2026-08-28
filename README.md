@@ -36,14 +36,13 @@ reports/      生成レポート
 ## データの境界
 
 - `config/sources.yaml` は巡回先と利用条件を管理する情報源レジストリです。
-- `config/monitoring-manifest.yaml` は112制度の監視区分、実装状態、capability、手動確認理由・解除条件を一意に管理する正本です。詳細は[初期マスタ監視設定](docs/monitoring-configuration.md)を参照してください。
-- `config/monitoring.yaml` と `config/adapter-inventory.yaml` は、正本manifest、制度マスタ、source設定から生成するruntime・coverage向け投影です。直接編集しません。
+- `config/monitoring.yaml` は112制度の監視区分、実装状態、capability、手動確認理由・解除条件を一意に管理する唯一の監視設定です。runtime監視計画と実行・coverage計画は、この正本、制度マスタ、source設定からメモリ上で生成し、類似設定ファイルとして保存しません。詳細は[初期マスタ監視設定](docs/monitoring-configuration.md)を参照してください。
 - `data/burdens`、`data/changes`、`data/events`、`data/phases`、`data/revenue`、`data/reconciliation` はレビュー後にGitで履歴管理する正本です。`data/monitoring/semantic-baseline.json`は、意味抽出値の前回レビュー済み状態であり、定期監視の項目単位比較に使用します。
 - 初期マスタの投入件数と未解決事項は[初期マスタ投入・検証レポート](docs/initial-master-import-report.md)を参照してください。
 - `data/candidates` は初期マスタへ昇格する前の調査候補です。Schema検証とGitレビューの対象ですが、確定制度マスタや配布対象として扱いません。適合性と昇格条件は[初期マスタ候補のSchema適合性確認](docs/initial-master-schema-fit.md)、税以外の候補の収集範囲は[税以外の公的負担候補の収集・照合](docs/public-burden-candidate-reconciliation.md)、統合判定は[初期マスタ投入対象の統合判定](docs/initial-master-selection.md)を参照してください。
 - 取得途中のHTML、PDF、API応答等は `.cache/` 配下の一時データとし、正本にせずGitにも保存しません。保存が必要な根拠は別Issueで対象と形式をレビューします。
 - 公式HTML・PDF・CSVは `scripts/formats/official-document.js` で原文バイトから形式検証・共通表現化し、制度固有の意味抽出規則は別の設定またはnormalize層へ置きます。共通表現は公式URL、取得日時、原文SHA-256、文書版を保持します。PDFの読取不能、CSVの必須列不足、HTMLの本文欠落、意味抽出の0件・複数件一致は構造変更として失敗させます。PR CIは縮小fixtureだけを使用して外部通信せず、実URLへの疎通は固定の定期・手動workflowで行います。
-- 社会保険料の集計関係や公的負担の手動確認情報も正本manifestに保持し、制度群別viewは必要な処理の中で決定的に組み立てます。
+- 社会保険料の集計関係や公的負担の手動確認情報も監視設定の正本に保持し、制度群別viewは必要な処理の中で決定的に組み立てます。
 - `reports/` や将来の `generated/` は正本から再生成する成果物であり、直接編集しません。
 - 制度の履歴は追記型のeventとphase、およびGit履歴で保持します。既存の事実を上書きして過去の状態を失わないようにします。
 
@@ -56,14 +55,14 @@ npm ci
 npm test
 npm run validate
 npm run monitoring:check
-npm run inventory:check
+npm run monitoring:plan:check
 npm run semantics:check
 npm run monitor:check
 ```
 
 `.yaml` ファイルはYAML 1.2として読み込みます。一般的なYAML記法とJSON互換記法のどちらも使用できます。`npm run validate` はYAML、JSON、CSVを対応するJSON Schemaへ照合し、必須項目、ID重複、参照整合性、URL、日付形式、追加プロパティなどを検証します。
 
-監視設定を変更した場合は`npm run monitoring:generate`を1回実行すると、runtime設定、adapter inventory、抽出対象レビューの3成果物を再生成できます。`npm run monitoring:check`は全成果物を正本manifestとbyte単位で比較します。
+監視設定を変更した場合は`npm run monitoring:generate`で抽出対象レビューを再生成します。`npm run monitoring:check`は正本からruntime監視計画を生成・検証し、レビュー文書の差分も検知します。`npm run monitoring:plan:check`は実行・coverage計画をメモリ上で生成して、未割当や重複を検証します。
 
 ## 公式情報の差分検出
 
@@ -82,7 +81,7 @@ npm run semantics:check
 npm run semantics:extract -- --output .cache/semantic-extraction.json
 ```
 
-#31の共通運用pipelineは、`config/adapter-inventory.yaml`で実装済みになった意味抽出adapterと従来のsource差分検出を一括実行します。確定的で正本への対応先がある差分だけを#9のPR候補へ渡し、取得失敗、構造変更、対応先不明、公式source間不一致は#8の重複防止付きIssue候補へ渡します。
+#31の共通運用pipelineは、`config/monitoring.yaml`から生成した実行計画で実装済みになった意味抽出adapterと従来のsource差分検出を一括実行します。確定的で正本への対応先がある差分だけを#9のPR候補へ渡し、取得失敗、構造変更、対応先不明、公式source間不一致は#8の重複防止付きIssue候補へ渡します。
 
 ```bash
 npm run monitor:check

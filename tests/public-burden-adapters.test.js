@@ -5,12 +5,13 @@ import { basename, join } from "node:path";
 import { fileURLToPath } from "node:url";
 import { readYaml } from "../scripts/validate/schema-validator.js";
 import { runSourcePipeline } from "../scripts/pipeline/source-pipeline.js";
-import { buildDecisionProjections, loadMonitoringManifest } from "../scripts/monitoring/monitoring-manifest.js";
+import { buildMonitoringExecutionPlan } from "../scripts/monitoring/build-monitoring-execution-plan.js";
+import { buildDecisionViews, loadMonitoringRegistry } from "../scripts/monitoring/monitoring-registry.js";
 
 const root = fileURLToPath(new URL("..", import.meta.url));
 const fixtureRoot = join(root, "tests/fixtures/source-scan");
 const now = () => new Date("2026-08-21T08:30:00+09:00");
-const publicPlan = async () => buildDecisionProjections(await loadMonitoringManifest(root))["public-burden-adapters"];
+const publicPlan = async () => buildDecisionViews(await loadMonitoringRegistry(root))["public-burden-adapters"];
 
 async function fixtureFetch(url) {
   const name = basename(new URL(url).pathname);
@@ -22,7 +23,7 @@ async function fixtureFetch(url) {
 test("all Issue 45 targets have exactly one implementation or concrete hold decision", async () => {
   const [plan, inventory] = await Promise.all([
     publicPlan(),
-    readYaml(new URL("../config/adapter-inventory.yaml", import.meta.url))
+    buildMonitoringExecutionPlan(root)
   ]);
   const issueTargets = inventory.targets.filter(({ implementation_issue }) => implementation_issue === 45);
   const decisions = [

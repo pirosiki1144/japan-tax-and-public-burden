@@ -1,26 +1,26 @@
 import { join } from "node:path";
 import { createValidators, readYaml, validateDocument } from "../validate/schema-validator.js";
 
-export async function loadMonitoringManifest(root) {
-  const path = join(root, "config/monitoring-manifest.yaml");
-  const manifest = await readYaml(path);
+export async function loadMonitoringRegistry(root) {
+  const path = join(root, "config/monitoring.yaml");
+  const registry = await readYaml(path);
   const validators = await createValidators({
-    manifest: join(root, "schemas/monitoring-manifest.schema.json"),
+    registry: join(root, "schemas/monitoring.schema.json"),
     "national-tax-adapters": join(root, "schemas/national-tax-adapters.schema.json"),
     "local-tax-adapters": join(root, "schemas/local-tax-adapters.schema.json"),
     "social-insurance-adapters": join(root, "schemas/social-insurance-adapters.schema.json"),
     "public-burden-adapters": join(root, "schemas/public-burden-adapters.schema.json")
   });
-  const errors = validateDocument(validators.manifest, manifest, "config/monitoring-manifest.yaml");
-  if (errors.length) throw new Error(`Canonical monitoring manifest is invalid: ${errors.join("; ")}`);
-  const ids = manifest.targets.map(({ tax_id: taxId }) => taxId);
+  const errors = validateDocument(validators.registry, registry, "config/monitoring.yaml");
+  if (errors.length) throw new Error(`Canonical monitoring registry is invalid: ${errors.join("; ")}`);
+  const ids = registry.targets.map(({ tax_id: taxId }) => taxId);
   const duplicates = ids.filter((taxId, index) => ids.indexOf(taxId) !== index);
-  if (duplicates.length) throw new Error(`Canonical monitoring manifest has duplicate tax_id values: ${[...new Set(duplicates)].join(", ")}`);
-  for (const [name, projection] of Object.entries(buildDecisionProjections(manifest))) {
+  if (duplicates.length) throw new Error(`Canonical monitoring registry has duplicate tax_id values: ${[...new Set(duplicates)].join(", ")}`);
+  for (const [name, projection] of Object.entries(buildDecisionViews(registry))) {
     const projectionErrors = validateDocument(validators[name], projection, `canonical ${name} view`);
-    if (projectionErrors.length) throw new Error(`Canonical monitoring manifest has an invalid ${name} view: ${projectionErrors.join("; ")}`);
+    if (projectionErrors.length) throw new Error(`Canonical monitoring registry has an invalid ${name} view: ${projectionErrors.join("; ")}`);
   }
-  return manifest;
+  return registry;
 }
 
 function standardProjection(manifest, issue) {
@@ -59,15 +59,15 @@ function publicProjection(manifest) {
   };
 }
 
-export function buildDecisionProjections(manifest) {
+export function buildDecisionViews(registry) {
   return {
-    "national-tax-adapters": standardProjection(manifest, 42),
-    "local-tax-adapters": standardProjection(manifest, 43),
-    "social-insurance-adapters": standardProjection(manifest, 44),
-    "public-burden-adapters": publicProjection(manifest)
+    "national-tax-adapters": standardProjection(registry, 42),
+    "local-tax-adapters": standardProjection(registry, 43),
+    "social-insurance-adapters": standardProjection(registry, 44),
+    "public-burden-adapters": publicProjection(registry)
   };
 }
 
-export function targetDecisions(manifest) {
-  return new Map(manifest.targets.map((target) => [target.tax_id, target]));
+export function registryByTaxId(registry) {
+  return new Map(registry.targets.map((target) => [target.tax_id, target]));
 }

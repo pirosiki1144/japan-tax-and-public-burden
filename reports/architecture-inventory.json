@@ -1,17 +1,17 @@
 {
   "schema_version": 1,
   "scope": "tracked repository files",
-  "baseline_commit": "4a29cd5cd76d6f5bcb4492ebc637d735f5590320",
+  "baseline_commit": "ed8395f9dc6b02d23816ba07f87d6ca0c7e22e95",
   "totals": {
-    "tracked_files": 182,
+    "tracked_files": 180,
     "javascript_files": 68,
-    "import_edges": 98
+    "import_edges": 102
   },
   "responsibilities": {
     "adapter": 4,
     "application": 5,
     "cli": 16,
-    "derived_artifact": 12,
+    "derived_artifact": 10,
     "documentation": 12,
     "domain": 15,
     "fixture": 42,
@@ -57,10 +57,6 @@
       "responsibility": "documentation"
     },
     {
-      "path": "config/adapter-inventory.yaml",
-      "responsibility": "derived_artifact"
-    },
-    {
       "path": "config/distribution.yaml",
       "responsibility": "source_of_truth"
     },
@@ -73,12 +69,8 @@
       "responsibility": "source_of_truth"
     },
     {
-      "path": "config/monitoring-manifest.yaml",
-      "responsibility": "source_of_truth"
-    },
-    {
       "path": "config/monitoring.yaml",
-      "responsibility": "derived_artifact"
+      "responsibility": "source_of_truth"
     },
     {
       "path": "config/sources.yaml",
@@ -241,10 +233,6 @@
       "responsibility": "derived_artifact"
     },
     {
-      "path": "schemas/adapter-inventory.schema.json",
-      "responsibility": "source_of_truth"
-    },
-    {
       "path": "schemas/burden.schema.json",
       "responsibility": "source_of_truth"
     },
@@ -289,7 +277,11 @@
       "responsibility": "source_of_truth"
     },
     {
-      "path": "schemas/monitoring-manifest.schema.json",
+      "path": "schemas/monitoring-execution-plan.schema.json",
+      "responsibility": "source_of_truth"
+    },
+    {
+      "path": "schemas/monitoring-runtime.schema.json",
       "responsibility": "source_of_truth"
     },
     {
@@ -405,11 +397,11 @@
       "responsibility": "cli"
     },
     {
-      "path": "scripts/monitoring/build-adapter-inventory.js",
+      "path": "scripts/monitoring/build-monitoring-config.js",
       "responsibility": "cli"
     },
     {
-      "path": "scripts/monitoring/build-monitoring-config.js",
+      "path": "scripts/monitoring/build-monitoring-execution-plan.js",
       "responsibility": "cli"
     },
     {
@@ -421,7 +413,7 @@
       "responsibility": "cli"
     },
     {
-      "path": "scripts/monitoring/monitoring-manifest.js",
+      "path": "scripts/monitoring/monitoring-registry.js",
       "responsibility": "domain"
     },
     {
@@ -502,10 +494,6 @@
     },
     {
       "path": "tests/adapter-coverage-audit.test.js",
-      "responsibility": "test"
-    },
-    {
-      "path": "tests/adapter-inventory.test.js",
       "responsibility": "test"
     },
     {
@@ -697,11 +685,15 @@
       "responsibility": "test"
     },
     {
-      "path": "tests/monitoring-manifest.test.js",
+      "path": "tests/monitoring-execution-plan.test.js",
       "responsibility": "test"
     },
     {
       "path": "tests/monitoring-pipeline.test.js",
+      "responsibility": "test"
+    },
+    {
+      "path": "tests/monitoring-registry.test.js",
       "responsibility": "test"
     },
     {
@@ -754,7 +746,8 @@
     "adjacency": {
       "scripts/audit/adapter-coverage-audit.js": [
         "scripts/validate/schema-validator.js",
-        "scripts/monitoring/build-adapter-inventory.js"
+        "scripts/monitoring/build-monitoring-config.js",
+        "scripts/monitoring/build-monitoring-execution-plan.js"
       ],
       "scripts/audit/architecture-inventory.js": [],
       "scripts/audit/audit-repository.js": [
@@ -796,22 +789,22 @@
         "scripts/generate/initial-master-selection.js",
         "scripts/validate/schema-validator.js"
       ],
-      "scripts/monitoring/build-adapter-inventory.js": [
-        "scripts/validate/schema-validator.js",
-        "scripts/monitoring/monitoring-manifest.js"
-      ],
       "scripts/monitoring/build-monitoring-config.js": [
         "scripts/validate/schema-validator.js",
-        "scripts/monitoring/build-adapter-inventory.js",
-        "scripts/monitoring/monitoring-manifest.js"
+        "scripts/monitoring/monitoring-registry.js"
+      ],
+      "scripts/monitoring/build-monitoring-execution-plan.js": [
+        "scripts/validate/schema-validator.js",
+        "scripts/monitoring/build-monitoring-config.js",
+        "scripts/monitoring/monitoring-registry.js"
       ],
       "scripts/monitoring/egov-change-detection.js": [],
       "scripts/monitoring/extract-egov-tax-semantics.js": [
         "scripts/normalize/egov-tax-semantics.js",
-        "scripts/validate/schema-validator.js",
-        "scripts/monitoring/monitoring-manifest.js"
+        "scripts/monitoring/build-monitoring-config.js",
+        "scripts/monitoring/monitoring-registry.js"
       ],
-      "scripts/monitoring/monitoring-manifest.js": [
+      "scripts/monitoring/monitoring-registry.js": [
         "scripts/validate/schema-validator.js"
       ],
       "scripts/monitoring/semantic-baseline.js": [
@@ -835,6 +828,8 @@
         "scripts/monitoring/extract-egov-tax-semantics.js",
         "scripts/monitoring/semantic-baseline.js",
         "scripts/validate/schema-validator.js",
+        "scripts/monitoring/build-monitoring-config.js",
+        "scripts/monitoring/build-monitoring-execution-plan.js",
         "scripts/pipeline/source-pipeline.js"
       ],
       "scripts/pipeline/run-monitoring.js": [
@@ -858,7 +853,8 @@
       "scripts/validate/integrity-validator.js": [],
       "scripts/validate/repository-validator.js": [
         "scripts/validate/schema-validator.js",
-        "scripts/validate/integrity-validator.js"
+        "scripts/validate/integrity-validator.js",
+        "scripts/monitoring/build-monitoring-config.js"
       ],
       "scripts/validate/schema-validator.js": [],
       "scripts/validate/validate-data.js": [
@@ -867,11 +863,6 @@
       ],
       "tests/adapter-coverage-audit.test.js": [
         "scripts/audit/adapter-coverage-audit.js"
-      ],
-      "tests/adapter-inventory.test.js": [
-        "scripts/monitoring/build-adapter-inventory.js",
-        "scripts/validate/schema-validator.js",
-        "config/monitoring.yaml"
       ],
       "tests/architecture-inventory.test.js": [
         "scripts/audit/architecture-inventory.js"
@@ -893,13 +884,13 @@
       ],
       "tests/egov-tax-semantics.test.js": [
         "scripts/monitoring/extract-egov-tax-semantics.js",
-        "scripts/monitoring/monitoring-manifest.js",
+        "scripts/monitoring/monitoring-registry.js",
         "scripts/normalize/egov-tax-semantics.js",
         "scripts/validate/schema-validator.js"
       ],
       "tests/format-adapter-registry.test.js": [
         "scripts/validate/schema-validator.js",
-        "config/adapter-inventory.yaml"
+        "scripts/monitoring/build-monitoring-execution-plan.js"
       ],
       "tests/http-fetcher.test.js": [
         "scripts/fetch/http-fetcher.js"
@@ -921,11 +912,15 @@
         "scripts/monitoring/build-monitoring-config.js",
         "scripts/monitoring/egov-change-detection.js"
       ],
-      "tests/monitoring-manifest.test.js": [
-        "scripts/monitoring/monitoring-manifest.js"
+      "tests/monitoring-execution-plan.test.js": [
+        "scripts/monitoring/build-monitoring-config.js",
+        "scripts/monitoring/build-monitoring-execution-plan.js"
       ],
       "tests/monitoring-pipeline.test.js": [
         "scripts/pipeline/monitoring-pipeline.js"
+      ],
+      "tests/monitoring-registry.test.js": [
+        "scripts/monitoring/monitoring-registry.js"
       ],
       "tests/official-document-adapters.test.js": [
         "scripts/formats/official-document.js",
@@ -934,7 +929,8 @@
       "tests/public-burden-adapters.test.js": [
         "scripts/validate/schema-validator.js",
         "scripts/pipeline/source-pipeline.js",
-        "scripts/monitoring/monitoring-manifest.js"
+        "scripts/monitoring/build-monitoring-execution-plan.js",
+        "scripts/monitoring/monitoring-registry.js"
       ],
       "tests/public-burden-candidates.test.js": [
         "scripts/validate/schema-validator.js",
@@ -955,8 +951,8 @@
       "tests/social-insurance-adapters.test.js": [
         "scripts/validate/schema-validator.js",
         "scripts/pipeline/source-pipeline.js",
-        "scripts/monitoring/monitoring-manifest.js",
-        "config/adapter-inventory.yaml"
+        "scripts/monitoring/build-monitoring-execution-plan.js",
+        "scripts/monitoring/monitoring-registry.js"
       ],
       "tests/source-pipeline.test.js": [
         "scripts/fetch/source-registry.js",
@@ -973,30 +969,24 @@
     }
   },
   "configuration_overlap": {
-    "monitoring_targets": 112,
-    "inventory_targets": 112,
-    "canonical_manifest_targets": 112,
+    "canonical_registry_targets": 112,
     "post_initial_decision_targets": 110,
-    "tax_ids_repeated_in_canonical_and_two_derived_layers": 112,
     "initial_implementation_targets": [
       "automobile-tax",
       "consumption-tax"
     ],
-    "monitoring_inventory_shared_target_fields": [
-      "tax_id",
-      "municipal_scope",
-      "sources"
-    ],
     "manually_edited_decision_files": 1,
-    "canonical_target_file": "config/monitoring-manifest.yaml",
-    "derived_target_files": [
-      "config/monitoring.yaml",
-      "config/adapter-inventory.yaml"
+    "canonical_target_file": "config/monitoring.yaml",
+    "persisted_derived_target_files": [],
+    "in_memory_views": [
+      "runtime monitoring plan",
+      "monitoring execution plan",
+      "category decision views"
     ]
   },
   "io_duplication": {
-    "filesystem_importing_files": 35,
-    "atomic_write_implementations": 12,
+    "filesystem_importing_files": 34,
+    "atomic_write_implementations": 11,
     "filesystem_users": [
       "scripts/audit/adapter-coverage-audit.js",
       "scripts/audit/architecture-inventory.js",
@@ -1009,8 +999,8 @@
       "scripts/generate/generate-distribution.js",
       "scripts/generate/initial-master-selection.js",
       "scripts/initial-master/build-burdens.js",
-      "scripts/monitoring/build-adapter-inventory.js",
       "scripts/monitoring/build-monitoring-config.js",
+      "scripts/monitoring/build-monitoring-execution-plan.js",
       "scripts/monitoring/extract-egov-tax-semantics.js",
       "scripts/monitoring/semantic-baseline.js",
       "scripts/monitoring/write-semantic-baseline.js",
@@ -1018,7 +1008,6 @@
       "scripts/pipeline/scan-source.js",
       "scripts/validate/repository-validator.js",
       "scripts/validate/schema-validator.js",
-      "tests/adapter-inventory.test.js",
       "tests/candidate-update.test.js",
       "tests/date-evidence.test.js",
       "tests/egov-tax-semantics.test.js",
@@ -1042,7 +1031,6 @@
       "scripts/generate/generate-distribution.js",
       "scripts/generate/initial-master-selection.js",
       "scripts/initial-master/build-burdens.js",
-      "scripts/monitoring/build-adapter-inventory.js",
       "scripts/monitoring/build-monitoring-config.js",
       "scripts/monitoring/write-semantic-baseline.js",
       "scripts/pipeline/run-monitoring.js",
@@ -1052,16 +1040,14 @@
   "change_surface": {
     "current_automated_existing_target_manual_edits": [
       "config/sources.yaml",
-      "config/monitoring-manifest.yaml"
+      "config/monitoring.yaml"
     ],
     "current_derived_files_regenerated": [
-      "config/monitoring.yaml",
-      "config/adapter-inventory.yaml",
       "docs/monitoring-extraction-target-review.md"
     ],
     "target_after_issue_71_manual_edits": [
       "config/sources.yaml",
-      "one canonical monitoring manifest"
+      "config/monitoring.yaml"
     ]
   }
 }

@@ -2,7 +2,8 @@ import { access, mkdir, readFile, rename, writeFile } from "node:fs/promises";
 import { basename, dirname, join } from "node:path";
 import { fileURLToPath } from "node:url";
 import { readYaml } from "../validate/schema-validator.js";
-import { validateInventoryCoverage } from "../monitoring/build-adapter-inventory.js";
+import { buildRuntimeMonitoringPlan } from "../monitoring/build-monitoring-config.js";
+import { buildMonitoringExecutionPlan, validateExecutionCoverage } from "../monitoring/build-monitoring-execution-plan.js";
 
 async function exists(path) {
   try { await access(path); return true; } catch { return false; }
@@ -10,11 +11,11 @@ async function exists(path) {
 
 export async function auditAdapterCoverage(root, { batchId } = {}) {
   const [inventory, monitoring, sources] = await Promise.all([
-    readYaml(join(root, "config/adapter-inventory.yaml")),
-    readYaml(join(root, "config/monitoring.yaml")),
+    buildMonitoringExecutionPlan(root),
+    buildRuntimeMonitoringPlan(root),
     readYaml(join(root, "config/sources.yaml"))
   ]);
-  const errors = validateInventoryCoverage(inventory, monitoring);
+  const errors = validateExecutionCoverage(inventory, monitoring);
   const sourceById = new Map(sources.sources.map((source) => [source.source_id, source]));
   const monitoringById = new Map(monitoring.targets.map((target) => [target.tax_id, target]));
   const targets = batchId ? inventory.targets.filter(({ batch_id: id }) => id === batchId) : inventory.targets;
