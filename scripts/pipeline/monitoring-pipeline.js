@@ -1,23 +1,14 @@
 import { join } from "node:path";
 import { auditSourceScan } from "../audit/source-scan-audit.js";
-import { extractConfiguredSemanticTarget } from "../monitoring/extract-egov-tax-semantics.js";
-import { diffAgainstSemanticBaseline, loadSemanticBaseline } from "../monitoring/semantic-baseline.js";
+import { loadSemanticBaseline } from "../monitoring/semantic-baseline.js";
 import { createValidators, readYaml, validateDocument } from "../validate/schema-validator.js";
 import { buildRuntimeMonitoringPlan } from "../monitoring/build-monitoring-config.js";
 import { buildMonitoringExecutionPlan } from "../monitoring/build-monitoring-execution-plan.js";
 import { runAutomatedSources } from "./source-pipeline.js";
-
-const semanticAdapters = new Map([
-  ["egov_law_semantics", async ({ root, taxId, fetchImpl, now, monitoring, baseline, documentCache }) => {
-    const extracted = await extractConfiguredSemanticTarget(root, taxId, { fetchImpl, now, monitoring, documentCache });
-    return { ...extracted, candidate_diff: diffAgainstSemanticBaseline(extracted.record, baseline) };
-  }]
-]);
+import { monitoringComposition } from "../composition/monitoring-composition.js";
 
 export function getSemanticAdapter(name) {
-  const adapter = semanticAdapters.get(name);
-  if (!adapter) throw new Error(`No registered semantic adapter: ${name}`);
-  return adapter;
+  return monitoringComposition().registries.semanticExtractors.get(name);
 }
 
 export async function loadOperationalJobs(root, { batchId } = {}) {

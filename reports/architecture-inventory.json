@@ -1,23 +1,24 @@
 {
   "schema_version": 1,
   "scope": "tracked repository files",
-  "baseline_commit": "ed8395f9dc6b02d23816ba07f87d6ca0c7e22e95",
+  "baseline_commit": "2874e9601b3842237d65320d17215451d3b651c7",
   "totals": {
-    "tracked_files": 180,
-    "javascript_files": 68,
-    "import_edges": 102
+    "tracked_files": 184,
+    "javascript_files": 72,
+    "import_edges": 113
   },
   "responsibilities": {
     "adapter": 4,
-    "application": 5,
+    "application": 7,
     "cli": 16,
+    "composition_root": 1,
     "derived_artifact": 10,
     "documentation": 12,
     "domain": 15,
     "fixture": 42,
     "repository_support": 8,
     "source_of_truth": 40,
-    "test": 28
+    "test": 29
   },
   "files": [
     {
@@ -325,6 +326,14 @@
       "responsibility": "source_of_truth"
     },
     {
+      "path": "scripts/application/source-monitoring.js",
+      "responsibility": "application"
+    },
+    {
+      "path": "scripts/application/strategy-registry.js",
+      "responsibility": "application"
+    },
+    {
       "path": "scripts/audit/adapter-coverage-audit.js",
       "responsibility": "cli"
     },
@@ -359,6 +368,10 @@
     {
       "path": "scripts/automation/prepare-update.js",
       "responsibility": "cli"
+    },
+    {
+      "path": "scripts/composition/monitoring-composition.js",
+      "responsibility": "composition_root"
     },
     {
       "path": "scripts/diff/canonical-diff.js",
@@ -737,6 +750,10 @@
       "responsibility": "test"
     },
     {
+      "path": "tests/strategy-registry.test.js",
+      "responsibility": "test"
+    },
+    {
       "path": "tests/tax-candidates.test.js",
       "responsibility": "test"
     }
@@ -744,6 +761,10 @@
   "import_graph": {
     "cycles": [],
     "adjacency": {
+      "scripts/application/source-monitoring.js": [
+        "scripts/application/strategy-registry.js"
+      ],
+      "scripts/application/strategy-registry.js": [],
       "scripts/audit/adapter-coverage-audit.js": [
         "scripts/validate/schema-validator.js",
         "scripts/monitoring/build-monitoring-config.js",
@@ -765,6 +786,20 @@
       "scripts/automation/candidate-update.js": [],
       "scripts/automation/prepare-update.js": [
         "scripts/automation/candidate-update.js"
+      ],
+      "scripts/composition/monitoring-composition.js": [
+        "scripts/application/strategy-registry.js",
+        "scripts/application/source-monitoring.js",
+        "scripts/diff/canonical-diff.js",
+        "scripts/fetch/http-fetcher.js",
+        "scripts/fetch/source-registry.js",
+        "scripts/formats/official-document.js",
+        "scripts/monitoring/extract-egov-tax-semantics.js",
+        "scripts/monitoring/semantic-baseline.js",
+        "scripts/normalize/egov-law-article-facts.js",
+        "scripts/normalize/html-regex-facts.js",
+        "scripts/normalize/normalized-source-validator.js",
+        "scripts/normalize/pdf-regex-facts.js"
       ],
       "scripts/diff/canonical-diff.js": [
         "scripts/validate/schema-validator.js"
@@ -825,12 +860,12 @@
       ],
       "scripts/pipeline/monitoring-pipeline.js": [
         "scripts/audit/source-scan-audit.js",
-        "scripts/monitoring/extract-egov-tax-semantics.js",
         "scripts/monitoring/semantic-baseline.js",
         "scripts/validate/schema-validator.js",
         "scripts/monitoring/build-monitoring-config.js",
         "scripts/monitoring/build-monitoring-execution-plan.js",
-        "scripts/pipeline/source-pipeline.js"
+        "scripts/pipeline/source-pipeline.js",
+        "scripts/composition/monitoring-composition.js"
       ],
       "scripts/pipeline/run-monitoring.js": [
         "scripts/pipeline/monitoring-pipeline.js"
@@ -839,16 +874,11 @@
         "scripts/pipeline/source-pipeline.js"
       ],
       "scripts/pipeline/source-adapters.js": [
-        "scripts/normalize/html-regex-facts.js",
-        "scripts/normalize/egov-law-article-facts.js",
-        "scripts/normalize/pdf-regex-facts.js"
+        "scripts/composition/monitoring-composition.js"
       ],
       "scripts/pipeline/source-pipeline.js": [
-        "scripts/fetch/source-registry.js",
-        "scripts/fetch/http-fetcher.js",
-        "scripts/normalize/normalized-source-validator.js",
-        "scripts/diff/canonical-diff.js",
-        "scripts/pipeline/source-adapters.js"
+        "scripts/application/source-monitoring.js",
+        "scripts/composition/monitoring-composition.js"
       ],
       "scripts/validate/integrity-validator.js": [],
       "scripts/validate/repository-validator.js": [
@@ -890,7 +920,8 @@
       ],
       "tests/format-adapter-registry.test.js": [
         "scripts/validate/schema-validator.js",
-        "scripts/monitoring/build-monitoring-execution-plan.js"
+        "scripts/monitoring/build-monitoring-execution-plan.js",
+        "scripts/composition/monitoring-composition.js"
       ],
       "tests/http-fetcher.test.js": [
         "scripts/fetch/http-fetcher.js"
@@ -962,6 +993,10 @@
         "scripts/audit/source-scan-audit.js",
         "scripts/audit/publish-audit-issues.js"
       ],
+      "tests/strategy-registry.test.js": [
+        "scripts/application/strategy-registry.js",
+        "scripts/composition/monitoring-composition.js"
+      ],
       "tests/tax-candidates.test.js": [
         "scripts/validate/schema-validator.js",
         "data/candidates/local-taxes.yaml"
@@ -985,7 +1020,7 @@
     ]
   },
   "io_duplication": {
-    "filesystem_importing_files": 34,
+    "filesystem_importing_files": 35,
     "atomic_write_implementations": 11,
     "filesystem_users": [
       "scripts/audit/adapter-coverage-audit.js",
@@ -1021,7 +1056,8 @@
       "tests/repository-validator.test.js",
       "tests/schema-naming.test.js",
       "tests/social-insurance-adapters.test.js",
-      "tests/source-pipeline.test.js"
+      "tests/source-pipeline.test.js",
+      "tests/strategy-registry.test.js"
     ],
     "atomic_writers": [
       "scripts/audit/adapter-coverage-audit.js",

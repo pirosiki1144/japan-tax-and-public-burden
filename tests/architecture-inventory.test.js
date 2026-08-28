@@ -26,4 +26,6 @@ test("classification keeps canonical configuration separate from generated proje
   assert.equal(classifyFile("config/monitoring.yaml"), "source_of_truth");
   assert.equal(classifyFile("tests/fixtures/source-scan/example.html"), "fixture");
   assert.equal(classifyFile("scripts/pipeline/monitoring-pipeline.js"), "application");
+  assert.equal(classifyFile("scripts/application/source-monitoring.js"), "application");
+  assert.equal(classifyFile("scripts/composition/monitoring-composition.js"), "composition_root");
 });

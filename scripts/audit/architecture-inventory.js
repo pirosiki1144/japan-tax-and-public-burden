@@ -37,6 +37,8 @@ export function classifyFile(path) {
   if (path.startsWith("scripts/") && CLI_NAMES.test(name)) return "cli";
   if (path.startsWith("scripts/pipeline/") || path.startsWith("scripts/generate/") || path.startsWith("scripts/automation/")) return "application";
   if (path.startsWith("scripts/fetch/") || path.startsWith("scripts/formats/") || path === "scripts/validate/schema-validator.js") return "adapter";
+  if (path.startsWith("scripts/application/")) return "application";
+  if (path.startsWith("scripts/composition/")) return "composition_root";
   if (path.startsWith("scripts/")) return "domain";
   return "unclassified";
 }

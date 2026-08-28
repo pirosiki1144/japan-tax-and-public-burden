@@ -31,6 +31,8 @@ cli → application → domain
 
 adapter選択にはStrategy + Registryを使い、依存の組立ては単一composition rootへ集約する。制度固有コードを持たない差は設定で表現し、JavaScriptファイルを追加しない。
 
+#72ではこの決定を、`scripts/application`のI/O非依存な監視処理、用途別の最小Port、`scripts/composition/monitoring-composition.js`の単一composition rootとして実装した。HTTP取得、HTML・PDF・CSV文書変換、e-Gov・宣言的意味抽出は共通のStrategy registry契約へ登録する。既存`pipeline`入口は#73まで互換facadeとして維持し、CLIの全面移動は行わない。
+
 ## 設定の正本
 
 URLの正本は引き続き`config/sources.yaml`とする。制度ごとの監視判断、capability、manual理由、解除条件、再確認方法は、#71で`config/monitoring.yaml`へ統合した。
