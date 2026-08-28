@@ -1,8 +1,8 @@
-import { mkdir, readFile, rename, writeFile } from "node:fs/promises";
-import { dirname, join } from "node:path";
+import { join } from "node:path";
 import { fileURLToPath } from "node:url";
 import { buildInitialMasterSelection } from "../generate/initial-master-selection.js";
 import { readYaml } from "../validate/schema-validator.js";
+import { readText, writeTextAtomic } from "../adapters/filesystem-store.js";
 
 const root = fileURLToPath(new URL("../..", import.meta.url));
 const outputPath = join(root, "data/burdens/initial-master.json");
@@ -61,14 +61,11 @@ async function run() {
   const check = process.argv.includes("--check");
   const content = `${JSON.stringify(await buildInitialMasterBurdens(root), null, 2)}\n`;
   if (check) {
-    if (await readFile(outputPath, "utf8") !== content) throw new Error("data/burdens/initial-master.json differs from #28 selection");
+    if (await readText(outputPath) !== content) throw new Error("data/burdens/initial-master.json differs from #28 selection");
     console.log(JSON.stringify({ status: "clean", burdens: JSON.parse(content).length }));
     return;
   }
-  await mkdir(dirname(outputPath), { recursive: true });
-  const temporary = `${outputPath}.tmp`;
-  await writeFile(temporary, content, "utf8");
-  await rename(temporary, outputPath);
+  await writeTextAtomic(outputPath, content);
   console.log(JSON.stringify({ status: "generated", burdens: JSON.parse(content).length }));
 }
 

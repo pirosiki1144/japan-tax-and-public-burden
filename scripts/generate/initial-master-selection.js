@@ -1,7 +1,8 @@
-import { mkdir, readFile, readdir, rename, writeFile } from "node:fs/promises";
-import { dirname, join } from "node:path";
+import { readdir } from "node:fs/promises";
+import { join } from "node:path";
 import { fileURLToPath } from "node:url";
 import { readYaml } from "../validate/schema-validator.js";
+import { readText, writeTextAtomic } from "../adapters/filesystem-store.js";
 
 const root = fileURLToPath(new URL("../..", import.meta.url));
 const outputPath = join(root, "reports/initial-master-selection.json");
@@ -100,14 +101,11 @@ async function run() {
   const check = process.argv.includes("--check");
   const report = `${JSON.stringify(await buildInitialMasterSelection(root), null, 2)}\n`;
   if (check) {
-    if (await readFile(outputPath, "utf8") !== report) throw new Error("reports/initial-master-selection.json differs from candidate decisions");
+    if (await readText(outputPath) !== report) throw new Error("reports/initial-master-selection.json differs from candidate decisions");
     console.log(JSON.stringify({ status: "clean", candidates: JSON.parse(report).counts.candidates }));
     return;
   }
-  await mkdir(dirname(outputPath), { recursive: true });
-  const temporary = `${outputPath}.tmp`;
-  await writeFile(temporary, report, "utf8");
-  await rename(temporary, outputPath);
+  await writeTextAtomic(outputPath, report);
   console.log(JSON.stringify({ status: "generated", candidates: JSON.parse(report).counts.candidates }));
 }
 

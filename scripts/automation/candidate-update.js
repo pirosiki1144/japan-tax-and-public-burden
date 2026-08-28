@@ -1,7 +1,8 @@
-import { mkdir, readFile, rename, writeFile } from "node:fs/promises";
-import { dirname, extname, resolve, sep } from "node:path";
+import { readFile } from "node:fs/promises";
+import { extname, resolve, sep } from "node:path";
 import { isDeepStrictEqual } from "node:util";
 import { parseDocument } from "yaml";
+import { writeTextAtomic } from "../adapters/filesystem-store.js";
 
 function canonicalPath(root, relativePath) {
   const dataRoot = `${resolve(root, "data")}${sep}`;
@@ -92,9 +93,7 @@ export async function applyCandidateUpdates({ root, scan }) {
 
   for (const [path, document] of documents) {
     const content = document.format === "json" ? `${JSON.stringify(document.value, null, 2)}\n` : document.yaml.toString();
-    const temporary = `${path}.candidate-update.tmp`;
-    await writeFile(temporary, content, "utf8");
-    await rename(temporary, path);
+    await writeTextAtomic(path, content);
   }
   return { changes, applied };
 }
@@ -153,8 +152,5 @@ ${files.map((file) => `- \`${file}\``).join("\n")}
 }
 
 export async function writePullRequestBody(path, body) {
-  await mkdir(dirname(path), { recursive: true });
-  const temporary = `${path}.tmp`;
-  await writeFile(temporary, body, "utf8");
-  await rename(temporary, path);
+  await writeTextAtomic(path, body);
 }

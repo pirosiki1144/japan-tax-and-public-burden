@@ -1,9 +1,10 @@
-import { access, mkdir, readFile, rename, writeFile } from "node:fs/promises";
-import { basename, dirname, join } from "node:path";
+import { access } from "node:fs/promises";
+import { basename, join } from "node:path";
 import { fileURLToPath } from "node:url";
 import { readYaml } from "../validate/schema-validator.js";
 import { buildRuntimeMonitoringPlan } from "../monitoring/build-monitoring-config.js";
 import { buildMonitoringExecutionPlan, validateExecutionCoverage } from "../monitoring/build-monitoring-execution-plan.js";
+import { writeJsonAtomic } from "../adapters/filesystem-store.js";
 
 async function exists(path) {
   try { await access(path); return true; } catch { return false; }
@@ -72,19 +73,12 @@ export async function auditAdapterCoverage(root, { batchId } = {}) {
   };
 }
 
-async function writeJson(path, value) {
-  await mkdir(dirname(path), { recursive: true });
-  const temporary = `${path}.tmp`;
-  await writeFile(temporary, `${JSON.stringify(value, null, 2)}\n`, "utf8");
-  await rename(temporary, path);
-}
-
 const root = fileURLToPath(new URL("../..", import.meta.url));
 const args = process.argv.slice(2);
 const option = (name) => { const index = args.indexOf(`--${name}`); return index < 0 ? undefined : args[index + 1]; };
 if (process.argv[1] && basename(process.argv[1]) === basename(fileURLToPath(import.meta.url))) {
   const report = await auditAdapterCoverage(root, { batchId: option("batch") });
-  if (option("output")) await writeJson(option("output"), report);
+  if (option("output")) await writeJsonAtomic(option("output"), report);
   if (args.includes("--matrix")) console.log(JSON.stringify(report.batches.map(({ batch_id }) => batch_id)));
   else console.log(JSON.stringify({ status: report.status, ...report.summary, errors: report.errors }));
   if (report.status === "error") process.exitCode = 1;

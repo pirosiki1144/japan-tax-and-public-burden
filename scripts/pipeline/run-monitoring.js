@@ -1,7 +1,9 @@
-import { mkdir, readFile, rename, writeFile } from "node:fs/promises";
-import { basename, dirname, extname, join } from "node:path";
+import { readFile } from "node:fs/promises";
+import { basename, extname, join } from "node:path";
 import { fileURLToPath } from "node:url";
 import { runOperationalMonitoring } from "./monitoring-pipeline.js";
+import { monitorSources } from "../application/repository-operations.js";
+import { writeJsonAtomic } from "../adapters/filesystem-store.js";
 
 const root = fileURLToPath(new URL("../..", import.meta.url));
 const args = process.argv.slice(2);
@@ -19,13 +21,6 @@ function fixtureFetch(fixtureDir) {
   };
 }
 
-async function writeResult(path, result) {
-  await mkdir(dirname(path), { recursive: true });
-  const temporary = `${path}.tmp`;
-  await writeFile(temporary, `${JSON.stringify(result, null, 2)}\n`, "utf8");
-  await rename(temporary, path);
-}
-
 const output = option("output");
 if (!output) {
   console.error("Usage: node scripts/pipeline/run-monitoring.js --output <result.json> [--fixture-dir <dir>] [--batch <id>] [--dry-run]");
@@ -33,19 +28,19 @@ if (!output) {
 } else {
   try {
     const fixtureDir = option("fixture-dir");
-    const result = await runOperationalMonitoring({
+    const result = await monitorSources({ run: runOperationalMonitoring,
       root,
       fetchImpl: fixtureDir ? fixtureFetch(fixtureDir) : globalThis.fetch,
       dryRun: args.includes("--dry-run"),
       batchId: option("batch"),
       semanticBaselinePath: option("semantic-baseline")
     });
-    await writeResult(output, result);
+    await writeJsonAtomic(output, result);
     console.log(JSON.stringify({ status: result.status, ...result.registry, ...result.routing }));
     if (result.status === "error") process.exitCode = 1;
   } catch (error) {
     const result = { schema_version: 1, status: "error", dry_run: args.includes("--dry-run"), error: error.message, results: [] };
-    await writeResult(output, result);
+    await writeJsonAtomic(output, result);
     console.error(JSON.stringify(result));
     process.exitCode = 1;
   }

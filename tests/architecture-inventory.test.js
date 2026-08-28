@@ -18,7 +18,8 @@ test("the baseline inventory detects dependency and configuration duplication", 
   assert.equal(report.configuration_overlap.post_initial_decision_targets, 110);
   assert.deepEqual(report.configuration_overlap.initial_implementation_targets, ["automobile-tax", "consumption-tax"]);
   assert.equal(report.configuration_overlap.manually_edited_decision_files, 1);
-  assert.ok(report.io_duplication.atomic_write_implementations > 1);
+  assert.equal(report.io_duplication.atomic_write_implementations, 1);
+  assert.deepEqual(report.io_duplication.atomic_writers, ["scripts/adapters/filesystem-store.js"]);
 });
 
 test("classification keeps canonical configuration separate from generated projections", () => {
