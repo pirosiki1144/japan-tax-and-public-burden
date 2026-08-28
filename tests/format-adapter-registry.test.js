@@ -7,6 +7,7 @@ import { buildMonitoringExecutionPlan } from "../scripts/monitoring/build-monito
 import { monitoringComposition } from "../scripts/composition/monitoring-composition.js";
 
 const root = fileURLToPath(new URL("..", import.meta.url));
+const fixtures = { html: "sample.html", pdf: "sample.pdf", csv: "sample.csv" };
 
 test("every inventoried non-e-Gov format has an implementation or a concrete manual reason", async () => {
   const [registry, inventory] = await Promise.all([
@@ -20,7 +21,7 @@ test("every inventoried non-e-Gov format has an implementation or a concrete man
     if (entry.status === "implemented") {
       assert.equal(parserRegistry.has(entry.adapter), true);
       await access(`${root}/${entry.implementation}`);
-      await access(`${root}/${entry.test_fixture}`);
+      await access(`${root}/tests/fixtures/format-adapters/${fixtures[entry.format]}`);
     } else {
       assert.equal(entry.adapter, "manual");
       assert.ok(entry.manual_reason.length >= 20);

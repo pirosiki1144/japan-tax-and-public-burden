@@ -35,6 +35,8 @@ adapter選択にはStrategy + Registryを使い、依存の組立ては単一com
 
 #73ではscan、monitor、validate、generate、auditをCLIなしで呼べるapplication serviceへ分離し、CLIを引数、呼出し、出力、終了コードへ限定した。JSON読込み、Schemaファイル検証、ディレクトリ作成を伴う原子的書込みは`scripts/adapters`へ集約する。既存npm scriptsの入口は互換性のため維持する。
 
+#74では永続化・投影境界ごとのSchemaを維持し、意味と制約が同一のID、確認日時、source ID配列、保留理由だけを`common.schema.json`へ共通化した。テストは物理移動による不要なimport変更を避けつつunit、contract、integration、fixtureの責務を文書化し、architecture checkで循環importと禁止依存を失敗させる。
+
 ## 設定の正本
 
 URLの正本は引き続き`config/sources.yaml`とする。制度ごとの監視判断、capability、manual理由、解除条件、再確認方法は、#71で`config/monitoring.yaml`へ統合した。

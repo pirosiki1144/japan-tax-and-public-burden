@@ -76,6 +76,17 @@ function findCycles(graph) {
   return cycles;
 }
 
+export function forbiddenDependencies(graph) {
+  const errors = [];
+  for (const [source, targets] of Object.entries(graph)) {
+    for (const target of targets) {
+      if (source.startsWith("scripts/application/") && /scripts\/(?:adapters|composition|fetch|formats|pipeline)\//.test(target)) errors.push(`${source} -> ${target}`);
+      if (source.startsWith("scripts/adapters/") && /scripts\/(?:application|composition|pipeline)\//.test(target)) errors.push(`${source} -> ${target}`);
+    }
+  }
+  return errors.sort();
+}
+
 async function yaml(root, path) {
   return parse(await readFile(join(root, path), "utf8"));
 }
@@ -120,7 +131,7 @@ export async function buildArchitectureInventory(root = ROOT) {
     totals: { tracked_files: files.length, javascript_files: javascript.length, import_edges: edgeCount },
     responsibilities: counts,
     files: classified,
-    import_graph: { cycles: findCycles(graph), adjacency: graph },
+    import_graph: { cycles: findCycles(graph), forbidden_edges: forbiddenDependencies(graph), adjacency: graph },
     configuration_overlap: await configurationMetrics(root),
     io_duplication: {
       filesystem_importing_files: fsUsers.length,
@@ -148,6 +159,8 @@ async function main() {
     report.baseline_commit = existing.baseline_commit;
     const comparable = `${JSON.stringify(report, null, 2)}\n`;
     if (comparable !== `${JSON.stringify(existing, null, 2)}\n`) throw new Error(`${output} is stale; run npm run architecture:audit`);
+    if (report.import_graph.cycles.length) throw new Error(`circular imports are forbidden: ${report.import_graph.cycles.join("; ")}`);
+    if (report.import_graph.forbidden_edges.length) throw new Error(`forbidden dependencies: ${report.import_graph.forbidden_edges.join("; ")}`);
     console.log(JSON.stringify({ status: "clean", files: report.totals.tracked_files, cycles: report.import_graph.cycles.length }));
     return;
   }
