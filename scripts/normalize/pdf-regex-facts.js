@@ -4,9 +4,9 @@ function compile(pattern, label) {
   try { return new RegExp(pattern); } catch (error) { throw new Error(`Invalid extraction pattern for ${label}: ${error.message}`); }
 }
 
-export async function normalizePdfRegexFacts(source, pages) {
+export async function normalizePdfRegexFacts(source, pages, { parseDocument = adaptPdfDocument } = {}) {
   if (pages.length !== source.extraction.expected_pages) throw new Error(`Source structure changed: expected ${source.extraction.expected_pages} configured pages but found ${pages.length}`);
-  const documents = await Promise.all(pages.map((page) => adaptPdfDocument(page)));
+  const documents = await Promise.all(pages.map((page) => parseDocument(page)));
   const texts = documents.map(({ text }) => text.normalize("NFKC").replace(/\s+/g, ""));
   for (const marker of source.extraction.required_markers) {
     if (!texts[marker.page_index] || !compile(marker.pattern, marker.label).test(texts[marker.page_index])) throw new Error(`Source structure changed: ${marker.label} was not found`);
