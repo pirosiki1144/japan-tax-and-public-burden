@@ -1,11 +1,11 @@
 {
   "schema_version": 1,
   "scope": "tracked repository files",
-  "baseline_commit": "574f1cdf5cf5ab87e6705ce0e4f2c2f45e8ab781",
+  "baseline_commit": "263ef15b44c030b9d9eaf3e30b5c6542f92cb69f",
   "totals": {
-    "tracked_files": 188,
-    "javascript_files": 76,
-    "import_edges": 133
+    "tracked_files": 191,
+    "javascript_files": 77,
+    "import_edges": 135
   },
   "responsibilities": {
     "adapter": 6,
@@ -13,12 +13,12 @@
     "cli": 16,
     "composition_root": 1,
     "derived_artifact": 10,
-    "documentation": 12,
+    "documentation": 13,
     "domain": 15,
     "fixture": 42,
     "repository_support": 8,
-    "source_of_truth": 40,
-    "test": 30
+    "source_of_truth": 41,
+    "test": 31
   },
   "files": [
     {
@@ -186,6 +186,10 @@
       "responsibility": "documentation"
     },
     {
+      "path": "docs/schema-and-test-boundaries.md",
+      "responsibility": "documentation"
+    },
+    {
       "path": "docs/tax-candidate-reconciliation.md",
       "responsibility": "documentation"
     },
@@ -239,6 +243,10 @@
     },
     {
       "path": "schemas/change.schema.json",
+      "responsibility": "source_of_truth"
+    },
+    {
+      "path": "schemas/common.schema.json",
       "responsibility": "source_of_truth"
     },
     {
@@ -746,6 +754,10 @@
       "responsibility": "test"
     },
     {
+      "path": "tests/schema-contracts.test.js",
+      "responsibility": "test"
+    },
+    {
       "path": "tests/schema-naming.test.js",
       "responsibility": "test"
     },
@@ -776,6 +788,7 @@
   ],
   "import_graph": {
     "cycles": [],
+    "forbidden_edges": [],
     "adjacency": {
       "scripts/adapters/filesystem-store.js": [],
       "scripts/adapters/repository-validation.js": [
@@ -1018,6 +1031,10 @@
         "scripts/validate/repository-validator.js",
         "scripts/validate/schema-validator.js"
       ],
+      "tests/schema-contracts.test.js": [
+        "scripts/monitoring/monitoring-registry.js",
+        "scripts/validate/schema-validator.js"
+      ],
       "tests/schema-naming.test.js": [],
       "tests/schema-validator.test.js": [
         "scripts/validate/schema-validator.js",
@@ -1064,7 +1081,7 @@
     ]
   },
   "io_duplication": {
-    "filesystem_importing_files": 32,
+    "filesystem_importing_files": 33,
     "atomic_write_implementations": 1,
     "filesystem_users": [
       "scripts/adapters/filesystem-store.js",
@@ -1095,6 +1112,7 @@
       "tests/public-burden-adapters.test.js",
       "tests/repository-operations.test.js",
       "tests/repository-validator.test.js",
+      "tests/schema-contracts.test.js",
       "tests/schema-naming.test.js",
       "tests/social-insurance-adapters.test.js",
       "tests/source-pipeline.test.js",

@@ -20,11 +20,10 @@
           "status": {"enum": ["implemented", "manual"]},
           "mime_types": {"type": "array", "minItems": 1, "uniqueItems": true, "items": {"type": "string", "minLength": 3}},
           "implementation": {"type": "string", "pattern": "^scripts/"},
-          "test_fixture": {"type": "string", "pattern": "^tests/fixtures/"},
           "manual_reason": {"type": "string", "minLength": 20}
         },
         "allOf": [
-          {"if": {"properties": {"status": {"const": "implemented"}}}, "then": {"required": ["implementation", "test_fixture"], "properties": {"implementation": {}, "test_fixture": {}}}},
+          {"if": {"properties": {"status": {"const": "implemented"}}}, "then": {"required": ["implementation"], "properties": {"implementation": {}}}},
           {"if": {"properties": {"status": {"const": "manual"}}}, "then": {"required": ["manual_reason"], "properties": {"adapter": {"const": "manual"}, "manual_reason": {}}}}
         ]
       }

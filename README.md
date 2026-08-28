@@ -44,6 +44,7 @@ reports/      生成レポート
 - 公式HTML・PDF・CSVは `scripts/formats/official-document.js` で原文バイトから形式検証・共通表現化し、制度固有の意味抽出規則は別の設定またはnormalize層へ置きます。共通表現は公式URL、取得日時、原文SHA-256、文書版を保持します。PDFの読取不能、CSVの必須列不足、HTMLの本文欠落、意味抽出の0件・複数件一致は構造変更として失敗させます。PR CIは縮小fixtureだけを使用して外部通信せず、実URLへの疎通は固定の定期・手動workflowで行います。
 - `scripts/application` は具体的なHTTP、PDF、filesystem実装を参照せず、最小Portを通じてsource取得・正規化・差分判定を調整します。`scripts/composition/monitoring-composition.js`を唯一のcomposition rootとし、HTTP source reader、HTML・PDF・CSV document parser、e-Gov・宣言的意味抽出Strategyを登録します。未登録、重複登録、契約外の戻り値は実行前後に失敗させます。
 - scan、monitor、validate、generate、auditのCLIは引数・application呼出し・表示・終了コードだけを担当します。再利用可能なユースケースは`scripts/application`、JSON/YAML検証と原子的ファイル書込みは`scripts/adapters`に置きます。既存のnpmコマンド名とfail-closed動作は維持します。
+- Schemaは永続化・投影境界ごとに維持し、意味と制約が同じID、確認日時、source ID配列、保留理由だけを`schemas/common.schema.json`で再利用します。unit・contract・integration・fixtureの責務と独立維持理由は[Schema・テスト境界](docs/schema-and-test-boundaries.md)を参照してください。
 - 社会保険料の集計関係や公的負担の手動確認情報も監視設定の正本に保持し、制度群別viewは必要な処理の中で決定的に組み立てます。
 - `reports/` や将来の `generated/` は正本から再生成する成果物であり、直接編集しません。
 - 制度の履歴は追記型のeventとphase、およびGit履歴で保持します。既存の事実を上書きして過去の状態を失わないようにします。

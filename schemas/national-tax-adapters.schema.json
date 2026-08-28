@@ -6,13 +6,13 @@
   "required":["schema_version","verified_at","implementation_issue","targets"],
   "properties":{
     "schema_version":{"const":1},
-    "verified_at":{"type":"string","format":"date-time"},
+    "verified_at":{"$ref":"common.schema.json#/$defs/verifiedAt"},
     "implementation_issue":{"const":42},
     "targets":{"type":"array","minItems":23,"maxItems":23,"items":{"$ref":"#/$defs/target"}}
   },
   "$defs":{"target":{"type":"object","additionalProperties":false,"required":["tax_id","status"],"properties":{
-    "tax_id":{"type":"string","pattern":"^[a-z0-9]+(?:-[a-z0-9]+)*$"},
+    "tax_id":{"$ref":"common.schema.json#/$defs/id"},
     "status":{"enum":["implemented","held"]},
-    "hold_reason":{"type":"string","minLength":20}
+    "hold_reason":{"$ref":"common.schema.json#/$defs/holdReason"}
   },"allOf":[{"if":{"properties":{"status":{"const":"held"}}},"then":{"properties":{"hold_reason":{}},"required":["hold_reason"]},"else":{"not":{"required":["hold_reason"]}}}]}}
 }

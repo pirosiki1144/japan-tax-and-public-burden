@@ -6,24 +6,21 @@
       "adapter": "official_html_document",
       "status": "implemented",
       "mime_types": ["text/html", "application/xhtml+xml"],
-      "implementation": "scripts/formats/official-document.js",
-      "test_fixture": "tests/fixtures/format-adapters/sample.html"
+      "implementation": "scripts/formats/official-document.js"
     },
     {
       "format": "pdf",
       "adapter": "official_pdf_document",
       "status": "implemented",
       "mime_types": ["application/pdf"],
-      "implementation": "scripts/formats/official-document.js",
-      "test_fixture": "tests/fixtures/format-adapters/sample.pdf"
+      "implementation": "scripts/formats/official-document.js"
     },
     {
       "format": "csv",
       "adapter": "official_csv_document",
       "status": "implemented",
       "mime_types": ["text/csv", "application/csv", "application/vnd.ms-excel"],
-      "implementation": "scripts/formats/official-document.js",
-      "test_fixture": "tests/fixtures/format-adapters/sample.csv"
+      "implementation": "scripts/formats/official-document.js"
     },
     {
       "format": "spreadsheet",

@@ -1,16 +1,25 @@
 {
-  "$schema":"https://json-schema.org/draft/2020-12/schema",
-  "$id":"https://github.com/pirosiki1144/japan-tax-and-public-burden/schemas/local-tax-adapters.schema.json",
-  "type":"object","additionalProperties":false,
-  "required":["schema_version","verified_at","implementation_issue","value_scope","targets"],
-  "properties":{
-    "schema_version":{"const":1},"verified_at":{"type":"string","format":"date-time"},"implementation_issue":{"const":43},
-    "value_scope":{"const":"national_law_standard_or_limit"},
-    "targets":{"type":"array","minItems":22,"maxItems":22,"items":{"$ref":"#/$defs/target"}}
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://github.com/pirosiki1144/japan-tax-and-public-burden/schemas/local-tax-adapters.schema.json",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["schema_version", "verified_at", "implementation_issue", "value_scope", "targets"],
+  "properties": {
+    "schema_version": {"const": 1},
+    "verified_at": {"$ref": "common.schema.json#/$defs/verifiedAt"},
+    "implementation_issue": {"const": 43},
+    "value_scope": {"const": "national_law_standard_or_limit"},
+    "targets": {"type": "array", "minItems": 22, "maxItems": 22, "items": {"$ref": "#/$defs/target"}}
   },
-  "$defs":{
-    "articleList":{"type":"array","minItems":1,"uniqueItems":true,"items":{"type":"string","pattern":"^[0-9]+(?:_[0-9]+)*$"}},
-    "articles":{"type":"object","additionalProperties":false,"required":["taxpayer_rules","taxable_scope_rules","tax_base_rules","rates"],"properties":{"taxpayer_rules":{"$ref":"#/$defs/articleList"},"taxable_scope_rules":{"$ref":"#/$defs/articleList"},"tax_base_rules":{"$ref":"#/$defs/articleList"},"rates":{"$ref":"#/$defs/articleList"}}},
-    "target":{"type":"object","additionalProperties":false,"required":["tax_id","status"],"properties":{"tax_id":{"type":"string","pattern":"^[a-z0-9]+(?:-[a-z0-9]+)*$"},"status":{"enum":["implemented","held"]},"articles":{"$ref":"#/$defs/articles"},"hold_reason":{"type":"string","minLength":20}},"allOf":[{"if":{"properties":{"status":{"const":"implemented"}}},"then":{"properties":{"articles":{}},"required":["articles"]},"else":{"properties":{"hold_reason":{}},"required":["hold_reason"]}}]}
+  "$defs": {
+    "articleList": {"type": "array", "minItems": 1, "uniqueItems": true, "items": {"type": "string", "pattern": "^[0-9]+(?:_[0-9]+)*$"}},
+    "articles": {"type": "object", "additionalProperties": false, "required": ["taxpayer_rules", "taxable_scope_rules", "tax_base_rules", "rates"], "properties": {"taxpayer_rules": {"$ref": "#/$defs/articleList"}, "taxable_scope_rules": {"$ref": "#/$defs/articleList"}, "tax_base_rules": {"$ref": "#/$defs/articleList"}, "rates": {"$ref": "#/$defs/articleList"}}},
+    "target": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["tax_id", "status"],
+      "properties": {"tax_id": {"$ref": "common.schema.json#/$defs/id"}, "status": {"enum": ["implemented", "held"]}, "articles": {"$ref": "#/$defs/articles"}, "hold_reason": {"$ref": "common.schema.json#/$defs/holdReason"}},
+      "allOf": [{"if": {"properties": {"status": {"const": "implemented"}}}, "then": {"properties": {"articles": {}}, "required": ["articles"]}, "else": {"properties": {"hold_reason": {}}, "required": ["hold_reason"]}}]
+    }
   }
 }
