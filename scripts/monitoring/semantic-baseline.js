@@ -18,8 +18,9 @@ export function buildSemanticBaseline(run) {
   return { schema_version: 1, reviewed_at: run.completed_at, records };
 }
 
-export async function loadSemanticBaseline(root, path = join(root, "data/monitoring/semantic-baseline.json")) {
-  const baseline = JSON.parse(await readFile(path, "utf8"));
+export async function loadSemanticBaseline(root, path = join(root, "data/monitoring/review.json")) {
+  const document = JSON.parse(await readFile(path, "utf8"));
+  const baseline = document.baseline ?? document;
   const { baseline: validateBaseline } = await createValidators({ baseline: join(root, "schemas/semantic-baseline.schema.json") });
   const errors = validateDocument(validateBaseline, baseline, path);
   if (errors.length) throw new Error(`Semantic baseline is invalid: ${errors.join("; ")}`);

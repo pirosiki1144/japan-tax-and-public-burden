@@ -208,10 +208,10 @@
             "capture_group": 1,
             "transform": "japanese_date",
             "target": {
-              "file": "data/changes/consumption-tax-2019-rate.yaml",
-              "record_id_field": "change_id",
-              "record_id": "consumption-tax-2019-rate",
-              "path": "application_start_dates.0.date_value"
+              "file": "data/master/canonical.json",
+              "record_id_field": "component_id",
+              "record_id": "consumption-tax-standard-rate-2019",
+              "path": "versions.0.application_start"
             }
           },
           {
@@ -221,10 +221,10 @@
             "capture_group": 1,
             "transform": "number",
             "target": {
-              "file": "data/phases/consumption-tax.yaml",
-              "record_id_field": "phase_id",
+              "file": "data/master/canonical.json",
+              "record_id_field": "component_id",
               "record_id": "consumption-tax-standard-rate-2019",
-              "path": "value.numeric_value"
+              "path": "versions.0.value.numeric_value"
             }
           },
           {
@@ -234,10 +234,10 @@
             "capture_group": 1,
             "transform": "number",
             "target": {
-              "file": "data/phases/consumption-tax.yaml",
-              "record_id_field": "phase_id",
+              "file": "data/master/canonical.json",
+              "record_id_field": "component_id",
               "record_id": "consumption-tax-reduced-rate-2019",
-              "path": "value.numeric_value"
+              "path": "versions.0.value.numeric_value"
             }
           }
         ]

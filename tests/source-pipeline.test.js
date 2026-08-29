@@ -21,7 +21,7 @@ function fixtureFetch(transform = (body) => body) {
 }
 
 test("offline fixtures reproduce the canonical values without changing data", async () => {
-  const canonicalPath = join(root, "data/phases/consumption-tax.yaml");
+  const canonicalPath = join(root, "data/master/canonical.json");
   const before = await readFile(canonicalPath, "utf8");
   const result = await runSourcePipeline({ root, sourceId: "nta-consumption-tax-rates", fetchImpl: fixtureFetch(), now, dryRun: true });
   assert.equal(result.status, "no_change");
@@ -38,7 +38,7 @@ test("a normalized value change creates a machine-readable candidate diff", asyn
   assert.equal(result.candidate_diff[0].fact_id, "standard-rate");
   assert.equal(result.candidate_diff[0].current, 7.8);
   assert.equal(result.candidate_diff[0].candidate, 7.9);
-  assert.equal(result.candidate_diff[0].target.path, "value.numeric_value");
+  assert.equal(result.candidate_diff[0].target.path, "versions.0.value.numeric_value");
 });
 
 test("all configured automated sources run through one shared pipeline", async () => {

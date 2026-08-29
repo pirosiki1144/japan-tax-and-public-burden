@@ -1,6 +1,10 @@
 import { auditRepositoryCollections } from "../audit/repository-audit.js";
 import { auditSourceScan, issueCandidatesFromAudit } from "../audit/source-scan-audit.js";
-import { compareArtifactSets } from "../generate/distribution-generator.js";
+
+function compareArtifactSets(expected, actual) {
+  const paths = new Set([...expected.keys(), ...actual.keys()]);
+  return [...paths].filter((path) => expected.get(path) !== actual.get(path)).sort();
+}
 
 export async function validateData({ root, file, schema, validateRepository, validateFile }) {
   if (!file && !schema) return validateRepository(root);

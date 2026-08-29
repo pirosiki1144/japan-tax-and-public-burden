@@ -1,956 +1,19 @@
 {
   "schema_version": 1,
-  "dataset": "current",
-  "as_of": "2026-08-18",
-  "sources": [
+  "verified_at": "2026-08-19T07:31:40+09:00",
+  "migration_audit": {
+    "issue": 87,
+    "source_burden_count": 112,
+    "source_phase_count": 2,
+    "preserved_public_burden_count": 112,
+    "created_component_count": 2
+  },
+  "public_burdens": [
     {
-      "source_id": "cfa-child-care-contribution-2026",
-      "name": "こども家庭庁 令和8年度子ども・子育て拠出金率",
-      "authority": "こども家庭庁",
-      "base_url": "https://www.cfa.go.jp/",
-      "entry_urls": [
-        "https://www.cfa.go.jp/policies/budget/tokubetsukaikei/kodomokosodate-r08"
-      ],
-      "source_type": "ministry",
-      "scope": "令和8年度の子ども・子育て拠出金率と適用年度",
-      "jurisdiction": "Japan",
-      "priority": 1,
-      "cadence": "annual",
-      "enabled": true,
-      "automation_enabled": true,
-      "monitoring_tax_ids": [
-        "child-care-contribution"
-      ],
-      "adapter": "html_regex_facts",
-      "accepted_content_types": [
-        "text/html"
-      ],
-      "extraction": {
-        "expected_pages": 1,
-        "required_markers": [
-          {
-            "page_index": 0,
-            "label": "child care contribution heading",
-            "pattern": "子ども・子育て拠出金率"
-          }
-        ],
-        "facts": [
-          {
-            "fact_id": "child-care-period-start",
-            "page_index": 0,
-            "pattern": "(令和8年度)の子ども・子育て拠出金率",
-            "capture_group": 1,
-            "transform": "japanese_fiscal_year_start",
-            "expected_value": "2026-04-01"
-          },
-          {
-            "fact_id": "child-care-period-end",
-            "page_index": 0,
-            "pattern": "(令和8年度)の子ども・子育て拠出金率",
-            "capture_group": 1,
-            "transform": "japanese_fiscal_year_end",
-            "expected_value": "2027-03-31"
-          },
-          {
-            "fact_id": "child-care-contribution-rate",
-            "page_index": 0,
-            "pattern": "令和8年度の子ども・子育て拠出金率[　 ]*([0-9]+(?:\\.[0-9]+)?)％",
-            "capture_group": 1,
-            "transform": "number",
-            "expected_value": 0.36
-          }
-        ]
-      },
-      "rate_limit": "サイトの利用条件に従う",
-      "terms_url": "https://www.cfa.go.jp/terms",
-      "last_verified_at": "2026-08-24T12:00:00+09:00",
-      "notes": "令和8年度固定ページの率と年度を監視する。厚生年金保険の標準報酬月額・標準賞与額を算定基礎とする法令上の負担主体・算式はe-Gov法令sourceで分離して確認する。子ども・子育て支援金率と混同しない。次年度は公式特別会計ページを確認してURLとfixtureを更新する"
-    },
-    {
-      "source_id": "egov-laws",
-      "name": "e-Gov法令検索",
-      "authority": "デジタル庁",
-      "base_url": "https://laws.e-gov.go.jp/",
-      "entry_urls": [
-        "https://laws.e-gov.go.jp/api/2/law_data/363AC0000000108",
-        "https://laws.e-gov.go.jp/api/2/law_data/325AC0000000226"
-      ],
-      "source_type": "law_api",
-      "scope": "現行法令本文、法令ID、改正履歴",
-      "jurisdiction": "Japan",
-      "priority": 1,
-      "cadence": "daily",
-      "enabled": true,
-      "automation_enabled": true,
-      "adapter": "egov_law_article_facts",
-      "accepted_content_types": [
-        "application/json"
-      ],
-      "extraction": {
-        "expected_pages": 2,
-        "required_markers": [],
-        "expected_documents": [
-          {
-            "page_index": 0,
-            "law_id": "363AC0000000108",
-            "law_title": "消費税法"
-          },
-          {
-            "page_index": 1,
-            "law_id": "325AC0000000226",
-            "law_title": "地方税法"
-          }
-        ],
-        "facts": [
-          {
-            "fact_id": "consumption-tax-act-standard-rate",
-            "page_index": 0,
-            "article_num": "29",
-            "article_caption": "（税率）",
-            "item_num": "1",
-            "pattern": "(百分の.+)$",
-            "capture_group": 1,
-            "transform": "string",
-            "expected_value": "百分の七・八"
-          },
-          {
-            "fact_id": "local-tax-act-local-consumption-ratio",
-            "page_index": 1,
-            "article_num": "72_83",
-            "article_caption": "（地方消費税の税率）",
-            "pattern": "地方消費税の税率は、([^、。]+)とする",
-            "capture_group": 1,
-            "transform": "string",
-            "expected_value": "七十八分の二十二"
-          }
-        ]
-      },
-      "rate_limit": "公式仕様およびrobots.txtに従う",
-      "terms_url": "https://laws.e-gov.go.jp/terms/",
-      "last_verified_at": "2026-08-16T12:20:19+09:00",
-      "notes": "法案審議の早期検知には国会情報を併用する"
-    },
-    {
-      "source_id": "jeed-disability-employment-levy",
-      "name": "JEED 障害者雇用納付金制度の概要",
-      "authority": "独立行政法人高齢・障害・求職者雇用支援機構",
-      "base_url": "https://www.jeed.go.jp/",
-      "entry_urls": [
-        "https://www.jeed.go.jp/disability/about_levy_grant_system.html"
-      ],
-      "source_type": "public_agency",
-      "scope": "障害者雇用納付金の対象事業主、算定基礎、1人当たり月額",
-      "jurisdiction": "Japan",
-      "priority": 1,
-      "cadence": "monthly",
-      "enabled": true,
-      "automation_enabled": true,
-      "monitoring_tax_ids": [
-        "disability-employment-levy"
-      ],
-      "adapter": "html_regex_facts",
-      "accepted_content_types": [
-        "text/html"
-      ],
-      "extraction": {
-        "expected_pages": 1,
-        "required_markers": [
-          {
-            "page_index": 0,
-            "label": "liable employer scope",
-            "pattern": "常時雇用している労働者数が[0-9０-９]+人を超える事業主"
-          },
-          {
-            "page_index": 0,
-            "label": "statutory shortfall basis",
-            "pattern": "法定雇用障害者数に不足する障害者数に応じて"
-          }
-        ],
-        "facts": [
-          {
-            "fact_id": "monthly-levy-amount",
-            "page_index": 0,
-            "pattern": "1人当たり月額([0-9０-９,，]+)円",
-            "capture_group": 1,
-            "transform": "japanese_number",
-            "expected_value": 50000
-          }
-        ]
-      },
-      "rate_limit": "サイトの利用条件に従う",
-      "terms_url": "https://www.jeed.go.jp/general/terms.html",
-      "last_verified_at": "2026-08-21T08:30:00+09:00",
-      "notes": "制度概要に明記された現行の納付金額を監視する。適用開始日は概要ページで確認できないため推測せずnullとする"
-    },
-    {
-      "source_id": "kanpo",
-      "name": "官報発行サイト",
-      "authority": "国立印刷局",
-      "base_url": "https://www.kanpo.go.jp/",
-      "entry_urls": [
-        "https://www.kanpo.go.jp/"
-      ],
-      "source_type": "official_gazette",
-      "scope": "法律、政令、省令等の公布確認",
-      "jurisdiction": "Japan",
-      "priority": 1,
-      "cadence": "publication_days",
-      "enabled": true,
-      "adapter": "manual",
-      "rate_limit": "サイトの利用条件に従う",
-      "terms_url": "https://www.kanpo.go.jp/",
-      "last_verified_at": "2026-08-16T12:20:19+09:00",
-      "notes": ""
-    },
-    {
-      "source_id": "mext-educational-public-transmission-compensation",
-      "name": "文部科学省 授業目的公衆送信補償金制度Q&A",
-      "authority": "文部科学省",
-      "base_url": "https://www.mext.go.jp/",
-      "entry_urls": [
-        "https://www.mext.go.jp/a_menu/coronavirus/mext_00042.html"
-      ],
-      "source_type": "ministry",
-      "scope": "授業目的公衆送信補償金の支払主体、対象、学校種別の児童生徒等1人当たり認可額",
-      "jurisdiction": "Japan",
-      "priority": 1,
-      "cadence": "annual",
-      "enabled": true,
-      "automation_enabled": true,
-      "monitoring_tax_ids": [
-        "educational-public-transmission-compensation"
-      ],
-      "adapter": "html_regex_facts",
-      "accepted_content_types": [
-        "text/html"
-      ],
-      "extraction": {
-        "expected_pages": 1,
-        "required_markers": [
-          {
-            "page_index": 0,
-            "label": "education provider payment",
-            "pattern": "学校の設置者が一括して補償金を支払う"
-          },
-          {
-            "page_index": 0,
-            "label": "approved compensation",
-            "pattern": "補償金の額は、文化庁長官によって認可"
-          },
-          {
-            "page_index": 0,
-            "label": "scope limitation",
-            "pattern": "その他の学校種や減免条件、都度支払いの料金体系"
-          }
-        ],
-        "facts": [
-          {
-            "fact_id": "elementary-school-amount",
-            "page_index": 0,
-            "pattern": "小学校([0-9０-９,，]+)円",
-            "capture_group": 1,
-            "transform": "japanese_number",
-            "expected_value": 120
-          },
-          {
-            "fact_id": "junior-high-school-amount",
-            "page_index": 0,
-            "pattern": "中学校([0-9０-９,，]+)円",
-            "capture_group": 1,
-            "transform": "japanese_number",
-            "expected_value": 180
-          },
-          {
-            "fact_id": "high-school-amount",
-            "page_index": 0,
-            "pattern": "高等学校([0-9０-９,，]+)円",
-            "capture_group": 1,
-            "transform": "japanese_number",
-            "expected_value": 420
-          },
-          {
-            "fact_id": "university-amount",
-            "page_index": 0,
-            "pattern": "大学([0-9０-９,，]+)円",
-            "capture_group": 1,
-            "transform": "japanese_number",
-            "expected_value": 720
-          }
-        ]
-      },
-      "rate_limit": "サイトの利用条件に従う",
-      "terms_url": "https://www.mext.go.jp/b_menu/1351168.htm",
-      "last_verified_at": "2026-08-21T09:45:00+09:00",
-      "notes": "学校種別の例示4値を監視する。その他の学校種、減免、都度払いは規程に依存するため、このsourceの4値へ集約しない。ページにない適用開始日は推測しない"
-    },
-    {
-      "source_id": "mhlw-employment-insurance-rates",
-      "name": "厚生労働省 令和8年度雇用保険料率",
-      "authority": "厚生労働省",
-      "base_url": "https://www.mhlw.go.jp/",
-      "entry_urls": [
-        "https://www.mhlw.go.jp/content/001692566.pdf"
-      ],
-      "source_type": "ministry",
-      "scope": "雇用保険料率の事業区分別合計、労働者負担、事業主負担、適用期間",
-      "jurisdiction": "Japan",
-      "priority": 1,
-      "cadence": "annual",
-      "enabled": true,
-      "automation_enabled": true,
-      "monitoring_tax_ids": [
-        "employment-insurance-premium"
-      ],
-      "adapter": "pdf_regex_facts",
-      "accepted_content_types": [
-        "application/pdf"
-      ],
-      "extraction": {
-        "expected_pages": 1,
-        "required_markers": [
-          {
-            "page_index": 0,
-            "label": "fiscal application period",
-            "pattern": "2026[^0-9]+0?4[^0-9]+0?1[^0-9]+.*2027[^0-9]+0?3[^0-9]+31"
-          },
-          {
-            "page_index": 0,
-            "label": "general business rates",
-            "pattern": "5/1,0008\\.5/1,0005/1,0003\\.5/1,00013\\.5/1,000"
-          },
-          {
-            "page_index": 0,
-            "label": "agriculture rates",
-            "pattern": "6/1,0009\\.5/1,0006/1,0003\\.5/1,00015\\.5/1,000"
-          },
-          {
-            "page_index": 0,
-            "label": "construction rates",
-            "pattern": "6/1,00010\\.5/1,0006/1,0004\\.5/1,00016\\.5/1,000"
-          }
-        ],
-        "facts": [
-          {
-            "fact_id": "employment-period-start",
-            "page_index": 0,
-            "pattern": "(2026)[^0-9]+(0?4)[^0-9]+(0?1)",
-            "capture_group": 1,
-            "transform": "iso_date_components",
-            "expected_value": "2026-04-01"
-          },
-          {
-            "fact_id": "employment-period-end",
-            "page_index": 0,
-            "pattern": "(2027)[^0-9]+(0?3)[^0-9]+(31)",
-            "capture_group": 1,
-            "transform": "iso_date_components",
-            "expected_value": "2027-03-31"
-          },
-          {
-            "fact_id": "employment-general-worker",
-            "page_index": 0,
-            "pattern": "[^0-9.]([0-9.]+)/1,0008\\.5/1,0005/1,0003\\.5/1,00013\\.5/1,000",
-            "capture_group": 1,
-            "transform": "number",
-            "expected_value": 5
-          },
-          {
-            "fact_id": "employment-general-employer",
-            "page_index": 0,
-            "pattern": "5/1,000([0-9.]+)/1,0005/1,0003\\.5/1,00013\\.5/1,000",
-            "capture_group": 1,
-            "transform": "number",
-            "expected_value": 8.5
-          },
-          {
-            "fact_id": "employment-general-total",
-            "page_index": 0,
-            "pattern": "5/1,0008\\.5/1,0005/1,0003\\.5/1,000([0-9.]+)/1,000",
-            "capture_group": 1,
-            "transform": "number",
-            "expected_value": 13.5
-          },
-          {
-            "fact_id": "employment-agriculture-worker",
-            "page_index": 0,
-            "pattern": "[^0-9.]([0-9.]+)/1,0009\\.5/1,0006/1,0003\\.5/1,00015\\.5/1,000",
-            "capture_group": 1,
-            "transform": "number",
-            "expected_value": 6
-          },
-          {
-            "fact_id": "employment-agriculture-employer",
-            "page_index": 0,
-            "pattern": "6/1,000([0-9.]+)/1,0006/1,0003\\.5/1,00015\\.5/1,000",
-            "capture_group": 1,
-            "transform": "number",
-            "expected_value": 9.5
-          },
-          {
-            "fact_id": "employment-agriculture-total",
-            "page_index": 0,
-            "pattern": "6/1,0009\\.5/1,0006/1,0003\\.5/1,000([0-9.]+)/1,000",
-            "capture_group": 1,
-            "transform": "number",
-            "expected_value": 15.5
-          },
-          {
-            "fact_id": "employment-construction-worker",
-            "page_index": 0,
-            "pattern": "[^0-9.]([0-9.]+)/1,00010\\.5/1,0006/1,0004\\.5/1,00016\\.5/1,000",
-            "capture_group": 1,
-            "transform": "number",
-            "expected_value": 6
-          },
-          {
-            "fact_id": "employment-construction-employer",
-            "page_index": 0,
-            "pattern": "6/1,000([0-9.]+)/1,0006/1,0004\\.5/1,00016\\.5/1,000",
-            "capture_group": 1,
-            "transform": "number",
-            "expected_value": 10.5
-          },
-          {
-            "fact_id": "employment-construction-total",
-            "page_index": 0,
-            "pattern": "6/1,00010\\.5/1,0006/1,0004\\.5/1,000([0-9.]+)/1,000",
-            "capture_group": 1,
-            "transform": "number",
-            "expected_value": 16.5
-          }
-        ]
-      },
-      "rate_limit": "サイトの利用条件に従う",
-      "terms_url": "https://www.mhlw.go.jp/chosakuken/index.html",
-      "last_verified_at": "2026-08-21T06:34:11+09:00",
-      "notes": "固定年度PDFの内容を年次監視する。令和8年4月1日から令和9年3月31日まで。次年度PDF URLへの切替は公式一覧ページを年次手動確認してconfigをレビューする。fixtureでは縮小PDFを使用する"
-    },
-    {
-      "source_id": "mof-national-burden",
-      "name": "財務省 国民負担率",
-      "authority": "財務省",
-      "base_url": "https://www.mof.go.jp/",
-      "entry_urls": [
-        "https://www.mof.go.jp/policy/budget/topics/futanritsu/"
-      ],
-      "source_type": "statistics",
-      "scope": "租税負担率、社会保障負担率、国民負担率",
-      "jurisdiction": "Japan",
-      "priority": 3,
-      "cadence": "annual",
-      "enabled": true,
-      "adapter": "manual",
-      "rate_limit": "サイトの利用条件に従う",
-      "terms_url": "https://www.mof.go.jp/about_mof/other/e-j/",
-      "last_verified_at": "2026-08-16T12:20:19+09:00",
-      "notes": "実績、実績見込み、見通しを区別する"
-    },
-    {
-      "source_id": "ndl-minutes-api",
-      "name": "国会会議録検索システムAPI",
-      "authority": "国立国会図書館",
-      "base_url": "https://kokkai.ndl.go.jp/",
-      "entry_urls": [
-        "https://kokkai.ndl.go.jp/api.html"
-      ],
-      "source_type": "parliamentary_minutes",
-      "scope": "本会議、委員会、小委員会等の会議・発言",
-      "jurisdiction": "Japan",
-      "priority": 2,
-      "cadence": "daily",
-      "enabled": true,
-      "adapter": "ndl_minutes_api",
-      "rate_limit": "多重リクエストを避け、取得後に数秒空ける",
-      "terms_url": "https://kokkai.ndl.go.jp/api.html",
-      "last_verified_at": "2026-08-16T12:20:19+09:00",
-      "notes": "公開までの時間差を考慮する"
-    },
-    {
-      "source_id": "nenkin-pension-premiums",
-      "name": "日本年金機構 厚生年金・国民年金保険料",
-      "authority": "日本年金機構",
-      "base_url": "https://www.nenkin.go.jp/",
-      "entry_urls": [
-        "https://www.nenkin.go.jp/service/kounen/hokenryo/hoshu/20150515-01.html",
-        "https://www.nenkin.go.jp/section/faq/kokunen/seido/hokenryo/seidosetsumei/20150331.html"
-      ],
-      "source_type": "public_agency",
-      "scope": "厚生年金の保険料率・労使折半・算定基礎と令和8年度国民年金月額",
-      "jurisdiction": "Japan",
-      "priority": 1,
-      "cadence": "annual",
-      "enabled": true,
-      "automation_enabled": true,
-      "monitoring_tax_ids": [
-        "pension-insurance-premium"
-      ],
-      "adapter": "html_regex_facts",
-      "accepted_content_types": [
-        "text/html"
-      ],
-      "extraction": {
-        "expected_pages": 2,
-        "required_markers": [
-          {
-            "page_index": 0,
-            "label": "employees pension shared burden",
-            "pattern": "事業主と被保険者とが半分ずつ負担"
-          },
-          {
-            "page_index": 0,
-            "label": "employees pension calculation basis",
-            "pattern": "標準報酬月額 × 保険料率"
-          },
-          {
-            "page_index": 1,
-            "label": "national pension fiscal period",
-            "pattern": "令和8年度（令和8年4月～令和9年3月まで）"
-          }
-        ],
-        "facts": [
-          {
-            "fact_id": "employees-pension-total",
-            "page_index": 0,
-            "pattern": "厚生年金保険料率は([0-9]+(?:\\.[0-9]+)?)％で固定",
-            "capture_group": 1,
-            "transform": "number",
-            "expected_value": 18.3
-          },
-          {
-            "fact_id": "national-pension-monthly-amount",
-            "page_index": 1,
-            "pattern": "月額([0-9,]+)円です",
-            "capture_group": 1,
-            "transform": "string",
-            "expected_value": "17,920"
-          }
-        ]
-      },
-      "rate_limit": "サイトの利用条件に従う",
-      "terms_url": "https://www.nenkin.go.jp/riyoukiyaku/index.html",
-      "last_verified_at": "2026-08-21T06:34:11+09:00",
-      "notes": "厚生年金は18.3%を労使折半。国民年金は令和8年度月額を別componentとして扱う"
-    },
-    {
-      "source_id": "nta-consumption-tax-rates",
-      "name": "国税庁 消費税の基本的なしくみ・軽減税率制度",
-      "authority": "国税庁",
-      "base_url": "https://www.nta.go.jp/",
-      "entry_urls": [
-        "https://www.nta.go.jp/taxes/shiraberu/taxanswer/shohi/6101.htm",
-        "https://www.nta.go.jp/taxes/shiraberu/taxanswer/shohi/6102.htm"
-      ],
-      "source_type": "ministry",
-      "scope": "消費税の納税義務者・負担者、消費税および地方消費税の標準税率、軽減税率、適用対象、実施開始日",
-      "jurisdiction": "Japan",
-      "priority": 1,
-      "cadence": "annual",
-      "enabled": true,
-      "automation_enabled": true,
-      "adapter": "html_regex_facts",
-      "extraction": {
-        "expected_pages": 2,
-        "required_markers": [
-          {
-            "page_index": 0,
-            "label": "overview rate statement",
-            "pattern": "標準税率10パーセント（うち2\\.2パーセントは地方消費税）"
-          },
-          {
-            "page_index": 1,
-            "label": "reduced-rate food scope",
-            "pattern": "飲食料品（酒類を除く）"
-          },
-          {
-            "page_index": 1,
-            "label": "reduced-rate newspaper scope",
-            "pattern": "週2回以上発行"
-          }
-        ],
-        "facts": [
-          {
-            "fact_id": "application-start",
-            "page_index": 1,
-            "pattern": "(令和元年10月1日)から",
-            "capture_group": 1,
-            "transform": "japanese_date",
-            "target": {
-              "file": "data/changes/consumption-tax-2019-rate.yaml",
-              "record_id_field": "change_id",
-              "record_id": "consumption-tax-2019-rate",
-              "path": "application_start_dates.0.date_value"
-            }
-          },
-          {
-            "fact_id": "standard-rate",
-            "page_index": 1,
-            "pattern": "標準税率は10パーセント（消費税率([0-9]+(?:\\.[0-9]+)?)パーセント、地方消費税率2\\.2パーセント）",
-            "capture_group": 1,
-            "transform": "number",
-            "target": {
-              "file": "data/phases/consumption-tax.yaml",
-              "record_id_field": "phase_id",
-              "record_id": "consumption-tax-standard-rate-2019",
-              "path": "value.numeric_value"
-            }
-          },
-          {
-            "fact_id": "reduced-rate",
-            "page_index": 1,
-            "pattern": "軽減税率は8パーセント（消費税率([0-9]+(?:\\.[0-9]+)?)パーセント、地方消費税率1\\.76パーセント）",
-            "capture_group": 1,
-            "transform": "number",
-            "target": {
-              "file": "data/phases/consumption-tax.yaml",
-              "record_id_field": "phase_id",
-              "record_id": "consumption-tax-reduced-rate-2019",
-              "path": "value.numeric_value"
-            }
-          }
-        ]
-      },
-      "rate_limit": "サイトの利用条件に従う",
-      "terms_url": "https://www.nta.go.jp/chuijiko/copy.htm",
-      "last_verified_at": "2026-08-17T00:12:24+09:00",
-      "notes": "Phase 1の検証用サンプルとPhase 2の自動取得adapterに使用する"
-    },
-    {
-      "source_id": "pmda-adverse-reaction-contribution-2026",
-      "name": "PMDA 令和8年度副作用拠出金申告・納付の手引",
-      "authority": "独立行政法人医薬品医療機器総合機構",
-      "base_url": "https://www.pmda.go.jp/",
-      "entry_urls": [
-        "https://www.pmda.go.jp/files/000281001.pdf"
-      ],
-      "source_type": "public_agency",
-      "scope": "副作用一般拠出金の納付義務者、算定基礎、率、付加拠出金算式、令和8年度の適用期間",
-      "jurisdiction": "Japan",
-      "priority": 1,
-      "cadence": "annual",
-      "enabled": true,
-      "automation_enabled": true,
-      "monitoring_tax_ids": [
-        "adverse-drug-reaction-contribution"
-      ],
-      "adapter": "pdf_regex_facts",
-      "accepted_content_types": [
-        "application/pdf"
-      ],
-      "extraction": {
-        "expected_pages": 1,
-        "required_markers": [
-          {
-            "page_index": 0,
-            "label": "2026 contribution year",
-            "pattern": "2026"
-          },
-          {
-            "page_index": 0,
-            "label": "adverse reaction general rate",
-            "pattern": "0\\.27/1000"
-          },
-          {
-            "page_index": 0,
-            "label": "adverse reaction additional formula",
-            "pattern": "1/4"
-          }
-        ],
-        "facts": [
-          {
-            "fact_id": "adverse-period-start",
-            "page_index": 0,
-            "pattern": "(2026)",
-            "capture_group": 1,
-            "transform": "fiscal_year_start",
-            "expected_value": "2026-04-01"
-          },
-          {
-            "fact_id": "adverse-period-end",
-            "page_index": 0,
-            "pattern": "(2026)",
-            "capture_group": 1,
-            "transform": "fiscal_year_end",
-            "expected_value": "2027-03-31"
-          },
-          {
-            "fact_id": "adverse-general-rate",
-            "page_index": 0,
-            "pattern": "(0\\.27)/1000",
-            "capture_group": 1,
-            "transform": "number",
-            "expected_value": 0.27
-          },
-          {
-            "fact_id": "adverse-additional-formula",
-            "page_index": 0,
-            "pattern": "(1/4)",
-            "capture_group": 1,
-            "transform": "string",
-            "expected_value": "1/4"
-          }
-        ]
-      },
-      "rate_limit": "サイトの利用条件に従う",
-      "terms_url": "https://www.pmda.go.jp/about-pmda/others/0005.html",
-      "last_verified_at": "2026-08-21T20:05:00+09:00",
-      "notes": "令和8年度固定PDFを年次監視する。一般拠出金と、個別通知を受ける付加拠出金を別componentにし、感染拠出金へfactを流用しない。次年度は公式手引一覧を確認してURLとfixtureを更新する"
-    },
-    {
-      "source_id": "pmda-infection-contribution-2026",
-      "name": "PMDA 令和8年度感染拠出金申告・納付の手引",
-      "authority": "独立行政法人医薬品医療機器総合機構",
-      "base_url": "https://www.pmda.go.jp/",
-      "entry_urls": [
-        "https://www.pmda.go.jp/files/000281003.pdf"
-      ],
-      "source_type": "public_agency",
-      "scope": "感染一般拠出金の納付義務者、算定基礎、率、付加拠出金算式、令和8年度の適用期間",
-      "jurisdiction": "Japan",
-      "priority": 1,
-      "cadence": "annual",
-      "enabled": true,
-      "automation_enabled": true,
-      "monitoring_tax_ids": [
-        "infection-contribution"
-      ],
-      "adapter": "pdf_regex_facts",
-      "accepted_content_types": [
-        "application/pdf"
-      ],
-      "extraction": {
-        "expected_pages": 1,
-        "required_markers": [
-          {
-            "page_index": 0,
-            "label": "2026 contribution year",
-            "pattern": "2026"
-          },
-          {
-            "page_index": 0,
-            "label": "infection general rate",
-            "pattern": "0\\.05/1000"
-          },
-          {
-            "page_index": 0,
-            "label": "infection additional formula",
-            "pattern": "1/3"
-          }
-        ],
-        "facts": [
-          {
-            "fact_id": "infection-period-start",
-            "page_index": 0,
-            "pattern": "(2026)",
-            "capture_group": 1,
-            "transform": "fiscal_year_start",
-            "expected_value": "2026-04-01"
-          },
-          {
-            "fact_id": "infection-period-end",
-            "page_index": 0,
-            "pattern": "(2026)",
-            "capture_group": 1,
-            "transform": "fiscal_year_end",
-            "expected_value": "2027-03-31"
-          },
-          {
-            "fact_id": "infection-general-rate",
-            "page_index": 0,
-            "pattern": "(0\\.05)/1000",
-            "capture_group": 1,
-            "transform": "number",
-            "expected_value": 0.05
-          },
-          {
-            "fact_id": "infection-additional-formula",
-            "page_index": 0,
-            "pattern": "(1/3)",
-            "capture_group": 1,
-            "transform": "string",
-            "expected_value": "1/3"
-          }
-        ]
-      },
-      "rate_limit": "サイトの利用条件に従う",
-      "terms_url": "https://www.pmda.go.jp/about-pmda/others/0005.html",
-      "last_verified_at": "2026-08-21T20:05:00+09:00",
-      "notes": "令和8年度固定PDFを年次監視する。一般拠出金と、個別通知を受ける付加拠出金を別componentにし、副作用拠出金へfactを流用しない。次年度は公式手引一覧を確認してURLとfixtureを更新する"
-    },
-    {
-      "source_id": "sangiin-bills",
-      "name": "参議院 議案情報",
-      "authority": "参議院",
-      "base_url": "https://www.sangiin.go.jp/",
-      "entry_urls": [
-        "https://www.sangiin.go.jp/japanese/joho1/kousei/gian/current/gian.htm"
-      ],
-      "source_type": "bill_index",
-      "scope": "法案、付託委員会、審議経過",
-      "jurisdiction": "Japan",
-      "priority": 2,
-      "cadence": "daily",
-      "enabled": true,
-      "adapter": "manual",
-      "rate_limit": "サイトの利用条件に従う",
-      "terms_url": "https://www.sangiin.go.jp/",
-      "last_verified_at": "2026-08-16T12:20:19+09:00",
-      "notes": ""
-    },
-    {
-      "source_id": "shugiin-bills",
-      "name": "衆議院 議案情報",
-      "authority": "衆議院",
-      "base_url": "https://www.shugiin.go.jp/",
-      "entry_urls": [
-        "https://www.shugiin.go.jp/Internet/itdb_gian.nsf/html/gian/menu.htm"
-      ],
-      "source_type": "bill_index",
-      "scope": "法案提出、審議状況、本文、経過",
-      "jurisdiction": "Japan",
-      "priority": 2,
-      "cadence": "daily",
-      "enabled": true,
-      "adapter": "manual",
-      "rate_limit": "サイトの利用条件に従う",
-      "terms_url": "https://www.shugiin.go.jp/",
-      "last_verified_at": "2026-08-16T12:20:19+09:00",
-      "notes": ""
-    },
-    {
-      "source_id": "tca-telephone-relay-number-price-2026",
-      "name": "電気通信事業者協会 令和8年度電話リレーサービス番号単価",
-      "authority": "一般社団法人電気通信事業者協会（総務大臣指定支援機関）",
-      "base_url": "https://www.tca.or.jp/",
-      "entry_urls": [
-        "https://www.tca.or.jp/telephonerelay_service_support/qa/"
-      ],
-      "source_type": "public_agency",
-      "scope": "電話リレーサービス負担金の負担主体、番号数による算定基礎、令和8年度番号単価",
-      "jurisdiction": "Japan",
-      "priority": 1,
-      "cadence": "annual",
-      "enabled": true,
-      "automation_enabled": true,
-      "monitoring_tax_ids": [
-        "telephone-accessibility-charge"
-      ],
-      "adapter": "html_regex_facts",
-      "accepted_content_types": [
-        "text/html"
-      ],
-      "extraction": {
-        "expected_pages": 1,
-        "required_markers": [
-          {
-            "page_index": 0,
-            "label": "relay carrier liability",
-            "pattern": "特定電話提供事業者である各電話会社が、サービス提供に用いている電話番号の使用数に応じて"
-          },
-          {
-            "page_index": 0,
-            "label": "twelve monthly prices",
-            "pattern": "1円 1円 1円 1円 1円 1円 1円 1円 1円 1円 1円 1円"
-          }
-        ],
-        "facts": [
-          {
-            "fact_id": "telephone-relay-period-start",
-            "page_index": 0,
-            "pattern": "(令和8年度)の番号単価",
-            "capture_group": 1,
-            "transform": "japanese_fiscal_year_start",
-            "expected_value": "2026-04-01"
-          },
-          {
-            "fact_id": "telephone-relay-period-end",
-            "page_index": 0,
-            "pattern": "(令和8年度)の番号単価",
-            "capture_group": 1,
-            "transform": "japanese_fiscal_year_end",
-            "expected_value": "2027-03-31"
-          },
-          {
-            "fact_id": "telephone-relay-number-price",
-            "page_index": 0,
-            "pattern": "1円 1円 1円 1円 1円 1円 1円 1円 1円 1円 1円 ([0-9０-９]+)円",
-            "capture_group": 1,
-            "transform": "japanese_number",
-            "expected_value": 1
-          }
-        ]
-      },
-      "rate_limit": "サイトの利用条件に従う",
-      "terms_url": "https://www.tca.or.jp/information/",
-      "last_verified_at": "2026-08-26T12:00:00+09:00",
-      "notes": "令和8年度の12か月がすべて1番号当たり月額1円であることを構造マーカーで確認する。法定負担主体である特定電話提供事業者の負担金と、各社が利用者へ設定する電話リレーサービス料を二重計上しない。次年度は公式Q&Aと認可発表を確認してURLとfixtureを更新する"
-    },
-    {
-      "source_id": "tca-universal-service-number-price",
-      "name": "電気通信事業者協会 電話ユニバーサルサービス番号単価Q&A",
-      "authority": "一般社団法人電気通信事業者協会（総務大臣指定支援機関）",
-      "base_url": "https://www.tca.or.jp/",
-      "entry_urls": [
-        "https://www.tca.or.jp/universalservice/qa/frequency.html"
-      ],
-      "source_type": "public_agency",
-      "scope": "電話ユニバーサルサービスの負担主体、算定対象番号、適用月、1番号当たり月額",
-      "jurisdiction": "Japan",
-      "priority": 1,
-      "cadence": "semiannual",
-      "enabled": true,
-      "automation_enabled": true,
-      "monitoring_tax_ids": [
-        "universal-service-fee"
-      ],
-      "adapter": "html_regex_facts",
-      "accepted_content_types": [
-        "text/html"
-      ],
-      "extraction": {
-        "expected_pages": 1,
-        "required_markers": [
-          {
-            "page_index": 0,
-            "label": "carrier liability",
-            "pattern": "現在ご利用（ご契約）の電話会社が支払う"
-          },
-          {
-            "page_index": 0,
-            "label": "number calculation basis",
-            "pattern": "ご利用になる電話番号の数に応じた費用"
-          }
-        ],
-        "facts": [
-          {
-            "fact_id": "universal-service-period-start",
-            "page_index": 0,
-            "pattern": "(令和8年1月)から1番号当たり",
-            "capture_group": 1,
-            "transform": "japanese_year_month",
-            "expected_value": "2026-01-01"
-          },
-          {
-            "fact_id": "universal-service-number-price",
-            "page_index": 0,
-            "pattern": "令和8年1月から1番号当たり([0-9０-９,，]+)円／月",
-            "capture_group": 1,
-            "transform": "japanese_number",
-            "expected_value": 2
-          }
-        ]
-      },
-      "rate_limit": "サイトの利用条件に従う",
-      "terms_url": "https://www.tca.or.jp/information/",
-      "last_verified_at": "2026-08-21T18:20:00+09:00",
-      "notes": "令和8年1月からの番号単価を監視する。電話会社の第一種負担金と利用者向け料金を同一主体の負担として二重計上しない。次期単価は公式番号単価一覧を確認してconfigを更新する"
-    }
-  ],
-  "records": [
-    {
-      "tax_id": "adverse-drug-reaction-contribution",
-      "current_status": "active",
-      "canonical_current_status": "active",
-      "burden": {
+      "public_burden_id": "adverse-drug-reaction-contribution",
+      "name": "副作用拠出金",
+      "category": "contribution",
+      "legacy_record": {
         "tax_id": "adverse-drug-reaction-contribution",
         "official_name": "副作用拠出金",
         "aliases": [],
@@ -986,16 +49,13 @@
           "公布日、施行日、適用開始日、徴収開始日を個別の公式資料で確認する"
         ],
         "verified_at": "2026-08-19T07:31:40+09:00"
-      },
-      "active_phases": [],
-      "pending_changes": [],
-      "canonical_pending_changes": []
+      }
     },
     {
-      "tax_id": "agricultural-cooperative-savings-charge",
-      "current_status": "active",
-      "canonical_current_status": "active",
-      "burden": {
+      "public_burden_id": "agricultural-cooperative-savings-charge",
+      "name": "unknown",
+      "category": "burden_charge",
+      "legacy_record": {
         "tax_id": "agricultural-cooperative-savings-charge",
         "official_name": "unknown",
         "aliases": [],
@@ -1031,16 +91,13 @@
           "公布日、施行日、適用開始日、徴収開始日を個別の公式資料で確認する"
         ],
         "verified_at": "2026-08-19T07:31:40+09:00"
-      },
-      "active_phases": [],
-      "pending_changes": [],
-      "canonical_pending_changes": []
+      }
     },
     {
-      "tax_id": "agricultural-cooperative-savings-insurance-premium",
-      "current_status": "active",
-      "canonical_current_status": "active",
-      "burden": {
+      "public_burden_id": "agricultural-cooperative-savings-insurance-premium",
+      "name": "unknown",
+      "category": "insurance_premium",
+      "legacy_record": {
         "tax_id": "agricultural-cooperative-savings-insurance-premium",
         "official_name": "unknown",
         "aliases": [],
@@ -1076,16 +133,13 @@
           "公布日、施行日、適用開始日、徴収開始日を個別の公式資料で確認する"
         ],
         "verified_at": "2026-08-19T07:31:40+09:00"
-      },
-      "active_phases": [],
-      "pending_changes": [],
-      "canonical_pending_changes": []
+      }
     },
     {
-      "tax_id": "agricultural-cooperative-savings-special-charge",
-      "current_status": "active",
-      "canonical_current_status": "active",
-      "burden": {
+      "public_burden_id": "agricultural-cooperative-savings-special-charge",
+      "name": "unknown",
+      "category": "burden_charge",
+      "legacy_record": {
         "tax_id": "agricultural-cooperative-savings-special-charge",
         "official_name": "unknown",
         "aliases": [],
@@ -1121,16 +175,13 @@
           "公布日、施行日、適用開始日、徴収開始日を個別の公式資料で確認する"
         ],
         "verified_at": "2026-08-19T07:31:40+09:00"
-      },
-      "active_phases": [],
-      "pending_changes": [],
-      "canonical_pending_changes": []
+      }
     },
     {
-      "tax_id": "asbestos-relief-general-contribution",
-      "current_status": "active",
-      "canonical_current_status": "active",
-      "burden": {
+      "public_burden_id": "asbestos-relief-general-contribution",
+      "name": "石綿健康被害救済一般拠出金",
+      "category": "contribution",
+      "legacy_record": {
         "tax_id": "asbestos-relief-general-contribution",
         "official_name": "石綿健康被害救済一般拠出金",
         "aliases": [],
@@ -1166,16 +217,13 @@
           "公布日、施行日、適用開始日、徴収開始日を個別の公式資料で確認する"
         ],
         "verified_at": "2026-08-19T07:31:40+09:00"
-      },
-      "active_phases": [],
-      "pending_changes": [],
-      "canonical_pending_changes": []
+      }
     },
     {
-      "tax_id": "asbestos-relief-special-contribution",
-      "current_status": "active",
-      "canonical_current_status": "active",
-      "burden": {
+      "public_burden_id": "asbestos-relief-special-contribution",
+      "name": "石綿健康被害救済特別拠出金",
+      "category": "contribution",
+      "legacy_record": {
         "tax_id": "asbestos-relief-special-contribution",
         "official_name": "石綿健康被害救済特別拠出金",
         "aliases": [],
@@ -1211,16 +259,13 @@
           "公布日、施行日、適用開始日、徴収開始日を個別の公式資料で確認する"
         ],
         "verified_at": "2026-08-19T07:31:40+09:00"
-      },
-      "active_phases": [],
-      "pending_changes": [],
-      "canonical_pending_changes": []
+      }
     },
     {
-      "tax_id": "automobile-accident-countermeasure-levy",
-      "current_status": "active",
-      "canonical_current_status": "active",
-      "burden": {
+      "public_burden_id": "automobile-accident-countermeasure-levy",
+      "name": "自動車事故対策事業賦課金",
+      "category": "levy",
+      "legacy_record": {
         "tax_id": "automobile-accident-countermeasure-levy",
         "official_name": "自動車事故対策事業賦課金",
         "aliases": [],
@@ -1256,16 +301,13 @@
           "公布日、施行日、適用開始日、徴収開始日を個別の公式資料で確認する"
         ],
         "verified_at": "2026-08-19T07:31:40+09:00"
-      },
-      "active_phases": [],
-      "pending_changes": [],
-      "canonical_pending_changes": []
+      }
     },
     {
-      "tax_id": "automobile-tax",
-      "current_status": "active",
-      "canonical_current_status": "active",
-      "burden": {
+      "public_burden_id": "automobile-tax",
+      "name": "自動車税",
+      "category": "local_tax",
+      "legacy_record": {
         "tax_id": "automobile-tax",
         "official_name": "自動車税",
         "aliases": [],
@@ -1303,16 +345,13 @@
           "公布日、施行日、適用開始日、徴収開始日を個別の公式資料で確認する"
         ],
         "verified_at": "2026-08-19T07:31:40+09:00"
-      },
-      "active_phases": [],
-      "pending_changes": [],
-      "canonical_pending_changes": []
+      }
     },
     {
-      "tax_id": "automobile-weight-tax",
-      "current_status": "active",
-      "canonical_current_status": "active",
-      "burden": {
+      "public_burden_id": "automobile-weight-tax",
+      "name": "自動車重量税",
+      "category": "national_tax",
+      "legacy_record": {
         "tax_id": "automobile-weight-tax",
         "official_name": "自動車重量税",
         "aliases": [],
@@ -1349,16 +388,13 @@
           "公布日、施行日、適用開始日、徴収開始日を個別の公式資料で確認する"
         ],
         "verified_at": "2026-08-19T07:31:40+09:00"
-      },
-      "active_phases": [],
-      "pending_changes": [],
-      "canonical_pending_changes": []
+      }
     },
     {
-      "tax_id": "aviation-fuel-tax",
-      "current_status": "active",
-      "canonical_current_status": "active",
-      "burden": {
+      "public_burden_id": "aviation-fuel-tax",
+      "name": "航空機燃料税",
+      "category": "national_tax",
+      "legacy_record": {
         "tax_id": "aviation-fuel-tax",
         "official_name": "航空機燃料税",
         "aliases": [],
@@ -1395,16 +431,13 @@
           "公布日、施行日、適用開始日、徴収開始日を個別の公式資料で確認する"
         ],
         "verified_at": "2026-08-19T07:31:40+09:00"
-      },
-      "active_phases": [],
-      "pending_changes": [],
-      "canonical_pending_changes": []
+      }
     },
     {
-      "tax_id": "banks-shareholdings-purchase-corporation-contribution",
-      "current_status": "active",
-      "canonical_current_status": "active",
-      "burden": {
+      "public_burden_id": "banks-shareholdings-purchase-corporation-contribution",
+      "name": "銀行等保有株式取得機構に対する拠出金",
+      "category": "contribution",
+      "legacy_record": {
         "tax_id": "banks-shareholdings-purchase-corporation-contribution",
         "official_name": "銀行等保有株式取得機構に対する拠出金",
         "aliases": [],
@@ -1441,16 +474,13 @@
           "公布日、施行日、適用開始日、徴収開始日を個別の公式資料で確認する"
         ],
         "verified_at": "2026-08-19T07:31:40+09:00"
-      },
-      "active_phases": [],
-      "pending_changes": [],
-      "canonical_pending_changes": []
+      }
     },
     {
-      "tax_id": "bathing-tax",
-      "current_status": "active",
-      "canonical_current_status": "active",
-      "burden": {
+      "public_burden_id": "bathing-tax",
+      "name": "入湯税",
+      "category": "local_tax",
+      "legacy_record": {
         "tax_id": "bathing-tax",
         "official_name": "入湯税",
         "aliases": [],
@@ -1486,16 +516,13 @@
           "公布日、施行日、適用開始日、徴収開始日を個別の公式資料で確認する"
         ],
         "verified_at": "2026-08-19T07:31:40+09:00"
-      },
-      "active_phases": [],
-      "pending_changes": [],
-      "canonical_pending_changes": []
+      }
     },
     {
-      "tax_id": "broadband-service-charge",
-      "current_status": "active",
-      "canonical_current_status": "active",
-      "burden": {
+      "public_burden_id": "broadband-service-charge",
+      "name": "unknown",
+      "category": "burden_charge",
+      "legacy_record": {
         "tax_id": "broadband-service-charge",
         "official_name": "unknown",
         "aliases": [],
@@ -1532,16 +559,13 @@
           "公布日、施行日、適用開始日、徴収開始日を個別の公式資料で確認する"
         ],
         "verified_at": "2026-08-19T07:31:40+09:00"
-      },
-      "active_phases": [],
-      "pending_changes": [],
-      "canonical_pending_changes": []
+      }
     },
     {
-      "tax_id": "business-office-tax",
-      "current_status": "active",
-      "canonical_current_status": "active",
-      "burden": {
+      "public_burden_id": "business-office-tax",
+      "name": "事業所税",
+      "category": "local_tax",
+      "legacy_record": {
         "tax_id": "business-office-tax",
         "official_name": "事業所税",
         "aliases": [],
@@ -1577,16 +601,13 @@
           "公布日、施行日、適用開始日、徴収開始日を個別の公式資料で確認する"
         ],
         "verified_at": "2026-08-19T07:31:40+09:00"
-      },
-      "active_phases": [],
-      "pending_changes": [],
-      "canonical_pending_changes": []
+      }
     },
     {
-      "tax_id": "child-care-contribution",
-      "current_status": "active",
-      "canonical_current_status": "active",
-      "burden": {
+      "public_burden_id": "child-care-contribution",
+      "name": "子ども・子育て拠出金",
+      "category": "contribution",
+      "legacy_record": {
         "tax_id": "child-care-contribution",
         "official_name": "子ども・子育て拠出金",
         "aliases": [],
@@ -1622,16 +643,13 @@
           "公布日、施行日、適用開始日、徴収開始日を個別の公式資料で確認する"
         ],
         "verified_at": "2026-08-19T07:31:40+09:00"
-      },
-      "active_phases": [],
-      "pending_changes": [],
-      "canonical_pending_changes": []
+      }
     },
     {
-      "tax_id": "city-planning-tax",
-      "current_status": "active",
-      "canonical_current_status": "active",
-      "burden": {
+      "public_burden_id": "city-planning-tax",
+      "name": "都市計画税",
+      "category": "local_tax",
+      "legacy_record": {
         "tax_id": "city-planning-tax",
         "official_name": "都市計画税",
         "aliases": [],
@@ -1667,16 +685,13 @@
           "公布日、施行日、適用開始日、徴収開始日を個別の公式資料で確認する"
         ],
         "verified_at": "2026-08-19T07:31:40+09:00"
-      },
-      "active_phases": [],
-      "pending_changes": [],
-      "canonical_pending_changes": []
+      }
     },
     {
-      "tax_id": "commodity-customer-protection-fund-charge",
-      "current_status": "active",
-      "canonical_current_status": "active",
-      "burden": {
+      "public_burden_id": "commodity-customer-protection-fund-charge",
+      "name": "日本商品委託者保護基金に対する負担金",
+      "category": "burden_charge",
+      "legacy_record": {
         "tax_id": "commodity-customer-protection-fund-charge",
         "official_name": "日本商品委託者保護基金に対する負担金",
         "aliases": [],
@@ -1712,16 +727,13 @@
           "公布日、施行日、適用開始日、徴収開始日を個別の公式資料で確認する"
         ],
         "verified_at": "2026-08-19T07:31:40+09:00"
-      },
-      "active_phases": [],
-      "pending_changes": [],
-      "canonical_pending_changes": []
+      }
     },
     {
-      "tax_id": "common-facilities-tax",
-      "current_status": "active",
-      "canonical_current_status": "active",
-      "burden": {
+      "public_burden_id": "common-facilities-tax",
+      "name": "共同施設税",
+      "category": "local_tax",
+      "legacy_record": {
         "tax_id": "common-facilities-tax",
         "official_name": "共同施設税",
         "aliases": [],
@@ -1757,16 +769,13 @@
           "公布日、施行日、適用開始日、徴収開始日を個別の公式資料で確認する"
         ],
         "verified_at": "2026-08-19T07:31:40+09:00"
-      },
-      "active_phases": [],
-      "pending_changes": [],
-      "canonical_pending_changes": []
+      }
     },
     {
-      "tax_id": "common-utility-tunnel-charge",
-      "current_status": "active",
-      "canonical_current_status": "active",
-      "burden": {
+      "public_burden_id": "common-utility-tunnel-charge",
+      "name": "unknown",
+      "category": "burden_charge",
+      "legacy_record": {
         "tax_id": "common-utility-tunnel-charge",
         "official_name": "unknown",
         "aliases": [],
@@ -1802,16 +811,13 @@
           "公布日、施行日、適用開始日、徴収開始日を個別の公式資料で確認する"
         ],
         "verified_at": "2026-08-19T07:31:40+09:00"
-      },
-      "active_phases": [],
-      "pending_changes": [],
-      "canonical_pending_changes": []
+      }
     },
     {
-      "tax_id": "consumption-tax",
-      "current_status": "active",
-      "canonical_current_status": "active",
-      "burden": {
+      "public_burden_id": "consumption-tax",
+      "name": "消費税",
+      "category": "national_tax",
+      "legacy_record": {
         "tax_id": "consumption-tax",
         "official_name": "消費税",
         "aliases": [
@@ -1856,83 +862,13 @@
         "coverage_status": "confirmed",
         "evidence_gaps": [],
         "verified_at": "2026-08-19T07:31:40+09:00"
-      },
-      "active_phases": [
-        {
-          "phase_id": "consumption-tax-reduced-rate-2019",
-          "tax_id": "consumption-tax",
-          "change_id": "consumption-tax-2019-rate",
-          "phase_sequence": 2,
-          "subject_scope": "酒類・外食を除く飲食料品と、定期購読契約に基づき週2回以上発行される新聞の譲渡",
-          "rate_or_amount": "6.24パーセント（地方消費税を含む軽減税率は8パーセント）",
-          "value": {
-            "kind": "rate",
-            "numeric_value": 6.24,
-            "unit": "percent",
-            "raw": "軽減税率8パーセントのうち消費税率6.24パーセント",
-            "value_status": "confirmed",
-            "scope": "軽減税率対象品目"
-          },
-          "application_start": "2019-10-01",
-          "application_start_raw": "令和元年10月1日",
-          "application_start_source_url": "https://www.nta.go.jp/taxes/shiraberu/taxanswer/shohi/6102.htm",
-          "application_end": null,
-          "collection_start": null,
-          "collection_start_raw": "国税庁ページに徴収開始日の記載なし",
-          "collection_start_source_url": "https://www.nta.go.jp/taxes/shiraberu/taxanswer/shohi/6102.htm",
-          "collection_end": null,
-          "transitional_rule": "このサンプルでは経過措置の詳細を未登録",
-          "source_refs": [
-            "nta-consumption-tax-rates"
-          ],
-          "evidence_gaps": [
-            "徴収開始日は未確認",
-            "経過措置の詳細は未登録"
-          ],
-          "verified_at": "2026-08-17T00:12:24+09:00"
-        },
-        {
-          "phase_id": "consumption-tax-standard-rate-2019",
-          "tax_id": "consumption-tax",
-          "change_id": "consumption-tax-2019-rate",
-          "phase_sequence": 1,
-          "subject_scope": "軽減税率の対象以外の課税資産の譲渡等",
-          "rate_or_amount": "7.8パーセント（地方消費税を含む標準税率は10パーセント）",
-          "value": {
-            "kind": "rate",
-            "numeric_value": 7.8,
-            "unit": "percent",
-            "raw": "標準税率10パーセントのうち消費税率7.8パーセント",
-            "value_status": "confirmed",
-            "scope": "標準税率対象取引"
-          },
-          "application_start": "2019-10-01",
-          "application_start_raw": "令和元年10月1日",
-          "application_start_source_url": "https://www.nta.go.jp/taxes/shiraberu/taxanswer/shohi/6102.htm",
-          "application_end": null,
-          "collection_start": null,
-          "collection_start_raw": "国税庁ページに徴収開始日の記載なし",
-          "collection_start_source_url": "https://www.nta.go.jp/taxes/shiraberu/taxanswer/shohi/6102.htm",
-          "collection_end": null,
-          "transitional_rule": "このサンプルでは経過措置の詳細を未登録",
-          "source_refs": [
-            "nta-consumption-tax-rates"
-          ],
-          "evidence_gaps": [
-            "徴収開始日は未確認",
-            "経過措置の詳細は未登録"
-          ],
-          "verified_at": "2026-08-17T00:12:24+09:00"
-        }
-      ],
-      "pending_changes": [],
-      "canonical_pending_changes": []
+      }
     },
     {
-      "tax_id": "corporation-tax",
-      "current_status": "active",
-      "canonical_current_status": "active",
-      "burden": {
+      "public_burden_id": "corporation-tax",
+      "name": "法人税",
+      "category": "national_tax",
+      "legacy_record": {
         "tax_id": "corporation-tax",
         "official_name": "法人税",
         "aliases": [],
@@ -1968,16 +904,13 @@
           "公布日、施行日、適用開始日、徴収開始日を個別の公式資料で確認する"
         ],
         "verified_at": "2026-08-19T07:31:40+09:00"
-      },
-      "active_phases": [],
-      "pending_changes": [],
-      "canonical_pending_changes": []
+      }
     },
     {
-      "tax_id": "customs-duty",
-      "current_status": "active",
-      "canonical_current_status": "active",
-      "burden": {
+      "public_burden_id": "customs-duty",
+      "name": "関税",
+      "category": "national_tax",
+      "legacy_record": {
         "tax_id": "customs-duty",
         "official_name": "関税",
         "aliases": [],
@@ -2014,16 +947,13 @@
           "公布日、施行日、適用開始日、徴収開始日を個別の公式資料で確認する"
         ],
         "verified_at": "2026-08-19T07:31:40+09:00"
-      },
-      "active_phases": [],
-      "pending_changes": [],
-      "canonical_pending_changes": []
+      }
     },
     {
-      "tax_id": "deposit-insurance-corporation-charge",
-      "current_status": "active",
-      "canonical_current_status": "active",
-      "burden": {
+      "public_burden_id": "deposit-insurance-corporation-charge",
+      "name": "預金保険機構に対する負担金",
+      "category": "burden_charge",
+      "legacy_record": {
         "tax_id": "deposit-insurance-corporation-charge",
         "official_name": "預金保険機構に対する負担金",
         "aliases": [],
@@ -2059,16 +989,13 @@
           "公布日、施行日、適用開始日、徴収開始日を個別の公式資料で確認する"
         ],
         "verified_at": "2026-08-19T07:31:40+09:00"
-      },
-      "active_phases": [],
-      "pending_changes": [],
-      "canonical_pending_changes": []
+      }
     },
     {
-      "tax_id": "deposit-insurance-corporation-special-charge",
-      "current_status": "active",
-      "canonical_current_status": "active",
-      "burden": {
+      "public_burden_id": "deposit-insurance-corporation-special-charge",
+      "name": "預金保険機構に対する特定負担金",
+      "category": "burden_charge",
+      "legacy_record": {
         "tax_id": "deposit-insurance-corporation-special-charge",
         "official_name": "預金保険機構に対する特定負担金",
         "aliases": [],
@@ -2104,16 +1031,13 @@
           "公布日、施行日、適用開始日、徴収開始日を個別の公式資料で確認する"
         ],
         "verified_at": "2026-08-19T07:31:40+09:00"
-      },
-      "active_phases": [],
-      "pending_changes": [],
-      "canonical_pending_changes": []
+      }
     },
     {
-      "tax_id": "deposit-insurance-premium",
-      "current_status": "active",
-      "canonical_current_status": "active",
-      "burden": {
+      "public_burden_id": "deposit-insurance-premium",
+      "name": "預金保険料",
+      "category": "insurance_premium",
+      "legacy_record": {
         "tax_id": "deposit-insurance-premium",
         "official_name": "預金保険料",
         "aliases": [],
@@ -2149,16 +1073,13 @@
           "公布日、施行日、適用開始日、徴収開始日を個別の公式資料で確認する"
         ],
         "verified_at": "2026-08-19T07:31:40+09:00"
-      },
-      "active_phases": [],
-      "pending_changes": [],
-      "canonical_pending_changes": []
+      }
     },
     {
-      "tax_id": "disability-employment-levy",
-      "current_status": "active",
-      "canonical_current_status": "active",
-      "burden": {
+      "public_burden_id": "disability-employment-levy",
+      "name": "障害者雇用納付金",
+      "category": "payment",
+      "legacy_record": {
         "tax_id": "disability-employment-levy",
         "official_name": "障害者雇用納付金",
         "aliases": [],
@@ -2194,16 +1115,13 @@
           "公布日、施行日、適用開始日、徴収開始日を個別の公式資料で確認する"
         ],
         "verified_at": "2026-08-19T07:31:40+09:00"
-      },
-      "active_phases": [],
-      "pending_changes": [],
-      "canonical_pending_changes": []
+      }
     },
     {
-      "tax_id": "east-japan-business-rehabilitation-contribution",
-      "current_status": "active",
-      "canonical_current_status": "active",
-      "burden": {
+      "public_burden_id": "east-japan-business-rehabilitation-contribution",
+      "name": "unknown",
+      "category": "contribution",
+      "legacy_record": {
         "tax_id": "east-japan-business-rehabilitation-contribution",
         "official_name": "unknown",
         "aliases": [],
@@ -2239,16 +1157,13 @@
           "公布日、施行日、適用開始日、徴収開始日を個別の公式資料で確認する"
         ],
         "verified_at": "2026-08-19T07:31:40+09:00"
-      },
-      "active_phases": [],
-      "pending_changes": [],
-      "canonical_pending_changes": []
+      }
     },
     {
-      "tax_id": "educational-public-transmission-compensation",
-      "current_status": "active",
-      "canonical_current_status": "active",
-      "burden": {
+      "public_burden_id": "educational-public-transmission-compensation",
+      "name": "授業目的公衆送信補償金",
+      "category": "payment",
+      "legacy_record": {
         "tax_id": "educational-public-transmission-compensation",
         "official_name": "授業目的公衆送信補償金",
         "aliases": [],
@@ -2284,16 +1199,13 @@
           "公布日、施行日、適用開始日、徴収開始日を個別の公式資料で確認する"
         ],
         "verified_at": "2026-08-19T07:31:40+09:00"
-      },
-      "active_phases": [],
-      "pending_changes": [],
-      "canonical_pending_changes": []
+      }
     },
     {
-      "tax_id": "electricity-business-compensation-charge",
-      "current_status": "active",
-      "canonical_current_status": "active",
-      "burden": {
+      "public_burden_id": "electricity-business-compensation-charge",
+      "name": "unknown",
+      "category": "burden_charge",
+      "legacy_record": {
         "tax_id": "electricity-business-compensation-charge",
         "official_name": "unknown",
         "aliases": [],
@@ -2329,16 +1241,13 @@
           "公布日、施行日、適用開始日、徴収開始日を個別の公式資料で確認する"
         ],
         "verified_at": "2026-08-19T07:31:40+09:00"
-      },
-      "active_phases": [],
-      "pending_changes": [],
-      "canonical_pending_changes": []
+      }
     },
     {
-      "tax_id": "employment-insurance-premium",
-      "current_status": "active",
-      "canonical_current_status": "active",
-      "burden": {
+      "public_burden_id": "employment-insurance-premium",
+      "name": "雇用保険料",
+      "category": "social_insurance_premium",
+      "legacy_record": {
         "tax_id": "employment-insurance-premium",
         "official_name": "雇用保険料",
         "aliases": [],
@@ -2374,16 +1283,13 @@
           "公布日、施行日、適用開始日、徴収開始日を個別の公式資料で確認する"
         ],
         "verified_at": "2026-08-19T07:31:40+09:00"
-      },
-      "active_phases": [],
-      "pending_changes": [],
-      "canonical_pending_changes": []
+      }
     },
     {
-      "tax_id": "enterprise-tax",
-      "current_status": "active",
-      "canonical_current_status": "active",
-      "burden": {
+      "public_burden_id": "enterprise-tax",
+      "name": "事業税",
+      "category": "local_tax",
+      "legacy_record": {
         "tax_id": "enterprise-tax",
         "official_name": "事業税",
         "aliases": [],
@@ -2420,16 +1326,13 @@
           "公布日、施行日、適用開始日、徴収開始日を個別の公式資料で確認する"
         ],
         "verified_at": "2026-08-19T07:31:40+09:00"
-      },
-      "active_phases": [],
-      "pending_changes": [],
-      "canonical_pending_changes": []
+      }
     },
     {
-      "tax_id": "fixed-asset-tax",
-      "current_status": "active",
-      "canonical_current_status": "active",
-      "burden": {
+      "public_burden_id": "fixed-asset-tax",
+      "name": "固定資産税",
+      "category": "local_tax",
+      "legacy_record": {
         "tax_id": "fixed-asset-tax",
         "official_name": "固定資産税",
         "aliases": [],
@@ -2465,16 +1368,13 @@
           "公布日、施行日、適用開始日、徴収開始日を個別の公式資料で確認する"
         ],
         "verified_at": "2026-08-19T07:31:40+09:00"
-      },
-      "active_phases": [],
-      "pending_changes": [],
-      "canonical_pending_changes": []
+      }
     },
     {
-      "tax_id": "forest-environment-tax",
-      "current_status": "active",
-      "canonical_current_status": "active",
-      "burden": {
+      "public_burden_id": "forest-environment-tax",
+      "name": "森林環境税",
+      "category": "national_tax",
+      "legacy_record": {
         "tax_id": "forest-environment-tax",
         "official_name": "森林環境税",
         "aliases": [],
@@ -2511,16 +1411,13 @@
           "公布日、施行日、適用開始日、徴収開始日を個別の公式資料で確認する"
         ],
         "verified_at": "2026-08-19T07:31:40+09:00"
-      },
-      "active_phases": [],
-      "pending_changes": [],
-      "canonical_pending_changes": []
+      }
     },
     {
-      "tax_id": "fossil-fuel-levy",
-      "current_status": "active",
-      "canonical_current_status": "active",
-      "burden": {
+      "public_burden_id": "fossil-fuel-levy",
+      "name": "化石燃料賦課金",
+      "category": "levy",
+      "legacy_record": {
         "tax_id": "fossil-fuel-levy",
         "official_name": "化石燃料賦課金",
         "aliases": [],
@@ -2557,16 +1454,13 @@
           "公布日、施行日、適用開始日、徴収開始日を個別の公式資料で確認する"
         ],
         "verified_at": "2026-08-19T07:31:40+09:00"
-      },
-      "active_phases": [],
-      "pending_changes": [],
-      "canonical_pending_changes": []
+      }
     },
     {
-      "tax_id": "gasoline-tax",
-      "current_status": "active",
-      "canonical_current_status": "active",
-      "burden": {
+      "public_burden_id": "gasoline-tax",
+      "name": "揮発油税",
+      "category": "national_tax",
+      "legacy_record": {
         "tax_id": "gasoline-tax",
         "official_name": "揮発油税",
         "aliases": [],
@@ -2603,16 +1497,13 @@
           "公布日、施行日、適用開始日、徴収開始日を個別の公式資料で確認する"
         ],
         "verified_at": "2026-08-19T07:31:40+09:00"
-      },
-      "active_phases": [],
-      "pending_changes": [],
-      "canonical_pending_changes": []
+      }
     },
     {
-      "tax_id": "golf-course-utilization-tax",
-      "current_status": "active",
-      "canonical_current_status": "active",
-      "burden": {
+      "public_burden_id": "golf-course-utilization-tax",
+      "name": "ゴルフ場利用税",
+      "category": "local_tax",
+      "legacy_record": {
         "tax_id": "golf-course-utilization-tax",
         "official_name": "ゴルフ場利用税",
         "aliases": [],
@@ -2648,16 +1539,13 @@
           "公布日、施行日、適用開始日、徴収開始日を個別の公式資料で確認する"
         ],
         "verified_at": "2026-08-19T07:31:40+09:00"
-      },
-      "active_phases": [],
-      "pending_changes": [],
-      "canonical_pending_changes": []
+      }
     },
     {
-      "tax_id": "gx-specified-business-charge",
-      "current_status": "active",
-      "canonical_current_status": "active",
-      "burden": {
+      "public_burden_id": "gx-specified-business-charge",
+      "name": "unknown",
+      "category": "burden_charge",
+      "legacy_record": {
         "tax_id": "gx-specified-business-charge",
         "official_name": "unknown",
         "aliases": [
@@ -2696,16 +1584,13 @@
           "公布日、施行日、適用開始日、徴収開始日を個別の公式資料で確認する"
         ],
         "verified_at": "2026-08-19T07:31:40+09:00"
-      },
-      "active_phases": [],
-      "pending_changes": [],
-      "canonical_pending_changes": []
+      }
     },
     {
-      "tax_id": "hepatitis-c-special-relief-contribution",
-      "current_status": "active",
-      "canonical_current_status": "active",
-      "burden": {
+      "public_burden_id": "hepatitis-c-special-relief-contribution",
+      "name": "unknown",
+      "category": "contribution",
+      "legacy_record": {
         "tax_id": "hepatitis-c-special-relief-contribution",
         "official_name": "unknown",
         "aliases": [
@@ -2743,16 +1628,13 @@
           "公布日、施行日、適用開始日、徴収開始日を個別の公式資料で確認する"
         ],
         "verified_at": "2026-08-19T07:31:40+09:00"
-      },
-      "active_phases": [],
-      "pending_changes": [],
-      "canonical_pending_changes": []
+      }
     },
     {
-      "tax_id": "high-level-waste-disposal-contribution",
-      "current_status": "active",
-      "canonical_current_status": "active",
-      "burden": {
+      "public_burden_id": "high-level-waste-disposal-contribution",
+      "name": "unknown",
+      "category": "contribution",
+      "legacy_record": {
         "tax_id": "high-level-waste-disposal-contribution",
         "official_name": "unknown",
         "aliases": [],
@@ -2788,16 +1670,13 @@
           "公布日、施行日、適用開始日、徴収開始日を個別の公式資料で確認する"
         ],
         "verified_at": "2026-08-19T07:31:40+09:00"
-      },
-      "active_phases": [],
-      "pending_changes": [],
-      "canonical_pending_changes": []
+      }
     },
     {
-      "tax_id": "hunting-tax",
-      "current_status": "active",
-      "canonical_current_status": "active",
-      "burden": {
+      "public_burden_id": "hunting-tax",
+      "name": "狩猟税",
+      "category": "local_tax",
+      "legacy_record": {
         "tax_id": "hunting-tax",
         "official_name": "狩猟税",
         "aliases": [],
@@ -2833,16 +1712,13 @@
           "公布日、施行日、適用開始日、徴収開始日を個別の公式資料で確認する"
         ],
         "verified_at": "2026-08-19T07:31:40+09:00"
-      },
-      "active_phases": [],
-      "pending_changes": [],
-      "canonical_pending_changes": []
+      }
     },
     {
-      "tax_id": "imported-sugar-adjustment-charge",
-      "current_status": "active",
-      "canonical_current_status": "active",
-      "burden": {
+      "public_burden_id": "imported-sugar-adjustment-charge",
+      "name": "unknown",
+      "category": "adjustment_charge",
+      "legacy_record": {
         "tax_id": "imported-sugar-adjustment-charge",
         "official_name": "unknown",
         "aliases": [],
@@ -2878,16 +1754,13 @@
           "公布日、施行日、適用開始日、徴収開始日を個別の公式資料で確認する"
         ],
         "verified_at": "2026-08-19T07:31:40+09:00"
-      },
-      "active_phases": [],
-      "pending_changes": [],
-      "canonical_pending_changes": []
+      }
     },
     {
-      "tax_id": "income-tax",
-      "current_status": "active",
-      "canonical_current_status": "active",
-      "burden": {
+      "public_burden_id": "income-tax",
+      "name": "所得税",
+      "category": "national_tax",
+      "legacy_record": {
         "tax_id": "income-tax",
         "official_name": "所得税",
         "aliases": [],
@@ -2923,16 +1796,13 @@
           "公布日、施行日、適用開始日、徴収開始日を個別の公式資料で確認する"
         ],
         "verified_at": "2026-08-19T07:31:40+09:00"
-      },
-      "active_phases": [],
-      "pending_changes": [],
-      "canonical_pending_changes": []
+      }
     },
     {
-      "tax_id": "infection-contribution",
-      "current_status": "active",
-      "canonical_current_status": "active",
-      "burden": {
+      "public_burden_id": "infection-contribution",
+      "name": "感染拠出金",
+      "category": "contribution",
+      "legacy_record": {
         "tax_id": "infection-contribution",
         "official_name": "感染拠出金",
         "aliases": [],
@@ -2968,16 +1838,13 @@
           "公布日、施行日、適用開始日、徴収開始日を個別の公式資料で確認する"
         ],
         "verified_at": "2026-08-19T07:31:40+09:00"
-      },
-      "active_phases": [],
-      "pending_changes": [],
-      "canonical_pending_changes": []
+      }
     },
     {
-      "tax_id": "inheritance-and-gift-tax",
-      "current_status": "active",
-      "canonical_current_status": "active",
-      "burden": {
+      "public_burden_id": "inheritance-and-gift-tax",
+      "name": "unknown",
+      "category": "national_tax",
+      "legacy_record": {
         "tax_id": "inheritance-and-gift-tax",
         "official_name": "unknown",
         "aliases": [],
@@ -3014,16 +1881,13 @@
           "公布日、施行日、適用開始日、徴収開始日を個別の公式資料で確認する"
         ],
         "verified_at": "2026-08-19T07:31:40+09:00"
-      },
-      "active_phases": [],
-      "pending_changes": [],
-      "canonical_pending_changes": []
+      }
     },
     {
-      "tax_id": "international-oil-pollution-fund-annual-contribution",
-      "current_status": "active",
-      "canonical_current_status": "active",
-      "burden": {
+      "public_burden_id": "international-oil-pollution-fund-annual-contribution",
+      "name": "unknown",
+      "category": "contribution",
+      "legacy_record": {
         "tax_id": "international-oil-pollution-fund-annual-contribution",
         "official_name": "unknown",
         "aliases": [],
@@ -3059,16 +1923,13 @@
           "公布日、施行日、適用開始日、徴収開始日を個別の公式資料で確認する"
         ],
         "verified_at": "2026-08-19T07:31:40+09:00"
-      },
-      "active_phases": [],
-      "pending_changes": [],
-      "canonical_pending_changes": []
+      }
     },
     {
-      "tax_id": "international-tourist-tax",
-      "current_status": "active",
-      "canonical_current_status": "active",
-      "burden": {
+      "public_burden_id": "international-tourist-tax",
+      "name": "国際観光旅客税",
+      "category": "national_tax",
+      "legacy_record": {
         "tax_id": "international-tourist-tax",
         "official_name": "国際観光旅客税",
         "aliases": [],
@@ -3104,16 +1965,13 @@
           "公布日、施行日、適用開始日、徴収開始日を個別の公式資料で確認する"
         ],
         "verified_at": "2026-08-19T07:31:40+09:00"
-      },
-      "active_phases": [],
-      "pending_changes": [],
-      "canonical_pending_changes": []
+      }
     },
     {
-      "tax_id": "investor-protection-fund-charge",
-      "current_status": "active",
-      "canonical_current_status": "active",
-      "burden": {
+      "public_burden_id": "investor-protection-fund-charge",
+      "name": "日本投資者保護基金に対する負担金",
+      "category": "burden_charge",
+      "legacy_record": {
         "tax_id": "investor-protection-fund-charge",
         "official_name": "日本投資者保護基金に対する負担金",
         "aliases": [],
@@ -3149,16 +2007,13 @@
           "公布日、施行日、適用開始日、徴収開始日を個別の公式資料で確認する"
         ],
         "verified_at": "2026-08-19T07:31:40+09:00"
-      },
-      "active_phases": [],
-      "pending_changes": [],
-      "canonical_pending_changes": []
+      }
     },
     {
-      "tax_id": "irrigation-water-facility-charge",
-      "current_status": "active",
-      "canonical_current_status": "active",
-      "burden": {
+      "public_burden_id": "irrigation-water-facility-charge",
+      "name": "unknown",
+      "category": "burden_charge",
+      "legacy_record": {
         "tax_id": "irrigation-water-facility-charge",
         "official_name": "unknown",
         "aliases": [],
@@ -3194,16 +2049,13 @@
           "公布日、施行日、適用開始日、徴収開始日を個別の公式資料で確認する"
         ],
         "verified_at": "2026-08-19T07:31:40+09:00"
-      },
-      "active_phases": [],
-      "pending_changes": [],
-      "canonical_pending_changes": []
+      }
     },
     {
-      "tax_id": "library-public-transmission-compensation",
-      "current_status": "active",
-      "canonical_current_status": "active",
-      "burden": {
+      "public_burden_id": "library-public-transmission-compensation",
+      "name": "図書館等公衆送信補償金",
+      "category": "payment",
+      "legacy_record": {
         "tax_id": "library-public-transmission-compensation",
         "official_name": "図書館等公衆送信補償金",
         "aliases": [],
@@ -3239,16 +2091,13 @@
           "公布日、施行日、適用開始日、徴収開始日を個別の公式資料で確認する"
         ],
         "verified_at": "2026-08-19T07:31:40+09:00"
-      },
-      "active_phases": [],
-      "pending_changes": [],
-      "canonical_pending_changes": []
+      }
     },
     {
-      "tax_id": "light-motor-vehicle-tax",
-      "current_status": "active",
-      "canonical_current_status": "active",
-      "burden": {
+      "public_burden_id": "light-motor-vehicle-tax",
+      "name": "軽自動車税",
+      "category": "local_tax",
+      "legacy_record": {
         "tax_id": "light-motor-vehicle-tax",
         "official_name": "軽自動車税",
         "aliases": [],
@@ -3285,16 +2134,13 @@
           "公布日、施行日、適用開始日、徴収開始日を個別の公式資料で確認する"
         ],
         "verified_at": "2026-08-19T07:31:40+09:00"
-      },
-      "active_phases": [],
-      "pending_changes": [],
-      "canonical_pending_changes": []
+      }
     },
     {
-      "tax_id": "light-oil-delivery-tax",
-      "current_status": "active",
-      "canonical_current_status": "active",
-      "burden": {
+      "public_burden_id": "light-oil-delivery-tax",
+      "name": "軽油引取税",
+      "category": "local_tax",
+      "legacy_record": {
         "tax_id": "light-oil-delivery-tax",
         "official_name": "軽油引取税",
         "aliases": [],
@@ -3330,16 +2176,13 @@
           "公布日、施行日、適用開始日、徴収開始日を個別の公式資料で確認する"
         ],
         "verified_at": "2026-08-19T07:31:40+09:00"
-      },
-      "active_phases": [],
-      "pending_changes": [],
-      "canonical_pending_changes": []
+      }
     },
     {
-      "tax_id": "liquor-tax",
-      "current_status": "active",
-      "canonical_current_status": "active",
-      "burden": {
+      "public_burden_id": "liquor-tax",
+      "name": "酒税",
+      "category": "national_tax",
+      "legacy_record": {
         "tax_id": "liquor-tax",
         "official_name": "酒税",
         "aliases": [],
@@ -3375,16 +2218,13 @@
           "公布日、施行日、適用開始日、徴収開始日を個別の公式資料で確認する"
         ],
         "verified_at": "2026-08-19T07:31:40+09:00"
-      },
-      "active_phases": [],
-      "pending_changes": [],
-      "canonical_pending_changes": []
+      }
     },
     {
-      "tax_id": "local-consumption-tax",
-      "current_status": "active",
-      "canonical_current_status": "active",
-      "burden": {
+      "public_burden_id": "local-consumption-tax",
+      "name": "地方消費税",
+      "category": "local_tax",
+      "legacy_record": {
         "tax_id": "local-consumption-tax",
         "official_name": "地方消費税",
         "aliases": [],
@@ -3422,16 +2262,13 @@
           "公布日、施行日、適用開始日、徴収開始日を個別の公式資料で確認する"
         ],
         "verified_at": "2026-08-19T07:31:40+09:00"
-      },
-      "active_phases": [],
-      "pending_changes": [],
-      "canonical_pending_changes": []
+      }
     },
     {
-      "tax_id": "local-corporation-tax",
-      "current_status": "active",
-      "canonical_current_status": "active",
-      "burden": {
+      "public_burden_id": "local-corporation-tax",
+      "name": "地方法人税",
+      "category": "national_tax",
+      "legacy_record": {
         "tax_id": "local-corporation-tax",
         "official_name": "地方法人税",
         "aliases": [],
@@ -3468,16 +2305,13 @@
           "公布日、施行日、適用開始日、徴収開始日を個別の公式資料で確認する"
         ],
         "verified_at": "2026-08-19T07:31:40+09:00"
-      },
-      "active_phases": [],
-      "pending_changes": [],
-      "canonical_pending_changes": []
+      }
     },
     {
-      "tax_id": "local-gasoline-tax",
-      "current_status": "active",
-      "canonical_current_status": "active",
-      "burden": {
+      "public_burden_id": "local-gasoline-tax",
+      "name": "地方揮発油税",
+      "category": "national_tax",
+      "legacy_record": {
         "tax_id": "local-gasoline-tax",
         "official_name": "地方揮発油税",
         "aliases": [],
@@ -3514,16 +2348,13 @@
           "公布日、施行日、適用開始日、徴収開始日を個別の公式資料で確認する"
         ],
         "verified_at": "2026-08-19T07:31:40+09:00"
-      },
-      "active_phases": [],
-      "pending_changes": [],
-      "canonical_pending_changes": []
+      }
     },
     {
-      "tax_id": "local-tobacco-tax",
-      "current_status": "active",
-      "canonical_current_status": "active",
-      "burden": {
+      "public_burden_id": "local-tobacco-tax",
+      "name": "地方たばこ税",
+      "category": "local_tax",
+      "legacy_record": {
         "tax_id": "local-tobacco-tax",
         "official_name": "地方たばこ税",
         "aliases": [],
@@ -3560,16 +2391,13 @@
           "公布日、施行日、適用開始日、徴収開始日を個別の公式資料で確認する"
         ],
         "verified_at": "2026-08-19T07:31:40+09:00"
-      },
-      "active_phases": [],
-      "pending_changes": [],
-      "canonical_pending_changes": []
+      }
     },
     {
-      "tax_id": "long-term-care-insurance-premium",
-      "current_status": "active",
-      "canonical_current_status": "active",
-      "burden": {
+      "public_burden_id": "long-term-care-insurance-premium",
+      "name": "unknown",
+      "category": "social_insurance_premium",
+      "legacy_record": {
         "tax_id": "long-term-care-insurance-premium",
         "official_name": "unknown",
         "aliases": [],
@@ -3605,16 +2433,13 @@
           "公布日、施行日、適用開始日、徴収開始日を個別の公式資料で確認する"
         ],
         "verified_at": "2026-08-19T07:31:40+09:00"
-      },
-      "active_phases": [],
-      "pending_changes": [],
-      "canonical_pending_changes": []
+      }
     },
     {
-      "tax_id": "medical-insurance-premium",
-      "current_status": "active",
-      "canonical_current_status": "active",
-      "burden": {
+      "public_burden_id": "medical-insurance-premium",
+      "name": "unknown",
+      "category": "social_insurance_premium",
+      "legacy_record": {
         "tax_id": "medical-insurance-premium",
         "official_name": "unknown",
         "aliases": [],
@@ -3663,16 +2488,13 @@
           "公布日、施行日、適用開始日、徴収開始日を個別の公式資料で確認する"
         ],
         "verified_at": "2026-08-19T07:31:40+09:00"
-      },
-      "active_phases": [],
-      "pending_changes": [],
-      "canonical_pending_changes": []
+      }
     },
     {
-      "tax_id": "minamata-specified-business-compensation-levy",
-      "current_status": "active",
-      "canonical_current_status": "active",
-      "burden": {
+      "public_burden_id": "minamata-specified-business-compensation-levy",
+      "name": "unknown",
+      "category": "levy",
+      "legacy_record": {
         "tax_id": "minamata-specified-business-compensation-levy",
         "official_name": "unknown",
         "aliases": [
@@ -3710,16 +2532,13 @@
           "公布日、施行日、適用開始日、徴収開始日を個別の公式資料で確認する"
         ],
         "verified_at": "2026-08-19T07:31:40+09:00"
-      },
-      "active_phases": [],
-      "pending_changes": [],
-      "canonical_pending_changes": []
+      }
     },
     {
-      "tax_id": "mineral-product-tax",
-      "current_status": "active",
-      "canonical_current_status": "active",
-      "burden": {
+      "public_burden_id": "mineral-product-tax",
+      "name": "鉱産税",
+      "category": "local_tax",
+      "legacy_record": {
         "tax_id": "mineral-product-tax",
         "official_name": "鉱産税",
         "aliases": [],
@@ -3755,16 +2574,13 @@
           "公布日、施行日、適用開始日、徴収開始日を個別の公式資料で確認する"
         ],
         "verified_at": "2026-08-19T07:31:40+09:00"
-      },
-      "active_phases": [],
-      "pending_changes": [],
-      "canonical_pending_changes": []
+      }
     },
     {
-      "tax_id": "mining-area-tax",
-      "current_status": "active",
-      "canonical_current_status": "active",
-      "burden": {
+      "public_burden_id": "mining-area-tax",
+      "name": "鉱区税",
+      "category": "local_tax",
+      "legacy_record": {
         "tax_id": "mining-area-tax",
         "official_name": "鉱区税",
         "aliases": [],
@@ -3800,16 +2616,13 @@
           "公布日、施行日、適用開始日、徴収開始日を個別の公式資料で確認する"
         ],
         "verified_at": "2026-08-19T07:31:40+09:00"
-      },
-      "active_phases": [],
-      "pending_changes": [],
-      "canonical_pending_changes": []
+      }
     },
     {
-      "tax_id": "mining-pollution-prevention-fund-contribution",
-      "current_status": "active",
-      "canonical_current_status": "active",
-      "burden": {
+      "public_burden_id": "mining-pollution-prevention-fund-contribution",
+      "name": "鉱害防止事業基金に対する拠出金",
+      "category": "contribution",
+      "legacy_record": {
         "tax_id": "mining-pollution-prevention-fund-contribution",
         "official_name": "鉱害防止事業基金に対する拠出金",
         "aliases": [],
@@ -3845,16 +2658,13 @@
           "公布日、施行日、適用開始日、徴収開始日を個別の公式資料で確認する"
         ],
         "verified_at": "2026-08-19T07:31:40+09:00"
-      },
-      "active_phases": [],
-      "pending_changes": [],
-      "canonical_pending_changes": []
+      }
     },
     {
-      "tax_id": "multipurpose-dam-charge",
-      "current_status": "active",
-      "canonical_current_status": "active",
-      "burden": {
+      "public_burden_id": "multipurpose-dam-charge",
+      "name": "unknown",
+      "category": "burden_charge",
+      "legacy_record": {
         "tax_id": "multipurpose-dam-charge",
         "official_name": "unknown",
         "aliases": [],
@@ -3891,16 +2701,13 @@
           "公布日、施行日、適用開始日、徴収開始日を個別の公式資料で確認する"
         ],
         "verified_at": "2026-08-19T07:31:40+09:00"
-      },
-      "active_phases": [],
-      "pending_changes": [],
-      "canonical_pending_changes": []
+      }
     },
     {
-      "tax_id": "national-health-insurance-tax",
-      "current_status": "active",
-      "canonical_current_status": "active",
-      "burden": {
+      "public_burden_id": "national-health-insurance-tax",
+      "name": "国民健康保険税",
+      "category": "local_tax",
+      "legacy_record": {
         "tax_id": "national-health-insurance-tax",
         "official_name": "国民健康保険税",
         "aliases": [],
@@ -3937,16 +2744,13 @@
           "公布日、施行日、適用開始日、徴収開始日を個別の公式資料で確認する"
         ],
         "verified_at": "2026-08-19T07:31:40+09:00"
-      },
-      "active_phases": [],
-      "pending_changes": [],
-      "canonical_pending_changes": []
+      }
     },
     {
-      "tax_id": "non-statutory-ordinary-tax-category",
-      "current_status": "active",
-      "canonical_current_status": "active",
-      "burden": {
+      "public_burden_id": "non-statutory-ordinary-tax-category",
+      "name": "法定外普通税",
+      "category": "local_tax",
+      "legacy_record": {
         "tax_id": "non-statutory-ordinary-tax-category",
         "official_name": "法定外普通税",
         "aliases": [],
@@ -3982,16 +2786,13 @@
           "公布日、施行日、適用開始日、徴収開始日を個別の公式資料で確認する"
         ],
         "verified_at": "2026-08-19T07:31:40+09:00"
-      },
-      "active_phases": [],
-      "pending_changes": [],
-      "canonical_pending_changes": []
+      }
     },
     {
-      "tax_id": "non-statutory-purpose-tax-category",
-      "current_status": "active",
-      "canonical_current_status": "active",
-      "burden": {
+      "public_burden_id": "non-statutory-purpose-tax-category",
+      "name": "法定外目的税",
+      "category": "local_tax",
+      "legacy_record": {
         "tax_id": "non-statutory-purpose-tax-category",
         "official_name": "法定外目的税",
         "aliases": [],
@@ -4027,16 +2828,13 @@
           "公布日、施行日、適用開始日、徴収開始日を個別の公式資料で確認する"
         ],
         "verified_at": "2026-08-19T07:31:40+09:00"
-      },
-      "active_phases": [],
-      "pending_changes": [],
-      "canonical_pending_changes": []
+      }
     },
     {
-      "tax_id": "nuclear-damage-support-general-charge",
-      "current_status": "active",
-      "canonical_current_status": "active",
-      "burden": {
+      "public_burden_id": "nuclear-damage-support-general-charge",
+      "name": "unknown",
+      "category": "burden_charge",
+      "legacy_record": {
         "tax_id": "nuclear-damage-support-general-charge",
         "official_name": "unknown",
         "aliases": [
@@ -4074,16 +2872,13 @@
           "公布日、施行日、適用開始日、徴収開始日を個別の公式資料で確認する"
         ],
         "verified_at": "2026-08-19T07:31:40+09:00"
-      },
-      "active_phases": [],
-      "pending_changes": [],
-      "canonical_pending_changes": []
+      }
     },
     {
-      "tax_id": "nuclear-damage-support-special-charge",
-      "current_status": "active",
-      "canonical_current_status": "active",
-      "burden": {
+      "public_burden_id": "nuclear-damage-support-special-charge",
+      "name": "unknown",
+      "category": "burden_charge",
+      "legacy_record": {
         "tax_id": "nuclear-damage-support-special-charge",
         "official_name": "unknown",
         "aliases": [
@@ -4121,16 +2916,13 @@
           "公布日、施行日、適用開始日、徴収開始日を個別の公式資料で確認する"
         ],
         "verified_at": "2026-08-19T07:31:40+09:00"
-      },
-      "active_phases": [],
-      "pending_changes": [],
-      "canonical_pending_changes": []
+      }
     },
     {
-      "tax_id": "nuclear-decommissioning-contribution",
-      "current_status": "active",
-      "canonical_current_status": "active",
-      "burden": {
+      "public_burden_id": "nuclear-decommissioning-contribution",
+      "name": "unknown",
+      "category": "contribution",
+      "legacy_record": {
         "tax_id": "nuclear-decommissioning-contribution",
         "official_name": "unknown",
         "aliases": [
@@ -4168,16 +2960,13 @@
           "公布日、施行日、適用開始日、徴収開始日を個別の公式資料で確認する"
         ],
         "verified_at": "2026-08-19T07:31:40+09:00"
-      },
-      "active_phases": [],
-      "pending_changes": [],
-      "canonical_pending_changes": []
+      }
     },
     {
-      "tax_id": "participant-protection-trust-charge",
-      "current_status": "active",
-      "canonical_current_status": "active",
-      "burden": {
+      "public_burden_id": "participant-protection-trust-charge",
+      "name": "加入者保護信託への負担金",
+      "category": "burden_charge",
+      "legacy_record": {
         "tax_id": "participant-protection-trust-charge",
         "official_name": "加入者保護信託への負担金",
         "aliases": [],
@@ -4213,16 +3002,13 @@
           "公布日、施行日、適用開始日、徴収開始日を個別の公式資料で確認する"
         ],
         "verified_at": "2026-08-19T07:31:40+09:00"
-      },
-      "active_phases": [],
-      "pending_changes": [],
-      "canonical_pending_changes": []
+      }
     },
     {
-      "tax_id": "pension-insurance-premium",
-      "current_status": "active",
-      "canonical_current_status": "active",
-      "burden": {
+      "public_burden_id": "pension-insurance-premium",
+      "name": "unknown",
+      "category": "social_insurance_premium",
+      "legacy_record": {
         "tax_id": "pension-insurance-premium",
         "official_name": "unknown",
         "aliases": [],
@@ -4265,16 +3051,13 @@
           "公布日、施行日、適用開始日、徴収開始日を個別の公式資料で確認する"
         ],
         "verified_at": "2026-08-19T07:31:40+09:00"
-      },
-      "active_phases": [],
-      "pending_changes": [],
-      "canonical_pending_changes": []
+      }
     },
     {
-      "tax_id": "petroleum-and-coal-tax",
-      "current_status": "active",
-      "canonical_current_status": "active",
-      "burden": {
+      "public_burden_id": "petroleum-and-coal-tax",
+      "name": "石油石炭税",
+      "category": "national_tax",
+      "legacy_record": {
         "tax_id": "petroleum-and-coal-tax",
         "official_name": "石油石炭税",
         "aliases": [],
@@ -4310,16 +3093,13 @@
           "公布日、施行日、適用開始日、徴収開始日を個別の公式資料で確認する"
         ],
         "verified_at": "2026-08-19T07:31:40+09:00"
-      },
-      "active_phases": [],
-      "pending_changes": [],
-      "canonical_pending_changes": []
+      }
     },
     {
-      "tax_id": "petroleum-gas-tax",
-      "current_status": "active",
-      "canonical_current_status": "active",
-      "burden": {
+      "public_burden_id": "petroleum-gas-tax",
+      "name": "石油ガス税",
+      "category": "national_tax",
+      "legacy_record": {
         "tax_id": "petroleum-gas-tax",
         "official_name": "石油ガス税",
         "aliases": [],
@@ -4356,16 +3136,13 @@
           "公布日、施行日、適用開始日、徴収開始日を個別の公式資料で確認する"
         ],
         "verified_at": "2026-08-19T07:31:40+09:00"
-      },
-      "active_phases": [],
-      "pending_changes": [],
-      "canonical_pending_changes": []
+      }
     },
     {
-      "tax_id": "pharmaceutical-safety-contribution",
-      "current_status": "active",
-      "canonical_current_status": "active",
-      "burden": {
+      "public_burden_id": "pharmaceutical-safety-contribution",
+      "name": "unknown",
+      "category": "contribution",
+      "legacy_record": {
         "tax_id": "pharmaceutical-safety-contribution",
         "official_name": "unknown",
         "aliases": [],
@@ -4401,16 +3178,13 @@
           "公布日、施行日、適用開始日、徴収開始日を個別の公式資料で確認する"
         ],
         "verified_at": "2026-08-19T07:31:40+09:00"
-      },
-      "active_phases": [],
-      "pending_changes": [],
-      "canonical_pending_changes": []
+      }
     },
     {
-      "tax_id": "policyholder-protection-fund-charge",
-      "current_status": "active",
-      "canonical_current_status": "active",
-      "burden": {
+      "public_burden_id": "policyholder-protection-fund-charge",
+      "name": "unknown",
+      "category": "burden_charge",
+      "legacy_record": {
         "tax_id": "policyholder-protection-fund-charge",
         "official_name": "unknown",
         "aliases": [],
@@ -4447,16 +3221,13 @@
           "公布日、施行日、適用開始日、徴収開始日を個別の公式資料で確認する"
         ],
         "verified_at": "2026-08-19T07:31:40+09:00"
-      },
-      "active_phases": [],
-      "pending_changes": [],
-      "canonical_pending_changes": []
+      }
     },
     {
-      "tax_id": "pollution-load-levy",
-      "current_status": "active",
-      "canonical_current_status": "active",
-      "burden": {
+      "public_burden_id": "pollution-load-levy",
+      "name": "汚染負荷量賦課金",
+      "category": "levy",
+      "legacy_record": {
         "tax_id": "pollution-load-levy",
         "official_name": "汚染負荷量賦課金",
         "aliases": [],
@@ -4492,16 +3263,13 @@
           "公布日、施行日、適用開始日、徴収開始日を個別の公式資料で確認する"
         ],
         "verified_at": "2026-08-19T07:31:40+09:00"
-      },
-      "active_phases": [],
-      "pending_changes": [],
-      "canonical_pending_changes": []
+      }
     },
     {
-      "tax_id": "pollution-prevention-project-business-charge",
-      "current_status": "active",
-      "canonical_current_status": "active",
-      "burden": {
+      "public_burden_id": "pollution-prevention-project-business-charge",
+      "name": "公害防止事業費事業者負担金",
+      "category": "burden_charge",
+      "legacy_record": {
         "tax_id": "pollution-prevention-project-business-charge",
         "official_name": "公害防止事業費事業者負担金",
         "aliases": [],
@@ -4537,16 +3305,13 @@
           "公布日、施行日、適用開始日、徴収開始日を個別の公式資料で確認する"
         ],
         "verified_at": "2026-08-19T07:31:40+09:00"
-      },
-      "active_phases": [],
-      "pending_changes": [],
-      "canonical_pending_changes": []
+      }
     },
     {
-      "tax_id": "port-environment-improvement-charge",
-      "current_status": "active",
-      "canonical_current_status": "active",
-      "burden": {
+      "public_burden_id": "port-environment-improvement-charge",
+      "name": "港湾環境整備負担金",
+      "category": "burden_charge",
+      "legacy_record": {
         "tax_id": "port-environment-improvement-charge",
         "official_name": "港湾環境整備負担金",
         "aliases": [],
@@ -4582,16 +3347,13 @@
           "公布日、施行日、適用開始日、徴収開始日を個別の公式資料で確認する"
         ],
         "verified_at": "2026-08-19T07:31:40+09:00"
-      },
-      "active_phases": [],
-      "pending_changes": [],
-      "canonical_pending_changes": []
+      }
     },
     {
-      "tax_id": "postal-network-support-contribution",
-      "current_status": "active",
-      "canonical_current_status": "active",
-      "burden": {
+      "public_burden_id": "postal-network-support-contribution",
+      "name": "unknown",
+      "category": "contribution",
+      "legacy_record": {
         "tax_id": "postal-network-support-contribution",
         "official_name": "unknown",
         "aliases": [],
@@ -4627,16 +3389,13 @@
           "公布日、施行日、適用開始日、徴収開始日を個別の公式資料で確認する"
         ],
         "verified_at": "2026-08-19T07:31:40+09:00"
-      },
-      "active_phases": [],
-      "pending_changes": [],
-      "canonical_pending_changes": []
+      }
     },
     {
-      "tax_id": "postal-transport-consignment-compensation",
-      "current_status": "active",
-      "canonical_current_status": "active",
-      "burden": {
+      "public_burden_id": "postal-transport-consignment-compensation",
+      "name": "郵便物運送委託補償金",
+      "category": "payment",
+      "legacy_record": {
         "tax_id": "postal-transport-consignment-compensation",
         "official_name": "郵便物運送委託補償金",
         "aliases": [],
@@ -4672,16 +3431,13 @@
           "公布日、施行日、適用開始日、徴収開始日を個別の公式資料で確認する"
         ],
         "verified_at": "2026-08-19T07:31:40+09:00"
-      },
-      "active_phases": [],
-      "pending_changes": [],
-      "canonical_pending_changes": []
+      }
     },
     {
-      "tax_id": "power-development-promotion-tax",
-      "current_status": "active",
-      "canonical_current_status": "active",
-      "burden": {
+      "public_burden_id": "power-development-promotion-tax",
+      "name": "電源開発促進税",
+      "category": "national_tax",
+      "legacy_record": {
         "tax_id": "power-development-promotion-tax",
         "official_name": "電源開発促進税",
         "aliases": [],
@@ -4717,16 +3473,13 @@
           "公布日、施行日、適用開始日、徴収開始日を個別の公式資料で確認する"
         ],
         "verified_at": "2026-08-19T07:31:40+09:00"
-      },
-      "active_phases": [],
-      "pending_changes": [],
-      "canonical_pending_changes": []
+      }
     },
     {
-      "tax_id": "private-recording-compensation",
-      "current_status": "active",
-      "canonical_current_status": "active",
-      "burden": {
+      "public_burden_id": "private-recording-compensation",
+      "name": "私的録音録画補償金",
+      "category": "payment",
+      "legacy_record": {
         "tax_id": "private-recording-compensation",
         "official_name": "私的録音録画補償金",
         "aliases": [],
@@ -4762,16 +3515,13 @@
           "公布日、施行日、適用開始日、徴収開始日を個別の公式資料で確認する"
         ],
         "verified_at": "2026-08-19T07:31:40+09:00"
-      },
-      "active_phases": [],
-      "pending_changes": [],
-      "canonical_pending_changes": []
+      }
     },
     {
-      "tax_id": "railway-barrier-free-fee",
-      "current_status": "active",
-      "canonical_current_status": "active",
-      "burden": {
+      "public_burden_id": "railway-barrier-free-fee",
+      "name": "unknown",
+      "category": "fee",
+      "legacy_record": {
         "tax_id": "railway-barrier-free-fee",
         "official_name": "unknown",
         "aliases": [],
@@ -4807,16 +3557,13 @@
           "公布日、施行日、適用開始日、徴収開始日を個別の公式資料で確認する"
         ],
         "verified_at": "2026-08-19T07:31:40+09:00"
-      },
-      "active_phases": [],
-      "pending_changes": [],
-      "canonical_pending_changes": []
+      }
     },
     {
-      "tax_id": "real-estate-acquisition-tax",
-      "current_status": "active",
-      "canonical_current_status": "active",
-      "burden": {
+      "public_burden_id": "real-estate-acquisition-tax",
+      "name": "不動産取得税",
+      "category": "local_tax",
+      "legacy_record": {
         "tax_id": "real-estate-acquisition-tax",
         "official_name": "不動産取得税",
         "aliases": [],
@@ -4852,16 +3599,13 @@
           "公布日、施行日、適用開始日、徴収開始日を個別の公式資料で確認する"
         ],
         "verified_at": "2026-08-19T07:31:40+09:00"
-      },
-      "active_phases": [],
-      "pending_changes": [],
-      "canonical_pending_changes": []
+      }
     },
     {
-      "tax_id": "reconstruction-special-income-tax",
-      "current_status": "active",
-      "canonical_current_status": "active",
-      "burden": {
+      "public_burden_id": "reconstruction-special-income-tax",
+      "name": "復興特別所得税",
+      "category": "national_tax",
+      "legacy_record": {
         "tax_id": "reconstruction-special-income-tax",
         "official_name": "復興特別所得税",
         "aliases": [],
@@ -4897,16 +3641,13 @@
           "公布日、施行日、適用開始日、徴収開始日を個別の公式資料で確認する"
         ],
         "verified_at": "2026-08-19T07:31:40+09:00"
-      },
-      "active_phases": [],
-      "pending_changes": [],
-      "canonical_pending_changes": []
+      }
     },
     {
-      "tax_id": "regional-economy-revitalization-contribution",
-      "current_status": "active",
-      "canonical_current_status": "active",
-      "burden": {
+      "public_burden_id": "regional-economy-revitalization-contribution",
+      "name": "unknown",
+      "category": "contribution",
+      "legacy_record": {
         "tax_id": "regional-economy-revitalization-contribution",
         "official_name": "unknown",
         "aliases": [],
@@ -4942,16 +3683,13 @@
           "公布日、施行日、適用開始日、徴収開始日を個別の公式資料で確認する"
         ],
         "verified_at": "2026-08-19T07:31:40+09:00"
-      },
-      "active_phases": [],
-      "pending_changes": [],
-      "canonical_pending_changes": []
+      }
     },
     {
-      "tax_id": "registration-and-license-tax",
-      "current_status": "active",
-      "canonical_current_status": "active",
-      "burden": {
+      "public_burden_id": "registration-and-license-tax",
+      "name": "登録免許税",
+      "category": "national_tax",
+      "legacy_record": {
         "tax_id": "registration-and-license-tax",
         "official_name": "登録免許税",
         "aliases": [],
@@ -4988,16 +3726,13 @@
           "公布日、施行日、適用開始日、徴収開始日を個別の公式資料で確認する"
         ],
         "verified_at": "2026-08-19T07:31:40+09:00"
-      },
-      "active_phases": [],
-      "pending_changes": [],
-      "canonical_pending_changes": []
+      }
     },
     {
-      "tax_id": "renewable-energy-surcharge",
-      "current_status": "active",
-      "canonical_current_status": "active",
-      "burden": {
+      "public_burden_id": "renewable-energy-surcharge",
+      "name": "再生可能エネルギー発電促進賦課金",
+      "category": "levy",
+      "legacy_record": {
         "tax_id": "renewable-energy-surcharge",
         "official_name": "再生可能エネルギー発電促進賦課金",
         "aliases": [
@@ -5035,16 +3770,13 @@
           "公布日、施行日、適用開始日、徴収開始日を個別の公式資料で確認する"
         ],
         "verified_at": "2026-08-19T07:31:40+09:00"
-      },
-      "active_phases": [],
-      "pending_changes": [],
-      "canonical_pending_changes": []
+      }
     },
     {
-      "tax_id": "reprocessing-contribution",
-      "current_status": "active",
-      "canonical_current_status": "active",
-      "burden": {
+      "public_burden_id": "reprocessing-contribution",
+      "name": "再処理等拠出金",
+      "category": "contribution",
+      "legacy_record": {
         "tax_id": "reprocessing-contribution",
         "official_name": "再処理等拠出金",
         "aliases": [],
@@ -5080,16 +3812,13 @@
           "公布日、施行日、適用開始日、徴収開始日を個別の公式資料で確認する"
         ],
         "verified_at": "2026-08-19T07:31:40+09:00"
-      },
-      "active_phases": [],
-      "pending_changes": [],
-      "canonical_pending_changes": []
+      }
     },
     {
-      "tax_id": "resident-tax",
-      "current_status": "active",
-      "canonical_current_status": "active",
-      "burden": {
+      "public_burden_id": "resident-tax",
+      "name": "住民税",
+      "category": "local_tax",
+      "legacy_record": {
         "tax_id": "resident-tax",
         "official_name": "住民税",
         "aliases": [],
@@ -5126,16 +3855,13 @@
           "公布日、施行日、適用開始日、徴収開始日を個別の公式資料で確認する"
         ],
         "verified_at": "2026-08-19T07:31:40+09:00"
-      },
-      "active_phases": [],
-      "pending_changes": [],
-      "canonical_pending_changes": []
+      }
     },
     {
-      "tax_id": "residential-land-development-tax",
-      "current_status": "active",
-      "canonical_current_status": "active",
-      "burden": {
+      "public_burden_id": "residential-land-development-tax",
+      "name": "宅地開発税",
+      "category": "local_tax",
+      "legacy_record": {
         "tax_id": "residential-land-development-tax",
         "official_name": "宅地開発税",
         "aliases": [],
@@ -5171,16 +3897,13 @@
           "公布日、施行日、適用開始日、徴収開始日を個別の公式資料で確認する"
         ],
         "verified_at": "2026-08-19T07:31:40+09:00"
-      },
-      "active_phases": [],
-      "pending_changes": [],
-      "canonical_pending_changes": []
+      }
     },
     {
-      "tax_id": "special-corporate-enterprise-tax",
-      "current_status": "active",
-      "canonical_current_status": "active",
-      "burden": {
+      "public_burden_id": "special-corporate-enterprise-tax",
+      "name": "特別法人事業税",
+      "category": "national_tax",
+      "legacy_record": {
         "tax_id": "special-corporate-enterprise-tax",
         "official_name": "特別法人事業税",
         "aliases": [],
@@ -5217,16 +3940,13 @@
           "公布日、施行日、適用開始日、徴収開始日を個別の公式資料で確認する"
         ],
         "verified_at": "2026-08-19T07:31:40+09:00"
-      },
-      "active_phases": [],
-      "pending_changes": [],
-      "canonical_pending_changes": []
+      }
     },
     {
-      "tax_id": "special-landholding-tax",
-      "current_status": "active",
-      "canonical_current_status": "active",
-      "burden": {
+      "public_burden_id": "special-landholding-tax",
+      "name": "特別土地保有税",
+      "category": "local_tax",
+      "legacy_record": {
         "tax_id": "special-landholding-tax",
         "official_name": "特別土地保有税",
         "aliases": [],
@@ -5263,16 +3983,13 @@
           "公布日、施行日、適用開始日、徴収開始日を個別の公式資料で確認する"
         ],
         "verified_at": "2026-08-19T07:31:40+09:00"
-      },
-      "active_phases": [],
-      "pending_changes": [],
-      "canonical_pending_changes": []
+      }
     },
     {
-      "tax_id": "special-tobacco-tax",
-      "current_status": "active",
-      "canonical_current_status": "active",
-      "burden": {
+      "public_burden_id": "special-tobacco-tax",
+      "name": "たばこ特別税",
+      "category": "national_tax",
+      "legacy_record": {
         "tax_id": "special-tobacco-tax",
         "official_name": "たばこ特別税",
         "aliases": [],
@@ -5308,16 +4025,13 @@
           "公布日、施行日、適用開始日、徴収開始日を個別の公式資料で確認する"
         ],
         "verified_at": "2026-08-19T07:31:40+09:00"
-      },
-      "active_phases": [],
-      "pending_changes": [],
-      "canonical_pending_changes": []
+      }
     },
     {
-      "tax_id": "special-tonnage-tax",
-      "current_status": "active",
-      "canonical_current_status": "active",
-      "burden": {
+      "public_burden_id": "special-tonnage-tax",
+      "name": "特別とん税",
+      "category": "national_tax",
+      "legacy_record": {
         "tax_id": "special-tonnage-tax",
         "official_name": "特別とん税",
         "aliases": [],
@@ -5354,16 +4068,13 @@
           "公布日、施行日、適用開始日、徴収開始日を個別の公式資料で確認する"
         ],
         "verified_at": "2026-08-19T07:31:40+09:00"
-      },
-      "active_phases": [],
-      "pending_changes": [],
-      "canonical_pending_changes": []
+      }
     },
     {
-      "tax_id": "specified-pollution-levy",
-      "current_status": "active",
-      "canonical_current_status": "active",
-      "burden": {
+      "public_burden_id": "specified-pollution-levy",
+      "name": "unknown",
+      "category": "levy",
+      "legacy_record": {
         "tax_id": "specified-pollution-levy",
         "official_name": "unknown",
         "aliases": [
@@ -5401,16 +4112,13 @@
           "公布日、施行日、適用開始日、徴収開始日を個別の公式資料で確認する"
         ],
         "verified_at": "2026-08-19T07:31:40+09:00"
-      },
-      "active_phases": [],
-      "pending_changes": [],
-      "canonical_pending_changes": []
+      }
     },
     {
-      "tax_id": "stamp-tax",
-      "current_status": "active",
-      "canonical_current_status": "active",
-      "burden": {
+      "public_burden_id": "stamp-tax",
+      "name": "印紙税",
+      "category": "national_tax",
+      "legacy_record": {
         "tax_id": "stamp-tax",
         "official_name": "印紙税",
         "aliases": [],
@@ -5447,16 +4155,13 @@
           "公布日、施行日、適用開始日、徴収開始日を個別の公式資料で確認する"
         ],
         "verified_at": "2026-08-19T07:31:40+09:00"
-      },
-      "active_phases": [],
-      "pending_changes": [],
-      "canonical_pending_changes": []
+      }
     },
     {
-      "tax_id": "supplementary-nuclear-damage-general-charge",
-      "current_status": "active",
-      "canonical_current_status": "active",
-      "burden": {
+      "public_burden_id": "supplementary-nuclear-damage-general-charge",
+      "name": "unknown",
+      "category": "burden_charge",
+      "legacy_record": {
         "tax_id": "supplementary-nuclear-damage-general-charge",
         "official_name": "unknown",
         "aliases": [],
@@ -5492,16 +4197,13 @@
           "公布日、施行日、適用開始日、徴収開始日を個別の公式資料で確認する"
         ],
         "verified_at": "2026-08-19T07:31:40+09:00"
-      },
-      "active_phases": [],
-      "pending_changes": [],
-      "canonical_pending_changes": []
+      }
     },
     {
-      "tax_id": "supplementary-nuclear-damage-special-charge",
-      "current_status": "active",
-      "canonical_current_status": "active",
-      "burden": {
+      "public_burden_id": "supplementary-nuclear-damage-special-charge",
+      "name": "unknown",
+      "category": "burden_charge",
+      "legacy_record": {
         "tax_id": "supplementary-nuclear-damage-special-charge",
         "official_name": "unknown",
         "aliases": [],
@@ -5537,16 +4239,13 @@
           "公布日、施行日、適用開始日、徴収開始日を個別の公式資料で確認する"
         ],
         "verified_at": "2026-08-19T07:31:40+09:00"
-      },
-      "active_phases": [],
-      "pending_changes": [],
-      "canonical_pending_changes": []
+      }
     },
     {
-      "tax_id": "supplementary-oil-pollution-fund-annual-contribution",
-      "current_status": "active",
-      "canonical_current_status": "active",
-      "burden": {
+      "public_burden_id": "supplementary-oil-pollution-fund-annual-contribution",
+      "name": "unknown",
+      "category": "contribution",
+      "legacy_record": {
         "tax_id": "supplementary-oil-pollution-fund-annual-contribution",
         "official_name": "unknown",
         "aliases": [],
@@ -5582,16 +4281,13 @@
           "公布日、施行日、適用開始日、徴収開始日を個別の公式資料で確認する"
         ],
         "verified_at": "2026-08-19T07:31:40+09:00"
-      },
-      "active_phases": [],
-      "pending_changes": [],
-      "canonical_pending_changes": []
+      }
     },
     {
-      "tax_id": "taxi-center-business-charge",
-      "current_status": "active",
-      "canonical_current_status": "active",
-      "burden": {
+      "public_burden_id": "taxi-center-business-charge",
+      "name": "unknown",
+      "category": "burden_charge",
+      "legacy_record": {
         "tax_id": "taxi-center-business-charge",
         "official_name": "unknown",
         "aliases": [],
@@ -5627,16 +4323,13 @@
           "公布日、施行日、適用開始日、徴収開始日を個別の公式資料で確認する"
         ],
         "verified_at": "2026-08-19T07:31:40+09:00"
-      },
-      "active_phases": [],
-      "pending_changes": [],
-      "canonical_pending_changes": []
+      }
     },
     {
-      "tax_id": "telephone-accessibility-charge",
-      "current_status": "active",
-      "canonical_current_status": "active",
-      "burden": {
+      "public_burden_id": "telephone-accessibility-charge",
+      "name": "unknown",
+      "category": "burden_charge",
+      "legacy_record": {
         "tax_id": "telephone-accessibility-charge",
         "official_name": "unknown",
         "aliases": [],
@@ -5672,16 +4365,13 @@
           "公布日、施行日、適用開始日、徴収開始日を個別の公式資料で確認する"
         ],
         "verified_at": "2026-08-19T07:31:40+09:00"
-      },
-      "active_phases": [],
-      "pending_changes": [],
-      "canonical_pending_changes": []
+      }
     },
     {
-      "tax_id": "tobacco-tax",
-      "current_status": "active",
-      "canonical_current_status": "active",
-      "burden": {
+      "public_burden_id": "tobacco-tax",
+      "name": "たばこ税",
+      "category": "national_tax",
+      "legacy_record": {
         "tax_id": "tobacco-tax",
         "official_name": "たばこ税",
         "aliases": [],
@@ -5718,16 +4408,13 @@
           "公布日、施行日、適用開始日、徴収開始日を個別の公式資料で確認する"
         ],
         "verified_at": "2026-08-19T07:31:40+09:00"
-      },
-      "active_phases": [],
-      "pending_changes": [],
-      "canonical_pending_changes": []
+      }
     },
     {
-      "tax_id": "tonnage-tax",
-      "current_status": "active",
-      "canonical_current_status": "active",
-      "burden": {
+      "public_burden_id": "tonnage-tax",
+      "name": "とん税",
+      "category": "national_tax",
+      "legacy_record": {
         "tax_id": "tonnage-tax",
         "official_name": "とん税",
         "aliases": [],
@@ -5764,16 +4451,13 @@
           "公布日、施行日、適用開始日、徴収開始日を個別の公式資料で確認する"
         ],
         "verified_at": "2026-08-19T07:31:40+09:00"
-      },
-      "active_phases": [],
-      "pending_changes": [],
-      "canonical_pending_changes": []
+      }
     },
     {
-      "tax_id": "tru-waste-disposal-contribution",
-      "current_status": "active",
-      "canonical_current_status": "active",
-      "burden": {
+      "public_burden_id": "tru-waste-disposal-contribution",
+      "name": "unknown",
+      "category": "contribution",
+      "legacy_record": {
         "tax_id": "tru-waste-disposal-contribution",
         "official_name": "unknown",
         "aliases": [],
@@ -5809,16 +4493,13 @@
           "公布日、施行日、適用開始日、徴収開始日を個別の公式資料で確認する"
         ],
         "verified_at": "2026-08-19T07:31:40+09:00"
-      },
-      "active_phases": [],
-      "pending_changes": [],
-      "canonical_pending_changes": []
+      }
     },
     {
-      "tax_id": "universal-service-fee",
-      "current_status": "active",
-      "canonical_current_status": "active",
-      "burden": {
+      "public_burden_id": "universal-service-fee",
+      "name": "unknown",
+      "category": "fee",
+      "legacy_record": {
         "tax_id": "universal-service-fee",
         "official_name": "unknown",
         "aliases": [],
@@ -5855,16 +4536,13 @@
           "公布日、施行日、適用開始日、徴収開始日を個別の公式資料で確認する"
         ],
         "verified_at": "2026-08-19T07:31:40+09:00"
-      },
-      "active_phases": [],
-      "pending_changes": [],
-      "canonical_pending_changes": []
+      }
     },
     {
-      "tax_id": "utility-tunnel-management-charge",
-      "current_status": "active",
-      "canonical_current_status": "active",
-      "burden": {
+      "public_burden_id": "utility-tunnel-management-charge",
+      "name": "unknown",
+      "category": "burden_charge",
+      "legacy_record": {
         "tax_id": "utility-tunnel-management-charge",
         "official_name": "unknown",
         "aliases": [
@@ -5902,16 +4580,13 @@
           "公布日、施行日、適用開始日、徴収開始日を個別の公式資料で確認する"
         ],
         "verified_at": "2026-08-19T07:31:40+09:00"
-      },
-      "active_phases": [],
-      "pending_changes": [],
-      "canonical_pending_changes": []
+      }
     },
     {
-      "tax_id": "utility-tunnel-other-occupant-charge",
-      "current_status": "active",
-      "canonical_current_status": "active",
-      "burden": {
+      "public_burden_id": "utility-tunnel-other-occupant-charge",
+      "name": "unknown",
+      "category": "burden_charge",
+      "legacy_record": {
         "tax_id": "utility-tunnel-other-occupant-charge",
         "official_name": "unknown",
         "aliases": [
@@ -5949,16 +4624,13 @@
           "公布日、施行日、適用開始日、徴収開始日を個別の公式資料で確認する"
         ],
         "verified_at": "2026-08-19T07:31:40+09:00"
-      },
-      "active_phases": [],
-      "pending_changes": [],
-      "canonical_pending_changes": []
+      }
     },
     {
-      "tax_id": "utility-tunnel-planned-occupant-construction-charge",
-      "current_status": "active",
-      "canonical_current_status": "active",
-      "burden": {
+      "public_burden_id": "utility-tunnel-planned-occupant-construction-charge",
+      "name": "unknown",
+      "category": "burden_charge",
+      "legacy_record": {
         "tax_id": "utility-tunnel-planned-occupant-construction-charge",
         "official_name": "unknown",
         "aliases": [
@@ -5996,16 +4668,13 @@
           "公布日、施行日、適用開始日、徴収開始日を個別の公式資料で確認する"
         ],
         "verified_at": "2026-08-19T07:31:40+09:00"
-      },
-      "active_phases": [],
-      "pending_changes": [],
-      "canonical_pending_changes": []
+      }
     },
     {
-      "tax_id": "water-and-land-benefit-tax",
-      "current_status": "active",
-      "canonical_current_status": "active",
-      "burden": {
+      "public_burden_id": "water-and-land-benefit-tax",
+      "name": "水利地益税",
+      "category": "local_tax",
+      "legacy_record": {
         "tax_id": "water-and-land-benefit-tax",
         "official_name": "水利地益税",
         "aliases": [],
@@ -6041,16 +4710,13 @@
           "公布日、施行日、適用開始日、徴収開始日を個別の公式資料で確認する"
         ],
         "verified_at": "2026-08-19T07:31:40+09:00"
-      },
-      "active_phases": [],
-      "pending_changes": [],
-      "canonical_pending_changes": []
+      }
     },
     {
-      "tax_id": "water-resources-facility-user-charge",
-      "current_status": "active",
-      "canonical_current_status": "active",
-      "burden": {
+      "public_burden_id": "water-resources-facility-user-charge",
+      "name": "unknown",
+      "category": "burden_charge",
+      "legacy_record": {
         "tax_id": "water-resources-facility-user-charge",
         "official_name": "unknown",
         "aliases": [],
@@ -6086,16 +4752,13 @@
           "公布日、施行日、適用開始日、徴収開始日を個別の公式資料で確認する"
         ],
         "verified_at": "2026-08-19T07:31:40+09:00"
-      },
-      "active_phases": [],
-      "pending_changes": [],
-      "canonical_pending_changes": []
+      }
     },
     {
-      "tax_id": "workers-compensation-insurance-premium",
-      "current_status": "active",
-      "canonical_current_status": "active",
-      "burden": {
+      "public_burden_id": "workers-compensation-insurance-premium",
+      "name": "労災保険料",
+      "category": "social_insurance_premium",
+      "legacy_record": {
         "tax_id": "workers-compensation-insurance-premium",
         "official_name": "労災保険料",
         "aliases": [],
@@ -6131,10 +4794,140 @@
           "公布日、施行日、適用開始日、徴収開始日を個別の公式資料で確認する"
         ],
         "verified_at": "2026-08-19T07:31:40+09:00"
-      },
-      "active_phases": [],
-      "pending_changes": [],
-      "canonical_pending_changes": []
+      }
+    }
+  ],
+  "legal_sources": [
+    {
+      "legal_source_id": "law-363ac0000000108",
+      "source_type": "law",
+      "title": "消費税法",
+      "item_number": null,
+      "item_text": null,
+      "source_url": "https://laws.e-gov.go.jp/api/2/law_data/363AC0000000108",
+      "dates": [],
+      "relationships": [],
+      "evidence_gaps": [
+        "現行データに項目単位文言と法令日付がないため推測せず未確認とする"
+      ]
+    },
+    {
+      "legal_source_id": "consumption-tax-guidance-2",
+      "source_type": "other",
+      "title": "消費税法等",
+      "item_number": "消法29等",
+      "item_text": null,
+      "source_url": "https://www.nta.go.jp/taxes/shiraberu/taxanswer/shohi/6101.htm",
+      "dates": [],
+      "relationships": [],
+      "evidence_gaps": [
+        "現行データに項目単位文言と法令日付がないため推測せず未確認とする"
+      ]
+    }
+  ],
+  "source_facts": [
+    {
+      "source_fact_id": "consumption-tax-standard-rate-2019-fact",
+      "legal_source_id": "consumption-tax-guidance-2",
+      "fact_kind": "rate",
+      "value_raw": "標準税率10パーセントのうち消費税率7.8パーセント",
+      "normalized_value": 7.8,
+      "unit": "percent",
+      "subject_conditions": "軽減税率の対象以外の課税資産の譲渡等",
+      "verified_at": "2026-08-17T00:12:24+09:00"
+    },
+    {
+      "source_fact_id": "consumption-tax-reduced-rate-2019-fact",
+      "legal_source_id": "consumption-tax-guidance-2",
+      "fact_kind": "rate",
+      "value_raw": "軽減税率8パーセントのうち消費税率6.24パーセント",
+      "normalized_value": 6.24,
+      "unit": "percent",
+      "subject_conditions": "酒類・外食を除く飲食料品と、定期購読契約に基づき週2回以上発行される新聞の譲渡",
+      "verified_at": "2026-08-17T00:12:24+09:00"
+    }
+  ],
+  "calculation_sets": [],
+  "burden_components": [
+    {
+      "component_id": "consumption-tax-standard-rate-2019",
+      "public_burden_id": "consumption-tax",
+      "name": "標準税率対象取引",
+      "versions": [
+        {
+          "version_id": "consumption-tax-standard-rate-2019-version",
+          "subject_conditions": "軽減税率の対象以外の課税資産の譲渡等",
+          "calculation_bases": [
+            {
+              "calculation_basis_id": "taxable-transaction-consideration",
+              "description": "課税資産の譲渡等の対価の額等"
+            }
+          ],
+          "liable_parties": [
+            {
+              "party_id": "consumer",
+              "description": "消費者"
+            }
+          ],
+          "payment_obligors": [
+            "課税資産の譲渡等を行う事業者等"
+          ],
+          "value": {
+            "value_kind": "rate",
+            "numeric_value": 7.8,
+            "unit": "percent",
+            "acquisition_type": "direct",
+            "source_fact_id": "consumption-tax-standard-rate-2019-fact"
+          },
+          "application_start": "2019-10-01",
+          "application_start_raw": "令和元年10月1日",
+          "application_end": null,
+          "legal_source_ids": [
+            "law-363ac0000000108",
+            "consumption-tax-guidance-2"
+          ]
+        }
+      ]
+    },
+    {
+      "component_id": "consumption-tax-reduced-rate-2019",
+      "public_burden_id": "consumption-tax",
+      "name": "軽減税率対象品目",
+      "versions": [
+        {
+          "version_id": "consumption-tax-reduced-rate-2019-version",
+          "subject_conditions": "酒類・外食を除く飲食料品と、定期購読契約に基づき週2回以上発行される新聞の譲渡",
+          "calculation_bases": [
+            {
+              "calculation_basis_id": "taxable-transaction-consideration",
+              "description": "課税資産の譲渡等の対価の額等"
+            }
+          ],
+          "liable_parties": [
+            {
+              "party_id": "consumer",
+              "description": "消費者"
+            }
+          ],
+          "payment_obligors": [
+            "課税資産の譲渡等を行う事業者等"
+          ],
+          "value": {
+            "value_kind": "rate",
+            "numeric_value": 6.24,
+            "unit": "percent",
+            "acquisition_type": "direct",
+            "source_fact_id": "consumption-tax-reduced-rate-2019-fact"
+          },
+          "application_start": "2019-10-01",
+          "application_start_raw": "令和元年10月1日",
+          "application_end": null,
+          "legal_source_ids": [
+            "law-363ac0000000108",
+            "consumption-tax-guidance-2"
+          ]
+        }
+      ]
     }
   ]
 }

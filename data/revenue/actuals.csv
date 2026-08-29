@@ -1,1 +1,0 @@
-record_id,tax_id,fiscal_year,period_start,period_end,amount_yen,amount_raw,amount_kind,accounting_basis,government_level,collector,account_or_fund,gross_or_net,refund_treatment,consolidation_scope,value_status,evidence_gap_reason,source_url,source_page_or_table,published_at,verified_at,notes

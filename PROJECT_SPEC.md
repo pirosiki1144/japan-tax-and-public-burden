@@ -241,7 +241,7 @@ date_certainty の例:
 
 ### 6.1 税金等マスター
 
-ファイル例: data/burdens/income-tax.yaml
+格納先: data/master/canonical.json の `public_burdens`
 
 最低限の項目:
 
@@ -268,7 +268,7 @@ date_certainty の例:
 
 ### 6.2 変更情報
 
-ファイル例: data/changes/2026-income-tax-basic-deduction.yaml
+格納先: data/master/canonical.json の制度・法的根拠・version情報
 
 | 項目 | 内容 |
 | --- | --- |
@@ -290,7 +290,7 @@ date_certainty の例:
 
 ### 6.3 適用区分
 
-ファイル例: data/phases/income-tax.yaml
+格納先: data/master/canonical.json の `burden_components[].versions`
 
 | 項目 | 内容 |
 | --- | --- |
@@ -361,7 +361,7 @@ event_type の例:
 
 税以外も含むため、データ名は revenue より collected_amount を優先する。
 
-ファイル例: data/revenue/actuals.csv
+歳入実績は正本へ未収録。必要なSchemaと格納先を別Issueで定義してから追加する。
 
 推奨列:
 
@@ -828,7 +828,7 @@ PRに最低限含める内容:
 
 ### 15.3 対応表
 
-data/reconciliation/national-burden-ratio-mapping.yaml に次を持つ。
+国民負担率との対応情報は正本へ未収録。必要なSchemaと格納先を別Issueで定義してから追加する。
 
 ~~~
 tax_id

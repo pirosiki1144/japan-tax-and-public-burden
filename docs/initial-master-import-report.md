@@ -8,7 +8,7 @@
 
 | 区分 | 件数 | 処理 |
 | --- | ---: | --- |
-| 新規投入 | 111 | `data/burdens/initial-master.json`へ登録 |
+| 新規投入 | 111 | Issue #87で `data/master/canonical.json` へ移行 |
 | 既存正本へ統合 | 1 | `consumption-tax`へe-Govの消費税法根拠を追加 |
 | 保留 | 7 | 適切な現行法令を一意に特定できないため未投入 |
 | 除外 | 0 | なし |

@@ -72,7 +72,7 @@ function timeClassification(version, asOf) {
 
 function evidenceCell(source) {
   const dates = source.dates.map(({ event_type, date, date_raw }) => `${event_type}:${date ?? "unknown"} (${date_raw})`).join("; ");
-  return `${source.title} ${source.item_number}\n${source.item_text}\n${dates}\n${source.source_url}`;
+  return [`${source.title}${source.item_number ? ` ${source.item_number}` : ""}`, source.item_text, dates, source.source_url].filter((value) => value !== null && value !== "").join("\n");
 }
 
 export function buildDistributionRows(master, asOf) {

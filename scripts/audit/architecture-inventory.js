@@ -8,18 +8,11 @@ import { parse } from "yaml";
 const ROOT = join(dirname(fileURLToPath(import.meta.url)), "../..");
 const DEFAULT_OUTPUT = "reports/architecture-inventory.json";
 const DERIVED = new Set([
-  "data/burdens/initial-master.json",
   "docs/monitoring-extraction-target-review.md",
-  "generated/current.csv",
-  "generated/current.json",
-  "generated/history.csv",
-  "generated/history.json",
-  "generated/summary.csv",
-  "generated/summary.json",
-  "reports/initial-master-selection.json",
+  "generated/public-burdens.csv",
   "reports/architecture-inventory.json"
 ]);
-const CLI_NAMES = /^(audit-repository|audit-source-scan|publish-audit-issues|adapter-coverage-audit|prepare-update|generate-distribution|initial-master-selection|build-burdens|build-monitoring-execution-plan|build-monitoring-config|extract-egov-tax-semantics|write-semantic-baseline|run-monitoring|scan-source|validate-data|architecture-inventory)\.js$/;
+const CLI_NAMES = /^(audit-repository|audit-source-scan|publish-audit-issues|adapter-coverage-audit|prepare-update|public-burden-csv|build-monitoring-execution-plan|build-monitoring-config|extract-egov-tax-semantics|write-semantic-baseline|run-monitoring|scan-source|validate-data|architecture-inventory)\.js$/;
 
 function trackedFiles(root) {
   return execFileSync("git", ["ls-files", "--cached", "--others", "--exclude-standard"], { cwd: root, encoding: "utf8" })

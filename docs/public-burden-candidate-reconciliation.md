@@ -4,8 +4,8 @@
 
 第212回国会の質問主意書「税以外の国民負担に関する質問主意書」に列挙された39項目と、政府答弁で関係行政機関が確認した追加例31項目を、合計70件の調査候補として収集した。
 
-- 質問本文39項目: `data/candidates/public-burdens-question-39.yaml`
-- 政府答弁の追加例31項目: `data/candidates/public-burdens-government-additions.yaml`
+- 質問本文39項目: `data/master/initial-import.json` の移行候補
+- 政府答弁の追加例31項目: `data/master/initial-import.json` の移行候補
 - 確認日時: 2026-08-18T23:35:17+09:00
 - [質問本文](https://www.sangiin.go.jp/japanese/joho1/kousei/syuisyo/212/syuh/s212073.htm)（2023年11月30日提出）
 - [政府答弁本文](https://www.sangiin.go.jp/japanese/joho1/kousei/syuisyo/212/touh/t212073.htm)（2023年12月12日）
