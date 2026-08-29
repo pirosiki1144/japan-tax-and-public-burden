@@ -1,24 +1,24 @@
 {
   "schema_version": 1,
   "scope": "tracked repository files",
-  "baseline_commit": "553cb9461ad7c7513e5ad3e81a6cb2560eebfdf4",
+  "baseline_commit": "c045ac261ace87ee895097937fe6f8dbe797ac69",
   "totals": {
-    "tracked_files": 194,
-    "javascript_files": 78,
-    "import_edges": 139
+    "tracked_files": 201,
+    "javascript_files": 80,
+    "import_edges": 143
   },
   "responsibilities": {
     "adapter": 6,
-    "application": 7,
+    "application": 8,
     "cli": 16,
     "composition_root": 1,
     "derived_artifact": 10,
-    "documentation": 15,
+    "documentation": 16,
     "domain": 15,
-    "fixture": 42,
+    "fixture": 44,
     "repository_support": 8,
-    "source_of_truth": 41,
-    "test": 33
+    "source_of_truth": 43,
+    "test": 34
   },
   "files": [
     {
@@ -155,6 +155,10 @@
     },
     {
       "path": "docs/architecture-inventory.md",
+      "responsibility": "documentation"
+    },
+    {
+      "path": "docs/atomic-public-burden-master.md",
       "responsibility": "documentation"
     },
     {
@@ -326,6 +330,14 @@
       "responsibility": "source_of_truth"
     },
     {
+      "path": "schemas/public-burden-distribution.schema.json",
+      "responsibility": "source_of_truth"
+    },
+    {
+      "path": "schemas/public-burden-master.schema.json",
+      "responsibility": "source_of_truth"
+    },
+    {
       "path": "schemas/revenue.schema.json",
       "responsibility": "source_of_truth"
     },
@@ -432,6 +444,10 @@
     {
       "path": "scripts/generate/initial-master-selection.js",
       "responsibility": "cli"
+    },
+    {
+      "path": "scripts/generate/public-burden-csv.js",
+      "responsibility": "application"
     },
     {
       "path": "scripts/initial-master/build-burdens.js",
@@ -571,6 +587,14 @@
     },
     {
       "path": "tests/fixtures/invalid-burden.yaml",
+      "responsibility": "fixture"
+    },
+    {
+      "path": "tests/fixtures/public-burden-master/expected.csv",
+      "responsibility": "fixture"
+    },
+    {
+      "path": "tests/fixtures/public-burden-master/representative-cases.json",
       "responsibility": "fixture"
     },
     {
@@ -746,6 +770,10 @@
       "responsibility": "test"
     },
     {
+      "path": "tests/public-burden-master.test.js",
+      "responsibility": "test"
+    },
+    {
       "path": "tests/refactoring-final-audit.test.js",
       "responsibility": "test"
     },
@@ -877,6 +905,10 @@
       "scripts/generate/initial-master-selection.js": [
         "scripts/validate/schema-validator.js",
         "scripts/adapters/filesystem-store.js"
+      ],
+      "scripts/generate/public-burden-csv.js": [
+        "scripts/adapters/filesystem-store.js",
+        "scripts/validate/schema-validator.js"
       ],
       "scripts/initial-master/build-burdens.js": [
         "scripts/generate/initial-master-selection.js",
@@ -1030,6 +1062,10 @@
         "scripts/validate/schema-validator.js",
         "data/candidates/public-burdens-government-additions.yaml"
       ],
+      "tests/public-burden-master.test.js": [
+        "scripts/validate/schema-validator.js",
+        "scripts/generate/public-burden-csv.js"
+      ],
       "tests/refactoring-final-audit.test.js": [
         "scripts/audit/architecture-inventory.js",
         "scripts/audit/adapter-coverage-audit.js",
@@ -1099,7 +1135,7 @@
     ]
   },
   "io_duplication": {
-    "filesystem_importing_files": 35,
+    "filesystem_importing_files": 37,
     "atomic_write_implementations": 1,
     "filesystem_users": [
       "scripts/adapters/filesystem-store.js",
@@ -1110,6 +1146,7 @@
       "scripts/automation/prepare-update.js",
       "scripts/generate/distribution-generator.js",
       "scripts/generate/initial-master-selection.js",
+      "scripts/generate/public-burden-csv.js",
       "scripts/monitoring/build-monitoring-config.js",
       "scripts/monitoring/build-monitoring-execution-plan.js",
       "scripts/monitoring/extract-egov-tax-semantics.js",
@@ -1128,6 +1165,7 @@
       "tests/monitoring-pipeline.test.js",
       "tests/official-document-adapters.test.js",
       "tests/public-burden-adapters.test.js",
+      "tests/public-burden-master.test.js",
       "tests/refactoring-final-audit.test.js",
       "tests/repository-consistency.test.js",
       "tests/repository-operations.test.js",

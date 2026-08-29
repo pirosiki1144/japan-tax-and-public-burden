@@ -1,0 +1,50 @@
+distribution_row_id,as_of,time_classification,public_burden_id,public_burden_name,component_id,version_id,component_name,subject_conditions,calculation_basis_id,calculation_basis,liable_party_id,liable_party,payment_obligors,value_kind,numeric_value,unit,acquisition_type,source_fact_id,calculation_set_id,application_start,application_end,law_evidence,cabinet_order_evidence,ministerial_ordinance_evidence,enforcement_regulation_evidence,ordinance_evidence,local_government_rule_evidence,notice_evidence,other_evidence,master_verified_at
+consumption-local-current-tax-exclusive-price-consumer,2026-08-30,current,consumption-tax-example,消費税（契約fixture）,consumption-local-component,consumption-local-current,標準区分地方税分,標準課税対象,tax-exclusive-price,税抜価格,consumer,消費者,課税事業者,rate,2.2,percent,calculated,,consumption-local-allocation,2019-10-01,,"消費税法（fixture） 第X条
+標準区分の率を定めるfixture文言
+enforced:2019-10-01 (令和元年10月1日)
+https://example.go.jp/law/consumption-tax
+
+地方税法（fixture） 第X条
+地方消費税の配分を定めるfixture文言
+enforced:2019-10-01 (令和元年10月1日)
+https://example.go.jp/law/local-tax",,,,,,,,2026-08-30T00:00:00+09:00
+consumption-national-current-tax-exclusive-price-consumer,2026-08-30,current,consumption-tax-example,消費税（契約fixture）,consumption-national-component,consumption-national-current,標準区分国税分,標準課税対象,tax-exclusive-price,税抜価格,consumer,消費者,課税事業者,rate,7.8,percent,direct,consumption-national-rate,,2019-10-01,,"消費税法（fixture） 第X条
+標準区分の率を定めるfixture文言
+enforced:2019-10-01 (令和元年10月1日)
+https://example.go.jp/law/consumption-tax",,,,,,,,2026-08-30T00:00:00+09:00
+income-high-current-taxable-income-band-individual-taxpayer,2026-08-30,current,income-tax-example,所得税（契約fixture）,income-high-component,income-high-current,累進区分2,課税所得の次区分に属する部分,taxable-income-band,当該区分に属する課税所得,individual-taxpayer,個人納税者,個人納税者,rate,10,percent,direct,income-high-rate,,2020-01-01,,"所得税法（fixture） 第X条
+課税所得区分ごとの税率を定めるfixture文言
+promulgated:2020-01-01 (令和2年1月1日)
+https://example.go.jp/law/income-tax",,,,,,,,2026-08-30T00:00:00+09:00
+income-low-current-taxable-income-band-individual-taxpayer,2026-08-30,current,income-tax-example,所得税（契約fixture）,income-low-component,income-low-current,累進区分1,課税所得の低位区分に属する部分,taxable-income-band,当該区分に属する課税所得,individual-taxpayer,個人納税者,個人納税者,rate,5,percent,direct,income-low-rate,,2020-01-01,,"所得税法（fixture） 第X条
+課税所得区分ごとの税率を定めるfixture文言
+promulgated:2020-01-01 (令和2年1月1日)
+https://example.go.jp/law/income-tax",,,,,,,,2026-08-30T00:00:00+09:00
+pension-employer-future-standard-monthly-remuneration-employer,2026-08-30,future,employee-pension-example,厚生年金保険料（契約fixture）,pension-employer-component,pension-employer-future,事業主負担,事業主負担,standard-monthly-remuneration,標準報酬月額,employer,事業主,事業主,rate,9.15,percent,calculated,,pension-equal-split,2027-01-01,,"厚生年金保険法（fixture） 第X条
+保険料率と負担関係を定めるfixture文言
+enforced:2017-09-01 (平成29年9月1日)
+https://example.go.jp/law/pension",,,"厚生年金保険法施行規則（fixture） 第X条
+納付手続を定めるfixture文言
+promulgated:2017-08-01 (平成29年8月1日)
+https://example.go.jp/rule/pension",,,,,2026-08-30T00:00:00+09:00
+pension-insured-current-standard-bonus-insured-person,2026-08-30,current,employee-pension-example,厚生年金保険料（契約fixture）,pension-insured-component,pension-insured-current,被保険者負担,被保険者負担,standard-bonus,標準賞与額,insured-person,被保険者,事業主,rate,9.15,percent,calculated,,pension-equal-split,2026-01-01,,"厚生年金保険法（fixture） 第X条
+保険料率と負担関係を定めるfixture文言
+enforced:2017-09-01 (平成29年9月1日)
+https://example.go.jp/law/pension",,,"厚生年金保険法施行規則（fixture） 第X条
+納付手続を定めるfixture文言
+promulgated:2017-08-01 (平成29年8月1日)
+https://example.go.jp/rule/pension",,,,,2026-08-30T00:00:00+09:00
+pension-insured-current-standard-monthly-remuneration-insured-person,2026-08-30,current,employee-pension-example,厚生年金保険料（契約fixture）,pension-insured-component,pension-insured-current,被保険者負担,被保険者負担,standard-monthly-remuneration,標準報酬月額,insured-person,被保険者,事業主,rate,9.15,percent,calculated,,pension-equal-split,2026-01-01,,"厚生年金保険法（fixture） 第X条
+保険料率と負担関係を定めるfixture文言
+enforced:2017-09-01 (平成29年9月1日)
+https://example.go.jp/law/pension",,,"厚生年金保険法施行規則（fixture） 第X条
+納付手続を定めるfixture文言
+promulgated:2017-08-01 (平成29年8月1日)
+https://example.go.jp/rule/pension",,,,,2026-08-30T00:00:00+09:00
+pension-insured-past-standard-monthly-remuneration-insured-person,2026-08-30,past,employee-pension-example,厚生年金保険料（契約fixture）,pension-insured-component,pension-insured-past,被保険者負担,被保険者負担,standard-monthly-remuneration,標準報酬月額,insured-person,被保険者,事業主,rate,9.15,percent,calculated,,pension-equal-split,2017-09-01,2025-12-31,"厚生年金保険法（fixture） 第X条
+保険料率と負担関係を定めるfixture文言
+enforced:2017-09-01 (平成29年9月1日)
+https://example.go.jp/law/pension",,,"厚生年金保険法施行規則（fixture） 第X条
+納付手続を定めるfixture文言
+promulgated:2017-08-01 (平成29年8月1日)
+https://example.go.jp/rule/pension",,,,,2026-08-30T00:00:00+09:00
