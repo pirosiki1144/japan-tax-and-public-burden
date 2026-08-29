@@ -2,7 +2,7 @@
 
 - 対応Issue: #28（親Issue: #19）
 - 判定日: 2026-08-19
-- 機械可読一覧: `reports/initial-master-selection.json`
+- 移行後の機械可読一覧: `data/master/initial-import.json`
 
 ## 結論
 

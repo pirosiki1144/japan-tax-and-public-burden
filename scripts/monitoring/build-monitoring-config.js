@@ -1,9 +1,9 @@
-import { readdir } from "node:fs/promises";
 import { join } from "node:path";
 import { fileURLToPath } from "node:url";
 import { readYaml } from "../validate/schema-validator.js";
 import { loadMonitoringRegistry, registryByTaxId } from "./monitoring-registry.js";
 import { readText, writeTextAtomic } from "../adapters/filesystem-store.js";
+import { loadLegacyBurdens } from "../adapters/canonical-master.js";
 
 const root = fileURLToPath(new URL("../..", import.meta.url));
 const reviewPath = join(root, "docs/monitoring-extraction-target-review.md");
@@ -61,20 +61,10 @@ function targetId(base) {
   return base.law_id ?? base.source_url.split("/").filter(Boolean).at(-1);
 }
 
-async function readBurdens(repositoryRoot) {
-  const burdens = [];
-  for (const entry of await readdir(join(repositoryRoot, "data/burdens"), { withFileTypes: true })) {
-    if (!entry.isFile() || !/\.(?:json|ya?ml)$/.test(entry.name)) continue;
-    const document = await readYaml(join(repositoryRoot, "data/burdens", entry.name));
-    burdens.push(...(Array.isArray(document) ? document : [document]));
-  }
-  return burdens;
-}
-
 export async function buildRuntimeMonitoringPlan(repositoryRoot) {
   const [sourcesRegistry, burdens, monitoringRegistry] = await Promise.all([
     readYaml(join(repositoryRoot, "config/sources.yaml")),
-    readBurdens(repositoryRoot),
+    loadLegacyBurdens(repositoryRoot),
     loadMonitoringRegistry(repositoryRoot)
   ]);
   const decisions = registryByTaxId(monitoringRegistry);
@@ -131,7 +121,7 @@ export async function buildRuntimeMonitoringPlan(repositoryRoot) {
 }
 
 export async function buildExtractionTargetReview(repositoryRoot) {
-  const burdens = await readBurdens(repositoryRoot);
+  const burdens = await loadLegacyBurdens(repositoryRoot);
   const config = await buildRuntimeMonitoringPlan(repositoryRoot);
   const names = new Map(burdens.map(({ tax_id, official_name }) => [tax_id, official_name]));
   const lines = [

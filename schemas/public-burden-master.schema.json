@@ -8,6 +8,7 @@
   "properties": {
     "schema_version": {"const": 1},
     "verified_at": {"$ref": "common.schema.json#/$defs/verifiedAt"},
+    "migration_audit": {"type": "object", "additionalProperties": false, "required": ["issue", "source_burden_count", "source_phase_count", "preserved_public_burden_count", "created_component_count"], "properties": {"issue": {"const": 87}, "source_burden_count": {"const": 112}, "source_phase_count": {"const": 2}, "preserved_public_burden_count": {"const": 112}, "created_component_count": {"const": 2}}},
     "public_burdens": {"type": "array", "items": {"$ref": "#/$defs/publicBurden"}},
     "legal_sources": {"type": "array", "items": {"$ref": "#/$defs/legalSource"}},
     "source_facts": {"type": "array", "items": {"$ref": "#/$defs/sourceFact"}},
@@ -19,7 +20,7 @@
     "publicBurden": {
       "type": "object", "additionalProperties": false,
       "required": ["public_burden_id", "name", "category"],
-      "properties": {"public_burden_id": {"$ref": "#/$defs/id"}, "name": {"type": "string", "minLength": 1}, "category": {"type": "string", "minLength": 1}}
+      "properties": {"public_burden_id": {"$ref": "#/$defs/id"}, "name": {"type": "string", "minLength": 1}, "category": {"type": "string", "minLength": 1}, "legacy_record": {"type": "object"}}
     },
     "legalSource": {
       "type": "object", "additionalProperties": false,
@@ -27,10 +28,11 @@
       "properties": {
         "legal_source_id": {"$ref": "#/$defs/id"},
         "source_type": {"enum": ["law", "cabinet_order", "ministerial_ordinance", "enforcement_regulation", "ordinance", "local_government_rule", "notice", "other"]},
-        "title": {"type": "string", "minLength": 1}, "item_number": {"type": "string", "minLength": 1}, "item_text": {"type": "string", "minLength": 1},
+        "title": {"type": "string", "minLength": 1}, "item_number": {"type": ["string", "null"]}, "item_text": {"type": ["string", "null"]},
         "source_url": {"type": "string", "format": "uri", "pattern": "^https://"},
         "dates": {"type": "array", "items": {"type": "object", "additionalProperties": false, "required": ["event_type", "date", "date_raw"], "properties": {"event_type": {"enum": ["enacted", "promulgated", "enforced", "amended"]}, "date": {"type": ["string", "null"], "format": "date"}, "date_raw": {"type": "string", "minLength": 1}}}},
-        "relationships": {"type": "array", "items": {"type": "object", "additionalProperties": false, "required": ["relationship_type", "target_legal_source_id"], "properties": {"relationship_type": {"enum": ["parent_source", "delegated_by", "references", "amends"]}, "target_legal_source_id": {"$ref": "#/$defs/id"}}}}
+        "relationships": {"type": "array", "items": {"type": "object", "additionalProperties": false, "required": ["relationship_type", "target_legal_source_id"], "properties": {"relationship_type": {"enum": ["parent_source", "delegated_by", "references", "amends"]}, "target_legal_source_id": {"$ref": "#/$defs/id"}}}},
+        "evidence_gaps": {"type": "array", "items": {"type": "string", "minLength": 1}}
       }
     },
     "sourceFact": {

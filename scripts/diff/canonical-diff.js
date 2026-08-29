@@ -9,10 +9,21 @@ function canonicalFile(root, relativePath) {
 }
 
 function selectRecord(document, target) {
-  const records = Array.isArray(document) ? document : [document];
-  const record = records.find((candidate) => candidate?.[target.record_id_field] === target.record_id);
-  if (!record) throw new Error(`Canonical record not found: ${target.record_id}`);
-  return record;
+  if (document && typeof document === "object" && document[target.record_id_field] === target.record_id) return document;
+  for (const child of Array.isArray(document) ? document : Object.values(document ?? {})) {
+    const record = child && typeof child === "object" ? selectRecordOrNull(child, target) : null;
+    if (record) return record;
+  }
+  throw new Error(`Canonical record not found: ${target.record_id}`);
+}
+
+function selectRecordOrNull(document, target) {
+  if (document && typeof document === "object" && document[target.record_id_field] === target.record_id) return document;
+  for (const child of Array.isArray(document) ? document : Object.values(document ?? {})) {
+    const record = child && typeof child === "object" ? selectRecordOrNull(child, target) : null;
+    if (record) return record;
+  }
+  return null;
 }
 
 function readPath(record, path) {

@@ -1,23 +1,13 @@
-import { readdir } from "node:fs/promises";
 import { basename, extname, join } from "node:path";
 import { fileURLToPath } from "node:url";
 import { readYaml } from "../validate/schema-validator.js";
 import { buildRuntimeMonitoringPlan } from "./build-monitoring-config.js";
 import { loadMonitoringRegistry, registryByTaxId } from "./monitoring-registry.js";
+import { loadLegacyBurdens } from "../adapters/canonical-master.js";
 
 const root = fileURLToPath(new URL("../..", import.meta.url));
 const DEFAULT_BATCH_SIZE = 15;
 const MAX_BATCH_SIZE = 20;
-
-async function readBurdens(repositoryRoot) {
-  const burdens = [];
-  for (const entry of await readdir(join(repositoryRoot, "data/burdens"), { withFileTypes: true })) {
-    if (!entry.isFile() || !/\.(?:json|ya?ml)$/.test(entry.name)) continue;
-    const document = await readYaml(join(repositoryRoot, "data/burdens", entry.name));
-    burdens.push(...(Array.isArray(document) ? document : [document]));
-  }
-  return burdens;
-}
 
 function implementationIssue(burden) {
   if (["consumption-tax", "automobile-tax"].includes(burden.tax_id)) return 39;
@@ -94,7 +84,7 @@ function assignBatches(targets) {
 export async function buildMonitoringExecutionPlan(repositoryRoot) {
   const [monitoring, burdens, registry] = await Promise.all([
     buildRuntimeMonitoringPlan(repositoryRoot),
-    readBurdens(repositoryRoot),
+    loadLegacyBurdens(repositoryRoot),
     loadMonitoringRegistry(repositoryRoot)
   ]);
   const decisions = registryByTaxId(registry);

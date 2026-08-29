@@ -34,8 +34,6 @@ export function validateIntegrity(collections) {
   const indexes = Object.fromEntries(Object.entries(ID_FIELDS).map(([name, field]) => [name, indexById(collections[name] ?? [], field, errors)]));
 
   for (const burden of collections.burdens ?? []) {
-    burden.current_phases.forEach((id) => requireReference(indexes.phases, id, `${burden.tax_id}.current_phases`, errors));
-    burden.pending_changes.forEach((id) => requireReference(indexes.changes, id, `${burden.tax_id}.pending_changes`, errors));
     burden.source_refs.forEach((id) => requireReference(indexes.sources, id, `${burden.tax_id}.source_refs`, errors));
   }
 

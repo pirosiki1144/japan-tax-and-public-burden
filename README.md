@@ -37,9 +37,9 @@ reports/      生成レポート
 
 - `config/sources.yaml` は巡回先と利用条件を管理する情報源レジストリです。
 - `config/monitoring.yaml` は112制度の監視区分、document adapter、限定計算policy、正本への書込候補、手動確認理由・解除条件を一意に管理する唯一の監視manifestです。URLと取得条件は`config/sources.yaml`だけに置きます。runtime監視計画と実行・coverage計画はメモリ上で生成し、類似設定ファイルとして保存しません。詳細は[監視manifest統合と移行対応表](docs/monitoring-manifest-migration.md)と[初期マスタ監視設定](docs/monitoring-configuration.md)を参照してください。
-- `data/burdens`、`data/changes`、`data/events`、`data/phases`、`data/revenue`、`data/reconciliation` はレビュー後にGitで履歴管理する正本です。`data/monitoring/semantic-baseline.json`は、意味抽出値の前回レビュー済み状態であり、定期監視の項目単位比較に使用します。
+- `data/master/canonical.json` が制度・根拠・構成要素を保持する唯一の正本です。`data/master/initial-import.json` はIssue #87移行時の全入力と未解決判定を監査用に保存し、`data/monitoring/review.json` はレビュー済み監視baselineを保持します。
 - 初期マスタの投入件数と未解決事項は[初期マスタ投入・検証レポート](docs/initial-master-import-report.md)を参照してください。
-- `data/candidates` は初期マスタへ昇格する前の調査候補です。Schema検証とGitレビューの対象ですが、確定制度マスタや配布対象として扱いません。適合性と昇格条件は[初期マスタ候補のSchema適合性確認](docs/initial-master-schema-fit.md)、税以外の候補の収集範囲は[税以外の公的負担候補の収集・照合](docs/public-burden-candidate-reconciliation.md)、統合判定は[初期マスタ投入対象の統合判定](docs/initial-master-selection.md)を参照してください。
+- 未解決の調査候補は `data/master/initial-import.json` に保存します。候補は確定制度マスタや配布対象として扱わず、確定後に `data/master/canonical.json` へ反映します。
 - 取得途中のHTML、PDF、API応答等は `.cache/` 配下の一時データとし、正本にせずGitにも保存しません。保存が必要な根拠は別Issueで対象と形式をレビューします。
 - 公式HTML・PDF・CSVは `scripts/formats/official-document.js` で原文バイトから形式検証・共通表現化し、制度固有の意味抽出規則は別の設定またはnormalize層へ置きます。共通表現は公式URL、取得日時、原文SHA-256、文書版を保持します。PDFの読取不能、CSVの必須列不足、HTMLの本文欠落、意味抽出の0件・複数件一致は構造変更として失敗させます。PR CIは縮小fixtureだけを使用して外部通信せず、実URLへの疎通は固定の定期・手動workflowで行います。
 - `scripts/application` は具体的なHTTP、PDF、filesystem実装を参照せず、最小Portを通じてsource取得・正規化・差分判定を調整します。`scripts/composition/monitoring-composition.js`を唯一のcomposition rootとし、HTTP source reader、HTML・PDF・CSV document parser、e-Gov・宣言的意味抽出Strategyを登録します。未登録、重複登録、契約外の戻り値は実行前後に失敗させます。
@@ -99,7 +99,7 @@ npm run monitor -- --dry-run --output .cache/source-scan-result.json
 意味抽出のbaselineは、実API結果を人間が確認した後だけ更新します。次のコマンドは確認済み結果から候補ファイルを生成するものであり、直接`main`へ反映せずPRで旧値・新値をレビューします。
 
 ```bash
-npm run semantics:baseline -- --input .cache/source-scan-result.json --output data/monitoring/semantic-baseline.json --confirm-reviewed
+npm run semantics:baseline -- --input .cache/source-scan-result.json --output data/monitoring/review.json --confirm-reviewed
 ```
 
 `.github/workflows/source-scan.yml` は毎週の定期実行と手動実行に対応し、結果JSONをartifactとして保存します。workflow自身や正本データは生成・commitしません。

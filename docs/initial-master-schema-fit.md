@@ -32,12 +32,12 @@
 
 ## 候補から正本への境界
 
-`data/candidates` は公式資料から抽出したレビュー前の調査入力であり、配布用の確定制度マスタではない。候補は次の順で扱う。
+`data/master/initial-import.json` は公式資料から抽出したレビュー前の調査入力であり、配布用の確定制度マスタではない。候補は次の順で扱う。
 
 1. 公式URL、確認日時、原文名称を候補として保存する。
 2. 不明値を推測せず `current_status: null` と `evidence_gaps` で表す。
 3. #28で重複、制度粒度、正式名称、状態根拠を確認する。
-4. `confirmed` の条件を満たしたものだけ、永続的な `tax_id` を付けて `data/burdens` 等へ登録する。
+4. `confirmed` の条件を満たしたものだけ、永続的なIDを付けて `data/master/canonical.json` へ登録する。
 
 候補Schemaの `confirmed` は、`official_name: unknown` と `current_status: null` を拒否する。ただしSchema適合だけで事実確認が完了したとはみなさず、人のレビューと公式根拠確認を必要とする。
 

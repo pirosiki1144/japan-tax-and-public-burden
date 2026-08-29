@@ -16,10 +16,24 @@ function pathSegments(path) {
 }
 
 function selectRecord(document, target) {
-  const records = Array.isArray(document) ? document : [document];
-  const index = records.findIndex((record) => record?.[target.record_id_field] === target.record_id);
-  if (index === -1) throw new Error(`Candidate record not found: ${target.record_id}`);
-  return { record: records[index], prefix: Array.isArray(document) ? [index] : [] };
+  const visit = (value, prefix = []) => {
+    if (value && typeof value === "object" && value[target.record_id_field] === target.record_id) return { record: value, prefix };
+    if (Array.isArray(value)) {
+      for (let index = 0; index < value.length; index += 1) {
+        const found = visit(value[index], [...prefix, index]);
+        if (found) return found;
+      }
+    } else if (value && typeof value === "object") {
+      for (const [key, child] of Object.entries(value)) {
+        const found = visit(child, [...prefix, key]);
+        if (found) return found;
+      }
+    }
+    return null;
+  };
+  const found = visit(document);
+  if (!found) throw new Error(`Candidate record not found: ${target.record_id}`);
+  return found;
 }
 
 function readValue(record, segments, label) {

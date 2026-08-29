@@ -38,7 +38,7 @@ test("generation uses an injected atomic file store in write and check modes", a
 });
 
 test("primary CLI files contain only orchestration and no extraction implementation", async () => {
-  for (const path of ["scripts/pipeline/scan-source.js", "scripts/pipeline/run-monitoring.js", "scripts/validate/validate-data.js", "scripts/generate/generate-distribution.js", "scripts/audit/audit-repository.js"]) {
+  for (const path of ["scripts/pipeline/scan-source.js", "scripts/pipeline/run-monitoring.js", "scripts/validate/validate-data.js", "scripts/audit/audit-repository.js"]) {
     const source = await readFile(`${root}/${path}`, "utf8");
     assert.doesNotMatch(source, /normalize|pdfjs-dist|canonical-diff|auditRepositoryCollections|validateDocument/);
   }

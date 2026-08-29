@@ -62,4 +62,4 @@ npm run monitoring:plan:check
 
 意味抽出jobはtarget単位で失敗を捕捉するため、1件の失敗で後続targetを停止しない。全体statusは非成功にし、成功分を含む取得時刻・原文SHA-256・正規化結果・失敗理由を固定workflowのartifactへ保存する。正本の直接更新、`main`への直接push、自動mergeは行わない。
 
-`data/monitoring/semantic-baseline.json`には、e-Gov実APIで確認しPRレビューを通した意味値を保存する。比較時は法令の改正ID・更新日時そのものではなく、納税義務者、課税対象、課税標準、率・金額等の意味部分を項目単位で比較する。意味変更は旧値・新値付きの未対応差分としてIssue経路へ渡し、推測でbaselineや正本を更新しない。baseline候補の生成には`--confirm-reviewed`を必須とし、更新後も人間レビュー用PRを経由する。
+`data/monitoring/review.json`の `baseline` には、e-Gov実APIで確認しPRレビューを通した意味値を保存する。比較時は法令の改正ID・更新日時そのものではなく、納税義務者、課税対象、課税標準、率・金額等の意味部分を項目単位で比較する。意味変更は旧値・新値付きの未対応差分としてIssue経路へ渡し、推測でbaselineや正本を更新しない。baseline候補の生成には`--confirm-reviewed`を必須とし、更新後も人間レビュー用PRを経由する。
