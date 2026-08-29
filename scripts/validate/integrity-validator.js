@@ -73,6 +73,25 @@ export function validateIntegrity(collections) {
     }
   }
 
+  const monitoringSourceIds = new Set();
+  function collectMonitoringSourceIds(value) {
+    if (Array.isArray(value)) return value.forEach(collectMonitoringSourceIds);
+    if (!value || typeof value !== "object") return;
+    for (const [key, child] of Object.entries(value)) {
+      if (key === "source_id" && typeof child === "string") monitoringSourceIds.add(child);
+      else if (key === "source_ids" && Array.isArray(child)) child.forEach((id) => monitoringSourceIds.add(id));
+      else collectMonitoringSourceIds(child);
+    }
+  }
+  for (const registry of collections.monitoringRegistries ?? []) {
+    collectMonitoringSourceIds(registry.targets);
+    for (const target of registry.targets) requireReference(indexes.burdens, target.public_burden_id, `${target.monitoring_target_id}.public_burden_id`, errors);
+  }
+  for (const sourceId of monitoringSourceIds) requireReference(indexes.sources, sourceId, `monitoring.source_id`, errors);
+  for (const source of collections.sources ?? []) {
+    if (source.source_id.startsWith("manual-") && !monitoringSourceIds.has(source.source_id)) errors.push(`${source.source_id}: unused manual monitoring source`);
+  }
+
   for (const revenue of collections.revenues ?? []) {
     requireReference(indexes.burdens, revenue.tax_id, `${revenue.record_id}.tax_id`, errors);
     validateDateOrder(revenue, "period_start", "period_end", revenue.record_id, errors);

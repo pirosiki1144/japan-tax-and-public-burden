@@ -60,7 +60,7 @@ function buildCurrent(collections, asOf) {
       canonical_pending_changes: burden.pending_changes.map((id) => changes.get(id)).filter(Boolean)
     };
   });
-  return { schema_version: 1, dataset: "current", as_of: asOf, sources: sortBy(collections.sources, "source_id"), records };
+  return { schema_version: 1, dataset: "current", as_of: asOf, sources: sortBy(collections.sources.filter(({ monitoring_only: monitoringOnly }) => !monitoringOnly), "source_id"), records };
 }
 
 function buildHistory(collections, asOf) {
@@ -68,7 +68,7 @@ function buildHistory(collections, asOf) {
     schema_version: 2,
     dataset: "history",
     as_of: asOf,
-    sources: sortBy(collections.sources, "source_id"),
+    sources: sortBy(collections.sources.filter(({ monitoring_only: monitoringOnly }) => !monitoringOnly), "source_id"),
     burdens: sortBy(collections.burdens, "tax_id"),
     changes: sortBy(collections.changes, "change_id"),
     events: sortBy(collections.events, "event_id"),
@@ -114,7 +114,7 @@ export function buildSummary(collections, asOf) {
     dataset: "summary",
     as_of: asOf,
     counts: {
-      sources: collections.sources?.length ?? 0,
+      sources: collections.sources?.filter(({ monitoring_only: monitoringOnly }) => !monitoringOnly).length ?? 0,
       burdens: collections.burdens.length,
       changes: collections.changes.length,
       events: collections.events.length,

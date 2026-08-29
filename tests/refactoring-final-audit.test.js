@@ -10,7 +10,7 @@ const root = fileURLToPath(new URL("..", import.meta.url));
 
 test("obsolete persisted monitoring paths and compatibility facade are absent", async () => {
   for (const path of [
-    "config/adapter-inventory.yaml", "config/monitoring-manifest.yaml", "config/national-tax-adapters.yaml", "config/local-tax-adapters.yaml", "config/social-insurance-adapters.yaml", "config/public-burden-adapters.yaml", "scripts/pipeline/source-adapters.js"
+    "config/adapter-inventory.yaml", "config/monitoring-manifest.yaml", "config/format-adapters.yaml", "config/national-tax-adapters.yaml", "config/local-tax-adapters.yaml", "config/social-insurance-adapters.yaml", "config/public-burden-adapters.yaml", "scripts/pipeline/source-adapters.js"
   ]) await assert.rejects(access(`${root}/${path}`));
 });
 
@@ -31,7 +31,7 @@ test("all 112 decisions, official evidence, manual audit metadata, and coverage 
   assert.equal(registry.targets.filter(({ monitoring_mode }) => monitoring_mode === "manual").length, 102);
   const manualPublic = registry.targets.filter(({ decision_kind }) => decision_kind === "public_manual");
   assert.equal(manualPublic.length, 53);
-  assert.ok(manualPublic.every(({ decision }) => decision.official_source_url.startsWith("https://") && decision.evidence_gap.length >= 20 && decision.release_conditions.length && decision.recheck_cadence));
+  assert.ok(manualPublic.every(({ decision }) => decision.source_ids.length && decision.evidence_gap.length >= 20 && decision.release_conditions.length && decision.recheck_cadence));
   assert.equal(coverage.status, "clean");
   assert.equal(coverage.summary.total_targets, 112);
 });

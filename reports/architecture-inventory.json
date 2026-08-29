@@ -1,9 +1,9 @@
 {
   "schema_version": 1,
   "scope": "tracked repository files",
-  "baseline_commit": "c045ac261ace87ee895097937fe6f8dbe797ac69",
+  "baseline_commit": "bc2fcd67da0c532196dd02f4bec429bb7642862d",
   "totals": {
-    "tracked_files": 201,
+    "tracked_files": 200,
     "javascript_files": 80,
     "import_edges": 143
   },
@@ -13,11 +13,11 @@
     "cli": 16,
     "composition_root": 1,
     "derived_artifact": 10,
-    "documentation": 16,
+    "documentation": 17,
     "domain": 15,
     "fixture": 44,
     "repository_support": 8,
-    "source_of_truth": 43,
+    "source_of_truth": 41,
     "test": 34
   },
   "files": [
@@ -59,10 +59,6 @@
     },
     {
       "path": "config/distribution.yaml",
-      "responsibility": "source_of_truth"
-    },
-    {
-      "path": "config/format-adapters.yaml",
       "responsibility": "source_of_truth"
     },
     {
@@ -186,6 +182,10 @@
       "responsibility": "derived_artifact"
     },
     {
+      "path": "docs/monitoring-manifest-migration.md",
+      "responsibility": "documentation"
+    },
+    {
       "path": "docs/public-burden-candidate-reconciliation.md",
       "responsibility": "documentation"
     },
@@ -279,10 +279,6 @@
     },
     {
       "path": "schemas/event.schema.json",
-      "responsibility": "source_of_truth"
-    },
-    {
-      "path": "schemas/format-adapters.schema.json",
       "responsibility": "source_of_truth"
     },
     {
@@ -1014,7 +1010,7 @@
         "scripts/validate/schema-validator.js"
       ],
       "tests/format-adapter-registry.test.js": [
-        "scripts/validate/schema-validator.js",
+        "scripts/monitoring/monitoring-registry.js",
         "scripts/monitoring/build-monitoring-execution-plan.js",
         "scripts/composition/monitoring-composition.js"
       ],

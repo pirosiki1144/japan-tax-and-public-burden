@@ -5,7 +5,7 @@ import { createValidators, readYaml, validateDocument } from "./schema-validator
 import { validateIntegrity } from "./integrity-validator.js";
 import { buildRuntimeMonitoringPlan } from "../monitoring/build-monitoring-config.js";
 
-const SCHEMA_NAMES = ["monitoring", "monitoring-runtime", "format-adapters", "semantic-baseline", "burden", "initial-master-candidate", "initial-master-selection", "change", "event", "phase", "source", "revenue", "national-burden-ratio", "national-burden-ratio-mapping", "distribution-config"];
+const SCHEMA_NAMES = ["monitoring", "monitoring-runtime", "semantic-baseline", "burden", "initial-master-candidate", "initial-master-selection", "change", "event", "phase", "source", "revenue", "national-burden-ratio", "national-burden-ratio-mapping", "distribution-config"];
 
 const DIRECTORY_SCHEMA_ROUTES = new Map([
   ["data/burdens", "burden"],
@@ -66,7 +66,7 @@ export async function validateRepository(root) {
   const schemaPaths = Object.fromEntries(SCHEMA_NAMES.map((name) => [name, join(root, `schemas/${name}.schema.json`)]));
   const schemas = Object.fromEntries(await Promise.all(SCHEMA_NAMES.map(async (name) => [name, JSON.parse(await readFile(schemaPaths[name], "utf8"))])));
   const validators = await createValidators(schemaPaths);
-  const collections = { monitoringRegistries: [], formatAdapters: [], semanticBaselines: [], burdens: [], candidates: [], changes: [], events: [], phases: [], sources: [], revenues: [], mappings: [], ratios: [], distributionConfigs: [], selectionConfigs: [], monitoringTargets: [] };
+  const collections = { monitoringRegistries: [], semanticBaselines: [], burdens: [], candidates: [], changes: [], events: [], phases: [], sources: [], revenues: [], mappings: [], ratios: [], distributionConfigs: [], selectionConfigs: [], monitoringTargets: [] };
 
   async function validateAndCollect(path, schemaName, target, allowArray = true) {
     try {
@@ -98,7 +98,6 @@ export async function validateRepository(root) {
   await validateAndCollect(join(root, "config/distribution.yaml"), "distribution-config", "distributionConfigs", false);
   await validateAndCollect(join(root, "config/initial-master-selection.yaml"), "initial-master-selection", "selectionConfigs", false);
   await validateAndCollect(join(root, "config/monitoring.yaml"), "monitoring", "monitoringRegistries", false);
-  await validateAndCollect(join(root, "config/format-adapters.yaml"), "format-adapters", "formatAdapters", false);
   await validateAndCollect(join(root, "data/monitoring/semantic-baseline.json"), "semantic-baseline", "semanticBaselines", false);
   const monitoringPath = "generated monitoring runtime plan";
   try {

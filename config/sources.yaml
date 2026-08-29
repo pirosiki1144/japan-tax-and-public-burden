@@ -5,7 +5,10 @@
       "name": "e-Gov法令検索",
       "authority": "デジタル庁",
       "base_url": "https://laws.e-gov.go.jp/",
-      "entry_urls": ["https://laws.e-gov.go.jp/api/2/law_data/363AC0000000108", "https://laws.e-gov.go.jp/api/2/law_data/325AC0000000226"],
+      "entry_urls": [
+        "https://laws.e-gov.go.jp/api/2/law_data/363AC0000000108",
+        "https://laws.e-gov.go.jp/api/2/law_data/325AC0000000226"
+      ],
       "source_type": "law_api",
       "scope": "現行法令本文、法令ID、改正履歴",
       "jurisdiction": "Japan",
@@ -14,13 +17,23 @@
       "enabled": true,
       "automation_enabled": true,
       "adapter": "egov_law_article_facts",
-      "accepted_content_types": ["application/json"],
+      "accepted_content_types": [
+        "application/json"
+      ],
       "extraction": {
         "expected_pages": 2,
         "required_markers": [],
         "expected_documents": [
-          {"page_index": 0, "law_id": "363AC0000000108", "law_title": "消費税法"},
-          {"page_index": 1, "law_id": "325AC0000000226", "law_title": "地方税法"}
+          {
+            "page_index": 0,
+            "law_id": "363AC0000000108",
+            "law_title": "消費税法"
+          },
+          {
+            "page_index": 1,
+            "law_id": "325AC0000000226",
+            "law_title": "地方税法"
+          }
         ],
         "facts": [
           {
@@ -56,7 +69,9 @@
       "name": "官報発行サイト",
       "authority": "国立印刷局",
       "base_url": "https://www.kanpo.go.jp/",
-      "entry_urls": ["https://www.kanpo.go.jp/"],
+      "entry_urls": [
+        "https://www.kanpo.go.jp/"
+      ],
       "source_type": "official_gazette",
       "scope": "法律、政令、省令等の公布確認",
       "jurisdiction": "Japan",
@@ -74,7 +89,9 @@
       "name": "衆議院 議案情報",
       "authority": "衆議院",
       "base_url": "https://www.shugiin.go.jp/",
-      "entry_urls": ["https://www.shugiin.go.jp/Internet/itdb_gian.nsf/html/gian/menu.htm"],
+      "entry_urls": [
+        "https://www.shugiin.go.jp/Internet/itdb_gian.nsf/html/gian/menu.htm"
+      ],
       "source_type": "bill_index",
       "scope": "法案提出、審議状況、本文、経過",
       "jurisdiction": "Japan",
@@ -92,7 +109,9 @@
       "name": "参議院 議案情報",
       "authority": "参議院",
       "base_url": "https://www.sangiin.go.jp/",
-      "entry_urls": ["https://www.sangiin.go.jp/japanese/joho1/kousei/gian/current/gian.htm"],
+      "entry_urls": [
+        "https://www.sangiin.go.jp/japanese/joho1/kousei/gian/current/gian.htm"
+      ],
       "source_type": "bill_index",
       "scope": "法案、付託委員会、審議経過",
       "jurisdiction": "Japan",
@@ -110,7 +129,9 @@
       "name": "国会会議録検索システムAPI",
       "authority": "国立国会図書館",
       "base_url": "https://kokkai.ndl.go.jp/",
-      "entry_urls": ["https://kokkai.ndl.go.jp/api.html"],
+      "entry_urls": [
+        "https://kokkai.ndl.go.jp/api.html"
+      ],
       "source_type": "parliamentary_minutes",
       "scope": "本会議、委員会、小委員会等の会議・発言",
       "jurisdiction": "Japan",
@@ -128,7 +149,9 @@
       "name": "財務省 国民負担率",
       "authority": "財務省",
       "base_url": "https://www.mof.go.jp/",
-      "entry_urls": ["https://www.mof.go.jp/policy/budget/topics/futanritsu/"],
+      "entry_urls": [
+        "https://www.mof.go.jp/policy/budget/topics/futanritsu/"
+      ],
       "source_type": "statistics",
       "scope": "租税負担率、社会保障負担率、国民負担率",
       "jurisdiction": "Japan",
@@ -146,7 +169,10 @@
       "name": "国税庁 消費税の基本的なしくみ・軽減税率制度",
       "authority": "国税庁",
       "base_url": "https://www.nta.go.jp/",
-      "entry_urls": ["https://www.nta.go.jp/taxes/shiraberu/taxanswer/shohi/6101.htm", "https://www.nta.go.jp/taxes/shiraberu/taxanswer/shohi/6102.htm"],
+      "entry_urls": [
+        "https://www.nta.go.jp/taxes/shiraberu/taxanswer/shohi/6101.htm",
+        "https://www.nta.go.jp/taxes/shiraberu/taxanswer/shohi/6102.htm"
+      ],
       "source_type": "ministry",
       "scope": "消費税の納税義務者・負担者、消費税および地方消費税の標準税率、軽減税率、適用対象、実施開始日",
       "jurisdiction": "Japan",
@@ -158,9 +184,21 @@
       "extraction": {
         "expected_pages": 2,
         "required_markers": [
-          {"page_index": 0, "label": "overview rate statement", "pattern": "標準税率10パーセント（うち2\\.2パーセントは地方消費税）"},
-          {"page_index": 1, "label": "reduced-rate food scope", "pattern": "飲食料品（酒類を除く）"},
-          {"page_index": 1, "label": "reduced-rate newspaper scope", "pattern": "週2回以上発行"}
+          {
+            "page_index": 0,
+            "label": "overview rate statement",
+            "pattern": "標準税率10パーセント（うち2\\.2パーセントは地方消費税）"
+          },
+          {
+            "page_index": 1,
+            "label": "reduced-rate food scope",
+            "pattern": "飲食料品（酒類を除く）"
+          },
+          {
+            "page_index": 1,
+            "label": "reduced-rate newspaper scope",
+            "pattern": "週2回以上発行"
+          }
         ],
         "facts": [
           {
@@ -169,7 +207,12 @@
             "pattern": "(令和元年10月1日)から",
             "capture_group": 1,
             "transform": "japanese_date",
-            "target": {"file": "data/changes/consumption-tax-2019-rate.yaml", "record_id_field": "change_id", "record_id": "consumption-tax-2019-rate", "path": "application_start_dates.0.date_value"}
+            "target": {
+              "file": "data/changes/consumption-tax-2019-rate.yaml",
+              "record_id_field": "change_id",
+              "record_id": "consumption-tax-2019-rate",
+              "path": "application_start_dates.0.date_value"
+            }
           },
           {
             "fact_id": "standard-rate",
@@ -177,7 +220,12 @@
             "pattern": "標準税率は10パーセント（消費税率([0-9]+(?:\\.[0-9]+)?)パーセント、地方消費税率2\\.2パーセント）",
             "capture_group": 1,
             "transform": "number",
-            "target": {"file": "data/phases/consumption-tax.yaml", "record_id_field": "phase_id", "record_id": "consumption-tax-standard-rate-2019", "path": "value.numeric_value"}
+            "target": {
+              "file": "data/phases/consumption-tax.yaml",
+              "record_id_field": "phase_id",
+              "record_id": "consumption-tax-standard-rate-2019",
+              "path": "value.numeric_value"
+            }
           },
           {
             "fact_id": "reduced-rate",
@@ -185,7 +233,12 @@
             "pattern": "軽減税率は8パーセント（消費税率([0-9]+(?:\\.[0-9]+)?)パーセント、地方消費税率1\\.76パーセント）",
             "capture_group": 1,
             "transform": "number",
-            "target": {"file": "data/phases/consumption-tax.yaml", "record_id_field": "phase_id", "record_id": "consumption-tax-reduced-rate-2019", "path": "value.numeric_value"}
+            "target": {
+              "file": "data/phases/consumption-tax.yaml",
+              "record_id_field": "phase_id",
+              "record_id": "consumption-tax-reduced-rate-2019",
+              "path": "value.numeric_value"
+            }
           }
         ]
       },
@@ -199,7 +252,9 @@
       "name": "厚生労働省 令和8年度雇用保険料率",
       "authority": "厚生労働省",
       "base_url": "https://www.mhlw.go.jp/",
-      "entry_urls": ["https://www.mhlw.go.jp/content/001692566.pdf"],
+      "entry_urls": [
+        "https://www.mhlw.go.jp/content/001692566.pdf"
+      ],
       "source_type": "ministry",
       "scope": "雇用保険料率の事業区分別合計、労働者負担、事業主負担、適用期間",
       "jurisdiction": "Japan",
@@ -207,29 +262,126 @@
       "cadence": "annual",
       "enabled": true,
       "automation_enabled": true,
-      "monitoring_tax_ids": ["employment-insurance-premium"],
+      "monitoring_tax_ids": [
+        "employment-insurance-premium"
+      ],
       "adapter": "pdf_regex_facts",
-      "accepted_content_types": ["application/pdf"],
+      "accepted_content_types": [
+        "application/pdf"
+      ],
       "extraction": {
         "expected_pages": 1,
         "required_markers": [
-          {"page_index":0,"label":"fiscal application period","pattern":"2026[^0-9]+0?4[^0-9]+0?1[^0-9]+.*2027[^0-9]+0?3[^0-9]+31"},
-          {"page_index":0,"label":"general business rates","pattern":"5/1,0008\\.5/1,0005/1,0003\\.5/1,00013\\.5/1,000"},
-          {"page_index":0,"label":"agriculture rates","pattern":"6/1,0009\\.5/1,0006/1,0003\\.5/1,00015\\.5/1,000"},
-          {"page_index":0,"label":"construction rates","pattern":"6/1,00010\\.5/1,0006/1,0004\\.5/1,00016\\.5/1,000"}
+          {
+            "page_index": 0,
+            "label": "fiscal application period",
+            "pattern": "2026[^0-9]+0?4[^0-9]+0?1[^0-9]+.*2027[^0-9]+0?3[^0-9]+31"
+          },
+          {
+            "page_index": 0,
+            "label": "general business rates",
+            "pattern": "5/1,0008\\.5/1,0005/1,0003\\.5/1,00013\\.5/1,000"
+          },
+          {
+            "page_index": 0,
+            "label": "agriculture rates",
+            "pattern": "6/1,0009\\.5/1,0006/1,0003\\.5/1,00015\\.5/1,000"
+          },
+          {
+            "page_index": 0,
+            "label": "construction rates",
+            "pattern": "6/1,00010\\.5/1,0006/1,0004\\.5/1,00016\\.5/1,000"
+          }
         ],
         "facts": [
-          {"fact_id":"employment-period-start","page_index":0,"pattern":"(2026)[^0-9]+(0?4)[^0-9]+(0?1)","capture_group":1,"transform":"iso_date_components","expected_value":"2026-04-01"},
-          {"fact_id":"employment-period-end","page_index":0,"pattern":"(2027)[^0-9]+(0?3)[^0-9]+(31)","capture_group":1,"transform":"iso_date_components","expected_value":"2027-03-31"},
-          {"fact_id":"employment-general-worker","page_index":0,"pattern":"[^0-9.]([0-9.]+)/1,0008\\.5/1,0005/1,0003\\.5/1,00013\\.5/1,000","capture_group":1,"transform":"number","expected_value":5},
-          {"fact_id":"employment-general-employer","page_index":0,"pattern":"5/1,000([0-9.]+)/1,0005/1,0003\\.5/1,00013\\.5/1,000","capture_group":1,"transform":"number","expected_value":8.5},
-          {"fact_id":"employment-general-total","page_index":0,"pattern":"5/1,0008\\.5/1,0005/1,0003\\.5/1,000([0-9.]+)/1,000","capture_group":1,"transform":"number","expected_value":13.5},
-          {"fact_id":"employment-agriculture-worker","page_index":0,"pattern":"[^0-9.]([0-9.]+)/1,0009\\.5/1,0006/1,0003\\.5/1,00015\\.5/1,000","capture_group":1,"transform":"number","expected_value":6},
-          {"fact_id":"employment-agriculture-employer","page_index":0,"pattern":"6/1,000([0-9.]+)/1,0006/1,0003\\.5/1,00015\\.5/1,000","capture_group":1,"transform":"number","expected_value":9.5},
-          {"fact_id":"employment-agriculture-total","page_index":0,"pattern":"6/1,0009\\.5/1,0006/1,0003\\.5/1,000([0-9.]+)/1,000","capture_group":1,"transform":"number","expected_value":15.5},
-          {"fact_id":"employment-construction-worker","page_index":0,"pattern":"[^0-9.]([0-9.]+)/1,00010\\.5/1,0006/1,0004\\.5/1,00016\\.5/1,000","capture_group":1,"transform":"number","expected_value":6},
-          {"fact_id":"employment-construction-employer","page_index":0,"pattern":"6/1,000([0-9.]+)/1,0006/1,0004\\.5/1,00016\\.5/1,000","capture_group":1,"transform":"number","expected_value":10.5},
-          {"fact_id":"employment-construction-total","page_index":0,"pattern":"6/1,00010\\.5/1,0006/1,0004\\.5/1,000([0-9.]+)/1,000","capture_group":1,"transform":"number","expected_value":16.5}
+          {
+            "fact_id": "employment-period-start",
+            "page_index": 0,
+            "pattern": "(2026)[^0-9]+(0?4)[^0-9]+(0?1)",
+            "capture_group": 1,
+            "transform": "iso_date_components",
+            "expected_value": "2026-04-01"
+          },
+          {
+            "fact_id": "employment-period-end",
+            "page_index": 0,
+            "pattern": "(2027)[^0-9]+(0?3)[^0-9]+(31)",
+            "capture_group": 1,
+            "transform": "iso_date_components",
+            "expected_value": "2027-03-31"
+          },
+          {
+            "fact_id": "employment-general-worker",
+            "page_index": 0,
+            "pattern": "[^0-9.]([0-9.]+)/1,0008\\.5/1,0005/1,0003\\.5/1,00013\\.5/1,000",
+            "capture_group": 1,
+            "transform": "number",
+            "expected_value": 5
+          },
+          {
+            "fact_id": "employment-general-employer",
+            "page_index": 0,
+            "pattern": "5/1,000([0-9.]+)/1,0005/1,0003\\.5/1,00013\\.5/1,000",
+            "capture_group": 1,
+            "transform": "number",
+            "expected_value": 8.5
+          },
+          {
+            "fact_id": "employment-general-total",
+            "page_index": 0,
+            "pattern": "5/1,0008\\.5/1,0005/1,0003\\.5/1,000([0-9.]+)/1,000",
+            "capture_group": 1,
+            "transform": "number",
+            "expected_value": 13.5
+          },
+          {
+            "fact_id": "employment-agriculture-worker",
+            "page_index": 0,
+            "pattern": "[^0-9.]([0-9.]+)/1,0009\\.5/1,0006/1,0003\\.5/1,00015\\.5/1,000",
+            "capture_group": 1,
+            "transform": "number",
+            "expected_value": 6
+          },
+          {
+            "fact_id": "employment-agriculture-employer",
+            "page_index": 0,
+            "pattern": "6/1,000([0-9.]+)/1,0006/1,0003\\.5/1,00015\\.5/1,000",
+            "capture_group": 1,
+            "transform": "number",
+            "expected_value": 9.5
+          },
+          {
+            "fact_id": "employment-agriculture-total",
+            "page_index": 0,
+            "pattern": "6/1,0009\\.5/1,0006/1,0003\\.5/1,000([0-9.]+)/1,000",
+            "capture_group": 1,
+            "transform": "number",
+            "expected_value": 15.5
+          },
+          {
+            "fact_id": "employment-construction-worker",
+            "page_index": 0,
+            "pattern": "[^0-9.]([0-9.]+)/1,00010\\.5/1,0006/1,0004\\.5/1,00016\\.5/1,000",
+            "capture_group": 1,
+            "transform": "number",
+            "expected_value": 6
+          },
+          {
+            "fact_id": "employment-construction-employer",
+            "page_index": 0,
+            "pattern": "6/1,000([0-9.]+)/1,0006/1,0004\\.5/1,00016\\.5/1,000",
+            "capture_group": 1,
+            "transform": "number",
+            "expected_value": 10.5
+          },
+          {
+            "fact_id": "employment-construction-total",
+            "page_index": 0,
+            "pattern": "6/1,00010\\.5/1,0006/1,0004\\.5/1,000([0-9.]+)/1,000",
+            "capture_group": 1,
+            "transform": "number",
+            "expected_value": 16.5
+          }
         ]
       },
       "rate_limit": "サイトの利用条件に従う",
@@ -242,7 +394,9 @@
       "name": "JEED 障害者雇用納付金制度の概要",
       "authority": "独立行政法人高齢・障害・求職者雇用支援機構",
       "base_url": "https://www.jeed.go.jp/",
-      "entry_urls": ["https://www.jeed.go.jp/disability/about_levy_grant_system.html"],
+      "entry_urls": [
+        "https://www.jeed.go.jp/disability/about_levy_grant_system.html"
+      ],
       "source_type": "public_agency",
       "scope": "障害者雇用納付金の対象事業主、算定基礎、1人当たり月額",
       "jurisdiction": "Japan",
@@ -250,17 +404,36 @@
       "cadence": "monthly",
       "enabled": true,
       "automation_enabled": true,
-      "monitoring_tax_ids": ["disability-employment-levy"],
+      "monitoring_tax_ids": [
+        "disability-employment-levy"
+      ],
       "adapter": "html_regex_facts",
-      "accepted_content_types": ["text/html"],
+      "accepted_content_types": [
+        "text/html"
+      ],
       "extraction": {
         "expected_pages": 1,
         "required_markers": [
-          {"page_index":0,"label":"liable employer scope","pattern":"常時雇用している労働者数が[0-9０-９]+人を超える事業主"},
-          {"page_index":0,"label":"statutory shortfall basis","pattern":"法定雇用障害者数に不足する障害者数に応じて"}
+          {
+            "page_index": 0,
+            "label": "liable employer scope",
+            "pattern": "常時雇用している労働者数が[0-9０-９]+人を超える事業主"
+          },
+          {
+            "page_index": 0,
+            "label": "statutory shortfall basis",
+            "pattern": "法定雇用障害者数に不足する障害者数に応じて"
+          }
         ],
         "facts": [
-          {"fact_id":"monthly-levy-amount","page_index":0,"pattern":"1人当たり月額([0-9０-９,，]+)円","capture_group":1,"transform":"japanese_number","expected_value":50000}
+          {
+            "fact_id": "monthly-levy-amount",
+            "page_index": 0,
+            "pattern": "1人当たり月額([0-9０-９,，]+)円",
+            "capture_group": 1,
+            "transform": "japanese_number",
+            "expected_value": 50000
+          }
         ]
       },
       "rate_limit": "サイトの利用条件に従う",
@@ -273,7 +446,9 @@
       "name": "電気通信事業者協会 電話ユニバーサルサービス番号単価Q&A",
       "authority": "一般社団法人電気通信事業者協会（総務大臣指定支援機関）",
       "base_url": "https://www.tca.or.jp/",
-      "entry_urls": ["https://www.tca.or.jp/universalservice/qa/frequency.html"],
+      "entry_urls": [
+        "https://www.tca.or.jp/universalservice/qa/frequency.html"
+      ],
       "source_type": "public_agency",
       "scope": "電話ユニバーサルサービスの負担主体、算定対象番号、適用月、1番号当たり月額",
       "jurisdiction": "Japan",
@@ -281,18 +456,44 @@
       "cadence": "semiannual",
       "enabled": true,
       "automation_enabled": true,
-      "monitoring_tax_ids": ["universal-service-fee"],
+      "monitoring_tax_ids": [
+        "universal-service-fee"
+      ],
       "adapter": "html_regex_facts",
-      "accepted_content_types": ["text/html"],
+      "accepted_content_types": [
+        "text/html"
+      ],
       "extraction": {
         "expected_pages": 1,
         "required_markers": [
-          {"page_index":0,"label":"carrier liability","pattern":"現在ご利用（ご契約）の電話会社が支払う"},
-          {"page_index":0,"label":"number calculation basis","pattern":"ご利用になる電話番号の数に応じた費用"}
+          {
+            "page_index": 0,
+            "label": "carrier liability",
+            "pattern": "現在ご利用（ご契約）の電話会社が支払う"
+          },
+          {
+            "page_index": 0,
+            "label": "number calculation basis",
+            "pattern": "ご利用になる電話番号の数に応じた費用"
+          }
         ],
         "facts": [
-          {"fact_id":"universal-service-period-start","page_index":0,"pattern":"(令和8年1月)から1番号当たり","capture_group":1,"transform":"japanese_year_month","expected_value":"2026-01-01"},
-          {"fact_id":"universal-service-number-price","page_index":0,"pattern":"令和8年1月から1番号当たり([0-9０-９,，]+)円／月","capture_group":1,"transform":"japanese_number","expected_value":2}
+          {
+            "fact_id": "universal-service-period-start",
+            "page_index": 0,
+            "pattern": "(令和8年1月)から1番号当たり",
+            "capture_group": 1,
+            "transform": "japanese_year_month",
+            "expected_value": "2026-01-01"
+          },
+          {
+            "fact_id": "universal-service-number-price",
+            "page_index": 0,
+            "pattern": "令和8年1月から1番号当たり([0-9０-９,，]+)円／月",
+            "capture_group": 1,
+            "transform": "japanese_number",
+            "expected_value": 2
+          }
         ]
       },
       "rate_limit": "サイトの利用条件に従う",
@@ -305,7 +506,9 @@
       "name": "電気通信事業者協会 令和8年度電話リレーサービス番号単価",
       "authority": "一般社団法人電気通信事業者協会（総務大臣指定支援機関）",
       "base_url": "https://www.tca.or.jp/",
-      "entry_urls": ["https://www.tca.or.jp/telephonerelay_service_support/qa/"],
+      "entry_urls": [
+        "https://www.tca.or.jp/telephonerelay_service_support/qa/"
+      ],
       "source_type": "public_agency",
       "scope": "電話リレーサービス負担金の負担主体、番号数による算定基礎、令和8年度番号単価",
       "jurisdiction": "Japan",
@@ -313,19 +516,52 @@
       "cadence": "annual",
       "enabled": true,
       "automation_enabled": true,
-      "monitoring_tax_ids": ["telephone-accessibility-charge"],
+      "monitoring_tax_ids": [
+        "telephone-accessibility-charge"
+      ],
       "adapter": "html_regex_facts",
-      "accepted_content_types": ["text/html"],
+      "accepted_content_types": [
+        "text/html"
+      ],
       "extraction": {
         "expected_pages": 1,
         "required_markers": [
-          {"page_index":0,"label":"relay carrier liability","pattern":"特定電話提供事業者である各電話会社が、サービス提供に用いている電話番号の使用数に応じて"},
-          {"page_index":0,"label":"twelve monthly prices","pattern":"1円 1円 1円 1円 1円 1円 1円 1円 1円 1円 1円 1円"}
+          {
+            "page_index": 0,
+            "label": "relay carrier liability",
+            "pattern": "特定電話提供事業者である各電話会社が、サービス提供に用いている電話番号の使用数に応じて"
+          },
+          {
+            "page_index": 0,
+            "label": "twelve monthly prices",
+            "pattern": "1円 1円 1円 1円 1円 1円 1円 1円 1円 1円 1円 1円"
+          }
         ],
         "facts": [
-          {"fact_id":"telephone-relay-period-start","page_index":0,"pattern":"(令和8年度)の番号単価","capture_group":1,"transform":"japanese_fiscal_year_start","expected_value":"2026-04-01"},
-          {"fact_id":"telephone-relay-period-end","page_index":0,"pattern":"(令和8年度)の番号単価","capture_group":1,"transform":"japanese_fiscal_year_end","expected_value":"2027-03-31"},
-          {"fact_id":"telephone-relay-number-price","page_index":0,"pattern":"1円 1円 1円 1円 1円 1円 1円 1円 1円 1円 1円 ([0-9０-９]+)円","capture_group":1,"transform":"japanese_number","expected_value":1}
+          {
+            "fact_id": "telephone-relay-period-start",
+            "page_index": 0,
+            "pattern": "(令和8年度)の番号単価",
+            "capture_group": 1,
+            "transform": "japanese_fiscal_year_start",
+            "expected_value": "2026-04-01"
+          },
+          {
+            "fact_id": "telephone-relay-period-end",
+            "page_index": 0,
+            "pattern": "(令和8年度)の番号単価",
+            "capture_group": 1,
+            "transform": "japanese_fiscal_year_end",
+            "expected_value": "2027-03-31"
+          },
+          {
+            "fact_id": "telephone-relay-number-price",
+            "page_index": 0,
+            "pattern": "1円 1円 1円 1円 1円 1円 1円 1円 1円 1円 1円 ([0-9０-９]+)円",
+            "capture_group": 1,
+            "transform": "japanese_number",
+            "expected_value": 1
+          }
         ]
       },
       "rate_limit": "サイトの利用条件に従う",
@@ -338,7 +574,9 @@
       "name": "文部科学省 授業目的公衆送信補償金制度Q&A",
       "authority": "文部科学省",
       "base_url": "https://www.mext.go.jp/",
-      "entry_urls": ["https://www.mext.go.jp/a_menu/coronavirus/mext_00042.html"],
+      "entry_urls": [
+        "https://www.mext.go.jp/a_menu/coronavirus/mext_00042.html"
+      ],
       "source_type": "ministry",
       "scope": "授業目的公衆送信補償金の支払主体、対象、学校種別の児童生徒等1人当たり認可額",
       "jurisdiction": "Japan",
@@ -346,21 +584,65 @@
       "cadence": "annual",
       "enabled": true,
       "automation_enabled": true,
-      "monitoring_tax_ids": ["educational-public-transmission-compensation"],
+      "monitoring_tax_ids": [
+        "educational-public-transmission-compensation"
+      ],
       "adapter": "html_regex_facts",
-      "accepted_content_types": ["text/html"],
+      "accepted_content_types": [
+        "text/html"
+      ],
       "extraction": {
         "expected_pages": 1,
         "required_markers": [
-          {"page_index":0,"label":"education provider payment","pattern":"学校の設置者が一括して補償金を支払う"},
-          {"page_index":0,"label":"approved compensation","pattern":"補償金の額は、文化庁長官によって認可"},
-          {"page_index":0,"label":"scope limitation","pattern":"その他の学校種や減免条件、都度支払いの料金体系"}
+          {
+            "page_index": 0,
+            "label": "education provider payment",
+            "pattern": "学校の設置者が一括して補償金を支払う"
+          },
+          {
+            "page_index": 0,
+            "label": "approved compensation",
+            "pattern": "補償金の額は、文化庁長官によって認可"
+          },
+          {
+            "page_index": 0,
+            "label": "scope limitation",
+            "pattern": "その他の学校種や減免条件、都度支払いの料金体系"
+          }
         ],
         "facts": [
-          {"fact_id":"elementary-school-amount","page_index":0,"pattern":"小学校([0-9０-９,，]+)円","capture_group":1,"transform":"japanese_number","expected_value":120},
-          {"fact_id":"junior-high-school-amount","page_index":0,"pattern":"中学校([0-9０-９,，]+)円","capture_group":1,"transform":"japanese_number","expected_value":180},
-          {"fact_id":"high-school-amount","page_index":0,"pattern":"高等学校([0-9０-９,，]+)円","capture_group":1,"transform":"japanese_number","expected_value":420},
-          {"fact_id":"university-amount","page_index":0,"pattern":"大学([0-9０-９,，]+)円","capture_group":1,"transform":"japanese_number","expected_value":720}
+          {
+            "fact_id": "elementary-school-amount",
+            "page_index": 0,
+            "pattern": "小学校([0-9０-９,，]+)円",
+            "capture_group": 1,
+            "transform": "japanese_number",
+            "expected_value": 120
+          },
+          {
+            "fact_id": "junior-high-school-amount",
+            "page_index": 0,
+            "pattern": "中学校([0-9０-９,，]+)円",
+            "capture_group": 1,
+            "transform": "japanese_number",
+            "expected_value": 180
+          },
+          {
+            "fact_id": "high-school-amount",
+            "page_index": 0,
+            "pattern": "高等学校([0-9０-９,，]+)円",
+            "capture_group": 1,
+            "transform": "japanese_number",
+            "expected_value": 420
+          },
+          {
+            "fact_id": "university-amount",
+            "page_index": 0,
+            "pattern": "大学([0-9０-９,，]+)円",
+            "capture_group": 1,
+            "transform": "japanese_number",
+            "expected_value": 720
+          }
         ]
       },
       "rate_limit": "サイトの利用条件に従う",
@@ -373,7 +655,9 @@
       "name": "PMDA 令和8年度副作用拠出金申告・納付の手引",
       "authority": "独立行政法人医薬品医療機器総合機構",
       "base_url": "https://www.pmda.go.jp/",
-      "entry_urls": ["https://www.pmda.go.jp/files/000281001.pdf"],
+      "entry_urls": [
+        "https://www.pmda.go.jp/files/000281001.pdf"
+      ],
       "source_type": "public_agency",
       "scope": "副作用一般拠出金の納付義務者、算定基礎、率、付加拠出金算式、令和8年度の適用期間",
       "jurisdiction": "Japan",
@@ -381,21 +665,65 @@
       "cadence": "annual",
       "enabled": true,
       "automation_enabled": true,
-      "monitoring_tax_ids": ["adverse-drug-reaction-contribution"],
+      "monitoring_tax_ids": [
+        "adverse-drug-reaction-contribution"
+      ],
       "adapter": "pdf_regex_facts",
-      "accepted_content_types": ["application/pdf"],
+      "accepted_content_types": [
+        "application/pdf"
+      ],
       "extraction": {
         "expected_pages": 1,
         "required_markers": [
-          {"page_index":0,"label":"2026 contribution year","pattern":"2026"},
-          {"page_index":0,"label":"adverse reaction general rate","pattern":"0\\.27/1000"},
-          {"page_index":0,"label":"adverse reaction additional formula","pattern":"1/4"}
+          {
+            "page_index": 0,
+            "label": "2026 contribution year",
+            "pattern": "2026"
+          },
+          {
+            "page_index": 0,
+            "label": "adverse reaction general rate",
+            "pattern": "0\\.27/1000"
+          },
+          {
+            "page_index": 0,
+            "label": "adverse reaction additional formula",
+            "pattern": "1/4"
+          }
         ],
         "facts": [
-          {"fact_id":"adverse-period-start","page_index":0,"pattern":"(2026)","capture_group":1,"transform":"fiscal_year_start","expected_value":"2026-04-01"},
-          {"fact_id":"adverse-period-end","page_index":0,"pattern":"(2026)","capture_group":1,"transform":"fiscal_year_end","expected_value":"2027-03-31"},
-          {"fact_id":"adverse-general-rate","page_index":0,"pattern":"(0\\.27)/1000","capture_group":1,"transform":"number","expected_value":0.27},
-          {"fact_id":"adverse-additional-formula","page_index":0,"pattern":"(1/4)","capture_group":1,"transform":"string","expected_value":"1/4"}
+          {
+            "fact_id": "adverse-period-start",
+            "page_index": 0,
+            "pattern": "(2026)",
+            "capture_group": 1,
+            "transform": "fiscal_year_start",
+            "expected_value": "2026-04-01"
+          },
+          {
+            "fact_id": "adverse-period-end",
+            "page_index": 0,
+            "pattern": "(2026)",
+            "capture_group": 1,
+            "transform": "fiscal_year_end",
+            "expected_value": "2027-03-31"
+          },
+          {
+            "fact_id": "adverse-general-rate",
+            "page_index": 0,
+            "pattern": "(0\\.27)/1000",
+            "capture_group": 1,
+            "transform": "number",
+            "expected_value": 0.27
+          },
+          {
+            "fact_id": "adverse-additional-formula",
+            "page_index": 0,
+            "pattern": "(1/4)",
+            "capture_group": 1,
+            "transform": "string",
+            "expected_value": "1/4"
+          }
         ]
       },
       "rate_limit": "サイトの利用条件に従う",
@@ -408,7 +736,9 @@
       "name": "PMDA 令和8年度感染拠出金申告・納付の手引",
       "authority": "独立行政法人医薬品医療機器総合機構",
       "base_url": "https://www.pmda.go.jp/",
-      "entry_urls": ["https://www.pmda.go.jp/files/000281003.pdf"],
+      "entry_urls": [
+        "https://www.pmda.go.jp/files/000281003.pdf"
+      ],
       "source_type": "public_agency",
       "scope": "感染一般拠出金の納付義務者、算定基礎、率、付加拠出金算式、令和8年度の適用期間",
       "jurisdiction": "Japan",
@@ -416,21 +746,65 @@
       "cadence": "annual",
       "enabled": true,
       "automation_enabled": true,
-      "monitoring_tax_ids": ["infection-contribution"],
+      "monitoring_tax_ids": [
+        "infection-contribution"
+      ],
       "adapter": "pdf_regex_facts",
-      "accepted_content_types": ["application/pdf"],
+      "accepted_content_types": [
+        "application/pdf"
+      ],
       "extraction": {
         "expected_pages": 1,
         "required_markers": [
-          {"page_index":0,"label":"2026 contribution year","pattern":"2026"},
-          {"page_index":0,"label":"infection general rate","pattern":"0\\.05/1000"},
-          {"page_index":0,"label":"infection additional formula","pattern":"1/3"}
+          {
+            "page_index": 0,
+            "label": "2026 contribution year",
+            "pattern": "2026"
+          },
+          {
+            "page_index": 0,
+            "label": "infection general rate",
+            "pattern": "0\\.05/1000"
+          },
+          {
+            "page_index": 0,
+            "label": "infection additional formula",
+            "pattern": "1/3"
+          }
         ],
         "facts": [
-          {"fact_id":"infection-period-start","page_index":0,"pattern":"(2026)","capture_group":1,"transform":"fiscal_year_start","expected_value":"2026-04-01"},
-          {"fact_id":"infection-period-end","page_index":0,"pattern":"(2026)","capture_group":1,"transform":"fiscal_year_end","expected_value":"2027-03-31"},
-          {"fact_id":"infection-general-rate","page_index":0,"pattern":"(0\\.05)/1000","capture_group":1,"transform":"number","expected_value":0.05},
-          {"fact_id":"infection-additional-formula","page_index":0,"pattern":"(1/3)","capture_group":1,"transform":"string","expected_value":"1/3"}
+          {
+            "fact_id": "infection-period-start",
+            "page_index": 0,
+            "pattern": "(2026)",
+            "capture_group": 1,
+            "transform": "fiscal_year_start",
+            "expected_value": "2026-04-01"
+          },
+          {
+            "fact_id": "infection-period-end",
+            "page_index": 0,
+            "pattern": "(2026)",
+            "capture_group": 1,
+            "transform": "fiscal_year_end",
+            "expected_value": "2027-03-31"
+          },
+          {
+            "fact_id": "infection-general-rate",
+            "page_index": 0,
+            "pattern": "(0\\.05)/1000",
+            "capture_group": 1,
+            "transform": "number",
+            "expected_value": 0.05
+          },
+          {
+            "fact_id": "infection-additional-formula",
+            "page_index": 0,
+            "pattern": "(1/3)",
+            "capture_group": 1,
+            "transform": "string",
+            "expected_value": "1/3"
+          }
         ]
       },
       "rate_limit": "サイトの利用条件に従う",
@@ -443,7 +817,9 @@
       "name": "こども家庭庁 令和8年度子ども・子育て拠出金率",
       "authority": "こども家庭庁",
       "base_url": "https://www.cfa.go.jp/",
-      "entry_urls": ["https://www.cfa.go.jp/policies/budget/tokubetsukaikei/kodomokosodate-r08"],
+      "entry_urls": [
+        "https://www.cfa.go.jp/policies/budget/tokubetsukaikei/kodomokosodate-r08"
+      ],
       "source_type": "ministry",
       "scope": "令和8年度の子ども・子育て拠出金率と適用年度",
       "jurisdiction": "Japan",
@@ -451,18 +827,47 @@
       "cadence": "annual",
       "enabled": true,
       "automation_enabled": true,
-      "monitoring_tax_ids": ["child-care-contribution"],
+      "monitoring_tax_ids": [
+        "child-care-contribution"
+      ],
       "adapter": "html_regex_facts",
-      "accepted_content_types": ["text/html"],
+      "accepted_content_types": [
+        "text/html"
+      ],
       "extraction": {
         "expected_pages": 1,
         "required_markers": [
-          {"page_index":0,"label":"child care contribution heading","pattern":"子ども・子育て拠出金率"}
+          {
+            "page_index": 0,
+            "label": "child care contribution heading",
+            "pattern": "子ども・子育て拠出金率"
+          }
         ],
         "facts": [
-          {"fact_id":"child-care-period-start","page_index":0,"pattern":"(令和8年度)の子ども・子育て拠出金率","capture_group":1,"transform":"japanese_fiscal_year_start","expected_value":"2026-04-01"},
-          {"fact_id":"child-care-period-end","page_index":0,"pattern":"(令和8年度)の子ども・子育て拠出金率","capture_group":1,"transform":"japanese_fiscal_year_end","expected_value":"2027-03-31"},
-          {"fact_id":"child-care-contribution-rate","page_index":0,"pattern":"令和8年度の子ども・子育て拠出金率[　 ]*([0-9]+(?:\\.[0-9]+)?)％","capture_group":1,"transform":"number","expected_value":0.36}
+          {
+            "fact_id": "child-care-period-start",
+            "page_index": 0,
+            "pattern": "(令和8年度)の子ども・子育て拠出金率",
+            "capture_group": 1,
+            "transform": "japanese_fiscal_year_start",
+            "expected_value": "2026-04-01"
+          },
+          {
+            "fact_id": "child-care-period-end",
+            "page_index": 0,
+            "pattern": "(令和8年度)の子ども・子育て拠出金率",
+            "capture_group": 1,
+            "transform": "japanese_fiscal_year_end",
+            "expected_value": "2027-03-31"
+          },
+          {
+            "fact_id": "child-care-contribution-rate",
+            "page_index": 0,
+            "pattern": "令和8年度の子ども・子育て拠出金率[　 ]*([0-9]+(?:\\.[0-9]+)?)％",
+            "capture_group": 1,
+            "transform": "number",
+            "expected_value": 0.36
+          }
         ]
       },
       "rate_limit": "サイトの利用条件に従う",
@@ -475,7 +880,10 @@
       "name": "日本年金機構 厚生年金・国民年金保険料",
       "authority": "日本年金機構",
       "base_url": "https://www.nenkin.go.jp/",
-      "entry_urls": ["https://www.nenkin.go.jp/service/kounen/hokenryo/hoshu/20150515-01.html", "https://www.nenkin.go.jp/section/faq/kokunen/seido/hokenryo/seidosetsumei/20150331.html"],
+      "entry_urls": [
+        "https://www.nenkin.go.jp/service/kounen/hokenryo/hoshu/20150515-01.html",
+        "https://www.nenkin.go.jp/section/faq/kokunen/seido/hokenryo/seidosetsumei/20150331.html"
+      ],
       "source_type": "public_agency",
       "scope": "厚生年金の保険料率・労使折半・算定基礎と令和8年度国民年金月額",
       "jurisdiction": "Japan",
@@ -483,25 +891,937 @@
       "cadence": "annual",
       "enabled": true,
       "automation_enabled": true,
-      "monitoring_tax_ids": ["pension-insurance-premium"],
+      "monitoring_tax_ids": [
+        "pension-insurance-premium"
+      ],
       "adapter": "html_regex_facts",
-      "accepted_content_types": ["text/html"],
+      "accepted_content_types": [
+        "text/html"
+      ],
       "extraction": {
         "expected_pages": 2,
         "required_markers": [
-          {"page_index":0,"label":"employees pension shared burden","pattern":"事業主と被保険者とが半分ずつ負担"},
-          {"page_index":0,"label":"employees pension calculation basis","pattern":"標準報酬月額 × 保険料率"},
-          {"page_index":1,"label":"national pension fiscal period","pattern":"令和8年度（令和8年4月～令和9年3月まで）"}
+          {
+            "page_index": 0,
+            "label": "employees pension shared burden",
+            "pattern": "事業主と被保険者とが半分ずつ負担"
+          },
+          {
+            "page_index": 0,
+            "label": "employees pension calculation basis",
+            "pattern": "標準報酬月額 × 保険料率"
+          },
+          {
+            "page_index": 1,
+            "label": "national pension fiscal period",
+            "pattern": "令和8年度（令和8年4月～令和9年3月まで）"
+          }
         ],
         "facts": [
-          {"fact_id":"employees-pension-total","page_index":0,"pattern":"厚生年金保険料率は([0-9]+(?:\\.[0-9]+)?)％で固定","capture_group":1,"transform":"number","expected_value":18.3},
-          {"fact_id":"national-pension-monthly-amount","page_index":1,"pattern":"月額([0-9,]+)円です","capture_group":1,"transform":"string","expected_value":"17,920"}
+          {
+            "fact_id": "employees-pension-total",
+            "page_index": 0,
+            "pattern": "厚生年金保険料率は([0-9]+(?:\\.[0-9]+)?)％で固定",
+            "capture_group": 1,
+            "transform": "number",
+            "expected_value": 18.3
+          },
+          {
+            "fact_id": "national-pension-monthly-amount",
+            "page_index": 1,
+            "pattern": "月額([0-9,]+)円です",
+            "capture_group": 1,
+            "transform": "string",
+            "expected_value": "17,920"
+          }
         ]
       },
       "rate_limit": "サイトの利用条件に従う",
       "terms_url": "https://www.nenkin.go.jp/riyoukiyaku/index.html",
       "last_verified_at": "2026-08-21T06:34:11+09:00",
       "notes": "厚生年金は18.3%を労使折半。国民年金は令和8年度月額を別componentとして扱う"
+    },
+    {
+      "source_id": "manual-bunka-go-jp-koho-hodo-oshirase-hodohappyo-pdf-93860201-01-pdf",
+      "name": "www.bunka.go.jp 公式資料",
+      "authority": "公式公開主体（既存監視設定から移行）",
+      "base_url": "https://www.bunka.go.jp/",
+      "entry_urls": [
+        "https://www.bunka.go.jp/koho_hodo_oshirase/hodohappyo/pdf/93860201_01.pdf"
+      ],
+      "source_type": "public_agency",
+      "scope": "既存manual監視targetの公式資料",
+      "jurisdiction": "Japan",
+      "priority": 3,
+      "cadence": "monthly",
+      "enabled": true,
+      "adapter": "manual",
+      "rate_limit": "サイトの利用条件に従う",
+      "terms_url": "https://www.bunka.go.jp/",
+      "last_verified_at": "2026-08-24T12:00:00+09:00",
+      "notes": "#86でmonitoring.yamlからURLを移行。利用条件と個別資料は次回確認時に再確認する",
+      "monitoring_only": true
+    },
+    {
+      "source_id": "manual-bunka-go-jp-seisaku-chosakuken-kakushushitei-94237803-html",
+      "name": "www.bunka.go.jp 公式資料",
+      "authority": "公式公開主体（既存監視設定から移行）",
+      "base_url": "https://www.bunka.go.jp/",
+      "entry_urls": [
+        "https://www.bunka.go.jp/seisaku/chosakuken/kakushushitei/94237803.html"
+      ],
+      "source_type": "public_agency",
+      "scope": "既存manual監視targetの公式資料",
+      "jurisdiction": "Japan",
+      "priority": 3,
+      "cadence": "monthly",
+      "enabled": true,
+      "adapter": "manual",
+      "rate_limit": "サイトの利用条件に従う",
+      "terms_url": "https://www.bunka.go.jp/",
+      "last_verified_at": "2026-08-24T12:00:00+09:00",
+      "notes": "#86でmonitoring.yamlからURLを移行。利用条件と個別資料は次回確認時に再確認する",
+      "monitoring_only": true
+    },
+    {
+      "source_id": "manual-dic-go-jp",
+      "name": "www.dic.go.jp 公式資料",
+      "authority": "公式公開主体（既存監視設定から移行）",
+      "base_url": "https://www.dic.go.jp/",
+      "entry_urls": [
+        "https://www.dic.go.jp/"
+      ],
+      "source_type": "public_agency",
+      "scope": "既存manual監視targetの公式資料",
+      "jurisdiction": "Japan",
+      "priority": 3,
+      "cadence": "monthly",
+      "enabled": true,
+      "adapter": "manual",
+      "rate_limit": "サイトの利用条件に従う",
+      "terms_url": "https://www.dic.go.jp/",
+      "last_verified_at": "2026-08-24T12:00:00+09:00",
+      "notes": "#86でmonitoring.yamlからURLを移行。利用条件と個別資料は次回確認時に再確認する",
+      "monitoring_only": true
+    },
+    {
+      "source_id": "manual-erca-go-jp-asbestos-kyosyutsu-tokubetsu-index-html",
+      "name": "www.erca.go.jp 公式資料",
+      "authority": "公式公開主体（既存監視設定から移行）",
+      "base_url": "https://www.erca.go.jp/",
+      "entry_urls": [
+        "https://www.erca.go.jp/asbestos/kyosyutsu/tokubetsu/index.html"
+      ],
+      "source_type": "public_agency",
+      "scope": "既存manual監視targetの公式資料",
+      "jurisdiction": "Japan",
+      "priority": 3,
+      "cadence": "monthly",
+      "enabled": true,
+      "adapter": "manual",
+      "rate_limit": "サイトの利用条件に従う",
+      "terms_url": "https://www.erca.go.jp/",
+      "last_verified_at": "2026-08-24T12:00:00+09:00",
+      "notes": "#86でmonitoring.yamlからURLを移行。利用条件と個別資料は次回確認時に再確認する",
+      "monitoring_only": true
+    },
+    {
+      "source_id": "manual-fsa-go-jp-ordinary-hoken-hogo",
+      "name": "www.fsa.go.jp 公式資料",
+      "authority": "公式公開主体（既存監視設定から移行）",
+      "base_url": "https://www.fsa.go.jp/",
+      "entry_urls": [
+        "https://www.fsa.go.jp/ordinary/hoken_hogo/"
+      ],
+      "source_type": "public_agency",
+      "scope": "既存manual監視targetの公式資料",
+      "jurisdiction": "Japan",
+      "priority": 3,
+      "cadence": "monthly",
+      "enabled": true,
+      "adapter": "manual",
+      "rate_limit": "サイトの利用条件に従う",
+      "terms_url": "https://www.fsa.go.jp/",
+      "last_verified_at": "2026-08-24T12:00:00+09:00",
+      "notes": "#86でmonitoring.yamlからURLを移行。利用条件と個別資料は次回確認時に再確認する",
+      "monitoring_only": true
+    },
+    {
+      "source_id": "manual-laws-e-gov-go-jp-law-323ac0000000025",
+      "name": "laws.e-gov.go.jp 公式資料",
+      "authority": "公式公開主体（既存監視設定から移行）",
+      "base_url": "https://laws.e-gov.go.jp/",
+      "entry_urls": [
+        "https://laws.e-gov.go.jp/law/323AC0000000025"
+      ],
+      "source_type": "public_agency",
+      "scope": "既存manual監視targetの公式資料",
+      "jurisdiction": "Japan",
+      "priority": 3,
+      "cadence": "monthly",
+      "enabled": true,
+      "adapter": "manual",
+      "rate_limit": "サイトの利用条件に従う",
+      "terms_url": "https://laws.e-gov.go.jp/",
+      "last_verified_at": "2026-08-24T12:00:00+09:00",
+      "notes": "#86でmonitoring.yamlからURLを移行。利用条件と個別資料は次回確認時に再確認する",
+      "monitoring_only": true
+    },
+    {
+      "source_id": "manual-laws-e-gov-go-jp-law-324ac0000000284",
+      "name": "laws.e-gov.go.jp 公式資料",
+      "authority": "公式公開主体（既存監視設定から移行）",
+      "base_url": "https://laws.e-gov.go.jp/",
+      "entry_urls": [
+        "https://laws.e-gov.go.jp/law/324AC0000000284"
+      ],
+      "source_type": "public_agency",
+      "scope": "既存manual監視targetの公式資料",
+      "jurisdiction": "Japan",
+      "priority": 3,
+      "cadence": "monthly",
+      "enabled": true,
+      "adapter": "manual",
+      "rate_limit": "サイトの利用条件に従う",
+      "terms_url": "https://laws.e-gov.go.jp/",
+      "last_verified_at": "2026-08-24T12:00:00+09:00",
+      "notes": "#86でmonitoring.yamlからURLを移行。利用条件と個別資料は次回確認時に再確認する",
+      "monitoring_only": true
+    },
+    {
+      "source_id": "manual-laws-e-gov-go-jp-law-325ac0000000218",
+      "name": "laws.e-gov.go.jp 公式資料",
+      "authority": "公式公開主体（既存監視設定から移行）",
+      "base_url": "https://laws.e-gov.go.jp/",
+      "entry_urls": [
+        "https://laws.e-gov.go.jp/law/325AC0000000218"
+      ],
+      "source_type": "public_agency",
+      "scope": "既存manual監視targetの公式資料",
+      "jurisdiction": "Japan",
+      "priority": 3,
+      "cadence": "monthly",
+      "enabled": true,
+      "adapter": "manual",
+      "rate_limit": "サイトの利用条件に従う",
+      "terms_url": "https://laws.e-gov.go.jp/",
+      "last_verified_at": "2026-08-24T12:00:00+09:00",
+      "notes": "#86でmonitoring.yamlからURLを移行。利用条件と個別資料は次回確認時に再確認する",
+      "monitoring_only": true
+    },
+    {
+      "source_id": "manual-laws-e-gov-go-jp-law-325ac0000000239",
+      "name": "laws.e-gov.go.jp 公式資料",
+      "authority": "公式公開主体（既存監視設定から移行）",
+      "base_url": "https://laws.e-gov.go.jp/",
+      "entry_urls": [
+        "https://laws.e-gov.go.jp/law/325AC0000000239"
+      ],
+      "source_type": "public_agency",
+      "scope": "既存manual監視targetの公式資料",
+      "jurisdiction": "Japan",
+      "priority": 3,
+      "cadence": "monthly",
+      "enabled": true,
+      "adapter": "manual",
+      "rate_limit": "サイトの利用条件に従う",
+      "terms_url": "https://laws.e-gov.go.jp/",
+      "last_verified_at": "2026-08-24T12:00:00+09:00",
+      "notes": "#86でmonitoring.yamlからURLを移行。利用条件と個別資料は次回確認時に再確認する",
+      "monitoring_only": true
+    },
+    {
+      "source_id": "manual-laws-e-gov-go-jp-law-330ac0000000097",
+      "name": "laws.e-gov.go.jp 公式資料",
+      "authority": "公式公開主体（既存監視設定から移行）",
+      "base_url": "https://laws.e-gov.go.jp/",
+      "entry_urls": [
+        "https://laws.e-gov.go.jp/law/330AC0000000097"
+      ],
+      "source_type": "public_agency",
+      "scope": "既存manual監視targetの公式資料",
+      "jurisdiction": "Japan",
+      "priority": 3,
+      "cadence": "monthly",
+      "enabled": true,
+      "adapter": "manual",
+      "rate_limit": "サイトの利用条件に従う",
+      "terms_url": "https://laws.e-gov.go.jp/",
+      "last_verified_at": "2026-08-24T12:00:00+09:00",
+      "notes": "#86でmonitoring.yamlからURLを移行。利用条件と個別資料は次回確認時に再確認する",
+      "monitoring_only": true
+    },
+    {
+      "source_id": "manual-laws-e-gov-go-jp-law-332co0000000188",
+      "name": "laws.e-gov.go.jp 公式資料",
+      "authority": "公式公開主体（既存監視設定から移行）",
+      "base_url": "https://laws.e-gov.go.jp/",
+      "entry_urls": [
+        "https://laws.e-gov.go.jp/law/332CO0000000188"
+      ],
+      "source_type": "public_agency",
+      "scope": "既存manual監視targetの公式資料",
+      "jurisdiction": "Japan",
+      "priority": 3,
+      "cadence": "monthly",
+      "enabled": true,
+      "adapter": "manual",
+      "rate_limit": "サイトの利用条件に従う",
+      "terms_url": "https://laws.e-gov.go.jp/",
+      "last_verified_at": "2026-08-24T12:00:00+09:00",
+      "notes": "#86でmonitoring.yamlからURLを移行。利用条件と個別資料は次回確認時に再確認する",
+      "monitoring_only": true
+    },
+    {
+      "source_id": "manual-laws-e-gov-go-jp-law-338ac0000000081",
+      "name": "laws.e-gov.go.jp 公式資料",
+      "authority": "公式公開主体（既存監視設定から移行）",
+      "base_url": "https://laws.e-gov.go.jp/",
+      "entry_urls": [
+        "https://laws.e-gov.go.jp/law/338AC0000000081"
+      ],
+      "source_type": "public_agency",
+      "scope": "既存manual監視targetの公式資料",
+      "jurisdiction": "Japan",
+      "priority": 3,
+      "cadence": "monthly",
+      "enabled": true,
+      "adapter": "manual",
+      "rate_limit": "サイトの利用条件に従う",
+      "terms_url": "https://laws.e-gov.go.jp/",
+      "last_verified_at": "2026-08-24T12:00:00+09:00",
+      "notes": "#86でmonitoring.yamlからURLを移行。利用条件と個別資料は次回確認時に再確認する",
+      "monitoring_only": true
+    },
+    {
+      "source_id": "manual-laws-e-gov-go-jp-law-340ac0000000109",
+      "name": "laws.e-gov.go.jp 公式資料",
+      "authority": "公式公開主体（既存監視設定から移行）",
+      "base_url": "https://laws.e-gov.go.jp/",
+      "entry_urls": [
+        "https://laws.e-gov.go.jp/law/340AC0000000109"
+      ],
+      "source_type": "public_agency",
+      "scope": "既存manual監視targetの公式資料",
+      "jurisdiction": "Japan",
+      "priority": 3,
+      "cadence": "monthly",
+      "enabled": true,
+      "adapter": "manual",
+      "rate_limit": "サイトの利用条件に従う",
+      "terms_url": "https://laws.e-gov.go.jp/",
+      "last_verified_at": "2026-08-24T12:00:00+09:00",
+      "notes": "#86でmonitoring.yamlからURLを移行。利用条件と個別資料は次回確認時に再確認する",
+      "monitoring_only": true
+    },
+    {
+      "source_id": "manual-laws-e-gov-go-jp-law-345ac0000000133",
+      "name": "laws.e-gov.go.jp 公式資料",
+      "authority": "公式公開主体（既存監視設定から移行）",
+      "base_url": "https://laws.e-gov.go.jp/",
+      "entry_urls": [
+        "https://laws.e-gov.go.jp/law/345AC0000000133"
+      ],
+      "source_type": "public_agency",
+      "scope": "既存manual監視targetの公式資料",
+      "jurisdiction": "Japan",
+      "priority": 3,
+      "cadence": "monthly",
+      "enabled": true,
+      "adapter": "manual",
+      "rate_limit": "サイトの利用条件に従う",
+      "terms_url": "https://laws.e-gov.go.jp/",
+      "last_verified_at": "2026-08-24T12:00:00+09:00",
+      "notes": "#86でmonitoring.yamlからURLを移行。利用条件と個別資料は次回確認時に再確認する",
+      "monitoring_only": true
+    },
+    {
+      "source_id": "manual-laws-e-gov-go-jp-law-346ac0000000034",
+      "name": "laws.e-gov.go.jp 公式資料",
+      "authority": "公式公開主体（既存監視設定から移行）",
+      "base_url": "https://laws.e-gov.go.jp/",
+      "entry_urls": [
+        "https://laws.e-gov.go.jp/law/346AC0000000034"
+      ],
+      "source_type": "public_agency",
+      "scope": "既存manual監視targetの公式資料",
+      "jurisdiction": "Japan",
+      "priority": 3,
+      "cadence": "monthly",
+      "enabled": true,
+      "adapter": "manual",
+      "rate_limit": "サイトの利用条件に従う",
+      "terms_url": "https://laws.e-gov.go.jp/",
+      "last_verified_at": "2026-08-24T12:00:00+09:00",
+      "notes": "#86でmonitoring.yamlからURLを移行。利用条件と個別資料は次回確認時に再確認する",
+      "monitoring_only": true
+    },
+    {
+      "source_id": "manual-laws-e-gov-go-jp-law-348ac0000000026",
+      "name": "laws.e-gov.go.jp 公式資料",
+      "authority": "公式公開主体（既存監視設定から移行）",
+      "base_url": "https://laws.e-gov.go.jp/",
+      "entry_urls": [
+        "https://laws.e-gov.go.jp/law/348AC0000000026"
+      ],
+      "source_type": "public_agency",
+      "scope": "既存manual監視targetの公式資料",
+      "jurisdiction": "Japan",
+      "priority": 3,
+      "cadence": "monthly",
+      "enabled": true,
+      "adapter": "manual",
+      "rate_limit": "サイトの利用条件に従う",
+      "terms_url": "https://laws.e-gov.go.jp/",
+      "last_verified_at": "2026-08-24T12:00:00+09:00",
+      "notes": "#86でmonitoring.yamlからURLを移行。利用条件と個別資料は次回確認時に再確認する",
+      "monitoring_only": true
+    },
+    {
+      "source_id": "manual-laws-e-gov-go-jp-law-348ac0000000053",
+      "name": "laws.e-gov.go.jp 公式資料",
+      "authority": "公式公開主体（既存監視設定から移行）",
+      "base_url": "https://laws.e-gov.go.jp/",
+      "entry_urls": [
+        "https://laws.e-gov.go.jp/law/348AC0000000053"
+      ],
+      "source_type": "public_agency",
+      "scope": "既存manual監視targetの公式資料",
+      "jurisdiction": "Japan",
+      "priority": 3,
+      "cadence": "monthly",
+      "enabled": true,
+      "adapter": "manual",
+      "rate_limit": "サイトの利用条件に従う",
+      "terms_url": "https://laws.e-gov.go.jp/",
+      "last_verified_at": "2026-08-24T12:00:00+09:00",
+      "notes": "#86でmonitoring.yamlからURLを移行。利用条件と個別資料は次回確認時に再確認する",
+      "monitoring_only": true
+    },
+    {
+      "source_id": "manual-laws-e-gov-go-jp-law-348ac0000000111",
+      "name": "laws.e-gov.go.jp 公式資料",
+      "authority": "公式公開主体（既存監視設定から移行）",
+      "base_url": "https://laws.e-gov.go.jp/",
+      "entry_urls": [
+        "https://laws.e-gov.go.jp/law/348AC0000000111"
+      ],
+      "source_type": "public_agency",
+      "scope": "既存manual監視targetの公式資料",
+      "jurisdiction": "Japan",
+      "priority": 3,
+      "cadence": "monthly",
+      "enabled": true,
+      "adapter": "manual",
+      "rate_limit": "サイトの利用条件に従う",
+      "terms_url": "https://laws.e-gov.go.jp/",
+      "last_verified_at": "2026-08-24T12:00:00+09:00",
+      "notes": "#86でmonitoring.yamlからURLを移行。利用条件と個別資料は次回確認時に再確認する",
+      "monitoring_only": true
+    },
+    {
+      "source_id": "manual-laws-e-gov-go-jp-law-350ac0000000095",
+      "name": "laws.e-gov.go.jp 公式資料",
+      "authority": "公式公開主体（既存監視設定から移行）",
+      "base_url": "https://laws.e-gov.go.jp/",
+      "entry_urls": [
+        "https://laws.e-gov.go.jp/law/350AC0000000095"
+      ],
+      "source_type": "public_agency",
+      "scope": "既存manual監視targetの公式資料",
+      "jurisdiction": "Japan",
+      "priority": 3,
+      "cadence": "monthly",
+      "enabled": true,
+      "adapter": "manual",
+      "rate_limit": "サイトの利用条件に従う",
+      "terms_url": "https://laws.e-gov.go.jp/",
+      "last_verified_at": "2026-08-24T12:00:00+09:00",
+      "notes": "#86でmonitoring.yamlからURLを移行。利用条件と個別資料は次回確認時に再確認する",
+      "monitoring_only": true
+    },
+    {
+      "source_id": "manual-laws-e-gov-go-jp-law-361ac0000000092",
+      "name": "laws.e-gov.go.jp 公式資料",
+      "authority": "公式公開主体（既存監視設定から移行）",
+      "base_url": "https://laws.e-gov.go.jp/",
+      "entry_urls": [
+        "https://laws.e-gov.go.jp/law/361AC0000000092"
+      ],
+      "source_type": "public_agency",
+      "scope": "既存manual監視targetの公式資料",
+      "jurisdiction": "Japan",
+      "priority": 3,
+      "cadence": "monthly",
+      "enabled": true,
+      "adapter": "manual",
+      "rate_limit": "サイトの利用条件に従う",
+      "terms_url": "https://laws.e-gov.go.jp/",
+      "last_verified_at": "2026-08-24T12:00:00+09:00",
+      "notes": "#86でmonitoring.yamlからURLを移行。利用条件と個別資料は次回確認時に再確認する",
+      "monitoring_only": true
+    },
+    {
+      "source_id": "manual-laws-e-gov-go-jp-law-407ac0000000039",
+      "name": "laws.e-gov.go.jp 公式資料",
+      "authority": "公式公開主体（既存監視設定から移行）",
+      "base_url": "https://laws.e-gov.go.jp/",
+      "entry_urls": [
+        "https://laws.e-gov.go.jp/law/407AC0000000039"
+      ],
+      "source_type": "public_agency",
+      "scope": "既存manual監視targetの公式資料",
+      "jurisdiction": "Japan",
+      "priority": 3,
+      "cadence": "monthly",
+      "enabled": true,
+      "adapter": "manual",
+      "rate_limit": "サイトの利用条件に従う",
+      "terms_url": "https://laws.e-gov.go.jp/",
+      "last_verified_at": "2026-08-24T12:00:00+09:00",
+      "notes": "#86でmonitoring.yamlからURLを移行。利用条件と個別資料は次回確認時に再確認する",
+      "monitoring_only": true
+    },
+    {
+      "source_id": "manual-laws-e-gov-go-jp-law-407m50000400077",
+      "name": "laws.e-gov.go.jp 公式資料",
+      "authority": "公式公開主体（既存監視設定から移行）",
+      "base_url": "https://laws.e-gov.go.jp/",
+      "entry_urls": [
+        "https://laws.e-gov.go.jp/law/407M50000400077"
+      ],
+      "source_type": "public_agency",
+      "scope": "既存manual監視targetの公式資料",
+      "jurisdiction": "Japan",
+      "priority": 3,
+      "cadence": "monthly",
+      "enabled": true,
+      "adapter": "manual",
+      "rate_limit": "サイトの利用条件に従う",
+      "terms_url": "https://laws.e-gov.go.jp/",
+      "last_verified_at": "2026-08-24T12:00:00+09:00",
+      "notes": "#86でmonitoring.yamlからURLを移行。利用条件と個別資料は次回確認時に再確認する",
+      "monitoring_only": true
+    },
+    {
+      "source_id": "manual-laws-e-gov-go-jp-law-412ac0000000117",
+      "name": "laws.e-gov.go.jp 公式資料",
+      "authority": "公式公開主体（既存監視設定から移行）",
+      "base_url": "https://laws.e-gov.go.jp/",
+      "entry_urls": [
+        "https://laws.e-gov.go.jp/law/412AC0000000117"
+      ],
+      "source_type": "public_agency",
+      "scope": "既存manual監視targetの公式資料",
+      "jurisdiction": "Japan",
+      "priority": 3,
+      "cadence": "monthly",
+      "enabled": true,
+      "adapter": "manual",
+      "rate_limit": "サイトの利用条件に従う",
+      "terms_url": "https://laws.e-gov.go.jp/",
+      "last_verified_at": "2026-08-24T12:00:00+09:00",
+      "notes": "#86でmonitoring.yamlからURLを移行。利用条件と個別資料は次回確認時に再確認する",
+      "monitoring_only": true
+    },
+    {
+      "source_id": "manual-laws-e-gov-go-jp-law-413ac0000000075",
+      "name": "laws.e-gov.go.jp 公式資料",
+      "authority": "公式公開主体（既存監視設定から移行）",
+      "base_url": "https://laws.e-gov.go.jp/",
+      "entry_urls": [
+        "https://laws.e-gov.go.jp/law/413AC0000000075"
+      ],
+      "source_type": "public_agency",
+      "scope": "既存manual監視targetの公式資料",
+      "jurisdiction": "Japan",
+      "priority": 3,
+      "cadence": "monthly",
+      "enabled": true,
+      "adapter": "manual",
+      "rate_limit": "サイトの利用条件に従う",
+      "terms_url": "https://laws.e-gov.go.jp/",
+      "last_verified_at": "2026-08-24T12:00:00+09:00",
+      "notes": "#86でmonitoring.yamlからURLを移行。利用条件と個別資料は次回確認時に再確認する",
+      "monitoring_only": true
+    },
+    {
+      "source_id": "manual-laws-e-gov-go-jp-law-413ac0000000131",
+      "name": "laws.e-gov.go.jp 公式資料",
+      "authority": "公式公開主体（既存監視設定から移行）",
+      "base_url": "https://laws.e-gov.go.jp/",
+      "entry_urls": [
+        "https://laws.e-gov.go.jp/law/413AC0000000131"
+      ],
+      "source_type": "public_agency",
+      "scope": "既存manual監視targetの公式資料",
+      "jurisdiction": "Japan",
+      "priority": 3,
+      "cadence": "monthly",
+      "enabled": true,
+      "adapter": "manual",
+      "rate_limit": "サイトの利用条件に従う",
+      "terms_url": "https://laws.e-gov.go.jp/",
+      "last_verified_at": "2026-08-24T12:00:00+09:00",
+      "notes": "#86でmonitoring.yamlからURLを移行。利用条件と個別資料は次回確認時に再確認する",
+      "monitoring_only": true
+    },
+    {
+      "source_id": "manual-laws-e-gov-go-jp-law-414ac0000000182",
+      "name": "laws.e-gov.go.jp 公式資料",
+      "authority": "公式公開主体（既存監視設定から移行）",
+      "base_url": "https://laws.e-gov.go.jp/",
+      "entry_urls": [
+        "https://laws.e-gov.go.jp/law/414AC0000000182"
+      ],
+      "source_type": "public_agency",
+      "scope": "既存manual監視targetの公式資料",
+      "jurisdiction": "Japan",
+      "priority": 3,
+      "cadence": "monthly",
+      "enabled": true,
+      "adapter": "manual",
+      "rate_limit": "サイトの利用条件に従う",
+      "terms_url": "https://laws.e-gov.go.jp/",
+      "last_verified_at": "2026-08-24T12:00:00+09:00",
+      "notes": "#86でmonitoring.yamlからURLを移行。利用条件と個別資料は次回確認時に再確認する",
+      "monitoring_only": true
+    },
+    {
+      "source_id": "manual-laws-e-gov-go-jp-law-417ac0000000048",
+      "name": "laws.e-gov.go.jp 公式資料",
+      "authority": "公式公開主体（既存監視設定から移行）",
+      "base_url": "https://laws.e-gov.go.jp/",
+      "entry_urls": [
+        "https://laws.e-gov.go.jp/law/417AC0000000048"
+      ],
+      "source_type": "public_agency",
+      "scope": "既存manual監視targetの公式資料",
+      "jurisdiction": "Japan",
+      "priority": 3,
+      "cadence": "monthly",
+      "enabled": true,
+      "adapter": "manual",
+      "rate_limit": "サイトの利用条件に従う",
+      "terms_url": "https://laws.e-gov.go.jp/",
+      "last_verified_at": "2026-08-24T12:00:00+09:00",
+      "notes": "#86でmonitoring.yamlからURLを移行。利用条件と個別資料は次回確認時に再確認する",
+      "monitoring_only": true
+    },
+    {
+      "source_id": "manual-laws-e-gov-go-jp-law-417ac0000000101",
+      "name": "laws.e-gov.go.jp 公式資料",
+      "authority": "公式公開主体（既存監視設定から移行）",
+      "base_url": "https://laws.e-gov.go.jp/",
+      "entry_urls": [
+        "https://laws.e-gov.go.jp/law/417AC0000000101"
+      ],
+      "source_type": "public_agency",
+      "scope": "既存manual監視targetの公式資料",
+      "jurisdiction": "Japan",
+      "priority": 3,
+      "cadence": "monthly",
+      "enabled": true,
+      "adapter": "manual",
+      "rate_limit": "サイトの利用条件に従う",
+      "terms_url": "https://laws.e-gov.go.jp/",
+      "last_verified_at": "2026-08-24T12:00:00+09:00",
+      "notes": "#86でmonitoring.yamlからURLを移行。利用条件と個別資料は次回確認時に再確認する",
+      "monitoring_only": true
+    },
+    {
+      "source_id": "manual-laws-e-gov-go-jp-law-418ac0000000004",
+      "name": "laws.e-gov.go.jp 公式資料",
+      "authority": "公式公開主体（既存監視設定から移行）",
+      "base_url": "https://laws.e-gov.go.jp/",
+      "entry_urls": [
+        "https://laws.e-gov.go.jp/law/418AC0000000004"
+      ],
+      "source_type": "public_agency",
+      "scope": "既存manual監視targetの公式資料",
+      "jurisdiction": "Japan",
+      "priority": 3,
+      "cadence": "monthly",
+      "enabled": true,
+      "adapter": "manual",
+      "rate_limit": "サイトの利用条件に従う",
+      "terms_url": "https://laws.e-gov.go.jp/",
+      "last_verified_at": "2026-08-24T12:00:00+09:00",
+      "notes": "#86でmonitoring.yamlからURLを移行。利用条件と個別資料は次回確認時に再確認する",
+      "monitoring_only": true
+    },
+    {
+      "source_id": "manual-laws-e-gov-go-jp-law-420ac1000000002",
+      "name": "laws.e-gov.go.jp 公式資料",
+      "authority": "公式公開主体（既存監視設定から移行）",
+      "base_url": "https://laws.e-gov.go.jp/",
+      "entry_urls": [
+        "https://laws.e-gov.go.jp/law/420AC1000000002"
+      ],
+      "source_type": "public_agency",
+      "scope": "既存manual監視targetの公式資料",
+      "jurisdiction": "Japan",
+      "priority": 3,
+      "cadence": "monthly",
+      "enabled": true,
+      "adapter": "manual",
+      "rate_limit": "サイトの利用条件に従う",
+      "terms_url": "https://laws.e-gov.go.jp/",
+      "last_verified_at": "2026-08-24T12:00:00+09:00",
+      "notes": "#86でmonitoring.yamlからURLを移行。利用条件と個別資料は次回確認時に再確認する",
+      "monitoring_only": true
+    },
+    {
+      "source_id": "manual-laws-e-gov-go-jp-law-421ac0000000063",
+      "name": "laws.e-gov.go.jp 公式資料",
+      "authority": "公式公開主体（既存監視設定から移行）",
+      "base_url": "https://laws.e-gov.go.jp/",
+      "entry_urls": [
+        "https://laws.e-gov.go.jp/law/421AC0000000063"
+      ],
+      "source_type": "public_agency",
+      "scope": "既存manual監視targetの公式資料",
+      "jurisdiction": "Japan",
+      "priority": 3,
+      "cadence": "monthly",
+      "enabled": true,
+      "adapter": "manual",
+      "rate_limit": "サイトの利用条件に従う",
+      "terms_url": "https://laws.e-gov.go.jp/",
+      "last_verified_at": "2026-08-24T12:00:00+09:00",
+      "notes": "#86でmonitoring.yamlからURLを移行。利用条件と個別資料は次回確認時に再確認する",
+      "monitoring_only": true
+    },
+    {
+      "source_id": "manual-laws-e-gov-go-jp-law-421ac0000000064",
+      "name": "laws.e-gov.go.jp 公式資料",
+      "authority": "公式公開主体（既存監視設定から移行）",
+      "base_url": "https://laws.e-gov.go.jp/",
+      "entry_urls": [
+        "https://laws.e-gov.go.jp/law/421AC0000000064"
+      ],
+      "source_type": "public_agency",
+      "scope": "既存manual監視targetの公式資料",
+      "jurisdiction": "Japan",
+      "priority": 3,
+      "cadence": "monthly",
+      "enabled": true,
+      "adapter": "manual",
+      "rate_limit": "サイトの利用条件に従う",
+      "terms_url": "https://laws.e-gov.go.jp/",
+      "last_verified_at": "2026-08-24T12:00:00+09:00",
+      "notes": "#86でmonitoring.yamlからURLを移行。利用条件と個別資料は次回確認時に再確認する",
+      "monitoring_only": true
+    },
+    {
+      "source_id": "manual-laws-e-gov-go-jp-law-421ac1000000081",
+      "name": "laws.e-gov.go.jp 公式資料",
+      "authority": "公式公開主体（既存監視設定から移行）",
+      "base_url": "https://laws.e-gov.go.jp/",
+      "entry_urls": [
+        "https://laws.e-gov.go.jp/law/421AC1000000081"
+      ],
+      "source_type": "public_agency",
+      "scope": "既存manual監視targetの公式資料",
+      "jurisdiction": "Japan",
+      "priority": 3,
+      "cadence": "monthly",
+      "enabled": true,
+      "adapter": "manual",
+      "rate_limit": "サイトの利用条件に従う",
+      "terms_url": "https://laws.e-gov.go.jp/",
+      "last_verified_at": "2026-08-24T12:00:00+09:00",
+      "notes": "#86でmonitoring.yamlからURLを移行。利用条件と個別資料は次回確認時に再確認する",
+      "monitoring_only": true
+    },
+    {
+      "source_id": "manual-laws-e-gov-go-jp-law-423ac0000000094",
+      "name": "laws.e-gov.go.jp 公式資料",
+      "authority": "公式公開主体（既存監視設定から移行）",
+      "base_url": "https://laws.e-gov.go.jp/",
+      "entry_urls": [
+        "https://laws.e-gov.go.jp/law/423AC0000000094"
+      ],
+      "source_type": "public_agency",
+      "scope": "既存manual監視targetの公式資料",
+      "jurisdiction": "Japan",
+      "priority": 3,
+      "cadence": "monthly",
+      "enabled": true,
+      "adapter": "manual",
+      "rate_limit": "サイトの利用条件に従う",
+      "terms_url": "https://laws.e-gov.go.jp/",
+      "last_verified_at": "2026-08-24T12:00:00+09:00",
+      "notes": "#86でmonitoring.yamlからURLを移行。利用条件と個別資料は次回確認時に再確認する",
+      "monitoring_only": true
+    },
+    {
+      "source_id": "manual-laws-e-gov-go-jp-law-423ac0100000113",
+      "name": "laws.e-gov.go.jp 公式資料",
+      "authority": "公式公開主体（既存監視設定から移行）",
+      "base_url": "https://laws.e-gov.go.jp/",
+      "entry_urls": [
+        "https://laws.e-gov.go.jp/law/423AC0100000113"
+      ],
+      "source_type": "public_agency",
+      "scope": "既存manual監視targetの公式資料",
+      "jurisdiction": "Japan",
+      "priority": 3,
+      "cadence": "monthly",
+      "enabled": true,
+      "adapter": "manual",
+      "rate_limit": "サイトの利用条件に従う",
+      "terms_url": "https://laws.e-gov.go.jp/",
+      "last_verified_at": "2026-08-24T12:00:00+09:00",
+      "notes": "#86でmonitoring.yamlからURLを移行。利用条件と個別資料は次回確認時に再確認する",
+      "monitoring_only": true
+    },
+    {
+      "source_id": "manual-laws-e-gov-go-jp-law-426ac0000000133",
+      "name": "laws.e-gov.go.jp 公式資料",
+      "authority": "公式公開主体（既存監視設定から移行）",
+      "base_url": "https://laws.e-gov.go.jp/",
+      "entry_urls": [
+        "https://laws.e-gov.go.jp/law/426AC0000000133"
+      ],
+      "source_type": "public_agency",
+      "scope": "既存manual監視targetの公式資料",
+      "jurisdiction": "Japan",
+      "priority": 3,
+      "cadence": "monthly",
+      "enabled": true,
+      "adapter": "manual",
+      "rate_limit": "サイトの利用条件に従う",
+      "terms_url": "https://laws.e-gov.go.jp/",
+      "last_verified_at": "2026-08-24T12:00:00+09:00",
+      "notes": "#86でmonitoring.yamlからURLを移行。利用条件と個別資料は次回確認時に再確認する",
+      "monitoring_only": true
+    },
+    {
+      "source_id": "manual-laws-e-gov-go-jp-law-502ac0000000053",
+      "name": "laws.e-gov.go.jp 公式資料",
+      "authority": "公式公開主体（既存監視設定から移行）",
+      "base_url": "https://laws.e-gov.go.jp/",
+      "entry_urls": [
+        "https://laws.e-gov.go.jp/law/502AC0000000053"
+      ],
+      "source_type": "public_agency",
+      "scope": "既存manual監視targetの公式資料",
+      "jurisdiction": "Japan",
+      "priority": 3,
+      "cadence": "monthly",
+      "enabled": true,
+      "adapter": "manual",
+      "rate_limit": "サイトの利用条件に従う",
+      "terms_url": "https://laws.e-gov.go.jp/",
+      "last_verified_at": "2026-08-24T12:00:00+09:00",
+      "notes": "#86でmonitoring.yamlからURLを移行。利用条件と個別資料は次回確認時に再確認する",
+      "monitoring_only": true
+    },
+    {
+      "source_id": "manual-laws-e-gov-go-jp-law-505ac0000000032",
+      "name": "laws.e-gov.go.jp 公式資料",
+      "authority": "公式公開主体（既存監視設定から移行）",
+      "base_url": "https://laws.e-gov.go.jp/",
+      "entry_urls": [
+        "https://laws.e-gov.go.jp/law/505AC0000000032"
+      ],
+      "source_type": "public_agency",
+      "scope": "既存manual監視targetの公式資料",
+      "jurisdiction": "Japan",
+      "priority": 3,
+      "cadence": "monthly",
+      "enabled": true,
+      "adapter": "manual",
+      "rate_limit": "サイトの利用条件に従う",
+      "terms_url": "https://laws.e-gov.go.jp/",
+      "last_verified_at": "2026-08-24T12:00:00+09:00",
+      "notes": "#86でmonitoring.yamlからURLを移行。利用条件と個別資料は次回確認時に再確認する",
+      "monitoring_only": true
+    },
+    {
+      "source_id": "manual-meti-go-jp-press-2025-03-20260319004-20260319004-html",
+      "name": "www.meti.go.jp 公式資料",
+      "authority": "公式公開主体（既存監視設定から移行）",
+      "base_url": "https://www.meti.go.jp/",
+      "entry_urls": [
+        "https://www.meti.go.jp/press/2025/03/20260319004/20260319004.html"
+      ],
+      "source_type": "public_agency",
+      "scope": "既存manual監視targetの公式資料",
+      "jurisdiction": "Japan",
+      "priority": 3,
+      "cadence": "monthly",
+      "enabled": true,
+      "adapter": "manual",
+      "rate_limit": "サイトの利用条件に従う",
+      "terms_url": "https://www.meti.go.jp/",
+      "last_verified_at": "2026-08-24T12:00:00+09:00",
+      "notes": "#86でmonitoring.yamlからURLを移行。利用条件と個別資料は次回確認時に再確認する",
+      "monitoring_only": true
+    },
+    {
+      "source_id": "manual-mext-go-jp-a-menu-hyouka-kekka-1421038-00004-htm",
+      "name": "www.mext.go.jp 公式資料",
+      "authority": "公式公開主体（既存監視設定から移行）",
+      "base_url": "https://www.mext.go.jp/",
+      "entry_urls": [
+        "https://www.mext.go.jp/a_menu/hyouka/kekka/1421038_00004.htm"
+      ],
+      "source_type": "public_agency",
+      "scope": "既存manual監視targetの公式資料",
+      "jurisdiction": "Japan",
+      "priority": 3,
+      "cadence": "monthly",
+      "enabled": true,
+      "adapter": "manual",
+      "rate_limit": "サイトの利用条件に従う",
+      "terms_url": "https://www.mext.go.jp/",
+      "last_verified_at": "2026-08-24T12:00:00+09:00",
+      "notes": "#86でmonitoring.yamlからURLを移行。利用条件と個別資料は次回確認時に再確認する",
+      "monitoring_only": true
+    },
+    {
+      "source_id": "manual-pmda-go-jp-safety-info-services-safety-contributions-0007-html",
+      "name": "www.pmda.go.jp 公式資料",
+      "authority": "公式公開主体（既存監視設定から移行）",
+      "base_url": "https://www.pmda.go.jp/",
+      "entry_urls": [
+        "https://www.pmda.go.jp/safety/info-services/safety-contributions/0007.html"
+      ],
+      "source_type": "public_agency",
+      "scope": "既存manual監視targetの公式資料",
+      "jurisdiction": "Japan",
+      "priority": 3,
+      "cadence": "monthly",
+      "enabled": true,
+      "adapter": "manual",
+      "rate_limit": "サイトの利用条件に従う",
+      "terms_url": "https://www.pmda.go.jp/",
+      "last_verified_at": "2026-08-24T12:00:00+09:00",
+      "notes": "#86でmonitoring.yamlからURLを移行。利用条件と個別資料は次回確認時に再確認する",
+      "monitoring_only": true
+    },
+    {
+      "source_id": "manual-tca-or-jp-broadband-universalservice-qa",
+      "name": "www.tca.or.jp 公式資料",
+      "authority": "公式公開主体（既存監視設定から移行）",
+      "base_url": "https://www.tca.or.jp/",
+      "entry_urls": [
+        "https://www.tca.or.jp/broadband-universalservice/qa/"
+      ],
+      "source_type": "public_agency",
+      "scope": "既存manual監視targetの公式資料",
+      "jurisdiction": "Japan",
+      "priority": 3,
+      "cadence": "monthly",
+      "enabled": true,
+      "adapter": "manual",
+      "rate_limit": "サイトの利用条件に従う",
+      "terms_url": "https://www.tca.or.jp/",
+      "last_verified_at": "2026-08-24T12:00:00+09:00",
+      "notes": "#86でmonitoring.yamlからURLを移行。利用条件と個別資料は次回確認時に再確認する",
+      "monitoring_only": true
     }
   ]
 }

@@ -4,7 +4,7 @@
   "title": "Canonical monitoring registry",
   "type": "object",
   "additionalProperties": false,
-  "required": ["schema_version", "metadata", "targets"],
+  "required": ["schema_version", "metadata", "defaults", "adapters", "calculation_policies", "targets"],
   "properties": {
     "schema_version": {"const": 1},
     "metadata": {
@@ -28,6 +28,22 @@
         }
       }
     },
+    "defaults": {
+      "type": "object", "additionalProperties": false,
+      "required": ["cadence", "comparison", "review_required"],
+      "properties": {"cadence": {"type": "string", "minLength": 1}, "comparison": {"enum": ["semantic", "raw_hash"]}, "review_required": {"type": "boolean"}}
+    },
+    "adapters": {
+      "type": "object", "additionalProperties": false, "required": ["formats"],
+      "properties": {"formats": {"type": "array", "minItems": 4, "items": {"$ref": "#/$defs/formatAdapter"}}}
+    },
+    "calculation_policies": {
+      "type": "object", "additionalProperties": false, "required": ["equal_split", "explicit_allocation"],
+      "properties": {
+        "equal_split": {"type": "object", "additionalProperties": false, "required": ["operation", "divisor", "rounding"], "properties": {"operation": {"const": "divide"}, "divisor": {"const": 2}, "rounding": {"enum": ["none", "floor", "ceiling", "half_up"]}}},
+        "explicit_allocation": {"type": "object", "additionalProperties": false, "required": ["operation", "rounding"], "properties": {"operation": {"const": "allocate_by_configured_ratio"}, "rounding": {"enum": ["none", "floor", "ceiling", "half_up"]}}}
+      }
+    },
     "targets": {
       "type": "array",
       "minItems": 1,
@@ -35,6 +51,12 @@
     }
   },
   "$defs": {
+    "formatAdapter": {
+      "type": "object", "additionalProperties": false,
+      "required": ["format", "adapter", "status", "mime_types"],
+      "properties": {"format": {"enum": ["html", "pdf", "csv", "spreadsheet"]}, "adapter": {"type": "string", "minLength": 1}, "status": {"enum": ["implemented", "manual"]}, "mime_types": {"type": "array", "minItems": 1, "uniqueItems": true, "items": {"type": "string", "minLength": 3}}, "implementation": {"type": "string", "pattern": "^scripts/"}, "manual_reason": {"type": "string", "minLength": 20}},
+      "allOf": [{"if": {"properties": {"status": {"const": "implemented"}}}, "then": {"required": ["implementation"], "properties": {"implementation": true}}}, {"if": {"properties": {"status": {"const": "manual"}}}, "then": {"required": ["manual_reason"], "properties": {"adapter": {"const": "manual"}, "manual_reason": true}}}]
+    },
     "profile": {
       "type": "object",
       "additionalProperties": false,
@@ -47,9 +69,12 @@
     "target": {
       "type": "object",
       "additionalProperties": false,
-      "required": ["tax_id", "implementation_issue", "implementation_status", "decision_kind", "monitoring_mode", "cadence", "municipal_scope", "decision"],
+      "required": ["monitoring_target_id", "tax_id", "public_burden_id", "canonical_target", "implementation_issue", "implementation_status", "decision_kind", "monitoring_mode", "cadence", "municipal_scope", "decision"],
       "properties": {
+        "monitoring_target_id": {"$ref": "common.schema.json#/$defs/id"},
         "tax_id": {"type": "string", "pattern": "^[a-z0-9]+(?:-[a-z0-9]+)*$"},
+        "public_burden_id": {"$ref": "common.schema.json#/$defs/id"},
+        "canonical_target": {"type": "object", "additionalProperties": false, "properties": {"source_fact_ids": {"type": "array", "minItems": 1, "uniqueItems": true, "items": {"$ref": "common.schema.json#/$defs/id"}}, "legal_state_id": {"$ref": "common.schema.json#/$defs/id"}}, "oneOf": [{"required": ["source_fact_ids"], "properties": {"source_fact_ids": true}}, {"required": ["legal_state_id"], "properties": {"legal_state_id": true}}]},
         "implementation_issue": {"enum": [39, 42, 43, 44, 45]},
         "implementation_status": {"enum": ["implemented_initial", "implemented", "held"]},
         "decision_kind": {"enum": ["initial", "standard", "public_implemented", "public_manual", "public_grouped_hold"]},

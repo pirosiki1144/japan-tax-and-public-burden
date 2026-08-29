@@ -36,7 +36,7 @@ reports/      生成レポート
 ## データの境界
 
 - `config/sources.yaml` は巡回先と利用条件を管理する情報源レジストリです。
-- `config/monitoring.yaml` は112制度の監視区分、実装状態、capability、手動確認理由・解除条件を一意に管理する唯一の監視設定です。runtime監視計画と実行・coverage計画は、この正本、制度マスタ、source設定からメモリ上で生成し、類似設定ファイルとして保存しません。詳細は[初期マスタ監視設定](docs/monitoring-configuration.md)を参照してください。
+- `config/monitoring.yaml` は112制度の監視区分、document adapter、限定計算policy、正本への書込候補、手動確認理由・解除条件を一意に管理する唯一の監視manifestです。URLと取得条件は`config/sources.yaml`だけに置きます。runtime監視計画と実行・coverage計画はメモリ上で生成し、類似設定ファイルとして保存しません。詳細は[監視manifest統合と移行対応表](docs/monitoring-manifest-migration.md)と[初期マスタ監視設定](docs/monitoring-configuration.md)を参照してください。
 - `data/burdens`、`data/changes`、`data/events`、`data/phases`、`data/revenue`、`data/reconciliation` はレビュー後にGitで履歴管理する正本です。`data/monitoring/semantic-baseline.json`は、意味抽出値の前回レビュー済み状態であり、定期監視の項目単位比較に使用します。
 - 初期マスタの投入件数と未解決事項は[初期マスタ投入・検証レポート](docs/initial-master-import-report.md)を参照してください。
 - `data/candidates` は初期マスタへ昇格する前の調査候補です。Schema検証とGitレビューの対象ですが、確定制度マスタや配布対象として扱いません。適合性と昇格条件は[初期マスタ候補のSchema適合性確認](docs/initial-master-schema-fit.md)、税以外の候補の収集範囲は[税以外の公的負担候補の収集・照合](docs/public-burden-candidate-reconciliation.md)、統合判定は[初期マスタ投入対象の統合判定](docs/initial-master-selection.md)を参照してください。

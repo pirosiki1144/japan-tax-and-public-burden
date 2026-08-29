@@ -1,7 +1,7 @@
 import test from "node:test";
 import assert from "node:assert/strict";
 import { fileURLToPath } from "node:url";
-import { buildDecisionViews, loadMonitoringRegistry } from "../scripts/monitoring/monitoring-registry.js";
+import { buildCalculatedComponentCandidates, buildDecisionViews, formatAdapterRegistry, loadMonitoringRegistry } from "../scripts/monitoring/monitoring-registry.js";
 
 const root = fileURLToPath(new URL("..", import.meta.url));
 
@@ -27,7 +27,7 @@ test("manual public burdens retain evidence gaps and release instructions", asyn
   const manual = registry.targets.filter(({ decision_kind: kind }) => kind === "public_manual");
   assert.equal(manual.length, 53);
   for (const { decision } of manual) {
-    assert.ok(decision.official_source_url.startsWith("https://"));
+    assert.ok(decision.source_ids.length > 0);
     assert.ok(decision.evidence_gap.length > 0);
     assert.ok(decision.release_conditions.length > 0);
     assert.ok(decision.recheck_cadence.length > 0);
@@ -41,4 +41,24 @@ test("monitoring registry does not duplicate crawl URL configuration", async () 
     assert.equal(Object.hasOwn(target.decision, "entry_urls"), false);
     assert.equal(Object.hasOwn(target.decision, "base_url"), false);
   }
+  assert.doesNotMatch(JSON.stringify(registry), /https?:\/\//);
+});
+
+test("one manifest owns adapters, canonical targets, and bounded calculation policies", async () => {
+  const registry = await loadMonitoringRegistry(root);
+  assert.deepEqual(formatAdapterRegistry(registry).map(({ format }) => format).sort(), ["csv", "html", "pdf", "spreadsheet"]);
+  assert.equal(new Set(registry.targets.map(({ monitoring_target_id }) => monitoring_target_id)).size, 112);
+  assert.ok(registry.targets.every(({ public_burden_id, tax_id, canonical_target }) => public_burden_id === tax_id && (canonical_target.source_fact_ids?.length || canonical_target.legal_state_id)));
+  assert.deepEqual(Object.keys(registry.calculation_policies).sort(), ["equal_split", "explicit_allocation"]);
+});
+
+test("pension shares are candidates from a direct fact and equal_split without a free expression", async () => {
+  const registry = await loadMonitoringRegistry(root);
+  const candidates = buildCalculatedComponentCandidates(registry, {
+    policyId: "equal_split", sourceFactId: "employees-pension-total-rate", normalizedValue: 18.3,
+    outputComponentIds: ["employees-pension-insured", "employees-pension-employer"]
+  });
+  assert.deepEqual(candidates.map(({ numeric_value }) => numeric_value), [9.15, 9.15]);
+  assert.ok(candidates.every(({ acquisition_type, input_source_fact_ids, rounding }) => acquisition_type === "calculated" && input_source_fact_ids[0] === "employees-pension-total-rate" && rounding === "none"));
+  assert.throws(() => buildCalculatedComponentCandidates(registry, { policyId: "value / 2", sourceFactId: "x", normalizedValue: 18.3, outputComponentIds: ["a", "b"] }), /Unknown calculation policy/);
 });

@@ -26,6 +26,7 @@
         "cadence": {"type": "string", "minLength": 1},
         "enabled": {"type": "boolean"},
         "automation_enabled": {"type": "boolean"},
+        "monitoring_only": {"type": "boolean"},
         "monitoring_tax_ids": {"type": "array", "minItems": 1, "uniqueItems": true, "items": {"type": "string", "pattern": "^[a-z0-9]+(?:-[a-z0-9]+)*$"}},
         "adapter": {"type": "string", "minLength": 1},
         "accepted_content_types": {"type": "array", "minItems": 1, "uniqueItems": true, "items": {"type": "string", "minLength": 1}},
