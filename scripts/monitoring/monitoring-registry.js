@@ -16,11 +16,46 @@ export async function loadMonitoringRegistry(root) {
   const ids = registry.targets.map(({ tax_id: taxId }) => taxId);
   const duplicates = ids.filter((taxId, index) => ids.indexOf(taxId) !== index);
   if (duplicates.length) throw new Error(`Canonical monitoring registry has duplicate tax_id values: ${[...new Set(duplicates)].join(", ")}`);
+  const targetIds = registry.targets.map(({ monitoring_target_id: id }) => id);
+  const duplicateTargetIds = targetIds.filter((id, index) => targetIds.indexOf(id) !== index);
+  if (duplicateTargetIds.length) throw new Error(`Canonical monitoring registry has duplicate monitoring_target_id values: ${[...new Set(duplicateTargetIds)].join(", ")}`);
+  if (/https?:\/\//.test(JSON.stringify(registry))) throw new Error("Canonical monitoring registry must reference source IDs instead of URLs");
   for (const [name, projection] of Object.entries(buildDecisionViews(registry))) {
     const projectionErrors = validateDocument(validators[name], projection, `canonical ${name} view`);
     if (projectionErrors.length) throw new Error(`Canonical monitoring registry has an invalid ${name} view: ${projectionErrors.join("; ")}`);
   }
   return registry;
+}
+
+export function formatAdapterRegistry(registry) {
+  return registry.adapters.formats;
+}
+
+export function buildCalculatedComponentCandidates(registry, { policyId, sourceFactId, normalizedValue, outputComponentIds, allocation }) {
+  const policy = registry.calculation_policies[policyId];
+  if (!policy) throw new Error(`Unknown calculation policy: ${policyId}`);
+  if (!Number.isFinite(normalizedValue)) throw new Error("Calculated component input must be a finite direct fact value");
+  if (!Array.isArray(outputComponentIds) || outputComponentIds.length === 0) throw new Error("Calculated component outputs are required");
+  let values;
+  if (policy.operation === "divide") {
+    if (outputComponentIds.length !== policy.divisor) throw new Error(`${policyId} requires ${policy.divisor} outputs`);
+    values = outputComponentIds.map(() => normalizedValue / policy.divisor);
+  } else {
+    values = outputComponentIds.map((componentId) => {
+      const ratio = allocation?.[componentId];
+      if (!Number.isFinite(ratio) || ratio <= 0) throw new Error(`${policyId} requires a positive ratio for ${componentId}`);
+      return normalizedValue * ratio;
+    });
+  }
+  if (policy.rounding !== "none") throw new Error(`Rounding policy ${policy.rounding} is not implemented`);
+  return outputComponentIds.map((componentId, index) => ({
+    component_id: componentId,
+    numeric_value: values[index],
+    acquisition_type: "calculated",
+    calculation_policy_id: policyId,
+    input_source_fact_ids: [sourceFactId],
+    rounding: policy.rounding
+  }));
 }
 
 function standardProjection(manifest, issue) {

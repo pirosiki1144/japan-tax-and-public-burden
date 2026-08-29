@@ -2,7 +2,7 @@ import test from "node:test";
 import assert from "node:assert/strict";
 import { access } from "node:fs/promises";
 import { fileURLToPath } from "node:url";
-import { readYaml } from "../scripts/validate/schema-validator.js";
+import { formatAdapterRegistry, loadMonitoringRegistry } from "../scripts/monitoring/monitoring-registry.js";
 import { buildMonitoringExecutionPlan } from "../scripts/monitoring/build-monitoring-execution-plan.js";
 import { monitoringComposition } from "../scripts/composition/monitoring-composition.js";
 
@@ -11,13 +11,14 @@ const fixtures = { html: "sample.html", pdf: "sample.pdf", csv: "sample.csv" };
 
 test("every inventoried non-e-Gov format has an implementation or a concrete manual reason", async () => {
   const [registry, inventory] = await Promise.all([
-    readYaml(new URL("../config/format-adapters.yaml", import.meta.url)),
+    loadMonitoringRegistry(root),
     buildMonitoringExecutionPlan(root)
   ]);
-  const byFormat = new Map(registry.formats.map((entry) => [entry.format, entry]));
+  const formatsRegistry = formatAdapterRegistry(registry);
+  const byFormat = new Map(formatsRegistry.map((entry) => [entry.format, entry]));
   const parserRegistry = monitoringComposition().registries.documentParsers;
   assert.deepEqual([...byFormat.keys()].sort(), ["csv", "html", "pdf", "spreadsheet"]);
-  for (const entry of registry.formats) {
+  for (const entry of formatsRegistry) {
     if (entry.status === "implemented") {
       assert.equal(parserRegistry.has(entry.adapter), true);
       await access(`${root}/${entry.implementation}`);

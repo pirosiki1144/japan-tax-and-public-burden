@@ -6,6 +6,8 @@
 - メモリ上の派生view: runtime監視計画、実行・coverage計画、制度群別判断
 - 保存する派生成果物: 監視抽出対象レビュー
 
+document adapterと許可済み計算policyもこのmanifestへ統合した。URLは`config/sources.yaml`だけに置き、targetは`source_id`で参照する。#86の全項目対応と追加手順は[監視manifest統合と移行対応表](monitoring-manifest-migration.md)を参照する。
+
 ## 判定結果
 
 | 監視区分 | 件数 | 内容 |

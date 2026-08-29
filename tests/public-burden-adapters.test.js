@@ -47,7 +47,7 @@ test("Issue 56 targets are implemented or have actionable manual review metadata
   assert.deepEqual(implemented.map(({ tax_id }) => tax_id), ["educational-public-transmission-compensation"]);
   assert.equal(manual.length, 11);
   assert.equal(new Set([...implemented, ...manual].map(({ tax_id }) => tax_id)).size, 12);
-  assert.ok(manual.every(({ official_source_url, value_scope, evidence_gap, release_conditions, recheck_cadence }) => official_source_url.startsWith("https://") && value_scope.length >= 20 && evidence_gap.length >= 20 && release_conditions.length >= 1 && ["monthly","quarterly","annual"].includes(recheck_cadence)));
+  assert.ok(manual.every(({ source_ids, value_scope, evidence_gap, release_conditions, recheck_cadence }) => source_ids.length > 0 && value_scope.length >= 20 && evidence_gap.length >= 20 && release_conditions.length >= 1 && ["monthly","quarterly","annual"].includes(recheck_cadence)));
   assert.ok(manual.every(({ value_scope }) => /単一|集計しない/.test(value_scope)));
 });
 
@@ -130,7 +130,7 @@ test("Issue 58 targets are implemented or have actionable scope-specific manual 
   assert.deepEqual(implemented.map(({ tax_id }) => tax_id), ["adverse-drug-reaction-contribution", "infection-contribution"]);
   assert.equal(manual.length, 12);
   assert.equal(new Set([...implemented, ...manual].map(({ tax_id }) => tax_id)).size, 14);
-  assert.ok(manual.every(({ official_source_url, value_scope, evidence_gap, release_conditions }) => official_source_url.startsWith("https://") && value_scope.length >= 20 && evidence_gap.length >= 20 && release_conditions.length >= 2));
+  assert.ok(manual.every(({ source_ids, value_scope, evidence_gap, release_conditions }) => source_ids.length > 0 && value_scope.length >= 20 && evidence_gap.length >= 20 && release_conditions.length >= 2));
   assert.ok(manual.every(({ value_scope }) => /単一値として集計しない|合算しない|統合しない/.test(value_scope)));
 });
 
@@ -175,7 +175,7 @@ test("Issue 59 targets have one official annual value or actionable manual metad
   assert.deepEqual(implemented.map(({ tax_id }) => tax_id), ["child-care-contribution"]);
   assert.equal(manual.length, 13);
   assert.equal(new Set([...implemented, ...manual].map(({ tax_id }) => tax_id)).size, 14);
-  assert.ok(manual.every(({ official_source_url, value_scope, evidence_gap, release_conditions, recheck_cadence }) => official_source_url.startsWith("https://") && value_scope.length >= 20 && evidence_gap.length >= 20 && release_conditions.length >= 2 && recheck_cadence === "annual"));
+  assert.ok(manual.every(({ source_ids, value_scope, evidence_gap, release_conditions, recheck_cadence }) => source_ids.length > 0 && value_scope.length >= 20 && evidence_gap.length >= 20 && release_conditions.length >= 2 && recheck_cadence === "annual"));
   assert.ok(manual.every(({ value_scope }) => /単一値として集計しない|合算しない/.test(value_scope)));
 });
 

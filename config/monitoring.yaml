@@ -72,7 +72,15 @@
           }
         ]
       },
-      "projection_order": 3
+      "projection_order": 3,
+      "monitoring_target_id": "adverse-drug-reaction-contribution-monitoring",
+      "public_burden_id": "adverse-drug-reaction-contribution",
+      "canonical_target": {
+        "source_fact_ids": [
+          "adverse-additional-formula",
+          "adverse-general-rate"
+        ]
+      }
     },
     {
       "tax_id": "agricultural-cooperative-savings-charge",
@@ -83,16 +91,23 @@
       "cadence": "monthly",
       "municipal_scope": "national_only",
       "decision": {
-        "official_source_url": "https://laws.e-gov.go.jp/law/348AC0000000053",
         "value_scope": "農水産業協同組合貯金保険機構の会員・年度別算定であり単一値として集計しない",
         "evidence_gap": "現行年度の負担金算定資料と会員別適用範囲を対応付けていない",
         "release_conditions": [
           "機構の現行業務規程・年度資料を特定する",
           "会員区分・算定基礎・期間を定義する"
         ],
-        "recheck_cadence": "annual"
+        "recheck_cadence": "annual",
+        "source_ids": [
+          "manual-laws-e-gov-go-jp-law-348ac0000000053"
+        ]
       },
-      "projection_order": 11
+      "projection_order": 11,
+      "monitoring_target_id": "agricultural-cooperative-savings-charge-monitoring",
+      "public_burden_id": "agricultural-cooperative-savings-charge",
+      "canonical_target": {
+        "legal_state_id": "agricultural-cooperative-savings-charge-legal-state"
+      }
     },
     {
       "tax_id": "agricultural-cooperative-savings-insurance-premium",
@@ -103,16 +118,23 @@
       "cadence": "monthly",
       "municipal_scope": "national_only",
       "decision": {
-        "official_source_url": "https://laws.e-gov.go.jp/law/348AC0000000053",
         "value_scope": "対象貯金・金融機関区分・年度別料率であり単一値として集計しない",
         "evidence_gap": "現行保険料率表と対象貯金区分を機械可読に対応付けていない",
         "release_conditions": [
           "機構の現行保険料率資料を特定する",
           "金融機関・貯金区分・期間の行キーを定義する"
         ],
-        "recheck_cadence": "annual"
+        "recheck_cadence": "annual",
+        "source_ids": [
+          "manual-laws-e-gov-go-jp-law-348ac0000000053"
+        ]
       },
-      "projection_order": 12
+      "projection_order": 12,
+      "monitoring_target_id": "agricultural-cooperative-savings-insurance-premium-monitoring",
+      "public_burden_id": "agricultural-cooperative-savings-insurance-premium",
+      "canonical_target": {
+        "legal_state_id": "agricultural-cooperative-savings-insurance-premium-legal-state"
+      }
     },
     {
       "tax_id": "agricultural-cooperative-savings-special-charge",
@@ -123,16 +145,23 @@
       "cadence": "monthly",
       "municipal_scope": "national_only",
       "decision": {
-        "official_source_url": "https://laws.e-gov.go.jp/law/348AC0000000053",
         "value_scope": "特別負担の対象会員・年度別決定であり通常保険料へ合算しない",
         "evidence_gap": "特別負担の現行適用有無と年度別決定資料を確認できていない",
         "release_conditions": [
           "特別負担の現行決定・終了状態を確認する",
           "通常保険料との集計関係を定義する"
         ],
-        "recheck_cadence": "annual"
+        "recheck_cadence": "annual",
+        "source_ids": [
+          "manual-laws-e-gov-go-jp-law-348ac0000000053"
+        ]
       },
-      "projection_order": 13
+      "projection_order": 13,
+      "monitoring_target_id": "agricultural-cooperative-savings-special-charge-monitoring",
+      "public_burden_id": "agricultural-cooperative-savings-special-charge",
+      "canonical_target": {
+        "legal_state_id": "agricultural-cooperative-savings-special-charge-legal-state"
+      }
     },
     {
       "tax_id": "asbestos-relief-general-contribution",
@@ -143,16 +172,23 @@
       "cadence": "monthly",
       "municipal_scope": "national_only",
       "decision": {
-        "official_source_url": "https://laws.e-gov.go.jp/law/418AC0000000004",
         "value_scope": "労災保険適用事業主等の年度別算定基礎に基づく一般拠出金であり特別拠出金と合算しない",
         "evidence_gap": "現行年度の一般拠出金率、算定基礎および適用期間を一つの公式年度資料へ対応付けていない",
         "release_conditions": [
           "環境再生保全機構等の現行年度資料を特定する",
           "一般拠出金率・算定基礎・期間を抽出する"
         ],
-        "recheck_cadence": "annual"
+        "recheck_cadence": "annual",
+        "source_ids": [
+          "manual-laws-e-gov-go-jp-law-418ac0000000004"
+        ]
       },
-      "projection_order": 36
+      "projection_order": 36,
+      "monitoring_target_id": "asbestos-relief-general-contribution-monitoring",
+      "public_burden_id": "asbestos-relief-general-contribution",
+      "canonical_target": {
+        "legal_state_id": "asbestos-relief-general-contribution-legal-state"
+      }
     },
     {
       "tax_id": "asbestos-relief-special-contribution",
@@ -163,16 +199,23 @@
       "cadence": "monthly",
       "municipal_scope": "national_only",
       "decision": {
-        "official_source_url": "https://www.erca.go.jp/asbestos/kyosyutsu/tokubetsu/index.html",
         "value_scope": "環境大臣が指定する事業主ごとの年度別特別拠出金であり一般拠出金と合算しない",
         "evidence_gap": "指定事業主別の現行通知額、算定方法および適用年度を公開資料から一意に確認できていない",
         "release_conditions": [
           "現行年度の指定事業主別決定資料を特定する",
           "事業主・通知額・算定基礎・年度の行キーを定義する"
         ],
-        "recheck_cadence": "annual"
+        "recheck_cadence": "annual",
+        "source_ids": [
+          "manual-erca-go-jp-asbestos-kyosyutsu-tokubetsu-index-html"
+        ]
       },
-      "projection_order": 37
+      "projection_order": 37,
+      "monitoring_target_id": "asbestos-relief-special-contribution-monitoring",
+      "public_burden_id": "asbestos-relief-special-contribution",
+      "canonical_target": {
+        "legal_state_id": "asbestos-relief-special-contribution-legal-state"
+      }
     },
     {
       "tax_id": "automobile-accident-countermeasure-levy",
@@ -183,16 +226,23 @@
       "cadence": "monthly",
       "municipal_scope": "national_only",
       "decision": {
-        "official_source_url": "https://laws.e-gov.go.jp/law/330AC0000000097",
         "value_scope": "契約区分・車種等に応じる個別賦課であり全国単一値として集計しない",
         "evidence_gap": "現行の契約区分別賦課金表と適用期間を公式資料で一意に対応付けていない",
         "release_conditions": [
           "国土交通省または関係機構の現行賦課金表を特定する",
           "車種・契約区分・適用期間の行キーを定義する"
         ],
-        "recheck_cadence": "annual"
+        "recheck_cadence": "annual",
+        "source_ids": [
+          "manual-laws-e-gov-go-jp-law-330ac0000000097"
+        ]
       },
-      "projection_order": 0
+      "projection_order": 0,
+      "monitoring_target_id": "automobile-accident-countermeasure-levy-monitoring",
+      "public_burden_id": "automobile-accident-countermeasure-levy",
+      "canonical_target": {
+        "legal_state_id": "automobile-accident-countermeasure-levy-legal-state"
+      }
     },
     {
       "tax_id": "automobile-tax",
@@ -202,7 +252,12 @@
       "monitoring_mode": "manual",
       "cadence": "monthly",
       "municipal_scope": "issue_20",
-      "decision": {}
+      "decision": {},
+      "monitoring_target_id": "automobile-tax-monitoring",
+      "public_burden_id": "automobile-tax",
+      "canonical_target": {
+        "legal_state_id": "automobile-tax-legal-state"
+      }
     },
     {
       "tax_id": "automobile-weight-tax",
@@ -213,7 +268,12 @@
       "cadence": "monthly",
       "municipal_scope": "national_only",
       "decision": {},
-      "projection_order": 0
+      "projection_order": 0,
+      "monitoring_target_id": "automobile-weight-tax-monitoring",
+      "public_burden_id": "automobile-weight-tax",
+      "canonical_target": {
+        "legal_state_id": "automobile-weight-tax-legal-state"
+      }
     },
     {
       "tax_id": "aviation-fuel-tax",
@@ -224,7 +284,12 @@
       "cadence": "monthly",
       "municipal_scope": "national_only",
       "decision": {},
-      "projection_order": 1
+      "projection_order": 1,
+      "monitoring_target_id": "aviation-fuel-tax-monitoring",
+      "public_burden_id": "aviation-fuel-tax",
+      "canonical_target": {
+        "legal_state_id": "aviation-fuel-tax-legal-state"
+      }
     },
     {
       "tax_id": "banks-shareholdings-purchase-corporation-contribution",
@@ -235,16 +300,23 @@
       "cadence": "monthly",
       "municipal_scope": "national_only",
       "decision": {
-        "official_source_url": "https://laws.e-gov.go.jp/law/413AC0000000131",
         "value_scope": "当初拠出金と株式等売却時拠出金は納付時点・算定対象が異なり単一値として集計しない",
         "evidence_gap": "機構の現行业務規程と会員別通知額を公開資料へ対応付けていない",
         "release_conditions": [
           "当初拠出金と売却時拠出金の現行規程を特定する",
           "会員・通知・対象取引・期間の安定キーを定義する"
         ],
-        "recheck_cadence": "annual"
+        "recheck_cadence": "annual",
+        "source_ids": [
+          "manual-laws-e-gov-go-jp-law-413ac0000000131"
+        ]
       },
-      "projection_order": 24
+      "projection_order": 24,
+      "monitoring_target_id": "banks-shareholdings-purchase-corporation-contribution-monitoring",
+      "public_burden_id": "banks-shareholdings-purchase-corporation-contribution",
+      "canonical_target": {
+        "legal_state_id": "banks-shareholdings-purchase-corporation-contribution-legal-state"
+      }
     },
     {
       "tax_id": "bathing-tax",
@@ -270,7 +342,12 @@
           ]
         }
       },
-      "projection_order": 0
+      "projection_order": 0,
+      "monitoring_target_id": "bathing-tax-monitoring",
+      "public_burden_id": "bathing-tax",
+      "canonical_target": {
+        "legal_state_id": "bathing-tax-legal-state"
+      }
     },
     {
       "tax_id": "broadband-service-charge",
@@ -281,16 +358,23 @@
       "cadence": "monthly",
       "municipal_scope": "national_only",
       "decision": {
-        "official_source_url": "https://www.tca.or.jp/broadband-universalservice/qa/",
         "value_scope": "事業者の回線数・年度認可単価に基づく負担金であり利用者料金と二重計上しない",
         "evidence_gap": "令和8年度の回線単価、対象回線、徴収時点を一つの公式表へ対応付けていない",
         "release_conditions": [
           "支援機関の年度別回線単価資料を特定する",
           "回線区分・算定時点・期間を定義する"
         ],
-        "recheck_cadence": "annual"
+        "recheck_cadence": "annual",
+        "source_ids": [
+          "manual-tca-or-jp-broadband-universalservice-qa"
+        ]
       },
-      "projection_order": 14
+      "projection_order": 14,
+      "monitoring_target_id": "broadband-service-charge-monitoring",
+      "public_burden_id": "broadband-service-charge",
+      "canonical_target": {
+        "legal_state_id": "broadband-service-charge-legal-state"
+      }
     },
     {
       "tax_id": "business-office-tax",
@@ -316,7 +400,12 @@
           ]
         }
       },
-      "projection_order": 1
+      "projection_order": 1,
+      "monitoring_target_id": "business-office-tax-monitoring",
+      "public_burden_id": "business-office-tax",
+      "canonical_target": {
+        "legal_state_id": "business-office-tax-legal-state"
+      }
     },
     {
       "tax_id": "child-care-contribution",
@@ -350,7 +439,14 @@
           }
         ]
       },
-      "projection_order": 5
+      "projection_order": 5,
+      "monitoring_target_id": "child-care-contribution-monitoring",
+      "public_burden_id": "child-care-contribution",
+      "canonical_target": {
+        "source_fact_ids": [
+          "child-care-contribution-rate"
+        ]
+      }
     },
     {
       "tax_id": "city-planning-tax",
@@ -376,7 +472,12 @@
           ]
         }
       },
-      "projection_order": 2
+      "projection_order": 2,
+      "monitoring_target_id": "city-planning-tax-monitoring",
+      "public_burden_id": "city-planning-tax",
+      "canonical_target": {
+        "legal_state_id": "city-planning-tax-legal-state"
+      }
     },
     {
       "tax_id": "commodity-customer-protection-fund-charge",
@@ -387,16 +488,23 @@
       "cadence": "monthly",
       "municipal_scope": "national_only",
       "decision": {
-        "official_source_url": "https://laws.e-gov.go.jp/law/325AC0000000239",
         "value_scope": "会員・基金業務規程ごとの負担金であり全国単一値として集計しない",
         "evidence_gap": "認可済み業務規程と現行会員別算定資料を確認できていない",
         "release_conditions": [
           "基金の現行业務規程と認可情報を特定する",
           "会員区分・算定基礎・免除条件を定義する"
         ],
-        "recheck_cadence": "annual"
+        "recheck_cadence": "annual",
+        "source_ids": [
+          "manual-laws-e-gov-go-jp-law-325ac0000000239"
+        ]
       },
-      "projection_order": 1
+      "projection_order": 1,
+      "monitoring_target_id": "commodity-customer-protection-fund-charge-monitoring",
+      "public_burden_id": "commodity-customer-protection-fund-charge",
+      "canonical_target": {
+        "legal_state_id": "commodity-customer-protection-fund-charge-legal-state"
+      }
     },
     {
       "tax_id": "common-facilities-tax",
@@ -409,7 +517,12 @@
       "decision": {
         "hold_reason": "水利地益税等との共通節で課税対象・負担者・算定方法が条例へ委任され、国法上の単一値を抽出できない"
       },
-      "projection_order": 3
+      "projection_order": 3,
+      "monitoring_target_id": "common-facilities-tax-monitoring",
+      "public_burden_id": "common-facilities-tax",
+      "canonical_target": {
+        "legal_state_id": "common-facilities-tax-legal-state"
+      }
     },
     {
       "tax_id": "common-utility-tunnel-charge",
@@ -420,16 +533,23 @@
       "cadence": "monthly",
       "municipal_scope": "national_only",
       "decision": {
-        "official_source_url": "https://laws.e-gov.go.jp/law/338AC0000000081",
         "value_scope": "共同溝・占用者・事業計画ごとの負担額であり全国単一値として集計しない",
         "evidence_gap": "個別共同溝の事業費・負担割合・占用関係を示す公式資料が未対応",
         "release_conditions": [
           "対象共同溝と管理主体の安定IDを設計する",
           "個別事業費・負担割合・期間の公式資料を特定する"
         ],
-        "recheck_cadence": "annual"
+        "recheck_cadence": "annual",
+        "source_ids": [
+          "manual-laws-e-gov-go-jp-law-338ac0000000081"
+        ]
       },
-      "projection_order": 2
+      "projection_order": 2,
+      "monitoring_target_id": "common-utility-tunnel-charge-monitoring",
+      "public_burden_id": "common-utility-tunnel-charge",
+      "canonical_target": {
+        "legal_state_id": "common-utility-tunnel-charge-legal-state"
+      }
     },
     {
       "tax_id": "consumption-tax",
@@ -439,7 +559,12 @@
       "monitoring_mode": "automated",
       "cadence": "daily",
       "municipal_scope": "national_only",
-      "decision": {}
+      "decision": {},
+      "monitoring_target_id": "consumption-tax-monitoring",
+      "public_burden_id": "consumption-tax",
+      "canonical_target": {
+        "legal_state_id": "consumption-tax-legal-state"
+      }
     },
     {
       "tax_id": "corporation-tax",
@@ -452,7 +577,12 @@
       "decision": {
         "hold_reason": "納税義務者と複数の課税体系が多数の章に分散しており、単一の共通条文規則では対象区分を安全に確定できない"
       },
-      "projection_order": 2
+      "projection_order": 2,
+      "monitoring_target_id": "corporation-tax-monitoring",
+      "public_burden_id": "corporation-tax",
+      "canonical_target": {
+        "legal_state_id": "corporation-tax-legal-state"
+      }
     },
     {
       "tax_id": "customs-duty",
@@ -465,7 +595,12 @@
       "decision": {
         "hold_reason": "税率が関税法ではなく関税定率法・関税暫定措置法・条約税率・実行関税率表に分散している"
       },
-      "projection_order": 3
+      "projection_order": 3,
+      "monitoring_target_id": "customs-duty-monitoring",
+      "public_burden_id": "customs-duty",
+      "canonical_target": {
+        "legal_state_id": "customs-duty-legal-state"
+      }
     },
     {
       "tax_id": "deposit-insurance-corporation-charge",
@@ -476,16 +611,23 @@
       "cadence": "monthly",
       "municipal_scope": "national_only",
       "decision": {
-        "official_source_url": "https://laws.e-gov.go.jp/law/346AC0000000034",
         "value_scope": "金融機関区分・年度・認可内容に応じる負担金であり単一値として集計しない",
         "evidence_gap": "現行年度の負担金決定と対象金融機関区分を対応付けていない",
         "release_conditions": [
           "預金保険機構の年度決定資料を特定する",
           "対象金融機関・算定基礎・期間を定義する"
         ],
-        "recheck_cadence": "annual"
+        "recheck_cadence": "annual",
+        "source_ids": [
+          "manual-laws-e-gov-go-jp-law-346ac0000000034"
+        ]
       },
-      "projection_order": 15
+      "projection_order": 15,
+      "monitoring_target_id": "deposit-insurance-corporation-charge-monitoring",
+      "public_burden_id": "deposit-insurance-corporation-charge",
+      "canonical_target": {
+        "legal_state_id": "deposit-insurance-corporation-charge-legal-state"
+      }
     },
     {
       "tax_id": "deposit-insurance-corporation-special-charge",
@@ -496,16 +638,23 @@
       "cadence": "monthly",
       "municipal_scope": "national_only",
       "decision": {
-        "official_source_url": "https://laws.e-gov.go.jp/law/346AC0000000034",
         "value_scope": "特定負担の対象金融機関・期間別決定であり通常保険料へ合算しない",
         "evidence_gap": "現行適用有無、対象範囲、終了条件の公式決定を確認できていない",
         "release_conditions": [
           "特定負担の現行状態と決定資料を確認する",
           "通常負担との集計関係を定義する"
         ],
-        "recheck_cadence": "annual"
+        "recheck_cadence": "annual",
+        "source_ids": [
+          "manual-laws-e-gov-go-jp-law-346ac0000000034"
+        ]
       },
-      "projection_order": 16
+      "projection_order": 16,
+      "monitoring_target_id": "deposit-insurance-corporation-special-charge-monitoring",
+      "public_burden_id": "deposit-insurance-corporation-special-charge",
+      "canonical_target": {
+        "legal_state_id": "deposit-insurance-corporation-special-charge-legal-state"
+      }
     },
     {
       "tax_id": "deposit-insurance-premium",
@@ -516,16 +665,23 @@
       "cadence": "monthly",
       "municipal_scope": "national_only",
       "decision": {
-        "official_source_url": "https://www.dic.go.jp/",
         "value_scope": "預金区分・金融機関区分・年度別保険料率であり単一率として集計しない",
         "evidence_gap": "現行年度の料率表と対象預金区分を機械可読に対応付けていない",
         "release_conditions": [
           "預金保険機構の現行保険料率資料を特定する",
           "預金・金融機関区分・期間の行キーを定義する"
         ],
-        "recheck_cadence": "annual"
+        "recheck_cadence": "annual",
+        "source_ids": [
+          "manual-dic-go-jp"
+        ]
       },
-      "projection_order": 17
+      "projection_order": 17,
+      "monitoring_target_id": "deposit-insurance-premium-monitoring",
+      "public_burden_id": "deposit-insurance-premium",
+      "canonical_target": {
+        "legal_state_id": "deposit-insurance-premium-legal-state"
+      }
     },
     {
       "tax_id": "disability-employment-levy",
@@ -559,7 +715,14 @@
           }
         ]
       },
-      "projection_order": 0
+      "projection_order": 0,
+      "monitoring_target_id": "disability-employment-levy-monitoring",
+      "public_burden_id": "disability-employment-levy",
+      "canonical_target": {
+        "source_fact_ids": [
+          "monthly-levy-amount"
+        ]
+      }
     },
     {
       "tax_id": "east-japan-business-rehabilitation-contribution",
@@ -570,16 +733,23 @@
       "cadence": "monthly",
       "municipal_scope": "national_only",
       "decision": {
-        "official_source_url": "https://laws.e-gov.go.jp/law/423AC0100000113",
         "value_scope": "対象金融機関等と年度決定に応じる事業再生支援の負担であり全国単一値として集計しない",
         "evidence_gap": "現行年度の対象者別負担額、算定基礎および決定期間を示す公式資料が未対応",
         "release_conditions": [
           "所管機関の現行年度決定資料を特定する",
           "対象者・算定基礎・額・期間を定義する"
         ],
-        "recheck_cadence": "annual"
+        "recheck_cadence": "annual",
+        "source_ids": [
+          "manual-laws-e-gov-go-jp-law-423ac0100000113"
+        ]
       },
-      "projection_order": 38
+      "projection_order": 38,
+      "monitoring_target_id": "east-japan-business-rehabilitation-contribution-monitoring",
+      "public_burden_id": "east-japan-business-rehabilitation-contribution",
+      "canonical_target": {
+        "legal_state_id": "east-japan-business-rehabilitation-contribution-legal-state"
+      }
     },
     {
       "tax_id": "educational-public-transmission-compensation",
@@ -664,7 +834,17 @@
           }
         ]
       },
-      "projection_order": 1
+      "projection_order": 1,
+      "monitoring_target_id": "educational-public-transmission-compensation-monitoring",
+      "public_burden_id": "educational-public-transmission-compensation",
+      "canonical_target": {
+        "source_fact_ids": [
+          "elementary-school-amount",
+          "high-school-amount",
+          "junior-high-school-amount",
+          "university-amount"
+        ]
+      }
     },
     {
       "tax_id": "electricity-business-compensation-charge",
@@ -675,16 +855,23 @@
       "cadence": "monthly",
       "municipal_scope": "national_only",
       "decision": {
-        "official_source_url": "https://laws.e-gov.go.jp/law/407M50000400077",
         "value_scope": "電気事業者・供給区域・認可原価または個別精算に依存し全国単一値として集計しない",
         "evidence_gap": "正式な負担名称、現行適用条項、事業者別算定・認可資料を一意に確認できていない",
         "release_conditions": [
           "経済産業省の現行認可・算定資料と該当条項を特定する",
           "事業者・区域・算定期間の安定キーを定義する"
         ],
-        "recheck_cadence": "annual"
+        "recheck_cadence": "annual",
+        "source_ids": [
+          "manual-laws-e-gov-go-jp-law-407m50000400077"
+        ]
       },
-      "projection_order": 25
+      "projection_order": 25,
+      "monitoring_target_id": "electricity-business-compensation-charge-monitoring",
+      "public_burden_id": "electricity-business-compensation-charge",
+      "canonical_target": {
+        "legal_state_id": "electricity-business-compensation-charge-legal-state"
+      }
     },
     {
       "tax_id": "employment-insurance-premium",
@@ -841,7 +1028,22 @@
           }
         ]
       },
-      "projection_order": 0
+      "projection_order": 0,
+      "monitoring_target_id": "employment-insurance-premium-monitoring",
+      "public_burden_id": "employment-insurance-premium",
+      "canonical_target": {
+        "source_fact_ids": [
+          "employment-agriculture-employer",
+          "employment-agriculture-total",
+          "employment-agriculture-worker",
+          "employment-construction-employer",
+          "employment-construction-total",
+          "employment-construction-worker",
+          "employment-general-employer",
+          "employment-general-total",
+          "employment-general-worker"
+        ]
+      }
     },
     {
       "tax_id": "enterprise-tax",
@@ -869,7 +1071,12 @@
           ]
         }
       },
-      "projection_order": 4
+      "projection_order": 4,
+      "monitoring_target_id": "enterprise-tax-monitoring",
+      "public_burden_id": "enterprise-tax",
+      "canonical_target": {
+        "legal_state_id": "enterprise-tax-legal-state"
+      }
     },
     {
       "tax_id": "fixed-asset-tax",
@@ -896,7 +1103,12 @@
           ]
         }
       },
-      "projection_order": 5
+      "projection_order": 5,
+      "monitoring_target_id": "fixed-asset-tax-monitoring",
+      "public_burden_id": "fixed-asset-tax",
+      "canonical_target": {
+        "legal_state_id": "fixed-asset-tax-legal-state"
+      }
     },
     {
       "tax_id": "forest-environment-tax",
@@ -909,7 +1121,12 @@
       "decision": {
         "hold_reason": "課税標準・税率・徴収は地方税法の個人住民税制度と一体で、参照法令を追加してから抽出する必要がある"
       },
-      "projection_order": 4
+      "projection_order": 4,
+      "monitoring_target_id": "forest-environment-tax-monitoring",
+      "public_burden_id": "forest-environment-tax",
+      "canonical_target": {
+        "legal_state_id": "forest-environment-tax-legal-state"
+      }
     },
     {
       "tax_id": "fossil-fuel-levy",
@@ -920,7 +1137,6 @@
       "cadence": "monthly",
       "municipal_scope": "national_only",
       "decision": {
-        "official_source_url": "https://laws.e-gov.go.jp/law/505AC0000000032",
         "value_scope": "化石燃料採取者等が原油等のCO2排出量に年度単価を乗じて負担する施行前の賦課金であり現行負担へ集計しない",
         "evidence_gap": "令和10年度からの徴収は法律で確定しているが、初年度単価を定める政令と具体的な徴収日は未公表",
         "release_conditions": [
@@ -935,37 +1151,45 @@
             "raw": "令和五年五月十九日公布",
             "precision": "exact_date",
             "certainty": "enacted",
-            "source_url": "https://laws.e-gov.go.jp/law/505AC0000000032"
+            "source_id": "manual-laws-e-gov-go-jp-law-505ac0000000032"
           },
           "enforcement": {
             "value": null,
             "raw": "化石燃料賦課金関係規定の施行日は附則・政令の再確認が必要",
             "precision": "unknown",
             "certainty": "unknown",
-            "source_url": "https://laws.e-gov.go.jp/law/505AC0000000032"
+            "source_id": "manual-laws-e-gov-go-jp-law-505ac0000000032"
           },
           "application_start": {
             "value": "2028-04-01",
             "raw": "令和十年度から",
             "precision": "fiscal_year",
             "certainty": "enacted",
-            "source_url": "https://laws.e-gov.go.jp/law/505AC0000000032"
+            "source_id": "manual-laws-e-gov-go-jp-law-505ac0000000032"
           },
           "collection_start": {
             "value": "2028-04-01",
             "raw": "令和十年度から一定の期間ごとに徴収",
             "precision": "fiscal_year",
             "certainty": "enacted",
-            "source_url": "https://laws.e-gov.go.jp/law/505AC0000000032"
+            "source_id": "manual-laws-e-gov-go-jp-law-505ac0000000032"
           },
           "release_events": [
             "enforcement_reached",
             "first_unit_price_published"
           ],
           "next_review_on": "2027-04-01"
-        }
+        },
+        "source_ids": [
+          "manual-laws-e-gov-go-jp-law-505ac0000000032"
+        ]
       },
-      "projection_order": 49
+      "projection_order": 49,
+      "monitoring_target_id": "fossil-fuel-levy-monitoring",
+      "public_burden_id": "fossil-fuel-levy",
+      "canonical_target": {
+        "legal_state_id": "fossil-fuel-levy-legal-state"
+      }
     },
     {
       "tax_id": "gasoline-tax",
@@ -976,7 +1200,12 @@
       "cadence": "monthly",
       "municipal_scope": "national_only",
       "decision": {},
-      "projection_order": 5
+      "projection_order": 5,
+      "monitoring_target_id": "gasoline-tax-monitoring",
+      "public_burden_id": "gasoline-tax",
+      "canonical_target": {
+        "legal_state_id": "gasoline-tax-legal-state"
+      }
     },
     {
       "tax_id": "golf-course-utilization-tax",
@@ -1002,7 +1231,12 @@
           ]
         }
       },
-      "projection_order": 6
+      "projection_order": 6,
+      "monitoring_target_id": "golf-course-utilization-tax-monitoring",
+      "public_burden_id": "golf-course-utilization-tax",
+      "canonical_target": {
+        "legal_state_id": "golf-course-utilization-tax-legal-state"
+      }
     },
     {
       "tax_id": "gx-specified-business-charge",
@@ -1013,7 +1247,6 @@
       "cadence": "monthly",
       "municipal_scope": "national_only",
       "decision": {
-        "official_source_url": "https://laws.e-gov.go.jp/law/505AC0000000032",
         "value_scope": "特定事業者の発電事業に係る排出枠入札で決まる施行前の負担金であり化石燃料賦課金へ合算しない",
         "evidence_gap": "令和15年度からの徴収は法律で確定しているが、初回入札、単価、対象期間および具体的徴収日は未公表",
         "release_conditions": [
@@ -1028,37 +1261,45 @@
             "raw": "令和五年五月十九日公布",
             "precision": "exact_date",
             "certainty": "enacted",
-            "source_url": "https://laws.e-gov.go.jp/law/505AC0000000032"
+            "source_id": "manual-laws-e-gov-go-jp-law-505ac0000000032"
           },
           "enforcement": {
             "value": null,
             "raw": "特定事業者負担金関係規定の施行日は附則・政令の再確認が必要",
             "precision": "unknown",
             "certainty": "unknown",
-            "source_url": "https://laws.e-gov.go.jp/law/505AC0000000032"
+            "source_id": "manual-laws-e-gov-go-jp-law-505ac0000000032"
           },
           "application_start": {
             "value": "2033-04-01",
             "raw": "令和十五年度から",
             "precision": "fiscal_year",
             "certainty": "enacted",
-            "source_url": "https://laws.e-gov.go.jp/law/505AC0000000032"
+            "source_id": "manual-laws-e-gov-go-jp-law-505ac0000000032"
           },
           "collection_start": {
             "value": "2033-04-01",
             "raw": "令和十五年度から一定の期間ごとに徴収",
             "precision": "fiscal_year",
             "certainty": "enacted",
-            "source_url": "https://laws.e-gov.go.jp/law/505AC0000000032"
+            "source_id": "manual-laws-e-gov-go-jp-law-505ac0000000032"
           },
           "release_events": [
             "enforcement_reached",
             "first_unit_price_published"
           ],
           "next_review_on": "2032-04-01"
-        }
+        },
+        "source_ids": [
+          "manual-laws-e-gov-go-jp-law-505ac0000000032"
+        ]
       },
-      "projection_order": 50
+      "projection_order": 50,
+      "monitoring_target_id": "gx-specified-business-charge-monitoring",
+      "public_burden_id": "gx-specified-business-charge",
+      "canonical_target": {
+        "legal_state_id": "gx-specified-business-charge-legal-state"
+      }
     },
     {
       "tax_id": "hepatitis-c-special-relief-contribution",
@@ -1069,16 +1310,23 @@
       "cadence": "monthly",
       "municipal_scope": "national_only",
       "decision": {
-        "official_source_url": "https://laws.e-gov.go.jp/law/420AC1000000002",
         "value_scope": "特定製剤の製造業者等に対する個別算定の拠出金であり全国単一値として集計しない",
         "evidence_gap": "現行の対象事業者、通知額、算定根拠および対象期間を示す公開公式資料が未対応",
         "release_conditions": [
           "現行の納付命令または年度決定資料を特定する",
           "事業者・対象製剤・算定額・期間を定義する"
         ],
-        "recheck_cadence": "annual"
+        "recheck_cadence": "annual",
+        "source_ids": [
+          "manual-laws-e-gov-go-jp-law-420ac1000000002"
+        ]
       },
-      "projection_order": 39
+      "projection_order": 39,
+      "monitoring_target_id": "hepatitis-c-special-relief-contribution-monitoring",
+      "public_burden_id": "hepatitis-c-special-relief-contribution",
+      "canonical_target": {
+        "legal_state_id": "hepatitis-c-special-relief-contribution-legal-state"
+      }
     },
     {
       "tax_id": "high-level-waste-disposal-contribution",
@@ -1089,16 +1337,23 @@
       "cadence": "monthly",
       "municipal_scope": "national_only",
       "decision": {
-        "official_source_url": "https://laws.e-gov.go.jp/law/412AC0000000117",
         "value_scope": "発電用原子炉設置者別の発電量・拠出単価・年度通知に基づくためTRU分と合算しない",
         "evidence_gap": "現行年度の拠出単価告示と事業者別通知額を機械可読に対応付けていない",
         "release_conditions": [
           "経済産業省またはNUMOの年度別拠出単価資料を特定する",
           "廃棄物区分・発電量・単価・年度の行キーを定義する"
         ],
-        "recheck_cadence": "annual"
+        "recheck_cadence": "annual",
+        "source_ids": [
+          "manual-laws-e-gov-go-jp-law-412ac0000000117"
+        ]
       },
-      "projection_order": 26
+      "projection_order": 26,
+      "monitoring_target_id": "high-level-waste-disposal-contribution-monitoring",
+      "public_burden_id": "high-level-waste-disposal-contribution",
+      "canonical_target": {
+        "legal_state_id": "high-level-waste-disposal-contribution-legal-state"
+      }
     },
     {
       "tax_id": "hunting-tax",
@@ -1124,7 +1379,12 @@
           ]
         }
       },
-      "projection_order": 7
+      "projection_order": 7,
+      "monitoring_target_id": "hunting-tax-monitoring",
+      "public_burden_id": "hunting-tax",
+      "canonical_target": {
+        "legal_state_id": "hunting-tax-legal-state"
+      }
     },
     {
       "tax_id": "imported-sugar-adjustment-charge",
@@ -1135,16 +1395,23 @@
       "cadence": "monthly",
       "municipal_scope": "national_only",
       "decision": {
-        "official_source_url": "https://laws.e-gov.go.jp/law/340AC0000000109",
         "value_scope": "輸入申告・糖種・時期等に応じる調整金であり単一固定額として集計しない",
         "evidence_gap": "現行の機構売買価格・調整率と適用日を公式資料へ対応付けていない",
         "release_conditions": [
           "農畜産業振興機構の現行算定資料を特定する",
           "糖種・期間・単位を持つ表adapterを整備する"
         ],
-        "recheck_cadence": "monthly"
+        "recheck_cadence": "monthly",
+        "source_ids": [
+          "manual-laws-e-gov-go-jp-law-340ac0000000109"
+        ]
       },
-      "projection_order": 3
+      "projection_order": 3,
+      "monitoring_target_id": "imported-sugar-adjustment-charge-monitoring",
+      "public_burden_id": "imported-sugar-adjustment-charge",
+      "canonical_target": {
+        "legal_state_id": "imported-sugar-adjustment-charge-legal-state"
+      }
     },
     {
       "tax_id": "income-tax",
@@ -1155,7 +1422,12 @@
       "cadence": "monthly",
       "municipal_scope": "national_only",
       "decision": {},
-      "projection_order": 6
+      "projection_order": 6,
+      "monitoring_target_id": "income-tax-monitoring",
+      "public_burden_id": "income-tax",
+      "canonical_target": {
+        "legal_state_id": "income-tax-legal-state"
+      }
     },
     {
       "tax_id": "infection-contribution",
@@ -1206,7 +1478,15 @@
           }
         ]
       },
-      "projection_order": 4
+      "projection_order": 4,
+      "monitoring_target_id": "infection-contribution-monitoring",
+      "public_burden_id": "infection-contribution",
+      "canonical_target": {
+        "source_fact_ids": [
+          "infection-additional-formula",
+          "infection-general-rate"
+        ]
+      }
     },
     {
       "tax_id": "inheritance-and-gift-tax",
@@ -1219,7 +1499,12 @@
       "decision": {
         "hold_reason": "相続税と贈与税で納税義務者・課税価格・税率表が分かれ、制度別selectorのレビューが必要である"
       },
-      "projection_order": 7
+      "projection_order": 7,
+      "monitoring_target_id": "inheritance-and-gift-tax-monitoring",
+      "public_burden_id": "inheritance-and-gift-tax",
+      "canonical_target": {
+        "legal_state_id": "inheritance-and-gift-tax-legal-state"
+      }
     },
     {
       "tax_id": "international-oil-pollution-fund-annual-contribution",
@@ -1230,16 +1515,23 @@
       "cadence": "monthly",
       "municipal_scope": "national_only",
       "decision": {
-        "official_source_url": "https://laws.e-gov.go.jp/law/350AC0000000095",
         "value_scope": "国際基金の年度通知・拠出油量・納付者別算定であり国内単一額として集計しない",
         "evidence_gap": "国際基金の現行年度通知と国内納付者の対象油量を対応付けていない",
         "release_conditions": [
           "国際基金の公式年次通知を特定する",
           "基金・年度・油種・数量・通貨単位を定義する"
         ],
-        "recheck_cadence": "annual"
+        "recheck_cadence": "annual",
+        "source_ids": [
+          "manual-laws-e-gov-go-jp-law-350ac0000000095"
+        ]
       },
-      "projection_order": 18
+      "projection_order": 18,
+      "monitoring_target_id": "international-oil-pollution-fund-annual-contribution-monitoring",
+      "public_burden_id": "international-oil-pollution-fund-annual-contribution",
+      "canonical_target": {
+        "legal_state_id": "international-oil-pollution-fund-annual-contribution-legal-state"
+      }
     },
     {
       "tax_id": "international-tourist-tax",
@@ -1252,7 +1544,12 @@
       "decision": {
         "hold_reason": "国際観光旅客等・出国・船舶航空会社の区分を含む条文名が共通規則と一致せず、専用selectorのレビューが必要である"
       },
-      "projection_order": 8
+      "projection_order": 8,
+      "monitoring_target_id": "international-tourist-tax-monitoring",
+      "public_burden_id": "international-tourist-tax",
+      "canonical_target": {
+        "legal_state_id": "international-tourist-tax-legal-state"
+      }
     },
     {
       "tax_id": "investor-protection-fund-charge",
@@ -1263,16 +1560,23 @@
       "cadence": "monthly",
       "municipal_scope": "national_only",
       "decision": {
-        "official_source_url": "https://laws.e-gov.go.jp/law/323AC0000000025",
         "value_scope": "基金会員・業務規程ごとの負担金であり全国単一値として集計しない",
         "evidence_gap": "認可済み業務規程と現行会員別算定資料を確認できていない",
         "release_conditions": [
           "基金の現行业務規程と認可情報を特定する",
           "会員区分・算定基礎・期間を定義する"
         ],
-        "recheck_cadence": "annual"
+        "recheck_cadence": "annual",
+        "source_ids": [
+          "manual-laws-e-gov-go-jp-law-323ac0000000025"
+        ]
       },
-      "projection_order": 4
+      "projection_order": 4,
+      "monitoring_target_id": "investor-protection-fund-charge-monitoring",
+      "public_burden_id": "investor-protection-fund-charge",
+      "canonical_target": {
+        "legal_state_id": "investor-protection-fund-charge-legal-state"
+      }
     },
     {
       "tax_id": "irrigation-water-facility-charge",
@@ -1283,16 +1587,23 @@
       "cadence": "monthly",
       "municipal_scope": "national_only",
       "decision": {
-        "official_source_url": "https://laws.e-gov.go.jp/law/414AC0000000182",
         "value_scope": "特定施設・かんがい利用者・事業費配賦ごとの負担であり施設横断の単一値として集計しない",
         "evidence_gap": "水資源機構の施設別事業計画、負担割合、納付期間を対応付けていない",
         "release_conditions": [
           "対象施設と利用者の安定IDを設計する",
           "施設別計画・費用・配賦割合・期間の公式資料を特定する"
         ],
-        "recheck_cadence": "annual"
+        "recheck_cadence": "annual",
+        "source_ids": [
+          "manual-laws-e-gov-go-jp-law-414ac0000000182"
+        ]
       },
-      "projection_order": 27
+      "projection_order": 27,
+      "monitoring_target_id": "irrigation-water-facility-charge-monitoring",
+      "public_burden_id": "irrigation-water-facility-charge",
+      "canonical_target": {
+        "legal_state_id": "irrigation-water-facility-charge-legal-state"
+      }
     },
     {
       "tax_id": "library-public-transmission-compensation",
@@ -1303,16 +1614,23 @@
       "cadence": "monthly",
       "municipal_scope": "national_only",
       "decision": {
-        "official_source_url": "https://www.bunka.go.jp/koho_hodo_oshirase/hodohappyo/pdf/93860201_01.pdf",
         "value_scope": "資料種別・送信方法・ページ数等による認可料金であり単一額として集計しない",
         "evidence_gap": "認可料金表の全区分と現行改訂状態を機械可読に対応付けていない",
         "release_conditions": [
           "文化庁認可資料と指定管理団体の現行規程を照合する",
           "資料種別・送信方法・数量の行キーを定義する"
         ],
-        "recheck_cadence": "annual"
+        "recheck_cadence": "annual",
+        "source_ids": [
+          "manual-bunka-go-jp-koho-hodo-oshirase-hodohappyo-pdf-93860201-01-pdf"
+        ]
       },
-      "projection_order": 5
+      "projection_order": 5,
+      "monitoring_target_id": "library-public-transmission-compensation-monitoring",
+      "public_burden_id": "library-public-transmission-compensation",
+      "canonical_target": {
+        "legal_state_id": "library-public-transmission-compensation-legal-state"
+      }
     },
     {
       "tax_id": "light-motor-vehicle-tax",
@@ -1338,7 +1656,12 @@
           ]
         }
       },
-      "projection_order": 8
+      "projection_order": 8,
+      "monitoring_target_id": "light-motor-vehicle-tax-monitoring",
+      "public_burden_id": "light-motor-vehicle-tax",
+      "canonical_target": {
+        "legal_state_id": "light-motor-vehicle-tax-legal-state"
+      }
     },
     {
       "tax_id": "light-oil-delivery-tax",
@@ -1364,7 +1687,12 @@
           ]
         }
       },
-      "projection_order": 9
+      "projection_order": 9,
+      "monitoring_target_id": "light-oil-delivery-tax-monitoring",
+      "public_burden_id": "light-oil-delivery-tax",
+      "canonical_target": {
+        "legal_state_id": "light-oil-delivery-tax-legal-state"
+      }
     },
     {
       "tax_id": "liquor-tax",
@@ -1375,7 +1703,12 @@
       "cadence": "monthly",
       "municipal_scope": "national_only",
       "decision": {},
-      "projection_order": 9
+      "projection_order": 9,
+      "monitoring_target_id": "liquor-tax-monitoring",
+      "public_burden_id": "liquor-tax",
+      "canonical_target": {
+        "legal_state_id": "liquor-tax-legal-state"
+      }
     },
     {
       "tax_id": "local-consumption-tax",
@@ -1401,7 +1734,12 @@
           ]
         }
       },
-      "projection_order": 10
+      "projection_order": 10,
+      "monitoring_target_id": "local-consumption-tax-monitoring",
+      "public_burden_id": "local-consumption-tax",
+      "canonical_target": {
+        "legal_state_id": "local-consumption-tax-legal-state"
+      }
     },
     {
       "tax_id": "local-corporation-tax",
@@ -1414,7 +1752,12 @@
       "decision": {
         "hold_reason": "課税標準が法人税額との参照計算であり、法人税adapterとの参照整合を設計してから抽出する必要がある"
       },
-      "projection_order": 10
+      "projection_order": 10,
+      "monitoring_target_id": "local-corporation-tax-monitoring",
+      "public_burden_id": "local-corporation-tax",
+      "canonical_target": {
+        "legal_state_id": "local-corporation-tax-legal-state"
+      }
     },
     {
       "tax_id": "local-gasoline-tax",
@@ -1425,7 +1768,12 @@
       "cadence": "monthly",
       "municipal_scope": "national_only",
       "decision": {},
-      "projection_order": 11
+      "projection_order": 11,
+      "monitoring_target_id": "local-gasoline-tax-monitoring",
+      "public_burden_id": "local-gasoline-tax",
+      "canonical_target": {
+        "legal_state_id": "local-gasoline-tax-legal-state"
+      }
     },
     {
       "tax_id": "local-tobacco-tax",
@@ -1455,7 +1803,12 @@
           ]
         }
       },
-      "projection_order": 11
+      "projection_order": 11,
+      "monitoring_target_id": "local-tobacco-tax-monitoring",
+      "public_burden_id": "local-tobacco-tax",
+      "canonical_target": {
+        "legal_state_id": "local-tobacco-tax-legal-state"
+      }
     },
     {
       "tax_id": "long-term-care-insurance-premium",
@@ -1469,7 +1822,12 @@
         "hold_reason": "第1号は市町村・所得段階別、第2号は加入医療保険別であり、全国一律値として扱わず保険者別網羅を別Issueで設計する必要がある",
         "follow_up_issue": 53
       },
-      "projection_order": 3
+      "projection_order": 3,
+      "monitoring_target_id": "long-term-care-insurance-premium-monitoring",
+      "public_burden_id": "long-term-care-insurance-premium",
+      "canonical_target": {
+        "legal_state_id": "long-term-care-insurance-premium-legal-state"
+      }
     },
     {
       "tax_id": "medical-insurance-premium",
@@ -1483,7 +1841,12 @@
         "hold_reason": "健康保険・国民健康保険・後期高齢者医療を束ねた総称で、保険者・都道府県・市町村別の率を単一の全国値として安全に抽出できない",
         "follow_up_issue": 53
       },
-      "projection_order": 2
+      "projection_order": 2,
+      "monitoring_target_id": "medical-insurance-premium-monitoring",
+      "public_burden_id": "medical-insurance-premium",
+      "canonical_target": {
+        "legal_state_id": "medical-insurance-premium-legal-state"
+      }
     },
     {
       "tax_id": "minamata-specified-business-compensation-levy",
@@ -1494,16 +1857,23 @@
       "cadence": "monthly",
       "municipal_scope": "national_only",
       "decision": {
-        "official_source_url": "https://laws.e-gov.go.jp/law/421AC1000000081",
         "value_scope": "指定事業者と補償対象に基づく個別負担であり全国単一値として集計しない",
         "evidence_gap": "現行年度の指定事業者別負担額、算定基礎および納付期間を示す公式資料が未対応",
         "release_conditions": [
           "環境省等の現行決定資料を特定する",
           "指定事業者・算定基礎・額・期間を定義する"
         ],
-        "recheck_cadence": "annual"
+        "recheck_cadence": "annual",
+        "source_ids": [
+          "manual-laws-e-gov-go-jp-law-421ac1000000081"
+        ]
       },
-      "projection_order": 40
+      "projection_order": 40,
+      "monitoring_target_id": "minamata-specified-business-compensation-levy-monitoring",
+      "public_burden_id": "minamata-specified-business-compensation-levy",
+      "canonical_target": {
+        "legal_state_id": "minamata-specified-business-compensation-levy-legal-state"
+      }
     },
     {
       "tax_id": "mineral-product-tax",
@@ -1529,7 +1899,12 @@
           ]
         }
       },
-      "projection_order": 12
+      "projection_order": 12,
+      "monitoring_target_id": "mineral-product-tax-monitoring",
+      "public_burden_id": "mineral-product-tax",
+      "canonical_target": {
+        "legal_state_id": "mineral-product-tax-legal-state"
+      }
     },
     {
       "tax_id": "mining-area-tax",
@@ -1555,7 +1930,12 @@
           ]
         }
       },
-      "projection_order": 13
+      "projection_order": 13,
+      "monitoring_target_id": "mining-area-tax-monitoring",
+      "public_burden_id": "mining-area-tax",
+      "canonical_target": {
+        "legal_state_id": "mining-area-tax-legal-state"
+      }
     },
     {
       "tax_id": "mining-pollution-prevention-fund-contribution",
@@ -1566,16 +1946,23 @@
       "cadence": "monthly",
       "municipal_scope": "national_only",
       "decision": {
-        "official_source_url": "https://laws.e-gov.go.jp/law/348AC0000000026",
         "value_scope": "鉱山・鉱害防止事業・積立計画ごとの拠出であり全国単一値として集計しない",
         "evidence_gap": "個別鉱山の積立計画、必要額、拠出期間の公式資料が未対応",
         "release_conditions": [
           "鉱山・事業者・積立計画の安定IDを設計する",
           "個別計画の額・算式・期間を特定する"
         ],
-        "recheck_cadence": "annual"
+        "recheck_cadence": "annual",
+        "source_ids": [
+          "manual-laws-e-gov-go-jp-law-348ac0000000026"
+        ]
       },
-      "projection_order": 19
+      "projection_order": 19,
+      "monitoring_target_id": "mining-pollution-prevention-fund-contribution-monitoring",
+      "public_burden_id": "mining-pollution-prevention-fund-contribution",
+      "canonical_target": {
+        "legal_state_id": "mining-pollution-prevention-fund-contribution-legal-state"
+      }
     },
     {
       "tax_id": "multipurpose-dam-charge",
@@ -1586,16 +1973,23 @@
       "cadence": "monthly",
       "municipal_scope": "national_only",
       "decision": {
-        "official_source_url": "https://laws.e-gov.go.jp/law/332CO0000000188",
         "value_scope": "ダム・使用権設定予定者・用途別の事業費負担であり全国単一値として集計しない",
         "evidence_gap": "個別ダムの事業費、負担割合、撤退精算等を示す公式資料が未対応",
         "release_conditions": [
           "ダムと使用権者の安定IDを設計する",
           "個別事業費・負担割合・期間の公式資料を特定する"
         ],
-        "recheck_cadence": "annual"
+        "recheck_cadence": "annual",
+        "source_ids": [
+          "manual-laws-e-gov-go-jp-law-332co0000000188"
+        ]
       },
-      "projection_order": 6
+      "projection_order": 6,
+      "monitoring_target_id": "multipurpose-dam-charge-monitoring",
+      "public_burden_id": "multipurpose-dam-charge",
+      "canonical_target": {
+        "legal_state_id": "multipurpose-dam-charge-legal-state"
+      }
     },
     {
       "tax_id": "national-health-insurance-tax",
@@ -1608,7 +2002,12 @@
       "decision": {
         "hold_reason": "所得割・資産割・被保険者均等割等の組合せと税率が条例で定まり、国法上の限度額だけでは実適用値にならない"
       },
-      "projection_order": 14
+      "projection_order": 14,
+      "monitoring_target_id": "national-health-insurance-tax-monitoring",
+      "public_burden_id": "national-health-insurance-tax",
+      "canonical_target": {
+        "legal_state_id": "national-health-insurance-tax-legal-state"
+      }
     },
     {
       "tax_id": "non-statutory-ordinary-tax-category",
@@ -1621,7 +2020,12 @@
       "decision": {
         "hold_reason": "法定外普通税は税目ではなく条例で新設される制度区分であり、自治体別税目と税率はIssue #20の対象である"
       },
-      "projection_order": 15
+      "projection_order": 15,
+      "monitoring_target_id": "non-statutory-ordinary-tax-category-monitoring",
+      "public_burden_id": "non-statutory-ordinary-tax-category",
+      "canonical_target": {
+        "legal_state_id": "non-statutory-ordinary-tax-category-legal-state"
+      }
     },
     {
       "tax_id": "non-statutory-purpose-tax-category",
@@ -1634,7 +2038,12 @@
       "decision": {
         "hold_reason": "法定外目的税は税目ではなく条例で新設される制度区分であり、自治体別税目と税率はIssue #20の対象である"
       },
-      "projection_order": 16
+      "projection_order": 16,
+      "monitoring_target_id": "non-statutory-purpose-tax-category-monitoring",
+      "public_burden_id": "non-statutory-purpose-tax-category",
+      "canonical_target": {
+        "legal_state_id": "non-statutory-purpose-tax-category-legal-state"
+      }
     },
     {
       "tax_id": "nuclear-damage-support-general-charge",
@@ -1645,16 +2054,23 @@
       "cadence": "monthly",
       "municipal_scope": "national_only",
       "decision": {
-        "official_source_url": "https://laws.e-gov.go.jp/law/423AC0000000094",
         "value_scope": "原子力事業者ごとの年度負担金額に基づく一般負担金であり特別負担金と合算しない",
         "evidence_gap": "現行年度の事業者別一般負担金額、算定根拠および認可日を対応付けていない",
         "release_conditions": [
           "機構または経済産業省の現行認可資料を特定する",
           "事業者・一般負担金額・対象年度・認可日を定義する"
         ],
-        "recheck_cadence": "annual"
+        "recheck_cadence": "annual",
+        "source_ids": [
+          "manual-laws-e-gov-go-jp-law-423ac0000000094"
+        ]
       },
-      "projection_order": 41
+      "projection_order": 41,
+      "monitoring_target_id": "nuclear-damage-support-general-charge-monitoring",
+      "public_burden_id": "nuclear-damage-support-general-charge",
+      "canonical_target": {
+        "legal_state_id": "nuclear-damage-support-general-charge-legal-state"
+      }
     },
     {
       "tax_id": "nuclear-damage-support-special-charge",
@@ -1665,16 +2081,23 @@
       "cadence": "monthly",
       "municipal_scope": "national_only",
       "decision": {
-        "official_source_url": "https://laws.e-gov.go.jp/law/423AC0000000094",
         "value_scope": "特別事業計画等に基づく対象事業者の特別負担金であり一般負担金と合算しない",
         "evidence_gap": "現行年度の特別負担金の適用有無、対象事業者、金額および認可資料を対応付けていない",
         "release_conditions": [
           "現行の特別事業計画または認可資料を特定する",
           "対象事業者・金額・対象年度・一般負担金との関係を定義する"
         ],
-        "recheck_cadence": "annual"
+        "recheck_cadence": "annual",
+        "source_ids": [
+          "manual-laws-e-gov-go-jp-law-423ac0000000094"
+        ]
       },
-      "projection_order": 42
+      "projection_order": 42,
+      "monitoring_target_id": "nuclear-damage-support-special-charge-monitoring",
+      "public_burden_id": "nuclear-damage-support-special-charge",
+      "canonical_target": {
+        "legal_state_id": "nuclear-damage-support-special-charge-legal-state"
+      }
     },
     {
       "tax_id": "nuclear-decommissioning-contribution",
@@ -1685,16 +2108,23 @@
       "cadence": "monthly",
       "municipal_scope": "national_only",
       "decision": {
-        "official_source_url": "https://laws.e-gov.go.jp/law/417AC0000000048",
         "value_scope": "原子力発電事業者等と年度認可額に基づく廃炉拠出金であり再処理拠出金と合算しない",
         "evidence_gap": "現行年度の事業者別拠出金額、算定基礎および認可資料を対応付けていない",
         "release_conditions": [
           "経済産業省等の現行年度認可資料を特定する",
           "事業者・廃炉区分・金額・対象年度を定義する"
         ],
-        "recheck_cadence": "annual"
+        "recheck_cadence": "annual",
+        "source_ids": [
+          "manual-laws-e-gov-go-jp-law-417ac0000000048"
+        ]
       },
-      "projection_order": 43
+      "projection_order": 43,
+      "monitoring_target_id": "nuclear-decommissioning-contribution-monitoring",
+      "public_burden_id": "nuclear-decommissioning-contribution",
+      "canonical_target": {
+        "legal_state_id": "nuclear-decommissioning-contribution-legal-state"
+      }
     },
     {
       "tax_id": "participant-protection-trust-charge",
@@ -1705,16 +2135,23 @@
       "cadence": "monthly",
       "municipal_scope": "national_only",
       "decision": {
-        "official_source_url": "https://laws.e-gov.go.jp/law/413AC0000000075",
         "value_scope": "振替機関・加入者保護信託契約・加入者区分ごとの負担であり全国単一値として集計しない",
         "evidence_gap": "現行信託契約・業務規程と加入者別算定方法を公開資料で確認できていない",
         "release_conditions": [
           "振替機関の現行业務規程と信託契約の公開状態を確認する",
           "加入者区分・算定基礎・期間を定義する"
         ],
-        "recheck_cadence": "annual"
+        "recheck_cadence": "annual",
+        "source_ids": [
+          "manual-laws-e-gov-go-jp-law-413ac0000000075"
+        ]
       },
-      "projection_order": 28
+      "projection_order": 28,
+      "monitoring_target_id": "participant-protection-trust-charge-monitoring",
+      "public_burden_id": "participant-protection-trust-charge",
+      "canonical_target": {
+        "legal_state_id": "participant-protection-trust-charge-legal-state"
+      }
     },
     {
       "tax_id": "pension-insurance-premium",
@@ -1792,7 +2229,15 @@
           }
         ]
       },
-      "projection_order": 1
+      "projection_order": 1,
+      "monitoring_target_id": "pension-insurance-premium-monitoring",
+      "public_burden_id": "pension-insurance-premium",
+      "canonical_target": {
+        "source_fact_ids": [
+          "employees-pension-total",
+          "national-pension-monthly-amount"
+        ]
+      }
     },
     {
       "tax_id": "petroleum-and-coal-tax",
@@ -1803,7 +2248,12 @@
       "cadence": "monthly",
       "municipal_scope": "national_only",
       "decision": {},
-      "projection_order": 12
+      "projection_order": 12,
+      "monitoring_target_id": "petroleum-and-coal-tax-monitoring",
+      "public_burden_id": "petroleum-and-coal-tax",
+      "canonical_target": {
+        "legal_state_id": "petroleum-and-coal-tax-legal-state"
+      }
     },
     {
       "tax_id": "petroleum-gas-tax",
@@ -1814,7 +2264,12 @@
       "cadence": "monthly",
       "municipal_scope": "national_only",
       "decision": {},
-      "projection_order": 13
+      "projection_order": 13,
+      "monitoring_target_id": "petroleum-gas-tax-monitoring",
+      "public_burden_id": "petroleum-gas-tax",
+      "canonical_target": {
+        "legal_state_id": "petroleum-gas-tax-legal-state"
+      }
     },
     {
       "tax_id": "pharmaceutical-safety-contribution",
@@ -1825,16 +2280,23 @@
       "cadence": "monthly",
       "municipal_scope": "national_only",
       "decision": {
-        "official_source_url": "https://www.pmda.go.jp/safety/info-services/safety-contributions/0007.html",
         "value_scope": "医薬品・医療機器・体外診断用医薬品・再生医療等製品の製品区分別率であり一率に統合しない",
         "evidence_gap": "現行手引の全製品区分、係数、率、適用除外を正本componentへ対応付けていない",
         "release_conditions": [
           "PMDA現行手引から全製品区分の算定表を抽出する",
           "製品区分・係数・率・適用期間の行キーを定義する"
         ],
-        "recheck_cadence": "annual"
+        "recheck_cadence": "annual",
+        "source_ids": [
+          "manual-pmda-go-jp-safety-info-services-safety-contributions-0007-html"
+        ]
       },
-      "projection_order": 29
+      "projection_order": 29,
+      "monitoring_target_id": "pharmaceutical-safety-contribution-monitoring",
+      "public_burden_id": "pharmaceutical-safety-contribution",
+      "canonical_target": {
+        "legal_state_id": "pharmaceutical-safety-contribution-legal-state"
+      }
     },
     {
       "tax_id": "policyholder-protection-fund-charge",
@@ -1845,16 +2307,23 @@
       "cadence": "monthly",
       "municipal_scope": "national_only",
       "decision": {
-        "official_source_url": "https://www.fsa.go.jp/ordinary/hoken_hogo/",
         "value_scope": "生命保険・損害保険の各保護機構、会員区分、事業年度別負担であり両機構を統合しない",
         "evidence_gap": "各機構の現行业務規程、認可済み負担金率、会員別算定を対応付けていない",
         "release_conditions": [
           "生命保険と損害保険の制度を別componentへ分割する",
           "各機構の認可済み規程・率・期間を特定する"
         ],
-        "recheck_cadence": "annual"
+        "recheck_cadence": "annual",
+        "source_ids": [
+          "manual-fsa-go-jp-ordinary-hoken-hogo"
+        ]
       },
-      "projection_order": 30
+      "projection_order": 30,
+      "monitoring_target_id": "policyholder-protection-fund-charge-monitoring",
+      "public_burden_id": "policyholder-protection-fund-charge",
+      "canonical_target": {
+        "legal_state_id": "policyholder-protection-fund-charge-legal-state"
+      }
     },
     {
       "tax_id": "pollution-load-levy",
@@ -1865,16 +2334,23 @@
       "cadence": "monthly",
       "municipal_scope": "national_only",
       "decision": {
-        "official_source_url": "https://laws.e-gov.go.jp/law/348AC0000000111",
         "value_scope": "業種・地域・排出量・年度賦課料率に応じるため単一率として集計しない",
         "evidence_gap": "現行年度の業種地域別料率表と排出量算定を対応付けていない",
         "release_conditions": [
           "所管機関の年度賦課料率表を特定する",
           "地域・業種・排出量・期間の行キーを定義する"
         ],
-        "recheck_cadence": "annual"
+        "recheck_cadence": "annual",
+        "source_ids": [
+          "manual-laws-e-gov-go-jp-law-348ac0000000111"
+        ]
       },
-      "projection_order": 20
+      "projection_order": 20,
+      "monitoring_target_id": "pollution-load-levy-monitoring",
+      "public_burden_id": "pollution-load-levy",
+      "canonical_target": {
+        "legal_state_id": "pollution-load-levy-legal-state"
+      }
     },
     {
       "tax_id": "pollution-prevention-project-business-charge",
@@ -1885,16 +2361,23 @@
       "cadence": "monthly",
       "municipal_scope": "national_only",
       "decision": {
-        "official_source_url": "https://laws.e-gov.go.jp/law/345AC0000000133",
         "value_scope": "公害防止事業・原因事業者ごとの費用負担であり全国単一値として集計しない",
         "evidence_gap": "個別事業計画と事業者負担割合の公式決定資料が未対応",
         "release_conditions": [
           "事業計画と負担事業者の安定IDを設計する",
           "個別決定の費用・割合・期間を特定する"
         ],
-        "recheck_cadence": "annual"
+        "recheck_cadence": "annual",
+        "source_ids": [
+          "manual-laws-e-gov-go-jp-law-345ac0000000133"
+        ]
       },
-      "projection_order": 7
+      "projection_order": 7,
+      "monitoring_target_id": "pollution-prevention-project-business-charge-monitoring",
+      "public_burden_id": "pollution-prevention-project-business-charge",
+      "canonical_target": {
+        "legal_state_id": "pollution-prevention-project-business-charge-legal-state"
+      }
     },
     {
       "tax_id": "port-environment-improvement-charge",
@@ -1905,16 +2388,23 @@
       "cadence": "monthly",
       "municipal_scope": "national_only",
       "decision": {
-        "official_source_url": "https://laws.e-gov.go.jp/law/325AC0000000218",
         "value_scope": "港湾・区域・原因事業者ごとの環境整備費負担であり全国単一値として集計しない",
         "evidence_gap": "港湾管理者ごとの負担対象区域・事業費・負担割合が未対応",
         "release_conditions": [
           "港湾管理者と対象事業の安定IDを設計する",
           "管理者の公式決定資料を特定する"
         ],
-        "recheck_cadence": "annual"
+        "recheck_cadence": "annual",
+        "source_ids": [
+          "manual-laws-e-gov-go-jp-law-325ac0000000218"
+        ]
       },
-      "projection_order": 8
+      "projection_order": 8,
+      "monitoring_target_id": "port-environment-improvement-charge-monitoring",
+      "public_burden_id": "port-environment-improvement-charge",
+      "canonical_target": {
+        "legal_state_id": "port-environment-improvement-charge-legal-state"
+      }
     },
     {
       "tax_id": "postal-network-support-contribution",
@@ -1925,16 +2415,23 @@
       "cadence": "monthly",
       "municipal_scope": "national_only",
       "decision": {
-        "official_source_url": "https://laws.e-gov.go.jp/law/417AC0000000101",
         "value_scope": "郵便局ネットワーク支援に係る関連銀行・保険会社別の年度負担であり全国単一値として集計しない",
         "evidence_gap": "現行年度の算定対象者別負担額、算定基礎および認可資料を対応付けていない",
         "release_conditions": [
           "総務省または支援機関の現行認可資料を特定する",
           "対象者・算定基礎・負担額・年度を定義する"
         ],
-        "recheck_cadence": "annual"
+        "recheck_cadence": "annual",
+        "source_ids": [
+          "manual-laws-e-gov-go-jp-law-417ac0000000101"
+        ]
       },
-      "projection_order": 44
+      "projection_order": 44,
+      "monitoring_target_id": "postal-network-support-contribution-monitoring",
+      "public_burden_id": "postal-network-support-contribution",
+      "canonical_target": {
+        "legal_state_id": "postal-network-support-contribution-legal-state"
+      }
     },
     {
       "tax_id": "postal-transport-consignment-compensation",
@@ -1945,16 +2442,23 @@
       "cadence": "monthly",
       "municipal_scope": "national_only",
       "decision": {
-        "official_source_url": "https://laws.e-gov.go.jp/law/324AC0000000284",
         "value_scope": "郵便運送委託契約ごとの補償であり公的負担の全国単一値として集計しない",
         "evidence_gap": "現行委託契約の補償条件と金額は一般公開資料から確認できていない",
         "release_conditions": [
           "日本郵便等の公開契約・調達資料で補償条件を確認する",
           "公開されない場合は非公開契約値としてmanualを維持する"
         ],
-        "recheck_cadence": "annual"
+        "recheck_cadence": "annual",
+        "source_ids": [
+          "manual-laws-e-gov-go-jp-law-324ac0000000284"
+        ]
       },
-      "projection_order": 9
+      "projection_order": 9,
+      "monitoring_target_id": "postal-transport-consignment-compensation-monitoring",
+      "public_burden_id": "postal-transport-consignment-compensation",
+      "canonical_target": {
+        "legal_state_id": "postal-transport-consignment-compensation-legal-state"
+      }
     },
     {
       "tax_id": "power-development-promotion-tax",
@@ -1965,7 +2469,12 @@
       "cadence": "monthly",
       "municipal_scope": "national_only",
       "decision": {},
-      "projection_order": 14
+      "projection_order": 14,
+      "monitoring_target_id": "power-development-promotion-tax-monitoring",
+      "public_burden_id": "power-development-promotion-tax",
+      "canonical_target": {
+        "legal_state_id": "power-development-promotion-tax-legal-state"
+      }
     },
     {
       "tax_id": "private-recording-compensation",
@@ -1976,16 +2485,23 @@
       "cadence": "monthly",
       "municipal_scope": "national_only",
       "decision": {
-        "official_source_url": "https://www.bunka.go.jp/seisaku/chosakuken/kakushushitei/94237803.html",
         "value_scope": "指定機器・媒体と指定管理団体の認可額に依存し単一額として集計しない",
         "evidence_gap": "対象機器・媒体別の現行認可額と指定管理団体の状態を機械可読に対応付けていない",
         "release_conditions": [
           "文化庁の指定対象と認可額を確認する",
           "機器・媒体・率または額・期間の行キーを定義する"
         ],
-        "recheck_cadence": "annual"
+        "recheck_cadence": "annual",
+        "source_ids": [
+          "manual-bunka-go-jp-seisaku-chosakuken-kakushushitei-94237803-html"
+        ]
       },
-      "projection_order": 10
+      "projection_order": 10,
+      "monitoring_target_id": "private-recording-compensation-monitoring",
+      "public_burden_id": "private-recording-compensation",
+      "canonical_target": {
+        "legal_state_id": "private-recording-compensation-legal-state"
+      }
     },
     {
       "tax_id": "railway-barrier-free-fee",
@@ -1996,16 +2512,23 @@
       "cadence": "monthly",
       "municipal_scope": "national_only",
       "decision": {
-        "official_source_url": "https://laws.e-gov.go.jp/law/361AC0000000092",
         "value_scope": "鉄道事業者・運賃区間・認可期間ごとの料金であり全国単一額として集計しない",
         "evidence_gap": "事業者別の現行認可料金表と適用区間を横断管理できていない",
         "release_conditions": [
           "鉄道事業者と運賃区間の安定IDを設計する",
           "事業者別認可料金・開始日・終了日を特定する"
         ],
-        "recheck_cadence": "quarterly"
+        "recheck_cadence": "quarterly",
+        "source_ids": [
+          "manual-laws-e-gov-go-jp-law-361ac0000000092"
+        ]
       },
-      "projection_order": 21
+      "projection_order": 21,
+      "monitoring_target_id": "railway-barrier-free-fee-monitoring",
+      "public_burden_id": "railway-barrier-free-fee",
+      "canonical_target": {
+        "legal_state_id": "railway-barrier-free-fee-legal-state"
+      }
     },
     {
       "tax_id": "real-estate-acquisition-tax",
@@ -2031,7 +2554,12 @@
           ]
         }
       },
-      "projection_order": 17
+      "projection_order": 17,
+      "monitoring_target_id": "real-estate-acquisition-tax-monitoring",
+      "public_burden_id": "real-estate-acquisition-tax",
+      "canonical_target": {
+        "legal_state_id": "real-estate-acquisition-tax-legal-state"
+      }
     },
     {
       "tax_id": "reconstruction-special-income-tax",
@@ -2044,7 +2572,12 @@
       "decision": {
         "hold_reason": "通常の課税物件条文がなく、所得税の課税対象と源泉徴収区分を参照するため専用selectorが必要である"
       },
-      "projection_order": 15
+      "projection_order": 15,
+      "monitoring_target_id": "reconstruction-special-income-tax-monitoring",
+      "public_burden_id": "reconstruction-special-income-tax",
+      "canonical_target": {
+        "legal_state_id": "reconstruction-special-income-tax-legal-state"
+      }
     },
     {
       "tax_id": "regional-economy-revitalization-contribution",
@@ -2055,16 +2588,23 @@
       "cadence": "monthly",
       "municipal_scope": "national_only",
       "decision": {
-        "official_source_url": "https://laws.e-gov.go.jp/law/421AC0000000063",
         "value_scope": "対象金融機関等に対する年度・個別算定の負担であり全国単一値として集計しない",
         "evidence_gap": "現行年度の対象者別負担額、算定基礎および決定資料を確認できていない",
         "release_conditions": [
           "機構または所管府省の現行年度資料を特定する",
           "対象者・算定基礎・金額・期間を定義する"
         ],
-        "recheck_cadence": "annual"
+        "recheck_cadence": "annual",
+        "source_ids": [
+          "manual-laws-e-gov-go-jp-law-421ac0000000063"
+        ]
       },
-      "projection_order": 45
+      "projection_order": 45,
+      "monitoring_target_id": "regional-economy-revitalization-contribution-monitoring",
+      "public_burden_id": "regional-economy-revitalization-contribution",
+      "canonical_target": {
+        "legal_state_id": "regional-economy-revitalization-contribution-legal-state"
+      }
     },
     {
       "tax_id": "registration-and-license-tax",
@@ -2077,7 +2617,12 @@
       "decision": {
         "hold_reason": "課税対象と税率が登記等の区分別表に集約されており、別表の行構造を検証する専用selectorが必要である"
       },
-      "projection_order": 16
+      "projection_order": 16,
+      "monitoring_target_id": "registration-and-license-tax-monitoring",
+      "public_burden_id": "registration-and-license-tax",
+      "canonical_target": {
+        "legal_state_id": "registration-and-license-tax-legal-state"
+      }
     },
     {
       "tax_id": "renewable-energy-surcharge",
@@ -2088,16 +2633,23 @@
       "cadence": "monthly",
       "municipal_scope": "national_only",
       "decision": {
-        "official_source_url": "https://www.meti.go.jp/press/2025/03/20260319004/20260319004.html",
         "value_scope": "電気使用量に全国単価を乗じる年度別賦課金であるが、減免対象を全国単一値として集計しない",
         "evidence_gap": "2026年度4.18円/kWhと2026年5月から2027年4月検針分の適用は確認済みだが、公式ページが自動取得を403で拒否するため安定した機械取得経路がない",
         "release_conditions": [
           "経済産業省の同一内容を返す機械取得可能な公式URLを特定する",
           "単価・開始検針月・終了検針月をライブ取得で再現する"
         ],
-        "recheck_cadence": "annual"
+        "recheck_cadence": "annual",
+        "source_ids": [
+          "manual-meti-go-jp-press-2025-03-20260319004-20260319004-html"
+        ]
       },
-      "projection_order": 46
+      "projection_order": 46,
+      "monitoring_target_id": "renewable-energy-surcharge-monitoring",
+      "public_burden_id": "renewable-energy-surcharge",
+      "canonical_target": {
+        "legal_state_id": "renewable-energy-surcharge-legal-state"
+      }
     },
     {
       "tax_id": "reprocessing-contribution",
@@ -2108,16 +2660,23 @@
       "cadence": "monthly",
       "municipal_scope": "national_only",
       "decision": {
-        "official_source_url": "https://laws.e-gov.go.jp/law/417AC0000000048",
         "value_scope": "原子力発電事業者等と年度認可額に基づく再処理拠出金であり廃炉拠出金と合算しない",
         "evidence_gap": "現行年度の事業者別拠出金額、使用済燃料等の算定基礎および認可資料を対応付けていない",
         "release_conditions": [
           "経済産業省等の現行年度認可資料を特定する",
           "事業者・再処理区分・数量・金額・対象年度を定義する"
         ],
-        "recheck_cadence": "annual"
+        "recheck_cadence": "annual",
+        "source_ids": [
+          "manual-laws-e-gov-go-jp-law-417ac0000000048"
+        ]
       },
-      "projection_order": 47
+      "projection_order": 47,
+      "monitoring_target_id": "reprocessing-contribution-monitoring",
+      "public_burden_id": "reprocessing-contribution",
+      "canonical_target": {
+        "legal_state_id": "reprocessing-contribution-legal-state"
+      }
     },
     {
       "tax_id": "resident-tax",
@@ -2153,7 +2712,12 @@
           ]
         }
       },
-      "projection_order": 18
+      "projection_order": 18,
+      "monitoring_target_id": "resident-tax-monitoring",
+      "public_burden_id": "resident-tax",
+      "canonical_target": {
+        "legal_state_id": "resident-tax-legal-state"
+      }
     },
     {
       "tax_id": "residential-land-development-tax",
@@ -2166,7 +2730,12 @@
       "decision": {
         "hold_reason": "水利地益税等との共通節で課税対象・負担者・算定方法が条例へ委任され、自治体別実値はIssue #20の対象である"
       },
-      "projection_order": 19
+      "projection_order": 19,
+      "monitoring_target_id": "residential-land-development-tax-monitoring",
+      "public_burden_id": "residential-land-development-tax",
+      "canonical_target": {
+        "legal_state_id": "residential-land-development-tax-legal-state"
+      }
     },
     {
       "tax_id": "special-corporate-enterprise-tax",
@@ -2179,7 +2748,12 @@
       "decision": {
         "hold_reason": "納税義務・基準法人所得割額・都道府県別税率が地方税法との参照計算であり、地方税adapterとの境界設計が必要である"
       },
-      "projection_order": 17
+      "projection_order": 17,
+      "monitoring_target_id": "special-corporate-enterprise-tax-monitoring",
+      "public_burden_id": "special-corporate-enterprise-tax",
+      "canonical_target": {
+        "legal_state_id": "special-corporate-enterprise-tax-legal-state"
+      }
     },
     {
       "tax_id": "special-landholding-tax",
@@ -2192,7 +2766,12 @@
       "decision": {
         "hold_reason": "新規課税が停止されている制度であり、本則税率だけを現行の実適用値として監視すると状態を誤認する"
       },
-      "projection_order": 20
+      "projection_order": 20,
+      "monitoring_target_id": "special-landholding-tax-monitoring",
+      "public_burden_id": "special-landholding-tax",
+      "canonical_target": {
+        "legal_state_id": "special-landholding-tax-legal-state"
+      }
     },
     {
       "tax_id": "special-tobacco-tax",
@@ -2203,7 +2782,12 @@
       "cadence": "monthly",
       "municipal_scope": "national_only",
       "decision": {},
-      "projection_order": 18
+      "projection_order": 18,
+      "monitoring_target_id": "special-tobacco-tax-monitoring",
+      "public_burden_id": "special-tobacco-tax",
+      "canonical_target": {
+        "legal_state_id": "special-tobacco-tax-legal-state"
+      }
     },
     {
       "tax_id": "special-tonnage-tax",
@@ -2214,7 +2798,12 @@
       "cadence": "monthly",
       "municipal_scope": "national_only",
       "decision": {},
-      "projection_order": 19
+      "projection_order": 19,
+      "monitoring_target_id": "special-tonnage-tax-monitoring",
+      "public_burden_id": "special-tonnage-tax",
+      "canonical_target": {
+        "legal_state_id": "special-tonnage-tax-legal-state"
+      }
     },
     {
       "tax_id": "specified-pollution-levy",
@@ -2225,16 +2814,23 @@
       "cadence": "monthly",
       "municipal_scope": "national_only",
       "decision": {
-        "official_source_url": "https://laws.e-gov.go.jp/law/348AC0000000111",
         "value_scope": "指定地域・原因物質・事業者別算定であり汚染負荷量賦課金へ合算しない",
         "evidence_gap": "現行の指定範囲、対象事業者、算定資料を対応付けていない",
         "release_conditions": [
           "指定地域・物質・事業者の公式決定を特定する",
           "汚染負荷量賦課金との集計関係を定義する"
         ],
-        "recheck_cadence": "annual"
+        "recheck_cadence": "annual",
+        "source_ids": [
+          "manual-laws-e-gov-go-jp-law-348ac0000000111"
+        ]
       },
-      "projection_order": 22
+      "projection_order": 22,
+      "monitoring_target_id": "specified-pollution-levy-monitoring",
+      "public_burden_id": "specified-pollution-levy",
+      "canonical_target": {
+        "legal_state_id": "specified-pollution-levy-legal-state"
+      }
     },
     {
       "tax_id": "stamp-tax",
@@ -2245,7 +2841,12 @@
       "cadence": "monthly",
       "municipal_scope": "national_only",
       "decision": {},
-      "projection_order": 20
+      "projection_order": 20,
+      "monitoring_target_id": "stamp-tax-monitoring",
+      "public_burden_id": "stamp-tax",
+      "canonical_target": {
+        "legal_state_id": "stamp-tax-legal-state"
+      }
     },
     {
       "tax_id": "supplementary-nuclear-damage-general-charge",
@@ -2256,7 +2857,6 @@
       "cadence": "monthly",
       "municipal_scope": "national_only",
       "decision": {
-        "official_source_url": "https://www.mext.go.jp/a_menu/hyouka/kekka/1421038_00004.htm",
         "value_scope": "原子力事業者が毎年度負担する施行済み一般負担金であり事故発生時の特別負担金と合算しない",
         "evidence_gap": "制度は施行済みだが、現行年度の事業者別算定額と納付日を公開資料へ一意に対応付けていない",
         "release_conditions": [
@@ -2271,36 +2871,44 @@
             "raw": "平成二十六年十一月二十八日公布",
             "precision": "exact_date",
             "certainty": "enacted",
-            "source_url": "https://laws.e-gov.go.jp/law/426AC0000000133"
+            "source_id": "manual-laws-e-gov-go-jp-law-426ac0000000133"
           },
           "enforcement": {
             "value": "2015-04-15",
             "raw": "条約が日本国について効力を生ずる日から施行",
             "precision": "exact_date",
             "certainty": "enacted",
-            "source_url": "https://laws.e-gov.go.jp/law/426AC0000000133"
+            "source_id": "manual-laws-e-gov-go-jp-law-426ac0000000133"
           },
           "application_start": {
             "value": "2015-04-15",
             "raw": "法律施行後、原子力事業者から毎年度徴収",
             "precision": "exact_date",
             "certainty": "enacted",
-            "source_url": "https://www.mext.go.jp/a_menu/hyouka/kekka/1421038_00004.htm"
+            "source_id": "manual-mext-go-jp-a-menu-hyouka-kekka-1421038-00004-htm"
           },
           "collection_start": {
             "value": null,
             "raw": "初回の個別納付日は公開概要から確認できない",
             "precision": "unknown",
             "certainty": "unknown",
-            "source_url": "https://www.mext.go.jp/a_menu/hyouka/kekka/1421038_00004.htm"
+            "source_id": "manual-mext-go-jp-a-menu-hyouka-kekka-1421038-00004-htm"
           },
           "release_events": [
             "annual_amount_approved"
           ],
           "next_review_on": "2027-04-01"
-        }
+        },
+        "source_ids": [
+          "manual-mext-go-jp-a-menu-hyouka-kekka-1421038-00004-htm"
+        ]
       },
-      "projection_order": 51
+      "projection_order": 51,
+      "monitoring_target_id": "supplementary-nuclear-damage-general-charge-monitoring",
+      "public_burden_id": "supplementary-nuclear-damage-general-charge",
+      "canonical_target": {
+        "legal_state_id": "supplementary-nuclear-damage-general-charge-legal-state"
+      }
     },
     {
       "tax_id": "supplementary-nuclear-damage-special-charge",
@@ -2311,7 +2919,6 @@
       "cadence": "monthly",
       "municipal_scope": "national_only",
       "decision": {
-        "official_source_url": "https://www.mext.go.jp/a_menu/hyouka/kekka/1421038_00004.htm",
         "value_scope": "政令基準を超える原子力損害が発生した事業者だけが負担する条件付き負担金であり一般負担金と合算しない",
         "evidence_gap": "制度は施行済みだが、事故条件が発生しない限り全国共通の現行額は存在せず、個別徴収開始日も未確定",
         "release_conditions": [
@@ -2326,37 +2933,45 @@
             "raw": "平成二十六年十一月二十八日公布",
             "precision": "exact_date",
             "certainty": "enacted",
-            "source_url": "https://laws.e-gov.go.jp/law/426AC0000000133"
+            "source_id": "manual-laws-e-gov-go-jp-law-426ac0000000133"
           },
           "enforcement": {
             "value": "2015-04-15",
             "raw": "条約が日本国について効力を生ずる日から施行",
             "precision": "exact_date",
             "certainty": "enacted",
-            "source_url": "https://laws.e-gov.go.jp/law/426AC0000000133"
+            "source_id": "manual-laws-e-gov-go-jp-law-426ac0000000133"
           },
           "application_start": {
             "value": "2015-04-15",
             "raw": "法律施行後、政令基準を超える場合に徴収",
             "precision": "exact_date",
             "certainty": "enacted",
-            "source_url": "https://www.mext.go.jp/a_menu/hyouka/kekka/1421038_00004.htm"
+            "source_id": "manual-mext-go-jp-a-menu-hyouka-kekka-1421038-00004-htm"
           },
           "collection_start": {
             "value": null,
             "raw": "政令基準を超える原子力損害の発生時に個別決定",
             "precision": "condition_based",
             "certainty": "enacted",
-            "source_url": "https://www.mext.go.jp/a_menu/hyouka/kekka/1421038_00004.htm"
+            "source_id": "manual-mext-go-jp-a-menu-hyouka-kekka-1421038-00004-htm"
           },
           "release_events": [
             "triggering_damage_confirmed",
             "annual_amount_approved"
           ],
           "next_review_on": "2027-04-01"
-        }
+        },
+        "source_ids": [
+          "manual-mext-go-jp-a-menu-hyouka-kekka-1421038-00004-htm"
+        ]
       },
-      "projection_order": 52
+      "projection_order": 52,
+      "monitoring_target_id": "supplementary-nuclear-damage-special-charge-monitoring",
+      "public_burden_id": "supplementary-nuclear-damage-special-charge",
+      "canonical_target": {
+        "legal_state_id": "supplementary-nuclear-damage-special-charge-legal-state"
+      }
     },
     {
       "tax_id": "supplementary-oil-pollution-fund-annual-contribution",
@@ -2367,16 +2982,23 @@
       "cadence": "monthly",
       "municipal_scope": "national_only",
       "decision": {
-        "official_source_url": "https://laws.e-gov.go.jp/law/350AC0000000095",
         "value_scope": "追加基金の年度通知・拠出油量・納付者別算定であり本基金拠出へ合算しない",
         "evidence_gap": "追加基金の現行年度通知と国内納付者の対象油量を対応付けていない",
         "release_conditions": [
           "追加基金の公式年次通知を特定する",
           "本基金との集計関係、年度、数量、通貨単位を定義する"
         ],
-        "recheck_cadence": "annual"
+        "recheck_cadence": "annual",
+        "source_ids": [
+          "manual-laws-e-gov-go-jp-law-350ac0000000095"
+        ]
       },
-      "projection_order": 23
+      "projection_order": 23,
+      "monitoring_target_id": "supplementary-oil-pollution-fund-annual-contribution-monitoring",
+      "public_burden_id": "supplementary-oil-pollution-fund-annual-contribution",
+      "canonical_target": {
+        "legal_state_id": "supplementary-oil-pollution-fund-annual-contribution-legal-state"
+      }
     },
     {
       "tax_id": "taxi-center-business-charge",
@@ -2387,16 +3009,23 @@
       "cadence": "monthly",
       "municipal_scope": "national_only",
       "decision": {
-        "official_source_url": "https://laws.e-gov.go.jp/law/421AC0000000064",
         "value_scope": "登録タクシー事業者・地域・台数等に応じるセンター事業負担金であり全国単一値として集計しない",
         "evidence_gap": "指定地域のセンターごとの現行負担金表、対象事業者区分および適用期間が未対応",
         "release_conditions": [
           "各指定登録機関の現行負担金規程と認可情報を特定する",
           "地域・事業者区分・台数・額・期間の行キーを定義する"
         ],
-        "recheck_cadence": "annual"
+        "recheck_cadence": "annual",
+        "source_ids": [
+          "manual-laws-e-gov-go-jp-law-421ac0000000064"
+        ]
       },
-      "projection_order": 48
+      "projection_order": 48,
+      "monitoring_target_id": "taxi-center-business-charge-monitoring",
+      "public_burden_id": "taxi-center-business-charge",
+      "canonical_target": {
+        "legal_state_id": "taxi-center-business-charge-legal-state"
+      }
     },
     {
       "tax_id": "telephone-accessibility-charge",
@@ -2436,28 +3065,28 @@
             "raw": "令和二年六月十二日公布",
             "precision": "exact_date",
             "certainty": "enacted",
-            "source_url": "https://laws.e-gov.go.jp/law/502AC0000000053"
+            "source_id": "manual-laws-e-gov-go-jp-law-502ac0000000053"
           },
           "enforcement": {
             "value": "2020-12-01",
             "raw": "令和2年12月1日に施行",
             "precision": "exact_date",
             "certainty": "official_current",
-            "source_url": "https://www.tca.or.jp/telephonerelay_service_support/qa/"
+            "source_id": "tca-telephone-relay-number-price-2026"
           },
           "application_start": {
             "value": "2020-12-01",
             "raw": "令和2年12月1日に制度の根拠法を施行",
             "precision": "exact_date",
             "certainty": "official_current",
-            "source_url": "https://www.tca.or.jp/telephonerelay_service_support/qa/"
+            "source_id": "tca-telephone-relay-number-price-2026"
           },
           "collection_start": {
             "value": null,
             "raw": "初回の負担金徴収日はこのsourceでは確認できない",
             "precision": "unknown",
             "certainty": "unknown",
-            "source_url": "https://www.tca.or.jp/telephonerelay_service_support/qa/"
+            "source_id": "tca-telephone-relay-number-price-2026"
           },
           "release_events": [
             "annual_amount_approved"
@@ -2465,7 +3094,14 @@
           "next_review_on": "2027-02-01"
         }
       },
-      "projection_order": 6
+      "projection_order": 6,
+      "monitoring_target_id": "telephone-accessibility-charge-monitoring",
+      "public_burden_id": "telephone-accessibility-charge",
+      "canonical_target": {
+        "source_fact_ids": [
+          "telephone-relay-number-price"
+        ]
+      }
     },
     {
       "tax_id": "tobacco-tax",
@@ -2476,7 +3112,12 @@
       "cadence": "monthly",
       "municipal_scope": "national_only",
       "decision": {},
-      "projection_order": 21
+      "projection_order": 21,
+      "monitoring_target_id": "tobacco-tax-monitoring",
+      "public_burden_id": "tobacco-tax",
+      "canonical_target": {
+        "legal_state_id": "tobacco-tax-legal-state"
+      }
     },
     {
       "tax_id": "tonnage-tax",
@@ -2487,7 +3128,12 @@
       "cadence": "monthly",
       "municipal_scope": "national_only",
       "decision": {},
-      "projection_order": 22
+      "projection_order": 22,
+      "monitoring_target_id": "tonnage-tax-monitoring",
+      "public_burden_id": "tonnage-tax",
+      "canonical_target": {
+        "legal_state_id": "tonnage-tax-legal-state"
+      }
     },
     {
       "tax_id": "tru-waste-disposal-contribution",
@@ -2498,16 +3144,23 @@
       "cadence": "monthly",
       "municipal_scope": "national_only",
       "decision": {
-        "official_source_url": "https://laws.e-gov.go.jp/law/412AC0000000117",
         "value_scope": "TRU廃棄物区分・発生量・拠出単価・年度通知に基づくため高レベル分と合算しない",
         "evidence_gap": "現行年度のTRU廃棄物向け拠出単価と事業者別通知を機械可読に対応付けていない",
         "release_conditions": [
           "TRU廃棄物に対応する年度別公式算定資料を特定する",
           "廃棄物区分・数量・単価・年度の行キーを定義する"
         ],
-        "recheck_cadence": "annual"
+        "recheck_cadence": "annual",
+        "source_ids": [
+          "manual-laws-e-gov-go-jp-law-412ac0000000117"
+        ]
       },
-      "projection_order": 31
+      "projection_order": 31,
+      "monitoring_target_id": "tru-waste-disposal-contribution-monitoring",
+      "public_burden_id": "tru-waste-disposal-contribution",
+      "canonical_target": {
+        "legal_state_id": "tru-waste-disposal-contribution-legal-state"
+      }
     },
     {
       "tax_id": "universal-service-fee",
@@ -2541,7 +3194,14 @@
           }
         ]
       },
-      "projection_order": 2
+      "projection_order": 2,
+      "monitoring_target_id": "universal-service-fee-monitoring",
+      "public_burden_id": "universal-service-fee",
+      "canonical_target": {
+        "source_fact_ids": [
+          "universal-service-number-price"
+        ]
+      }
     },
     {
       "tax_id": "utility-tunnel-management-charge",
@@ -2552,16 +3212,23 @@
       "cadence": "monthly",
       "municipal_scope": "national_only",
       "decision": {
-        "official_source_url": "https://laws.e-gov.go.jp/law/407AC0000000039",
         "value_scope": "電線共同溝・道路管理者・占用者別の管理費用負担であり他の建設・占用負担へ合算しない",
         "evidence_gap": "個別共同溝の管理計画、管理費、占用者別配賦資料が未対応",
         "release_conditions": [
           "共同溝・道路管理者・占用者の安定IDを設計する",
           "管理計画・費用・配賦割合・期間の公式資料を特定する"
         ],
-        "recheck_cadence": "annual"
+        "recheck_cadence": "annual",
+        "source_ids": [
+          "manual-laws-e-gov-go-jp-law-407ac0000000039"
+        ]
       },
-      "projection_order": 32
+      "projection_order": 32,
+      "monitoring_target_id": "utility-tunnel-management-charge-monitoring",
+      "public_burden_id": "utility-tunnel-management-charge",
+      "canonical_target": {
+        "legal_state_id": "utility-tunnel-management-charge-legal-state"
+      }
     },
     {
       "tax_id": "utility-tunnel-other-occupant-charge",
@@ -2572,16 +3239,23 @@
       "cadence": "monthly",
       "municipal_scope": "national_only",
       "decision": {
-        "official_source_url": "https://laws.e-gov.go.jp/law/407AC0000000039",
         "value_scope": "占用予定者以外の占用者・共同溝・占用区間別負担であり建設負担金へ合算しない",
         "evidence_gap": "個別許可の占用区間、占用者、負担額算定資料を対応付けていない",
         "release_conditions": [
           "共同溝・占用許可・占用者の安定IDを設計する",
           "個別占用許可の費用・割合・期間を特定する"
         ],
-        "recheck_cadence": "annual"
+        "recheck_cadence": "annual",
+        "source_ids": [
+          "manual-laws-e-gov-go-jp-law-407ac0000000039"
+        ]
       },
-      "projection_order": 33
+      "projection_order": 33,
+      "monitoring_target_id": "utility-tunnel-other-occupant-charge-monitoring",
+      "public_burden_id": "utility-tunnel-other-occupant-charge",
+      "canonical_target": {
+        "legal_state_id": "utility-tunnel-other-occupant-charge-legal-state"
+      }
     },
     {
       "tax_id": "utility-tunnel-planned-occupant-construction-charge",
@@ -2592,16 +3266,23 @@
       "cadence": "monthly",
       "municipal_scope": "national_only",
       "decision": {
-        "official_source_url": "https://laws.e-gov.go.jp/law/407AC0000000039",
         "value_scope": "占用予定者・共同溝・建設計画別の工事費負担であり管理・後発占用負担へ合算しない",
         "evidence_gap": "個別建設計画、予定占用者、工事費配賦資料を対応付けていない",
         "release_conditions": [
           "共同溝・建設計画・予定占用者の安定IDを設計する",
           "工事費・配賦割合・工期の公式資料を特定する"
         ],
-        "recheck_cadence": "annual"
+        "recheck_cadence": "annual",
+        "source_ids": [
+          "manual-laws-e-gov-go-jp-law-407ac0000000039"
+        ]
       },
-      "projection_order": 34
+      "projection_order": 34,
+      "monitoring_target_id": "utility-tunnel-planned-occupant-construction-charge-monitoring",
+      "public_burden_id": "utility-tunnel-planned-occupant-construction-charge",
+      "canonical_target": {
+        "legal_state_id": "utility-tunnel-planned-occupant-construction-charge-legal-state"
+      }
     },
     {
       "tax_id": "water-and-land-benefit-tax",
@@ -2614,7 +3295,12 @@
       "decision": {
         "hold_reason": "共同施設税等との共通節で課税対象・負担者・算定方法が条例へ委任され、自治体別実値はIssue #20の対象である"
       },
-      "projection_order": 21
+      "projection_order": 21,
+      "monitoring_target_id": "water-and-land-benefit-tax-monitoring",
+      "public_burden_id": "water-and-land-benefit-tax",
+      "canonical_target": {
+        "legal_state_id": "water-and-land-benefit-tax-legal-state"
+      }
     },
     {
       "tax_id": "water-resources-facility-user-charge",
@@ -2625,16 +3311,23 @@
       "cadence": "monthly",
       "municipal_scope": "national_only",
       "decision": {
-        "official_source_url": "https://laws.e-gov.go.jp/law/414AC0000000182",
         "value_scope": "水資源開発施設・用途・利用者・事業費配賦ごとの負担でありかんがい分と合算しない",
         "evidence_gap": "施設別事業計画、水道・工業用水等の用途別負担割合、納付期間が未対応",
         "release_conditions": [
           "施設・用途・利用者の安定IDを設計する",
           "事業費・用途別配賦割合・期間の公式資料を特定する"
         ],
-        "recheck_cadence": "annual"
+        "recheck_cadence": "annual",
+        "source_ids": [
+          "manual-laws-e-gov-go-jp-law-414ac0000000182"
+        ]
       },
-      "projection_order": 35
+      "projection_order": 35,
+      "monitoring_target_id": "water-resources-facility-user-charge-monitoring",
+      "public_burden_id": "water-resources-facility-user-charge",
+      "canonical_target": {
+        "legal_state_id": "water-resources-facility-user-charge-legal-state"
+      }
     },
     {
       "tax_id": "workers-compensation-insurance-premium",
@@ -2648,7 +3341,72 @@
         "hold_reason": "労災保険率は事業種類別の率表とメリット制で変動し、PDF表の行対応と個別適用率を単一値にせず別Issueで整備する必要がある",
         "follow_up_issue": 53
       },
-      "projection_order": 4
+      "projection_order": 4,
+      "monitoring_target_id": "workers-compensation-insurance-premium-monitoring",
+      "public_burden_id": "workers-compensation-insurance-premium",
+      "canonical_target": {
+        "legal_state_id": "workers-compensation-insurance-premium-legal-state"
+      }
     }
-  ]
+  ],
+  "defaults": {
+    "cadence": "monthly",
+    "comparison": "semantic",
+    "review_required": true
+  },
+  "adapters": {
+    "formats": [
+      {
+        "format": "html",
+        "adapter": "official_html_document",
+        "status": "implemented",
+        "mime_types": [
+          "text/html",
+          "application/xhtml+xml"
+        ],
+        "implementation": "scripts/formats/official-document.js"
+      },
+      {
+        "format": "pdf",
+        "adapter": "official_pdf_document",
+        "status": "implemented",
+        "mime_types": [
+          "application/pdf"
+        ],
+        "implementation": "scripts/formats/official-document.js"
+      },
+      {
+        "format": "csv",
+        "adapter": "official_csv_document",
+        "status": "implemented",
+        "mime_types": [
+          "text/csv",
+          "application/csv",
+          "application/vnd.ms-excel"
+        ],
+        "implementation": "scripts/formats/official-document.js"
+      },
+      {
+        "format": "spreadsheet",
+        "adapter": "manual",
+        "status": "manual",
+        "mime_types": [
+          "application/vnd.openxmlformats-officedocument.spreadsheetml.sheet",
+          "application/vnd.ms-excel"
+        ],
+        "manual_reason": "棚卸し時点で監視対象がなく、セル結合・数式・複数sheetの意味解釈方針が未確定のため、対象追加時に別Issueでレビューする"
+      }
+    ]
+  },
+  "calculation_policies": {
+    "equal_split": {
+      "operation": "divide",
+      "divisor": 2,
+      "rounding": "none"
+    },
+    "explicit_allocation": {
+      "operation": "allocate_by_configured_ratio",
+      "rounding": "none"
+    }
+  }
 }

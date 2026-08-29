@@ -48,7 +48,7 @@ test("category-specific counts and conditional fields are not weakened", async (
 });
 
 test("production configuration never treats test fixtures as canonical input", async () => {
-  for (const name of ["sources.yaml", "monitoring.yaml", "format-adapters.yaml", "distribution.yaml", "initial-master-selection.yaml"]) {
+  for (const name of ["sources.yaml", "monitoring.yaml", "distribution.yaml", "initial-master-selection.yaml"]) {
     assert.doesNotMatch(await readFile(join(root, "config", name), "utf8"), /tests\/fixtures/);
   }
 });

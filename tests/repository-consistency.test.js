@@ -9,7 +9,7 @@ import { validatePersistedFileCoverage } from "../scripts/validate/repository-va
 test("every persisted data and config file has an explicit schema route", async () => {
   const root = new URL("..", import.meta.url).pathname;
   const validated = new Set([
-    join(root, "config/distribution.yaml"), join(root, "config/format-adapters.yaml"),
+    join(root, "config/distribution.yaml"),
     join(root, "config/initial-master-selection.yaml"), join(root, "config/monitoring.yaml"),
     join(root, "config/sources.yaml"), join(root, "data/monitoring/semantic-baseline.json"),
     join(root, "data/reconciliation/national-burden-ratio-mapping.yaml"),
