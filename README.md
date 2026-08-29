@@ -46,6 +46,7 @@ reports/      生成レポート
 - scan、monitor、validate、generate、auditのCLIは引数・application呼出し・表示・終了コードだけを担当します。再利用可能なユースケースは`scripts/application`、JSON/YAML検証と原子的ファイル書込みは`scripts/adapters`に置きます。既存のnpmコマンド名とfail-closed動作は維持します。
 - Schemaは永続化・投影境界ごとに維持し、意味と制約が同じID、確認日時、source ID配列、保留理由だけを`schemas/common.schema.json`で再利用します。unit・contract・integration・fixtureの責務と独立維持理由は[Schema・テスト境界](docs/schema-and-test-boundaries.md)を参照してください。
 - `data/`・`config/`とSchema、横断ID、生成物、scripts、workflow、文書の整合性確認は[リポジトリ整合性監査](docs/repository-consistency-audit.md)に記録しています。未登録の永続ファイルは`npm run validate`でエラーになります。
+- #84で移行する原子負担component正本、直接値・計算値の追跡、単一非正規化CSVの契約と合計方法は[原子負担component正本と単一配布CSV](docs/atomic-public-burden-master.md)に記録しています。#85では代表fixtureで契約を固定し、現行正本の移行は#87で行います。
 - #69の構造移行、削除判断、定量比較、112制度の互換性確認は[監視基盤リファクタリング最終監査](docs/refactoring-final-audit.md)に記録しています。
 - 社会保険料の集計関係や公的負担の手動確認情報も監視設定の正本に保持し、制度群別viewは必要な処理の中で決定的に組み立てます。
 - `reports/` や将来の `generated/` は正本から再生成する成果物であり、直接編集しません。

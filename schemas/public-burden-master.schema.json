@@ -1,0 +1,65 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://github.com/pirosiki1144/japan-tax-and-public-burden/schemas/public-burden-master.schema.json",
+  "title": "Atomic public burden master",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["schema_version", "verified_at", "public_burdens", "legal_sources", "source_facts", "calculation_sets", "burden_components"],
+  "properties": {
+    "schema_version": {"const": 1},
+    "verified_at": {"$ref": "common.schema.json#/$defs/verifiedAt"},
+    "public_burdens": {"type": "array", "items": {"$ref": "#/$defs/publicBurden"}},
+    "legal_sources": {"type": "array", "items": {"$ref": "#/$defs/legalSource"}},
+    "source_facts": {"type": "array", "items": {"$ref": "#/$defs/sourceFact"}},
+    "calculation_sets": {"type": "array", "items": {"$ref": "#/$defs/calculationSet"}},
+    "burden_components": {"type": "array", "items": {"$ref": "#/$defs/component"}}
+  },
+  "$defs": {
+    "id": {"$ref": "common.schema.json#/$defs/id"},
+    "publicBurden": {
+      "type": "object", "additionalProperties": false,
+      "required": ["public_burden_id", "name", "category"],
+      "properties": {"public_burden_id": {"$ref": "#/$defs/id"}, "name": {"type": "string", "minLength": 1}, "category": {"type": "string", "minLength": 1}}
+    },
+    "legalSource": {
+      "type": "object", "additionalProperties": false,
+      "required": ["legal_source_id", "source_type", "title", "item_number", "item_text", "source_url", "dates", "relationships"],
+      "properties": {
+        "legal_source_id": {"$ref": "#/$defs/id"},
+        "source_type": {"enum": ["law", "cabinet_order", "ministerial_ordinance", "enforcement_regulation", "ordinance", "local_government_rule", "notice", "other"]},
+        "title": {"type": "string", "minLength": 1}, "item_number": {"type": "string", "minLength": 1}, "item_text": {"type": "string", "minLength": 1},
+        "source_url": {"type": "string", "format": "uri", "pattern": "^https://"},
+        "dates": {"type": "array", "items": {"type": "object", "additionalProperties": false, "required": ["event_type", "date", "date_raw"], "properties": {"event_type": {"enum": ["enacted", "promulgated", "enforced", "amended"]}, "date": {"type": ["string", "null"], "format": "date"}, "date_raw": {"type": "string", "minLength": 1}}}},
+        "relationships": {"type": "array", "items": {"type": "object", "additionalProperties": false, "required": ["relationship_type", "target_legal_source_id"], "properties": {"relationship_type": {"enum": ["parent_source", "delegated_by", "references", "amends"]}, "target_legal_source_id": {"$ref": "#/$defs/id"}}}}
+      }
+    },
+    "sourceFact": {
+      "type": "object", "additionalProperties": false,
+      "required": ["source_fact_id", "legal_source_id", "fact_kind", "value_raw", "normalized_value", "unit", "subject_conditions", "verified_at"],
+      "properties": {"source_fact_id": {"$ref": "#/$defs/id"}, "legal_source_id": {"$ref": "#/$defs/id"}, "fact_kind": {"enum": ["rate", "amount", "allocation_ratio", "threshold"]}, "value_raw": {"type": "string", "minLength": 1}, "normalized_value": {"type": "number"}, "unit": {"enum": ["percent", "yen", "ratio", "yen_per_unit"]}, "subject_conditions": {"type": "string", "minLength": 1}, "verified_at": {"$ref": "common.schema.json#/$defs/verifiedAt"}}
+    },
+    "calculationSet": {
+      "type": "object", "additionalProperties": false,
+      "required": ["calculation_set_id", "method", "input_source_fact_ids", "output_component_ids", "rounding"],
+      "properties": {"calculation_set_id": {"$ref": "#/$defs/id"}, "method": {"enum": ["equal_split", "explicit_allocation"]}, "input_source_fact_ids": {"type": "array", "minItems": 1, "uniqueItems": true, "items": {"$ref": "#/$defs/id"}}, "output_component_ids": {"type": "array", "minItems": 1, "uniqueItems": true, "items": {"$ref": "#/$defs/id"}}, "allocation": {"type": "object", "additionalProperties": {"type": "number", "exclusiveMinimum": 0}, "minProperties": 1}, "rounding": {"enum": ["none", "floor", "ceiling", "half_up"]}}
+    },
+    "component": {
+      "type": "object", "additionalProperties": false,
+      "required": ["component_id", "public_burden_id", "name", "versions"],
+      "properties": {"component_id": {"$ref": "#/$defs/id"}, "public_burden_id": {"$ref": "#/$defs/id"}, "name": {"type": "string", "minLength": 1}, "versions": {"type": "array", "minItems": 1, "items": {"$ref": "#/$defs/version"}}}
+    },
+    "version": {
+      "type": "object", "additionalProperties": false,
+      "required": ["version_id", "subject_conditions", "calculation_bases", "liable_parties", "payment_obligors", "value", "application_start", "application_start_raw", "application_end", "legal_source_ids"],
+      "properties": {
+        "version_id": {"$ref": "#/$defs/id"}, "subject_conditions": {"type": "string", "minLength": 1},
+        "calculation_bases": {"type": "array", "minItems": 1, "items": {"type": "object", "additionalProperties": false, "required": ["calculation_basis_id", "description"], "properties": {"calculation_basis_id": {"$ref": "#/$defs/id"}, "description": {"type": "string", "minLength": 1}}}},
+        "liable_parties": {"type": "array", "minItems": 1, "items": {"type": "object", "additionalProperties": false, "required": ["party_id", "description"], "properties": {"party_id": {"$ref": "#/$defs/id"}, "description": {"type": "string", "minLength": 1}}}},
+        "payment_obligors": {"type": "array", "minItems": 1, "items": {"type": "string", "minLength": 1}},
+        "value": {"type": "object", "additionalProperties": false, "required": ["value_kind", "numeric_value", "unit", "acquisition_type"], "properties": {"value_kind": {"enum": ["rate", "amount"]}, "numeric_value": {"type": "number"}, "unit": {"enum": ["percent", "yen", "yen_per_unit"]}, "acquisition_type": {"enum": ["direct", "calculated"]}, "source_fact_id": {"$ref": "#/$defs/id"}, "calculation_set_id": {"$ref": "#/$defs/id"}}, "allOf": [{"if": {"properties": {"acquisition_type": {"const": "direct"}}}, "then": {"required": ["source_fact_id"], "properties": {"source_fact_id": true, "calculation_set_id": false}}}, {"if": {"properties": {"acquisition_type": {"const": "calculated"}}}, "then": {"required": ["calculation_set_id"], "properties": {"calculation_set_id": true, "source_fact_id": false}}}]},
+        "application_start": {"type": ["string", "null"], "format": "date"}, "application_start_raw": {"type": "string", "minLength": 1}, "application_end": {"type": ["string", "null"], "format": "date"},
+        "legal_source_ids": {"type": "array", "minItems": 1, "uniqueItems": true, "items": {"$ref": "#/$defs/id"}}
+      }
+    }
+  }
+}

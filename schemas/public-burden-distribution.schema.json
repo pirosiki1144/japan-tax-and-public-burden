@@ -1,0 +1,15 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://github.com/pirosiki1144/japan-tax-and-public-burden/schemas/public-burden-distribution.schema.json",
+  "title": "Denormalized public burden distribution row",
+  "type": "object", "additionalProperties": false,
+  "required": ["distribution_row_id", "as_of", "time_classification", "public_burden_id", "public_burden_name", "component_id", "version_id", "component_name", "subject_conditions", "calculation_basis_id", "calculation_basis", "liable_party_id", "liable_party", "payment_obligors", "value_kind", "numeric_value", "unit", "acquisition_type", "source_fact_id", "calculation_set_id", "application_start", "application_end", "law_evidence", "cabinet_order_evidence", "ministerial_ordinance_evidence", "enforcement_regulation_evidence", "ordinance_evidence", "local_government_rule_evidence", "notice_evidence", "other_evidence", "master_verified_at"],
+  "properties": {
+    "distribution_row_id": {"$ref": "common.schema.json#/$defs/id"}, "as_of": {"type": "string", "format": "date"}, "time_classification": {"enum": ["past", "current", "future"]},
+    "public_burden_id": {"$ref": "common.schema.json#/$defs/id"}, "public_burden_name": {"type": "string"}, "component_id": {"$ref": "common.schema.json#/$defs/id"}, "version_id": {"$ref": "common.schema.json#/$defs/id"}, "component_name": {"type": "string"}, "subject_conditions": {"type": "string"},
+    "calculation_basis_id": {"$ref": "common.schema.json#/$defs/id"}, "calculation_basis": {"type": "string"}, "liable_party_id": {"$ref": "common.schema.json#/$defs/id"}, "liable_party": {"type": "string"}, "payment_obligors": {"type": "string"},
+    "value_kind": {"enum": ["rate", "amount"]}, "numeric_value": {"type": "number"}, "unit": {"enum": ["percent", "yen", "yen_per_unit"]}, "acquisition_type": {"enum": ["direct", "calculated"]}, "source_fact_id": {"type": "string"}, "calculation_set_id": {"type": "string"},
+    "application_start": {"type": ["string", "null"], "format": "date"}, "application_end": {"type": ["string", "null"], "format": "date"},
+    "law_evidence": {"type": "string"}, "cabinet_order_evidence": {"type": "string"}, "ministerial_ordinance_evidence": {"type": "string"}, "enforcement_regulation_evidence": {"type": "string"}, "ordinance_evidence": {"type": "string"}, "local_government_rule_evidence": {"type": "string"}, "notice_evidence": {"type": "string"}, "other_evidence": {"type": "string"}, "master_verified_at": {"type": "string", "format": "date-time"}
+  }
+}
