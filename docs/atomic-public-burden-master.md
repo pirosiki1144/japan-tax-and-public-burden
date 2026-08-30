@@ -28,6 +28,8 @@
 
 ## CSV規則
 
+追跡する配布用CSVは`data/master/public-burdens.csv`に置く。ただし、同じディレクトリの`canonical.json`だけが正本であり、CSVは正本JSONと`config/distribution.yaml`の基準日から再生成する派生物として直接編集しない。
+
 1行は `component version × calculation basis × liable party` とする。`distribution_row_id`はこれら3つの安定IDを連結して作り、同じ入力と`as_of`から常に同じ行・順序・UTF-8 bytesを生成する。
 
 法令根拠は法令区分別の列にまとめる。同一区分が複数あっても、`legal_source_id`順の引用符付き複数行セルへ格納し、行を増やさない。`as_of`より開始が後なら`future`、終了が前なら`past`、それ以外は`current`とする。確定済みfutureは除外しない。

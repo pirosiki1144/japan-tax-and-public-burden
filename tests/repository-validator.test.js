@@ -59,7 +59,8 @@ test("source scan workflow is fixed, scheduled, and manually runnable", async ()
   assert.ok(workflow.jobs["coverage-plan"].steps.some(({ run }) => run?.includes("audit:coverage")));
   assert.ok(workflow.jobs["coverage-audit"].steps.some(({ uses }) => uses === "actions/upload-artifact@v4"));
   assert.ok(updateCommands.some((command) => command.includes("npm run prepare-update")));
-  assert.ok(updateCommands.some((command) => command.includes("npm run generate") && command.includes("git add data generated")));
+  assert.ok(updateCommands.some((command) => command.includes("npm run generate") && command.includes("git add data")));
+  assert.ok(updateCommands.every((command) => !command.includes("git add data generated")));
   assert.ok(updateCommands.some((command) => command.includes("gh pr list") && command.includes("gh pr edit") && command.includes("gh pr create")));
   assert.ok([...scanCommands, ...updateCommands].every((command) => !command.includes("gh pr merge")));
   const issueCommands = workflow.jobs["audit-issues"].steps.map(({ run }) => run).filter(Boolean);

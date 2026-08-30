@@ -144,7 +144,7 @@ jobs:
           npm run generate:check
           npm run audit -- --output .cache/repository-audit-after-update.json
           if ! git diff --quiet; then
-            git add data generated
+            git add data
             git commit -m "公式情報に基づくデータ更新候補"
           fi
           if git diff --quiet origin/main...HEAD; then

@@ -42,7 +42,7 @@ reports/      生成レポート
 
 - `config/sources.yaml` は巡回先と利用条件を管理する情報源レジストリです。
 - `config/monitoring.yaml` は112制度の監視区分、document adapter、限定計算policy、正本への書込候補、手動確認理由・解除条件を一意に管理する唯一の監視manifestです。URLと取得条件は`config/sources.yaml`だけに置きます。runtime監視計画と実行・coverage計画はメモリ上で生成し、類似設定ファイルとして保存しません。詳細は[監視manifest統合と移行対応表](docs/monitoring-manifest-migration.md)と[初期マスタ監視設定](docs/monitoring-configuration.md)を参照してください。
-- `data/master/canonical.json` が制度・根拠・構成要素を保持する唯一の正本です。`data/master/initial-import.json` はIssue #87移行時の全入力と未解決判定を監査用に保存し、`data/monitoring/review.json` はレビュー済み監視baselineを保持します。
+- `data/master/canonical.json` が制度・根拠・構成要素を保持する唯一の正本です。`data/master/public-burdens.csv`は正本JSONから決定的に生成する配布用派生CSVであり、直接編集しません。`data/master/initial-import.json` はIssue #87移行時の全入力と未解決判定を監査用に保存し、`data/monitoring/review.json` はレビュー済み監視baselineを保持します。
 - 初期マスタの投入件数と未解決事項は[初期マスタ投入・検証レポート](docs/initial-master-import-report.md)を参照してください。
 - 未解決の調査候補は `data/master/initial-import.json` に保存します。候補は確定制度マスタや配布対象として扱わず、確定後に `data/master/canonical.json` へ反映します。
 - 取得途中のHTML、PDF、API応答等は `.cache/` 配下の一時データとし、正本にせずGitにも保存しません。保存が必要な根拠は別Issueで対象と形式をレビューします。
@@ -123,25 +123,13 @@ JavaScriptの責務は `config/architecture-responsibilities.json` に明示し�
 
 ## 配布用データの生成
 
-`data/` と `config/` を正本とし、`generated/` のCSV・JSONを一方向に生成します。通常は次のコマンドを使用します。
+`data/master/canonical.json`を唯一の正本とし、配布用の単一ワイドCSV `data/master/public-burdens.csv`を一方向に生成します。CSVは正本と同じディレクトリに置きますが派生物であり、直接編集しません。通常は次のコマンドを使用します。
 
 ```bash
 npm run generate
 npm run generate:check
 ```
 
-基準日は `config/distribution.yaml` の `default_as_of` です。過去時点を再現する場合は、追跡対象を上書きせず `.cache/` へ出力します。
-
-```bash
-npm run generate -- --as-of 2019-10-01 --output-dir .cache/distribution-2019-10-01
-```
-
-- `current.json` / `current.csv`: 指定日時点で適用中のphaseと主状態
-- `history.json` / `history.csv`: burden、change、event、phase、税収・照合データの履歴
-- `summary.json` / `summary.csv`: 件数と、集計条件を分離した金額合計
-
-`included_in_parent_total` は合計から除外し、未集計・未徴収・非把握・部分値は0円と推測せず別一覧に残します。JSONは正本の全項目を保持し、履歴CSVは `payload_json` に元レコードを保持します。同じ正本と基準日からはbyte単位で同一の生成物が得られ、CIの `generate:check` が直接編集や更新漏れを検出します。
-
-`history.json` のSchema version 2では、財務省の固有指標「国民負担率」への対応表を `national_burden_ratio_mappings` と呼びます。version 1の `national_burden_mappings` から名称が変わっているため、利用側は `schema_version` を確認してください。
+基準日と保存先の契約は `config/distribution.yaml` の `default_as_of` と `output_directory` です。1行は`component version × calculation basis × liable party`であり、同じ正本と基準日からbyte単位で同一のCSVが得られます。CIの`generate:check`と`npm run validate`が直接編集や更新漏れを検出します。
 
 現在はGitリポジトリ内の成果物として配布します。GitHub PagesやAPI公開は、公開URL、更新保証、キャッシュ、障害対応、費用と権限を決める必要があるため、このIssueには含めず別Issueで判断します。
