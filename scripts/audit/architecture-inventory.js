@@ -1,43 +1,61 @@
 import { execFileSync } from "node:child_process";
 import { existsSync } from "node:fs";
 import { readFile, writeFile } from "node:fs/promises";
+import { builtinModules } from "node:module";
 import { dirname, extname, join, normalize } from "node:path";
 import { fileURLToPath } from "node:url";
 import { parse } from "yaml";
+import { compareViolations, dependencyType, evaluateDependency, parseDependencies } from "./dependency-rules.js";
 
 const ROOT = join(dirname(fileURLToPath(import.meta.url)), "../..");
 const DEFAULT_OUTPUT = "reports/architecture-inventory.json";
-const DERIVED = new Set([
-  "docs/monitoring-extraction-target-review.md",
-  "generated/public-burdens.csv",
-  "reports/architecture-inventory.json"
-]);
-const CLI_NAMES = /^(audit-repository|audit-source-scan|publish-audit-issues|adapter-coverage-audit|prepare-update|public-burden-csv|build-monitoring-execution-plan|build-monitoring-config|extract-egov-tax-semantics|write-semantic-baseline|run-monitoring|scan-source|validate-data|architecture-inventory)\.js$/;
+const RESPONSIBILITY_PATH = "config/architecture-responsibilities.json";
+const BASELINE_PATH = "config/architecture-violations-baseline.json";
+const DERIVED = new Set(["docs/monitoring-extraction-target-review.md", "generated/public-burdens.csv", DEFAULT_OUTPUT]);
+const BUILTINS = new Set([...builtinModules, ...builtinModules.map((name) => `node:${name}`)]);
 
 function trackedFiles(root) {
   return execFileSync("git", ["ls-files", "--cached", "--others", "--exclude-standard"], { cwd: root, encoding: "utf8" })
     .trim().split("\n").filter((path) => path && existsSync(join(root, path))).sort();
 }
 
-export function classifyFile(path) {
-  const name = path.split("/").at(-1);
+export function classifyNonJavaScript(path) {
   if (DERIVED.has(path)) return "derived_artifact";
   if (path.startsWith("tests/fixtures/") || path.endsWith("/.gitkeep")) return "fixture";
-  if (path.startsWith("tests/")) return "test";
   if (path.startsWith("docs/") || path === "README.md" || path === "PROJECT_SPEC.md" || path === "AGENTS.md") return "documentation";
   if (path.startsWith("schemas/") || path.startsWith("config/") || path.startsWith("data/")) return "source_of_truth";
   if (path.startsWith(".github/") || [".gitignore", "package.json", "package-lock.json"].includes(path)) return "repository_support";
-  if (path.startsWith("scripts/") && CLI_NAMES.test(name)) return "cli";
-  if (path.startsWith("scripts/pipeline/") || path.startsWith("scripts/generate/") || path.startsWith("scripts/automation/")) return "application";
-  if (path.startsWith("scripts/adapters/") || path.startsWith("scripts/fetch/") || path.startsWith("scripts/formats/") || path === "scripts/validate/schema-validator.js") return "adapter";
-  if (path.startsWith("scripts/application/")) return "application";
-  if (path.startsWith("scripts/composition/")) return "composition_root";
-  if (path.startsWith("scripts/")) return "domain";
   return "unclassified";
 }
 
-function relativeImports(source) {
-  return [...source.matchAll(/(?:import|export)[^"']*?["'](\.{1,2}\/[^"']+)["']/g)].map((match) => match[1]);
+export function validateResponsibilityRegistry(registry, javascriptPaths) {
+  const errors = [];
+  if (registry?.schema_version !== 1 || !Array.isArray(registry.files)) return ["responsibility registry must have schema_version 1 and files"];
+  const registered = new Map();
+  const allowed = new Set(registry.responsibilities ?? []);
+  for (const entry of registry.files) {
+    if (!entry?.path || !entry?.responsibility) {
+      errors.push("responsibility entry requires path and responsibility");
+      continue;
+    }
+    if (registered.has(entry.path)) errors.push(`${entry.path}: duplicate responsibility registration`);
+    if (!allowed.has(entry.responsibility)) errors.push(`${entry.path}: unknown responsibility ${entry.responsibility}`);
+    registered.set(entry.path, entry.responsibility);
+  }
+  const actual = new Set(javascriptPaths);
+  for (const path of javascriptPaths) if (!registered.has(path)) errors.push(`${path}: JavaScript responsibility is not registered`);
+  for (const path of registered.keys()) if (!actual.has(path)) errors.push(`${path}: responsibility references a missing JavaScript file`);
+  return errors.sort();
+}
+
+export function validateViolationBaseline(baseline) {
+  const errors = [];
+  if (baseline?.schema_version !== 1 || baseline?.remediation_issue !== 93 || !Array.isArray(baseline?.violations)) return ["violation baseline must have schema_version 1, remediation_issue 93, and violations"];
+  baseline.violations.forEach((item, index) => {
+    for (const field of ["source_path", "source_responsibility", "specifier", "dependency_type", "import_kind", "rule"]) if (!item[field]) errors.push(`baseline[${index}].${field}: required`);
+    if (item.remediation_issue !== 93) errors.push(`baseline[${index}].remediation_issue: must be 93`);
+  });
+  return errors;
 }
 
 function resolveImport(from, specifier, files) {
@@ -53,8 +71,7 @@ function findCycles(graph) {
   const stack = [];
   function visit(node) {
     if (visiting.has(node)) {
-      const start = stack.indexOf(node);
-      cycles.push([...stack.slice(start), node]);
+      cycles.push([...stack.slice(stack.indexOf(node)), node]);
       return;
     }
     if (visited.has(node)) return;
@@ -69,15 +86,8 @@ function findCycles(graph) {
   return cycles;
 }
 
-export function forbiddenDependencies(graph) {
-  const errors = [];
-  for (const [source, targets] of Object.entries(graph)) {
-    for (const target of targets) {
-      if (source.startsWith("scripts/application/") && /scripts\/(?:adapters|composition|fetch|formats|pipeline)\//.test(target)) errors.push(`${source} -> ${target}`);
-      if (source.startsWith("scripts/adapters/") && /scripts\/(?:application|composition|pipeline)\//.test(target)) errors.push(`${source} -> ${target}`);
-    }
-  }
-  return errors.sort();
+async function json(root, path) {
+  return JSON.parse(await readFile(join(root, path), "utf8"));
 }
 
 async function yaml(root, path) {
@@ -99,39 +109,65 @@ async function configurationMetrics(root) {
   };
 }
 
+export async function analyzeJavaScriptDependencies(root, javascript, registry) {
+  const fileSet = new Set(javascript);
+  const responsibilities = new Map(registry.files.map(({ path, responsibility }) => [path, responsibility]));
+  const adjacency = {};
+  const edges = [];
+  const violations = [];
+  for (const sourcePath of javascript) {
+    adjacency[sourcePath] = [];
+    const source = await readFile(join(root, sourcePath), "utf8");
+    for (const dependency of parseDependencies(source)) {
+      const type = dependencyType(dependency.specifier, BUILTINS);
+      const targetPath = type === "internal" ? resolveImport(sourcePath, dependency.specifier, fileSet) : null;
+      const targetResponsibility = targetPath ? responsibilities.get(targetPath) : null;
+      if (targetPath && !adjacency[sourcePath].includes(targetPath)) adjacency[sourcePath].push(targetPath);
+      const edge = {
+        source_path: sourcePath,
+        source_responsibility: responsibilities.get(sourcePath),
+        target_path: targetPath,
+        target_responsibility: targetResponsibility,
+        specifier: dependency.specifier,
+        dependency_type: type,
+        import_kind: dependency.import_kind
+      };
+      edges.push(edge);
+      const violation = evaluateDependency({ ...edge, sourcePath, sourceResponsibility: edge.source_responsibility, targetPath, targetResponsibility, importKind: edge.import_kind, dependencyType: type });
+      if (violation) violations.push(violation);
+    }
+    adjacency[sourcePath].sort();
+  }
+  return { adjacency, edges, violations, cycles: findCycles(adjacency) };
+}
+
 export async function buildArchitectureInventory(root = ROOT) {
   const files = trackedFiles(root);
-  const fileSet = new Set(files);
   const javascript = files.filter((path) => extname(path) === ".js");
-  const graph = {};
-  let edgeCount = 0;
-  const fsUsers = [];
-  const atomicWriters = [];
-  for (const path of javascript) {
-    const source = await readFile(join(root, path), "utf8");
-    graph[path] = relativeImports(source).map((specifier) => resolveImport(path, specifier, fileSet)).filter(Boolean);
-    edgeCount += graph[path].length;
-    if (/node:fs(?:\/promises)?/.test(source)) fsUsers.push(path);
-    if (/\bwriteFile\b/.test(source) && /\brename\b/.test(source)) atomicWriters.push(path);
-  }
-  const classified = files.map((path) => ({ path, responsibility: classifyFile(path) }));
-  const counts = Object.fromEntries([...new Set(classified.map(({ responsibility }) => responsibility))]
-    .sort().map((responsibility) => [responsibility, classified.filter((entry) => entry.responsibility === responsibility).length]));
+  const responsibilityRegistry = await json(root, RESPONSIBILITY_PATH);
+  const registrationErrors = validateResponsibilityRegistry(responsibilityRegistry, javascript);
+  const registered = new Map(responsibilityRegistry.files.map(({ path, responsibility }) => [path, responsibility]));
+  const dependencies = await analyzeJavaScriptDependencies(root, javascript, responsibilityRegistry);
+  const baselineDocument = await json(root, BASELINE_PATH);
+  const baselineErrors = validateViolationBaseline(baselineDocument);
+  const baselineComparison = compareViolations(dependencies.violations, baselineDocument.violations);
+  const classified = files.map((path) => ({ path, responsibility: registered.get(path) ?? classifyNonJavaScript(path) }));
+  const counts = Object.fromEntries([...new Set(classified.map(({ responsibility }) => responsibility))].sort()
+    .map((responsibility) => [responsibility, classified.filter((entry) => entry.responsibility === responsibility).length]));
+  const fsUsers = dependencies.edges.filter(({ specifier }) => ["node:fs", "node:fs/promises", "fs", "fs/promises"].includes(specifier)).map(({ source_path }) => source_path);
+  const atomicWriters = javascript.filter((path) => path === "scripts/adapters/filesystem-store.js");
   return {
-    schema_version: 1,
+    schema_version: 2,
     scope: "tracked repository files",
     baseline_commit: execFileSync("git", ["rev-parse", "HEAD"], { cwd: root, encoding: "utf8" }).trim(),
-    totals: { tracked_files: files.length, javascript_files: javascript.length, import_edges: edgeCount },
+    responsibility_registry: { path: RESPONSIBILITY_PATH, errors: registrationErrors },
+    violation_baseline: { path: BASELINE_PATH, issue: 93, entries: baselineDocument.violations.length, errors: baselineErrors, ...baselineComparison },
+    totals: { tracked_files: files.length, javascript_files: javascript.length, import_edges: dependencies.edges.length },
     responsibilities: counts,
     files: classified,
-    import_graph: { cycles: findCycles(graph), forbidden_edges: forbiddenDependencies(graph), adjacency: graph },
+    import_graph: { cycles: dependencies.cycles, violations: dependencies.violations, edges: dependencies.edges, adjacency: dependencies.adjacency },
     configuration_overlap: await configurationMetrics(root),
-    io_duplication: {
-      filesystem_importing_files: fsUsers.length,
-      atomic_write_implementations: atomicWriters.length,
-      filesystem_users: fsUsers,
-      atomic_writers: atomicWriters
-    },
+    io_duplication: { filesystem_importing_files: new Set(fsUsers).size, atomic_write_implementations: atomicWriters.length, filesystem_users: [...new Set(fsUsers)].sort(), atomic_writers: atomicWriters },
     change_surface: {
       current_automated_existing_target_manual_edits: ["config/sources.yaml", "config/monitoring.yaml"],
       current_derived_files_regenerated: ["docs/monitoring-extraction-target-review.md"],
@@ -142,23 +178,25 @@ export async function buildArchitectureInventory(root = ROOT) {
 
 async function main() {
   const check = process.argv.includes("--check");
+  const strict = process.argv.includes("--strict");
   const outputIndex = process.argv.indexOf("--output");
   const output = outputIndex >= 0 ? process.argv[outputIndex + 1] : DEFAULT_OUTPUT;
   const report = await buildArchitectureInventory(ROOT);
-  const serialized = `${JSON.stringify(report, null, 2)}\n`;
   if (check) {
     const existing = JSON.parse(await readFile(join(ROOT, output), "utf8"));
-    // The baseline commit records when the inventory was reviewed; it is not a generated-drift signal.
     report.baseline_commit = existing.baseline_commit;
-    const comparable = `${JSON.stringify(report, null, 2)}\n`;
-    if (comparable !== `${JSON.stringify(existing, null, 2)}\n`) throw new Error(`${output} is stale; run npm run architecture:audit`);
+    if (`${JSON.stringify(report, null, 2)}\n` !== `${JSON.stringify(existing, null, 2)}\n`) throw new Error(`${output} is stale; run npm run architecture:audit`);
+    if (report.responsibility_registry.errors.length) throw new Error(`responsibility registry errors: ${report.responsibility_registry.errors.join("; ")}`);
+    if (report.violation_baseline.errors.length) throw new Error(`violation baseline errors: ${report.violation_baseline.errors.join("; ")}`);
     if (report.import_graph.cycles.length) throw new Error(`circular imports are forbidden: ${report.import_graph.cycles.join("; ")}`);
-    if (report.import_graph.forbidden_edges.length) throw new Error(`forbidden dependencies: ${report.import_graph.forbidden_edges.join("; ")}`);
-    console.log(JSON.stringify({ status: "clean", files: report.totals.tracked_files, cycles: report.import_graph.cycles.length }));
+    if (report.violation_baseline.new_violations.length) throw new Error(`new architecture violations: ${JSON.stringify(report.violation_baseline.new_violations)}`);
+    if (report.violation_baseline.resolved_without_baseline_update.length) throw new Error(`resolved violations must be removed from baseline: ${JSON.stringify(report.violation_baseline.resolved_without_baseline_update)}`);
+    if (strict && report.import_graph.violations.length) throw new Error(`strict architecture violations: ${JSON.stringify(report.import_graph.violations)}`);
+    console.log(JSON.stringify({ status: "clean", files: report.totals.tracked_files, cycles: 0, violations: report.import_graph.violations.length, strict }));
     return;
   }
-  await writeFile(join(ROOT, output), serialized);
-  console.log(JSON.stringify({ status: "written", output, files: report.totals.tracked_files, cycles: report.import_graph.cycles.length }));
+  await writeFile(join(ROOT, output), `${JSON.stringify(report, null, 2)}\n`);
+  console.log(JSON.stringify({ status: "written", output, files: report.totals.tracked_files, cycles: report.import_graph.cycles.length, violations: report.import_graph.violations.length }));
 }
 
 if (process.argv[1] && fileURLToPath(import.meta.url) === normalize(process.argv[1])) main().catch((error) => {

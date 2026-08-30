@@ -1,0 +1,12 @@
+{
+  "$schema":"https://json-schema.org/draft/2020-12/schema",
+  "$id":"https://github.com/pirosiki1144/japan-tax-and-public-burden/schemas/architecture-violations-baseline.schema.json",
+  "type":"object",
+  "additionalProperties":false,
+  "required":["schema_version","remediation_issue","violations"],
+  "properties":{
+    "schema_version":{"const":1},
+    "remediation_issue":{"const":93},
+    "violations":{"type":"array","items":{"type":"object","additionalProperties":false,"required":["source_path","source_responsibility","target_path","target_responsibility","specifier","dependency_type","import_kind","rule","remediation_issue"],"properties":{"source_path":{"type":"string"},"source_responsibility":{"enum":["cli","composition_root","application","domain","adapter","test"]},"target_path":{"type":["string","null"]},"target_responsibility":{"type":["string","null"]},"specifier":{"type":"string"},"dependency_type":{"enum":["internal","node_builtin","external_package"]},"import_kind":{"enum":["static_import","re_export","dynamic_import","commonjs_require"]},"rule":{"enum":["responsibility_direction_forbidden","domain_node_builtin_forbidden","domain_external_package_forbidden","commonjs_require_forbidden"]},"remediation_issue":{"const":93}}}}
+  }
+}
