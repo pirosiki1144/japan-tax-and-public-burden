@@ -1,5 +1,6 @@
 import test from "node:test";
 import assert from "node:assert/strict";
+import { spawnSync } from "node:child_process";
 import { readFile } from "node:fs/promises";
 import { fileURLToPath } from "node:url";
 import { auditRepository, auditScan, generateDistribution, monitorSources, scanSources, validateData } from "../scripts/application/repository-operations.js";
@@ -38,8 +39,24 @@ test("generation uses an injected atomic file store in write and check modes", a
 });
 
 test("primary CLI files contain only orchestration and no extraction implementation", async () => {
-  for (const path of ["scripts/pipeline/scan-source.js", "scripts/pipeline/run-monitoring.js", "scripts/validate/validate-data.js", "scripts/audit/audit-repository.js"]) {
+  for (const path of ["scripts/cli/scan-source.js", "scripts/cli/run-monitoring.js", "scripts/cli/validate-data.js", "scripts/cli/audit-repository.js"]) {
     const source = await readFile(`${root}/${path}`, "utf8");
     assert.doesNotMatch(source, /normalize|pdfjs-dist|canonical-diff|auditRepositoryCollections|validateDocument/);
+  }
+});
+
+test("moved CLIs preserve missing-argument stderr and exit codes", () => {
+  const cases = [
+    ["scripts/cli/prepare-update.js", "Usage: node scripts/automation/prepare-update.js --scan <result.json> --report <pr-body.md>\n"],
+    ["scripts/cli/write-semantic-baseline.js", "Usage: node scripts/monitoring/write-semantic-baseline.js --input <reviewed-run.json> --output <review.json> --confirm-reviewed\n"],
+    ["scripts/cli/run-monitoring.js", "Usage: node scripts/pipeline/run-monitoring.js --output <result.json> [--fixture-dir <dir>] [--batch <id>] [--dry-run]\n"],
+    ["scripts/cli/audit-source-scan.js", "Usage: node scripts/audit/audit-source-scan.js --scan <scan.json> --report <audit.json>\n"],
+    ["scripts/cli/publish-audit-issues.js", "Usage: node scripts/audit/publish-audit-issues.js --report <audit.json>\n"]
+  ];
+  for (const [path, stderr] of cases) {
+    const result = spawnSync(process.execPath, [path], { cwd: root, encoding: "utf8" });
+    assert.equal(result.status, 2, path);
+    assert.equal(result.stdout, "", path);
+    assert.equal(result.stderr, stderr, path);
   }
 });

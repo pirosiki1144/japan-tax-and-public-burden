@@ -4,7 +4,7 @@ import { mkdtemp, mkdir, readFile, writeFile } from "node:fs/promises";
 import { join } from "node:path";
 import { tmpdir } from "node:os";
 import { parse } from "yaml";
-import { applyCandidateUpdates, buildPullRequestBody } from "../scripts/automation/candidate-update.js";
+import { applyCandidateUpdates, buildPullRequestBody } from "../scripts/application/candidate-update.js";
 
 const evidence = [{ source_url: "https://example.go.jp/official", fetched_at: "2026-08-17T01:02:03.000Z", sha256: "a".repeat(64) }];
 

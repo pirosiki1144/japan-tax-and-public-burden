@@ -1,8 +1,8 @@
 import test from "node:test";
 import assert from "node:assert/strict";
 import { fileURLToPath } from "node:url";
-import { buildRuntimeMonitoringPlan } from "../scripts/monitoring/build-monitoring-config.js";
-import { buildMonitoringExecutionPlan, validateExecutionCoverage } from "../scripts/monitoring/build-monitoring-execution-plan.js";
+import { buildRuntimeMonitoringPlan } from "../scripts/cli/build-monitoring-config.js";
+import { buildMonitoringExecutionPlan, validateExecutionCoverage } from "../scripts/cli/build-monitoring-execution-plan.js";
 
 const root = fileURLToPath(new URL("..", import.meta.url));
 

@@ -1,7 +1,7 @@
 import { fileURLToPath } from "node:url";
 import { auditRepository } from "../application/repository-operations.js";
 import { writeJsonAtomic } from "../adapters/filesystem-store.js";
-import { validateRepository } from "../validate/repository-validator.js";
+import { validateRepository } from "../composition/repository-validator.js";
 
 const root = fileURLToPath(new URL("../..", import.meta.url));
 const args = process.argv.slice(2);

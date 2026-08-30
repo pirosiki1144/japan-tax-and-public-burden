@@ -1,7 +1,7 @@
 import { readFile } from "node:fs/promises";
 import { basename, extname, join } from "node:path";
 import { fileURLToPath } from "node:url";
-import { runAutomatedSources, runSourcePipeline } from "./source-pipeline.js";
+import { runAutomatedSources, runSourcePipeline } from "../composition/source-pipeline.js";
 import { scanSources } from "../application/repository-operations.js";
 import { writeJsonAtomic } from "../adapters/filesystem-store.js";
 

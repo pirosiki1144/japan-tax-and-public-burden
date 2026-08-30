@@ -1,15 +1,15 @@
 import { createStrategyRegistry, validateDocument, validateNormalizedFacts, validateSemanticExtraction, validateSourcePages } from "../application/strategy-registry.js";
 import { runAllSources } from "../application/source-monitoring.js";
-import { detectCanonicalDiff } from "../diff/canonical-diff.js";
-import { fetchSourcePages } from "../fetch/http-fetcher.js";
-import { loadAutomatedSources, loadEnabledSource } from "../fetch/source-registry.js";
-import { adaptCsvDocument, adaptHtmlDocument, adaptPdfDocument } from "../formats/official-document.js";
-import { extractConfiguredSemanticTarget } from "../monitoring/extract-egov-tax-semantics.js";
-import { diffAgainstSemanticBaseline } from "../monitoring/semantic-baseline.js";
-import { normalizeEgovLawArticleFacts } from "../normalize/egov-law-article-facts.js";
-import { normalizeHtmlRegexFacts } from "../normalize/html-regex-facts.js";
-import { validateNormalizedSource } from "../normalize/normalized-source-validator.js";
-import { normalizePdfRegexFacts } from "../normalize/pdf-regex-facts.js";
+import { detectCanonicalDiff } from "./canonical-diff.js";
+import { fetchSourcePages } from "../adapters/http-fetcher.js";
+import { loadAutomatedSources, loadEnabledSource } from "./source-registry.js";
+import { adaptCsvDocument, adaptHtmlDocument, adaptPdfDocument } from "../adapters/official-document.js";
+import { extractConfiguredSemanticTarget } from "../cli/extract-egov-tax-semantics.js";
+import { diffAgainstSemanticBaseline } from "./semantic-baseline.js";
+import { normalizeEgovLawArticleFacts } from "../domain/egov-law-article-facts.js";
+import { normalizeHtmlRegexFacts } from "../domain/html-regex-facts.js";
+import { validateNormalizedSource } from "../domain/normalized-source-validator.js";
+import { normalizePdfRegexFacts } from "../domain/pdf-regex-facts.js";
 
 function buildComposition() {
   const sourceReaders = createStrategyRegistry("source reader", validateSourcePages).register("http", fetchSourcePages);

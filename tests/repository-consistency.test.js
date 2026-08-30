@@ -3,8 +3,8 @@ import { mkdtemp, mkdir, writeFile } from "node:fs/promises";
 import { tmpdir } from "node:os";
 import { join } from "node:path";
 import test from "node:test";
-import { validateIntegrity } from "../scripts/validate/integrity-validator.js";
-import { validatePersistedFileCoverage } from "../scripts/validate/repository-validator.js";
+import { validateIntegrity } from "../scripts/domain/integrity-validator.js";
+import { validatePersistedFileCoverage } from "../scripts/composition/repository-validator.js";
 
 test("every persisted data and config file has an explicit schema route", async () => {
   const root = new URL("..", import.meta.url).pathname;

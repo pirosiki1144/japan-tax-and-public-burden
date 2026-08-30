@@ -3,10 +3,10 @@ import assert from "node:assert/strict";
 import { readFile } from "node:fs/promises";
 import { basename, join } from "node:path";
 import { fileURLToPath } from "node:url";
-import { readYaml } from "../scripts/validate/schema-validator.js";
-import { runSourcePipeline } from "../scripts/pipeline/source-pipeline.js";
-import { buildMonitoringExecutionPlan } from "../scripts/monitoring/build-monitoring-execution-plan.js";
-import { buildDecisionViews, loadMonitoringRegistry } from "../scripts/monitoring/monitoring-registry.js";
+import { readYaml } from "../scripts/adapters/schema-validator.js";
+import { runSourcePipeline } from "../scripts/composition/source-pipeline.js";
+import { buildMonitoringExecutionPlan } from "../scripts/cli/build-monitoring-execution-plan.js";
+import { buildDecisionViews, loadMonitoringRegistry } from "../scripts/composition/monitoring-registry.js";
 
 const root = fileURLToPath(new URL("..", import.meta.url));
 const fixtureRoot = join(root, "tests/fixtures/source-scan");

@@ -1,8 +1,8 @@
 import { readdir, readFile } from "node:fs/promises";
 import { join, relative } from "node:path";
-import { createValidators, readYaml, validateDocument } from "./schema-validator.js";
-import { validateIntegrity } from "./integrity-validator.js";
-import { buildRuntimeMonitoringPlan } from "../monitoring/build-monitoring-config.js";
+import { createValidators, readYaml, validateDocument } from "../adapters/schema-validator.js";
+import { validateIntegrity } from "../domain/integrity-validator.js";
+import { buildRuntimeMonitoringPlan } from "../cli/build-monitoring-config.js";
 
 const SCHEMA_NAMES = ["monitoring", "monitoring-runtime", "semantic-baseline", "burden", "source", "distribution-config", "public-burden-master", "initial-import", "monitoring-review", "architecture-responsibilities"];
 

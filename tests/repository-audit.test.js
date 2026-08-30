@@ -1,6 +1,6 @@
 import test from "node:test";
 import assert from "node:assert/strict";
-import { auditRepositoryCollections } from "../scripts/audit/repository-audit.js";
+import { auditRepositoryCollections } from "../scripts/domain/repository-audit.js";
 
 function collections() {
   return {

@@ -2,9 +2,9 @@ import { createHash } from "node:crypto";
 import { mkdir, readFile, writeFile } from "node:fs/promises";
 import { basename, dirname, join } from "node:path";
 import { fileURLToPath } from "node:url";
-import { extractConfiguredLocalTaxSemantics, extractEgovTaxSemantics, extractGenericNationalTaxSemantics } from "../normalize/egov-tax-semantics.js";
+import { extractConfiguredLocalTaxSemantics, extractEgovTaxSemantics, extractGenericNationalTaxSemantics } from "../domain/egov-tax-semantics.js";
 import { buildRuntimeMonitoringPlan } from "./build-monitoring-config.js";
-import { buildDecisionViews, loadMonitoringRegistry } from "./monitoring-registry.js";
+import { buildDecisionViews, loadMonitoringRegistry } from "../composition/monitoring-registry.js";
 
 const root = fileURLToPath(new URL("../..", import.meta.url));
 

@@ -1,8 +1,8 @@
 import test from "node:test";
 import assert from "node:assert/strict";
-import { auditSourceScan, issueCandidatesFromAudit } from "../scripts/audit/source-scan-audit.js";
-import { sha256 } from "../scripts/normalize/sha256.js";
-import { publishAuditIssues } from "../scripts/audit/publish-audit-issues.js";
+import { auditSourceScan, issueCandidatesFromAudit } from "../scripts/domain/source-scan-audit.js";
+import { sha256 } from "../scripts/domain/sha256.js";
+import { publishAuditIssues } from "../scripts/cli/publish-audit-issues.js";
 
 const fetchedAt = "2026-08-17T01:02:03.000Z";
 const fetches = [{ source_url: "https://example.go.jp/source", fetched_at: fetchedAt, sha256: "a".repeat(64) }];

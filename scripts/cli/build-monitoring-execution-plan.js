@@ -1,8 +1,8 @@
 import { basename, extname, join } from "node:path";
 import { fileURLToPath } from "node:url";
-import { readYaml } from "../validate/schema-validator.js";
+import { readYaml } from "../adapters/schema-validator.js";
 import { buildRuntimeMonitoringPlan } from "./build-monitoring-config.js";
-import { loadMonitoringRegistry, registryByTaxId } from "./monitoring-registry.js";
+import { loadMonitoringRegistry, registryByTaxId } from "../composition/monitoring-registry.js";
 import { loadLegacyBurdens } from "../adapters/canonical-master.js";
 
 const root = fileURLToPath(new URL("../..", import.meta.url));

@@ -1,7 +1,7 @@
 import test from "node:test";
 import assert from "node:assert/strict";
 import { fileURLToPath } from "node:url";
-import { buildCalculatedComponentCandidates, buildDecisionViews, formatAdapterRegistry, loadMonitoringRegistry } from "../scripts/monitoring/monitoring-registry.js";
+import { buildCalculatedComponentCandidates, buildDecisionViews, formatAdapterRegistry, loadMonitoringRegistry } from "../scripts/composition/monitoring-registry.js";
 
 const root = fileURLToPath(new URL("..", import.meta.url));
 

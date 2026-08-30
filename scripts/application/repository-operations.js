@@ -1,5 +1,5 @@
-import { auditRepositoryCollections } from "../audit/repository-audit.js";
-import { auditSourceScan, issueCandidatesFromAudit } from "../audit/source-scan-audit.js";
+import { auditRepositoryCollections } from "../domain/repository-audit.js";
+import { auditSourceScan, issueCandidatesFromAudit } from "../domain/source-scan-audit.js";
 
 function compareArtifactSets(expected, actual) {
   const paths = new Set([...expected.keys(), ...actual.keys()]);

@@ -1,5 +1,5 @@
 import { resolve, sep } from "node:path";
-import { readYaml } from "../validate/schema-validator.js";
+import { readYaml } from "../adapters/schema-validator.js";
 
 function canonicalFile(root, relativePath) {
   const dataRoot = `${resolve(root, "data")}${sep}`;

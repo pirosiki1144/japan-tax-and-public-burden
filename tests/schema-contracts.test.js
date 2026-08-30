@@ -3,8 +3,8 @@ import assert from "node:assert/strict";
 import { readFile } from "node:fs/promises";
 import { join } from "node:path";
 import { fileURLToPath } from "node:url";
-import { buildDecisionViews, loadMonitoringRegistry } from "../scripts/monitoring/monitoring-registry.js";
-import { createValidators, validateDocument } from "../scripts/validate/schema-validator.js";
+import { buildDecisionViews, loadMonitoringRegistry } from "../scripts/composition/monitoring-registry.js";
+import { createValidators, validateDocument } from "../scripts/adapters/schema-validator.js";
 
 const root = fileURLToPath(new URL("..", import.meta.url));
 const names = ["national-tax-adapters", "local-tax-adapters", "social-insurance-adapters", "public-burden-adapters"];

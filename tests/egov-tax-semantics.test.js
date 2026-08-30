@@ -3,10 +3,10 @@ import assert from "node:assert/strict";
 import { readFile } from "node:fs/promises";
 import { join } from "node:path";
 import { fileURLToPath } from "node:url";
-import { extractConfiguredSemantics } from "../scripts/monitoring/extract-egov-tax-semantics.js";
-import { buildDecisionViews, loadMonitoringRegistry } from "../scripts/monitoring/monitoring-registry.js";
-import { diffSemanticValues, extractConfiguredLocalTaxSemantics, extractEgovTaxSemantics, extractGenericNationalTaxSemantics } from "../scripts/normalize/egov-tax-semantics.js";
-import { readYaml } from "../scripts/validate/schema-validator.js";
+import { extractConfiguredSemantics } from "../scripts/cli/extract-egov-tax-semantics.js";
+import { buildDecisionViews, loadMonitoringRegistry } from "../scripts/composition/monitoring-registry.js";
+import { diffSemanticValues, extractConfiguredLocalTaxSemantics, extractEgovTaxSemantics, extractGenericNationalTaxSemantics } from "../scripts/domain/egov-tax-semantics.js";
+import { readYaml } from "../scripts/adapters/schema-validator.js";
 
 const root = fileURLToPath(new URL("..", import.meta.url));
 const fixtureDir = join(root, "tests/fixtures/source-scan");

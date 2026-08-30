@@ -28,7 +28,12 @@ Phase 1（基盤）として、次を提供しています。
 config/       情報源と巡回設定
 schemas/      データ形式のJSON Schema
 data/         公開する構造化データ
-scripts/      検証・取得・正規化・レポート処理
+scripts/      CLI・application・domain・adapter・composition処理
+  cli/        引数解析、表示、終了コード
+  application/ ユースケース調整
+  domain/     外部I/Oに依存しない規則と変換
+  adapters/   filesystem、HTTP、文書・Schema境界
+  composition/ 具体adapterと処理の組立て
 tests/        自動テスト
 reports/      生成レポート
 ```
@@ -41,7 +46,7 @@ reports/      生成レポート
 - 初期マスタの投入件数と未解決事項は[初期マスタ投入・検証レポート](docs/initial-master-import-report.md)を参照してください。
 - 未解決の調査候補は `data/master/initial-import.json` に保存します。候補は確定制度マスタや配布対象として扱わず、確定後に `data/master/canonical.json` へ反映します。
 - 取得途中のHTML、PDF、API応答等は `.cache/` 配下の一時データとし、正本にせずGitにも保存しません。保存が必要な根拠は別Issueで対象と形式をレビューします。
-- 公式HTML・PDF・CSVは `scripts/formats/official-document.js` で原文バイトから形式検証・共通表現化し、制度固有の意味抽出規則は別の設定またはnormalize層へ置きます。共通表現は公式URL、取得日時、原文SHA-256、文書版を保持します。PDFの読取不能、CSVの必須列不足、HTMLの本文欠落、意味抽出の0件・複数件一致は構造変更として失敗させます。PR CIは縮小fixtureだけを使用して外部通信せず、実URLへの疎通は固定の定期・手動workflowで行います。
+- 公式HTML・PDF・CSVは `scripts/adapters/official-document.js` で原文バイトから形式検証・共通表現化し、制度固有の意味抽出規則は別の設定またはnormalize層へ置きます。共通表現は公式URL、取得日時、原文SHA-256、文書版を保持します。PDFの読取不能、CSVの必須列不足、HTMLの本文欠落、意味抽出の0件・複数件一致は構造変更として失敗させます。PR CIは縮小fixtureだけを使用して外部通信せず、実URLへの疎通は固定の定期・手動workflowで行います。
 - `scripts/application` は具体的なHTTP、PDF、filesystem実装を参照せず、最小Portを通じてsource取得・正規化・差分判定を調整します。`scripts/composition/monitoring-composition.js`を唯一のcomposition rootとし、HTTP source reader、HTML・PDF・CSV document parser、e-Gov・宣言的意味抽出Strategyを登録します。未登録、重複登録、契約外の戻り値は実行前後に失敗させます。
 - scan、monitor、validate、generate、auditのCLIは引数・application呼出し・表示・終了コードだけを担当します。再利用可能なユースケースは`scripts/application`、JSON/YAML検証と原子的ファイル書込みは`scripts/adapters`に置きます。既存のnpmコマンド名とfail-closed動作は維持します。
 - Schemaは永続化・投影境界ごとに維持し、意味と制約が同じID、確認日時、source ID配列、保留理由だけを`schemas/common.schema.json`で再利用します。unit・contract・integration・fixtureの責務と独立維持理由は[Schema・テスト境界](docs/schema-and-test-boundaries.md)を参照してください。

@@ -3364,7 +3364,7 @@
           "text/html",
           "application/xhtml+xml"
         ],
-        "implementation": "scripts/formats/official-document.js"
+        "implementation": "scripts/adapters/official-document.js"
       },
       {
         "format": "pdf",
@@ -3373,7 +3373,7 @@
         "mime_types": [
           "application/pdf"
         ],
-        "implementation": "scripts/formats/official-document.js"
+        "implementation": "scripts/adapters/official-document.js"
       },
       {
         "format": "csv",
@@ -3384,7 +3384,7 @@
           "application/csv",
           "application/vnd.ms-excel"
         ],
-        "implementation": "scripts/formats/official-document.js"
+        "implementation": "scripts/adapters/official-document.js"
       },
       {
         "format": "spreadsheet",

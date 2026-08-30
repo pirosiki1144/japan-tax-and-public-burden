@@ -2,9 +2,9 @@ import test from "node:test";
 import assert from "node:assert/strict";
 import { access, readFile, readdir } from "node:fs/promises";
 import { fileURLToPath } from "node:url";
-import { buildArchitectureInventory } from "../scripts/audit/architecture-inventory.js";
-import { auditAdapterCoverage } from "../scripts/audit/adapter-coverage-audit.js";
-import { loadMonitoringRegistry } from "../scripts/monitoring/monitoring-registry.js";
+import { buildArchitectureInventory } from "../scripts/cli/architecture-inventory.js";
+import { auditAdapterCoverage } from "../scripts/cli/adapter-coverage-audit.js";
+import { loadMonitoringRegistry } from "../scripts/composition/monitoring-registry.js";
 
 const root = fileURLToPath(new URL("..", import.meta.url));
 

@@ -5,7 +5,7 @@ import { builtinModules } from "node:module";
 import { dirname, extname, join, normalize } from "node:path";
 import { fileURLToPath } from "node:url";
 import { parse } from "yaml";
-import { dependencyType, evaluateDependency, parseDependencies } from "./dependency-rules.js";
+import { dependencyType, evaluateDependency, parseDependencies } from "../domain/dependency-rules.js";
 
 const ROOT = join(dirname(fileURLToPath(import.meta.url)), "../..");
 const DEFAULT_OUTPUT = "reports/architecture-inventory.json";
