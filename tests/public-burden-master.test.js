@@ -2,8 +2,8 @@ import assert from "node:assert/strict";
 import { readFile } from "node:fs/promises";
 import { join } from "node:path";
 import test from "node:test";
-import { createValidators, validateDocument } from "../scripts/validate/schema-validator.js";
-import { buildDistributionRows, serializeDistributionCsv, validateMasterIntegrity } from "../scripts/generate/public-burden-csv.js";
+import { createValidators, validateDocument } from "../scripts/adapters/schema-validator.js";
+import { buildDistributionRows, serializeDistributionCsv, validateMasterIntegrity } from "../scripts/cli/public-burden-csv.js";
 
 const root = new URL("..", import.meta.url).pathname;
 const fixturePath = join(root, "tests/fixtures/public-burden-master/representative-cases.json");

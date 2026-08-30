@@ -62,6 +62,8 @@ URLの正本は引き続き`config/sources.yaml`とする。制度ごとの監�
 
 #91時点の既存違反は一時baselineへ固定して#93へ引き渡した。#93で全件を解消してbaselineを削除し、`npm run architecture:check`と`npm run architecture:strict`はいずれも禁止依存と循環importが0件であることを要求する。具体的なSchema・filesystem・adapterを束ねる互換facadeはcomposition responsibilityとして明示し、domain処理へ具体実装を持ち込まない。
 
+#92では明示済みresponsibilityを変更せず、JavaScriptを`scripts/cli`、`scripts/application`、`scripts/domain`、`scripts/adapters`、`scripts/composition`へ物理移動した。`composition`は依存を組み立てる配置場所であり、第5の責務レイヤーではない。独立した`ports/`は設けず、npmコマンド名と外部挙動を維持する。
+
 ## 移行順
 
 依存関係を明確にするため、#70 → #71 → #72 → #73 → #74 → #75の直列を維持する。

@@ -1,7 +1,7 @@
 import test from "node:test";
 import assert from "node:assert/strict";
 import { fileURLToPath } from "node:url";
-import { auditAdapterCoverage } from "../scripts/audit/adapter-coverage-audit.js";
+import { auditAdapterCoverage } from "../scripts/cli/adapter-coverage-audit.js";
 
 const root = fileURLToPath(new URL("..", import.meta.url));
 

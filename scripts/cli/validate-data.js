@@ -1,7 +1,7 @@
 import { fileURLToPath } from "node:url";
 import { validateData } from "../application/repository-operations.js";
-import { validateFile } from "../adapters/repository-validation.js";
-import { validateRepository } from "./repository-validator.js";
+import { validateFile } from "../composition/repository-validation.js";
+import { validateRepository } from "../composition/repository-validator.js";
 
 const root = fileURLToPath(new URL("../..", import.meta.url));
 const argumentsMap = Object.fromEntries(process.argv.slice(2).reduce((pairs, value, index, values) => {

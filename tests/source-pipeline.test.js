@@ -3,8 +3,8 @@ import assert from "node:assert/strict";
 import { readFile } from "node:fs/promises";
 import { basename, join } from "node:path";
 import { fileURLToPath } from "node:url";
-import { loadEnabledSource } from "../scripts/fetch/source-registry.js";
-import { runAutomatedSources, runConfiguredSources, runSourcePipeline } from "../scripts/pipeline/source-pipeline.js";
+import { loadEnabledSource } from "../scripts/composition/source-registry.js";
+import { runAutomatedSources, runConfiguredSources, runSourcePipeline } from "../scripts/composition/source-pipeline.js";
 
 const root = fileURLToPath(new URL("..", import.meta.url));
 const fixtureRoot = join(root, "tests/fixtures/source-scan");

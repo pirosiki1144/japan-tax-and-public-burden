@@ -1,4 +1,4 @@
-import { sha256 as hashText } from "../normalize/sha256.js";
+import { sha256 as hashText } from "./sha256.js";
 
 function atPointer(document, pointer) {
   return pointer.split("/").slice(1).reduce((value, segment) => value?.[segment.replaceAll("~1", "/").replaceAll("~0", "~")], document);

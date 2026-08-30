@@ -1,7 +1,7 @@
 import { readFile } from "node:fs/promises";
 import { join } from "node:path";
-import { diffSemanticValues } from "../normalize/egov-tax-semantics.js";
-import { createValidators, validateDocument } from "../validate/schema-validator.js";
+import { diffSemanticValues } from "../domain/egov-tax-semantics.js";
+import { createValidators, validateDocument } from "../adapters/schema-validator.js";
 
 const metadataKeys = new Set(["schema_version", "tax_id", "law_id", "law_title", "revision_id", "updated_at", "source_url"]);
 

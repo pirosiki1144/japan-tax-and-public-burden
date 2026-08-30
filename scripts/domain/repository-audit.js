@@ -1,4 +1,4 @@
-import { deriveBurdenStatus } from "../normalize/derive-status.js";
+import { deriveBurdenStatus } from "./derive-status.js";
 
 function add(findings, severity, code, recordId, message) {
   findings.push({ severity, code, record_id: recordId, message });

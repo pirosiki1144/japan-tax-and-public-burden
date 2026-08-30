@@ -1,11 +1,11 @@
 import { join } from "node:path";
-import { auditSourceScan } from "../audit/source-scan-audit.js";
-import { loadSemanticBaseline } from "../monitoring/semantic-baseline.js";
-import { createValidators, readYaml, validateDocument } from "../validate/schema-validator.js";
-import { buildRuntimeMonitoringPlan } from "../monitoring/build-monitoring-config.js";
-import { buildMonitoringExecutionPlan } from "../monitoring/build-monitoring-execution-plan.js";
+import { auditSourceScan } from "../domain/source-scan-audit.js";
+import { loadSemanticBaseline } from "./semantic-baseline.js";
+import { createValidators, readYaml, validateDocument } from "../adapters/schema-validator.js";
+import { buildRuntimeMonitoringPlan } from "../cli/build-monitoring-config.js";
+import { buildMonitoringExecutionPlan } from "../cli/build-monitoring-execution-plan.js";
 import { runAutomatedSources } from "./source-pipeline.js";
-import { monitoringComposition } from "../composition/monitoring-composition.js";
+import { monitoringComposition } from "./monitoring-composition.js";
 
 export function getSemanticAdapter(name) {
   return monitoringComposition().registries.semanticExtractors.get(name);

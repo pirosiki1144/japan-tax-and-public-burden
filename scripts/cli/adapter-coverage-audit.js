@@ -1,9 +1,9 @@
 import { access } from "node:fs/promises";
 import { basename, join } from "node:path";
 import { fileURLToPath } from "node:url";
-import { readYaml } from "../validate/schema-validator.js";
-import { buildRuntimeMonitoringPlan } from "../monitoring/build-monitoring-config.js";
-import { buildMonitoringExecutionPlan, validateExecutionCoverage } from "../monitoring/build-monitoring-execution-plan.js";
+import { readYaml } from "../adapters/schema-validator.js";
+import { buildRuntimeMonitoringPlan } from "./build-monitoring-config.js";
+import { buildMonitoringExecutionPlan, validateExecutionCoverage } from "./build-monitoring-execution-plan.js";
 import { writeJsonAtomic } from "../adapters/filesystem-store.js";
 
 async function exists(path) {

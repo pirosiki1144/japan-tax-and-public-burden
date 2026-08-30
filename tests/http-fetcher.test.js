@@ -1,6 +1,6 @@
 import test from "node:test";
 import assert from "node:assert/strict";
-import { fetchSourcePages, SourceFetchError } from "../scripts/fetch/http-fetcher.js";
+import { fetchSourcePages, SourceFetchError } from "../scripts/adapters/http-fetcher.js";
 
 const source = {
   base_url: "https://example.go.jp/",

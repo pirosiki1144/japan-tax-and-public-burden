@@ -2,7 +2,7 @@ import { readFile } from "node:fs/promises";
 import { join } from "node:path";
 import { fileURLToPath } from "node:url";
 import { writeTextAtomic } from "../adapters/filesystem-store.js";
-import { createValidators, validateDocument } from "../validate/schema-validator.js";
+import { createValidators, validateDocument } from "../adapters/schema-validator.js";
 
 export const DISTRIBUTION_HEADERS = ["distribution_row_id", "as_of", "time_classification", "public_burden_id", "public_burden_name", "component_id", "version_id", "component_name", "subject_conditions", "calculation_basis_id", "calculation_basis", "liable_party_id", "liable_party", "payment_obligors", "value_kind", "numeric_value", "unit", "acquisition_type", "source_fact_id", "calculation_set_id", "application_start", "application_end", "law_evidence", "cabinet_order_evidence", "ministerial_ordinance_evidence", "enforcement_regulation_evidence", "ordinance_evidence", "local_government_rule_evidence", "notice_evidence", "other_evidence", "master_verified_at"];
 

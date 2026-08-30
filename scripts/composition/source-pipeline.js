@@ -1,5 +1,5 @@
 import { runAllSources, runSource, runSources } from "../application/source-monitoring.js";
-import { monitoringComposition } from "../composition/monitoring-composition.js";
+import { monitoringComposition } from "./monitoring-composition.js";
 
 export async function runSourcePipeline({ root, sourceId, source: configuredSource, fetchImpl, now = () => new Date(), dryRun = false }) {
   return runSource({ root, sourceId, source: configuredSource, fetchImpl, now, dryRun, ports: monitoringComposition().ports });

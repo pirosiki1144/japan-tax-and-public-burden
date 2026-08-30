@@ -1,6 +1,6 @@
 import { readFile } from "node:fs/promises";
 import { fileURLToPath } from "node:url";
-import { applyCandidateUpdates, buildPullRequestBody, writePullRequestBody } from "./candidate-update.js";
+import { applyCandidateUpdates, buildPullRequestBody, writePullRequestBody } from "../application/candidate-update.js";
 import { writeTextAtomic } from "../adapters/filesystem-store.js";
 
 const root = fileURLToPath(new URL("../..", import.meta.url));

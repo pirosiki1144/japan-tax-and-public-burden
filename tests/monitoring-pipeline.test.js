@@ -3,7 +3,7 @@ import assert from "node:assert/strict";
 import { readFile } from "node:fs/promises";
 import { basename, join } from "node:path";
 import { fileURLToPath } from "node:url";
-import { loadOperationalJobs, runOperationalMonitoring } from "../scripts/pipeline/monitoring-pipeline.js";
+import { loadOperationalJobs, runOperationalMonitoring } from "../scripts/composition/monitoring-pipeline.js";
 
 const root = fileURLToPath(new URL("..", import.meta.url));
 const fixtureRoot = join(root, "tests/fixtures/source-scan");

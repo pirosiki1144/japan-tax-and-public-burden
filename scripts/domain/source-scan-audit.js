@@ -1,4 +1,4 @@
-import { sha256 } from "../normalize/sha256.js";
+import { sha256 } from "./sha256.js";
 
 function topicKey(parts) {
   const identity = parts.map((part) => String(part ?? "unknown").trim().toLowerCase()).join("|");

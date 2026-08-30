@@ -1,7 +1,7 @@
 import test from "node:test";
 import assert from "node:assert/strict";
 import { fileURLToPath } from "node:url";
-import { createValidators, readYaml, validateDocument } from "../scripts/validate/schema-validator.js";
+import { createValidators, readYaml, validateDocument } from "../scripts/adapters/schema-validator.js";
 
 const burdenSchema = fileURLToPath(new URL("../schemas/burden.schema.json", import.meta.url));
 const invalidFixture = fileURLToPath(new URL("./fixtures/invalid-burden.yaml", import.meta.url));

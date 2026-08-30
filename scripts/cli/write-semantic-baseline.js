@@ -1,4 +1,4 @@
-import { buildSemanticBaseline } from "./semantic-baseline.js";
+import { buildSemanticBaseline } from "../composition/semantic-baseline.js";
 import { readJson, writeJsonAtomic } from "../adapters/filesystem-store.js";
 
 const args = process.argv.slice(2);

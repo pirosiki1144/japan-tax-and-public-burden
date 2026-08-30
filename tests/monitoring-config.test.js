@@ -2,8 +2,8 @@ import test from "node:test";
 import assert from "node:assert/strict";
 import { readFile } from "node:fs/promises";
 import { fileURLToPath } from "node:url";
-import { buildExtractionTargetReview, buildRuntimeMonitoringPlan } from "../scripts/monitoring/build-monitoring-config.js";
-import { buildEgovChangeSnapshot, hasEgovSourceChanged } from "../scripts/monitoring/egov-change-detection.js";
+import { buildExtractionTargetReview, buildRuntimeMonitoringPlan } from "../scripts/cli/build-monitoring-config.js";
+import { buildEgovChangeSnapshot, hasEgovSourceChanged } from "../scripts/domain/egov-change-detection.js";
 
 const root = fileURLToPath(new URL("..", import.meta.url));
 

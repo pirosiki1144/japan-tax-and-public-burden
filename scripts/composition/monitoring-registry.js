@@ -1,5 +1,5 @@
 import { join } from "node:path";
-import { createValidators, readYaml, validateDocument } from "../validate/schema-validator.js";
+import { createValidators, readYaml, validateDocument } from "../adapters/schema-validator.js";
 
 export async function loadMonitoringRegistry(root) {
   const path = join(root, "config/monitoring.yaml");

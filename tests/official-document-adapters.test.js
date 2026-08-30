@@ -2,8 +2,8 @@ import test from "node:test";
 import assert from "node:assert/strict";
 import { createHash } from "node:crypto";
 import { readFile } from "node:fs/promises";
-import { adaptCsvDocument, adaptHtmlDocument, adaptPdfDocument } from "../scripts/formats/official-document.js";
-import { extractCsvFacts, extractTextFacts } from "../scripts/normalize/declarative-document-facts.js";
+import { adaptCsvDocument, adaptHtmlDocument, adaptPdfDocument } from "../scripts/adapters/official-document.js";
+import { extractCsvFacts, extractTextFacts } from "../scripts/domain/declarative-document-facts.js";
 
 const fixtureRoot = new URL("fixtures/format-adapters/", import.meta.url);
 const fetchedAt = "2026-08-21T12:00:00+09:00";

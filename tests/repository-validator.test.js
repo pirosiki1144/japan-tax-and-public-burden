@@ -3,8 +3,8 @@ import assert from "node:assert/strict";
 import { readFile } from "node:fs/promises";
 import { fileURLToPath } from "node:url";
 import { parse } from "yaml";
-import { validateRepository } from "../scripts/validate/repository-validator.js";
-import { createValidators, validateDocument } from "../scripts/validate/schema-validator.js";
+import { validateRepository } from "../scripts/composition/repository-validator.js";
+import { createValidators, validateDocument } from "../scripts/adapters/schema-validator.js";
 
 const root = fileURLToPath(new URL("..", import.meta.url));
 

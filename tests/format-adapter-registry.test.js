@@ -2,8 +2,8 @@ import test from "node:test";
 import assert from "node:assert/strict";
 import { access } from "node:fs/promises";
 import { fileURLToPath } from "node:url";
-import { formatAdapterRegistry, loadMonitoringRegistry } from "../scripts/monitoring/monitoring-registry.js";
-import { buildMonitoringExecutionPlan } from "../scripts/monitoring/build-monitoring-execution-plan.js";
+import { formatAdapterRegistry, loadMonitoringRegistry } from "../scripts/composition/monitoring-registry.js";
+import { buildMonitoringExecutionPlan } from "../scripts/cli/build-monitoring-execution-plan.js";
 import { monitoringComposition } from "../scripts/composition/monitoring-composition.js";
 
 const root = fileURLToPath(new URL("..", import.meta.url));

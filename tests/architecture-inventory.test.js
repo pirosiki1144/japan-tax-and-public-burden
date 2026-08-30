@@ -1,8 +1,8 @@
 import test from "node:test";
 import assert from "node:assert/strict";
 import { fileURLToPath } from "node:url";
-import { buildArchitectureInventory, classifyNonJavaScript, validateResponsibilityRegistry } from "../scripts/audit/architecture-inventory.js";
-import { dependencyType, evaluateDependency, parseDependencies } from "../scripts/audit/dependency-rules.js";
+import { buildArchitectureInventory, classifyNonJavaScript, validateResponsibilityRegistry } from "../scripts/cli/architecture-inventory.js";
+import { dependencyType, evaluateDependency, parseDependencies } from "../scripts/domain/dependency-rules.js";
 
 const root = fileURLToPath(new URL("..", import.meta.url));
 
@@ -79,6 +79,14 @@ test("strict architecture inspection has no violations or cycles", async () => {
   const report = await buildArchitectureInventory(root);
   assert.deepEqual(report.import_graph.violations, []);
   assert.deepEqual(report.import_graph.cycles, []);
+});
+
+test("script placement matches the five physical directories without changing responsibilities", async () => {
+  const report = await buildArchitectureInventory(root);
+  const directoryByResponsibility = { cli: "cli", application: "application", domain: "domain", adapter: "adapters", composition_root: "composition" };
+  const scriptFiles = report.files.filter(({ path }) => path.startsWith("scripts/") && path.endsWith(".js"));
+  assert.deepEqual([...new Set(scriptFiles.map(({ path }) => path.split("/")[1]))].sort(), ["adapters", "application", "cli", "composition", "domain"]);
+  for (const { path, responsibility } of scriptFiles) assert.equal(path.split("/")[1], directoryByResponsibility[responsibility], path);
 });
 
 test("non-JavaScript classification remains separate from the responsibility registry", () => {

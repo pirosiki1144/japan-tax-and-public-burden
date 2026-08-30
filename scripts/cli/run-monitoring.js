@@ -1,7 +1,7 @@
 import { readFile } from "node:fs/promises";
 import { basename, extname, join } from "node:path";
 import { fileURLToPath } from "node:url";
-import { runOperationalMonitoring } from "./monitoring-pipeline.js";
+import { runOperationalMonitoring } from "../composition/monitoring-pipeline.js";
 import { monitorSources } from "../application/repository-operations.js";
 import { writeJsonAtomic } from "../adapters/filesystem-store.js";
 

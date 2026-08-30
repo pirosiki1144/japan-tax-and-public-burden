@@ -1,7 +1,7 @@
 import { join } from "node:path";
 import { fileURLToPath } from "node:url";
-import { readYaml } from "../validate/schema-validator.js";
-import { loadMonitoringRegistry, registryByTaxId } from "./monitoring-registry.js";
+import { readYaml } from "../adapters/schema-validator.js";
+import { loadMonitoringRegistry, registryByTaxId } from "../composition/monitoring-registry.js";
 import { readText, writeTextAtomic } from "../adapters/filesystem-store.js";
 import { loadLegacyBurdens } from "../adapters/canonical-master.js";
 

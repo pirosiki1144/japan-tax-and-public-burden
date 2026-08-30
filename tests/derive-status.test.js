@@ -1,6 +1,6 @@
 import test from "node:test";
 import assert from "node:assert/strict";
-import { BURDEN_STATUSES, deriveBurdenStatus } from "../scripts/normalize/derive-status.js";
+import { BURDEN_STATUSES, deriveBurdenStatus } from "../scripts/domain/derive-status.js";
 
 const asOf = "2026-08-16";
 
