@@ -11,7 +11,7 @@ test("every persisted data and config file has an explicit schema route", async 
   const validated = new Set([
     join(root, "config/distribution.yaml"),
     join(root, "config/monitoring.yaml"), join(root, "config/sources.yaml"),
-    join(root, "config/architecture-responsibilities.json"), join(root, "config/architecture-violations-baseline.json"),
+    join(root, "config/architecture-responsibilities.json"),
     join(root, "data/master/canonical.json"), join(root, "data/master/initial-import.json"),
     join(root, "data/monitoring/review.json")
   ]);

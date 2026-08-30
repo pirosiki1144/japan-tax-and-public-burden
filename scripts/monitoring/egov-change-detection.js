@@ -1,4 +1,4 @@
-import { createHash } from "node:crypto";
+import { sha256 as hashText } from "../normalize/sha256.js";
 
 function atPointer(document, pointer) {
   return pointer.split("/").slice(1).reduce((value, segment) => value?.[segment.replaceAll("~1", "/").replaceAll("~0", "~")], document);
@@ -19,7 +19,7 @@ function collectTaggedNodes(node, tag, matches = []) {
 }
 
 function sha256(value) {
-  return createHash("sha256").update(JSON.stringify(value)).digest("hex");
+  return hashText(JSON.stringify(value));
 }
 
 export function buildEgovChangeSnapshot(document, source) {

@@ -5,12 +5,11 @@ import { builtinModules } from "node:module";
 import { dirname, extname, join, normalize } from "node:path";
 import { fileURLToPath } from "node:url";
 import { parse } from "yaml";
-import { compareViolations, dependencyType, evaluateDependency, parseDependencies } from "./dependency-rules.js";
+import { dependencyType, evaluateDependency, parseDependencies } from "./dependency-rules.js";
 
 const ROOT = join(dirname(fileURLToPath(import.meta.url)), "../..");
 const DEFAULT_OUTPUT = "reports/architecture-inventory.json";
 const RESPONSIBILITY_PATH = "config/architecture-responsibilities.json";
-const BASELINE_PATH = "config/architecture-violations-baseline.json";
 const DERIVED = new Set(["docs/monitoring-extraction-target-review.md", "generated/public-burdens.csv", DEFAULT_OUTPUT]);
 const BUILTINS = new Set([...builtinModules, ...builtinModules.map((name) => `node:${name}`)]);
 
@@ -46,16 +45,6 @@ export function validateResponsibilityRegistry(registry, javascriptPaths) {
   for (const path of javascriptPaths) if (!registered.has(path)) errors.push(`${path}: JavaScript responsibility is not registered`);
   for (const path of registered.keys()) if (!actual.has(path)) errors.push(`${path}: responsibility references a missing JavaScript file`);
   return errors.sort();
-}
-
-export function validateViolationBaseline(baseline) {
-  const errors = [];
-  if (baseline?.schema_version !== 1 || baseline?.remediation_issue !== 93 || !Array.isArray(baseline?.violations)) return ["violation baseline must have schema_version 1, remediation_issue 93, and violations"];
-  baseline.violations.forEach((item, index) => {
-    for (const field of ["source_path", "source_responsibility", "specifier", "dependency_type", "import_kind", "rule"]) if (!item[field]) errors.push(`baseline[${index}].${field}: required`);
-    if (item.remediation_issue !== 93) errors.push(`baseline[${index}].remediation_issue: must be 93`);
-  });
-  return errors;
 }
 
 function resolveImport(from, specifier, files) {
@@ -148,9 +137,6 @@ export async function buildArchitectureInventory(root = ROOT) {
   const registrationErrors = validateResponsibilityRegistry(responsibilityRegistry, javascript);
   const registered = new Map(responsibilityRegistry.files.map(({ path, responsibility }) => [path, responsibility]));
   const dependencies = await analyzeJavaScriptDependencies(root, javascript, responsibilityRegistry);
-  const baselineDocument = await json(root, BASELINE_PATH);
-  const baselineErrors = validateViolationBaseline(baselineDocument);
-  const baselineComparison = compareViolations(dependencies.violations, baselineDocument.violations);
   const classified = files.map((path) => ({ path, responsibility: registered.get(path) ?? classifyNonJavaScript(path) }));
   const counts = Object.fromEntries([...new Set(classified.map(({ responsibility }) => responsibility))].sort()
     .map((responsibility) => [responsibility, classified.filter((entry) => entry.responsibility === responsibility).length]));
@@ -161,7 +147,6 @@ export async function buildArchitectureInventory(root = ROOT) {
     scope: "tracked repository files",
     baseline_commit: execFileSync("git", ["rev-parse", "HEAD"], { cwd: root, encoding: "utf8" }).trim(),
     responsibility_registry: { path: RESPONSIBILITY_PATH, errors: registrationErrors },
-    violation_baseline: { path: BASELINE_PATH, issue: 93, entries: baselineDocument.violations.length, errors: baselineErrors, ...baselineComparison },
     totals: { tracked_files: files.length, javascript_files: javascript.length, import_edges: dependencies.edges.length },
     responsibilities: counts,
     files: classified,
@@ -187,11 +172,8 @@ async function main() {
     report.baseline_commit = existing.baseline_commit;
     if (`${JSON.stringify(report, null, 2)}\n` !== `${JSON.stringify(existing, null, 2)}\n`) throw new Error(`${output} is stale; run npm run architecture:audit`);
     if (report.responsibility_registry.errors.length) throw new Error(`responsibility registry errors: ${report.responsibility_registry.errors.join("; ")}`);
-    if (report.violation_baseline.errors.length) throw new Error(`violation baseline errors: ${report.violation_baseline.errors.join("; ")}`);
     if (report.import_graph.cycles.length) throw new Error(`circular imports are forbidden: ${report.import_graph.cycles.join("; ")}`);
-    if (report.violation_baseline.new_violations.length) throw new Error(`new architecture violations: ${JSON.stringify(report.violation_baseline.new_violations)}`);
-    if (report.violation_baseline.resolved_without_baseline_update.length) throw new Error(`resolved violations must be removed from baseline: ${JSON.stringify(report.violation_baseline.resolved_without_baseline_update)}`);
-    if (strict && report.import_graph.violations.length) throw new Error(`strict architecture violations: ${JSON.stringify(report.import_graph.violations)}`);
+    if (report.import_graph.violations.length) throw new Error(`architecture violations: ${JSON.stringify(report.import_graph.violations)}`);
     console.log(JSON.stringify({ status: "clean", files: report.totals.tracked_files, cycles: 0, violations: report.import_graph.violations.length, strict }));
     return;
   }

@@ -14,16 +14,14 @@ test("obsolete persisted monitoring paths and compatibility facade are absent", 
   ]) await assert.rejects(access(`${root}/${path}`));
 });
 
-test("the architecture has one registry, one atomic writer, and only baselined migration violations", async () => {
+test("the architecture has one registry, one atomic writer, and no violations", async () => {
   const report = await buildArchitectureInventory(root);
   assert.equal(report.configuration_overlap.canonical_registry_targets, 112);
   assert.equal(report.configuration_overlap.manually_edited_decision_files, 1);
   assert.deepEqual(report.configuration_overlap.persisted_derived_target_files, []);
   assert.equal(report.io_duplication.atomic_write_implementations, 1);
   assert.deepEqual(report.import_graph.cycles, []);
-  assert.equal(report.import_graph.violations.length, 22);
-  assert.deepEqual(report.violation_baseline.new_violations, []);
-  assert.deepEqual(report.violation_baseline.resolved_without_baseline_update, []);
+  assert.deepEqual(report.import_graph.violations, []);
 });
 
 test("all 112 decisions, official evidence, manual audit metadata, and coverage remain reviewable", async () => {

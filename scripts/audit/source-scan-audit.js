@@ -1,8 +1,8 @@
-import { createHash } from "node:crypto";
+import { sha256 } from "../normalize/sha256.js";
 
 function topicKey(parts) {
   const identity = parts.map((part) => String(part ?? "unknown").trim().toLowerCase()).join("|");
-  return `audit-${createHash("sha256").update(identity).digest("hex").slice(0, 20)}`;
+  return `audit-${sha256(identity).slice(0, 20)}`;
 }
 
 function evidenceUrls(result) {

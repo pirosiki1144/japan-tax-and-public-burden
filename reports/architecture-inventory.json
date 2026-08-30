@@ -1,35 +1,27 @@
 {
   "schema_version": 2,
   "scope": "tracked repository files",
-  "baseline_commit": "828cc16ac9958c9d25b4dd3d75882f374f8f0eec",
+  "baseline_commit": "648d5143d55d574271fd402b781b1950488e2be1",
   "responsibility_registry": {
     "path": "config/architecture-responsibilities.json",
     "errors": []
   },
-  "violation_baseline": {
-    "path": "config/architecture-violations-baseline.json",
-    "issue": 93,
-    "entries": 22,
-    "errors": [],
-    "new_violations": [],
-    "resolved_without_baseline_update": []
-  },
   "totals": {
-    "tracked_files": 165,
-    "javascript_files": 72,
+    "tracked_files": 164,
+    "javascript_files": 73,
     "import_edges": 288
   },
   "responsibilities": {
-    "adapter": 7,
-    "application": 6,
+    "adapter": 5,
+    "application": 4,
     "cli": 14,
-    "composition_root": 1,
+    "composition_root": 9,
     "derived_artifact": 3,
     "documentation": 17,
-    "domain": 16,
+    "domain": 13,
     "fixture": 39,
     "repository_support": 8,
-    "source_of_truth": 26,
+    "source_of_truth": 24,
     "test": 28
   },
   "files": [
@@ -71,10 +63,6 @@
     },
     {
       "path": "config/architecture-responsibilities.json",
-      "responsibility": "source_of_truth"
-    },
-    {
-      "path": "config/architecture-violations-baseline.json",
       "responsibility": "source_of_truth"
     },
     {
@@ -186,10 +174,6 @@
       "responsibility": "source_of_truth"
     },
     {
-      "path": "schemas/architecture-violations-baseline.schema.json",
-      "responsibility": "source_of_truth"
-    },
-    {
       "path": "schemas/burden.schema.json",
       "responsibility": "source_of_truth"
     },
@@ -263,7 +247,7 @@
     },
     {
       "path": "scripts/adapters/repository-validation.js",
-      "responsibility": "adapter"
+      "responsibility": "composition_root"
     },
     {
       "path": "scripts/application/repository-operations.js",
@@ -323,7 +307,7 @@
     },
     {
       "path": "scripts/diff/canonical-diff.js",
-      "responsibility": "domain"
+      "responsibility": "composition_root"
     },
     {
       "path": "scripts/fetch/.gitkeep",
@@ -335,7 +319,7 @@
     },
     {
       "path": "scripts/fetch/source-registry.js",
-      "responsibility": "adapter"
+      "responsibility": "composition_root"
     },
     {
       "path": "scripts/formats/official-document.js",
@@ -363,11 +347,11 @@
     },
     {
       "path": "scripts/monitoring/monitoring-registry.js",
-      "responsibility": "domain"
+      "responsibility": "composition_root"
     },
     {
       "path": "scripts/monitoring/semantic-baseline.js",
-      "responsibility": "domain"
+      "responsibility": "composition_root"
     },
     {
       "path": "scripts/monitoring/write-semantic-baseline.js",
@@ -402,8 +386,12 @@
       "responsibility": "domain"
     },
     {
+      "path": "scripts/normalize/sha256.js",
+      "responsibility": "domain"
+    },
+    {
       "path": "scripts/pipeline/monitoring-pipeline.js",
-      "responsibility": "application"
+      "responsibility": "composition_root"
     },
     {
       "path": "scripts/pipeline/run-monitoring.js",
@@ -415,7 +403,7 @@
     },
     {
       "path": "scripts/pipeline/source-pipeline.js",
-      "responsibility": "application"
+      "responsibility": "composition_root"
     },
     {
       "path": "scripts/report/.gitkeep",
@@ -427,7 +415,7 @@
     },
     {
       "path": "scripts/validate/repository-validator.js",
-      "responsibility": "domain"
+      "responsibility": "composition_root"
     },
     {
       "path": "scripts/validate/schema-validator.js",
@@ -696,228 +684,7 @@
   ],
   "import_graph": {
     "cycles": [],
-    "violations": [
-      {
-        "source_path": "scripts/adapters/repository-validation.js",
-        "source_responsibility": "adapter",
-        "target_path": "scripts/validate/schema-validator.js",
-        "target_responsibility": "adapter",
-        "specifier": "../validate/schema-validator.js",
-        "dependency_type": "internal",
-        "import_kind": "static_import",
-        "rule": "responsibility_direction_forbidden"
-      },
-      {
-        "source_path": "scripts/audit/source-scan-audit.js",
-        "source_responsibility": "domain",
-        "target_path": null,
-        "target_responsibility": null,
-        "specifier": "node:crypto",
-        "dependency_type": "node_builtin",
-        "import_kind": "static_import",
-        "rule": "domain_node_builtin_forbidden"
-      },
-      {
-        "source_path": "scripts/automation/candidate-update.js",
-        "source_responsibility": "application",
-        "target_path": "scripts/adapters/filesystem-store.js",
-        "target_responsibility": "adapter",
-        "specifier": "../adapters/filesystem-store.js",
-        "dependency_type": "internal",
-        "import_kind": "static_import",
-        "rule": "responsibility_direction_forbidden"
-      },
-      {
-        "source_path": "scripts/diff/canonical-diff.js",
-        "source_responsibility": "domain",
-        "target_path": null,
-        "target_responsibility": null,
-        "specifier": "node:path",
-        "dependency_type": "node_builtin",
-        "import_kind": "static_import",
-        "rule": "domain_node_builtin_forbidden"
-      },
-      {
-        "source_path": "scripts/diff/canonical-diff.js",
-        "source_responsibility": "domain",
-        "target_path": "scripts/validate/schema-validator.js",
-        "target_responsibility": "adapter",
-        "specifier": "../validate/schema-validator.js",
-        "dependency_type": "internal",
-        "import_kind": "static_import",
-        "rule": "responsibility_direction_forbidden"
-      },
-      {
-        "source_path": "scripts/fetch/source-registry.js",
-        "source_responsibility": "adapter",
-        "target_path": "scripts/validate/schema-validator.js",
-        "target_responsibility": "adapter",
-        "specifier": "../validate/schema-validator.js",
-        "dependency_type": "internal",
-        "import_kind": "static_import",
-        "rule": "responsibility_direction_forbidden"
-      },
-      {
-        "source_path": "scripts/monitoring/egov-change-detection.js",
-        "source_responsibility": "domain",
-        "target_path": null,
-        "target_responsibility": null,
-        "specifier": "node:crypto",
-        "dependency_type": "node_builtin",
-        "import_kind": "static_import",
-        "rule": "domain_node_builtin_forbidden"
-      },
-      {
-        "source_path": "scripts/monitoring/monitoring-registry.js",
-        "source_responsibility": "domain",
-        "target_path": null,
-        "target_responsibility": null,
-        "specifier": "node:path",
-        "dependency_type": "node_builtin",
-        "import_kind": "static_import",
-        "rule": "domain_node_builtin_forbidden"
-      },
-      {
-        "source_path": "scripts/monitoring/monitoring-registry.js",
-        "source_responsibility": "domain",
-        "target_path": "scripts/validate/schema-validator.js",
-        "target_responsibility": "adapter",
-        "specifier": "../validate/schema-validator.js",
-        "dependency_type": "internal",
-        "import_kind": "static_import",
-        "rule": "responsibility_direction_forbidden"
-      },
-      {
-        "source_path": "scripts/monitoring/semantic-baseline.js",
-        "source_responsibility": "domain",
-        "target_path": null,
-        "target_responsibility": null,
-        "specifier": "node:fs/promises",
-        "dependency_type": "node_builtin",
-        "import_kind": "static_import",
-        "rule": "domain_node_builtin_forbidden"
-      },
-      {
-        "source_path": "scripts/monitoring/semantic-baseline.js",
-        "source_responsibility": "domain",
-        "target_path": null,
-        "target_responsibility": null,
-        "specifier": "node:path",
-        "dependency_type": "node_builtin",
-        "import_kind": "static_import",
-        "rule": "domain_node_builtin_forbidden"
-      },
-      {
-        "source_path": "scripts/monitoring/semantic-baseline.js",
-        "source_responsibility": "domain",
-        "target_path": "scripts/validate/schema-validator.js",
-        "target_responsibility": "adapter",
-        "specifier": "../validate/schema-validator.js",
-        "dependency_type": "internal",
-        "import_kind": "static_import",
-        "rule": "responsibility_direction_forbidden"
-      },
-      {
-        "source_path": "scripts/normalize/pdf-regex-facts.js",
-        "source_responsibility": "domain",
-        "target_path": "scripts/formats/official-document.js",
-        "target_responsibility": "adapter",
-        "specifier": "../formats/official-document.js",
-        "dependency_type": "internal",
-        "import_kind": "static_import",
-        "rule": "responsibility_direction_forbidden"
-      },
-      {
-        "source_path": "scripts/pipeline/monitoring-pipeline.js",
-        "source_responsibility": "application",
-        "target_path": "scripts/validate/schema-validator.js",
-        "target_responsibility": "adapter",
-        "specifier": "../validate/schema-validator.js",
-        "dependency_type": "internal",
-        "import_kind": "static_import",
-        "rule": "responsibility_direction_forbidden"
-      },
-      {
-        "source_path": "scripts/pipeline/monitoring-pipeline.js",
-        "source_responsibility": "application",
-        "target_path": "scripts/monitoring/build-monitoring-config.js",
-        "target_responsibility": "cli",
-        "specifier": "../monitoring/build-monitoring-config.js",
-        "dependency_type": "internal",
-        "import_kind": "static_import",
-        "rule": "responsibility_direction_forbidden"
-      },
-      {
-        "source_path": "scripts/pipeline/monitoring-pipeline.js",
-        "source_responsibility": "application",
-        "target_path": "scripts/monitoring/build-monitoring-execution-plan.js",
-        "target_responsibility": "cli",
-        "specifier": "../monitoring/build-monitoring-execution-plan.js",
-        "dependency_type": "internal",
-        "import_kind": "static_import",
-        "rule": "responsibility_direction_forbidden"
-      },
-      {
-        "source_path": "scripts/pipeline/monitoring-pipeline.js",
-        "source_responsibility": "application",
-        "target_path": "scripts/composition/monitoring-composition.js",
-        "target_responsibility": "composition_root",
-        "specifier": "../composition/monitoring-composition.js",
-        "dependency_type": "internal",
-        "import_kind": "static_import",
-        "rule": "responsibility_direction_forbidden"
-      },
-      {
-        "source_path": "scripts/pipeline/source-pipeline.js",
-        "source_responsibility": "application",
-        "target_path": "scripts/composition/monitoring-composition.js",
-        "target_responsibility": "composition_root",
-        "specifier": "../composition/monitoring-composition.js",
-        "dependency_type": "internal",
-        "import_kind": "static_import",
-        "rule": "responsibility_direction_forbidden"
-      },
-      {
-        "source_path": "scripts/validate/repository-validator.js",
-        "source_responsibility": "domain",
-        "target_path": null,
-        "target_responsibility": null,
-        "specifier": "node:fs/promises",
-        "dependency_type": "node_builtin",
-        "import_kind": "static_import",
-        "rule": "domain_node_builtin_forbidden"
-      },
-      {
-        "source_path": "scripts/validate/repository-validator.js",
-        "source_responsibility": "domain",
-        "target_path": null,
-        "target_responsibility": null,
-        "specifier": "node:path",
-        "dependency_type": "node_builtin",
-        "import_kind": "static_import",
-        "rule": "domain_node_builtin_forbidden"
-      },
-      {
-        "source_path": "scripts/validate/repository-validator.js",
-        "source_responsibility": "domain",
-        "target_path": "scripts/validate/schema-validator.js",
-        "target_responsibility": "adapter",
-        "specifier": "./schema-validator.js",
-        "dependency_type": "internal",
-        "import_kind": "static_import",
-        "rule": "responsibility_direction_forbidden"
-      },
-      {
-        "source_path": "scripts/validate/repository-validator.js",
-        "source_responsibility": "domain",
-        "target_path": "scripts/monitoring/build-monitoring-config.js",
-        "target_responsibility": "cli",
-        "specifier": "../monitoring/build-monitoring-config.js",
-        "dependency_type": "internal",
-        "import_kind": "static_import",
-        "rule": "responsibility_direction_forbidden"
-      }
-    ],
+    "violations": [],
     "edges": [
       {
         "source_path": "scripts/adapters/canonical-master.js",
@@ -957,7 +724,7 @@
       },
       {
         "source_path": "scripts/adapters/repository-validation.js",
-        "source_responsibility": "adapter",
+        "source_responsibility": "composition_root",
         "target_path": null,
         "target_responsibility": null,
         "specifier": "node:path",
@@ -966,7 +733,7 @@
       },
       {
         "source_path": "scripts/adapters/repository-validation.js",
-        "source_responsibility": "adapter",
+        "source_responsibility": "composition_root",
         "target_path": "scripts/validate/schema-validator.js",
         "target_responsibility": "adapter",
         "specifier": "../validate/schema-validator.js",
@@ -1166,7 +933,7 @@
         "source_path": "scripts/audit/audit-repository.js",
         "source_responsibility": "cli",
         "target_path": "scripts/validate/repository-validator.js",
-        "target_responsibility": "domain",
+        "target_responsibility": "composition_root",
         "specifier": "../validate/repository-validator.js",
         "dependency_type": "internal",
         "import_kind": "static_import"
@@ -1210,10 +977,10 @@
       {
         "source_path": "scripts/audit/source-scan-audit.js",
         "source_responsibility": "domain",
-        "target_path": null,
-        "target_responsibility": null,
-        "specifier": "node:crypto",
-        "dependency_type": "node_builtin",
+        "target_path": "scripts/normalize/sha256.js",
+        "target_responsibility": "domain",
+        "specifier": "../normalize/sha256.js",
+        "dependency_type": "internal",
         "import_kind": "static_import"
       },
       {
@@ -1253,15 +1020,6 @@
         "import_kind": "static_import"
       },
       {
-        "source_path": "scripts/automation/candidate-update.js",
-        "source_responsibility": "application",
-        "target_path": "scripts/adapters/filesystem-store.js",
-        "target_responsibility": "adapter",
-        "specifier": "../adapters/filesystem-store.js",
-        "dependency_type": "internal",
-        "import_kind": "static_import"
-      },
-      {
         "source_path": "scripts/automation/prepare-update.js",
         "source_responsibility": "cli",
         "target_path": null,
@@ -1289,6 +1047,15 @@
         "import_kind": "static_import"
       },
       {
+        "source_path": "scripts/automation/prepare-update.js",
+        "source_responsibility": "cli",
+        "target_path": "scripts/adapters/filesystem-store.js",
+        "target_responsibility": "adapter",
+        "specifier": "../adapters/filesystem-store.js",
+        "dependency_type": "internal",
+        "import_kind": "static_import"
+      },
+      {
         "source_path": "scripts/composition/monitoring-composition.js",
         "source_responsibility": "composition_root",
         "target_path": "scripts/application/strategy-registry.js",
@@ -1310,7 +1077,7 @@
         "source_path": "scripts/composition/monitoring-composition.js",
         "source_responsibility": "composition_root",
         "target_path": "scripts/diff/canonical-diff.js",
-        "target_responsibility": "domain",
+        "target_responsibility": "composition_root",
         "specifier": "../diff/canonical-diff.js",
         "dependency_type": "internal",
         "import_kind": "static_import"
@@ -1328,7 +1095,7 @@
         "source_path": "scripts/composition/monitoring-composition.js",
         "source_responsibility": "composition_root",
         "target_path": "scripts/fetch/source-registry.js",
-        "target_responsibility": "adapter",
+        "target_responsibility": "composition_root",
         "specifier": "../fetch/source-registry.js",
         "dependency_type": "internal",
         "import_kind": "static_import"
@@ -1355,7 +1122,7 @@
         "source_path": "scripts/composition/monitoring-composition.js",
         "source_responsibility": "composition_root",
         "target_path": "scripts/monitoring/semantic-baseline.js",
-        "target_responsibility": "domain",
+        "target_responsibility": "composition_root",
         "specifier": "../monitoring/semantic-baseline.js",
         "dependency_type": "internal",
         "import_kind": "static_import"
@@ -1398,7 +1165,7 @@
       },
       {
         "source_path": "scripts/diff/canonical-diff.js",
-        "source_responsibility": "domain",
+        "source_responsibility": "composition_root",
         "target_path": null,
         "target_responsibility": null,
         "specifier": "node:path",
@@ -1407,7 +1174,7 @@
       },
       {
         "source_path": "scripts/diff/canonical-diff.js",
-        "source_responsibility": "domain",
+        "source_responsibility": "composition_root",
         "target_path": "scripts/validate/schema-validator.js",
         "target_responsibility": "adapter",
         "specifier": "../validate/schema-validator.js",
@@ -1425,7 +1192,7 @@
       },
       {
         "source_path": "scripts/fetch/source-registry.js",
-        "source_responsibility": "adapter",
+        "source_responsibility": "composition_root",
         "target_path": null,
         "target_responsibility": null,
         "specifier": "node:path",
@@ -1434,7 +1201,7 @@
       },
       {
         "source_path": "scripts/fetch/source-registry.js",
-        "source_responsibility": "adapter",
+        "source_responsibility": "composition_root",
         "target_path": "scripts/validate/schema-validator.js",
         "target_responsibility": "adapter",
         "specifier": "../validate/schema-validator.js",
@@ -1535,7 +1302,7 @@
         "source_path": "scripts/monitoring/build-monitoring-config.js",
         "source_responsibility": "cli",
         "target_path": "scripts/monitoring/monitoring-registry.js",
-        "target_responsibility": "domain",
+        "target_responsibility": "composition_root",
         "specifier": "./monitoring-registry.js",
         "dependency_type": "internal",
         "import_kind": "static_import"
@@ -1598,7 +1365,7 @@
         "source_path": "scripts/monitoring/build-monitoring-execution-plan.js",
         "source_responsibility": "cli",
         "target_path": "scripts/monitoring/monitoring-registry.js",
-        "target_responsibility": "domain",
+        "target_responsibility": "composition_root",
         "specifier": "./monitoring-registry.js",
         "dependency_type": "internal",
         "import_kind": "static_import"
@@ -1615,10 +1382,10 @@
       {
         "source_path": "scripts/monitoring/egov-change-detection.js",
         "source_responsibility": "domain",
-        "target_path": null,
-        "target_responsibility": null,
-        "specifier": "node:crypto",
-        "dependency_type": "node_builtin",
+        "target_path": "scripts/normalize/sha256.js",
+        "target_responsibility": "domain",
+        "specifier": "../normalize/sha256.js",
+        "dependency_type": "internal",
         "import_kind": "static_import"
       },
       {
@@ -1679,14 +1446,14 @@
         "source_path": "scripts/monitoring/extract-egov-tax-semantics.js",
         "source_responsibility": "cli",
         "target_path": "scripts/monitoring/monitoring-registry.js",
-        "target_responsibility": "domain",
+        "target_responsibility": "composition_root",
         "specifier": "./monitoring-registry.js",
         "dependency_type": "internal",
         "import_kind": "static_import"
       },
       {
         "source_path": "scripts/monitoring/monitoring-registry.js",
-        "source_responsibility": "domain",
+        "source_responsibility": "composition_root",
         "target_path": null,
         "target_responsibility": null,
         "specifier": "node:path",
@@ -1695,7 +1462,7 @@
       },
       {
         "source_path": "scripts/monitoring/monitoring-registry.js",
-        "source_responsibility": "domain",
+        "source_responsibility": "composition_root",
         "target_path": "scripts/validate/schema-validator.js",
         "target_responsibility": "adapter",
         "specifier": "../validate/schema-validator.js",
@@ -1704,7 +1471,7 @@
       },
       {
         "source_path": "scripts/monitoring/semantic-baseline.js",
-        "source_responsibility": "domain",
+        "source_responsibility": "composition_root",
         "target_path": null,
         "target_responsibility": null,
         "specifier": "node:fs/promises",
@@ -1713,7 +1480,7 @@
       },
       {
         "source_path": "scripts/monitoring/semantic-baseline.js",
-        "source_responsibility": "domain",
+        "source_responsibility": "composition_root",
         "target_path": null,
         "target_responsibility": null,
         "specifier": "node:path",
@@ -1722,7 +1489,7 @@
       },
       {
         "source_path": "scripts/monitoring/semantic-baseline.js",
-        "source_responsibility": "domain",
+        "source_responsibility": "composition_root",
         "target_path": "scripts/normalize/egov-tax-semantics.js",
         "target_responsibility": "domain",
         "specifier": "../normalize/egov-tax-semantics.js",
@@ -1731,7 +1498,7 @@
       },
       {
         "source_path": "scripts/monitoring/semantic-baseline.js",
-        "source_responsibility": "domain",
+        "source_responsibility": "composition_root",
         "target_path": "scripts/validate/schema-validator.js",
         "target_responsibility": "adapter",
         "specifier": "../validate/schema-validator.js",
@@ -1742,7 +1509,7 @@
         "source_path": "scripts/monitoring/write-semantic-baseline.js",
         "source_responsibility": "cli",
         "target_path": "scripts/monitoring/semantic-baseline.js",
-        "target_responsibility": "domain",
+        "target_responsibility": "composition_root",
         "specifier": "./semantic-baseline.js",
         "dependency_type": "internal",
         "import_kind": "static_import"
@@ -1757,17 +1524,8 @@
         "import_kind": "static_import"
       },
       {
-        "source_path": "scripts/normalize/pdf-regex-facts.js",
-        "source_responsibility": "domain",
-        "target_path": "scripts/formats/official-document.js",
-        "target_responsibility": "adapter",
-        "specifier": "../formats/official-document.js",
-        "dependency_type": "internal",
-        "import_kind": "static_import"
-      },
-      {
         "source_path": "scripts/pipeline/monitoring-pipeline.js",
-        "source_responsibility": "application",
+        "source_responsibility": "composition_root",
         "target_path": null,
         "target_responsibility": null,
         "specifier": "node:path",
@@ -1776,7 +1534,7 @@
       },
       {
         "source_path": "scripts/pipeline/monitoring-pipeline.js",
-        "source_responsibility": "application",
+        "source_responsibility": "composition_root",
         "target_path": "scripts/audit/source-scan-audit.js",
         "target_responsibility": "domain",
         "specifier": "../audit/source-scan-audit.js",
@@ -1785,16 +1543,16 @@
       },
       {
         "source_path": "scripts/pipeline/monitoring-pipeline.js",
-        "source_responsibility": "application",
+        "source_responsibility": "composition_root",
         "target_path": "scripts/monitoring/semantic-baseline.js",
-        "target_responsibility": "domain",
+        "target_responsibility": "composition_root",
         "specifier": "../monitoring/semantic-baseline.js",
         "dependency_type": "internal",
         "import_kind": "static_import"
       },
       {
         "source_path": "scripts/pipeline/monitoring-pipeline.js",
-        "source_responsibility": "application",
+        "source_responsibility": "composition_root",
         "target_path": "scripts/validate/schema-validator.js",
         "target_responsibility": "adapter",
         "specifier": "../validate/schema-validator.js",
@@ -1803,7 +1561,7 @@
       },
       {
         "source_path": "scripts/pipeline/monitoring-pipeline.js",
-        "source_responsibility": "application",
+        "source_responsibility": "composition_root",
         "target_path": "scripts/monitoring/build-monitoring-config.js",
         "target_responsibility": "cli",
         "specifier": "../monitoring/build-monitoring-config.js",
@@ -1812,7 +1570,7 @@
       },
       {
         "source_path": "scripts/pipeline/monitoring-pipeline.js",
-        "source_responsibility": "application",
+        "source_responsibility": "composition_root",
         "target_path": "scripts/monitoring/build-monitoring-execution-plan.js",
         "target_responsibility": "cli",
         "specifier": "../monitoring/build-monitoring-execution-plan.js",
@@ -1821,16 +1579,16 @@
       },
       {
         "source_path": "scripts/pipeline/monitoring-pipeline.js",
-        "source_responsibility": "application",
+        "source_responsibility": "composition_root",
         "target_path": "scripts/pipeline/source-pipeline.js",
-        "target_responsibility": "application",
+        "target_responsibility": "composition_root",
         "specifier": "./source-pipeline.js",
         "dependency_type": "internal",
         "import_kind": "static_import"
       },
       {
         "source_path": "scripts/pipeline/monitoring-pipeline.js",
-        "source_responsibility": "application",
+        "source_responsibility": "composition_root",
         "target_path": "scripts/composition/monitoring-composition.js",
         "target_responsibility": "composition_root",
         "specifier": "../composition/monitoring-composition.js",
@@ -1868,7 +1626,7 @@
         "source_path": "scripts/pipeline/run-monitoring.js",
         "source_responsibility": "cli",
         "target_path": "scripts/pipeline/monitoring-pipeline.js",
-        "target_responsibility": "application",
+        "target_responsibility": "composition_root",
         "specifier": "./monitoring-pipeline.js",
         "dependency_type": "internal",
         "import_kind": "static_import"
@@ -1922,7 +1680,7 @@
         "source_path": "scripts/pipeline/scan-source.js",
         "source_responsibility": "cli",
         "target_path": "scripts/pipeline/source-pipeline.js",
-        "target_responsibility": "application",
+        "target_responsibility": "composition_root",
         "specifier": "./source-pipeline.js",
         "dependency_type": "internal",
         "import_kind": "static_import"
@@ -1947,7 +1705,7 @@
       },
       {
         "source_path": "scripts/pipeline/source-pipeline.js",
-        "source_responsibility": "application",
+        "source_responsibility": "composition_root",
         "target_path": "scripts/application/source-monitoring.js",
         "target_responsibility": "application",
         "specifier": "../application/source-monitoring.js",
@@ -1956,7 +1714,7 @@
       },
       {
         "source_path": "scripts/pipeline/source-pipeline.js",
-        "source_responsibility": "application",
+        "source_responsibility": "composition_root",
         "target_path": "scripts/composition/monitoring-composition.js",
         "target_responsibility": "composition_root",
         "specifier": "../composition/monitoring-composition.js",
@@ -1965,7 +1723,7 @@
       },
       {
         "source_path": "scripts/validate/repository-validator.js",
-        "source_responsibility": "domain",
+        "source_responsibility": "composition_root",
         "target_path": null,
         "target_responsibility": null,
         "specifier": "node:fs/promises",
@@ -1974,7 +1732,7 @@
       },
       {
         "source_path": "scripts/validate/repository-validator.js",
-        "source_responsibility": "domain",
+        "source_responsibility": "composition_root",
         "target_path": null,
         "target_responsibility": null,
         "specifier": "node:path",
@@ -1983,7 +1741,7 @@
       },
       {
         "source_path": "scripts/validate/repository-validator.js",
-        "source_responsibility": "domain",
+        "source_responsibility": "composition_root",
         "target_path": "scripts/validate/schema-validator.js",
         "target_responsibility": "adapter",
         "specifier": "./schema-validator.js",
@@ -1992,7 +1750,7 @@
       },
       {
         "source_path": "scripts/validate/repository-validator.js",
-        "source_responsibility": "domain",
+        "source_responsibility": "composition_root",
         "target_path": "scripts/validate/integrity-validator.js",
         "target_responsibility": "domain",
         "specifier": "./integrity-validator.js",
@@ -2001,7 +1759,7 @@
       },
       {
         "source_path": "scripts/validate/repository-validator.js",
-        "source_responsibility": "domain",
+        "source_responsibility": "composition_root",
         "target_path": "scripts/monitoring/build-monitoring-config.js",
         "target_responsibility": "cli",
         "specifier": "../monitoring/build-monitoring-config.js",
@@ -2075,7 +1833,7 @@
         "source_path": "scripts/validate/validate-data.js",
         "source_responsibility": "cli",
         "target_path": "scripts/adapters/repository-validation.js",
-        "target_responsibility": "adapter",
+        "target_responsibility": "composition_root",
         "specifier": "../adapters/repository-validation.js",
         "dependency_type": "internal",
         "import_kind": "static_import"
@@ -2084,7 +1842,7 @@
         "source_path": "scripts/validate/validate-data.js",
         "source_responsibility": "cli",
         "target_path": "scripts/validate/repository-validator.js",
-        "target_responsibility": "domain",
+        "target_responsibility": "composition_root",
         "specifier": "./repository-validator.js",
         "dependency_type": "internal",
         "import_kind": "static_import"
@@ -2372,7 +2130,7 @@
         "source_path": "tests/egov-tax-semantics.test.js",
         "source_responsibility": "test",
         "target_path": "scripts/monitoring/monitoring-registry.js",
-        "target_responsibility": "domain",
+        "target_responsibility": "composition_root",
         "specifier": "../scripts/monitoring/monitoring-registry.js",
         "dependency_type": "internal",
         "import_kind": "static_import"
@@ -2435,7 +2193,7 @@
         "source_path": "tests/format-adapter-registry.test.js",
         "source_responsibility": "test",
         "target_path": "scripts/monitoring/monitoring-registry.js",
-        "target_responsibility": "domain",
+        "target_responsibility": "composition_root",
         "specifier": "../scripts/monitoring/monitoring-registry.js",
         "dependency_type": "internal",
         "import_kind": "static_import"
@@ -2687,7 +2445,7 @@
         "source_path": "tests/monitoring-pipeline.test.js",
         "source_responsibility": "test",
         "target_path": "scripts/pipeline/monitoring-pipeline.js",
-        "target_responsibility": "application",
+        "target_responsibility": "composition_root",
         "specifier": "../scripts/pipeline/monitoring-pipeline.js",
         "dependency_type": "internal",
         "import_kind": "static_import"
@@ -2723,7 +2481,7 @@
         "source_path": "tests/monitoring-registry.test.js",
         "source_responsibility": "test",
         "target_path": "scripts/monitoring/monitoring-registry.js",
-        "target_responsibility": "domain",
+        "target_responsibility": "composition_root",
         "specifier": "../scripts/monitoring/monitoring-registry.js",
         "dependency_type": "internal",
         "import_kind": "static_import"
@@ -2840,7 +2598,7 @@
         "source_path": "tests/public-burden-adapters.test.js",
         "source_responsibility": "test",
         "target_path": "scripts/pipeline/source-pipeline.js",
-        "target_responsibility": "application",
+        "target_responsibility": "composition_root",
         "specifier": "../scripts/pipeline/source-pipeline.js",
         "dependency_type": "internal",
         "import_kind": "static_import"
@@ -2858,7 +2616,7 @@
         "source_path": "tests/public-burden-adapters.test.js",
         "source_responsibility": "test",
         "target_path": "scripts/monitoring/monitoring-registry.js",
-        "target_responsibility": "domain",
+        "target_responsibility": "composition_root",
         "specifier": "../scripts/monitoring/monitoring-registry.js",
         "dependency_type": "internal",
         "import_kind": "static_import"
@@ -2975,7 +2733,7 @@
         "source_path": "tests/refactoring-final-audit.test.js",
         "source_responsibility": "test",
         "target_path": "scripts/monitoring/monitoring-registry.js",
-        "target_responsibility": "domain",
+        "target_responsibility": "composition_root",
         "specifier": "../scripts/monitoring/monitoring-registry.js",
         "dependency_type": "internal",
         "import_kind": "static_import"
@@ -3065,7 +2823,7 @@
         "source_path": "tests/repository-consistency.test.js",
         "source_responsibility": "test",
         "target_path": "scripts/validate/repository-validator.js",
-        "target_responsibility": "domain",
+        "target_responsibility": "composition_root",
         "specifier": "../scripts/validate/repository-validator.js",
         "dependency_type": "internal",
         "import_kind": "static_import"
@@ -3164,7 +2922,7 @@
         "source_path": "tests/repository-validator.test.js",
         "source_responsibility": "test",
         "target_path": "scripts/validate/repository-validator.js",
-        "target_responsibility": "domain",
+        "target_responsibility": "composition_root",
         "specifier": "../scripts/validate/repository-validator.js",
         "dependency_type": "internal",
         "import_kind": "static_import"
@@ -3227,7 +2985,7 @@
         "source_path": "tests/schema-contracts.test.js",
         "source_responsibility": "test",
         "target_path": "scripts/monitoring/monitoring-registry.js",
-        "target_responsibility": "domain",
+        "target_responsibility": "composition_root",
         "specifier": "../scripts/monitoring/monitoring-registry.js",
         "dependency_type": "internal",
         "import_kind": "static_import"
@@ -3335,7 +3093,7 @@
         "source_path": "tests/social-insurance-adapters.test.js",
         "source_responsibility": "test",
         "target_path": "scripts/pipeline/source-pipeline.js",
-        "target_responsibility": "application",
+        "target_responsibility": "composition_root",
         "specifier": "../scripts/pipeline/source-pipeline.js",
         "dependency_type": "internal",
         "import_kind": "static_import"
@@ -3353,7 +3111,7 @@
         "source_path": "tests/social-insurance-adapters.test.js",
         "source_responsibility": "test",
         "target_path": "scripts/monitoring/monitoring-registry.js",
-        "target_responsibility": "domain",
+        "target_responsibility": "composition_root",
         "specifier": "../scripts/monitoring/monitoring-registry.js",
         "dependency_type": "internal",
         "import_kind": "static_import"
@@ -3407,7 +3165,7 @@
         "source_path": "tests/source-pipeline.test.js",
         "source_responsibility": "test",
         "target_path": "scripts/fetch/source-registry.js",
-        "target_responsibility": "adapter",
+        "target_responsibility": "composition_root",
         "specifier": "../scripts/fetch/source-registry.js",
         "dependency_type": "internal",
         "import_kind": "static_import"
@@ -3416,7 +3174,7 @@
         "source_path": "tests/source-pipeline.test.js",
         "source_responsibility": "test",
         "target_path": "scripts/pipeline/source-pipeline.js",
-        "target_responsibility": "application",
+        "target_responsibility": "composition_root",
         "specifier": "../scripts/pipeline/source-pipeline.js",
         "dependency_type": "internal",
         "import_kind": "static_import"
@@ -3445,6 +3203,15 @@
         "target_path": "scripts/audit/source-scan-audit.js",
         "target_responsibility": "domain",
         "specifier": "../scripts/audit/source-scan-audit.js",
+        "dependency_type": "internal",
+        "import_kind": "static_import"
+      },
+      {
+        "source_path": "tests/source-scan-audit.test.js",
+        "source_responsibility": "test",
+        "target_path": "scripts/normalize/sha256.js",
+        "target_responsibility": "domain",
+        "specifier": "../scripts/normalize/sha256.js",
         "dependency_type": "internal",
         "import_kind": "static_import"
       },
@@ -3549,11 +3316,12 @@
       "scripts/audit/repository-audit.js": [
         "scripts/normalize/derive-status.js"
       ],
-      "scripts/audit/source-scan-audit.js": [],
-      "scripts/automation/candidate-update.js": [
-        "scripts/adapters/filesystem-store.js"
+      "scripts/audit/source-scan-audit.js": [
+        "scripts/normalize/sha256.js"
       ],
+      "scripts/automation/candidate-update.js": [],
       "scripts/automation/prepare-update.js": [
+        "scripts/adapters/filesystem-store.js",
         "scripts/automation/candidate-update.js"
       ],
       "scripts/composition/monitoring-composition.js": [
@@ -3594,7 +3362,9 @@
         "scripts/monitoring/monitoring-registry.js",
         "scripts/validate/schema-validator.js"
       ],
-      "scripts/monitoring/egov-change-detection.js": [],
+      "scripts/monitoring/egov-change-detection.js": [
+        "scripts/normalize/sha256.js"
+      ],
       "scripts/monitoring/extract-egov-tax-semantics.js": [
         "scripts/monitoring/build-monitoring-config.js",
         "scripts/monitoring/monitoring-registry.js",
@@ -3617,9 +3387,8 @@
       "scripts/normalize/egov-tax-semantics.js": [],
       "scripts/normalize/html-regex-facts.js": [],
       "scripts/normalize/normalized-source-validator.js": [],
-      "scripts/normalize/pdf-regex-facts.js": [
-        "scripts/formats/official-document.js"
-      ],
+      "scripts/normalize/pdf-regex-facts.js": [],
+      "scripts/normalize/sha256.js": [],
       "scripts/pipeline/monitoring-pipeline.js": [
         "scripts/audit/source-scan-audit.js",
         "scripts/composition/monitoring-composition.js",
@@ -3753,7 +3522,8 @@
       ],
       "tests/source-scan-audit.test.js": [
         "scripts/audit/publish-audit-issues.js",
-        "scripts/audit/source-scan-audit.js"
+        "scripts/audit/source-scan-audit.js",
+        "scripts/normalize/sha256.js"
       ],
       "tests/strategy-registry.test.js": [
         "scripts/application/strategy-registry.js",

@@ -110,7 +110,7 @@ npm run semantics:baseline -- --input .cache/source-scan-result.json --output da
 
 あわせて [AGENTS.md](AGENTS.md) と [PROJECT_SPEC.md](PROJECT_SPEC.md) を確認してください。新しい事実には一次情報のURLと確認日時を付け、推測値は登録しないでください。巡回先の追加・変更・停止もPull Requestでレビューします。
 
-JavaScriptの責務は `config/architecture-responsibilities.json` に明示し、物理フォルダ名から推測しません。`npm run architecture:check`は循環importと新規の禁止依存を検出します。#93までの既存違反は、恒久例外ではない一時baselineとして `config/architecture-violations-baseline.json` に全件を記録しています。解消後は `npm run architecture:strict` で違反0件を要求します。詳細は[ADR 0001](docs/adr/0001-monitoring-architecture-boundaries.md)を参照してください。
+JavaScriptの責務は `config/architecture-responsibilities.json` に明示し、物理フォルダ名から推測しません。`npm run architecture:check`と`npm run architecture:strict`は循環importと禁止依存が0件であることを検査します。詳細は[ADR 0001](docs/adr/0001-monitoring-architecture-boundaries.md)を参照してください。
 
 定期巡回は既存の `source-scan.yml` だけで実行します。確定的な差分がある場合は固定ブランチ `automation/official-source-updates` から `main` 向けのPRを作成し、既存PRがあれば更新します。取得失敗、構造変更、対象不明、正本との競合ではデータをcommitせず停止します。変更がなければbranch、commit、PRを作成せず、自動マージも行いません。
 
