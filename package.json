@@ -15,6 +15,7 @@
     "audit": "node scripts/audit/audit-repository.js",
     "architecture:audit": "node scripts/audit/architecture-inventory.js",
     "architecture:check": "node scripts/audit/architecture-inventory.js --check",
+    "architecture:strict": "node scripts/audit/architecture-inventory.js --check --strict",
     "audit:coverage": "node scripts/audit/adapter-coverage-audit.js",
     "audit:scan": "node scripts/audit/audit-source-scan.js",
     "audit:issues": "node scripts/audit/publish-audit-issues.js",

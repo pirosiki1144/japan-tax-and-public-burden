@@ -1,11 +1,23 @@
 {
-  "schema_version": 1,
+  "schema_version": 2,
   "scope": "tracked repository files",
-  "baseline_commit": "35fd4a02eb1e19c8b41709a4136d03e16b5869ad",
+  "baseline_commit": "828cc16ac9958c9d25b4dd3d75882f374f8f0eec",
+  "responsibility_registry": {
+    "path": "config/architecture-responsibilities.json",
+    "errors": []
+  },
+  "violation_baseline": {
+    "path": "config/architecture-violations-baseline.json",
+    "issue": 93,
+    "entries": 22,
+    "errors": [],
+    "new_violations": [],
+    "resolved_without_baseline_update": []
+  },
   "totals": {
-    "tracked_files": 160,
-    "javascript_files": 71,
-    "import_edges": 120
+    "tracked_files": 165,
+    "javascript_files": 72,
+    "import_edges": 288
   },
   "responsibilities": {
     "adapter": 7,
@@ -14,10 +26,10 @@
     "composition_root": 1,
     "derived_artifact": 3,
     "documentation": 17,
-    "domain": 15,
+    "domain": 16,
     "fixture": 39,
     "repository_support": 8,
-    "source_of_truth": 22,
+    "source_of_truth": 26,
     "test": 28
   },
   "files": [
@@ -56,6 +68,14 @@
     {
       "path": "README.md",
       "responsibility": "documentation"
+    },
+    {
+      "path": "config/architecture-responsibilities.json",
+      "responsibility": "source_of_truth"
+    },
+    {
+      "path": "config/architecture-violations-baseline.json",
+      "responsibility": "source_of_truth"
     },
     {
       "path": "config/distribution.yaml",
@@ -162,6 +182,14 @@
       "responsibility": "derived_artifact"
     },
     {
+      "path": "schemas/architecture-responsibilities.schema.json",
+      "responsibility": "source_of_truth"
+    },
+    {
+      "path": "schemas/architecture-violations-baseline.schema.json",
+      "responsibility": "source_of_truth"
+    },
+    {
       "path": "schemas/burden.schema.json",
       "responsibility": "source_of_truth"
     },
@@ -264,6 +292,10 @@
     {
       "path": "scripts/audit/audit-source-scan.js",
       "responsibility": "cli"
+    },
+    {
+      "path": "scripts/audit/dependency-rules.js",
+      "responsibility": "domain"
     },
     {
       "path": "scripts/audit/publish-audit-issues.js",
@@ -664,7 +696,2822 @@
   ],
   "import_graph": {
     "cycles": [],
-    "forbidden_edges": [],
+    "violations": [
+      {
+        "source_path": "scripts/adapters/repository-validation.js",
+        "source_responsibility": "adapter",
+        "target_path": "scripts/validate/schema-validator.js",
+        "target_responsibility": "adapter",
+        "specifier": "../validate/schema-validator.js",
+        "dependency_type": "internal",
+        "import_kind": "static_import",
+        "rule": "responsibility_direction_forbidden"
+      },
+      {
+        "source_path": "scripts/audit/source-scan-audit.js",
+        "source_responsibility": "domain",
+        "target_path": null,
+        "target_responsibility": null,
+        "specifier": "node:crypto",
+        "dependency_type": "node_builtin",
+        "import_kind": "static_import",
+        "rule": "domain_node_builtin_forbidden"
+      },
+      {
+        "source_path": "scripts/automation/candidate-update.js",
+        "source_responsibility": "application",
+        "target_path": "scripts/adapters/filesystem-store.js",
+        "target_responsibility": "adapter",
+        "specifier": "../adapters/filesystem-store.js",
+        "dependency_type": "internal",
+        "import_kind": "static_import",
+        "rule": "responsibility_direction_forbidden"
+      },
+      {
+        "source_path": "scripts/diff/canonical-diff.js",
+        "source_responsibility": "domain",
+        "target_path": null,
+        "target_responsibility": null,
+        "specifier": "node:path",
+        "dependency_type": "node_builtin",
+        "import_kind": "static_import",
+        "rule": "domain_node_builtin_forbidden"
+      },
+      {
+        "source_path": "scripts/diff/canonical-diff.js",
+        "source_responsibility": "domain",
+        "target_path": "scripts/validate/schema-validator.js",
+        "target_responsibility": "adapter",
+        "specifier": "../validate/schema-validator.js",
+        "dependency_type": "internal",
+        "import_kind": "static_import",
+        "rule": "responsibility_direction_forbidden"
+      },
+      {
+        "source_path": "scripts/fetch/source-registry.js",
+        "source_responsibility": "adapter",
+        "target_path": "scripts/validate/schema-validator.js",
+        "target_responsibility": "adapter",
+        "specifier": "../validate/schema-validator.js",
+        "dependency_type": "internal",
+        "import_kind": "static_import",
+        "rule": "responsibility_direction_forbidden"
+      },
+      {
+        "source_path": "scripts/monitoring/egov-change-detection.js",
+        "source_responsibility": "domain",
+        "target_path": null,
+        "target_responsibility": null,
+        "specifier": "node:crypto",
+        "dependency_type": "node_builtin",
+        "import_kind": "static_import",
+        "rule": "domain_node_builtin_forbidden"
+      },
+      {
+        "source_path": "scripts/monitoring/monitoring-registry.js",
+        "source_responsibility": "domain",
+        "target_path": null,
+        "target_responsibility": null,
+        "specifier": "node:path",
+        "dependency_type": "node_builtin",
+        "import_kind": "static_import",
+        "rule": "domain_node_builtin_forbidden"
+      },
+      {
+        "source_path": "scripts/monitoring/monitoring-registry.js",
+        "source_responsibility": "domain",
+        "target_path": "scripts/validate/schema-validator.js",
+        "target_responsibility": "adapter",
+        "specifier": "../validate/schema-validator.js",
+        "dependency_type": "internal",
+        "import_kind": "static_import",
+        "rule": "responsibility_direction_forbidden"
+      },
+      {
+        "source_path": "scripts/monitoring/semantic-baseline.js",
+        "source_responsibility": "domain",
+        "target_path": null,
+        "target_responsibility": null,
+        "specifier": "node:fs/promises",
+        "dependency_type": "node_builtin",
+        "import_kind": "static_import",
+        "rule": "domain_node_builtin_forbidden"
+      },
+      {
+        "source_path": "scripts/monitoring/semantic-baseline.js",
+        "source_responsibility": "domain",
+        "target_path": null,
+        "target_responsibility": null,
+        "specifier": "node:path",
+        "dependency_type": "node_builtin",
+        "import_kind": "static_import",
+        "rule": "domain_node_builtin_forbidden"
+      },
+      {
+        "source_path": "scripts/monitoring/semantic-baseline.js",
+        "source_responsibility": "domain",
+        "target_path": "scripts/validate/schema-validator.js",
+        "target_responsibility": "adapter",
+        "specifier": "../validate/schema-validator.js",
+        "dependency_type": "internal",
+        "import_kind": "static_import",
+        "rule": "responsibility_direction_forbidden"
+      },
+      {
+        "source_path": "scripts/normalize/pdf-regex-facts.js",
+        "source_responsibility": "domain",
+        "target_path": "scripts/formats/official-document.js",
+        "target_responsibility": "adapter",
+        "specifier": "../formats/official-document.js",
+        "dependency_type": "internal",
+        "import_kind": "static_import",
+        "rule": "responsibility_direction_forbidden"
+      },
+      {
+        "source_path": "scripts/pipeline/monitoring-pipeline.js",
+        "source_responsibility": "application",
+        "target_path": "scripts/validate/schema-validator.js",
+        "target_responsibility": "adapter",
+        "specifier": "../validate/schema-validator.js",
+        "dependency_type": "internal",
+        "import_kind": "static_import",
+        "rule": "responsibility_direction_forbidden"
+      },
+      {
+        "source_path": "scripts/pipeline/monitoring-pipeline.js",
+        "source_responsibility": "application",
+        "target_path": "scripts/monitoring/build-monitoring-config.js",
+        "target_responsibility": "cli",
+        "specifier": "../monitoring/build-monitoring-config.js",
+        "dependency_type": "internal",
+        "import_kind": "static_import",
+        "rule": "responsibility_direction_forbidden"
+      },
+      {
+        "source_path": "scripts/pipeline/monitoring-pipeline.js",
+        "source_responsibility": "application",
+        "target_path": "scripts/monitoring/build-monitoring-execution-plan.js",
+        "target_responsibility": "cli",
+        "specifier": "../monitoring/build-monitoring-execution-plan.js",
+        "dependency_type": "internal",
+        "import_kind": "static_import",
+        "rule": "responsibility_direction_forbidden"
+      },
+      {
+        "source_path": "scripts/pipeline/monitoring-pipeline.js",
+        "source_responsibility": "application",
+        "target_path": "scripts/composition/monitoring-composition.js",
+        "target_responsibility": "composition_root",
+        "specifier": "../composition/monitoring-composition.js",
+        "dependency_type": "internal",
+        "import_kind": "static_import",
+        "rule": "responsibility_direction_forbidden"
+      },
+      {
+        "source_path": "scripts/pipeline/source-pipeline.js",
+        "source_responsibility": "application",
+        "target_path": "scripts/composition/monitoring-composition.js",
+        "target_responsibility": "composition_root",
+        "specifier": "../composition/monitoring-composition.js",
+        "dependency_type": "internal",
+        "import_kind": "static_import",
+        "rule": "responsibility_direction_forbidden"
+      },
+      {
+        "source_path": "scripts/validate/repository-validator.js",
+        "source_responsibility": "domain",
+        "target_path": null,
+        "target_responsibility": null,
+        "specifier": "node:fs/promises",
+        "dependency_type": "node_builtin",
+        "import_kind": "static_import",
+        "rule": "domain_node_builtin_forbidden"
+      },
+      {
+        "source_path": "scripts/validate/repository-validator.js",
+        "source_responsibility": "domain",
+        "target_path": null,
+        "target_responsibility": null,
+        "specifier": "node:path",
+        "dependency_type": "node_builtin",
+        "import_kind": "static_import",
+        "rule": "domain_node_builtin_forbidden"
+      },
+      {
+        "source_path": "scripts/validate/repository-validator.js",
+        "source_responsibility": "domain",
+        "target_path": "scripts/validate/schema-validator.js",
+        "target_responsibility": "adapter",
+        "specifier": "./schema-validator.js",
+        "dependency_type": "internal",
+        "import_kind": "static_import",
+        "rule": "responsibility_direction_forbidden"
+      },
+      {
+        "source_path": "scripts/validate/repository-validator.js",
+        "source_responsibility": "domain",
+        "target_path": "scripts/monitoring/build-monitoring-config.js",
+        "target_responsibility": "cli",
+        "specifier": "../monitoring/build-monitoring-config.js",
+        "dependency_type": "internal",
+        "import_kind": "static_import",
+        "rule": "responsibility_direction_forbidden"
+      }
+    ],
+    "edges": [
+      {
+        "source_path": "scripts/adapters/canonical-master.js",
+        "source_responsibility": "adapter",
+        "target_path": null,
+        "target_responsibility": null,
+        "specifier": "node:fs/promises",
+        "dependency_type": "node_builtin",
+        "import_kind": "static_import"
+      },
+      {
+        "source_path": "scripts/adapters/canonical-master.js",
+        "source_responsibility": "adapter",
+        "target_path": null,
+        "target_responsibility": null,
+        "specifier": "node:path",
+        "dependency_type": "node_builtin",
+        "import_kind": "static_import"
+      },
+      {
+        "source_path": "scripts/adapters/filesystem-store.js",
+        "source_responsibility": "adapter",
+        "target_path": null,
+        "target_responsibility": null,
+        "specifier": "node:fs/promises",
+        "dependency_type": "node_builtin",
+        "import_kind": "static_import"
+      },
+      {
+        "source_path": "scripts/adapters/filesystem-store.js",
+        "source_responsibility": "adapter",
+        "target_path": null,
+        "target_responsibility": null,
+        "specifier": "node:path",
+        "dependency_type": "node_builtin",
+        "import_kind": "static_import"
+      },
+      {
+        "source_path": "scripts/adapters/repository-validation.js",
+        "source_responsibility": "adapter",
+        "target_path": null,
+        "target_responsibility": null,
+        "specifier": "node:path",
+        "dependency_type": "node_builtin",
+        "import_kind": "static_import"
+      },
+      {
+        "source_path": "scripts/adapters/repository-validation.js",
+        "source_responsibility": "adapter",
+        "target_path": "scripts/validate/schema-validator.js",
+        "target_responsibility": "adapter",
+        "specifier": "../validate/schema-validator.js",
+        "dependency_type": "internal",
+        "import_kind": "static_import"
+      },
+      {
+        "source_path": "scripts/application/repository-operations.js",
+        "source_responsibility": "application",
+        "target_path": "scripts/audit/repository-audit.js",
+        "target_responsibility": "domain",
+        "specifier": "../audit/repository-audit.js",
+        "dependency_type": "internal",
+        "import_kind": "static_import"
+      },
+      {
+        "source_path": "scripts/application/repository-operations.js",
+        "source_responsibility": "application",
+        "target_path": "scripts/audit/source-scan-audit.js",
+        "target_responsibility": "domain",
+        "specifier": "../audit/source-scan-audit.js",
+        "dependency_type": "internal",
+        "import_kind": "static_import"
+      },
+      {
+        "source_path": "scripts/application/source-monitoring.js",
+        "source_responsibility": "application",
+        "target_path": "scripts/application/strategy-registry.js",
+        "target_responsibility": "application",
+        "specifier": "./strategy-registry.js",
+        "dependency_type": "internal",
+        "import_kind": "static_import"
+      },
+      {
+        "source_path": "scripts/audit/adapter-coverage-audit.js",
+        "source_responsibility": "cli",
+        "target_path": null,
+        "target_responsibility": null,
+        "specifier": "node:fs/promises",
+        "dependency_type": "node_builtin",
+        "import_kind": "static_import"
+      },
+      {
+        "source_path": "scripts/audit/adapter-coverage-audit.js",
+        "source_responsibility": "cli",
+        "target_path": null,
+        "target_responsibility": null,
+        "specifier": "node:path",
+        "dependency_type": "node_builtin",
+        "import_kind": "static_import"
+      },
+      {
+        "source_path": "scripts/audit/adapter-coverage-audit.js",
+        "source_responsibility": "cli",
+        "target_path": null,
+        "target_responsibility": null,
+        "specifier": "node:url",
+        "dependency_type": "node_builtin",
+        "import_kind": "static_import"
+      },
+      {
+        "source_path": "scripts/audit/adapter-coverage-audit.js",
+        "source_responsibility": "cli",
+        "target_path": "scripts/validate/schema-validator.js",
+        "target_responsibility": "adapter",
+        "specifier": "../validate/schema-validator.js",
+        "dependency_type": "internal",
+        "import_kind": "static_import"
+      },
+      {
+        "source_path": "scripts/audit/adapter-coverage-audit.js",
+        "source_responsibility": "cli",
+        "target_path": "scripts/monitoring/build-monitoring-config.js",
+        "target_responsibility": "cli",
+        "specifier": "../monitoring/build-monitoring-config.js",
+        "dependency_type": "internal",
+        "import_kind": "static_import"
+      },
+      {
+        "source_path": "scripts/audit/adapter-coverage-audit.js",
+        "source_responsibility": "cli",
+        "target_path": "scripts/monitoring/build-monitoring-execution-plan.js",
+        "target_responsibility": "cli",
+        "specifier": "../monitoring/build-monitoring-execution-plan.js",
+        "dependency_type": "internal",
+        "import_kind": "static_import"
+      },
+      {
+        "source_path": "scripts/audit/adapter-coverage-audit.js",
+        "source_responsibility": "cli",
+        "target_path": "scripts/adapters/filesystem-store.js",
+        "target_responsibility": "adapter",
+        "specifier": "../adapters/filesystem-store.js",
+        "dependency_type": "internal",
+        "import_kind": "static_import"
+      },
+      {
+        "source_path": "scripts/audit/architecture-inventory.js",
+        "source_responsibility": "cli",
+        "target_path": null,
+        "target_responsibility": null,
+        "specifier": "node:child_process",
+        "dependency_type": "node_builtin",
+        "import_kind": "static_import"
+      },
+      {
+        "source_path": "scripts/audit/architecture-inventory.js",
+        "source_responsibility": "cli",
+        "target_path": null,
+        "target_responsibility": null,
+        "specifier": "node:fs",
+        "dependency_type": "node_builtin",
+        "import_kind": "static_import"
+      },
+      {
+        "source_path": "scripts/audit/architecture-inventory.js",
+        "source_responsibility": "cli",
+        "target_path": null,
+        "target_responsibility": null,
+        "specifier": "node:fs/promises",
+        "dependency_type": "node_builtin",
+        "import_kind": "static_import"
+      },
+      {
+        "source_path": "scripts/audit/architecture-inventory.js",
+        "source_responsibility": "cli",
+        "target_path": null,
+        "target_responsibility": null,
+        "specifier": "node:module",
+        "dependency_type": "node_builtin",
+        "import_kind": "static_import"
+      },
+      {
+        "source_path": "scripts/audit/architecture-inventory.js",
+        "source_responsibility": "cli",
+        "target_path": null,
+        "target_responsibility": null,
+        "specifier": "node:path",
+        "dependency_type": "node_builtin",
+        "import_kind": "static_import"
+      },
+      {
+        "source_path": "scripts/audit/architecture-inventory.js",
+        "source_responsibility": "cli",
+        "target_path": null,
+        "target_responsibility": null,
+        "specifier": "node:url",
+        "dependency_type": "node_builtin",
+        "import_kind": "static_import"
+      },
+      {
+        "source_path": "scripts/audit/architecture-inventory.js",
+        "source_responsibility": "cli",
+        "target_path": null,
+        "target_responsibility": null,
+        "specifier": "yaml",
+        "dependency_type": "external_package",
+        "import_kind": "static_import"
+      },
+      {
+        "source_path": "scripts/audit/architecture-inventory.js",
+        "source_responsibility": "cli",
+        "target_path": "scripts/audit/dependency-rules.js",
+        "target_responsibility": "domain",
+        "specifier": "./dependency-rules.js",
+        "dependency_type": "internal",
+        "import_kind": "static_import"
+      },
+      {
+        "source_path": "scripts/audit/audit-repository.js",
+        "source_responsibility": "cli",
+        "target_path": null,
+        "target_responsibility": null,
+        "specifier": "node:url",
+        "dependency_type": "node_builtin",
+        "import_kind": "static_import"
+      },
+      {
+        "source_path": "scripts/audit/audit-repository.js",
+        "source_responsibility": "cli",
+        "target_path": "scripts/application/repository-operations.js",
+        "target_responsibility": "application",
+        "specifier": "../application/repository-operations.js",
+        "dependency_type": "internal",
+        "import_kind": "static_import"
+      },
+      {
+        "source_path": "scripts/audit/audit-repository.js",
+        "source_responsibility": "cli",
+        "target_path": "scripts/adapters/filesystem-store.js",
+        "target_responsibility": "adapter",
+        "specifier": "../adapters/filesystem-store.js",
+        "dependency_type": "internal",
+        "import_kind": "static_import"
+      },
+      {
+        "source_path": "scripts/audit/audit-repository.js",
+        "source_responsibility": "cli",
+        "target_path": "scripts/validate/repository-validator.js",
+        "target_responsibility": "domain",
+        "specifier": "../validate/repository-validator.js",
+        "dependency_type": "internal",
+        "import_kind": "static_import"
+      },
+      {
+        "source_path": "scripts/audit/audit-source-scan.js",
+        "source_responsibility": "cli",
+        "target_path": "scripts/application/repository-operations.js",
+        "target_responsibility": "application",
+        "specifier": "../application/repository-operations.js",
+        "dependency_type": "internal",
+        "import_kind": "static_import"
+      },
+      {
+        "source_path": "scripts/audit/audit-source-scan.js",
+        "source_responsibility": "cli",
+        "target_path": "scripts/adapters/filesystem-store.js",
+        "target_responsibility": "adapter",
+        "specifier": "../adapters/filesystem-store.js",
+        "dependency_type": "internal",
+        "import_kind": "static_import"
+      },
+      {
+        "source_path": "scripts/audit/publish-audit-issues.js",
+        "source_responsibility": "cli",
+        "target_path": null,
+        "target_responsibility": null,
+        "specifier": "node:fs/promises",
+        "dependency_type": "node_builtin",
+        "import_kind": "static_import"
+      },
+      {
+        "source_path": "scripts/audit/repository-audit.js",
+        "source_responsibility": "domain",
+        "target_path": "scripts/normalize/derive-status.js",
+        "target_responsibility": "domain",
+        "specifier": "../normalize/derive-status.js",
+        "dependency_type": "internal",
+        "import_kind": "static_import"
+      },
+      {
+        "source_path": "scripts/audit/source-scan-audit.js",
+        "source_responsibility": "domain",
+        "target_path": null,
+        "target_responsibility": null,
+        "specifier": "node:crypto",
+        "dependency_type": "node_builtin",
+        "import_kind": "static_import"
+      },
+      {
+        "source_path": "scripts/automation/candidate-update.js",
+        "source_responsibility": "application",
+        "target_path": null,
+        "target_responsibility": null,
+        "specifier": "node:fs/promises",
+        "dependency_type": "node_builtin",
+        "import_kind": "static_import"
+      },
+      {
+        "source_path": "scripts/automation/candidate-update.js",
+        "source_responsibility": "application",
+        "target_path": null,
+        "target_responsibility": null,
+        "specifier": "node:path",
+        "dependency_type": "node_builtin",
+        "import_kind": "static_import"
+      },
+      {
+        "source_path": "scripts/automation/candidate-update.js",
+        "source_responsibility": "application",
+        "target_path": null,
+        "target_responsibility": null,
+        "specifier": "node:util",
+        "dependency_type": "node_builtin",
+        "import_kind": "static_import"
+      },
+      {
+        "source_path": "scripts/automation/candidate-update.js",
+        "source_responsibility": "application",
+        "target_path": null,
+        "target_responsibility": null,
+        "specifier": "yaml",
+        "dependency_type": "external_package",
+        "import_kind": "static_import"
+      },
+      {
+        "source_path": "scripts/automation/candidate-update.js",
+        "source_responsibility": "application",
+        "target_path": "scripts/adapters/filesystem-store.js",
+        "target_responsibility": "adapter",
+        "specifier": "../adapters/filesystem-store.js",
+        "dependency_type": "internal",
+        "import_kind": "static_import"
+      },
+      {
+        "source_path": "scripts/automation/prepare-update.js",
+        "source_responsibility": "cli",
+        "target_path": null,
+        "target_responsibility": null,
+        "specifier": "node:fs/promises",
+        "dependency_type": "node_builtin",
+        "import_kind": "static_import"
+      },
+      {
+        "source_path": "scripts/automation/prepare-update.js",
+        "source_responsibility": "cli",
+        "target_path": null,
+        "target_responsibility": null,
+        "specifier": "node:url",
+        "dependency_type": "node_builtin",
+        "import_kind": "static_import"
+      },
+      {
+        "source_path": "scripts/automation/prepare-update.js",
+        "source_responsibility": "cli",
+        "target_path": "scripts/automation/candidate-update.js",
+        "target_responsibility": "application",
+        "specifier": "./candidate-update.js",
+        "dependency_type": "internal",
+        "import_kind": "static_import"
+      },
+      {
+        "source_path": "scripts/composition/monitoring-composition.js",
+        "source_responsibility": "composition_root",
+        "target_path": "scripts/application/strategy-registry.js",
+        "target_responsibility": "application",
+        "specifier": "../application/strategy-registry.js",
+        "dependency_type": "internal",
+        "import_kind": "static_import"
+      },
+      {
+        "source_path": "scripts/composition/monitoring-composition.js",
+        "source_responsibility": "composition_root",
+        "target_path": "scripts/application/source-monitoring.js",
+        "target_responsibility": "application",
+        "specifier": "../application/source-monitoring.js",
+        "dependency_type": "internal",
+        "import_kind": "static_import"
+      },
+      {
+        "source_path": "scripts/composition/monitoring-composition.js",
+        "source_responsibility": "composition_root",
+        "target_path": "scripts/diff/canonical-diff.js",
+        "target_responsibility": "domain",
+        "specifier": "../diff/canonical-diff.js",
+        "dependency_type": "internal",
+        "import_kind": "static_import"
+      },
+      {
+        "source_path": "scripts/composition/monitoring-composition.js",
+        "source_responsibility": "composition_root",
+        "target_path": "scripts/fetch/http-fetcher.js",
+        "target_responsibility": "adapter",
+        "specifier": "../fetch/http-fetcher.js",
+        "dependency_type": "internal",
+        "import_kind": "static_import"
+      },
+      {
+        "source_path": "scripts/composition/monitoring-composition.js",
+        "source_responsibility": "composition_root",
+        "target_path": "scripts/fetch/source-registry.js",
+        "target_responsibility": "adapter",
+        "specifier": "../fetch/source-registry.js",
+        "dependency_type": "internal",
+        "import_kind": "static_import"
+      },
+      {
+        "source_path": "scripts/composition/monitoring-composition.js",
+        "source_responsibility": "composition_root",
+        "target_path": "scripts/formats/official-document.js",
+        "target_responsibility": "adapter",
+        "specifier": "../formats/official-document.js",
+        "dependency_type": "internal",
+        "import_kind": "static_import"
+      },
+      {
+        "source_path": "scripts/composition/monitoring-composition.js",
+        "source_responsibility": "composition_root",
+        "target_path": "scripts/monitoring/extract-egov-tax-semantics.js",
+        "target_responsibility": "cli",
+        "specifier": "../monitoring/extract-egov-tax-semantics.js",
+        "dependency_type": "internal",
+        "import_kind": "static_import"
+      },
+      {
+        "source_path": "scripts/composition/monitoring-composition.js",
+        "source_responsibility": "composition_root",
+        "target_path": "scripts/monitoring/semantic-baseline.js",
+        "target_responsibility": "domain",
+        "specifier": "../monitoring/semantic-baseline.js",
+        "dependency_type": "internal",
+        "import_kind": "static_import"
+      },
+      {
+        "source_path": "scripts/composition/monitoring-composition.js",
+        "source_responsibility": "composition_root",
+        "target_path": "scripts/normalize/egov-law-article-facts.js",
+        "target_responsibility": "domain",
+        "specifier": "../normalize/egov-law-article-facts.js",
+        "dependency_type": "internal",
+        "import_kind": "static_import"
+      },
+      {
+        "source_path": "scripts/composition/monitoring-composition.js",
+        "source_responsibility": "composition_root",
+        "target_path": "scripts/normalize/html-regex-facts.js",
+        "target_responsibility": "domain",
+        "specifier": "../normalize/html-regex-facts.js",
+        "dependency_type": "internal",
+        "import_kind": "static_import"
+      },
+      {
+        "source_path": "scripts/composition/monitoring-composition.js",
+        "source_responsibility": "composition_root",
+        "target_path": "scripts/normalize/normalized-source-validator.js",
+        "target_responsibility": "domain",
+        "specifier": "../normalize/normalized-source-validator.js",
+        "dependency_type": "internal",
+        "import_kind": "static_import"
+      },
+      {
+        "source_path": "scripts/composition/monitoring-composition.js",
+        "source_responsibility": "composition_root",
+        "target_path": "scripts/normalize/pdf-regex-facts.js",
+        "target_responsibility": "domain",
+        "specifier": "../normalize/pdf-regex-facts.js",
+        "dependency_type": "internal",
+        "import_kind": "static_import"
+      },
+      {
+        "source_path": "scripts/diff/canonical-diff.js",
+        "source_responsibility": "domain",
+        "target_path": null,
+        "target_responsibility": null,
+        "specifier": "node:path",
+        "dependency_type": "node_builtin",
+        "import_kind": "static_import"
+      },
+      {
+        "source_path": "scripts/diff/canonical-diff.js",
+        "source_responsibility": "domain",
+        "target_path": "scripts/validate/schema-validator.js",
+        "target_responsibility": "adapter",
+        "specifier": "../validate/schema-validator.js",
+        "dependency_type": "internal",
+        "import_kind": "static_import"
+      },
+      {
+        "source_path": "scripts/fetch/http-fetcher.js",
+        "source_responsibility": "adapter",
+        "target_path": null,
+        "target_responsibility": null,
+        "specifier": "node:crypto",
+        "dependency_type": "node_builtin",
+        "import_kind": "static_import"
+      },
+      {
+        "source_path": "scripts/fetch/source-registry.js",
+        "source_responsibility": "adapter",
+        "target_path": null,
+        "target_responsibility": null,
+        "specifier": "node:path",
+        "dependency_type": "node_builtin",
+        "import_kind": "static_import"
+      },
+      {
+        "source_path": "scripts/fetch/source-registry.js",
+        "source_responsibility": "adapter",
+        "target_path": "scripts/validate/schema-validator.js",
+        "target_responsibility": "adapter",
+        "specifier": "../validate/schema-validator.js",
+        "dependency_type": "internal",
+        "import_kind": "static_import"
+      },
+      {
+        "source_path": "scripts/formats/official-document.js",
+        "source_responsibility": "adapter",
+        "target_path": null,
+        "target_responsibility": null,
+        "specifier": "csv-parse/sync",
+        "dependency_type": "external_package",
+        "import_kind": "static_import"
+      },
+      {
+        "source_path": "scripts/formats/official-document.js",
+        "source_responsibility": "adapter",
+        "target_path": null,
+        "target_responsibility": null,
+        "specifier": "pdfjs-dist/legacy/build/pdf.mjs",
+        "dependency_type": "external_package",
+        "import_kind": "static_import"
+      },
+      {
+        "source_path": "scripts/generate/public-burden-csv.js",
+        "source_responsibility": "cli",
+        "target_path": null,
+        "target_responsibility": null,
+        "specifier": "node:fs/promises",
+        "dependency_type": "node_builtin",
+        "import_kind": "static_import"
+      },
+      {
+        "source_path": "scripts/generate/public-burden-csv.js",
+        "source_responsibility": "cli",
+        "target_path": null,
+        "target_responsibility": null,
+        "specifier": "node:path",
+        "dependency_type": "node_builtin",
+        "import_kind": "static_import"
+      },
+      {
+        "source_path": "scripts/generate/public-burden-csv.js",
+        "source_responsibility": "cli",
+        "target_path": null,
+        "target_responsibility": null,
+        "specifier": "node:url",
+        "dependency_type": "node_builtin",
+        "import_kind": "static_import"
+      },
+      {
+        "source_path": "scripts/generate/public-burden-csv.js",
+        "source_responsibility": "cli",
+        "target_path": "scripts/adapters/filesystem-store.js",
+        "target_responsibility": "adapter",
+        "specifier": "../adapters/filesystem-store.js",
+        "dependency_type": "internal",
+        "import_kind": "static_import"
+      },
+      {
+        "source_path": "scripts/generate/public-burden-csv.js",
+        "source_responsibility": "cli",
+        "target_path": "scripts/validate/schema-validator.js",
+        "target_responsibility": "adapter",
+        "specifier": "../validate/schema-validator.js",
+        "dependency_type": "internal",
+        "import_kind": "static_import"
+      },
+      {
+        "source_path": "scripts/monitoring/build-monitoring-config.js",
+        "source_responsibility": "cli",
+        "target_path": null,
+        "target_responsibility": null,
+        "specifier": "node:path",
+        "dependency_type": "node_builtin",
+        "import_kind": "static_import"
+      },
+      {
+        "source_path": "scripts/monitoring/build-monitoring-config.js",
+        "source_responsibility": "cli",
+        "target_path": null,
+        "target_responsibility": null,
+        "specifier": "node:url",
+        "dependency_type": "node_builtin",
+        "import_kind": "static_import"
+      },
+      {
+        "source_path": "scripts/monitoring/build-monitoring-config.js",
+        "source_responsibility": "cli",
+        "target_path": "scripts/validate/schema-validator.js",
+        "target_responsibility": "adapter",
+        "specifier": "../validate/schema-validator.js",
+        "dependency_type": "internal",
+        "import_kind": "static_import"
+      },
+      {
+        "source_path": "scripts/monitoring/build-monitoring-config.js",
+        "source_responsibility": "cli",
+        "target_path": "scripts/monitoring/monitoring-registry.js",
+        "target_responsibility": "domain",
+        "specifier": "./monitoring-registry.js",
+        "dependency_type": "internal",
+        "import_kind": "static_import"
+      },
+      {
+        "source_path": "scripts/monitoring/build-monitoring-config.js",
+        "source_responsibility": "cli",
+        "target_path": "scripts/adapters/filesystem-store.js",
+        "target_responsibility": "adapter",
+        "specifier": "../adapters/filesystem-store.js",
+        "dependency_type": "internal",
+        "import_kind": "static_import"
+      },
+      {
+        "source_path": "scripts/monitoring/build-monitoring-config.js",
+        "source_responsibility": "cli",
+        "target_path": "scripts/adapters/canonical-master.js",
+        "target_responsibility": "adapter",
+        "specifier": "../adapters/canonical-master.js",
+        "dependency_type": "internal",
+        "import_kind": "static_import"
+      },
+      {
+        "source_path": "scripts/monitoring/build-monitoring-execution-plan.js",
+        "source_responsibility": "cli",
+        "target_path": null,
+        "target_responsibility": null,
+        "specifier": "node:path",
+        "dependency_type": "node_builtin",
+        "import_kind": "static_import"
+      },
+      {
+        "source_path": "scripts/monitoring/build-monitoring-execution-plan.js",
+        "source_responsibility": "cli",
+        "target_path": null,
+        "target_responsibility": null,
+        "specifier": "node:url",
+        "dependency_type": "node_builtin",
+        "import_kind": "static_import"
+      },
+      {
+        "source_path": "scripts/monitoring/build-monitoring-execution-plan.js",
+        "source_responsibility": "cli",
+        "target_path": "scripts/validate/schema-validator.js",
+        "target_responsibility": "adapter",
+        "specifier": "../validate/schema-validator.js",
+        "dependency_type": "internal",
+        "import_kind": "static_import"
+      },
+      {
+        "source_path": "scripts/monitoring/build-monitoring-execution-plan.js",
+        "source_responsibility": "cli",
+        "target_path": "scripts/monitoring/build-monitoring-config.js",
+        "target_responsibility": "cli",
+        "specifier": "./build-monitoring-config.js",
+        "dependency_type": "internal",
+        "import_kind": "static_import"
+      },
+      {
+        "source_path": "scripts/monitoring/build-monitoring-execution-plan.js",
+        "source_responsibility": "cli",
+        "target_path": "scripts/monitoring/monitoring-registry.js",
+        "target_responsibility": "domain",
+        "specifier": "./monitoring-registry.js",
+        "dependency_type": "internal",
+        "import_kind": "static_import"
+      },
+      {
+        "source_path": "scripts/monitoring/build-monitoring-execution-plan.js",
+        "source_responsibility": "cli",
+        "target_path": "scripts/adapters/canonical-master.js",
+        "target_responsibility": "adapter",
+        "specifier": "../adapters/canonical-master.js",
+        "dependency_type": "internal",
+        "import_kind": "static_import"
+      },
+      {
+        "source_path": "scripts/monitoring/egov-change-detection.js",
+        "source_responsibility": "domain",
+        "target_path": null,
+        "target_responsibility": null,
+        "specifier": "node:crypto",
+        "dependency_type": "node_builtin",
+        "import_kind": "static_import"
+      },
+      {
+        "source_path": "scripts/monitoring/extract-egov-tax-semantics.js",
+        "source_responsibility": "cli",
+        "target_path": null,
+        "target_responsibility": null,
+        "specifier": "node:crypto",
+        "dependency_type": "node_builtin",
+        "import_kind": "static_import"
+      },
+      {
+        "source_path": "scripts/monitoring/extract-egov-tax-semantics.js",
+        "source_responsibility": "cli",
+        "target_path": null,
+        "target_responsibility": null,
+        "specifier": "node:fs/promises",
+        "dependency_type": "node_builtin",
+        "import_kind": "static_import"
+      },
+      {
+        "source_path": "scripts/monitoring/extract-egov-tax-semantics.js",
+        "source_responsibility": "cli",
+        "target_path": null,
+        "target_responsibility": null,
+        "specifier": "node:path",
+        "dependency_type": "node_builtin",
+        "import_kind": "static_import"
+      },
+      {
+        "source_path": "scripts/monitoring/extract-egov-tax-semantics.js",
+        "source_responsibility": "cli",
+        "target_path": null,
+        "target_responsibility": null,
+        "specifier": "node:url",
+        "dependency_type": "node_builtin",
+        "import_kind": "static_import"
+      },
+      {
+        "source_path": "scripts/monitoring/extract-egov-tax-semantics.js",
+        "source_responsibility": "cli",
+        "target_path": "scripts/normalize/egov-tax-semantics.js",
+        "target_responsibility": "domain",
+        "specifier": "../normalize/egov-tax-semantics.js",
+        "dependency_type": "internal",
+        "import_kind": "static_import"
+      },
+      {
+        "source_path": "scripts/monitoring/extract-egov-tax-semantics.js",
+        "source_responsibility": "cli",
+        "target_path": "scripts/monitoring/build-monitoring-config.js",
+        "target_responsibility": "cli",
+        "specifier": "./build-monitoring-config.js",
+        "dependency_type": "internal",
+        "import_kind": "static_import"
+      },
+      {
+        "source_path": "scripts/monitoring/extract-egov-tax-semantics.js",
+        "source_responsibility": "cli",
+        "target_path": "scripts/monitoring/monitoring-registry.js",
+        "target_responsibility": "domain",
+        "specifier": "./monitoring-registry.js",
+        "dependency_type": "internal",
+        "import_kind": "static_import"
+      },
+      {
+        "source_path": "scripts/monitoring/monitoring-registry.js",
+        "source_responsibility": "domain",
+        "target_path": null,
+        "target_responsibility": null,
+        "specifier": "node:path",
+        "dependency_type": "node_builtin",
+        "import_kind": "static_import"
+      },
+      {
+        "source_path": "scripts/monitoring/monitoring-registry.js",
+        "source_responsibility": "domain",
+        "target_path": "scripts/validate/schema-validator.js",
+        "target_responsibility": "adapter",
+        "specifier": "../validate/schema-validator.js",
+        "dependency_type": "internal",
+        "import_kind": "static_import"
+      },
+      {
+        "source_path": "scripts/monitoring/semantic-baseline.js",
+        "source_responsibility": "domain",
+        "target_path": null,
+        "target_responsibility": null,
+        "specifier": "node:fs/promises",
+        "dependency_type": "node_builtin",
+        "import_kind": "static_import"
+      },
+      {
+        "source_path": "scripts/monitoring/semantic-baseline.js",
+        "source_responsibility": "domain",
+        "target_path": null,
+        "target_responsibility": null,
+        "specifier": "node:path",
+        "dependency_type": "node_builtin",
+        "import_kind": "static_import"
+      },
+      {
+        "source_path": "scripts/monitoring/semantic-baseline.js",
+        "source_responsibility": "domain",
+        "target_path": "scripts/normalize/egov-tax-semantics.js",
+        "target_responsibility": "domain",
+        "specifier": "../normalize/egov-tax-semantics.js",
+        "dependency_type": "internal",
+        "import_kind": "static_import"
+      },
+      {
+        "source_path": "scripts/monitoring/semantic-baseline.js",
+        "source_responsibility": "domain",
+        "target_path": "scripts/validate/schema-validator.js",
+        "target_responsibility": "adapter",
+        "specifier": "../validate/schema-validator.js",
+        "dependency_type": "internal",
+        "import_kind": "static_import"
+      },
+      {
+        "source_path": "scripts/monitoring/write-semantic-baseline.js",
+        "source_responsibility": "cli",
+        "target_path": "scripts/monitoring/semantic-baseline.js",
+        "target_responsibility": "domain",
+        "specifier": "./semantic-baseline.js",
+        "dependency_type": "internal",
+        "import_kind": "static_import"
+      },
+      {
+        "source_path": "scripts/monitoring/write-semantic-baseline.js",
+        "source_responsibility": "cli",
+        "target_path": "scripts/adapters/filesystem-store.js",
+        "target_responsibility": "adapter",
+        "specifier": "../adapters/filesystem-store.js",
+        "dependency_type": "internal",
+        "import_kind": "static_import"
+      },
+      {
+        "source_path": "scripts/normalize/pdf-regex-facts.js",
+        "source_responsibility": "domain",
+        "target_path": "scripts/formats/official-document.js",
+        "target_responsibility": "adapter",
+        "specifier": "../formats/official-document.js",
+        "dependency_type": "internal",
+        "import_kind": "static_import"
+      },
+      {
+        "source_path": "scripts/pipeline/monitoring-pipeline.js",
+        "source_responsibility": "application",
+        "target_path": null,
+        "target_responsibility": null,
+        "specifier": "node:path",
+        "dependency_type": "node_builtin",
+        "import_kind": "static_import"
+      },
+      {
+        "source_path": "scripts/pipeline/monitoring-pipeline.js",
+        "source_responsibility": "application",
+        "target_path": "scripts/audit/source-scan-audit.js",
+        "target_responsibility": "domain",
+        "specifier": "../audit/source-scan-audit.js",
+        "dependency_type": "internal",
+        "import_kind": "static_import"
+      },
+      {
+        "source_path": "scripts/pipeline/monitoring-pipeline.js",
+        "source_responsibility": "application",
+        "target_path": "scripts/monitoring/semantic-baseline.js",
+        "target_responsibility": "domain",
+        "specifier": "../monitoring/semantic-baseline.js",
+        "dependency_type": "internal",
+        "import_kind": "static_import"
+      },
+      {
+        "source_path": "scripts/pipeline/monitoring-pipeline.js",
+        "source_responsibility": "application",
+        "target_path": "scripts/validate/schema-validator.js",
+        "target_responsibility": "adapter",
+        "specifier": "../validate/schema-validator.js",
+        "dependency_type": "internal",
+        "import_kind": "static_import"
+      },
+      {
+        "source_path": "scripts/pipeline/monitoring-pipeline.js",
+        "source_responsibility": "application",
+        "target_path": "scripts/monitoring/build-monitoring-config.js",
+        "target_responsibility": "cli",
+        "specifier": "../monitoring/build-monitoring-config.js",
+        "dependency_type": "internal",
+        "import_kind": "static_import"
+      },
+      {
+        "source_path": "scripts/pipeline/monitoring-pipeline.js",
+        "source_responsibility": "application",
+        "target_path": "scripts/monitoring/build-monitoring-execution-plan.js",
+        "target_responsibility": "cli",
+        "specifier": "../monitoring/build-monitoring-execution-plan.js",
+        "dependency_type": "internal",
+        "import_kind": "static_import"
+      },
+      {
+        "source_path": "scripts/pipeline/monitoring-pipeline.js",
+        "source_responsibility": "application",
+        "target_path": "scripts/pipeline/source-pipeline.js",
+        "target_responsibility": "application",
+        "specifier": "./source-pipeline.js",
+        "dependency_type": "internal",
+        "import_kind": "static_import"
+      },
+      {
+        "source_path": "scripts/pipeline/monitoring-pipeline.js",
+        "source_responsibility": "application",
+        "target_path": "scripts/composition/monitoring-composition.js",
+        "target_responsibility": "composition_root",
+        "specifier": "../composition/monitoring-composition.js",
+        "dependency_type": "internal",
+        "import_kind": "static_import"
+      },
+      {
+        "source_path": "scripts/pipeline/run-monitoring.js",
+        "source_responsibility": "cli",
+        "target_path": null,
+        "target_responsibility": null,
+        "specifier": "node:fs/promises",
+        "dependency_type": "node_builtin",
+        "import_kind": "static_import"
+      },
+      {
+        "source_path": "scripts/pipeline/run-monitoring.js",
+        "source_responsibility": "cli",
+        "target_path": null,
+        "target_responsibility": null,
+        "specifier": "node:path",
+        "dependency_type": "node_builtin",
+        "import_kind": "static_import"
+      },
+      {
+        "source_path": "scripts/pipeline/run-monitoring.js",
+        "source_responsibility": "cli",
+        "target_path": null,
+        "target_responsibility": null,
+        "specifier": "node:url",
+        "dependency_type": "node_builtin",
+        "import_kind": "static_import"
+      },
+      {
+        "source_path": "scripts/pipeline/run-monitoring.js",
+        "source_responsibility": "cli",
+        "target_path": "scripts/pipeline/monitoring-pipeline.js",
+        "target_responsibility": "application",
+        "specifier": "./monitoring-pipeline.js",
+        "dependency_type": "internal",
+        "import_kind": "static_import"
+      },
+      {
+        "source_path": "scripts/pipeline/run-monitoring.js",
+        "source_responsibility": "cli",
+        "target_path": "scripts/application/repository-operations.js",
+        "target_responsibility": "application",
+        "specifier": "../application/repository-operations.js",
+        "dependency_type": "internal",
+        "import_kind": "static_import"
+      },
+      {
+        "source_path": "scripts/pipeline/run-monitoring.js",
+        "source_responsibility": "cli",
+        "target_path": "scripts/adapters/filesystem-store.js",
+        "target_responsibility": "adapter",
+        "specifier": "../adapters/filesystem-store.js",
+        "dependency_type": "internal",
+        "import_kind": "static_import"
+      },
+      {
+        "source_path": "scripts/pipeline/scan-source.js",
+        "source_responsibility": "cli",
+        "target_path": null,
+        "target_responsibility": null,
+        "specifier": "node:fs/promises",
+        "dependency_type": "node_builtin",
+        "import_kind": "static_import"
+      },
+      {
+        "source_path": "scripts/pipeline/scan-source.js",
+        "source_responsibility": "cli",
+        "target_path": null,
+        "target_responsibility": null,
+        "specifier": "node:path",
+        "dependency_type": "node_builtin",
+        "import_kind": "static_import"
+      },
+      {
+        "source_path": "scripts/pipeline/scan-source.js",
+        "source_responsibility": "cli",
+        "target_path": null,
+        "target_responsibility": null,
+        "specifier": "node:url",
+        "dependency_type": "node_builtin",
+        "import_kind": "static_import"
+      },
+      {
+        "source_path": "scripts/pipeline/scan-source.js",
+        "source_responsibility": "cli",
+        "target_path": "scripts/pipeline/source-pipeline.js",
+        "target_responsibility": "application",
+        "specifier": "./source-pipeline.js",
+        "dependency_type": "internal",
+        "import_kind": "static_import"
+      },
+      {
+        "source_path": "scripts/pipeline/scan-source.js",
+        "source_responsibility": "cli",
+        "target_path": "scripts/application/repository-operations.js",
+        "target_responsibility": "application",
+        "specifier": "../application/repository-operations.js",
+        "dependency_type": "internal",
+        "import_kind": "static_import"
+      },
+      {
+        "source_path": "scripts/pipeline/scan-source.js",
+        "source_responsibility": "cli",
+        "target_path": "scripts/adapters/filesystem-store.js",
+        "target_responsibility": "adapter",
+        "specifier": "../adapters/filesystem-store.js",
+        "dependency_type": "internal",
+        "import_kind": "static_import"
+      },
+      {
+        "source_path": "scripts/pipeline/source-pipeline.js",
+        "source_responsibility": "application",
+        "target_path": "scripts/application/source-monitoring.js",
+        "target_responsibility": "application",
+        "specifier": "../application/source-monitoring.js",
+        "dependency_type": "internal",
+        "import_kind": "static_import"
+      },
+      {
+        "source_path": "scripts/pipeline/source-pipeline.js",
+        "source_responsibility": "application",
+        "target_path": "scripts/composition/monitoring-composition.js",
+        "target_responsibility": "composition_root",
+        "specifier": "../composition/monitoring-composition.js",
+        "dependency_type": "internal",
+        "import_kind": "static_import"
+      },
+      {
+        "source_path": "scripts/validate/repository-validator.js",
+        "source_responsibility": "domain",
+        "target_path": null,
+        "target_responsibility": null,
+        "specifier": "node:fs/promises",
+        "dependency_type": "node_builtin",
+        "import_kind": "static_import"
+      },
+      {
+        "source_path": "scripts/validate/repository-validator.js",
+        "source_responsibility": "domain",
+        "target_path": null,
+        "target_responsibility": null,
+        "specifier": "node:path",
+        "dependency_type": "node_builtin",
+        "import_kind": "static_import"
+      },
+      {
+        "source_path": "scripts/validate/repository-validator.js",
+        "source_responsibility": "domain",
+        "target_path": "scripts/validate/schema-validator.js",
+        "target_responsibility": "adapter",
+        "specifier": "./schema-validator.js",
+        "dependency_type": "internal",
+        "import_kind": "static_import"
+      },
+      {
+        "source_path": "scripts/validate/repository-validator.js",
+        "source_responsibility": "domain",
+        "target_path": "scripts/validate/integrity-validator.js",
+        "target_responsibility": "domain",
+        "specifier": "./integrity-validator.js",
+        "dependency_type": "internal",
+        "import_kind": "static_import"
+      },
+      {
+        "source_path": "scripts/validate/repository-validator.js",
+        "source_responsibility": "domain",
+        "target_path": "scripts/monitoring/build-monitoring-config.js",
+        "target_responsibility": "cli",
+        "specifier": "../monitoring/build-monitoring-config.js",
+        "dependency_type": "internal",
+        "import_kind": "static_import"
+      },
+      {
+        "source_path": "scripts/validate/schema-validator.js",
+        "source_responsibility": "adapter",
+        "target_path": null,
+        "target_responsibility": null,
+        "specifier": "ajv/dist/2020.js",
+        "dependency_type": "external_package",
+        "import_kind": "static_import"
+      },
+      {
+        "source_path": "scripts/validate/schema-validator.js",
+        "source_responsibility": "adapter",
+        "target_path": null,
+        "target_responsibility": null,
+        "specifier": "ajv-formats",
+        "dependency_type": "external_package",
+        "import_kind": "static_import"
+      },
+      {
+        "source_path": "scripts/validate/schema-validator.js",
+        "source_responsibility": "adapter",
+        "target_path": null,
+        "target_responsibility": null,
+        "specifier": "node:fs/promises",
+        "dependency_type": "node_builtin",
+        "import_kind": "static_import"
+      },
+      {
+        "source_path": "scripts/validate/schema-validator.js",
+        "source_responsibility": "adapter",
+        "target_path": null,
+        "target_responsibility": null,
+        "specifier": "node:path",
+        "dependency_type": "node_builtin",
+        "import_kind": "static_import"
+      },
+      {
+        "source_path": "scripts/validate/schema-validator.js",
+        "source_responsibility": "adapter",
+        "target_path": null,
+        "target_responsibility": null,
+        "specifier": "yaml",
+        "dependency_type": "external_package",
+        "import_kind": "static_import"
+      },
+      {
+        "source_path": "scripts/validate/validate-data.js",
+        "source_responsibility": "cli",
+        "target_path": null,
+        "target_responsibility": null,
+        "specifier": "node:url",
+        "dependency_type": "node_builtin",
+        "import_kind": "static_import"
+      },
+      {
+        "source_path": "scripts/validate/validate-data.js",
+        "source_responsibility": "cli",
+        "target_path": "scripts/application/repository-operations.js",
+        "target_responsibility": "application",
+        "specifier": "../application/repository-operations.js",
+        "dependency_type": "internal",
+        "import_kind": "static_import"
+      },
+      {
+        "source_path": "scripts/validate/validate-data.js",
+        "source_responsibility": "cli",
+        "target_path": "scripts/adapters/repository-validation.js",
+        "target_responsibility": "adapter",
+        "specifier": "../adapters/repository-validation.js",
+        "dependency_type": "internal",
+        "import_kind": "static_import"
+      },
+      {
+        "source_path": "scripts/validate/validate-data.js",
+        "source_responsibility": "cli",
+        "target_path": "scripts/validate/repository-validator.js",
+        "target_responsibility": "domain",
+        "specifier": "./repository-validator.js",
+        "dependency_type": "internal",
+        "import_kind": "static_import"
+      },
+      {
+        "source_path": "tests/adapter-coverage-audit.test.js",
+        "source_responsibility": "test",
+        "target_path": null,
+        "target_responsibility": null,
+        "specifier": "node:test",
+        "dependency_type": "node_builtin",
+        "import_kind": "static_import"
+      },
+      {
+        "source_path": "tests/adapter-coverage-audit.test.js",
+        "source_responsibility": "test",
+        "target_path": null,
+        "target_responsibility": null,
+        "specifier": "node:assert/strict",
+        "dependency_type": "node_builtin",
+        "import_kind": "static_import"
+      },
+      {
+        "source_path": "tests/adapter-coverage-audit.test.js",
+        "source_responsibility": "test",
+        "target_path": null,
+        "target_responsibility": null,
+        "specifier": "node:url",
+        "dependency_type": "node_builtin",
+        "import_kind": "static_import"
+      },
+      {
+        "source_path": "tests/adapter-coverage-audit.test.js",
+        "source_responsibility": "test",
+        "target_path": "scripts/audit/adapter-coverage-audit.js",
+        "target_responsibility": "cli",
+        "specifier": "../scripts/audit/adapter-coverage-audit.js",
+        "dependency_type": "internal",
+        "import_kind": "static_import"
+      },
+      {
+        "source_path": "tests/architecture-inventory.test.js",
+        "source_responsibility": "test",
+        "target_path": null,
+        "target_responsibility": null,
+        "specifier": "node:test",
+        "dependency_type": "node_builtin",
+        "import_kind": "static_import"
+      },
+      {
+        "source_path": "tests/architecture-inventory.test.js",
+        "source_responsibility": "test",
+        "target_path": null,
+        "target_responsibility": null,
+        "specifier": "node:assert/strict",
+        "dependency_type": "node_builtin",
+        "import_kind": "static_import"
+      },
+      {
+        "source_path": "tests/architecture-inventory.test.js",
+        "source_responsibility": "test",
+        "target_path": null,
+        "target_responsibility": null,
+        "specifier": "node:url",
+        "dependency_type": "node_builtin",
+        "import_kind": "static_import"
+      },
+      {
+        "source_path": "tests/architecture-inventory.test.js",
+        "source_responsibility": "test",
+        "target_path": "scripts/audit/architecture-inventory.js",
+        "target_responsibility": "cli",
+        "specifier": "../scripts/audit/architecture-inventory.js",
+        "dependency_type": "internal",
+        "import_kind": "static_import"
+      },
+      {
+        "source_path": "tests/architecture-inventory.test.js",
+        "source_responsibility": "test",
+        "target_path": "scripts/audit/dependency-rules.js",
+        "target_responsibility": "domain",
+        "specifier": "../scripts/audit/dependency-rules.js",
+        "dependency_type": "internal",
+        "import_kind": "static_import"
+      },
+      {
+        "source_path": "tests/architecture-inventory.test.js",
+        "source_responsibility": "test",
+        "target_path": null,
+        "target_responsibility": null,
+        "specifier": "./static.js",
+        "dependency_type": "internal",
+        "import_kind": "static_import"
+      },
+      {
+        "source_path": "tests/architecture-inventory.test.js",
+        "source_responsibility": "test",
+        "target_path": null,
+        "target_responsibility": null,
+        "specifier": "./exported.js",
+        "dependency_type": "internal",
+        "import_kind": "re_export"
+      },
+      {
+        "source_path": "tests/architecture-inventory.test.js",
+        "source_responsibility": "test",
+        "target_path": null,
+        "target_responsibility": null,
+        "specifier": "external-package",
+        "dependency_type": "external_package",
+        "import_kind": "dynamic_import"
+      },
+      {
+        "source_path": "tests/candidate-update.test.js",
+        "source_responsibility": "test",
+        "target_path": null,
+        "target_responsibility": null,
+        "specifier": "node:test",
+        "dependency_type": "node_builtin",
+        "import_kind": "static_import"
+      },
+      {
+        "source_path": "tests/candidate-update.test.js",
+        "source_responsibility": "test",
+        "target_path": null,
+        "target_responsibility": null,
+        "specifier": "node:assert/strict",
+        "dependency_type": "node_builtin",
+        "import_kind": "static_import"
+      },
+      {
+        "source_path": "tests/candidate-update.test.js",
+        "source_responsibility": "test",
+        "target_path": null,
+        "target_responsibility": null,
+        "specifier": "node:fs/promises",
+        "dependency_type": "node_builtin",
+        "import_kind": "static_import"
+      },
+      {
+        "source_path": "tests/candidate-update.test.js",
+        "source_responsibility": "test",
+        "target_path": null,
+        "target_responsibility": null,
+        "specifier": "node:path",
+        "dependency_type": "node_builtin",
+        "import_kind": "static_import"
+      },
+      {
+        "source_path": "tests/candidate-update.test.js",
+        "source_responsibility": "test",
+        "target_path": null,
+        "target_responsibility": null,
+        "specifier": "node:os",
+        "dependency_type": "node_builtin",
+        "import_kind": "static_import"
+      },
+      {
+        "source_path": "tests/candidate-update.test.js",
+        "source_responsibility": "test",
+        "target_path": null,
+        "target_responsibility": null,
+        "specifier": "yaml",
+        "dependency_type": "external_package",
+        "import_kind": "static_import"
+      },
+      {
+        "source_path": "tests/candidate-update.test.js",
+        "source_responsibility": "test",
+        "target_path": "scripts/automation/candidate-update.js",
+        "target_responsibility": "application",
+        "specifier": "../scripts/automation/candidate-update.js",
+        "dependency_type": "internal",
+        "import_kind": "static_import"
+      },
+      {
+        "source_path": "tests/data-layout-migration.test.js",
+        "source_responsibility": "test",
+        "target_path": null,
+        "target_responsibility": null,
+        "specifier": "node:assert/strict",
+        "dependency_type": "node_builtin",
+        "import_kind": "static_import"
+      },
+      {
+        "source_path": "tests/data-layout-migration.test.js",
+        "source_responsibility": "test",
+        "target_path": null,
+        "target_responsibility": null,
+        "specifier": "node:fs/promises",
+        "dependency_type": "node_builtin",
+        "import_kind": "static_import"
+      },
+      {
+        "source_path": "tests/data-layout-migration.test.js",
+        "source_responsibility": "test",
+        "target_path": null,
+        "target_responsibility": null,
+        "specifier": "node:test",
+        "dependency_type": "node_builtin",
+        "import_kind": "static_import"
+      },
+      {
+        "source_path": "tests/derive-status.test.js",
+        "source_responsibility": "test",
+        "target_path": null,
+        "target_responsibility": null,
+        "specifier": "node:test",
+        "dependency_type": "node_builtin",
+        "import_kind": "static_import"
+      },
+      {
+        "source_path": "tests/derive-status.test.js",
+        "source_responsibility": "test",
+        "target_path": null,
+        "target_responsibility": null,
+        "specifier": "node:assert/strict",
+        "dependency_type": "node_builtin",
+        "import_kind": "static_import"
+      },
+      {
+        "source_path": "tests/derive-status.test.js",
+        "source_responsibility": "test",
+        "target_path": "scripts/normalize/derive-status.js",
+        "target_responsibility": "domain",
+        "specifier": "../scripts/normalize/derive-status.js",
+        "dependency_type": "internal",
+        "import_kind": "static_import"
+      },
+      {
+        "source_path": "tests/egov-tax-semantics.test.js",
+        "source_responsibility": "test",
+        "target_path": null,
+        "target_responsibility": null,
+        "specifier": "node:test",
+        "dependency_type": "node_builtin",
+        "import_kind": "static_import"
+      },
+      {
+        "source_path": "tests/egov-tax-semantics.test.js",
+        "source_responsibility": "test",
+        "target_path": null,
+        "target_responsibility": null,
+        "specifier": "node:assert/strict",
+        "dependency_type": "node_builtin",
+        "import_kind": "static_import"
+      },
+      {
+        "source_path": "tests/egov-tax-semantics.test.js",
+        "source_responsibility": "test",
+        "target_path": null,
+        "target_responsibility": null,
+        "specifier": "node:fs/promises",
+        "dependency_type": "node_builtin",
+        "import_kind": "static_import"
+      },
+      {
+        "source_path": "tests/egov-tax-semantics.test.js",
+        "source_responsibility": "test",
+        "target_path": null,
+        "target_responsibility": null,
+        "specifier": "node:path",
+        "dependency_type": "node_builtin",
+        "import_kind": "static_import"
+      },
+      {
+        "source_path": "tests/egov-tax-semantics.test.js",
+        "source_responsibility": "test",
+        "target_path": null,
+        "target_responsibility": null,
+        "specifier": "node:url",
+        "dependency_type": "node_builtin",
+        "import_kind": "static_import"
+      },
+      {
+        "source_path": "tests/egov-tax-semantics.test.js",
+        "source_responsibility": "test",
+        "target_path": "scripts/monitoring/extract-egov-tax-semantics.js",
+        "target_responsibility": "cli",
+        "specifier": "../scripts/monitoring/extract-egov-tax-semantics.js",
+        "dependency_type": "internal",
+        "import_kind": "static_import"
+      },
+      {
+        "source_path": "tests/egov-tax-semantics.test.js",
+        "source_responsibility": "test",
+        "target_path": "scripts/monitoring/monitoring-registry.js",
+        "target_responsibility": "domain",
+        "specifier": "../scripts/monitoring/monitoring-registry.js",
+        "dependency_type": "internal",
+        "import_kind": "static_import"
+      },
+      {
+        "source_path": "tests/egov-tax-semantics.test.js",
+        "source_responsibility": "test",
+        "target_path": "scripts/normalize/egov-tax-semantics.js",
+        "target_responsibility": "domain",
+        "specifier": "../scripts/normalize/egov-tax-semantics.js",
+        "dependency_type": "internal",
+        "import_kind": "static_import"
+      },
+      {
+        "source_path": "tests/egov-tax-semantics.test.js",
+        "source_responsibility": "test",
+        "target_path": "scripts/validate/schema-validator.js",
+        "target_responsibility": "adapter",
+        "specifier": "../scripts/validate/schema-validator.js",
+        "dependency_type": "internal",
+        "import_kind": "static_import"
+      },
+      {
+        "source_path": "tests/format-adapter-registry.test.js",
+        "source_responsibility": "test",
+        "target_path": null,
+        "target_responsibility": null,
+        "specifier": "node:test",
+        "dependency_type": "node_builtin",
+        "import_kind": "static_import"
+      },
+      {
+        "source_path": "tests/format-adapter-registry.test.js",
+        "source_responsibility": "test",
+        "target_path": null,
+        "target_responsibility": null,
+        "specifier": "node:assert/strict",
+        "dependency_type": "node_builtin",
+        "import_kind": "static_import"
+      },
+      {
+        "source_path": "tests/format-adapter-registry.test.js",
+        "source_responsibility": "test",
+        "target_path": null,
+        "target_responsibility": null,
+        "specifier": "node:fs/promises",
+        "dependency_type": "node_builtin",
+        "import_kind": "static_import"
+      },
+      {
+        "source_path": "tests/format-adapter-registry.test.js",
+        "source_responsibility": "test",
+        "target_path": null,
+        "target_responsibility": null,
+        "specifier": "node:url",
+        "dependency_type": "node_builtin",
+        "import_kind": "static_import"
+      },
+      {
+        "source_path": "tests/format-adapter-registry.test.js",
+        "source_responsibility": "test",
+        "target_path": "scripts/monitoring/monitoring-registry.js",
+        "target_responsibility": "domain",
+        "specifier": "../scripts/monitoring/monitoring-registry.js",
+        "dependency_type": "internal",
+        "import_kind": "static_import"
+      },
+      {
+        "source_path": "tests/format-adapter-registry.test.js",
+        "source_responsibility": "test",
+        "target_path": "scripts/monitoring/build-monitoring-execution-plan.js",
+        "target_responsibility": "cli",
+        "specifier": "../scripts/monitoring/build-monitoring-execution-plan.js",
+        "dependency_type": "internal",
+        "import_kind": "static_import"
+      },
+      {
+        "source_path": "tests/format-adapter-registry.test.js",
+        "source_responsibility": "test",
+        "target_path": "scripts/composition/monitoring-composition.js",
+        "target_responsibility": "composition_root",
+        "specifier": "../scripts/composition/monitoring-composition.js",
+        "dependency_type": "internal",
+        "import_kind": "static_import"
+      },
+      {
+        "source_path": "tests/http-fetcher.test.js",
+        "source_responsibility": "test",
+        "target_path": null,
+        "target_responsibility": null,
+        "specifier": "node:test",
+        "dependency_type": "node_builtin",
+        "import_kind": "static_import"
+      },
+      {
+        "source_path": "tests/http-fetcher.test.js",
+        "source_responsibility": "test",
+        "target_path": null,
+        "target_responsibility": null,
+        "specifier": "node:assert/strict",
+        "dependency_type": "node_builtin",
+        "import_kind": "static_import"
+      },
+      {
+        "source_path": "tests/http-fetcher.test.js",
+        "source_responsibility": "test",
+        "target_path": "scripts/fetch/http-fetcher.js",
+        "target_responsibility": "adapter",
+        "specifier": "../scripts/fetch/http-fetcher.js",
+        "dependency_type": "internal",
+        "import_kind": "static_import"
+      },
+      {
+        "source_path": "tests/initial-master-candidate-schema.test.js",
+        "source_responsibility": "test",
+        "target_path": null,
+        "target_responsibility": null,
+        "specifier": "node:assert/strict",
+        "dependency_type": "node_builtin",
+        "import_kind": "static_import"
+      },
+      {
+        "source_path": "tests/initial-master-candidate-schema.test.js",
+        "source_responsibility": "test",
+        "target_path": null,
+        "target_responsibility": null,
+        "specifier": "node:fs/promises",
+        "dependency_type": "node_builtin",
+        "import_kind": "static_import"
+      },
+      {
+        "source_path": "tests/initial-master-candidate-schema.test.js",
+        "source_responsibility": "test",
+        "target_path": null,
+        "target_responsibility": null,
+        "specifier": "node:test",
+        "dependency_type": "node_builtin",
+        "import_kind": "static_import"
+      },
+      {
+        "source_path": "tests/integrity-validator.test.js",
+        "source_responsibility": "test",
+        "target_path": null,
+        "target_responsibility": null,
+        "specifier": "node:test",
+        "dependency_type": "node_builtin",
+        "import_kind": "static_import"
+      },
+      {
+        "source_path": "tests/integrity-validator.test.js",
+        "source_responsibility": "test",
+        "target_path": null,
+        "target_responsibility": null,
+        "specifier": "node:assert/strict",
+        "dependency_type": "node_builtin",
+        "import_kind": "static_import"
+      },
+      {
+        "source_path": "tests/integrity-validator.test.js",
+        "source_responsibility": "test",
+        "target_path": "scripts/validate/integrity-validator.js",
+        "target_responsibility": "domain",
+        "specifier": "../scripts/validate/integrity-validator.js",
+        "dependency_type": "internal",
+        "import_kind": "static_import"
+      },
+      {
+        "source_path": "tests/monitoring-config.test.js",
+        "source_responsibility": "test",
+        "target_path": null,
+        "target_responsibility": null,
+        "specifier": "node:test",
+        "dependency_type": "node_builtin",
+        "import_kind": "static_import"
+      },
+      {
+        "source_path": "tests/monitoring-config.test.js",
+        "source_responsibility": "test",
+        "target_path": null,
+        "target_responsibility": null,
+        "specifier": "node:assert/strict",
+        "dependency_type": "node_builtin",
+        "import_kind": "static_import"
+      },
+      {
+        "source_path": "tests/monitoring-config.test.js",
+        "source_responsibility": "test",
+        "target_path": null,
+        "target_responsibility": null,
+        "specifier": "node:fs/promises",
+        "dependency_type": "node_builtin",
+        "import_kind": "static_import"
+      },
+      {
+        "source_path": "tests/monitoring-config.test.js",
+        "source_responsibility": "test",
+        "target_path": null,
+        "target_responsibility": null,
+        "specifier": "node:url",
+        "dependency_type": "node_builtin",
+        "import_kind": "static_import"
+      },
+      {
+        "source_path": "tests/monitoring-config.test.js",
+        "source_responsibility": "test",
+        "target_path": "scripts/monitoring/build-monitoring-config.js",
+        "target_responsibility": "cli",
+        "specifier": "../scripts/monitoring/build-monitoring-config.js",
+        "dependency_type": "internal",
+        "import_kind": "static_import"
+      },
+      {
+        "source_path": "tests/monitoring-config.test.js",
+        "source_responsibility": "test",
+        "target_path": "scripts/monitoring/egov-change-detection.js",
+        "target_responsibility": "domain",
+        "specifier": "../scripts/monitoring/egov-change-detection.js",
+        "dependency_type": "internal",
+        "import_kind": "static_import"
+      },
+      {
+        "source_path": "tests/monitoring-execution-plan.test.js",
+        "source_responsibility": "test",
+        "target_path": null,
+        "target_responsibility": null,
+        "specifier": "node:test",
+        "dependency_type": "node_builtin",
+        "import_kind": "static_import"
+      },
+      {
+        "source_path": "tests/monitoring-execution-plan.test.js",
+        "source_responsibility": "test",
+        "target_path": null,
+        "target_responsibility": null,
+        "specifier": "node:assert/strict",
+        "dependency_type": "node_builtin",
+        "import_kind": "static_import"
+      },
+      {
+        "source_path": "tests/monitoring-execution-plan.test.js",
+        "source_responsibility": "test",
+        "target_path": null,
+        "target_responsibility": null,
+        "specifier": "node:url",
+        "dependency_type": "node_builtin",
+        "import_kind": "static_import"
+      },
+      {
+        "source_path": "tests/monitoring-execution-plan.test.js",
+        "source_responsibility": "test",
+        "target_path": "scripts/monitoring/build-monitoring-config.js",
+        "target_responsibility": "cli",
+        "specifier": "../scripts/monitoring/build-monitoring-config.js",
+        "dependency_type": "internal",
+        "import_kind": "static_import"
+      },
+      {
+        "source_path": "tests/monitoring-execution-plan.test.js",
+        "source_responsibility": "test",
+        "target_path": "scripts/monitoring/build-monitoring-execution-plan.js",
+        "target_responsibility": "cli",
+        "specifier": "../scripts/monitoring/build-monitoring-execution-plan.js",
+        "dependency_type": "internal",
+        "import_kind": "static_import"
+      },
+      {
+        "source_path": "tests/monitoring-pipeline.test.js",
+        "source_responsibility": "test",
+        "target_path": null,
+        "target_responsibility": null,
+        "specifier": "node:test",
+        "dependency_type": "node_builtin",
+        "import_kind": "static_import"
+      },
+      {
+        "source_path": "tests/monitoring-pipeline.test.js",
+        "source_responsibility": "test",
+        "target_path": null,
+        "target_responsibility": null,
+        "specifier": "node:assert/strict",
+        "dependency_type": "node_builtin",
+        "import_kind": "static_import"
+      },
+      {
+        "source_path": "tests/monitoring-pipeline.test.js",
+        "source_responsibility": "test",
+        "target_path": null,
+        "target_responsibility": null,
+        "specifier": "node:fs/promises",
+        "dependency_type": "node_builtin",
+        "import_kind": "static_import"
+      },
+      {
+        "source_path": "tests/monitoring-pipeline.test.js",
+        "source_responsibility": "test",
+        "target_path": null,
+        "target_responsibility": null,
+        "specifier": "node:path",
+        "dependency_type": "node_builtin",
+        "import_kind": "static_import"
+      },
+      {
+        "source_path": "tests/monitoring-pipeline.test.js",
+        "source_responsibility": "test",
+        "target_path": null,
+        "target_responsibility": null,
+        "specifier": "node:url",
+        "dependency_type": "node_builtin",
+        "import_kind": "static_import"
+      },
+      {
+        "source_path": "tests/monitoring-pipeline.test.js",
+        "source_responsibility": "test",
+        "target_path": "scripts/pipeline/monitoring-pipeline.js",
+        "target_responsibility": "application",
+        "specifier": "../scripts/pipeline/monitoring-pipeline.js",
+        "dependency_type": "internal",
+        "import_kind": "static_import"
+      },
+      {
+        "source_path": "tests/monitoring-registry.test.js",
+        "source_responsibility": "test",
+        "target_path": null,
+        "target_responsibility": null,
+        "specifier": "node:test",
+        "dependency_type": "node_builtin",
+        "import_kind": "static_import"
+      },
+      {
+        "source_path": "tests/monitoring-registry.test.js",
+        "source_responsibility": "test",
+        "target_path": null,
+        "target_responsibility": null,
+        "specifier": "node:assert/strict",
+        "dependency_type": "node_builtin",
+        "import_kind": "static_import"
+      },
+      {
+        "source_path": "tests/monitoring-registry.test.js",
+        "source_responsibility": "test",
+        "target_path": null,
+        "target_responsibility": null,
+        "specifier": "node:url",
+        "dependency_type": "node_builtin",
+        "import_kind": "static_import"
+      },
+      {
+        "source_path": "tests/monitoring-registry.test.js",
+        "source_responsibility": "test",
+        "target_path": "scripts/monitoring/monitoring-registry.js",
+        "target_responsibility": "domain",
+        "specifier": "../scripts/monitoring/monitoring-registry.js",
+        "dependency_type": "internal",
+        "import_kind": "static_import"
+      },
+      {
+        "source_path": "tests/official-document-adapters.test.js",
+        "source_responsibility": "test",
+        "target_path": null,
+        "target_responsibility": null,
+        "specifier": "node:test",
+        "dependency_type": "node_builtin",
+        "import_kind": "static_import"
+      },
+      {
+        "source_path": "tests/official-document-adapters.test.js",
+        "source_responsibility": "test",
+        "target_path": null,
+        "target_responsibility": null,
+        "specifier": "node:assert/strict",
+        "dependency_type": "node_builtin",
+        "import_kind": "static_import"
+      },
+      {
+        "source_path": "tests/official-document-adapters.test.js",
+        "source_responsibility": "test",
+        "target_path": null,
+        "target_responsibility": null,
+        "specifier": "node:crypto",
+        "dependency_type": "node_builtin",
+        "import_kind": "static_import"
+      },
+      {
+        "source_path": "tests/official-document-adapters.test.js",
+        "source_responsibility": "test",
+        "target_path": null,
+        "target_responsibility": null,
+        "specifier": "node:fs/promises",
+        "dependency_type": "node_builtin",
+        "import_kind": "static_import"
+      },
+      {
+        "source_path": "tests/official-document-adapters.test.js",
+        "source_responsibility": "test",
+        "target_path": "scripts/formats/official-document.js",
+        "target_responsibility": "adapter",
+        "specifier": "../scripts/formats/official-document.js",
+        "dependency_type": "internal",
+        "import_kind": "static_import"
+      },
+      {
+        "source_path": "tests/official-document-adapters.test.js",
+        "source_responsibility": "test",
+        "target_path": "scripts/normalize/declarative-document-facts.js",
+        "target_responsibility": "domain",
+        "specifier": "../scripts/normalize/declarative-document-facts.js",
+        "dependency_type": "internal",
+        "import_kind": "static_import"
+      },
+      {
+        "source_path": "tests/public-burden-adapters.test.js",
+        "source_responsibility": "test",
+        "target_path": null,
+        "target_responsibility": null,
+        "specifier": "node:test",
+        "dependency_type": "node_builtin",
+        "import_kind": "static_import"
+      },
+      {
+        "source_path": "tests/public-burden-adapters.test.js",
+        "source_responsibility": "test",
+        "target_path": null,
+        "target_responsibility": null,
+        "specifier": "node:assert/strict",
+        "dependency_type": "node_builtin",
+        "import_kind": "static_import"
+      },
+      {
+        "source_path": "tests/public-burden-adapters.test.js",
+        "source_responsibility": "test",
+        "target_path": null,
+        "target_responsibility": null,
+        "specifier": "node:fs/promises",
+        "dependency_type": "node_builtin",
+        "import_kind": "static_import"
+      },
+      {
+        "source_path": "tests/public-burden-adapters.test.js",
+        "source_responsibility": "test",
+        "target_path": null,
+        "target_responsibility": null,
+        "specifier": "node:path",
+        "dependency_type": "node_builtin",
+        "import_kind": "static_import"
+      },
+      {
+        "source_path": "tests/public-burden-adapters.test.js",
+        "source_responsibility": "test",
+        "target_path": null,
+        "target_responsibility": null,
+        "specifier": "node:url",
+        "dependency_type": "node_builtin",
+        "import_kind": "static_import"
+      },
+      {
+        "source_path": "tests/public-burden-adapters.test.js",
+        "source_responsibility": "test",
+        "target_path": "scripts/validate/schema-validator.js",
+        "target_responsibility": "adapter",
+        "specifier": "../scripts/validate/schema-validator.js",
+        "dependency_type": "internal",
+        "import_kind": "static_import"
+      },
+      {
+        "source_path": "tests/public-burden-adapters.test.js",
+        "source_responsibility": "test",
+        "target_path": "scripts/pipeline/source-pipeline.js",
+        "target_responsibility": "application",
+        "specifier": "../scripts/pipeline/source-pipeline.js",
+        "dependency_type": "internal",
+        "import_kind": "static_import"
+      },
+      {
+        "source_path": "tests/public-burden-adapters.test.js",
+        "source_responsibility": "test",
+        "target_path": "scripts/monitoring/build-monitoring-execution-plan.js",
+        "target_responsibility": "cli",
+        "specifier": "../scripts/monitoring/build-monitoring-execution-plan.js",
+        "dependency_type": "internal",
+        "import_kind": "static_import"
+      },
+      {
+        "source_path": "tests/public-burden-adapters.test.js",
+        "source_responsibility": "test",
+        "target_path": "scripts/monitoring/monitoring-registry.js",
+        "target_responsibility": "domain",
+        "specifier": "../scripts/monitoring/monitoring-registry.js",
+        "dependency_type": "internal",
+        "import_kind": "static_import"
+      },
+      {
+        "source_path": "tests/public-burden-master.test.js",
+        "source_responsibility": "test",
+        "target_path": null,
+        "target_responsibility": null,
+        "specifier": "node:assert/strict",
+        "dependency_type": "node_builtin",
+        "import_kind": "static_import"
+      },
+      {
+        "source_path": "tests/public-burden-master.test.js",
+        "source_responsibility": "test",
+        "target_path": null,
+        "target_responsibility": null,
+        "specifier": "node:fs/promises",
+        "dependency_type": "node_builtin",
+        "import_kind": "static_import"
+      },
+      {
+        "source_path": "tests/public-burden-master.test.js",
+        "source_responsibility": "test",
+        "target_path": null,
+        "target_responsibility": null,
+        "specifier": "node:path",
+        "dependency_type": "node_builtin",
+        "import_kind": "static_import"
+      },
+      {
+        "source_path": "tests/public-burden-master.test.js",
+        "source_responsibility": "test",
+        "target_path": null,
+        "target_responsibility": null,
+        "specifier": "node:test",
+        "dependency_type": "node_builtin",
+        "import_kind": "static_import"
+      },
+      {
+        "source_path": "tests/public-burden-master.test.js",
+        "source_responsibility": "test",
+        "target_path": "scripts/validate/schema-validator.js",
+        "target_responsibility": "adapter",
+        "specifier": "../scripts/validate/schema-validator.js",
+        "dependency_type": "internal",
+        "import_kind": "static_import"
+      },
+      {
+        "source_path": "tests/public-burden-master.test.js",
+        "source_responsibility": "test",
+        "target_path": "scripts/generate/public-burden-csv.js",
+        "target_responsibility": "cli",
+        "specifier": "../scripts/generate/public-burden-csv.js",
+        "dependency_type": "internal",
+        "import_kind": "static_import"
+      },
+      {
+        "source_path": "tests/refactoring-final-audit.test.js",
+        "source_responsibility": "test",
+        "target_path": null,
+        "target_responsibility": null,
+        "specifier": "node:test",
+        "dependency_type": "node_builtin",
+        "import_kind": "static_import"
+      },
+      {
+        "source_path": "tests/refactoring-final-audit.test.js",
+        "source_responsibility": "test",
+        "target_path": null,
+        "target_responsibility": null,
+        "specifier": "node:assert/strict",
+        "dependency_type": "node_builtin",
+        "import_kind": "static_import"
+      },
+      {
+        "source_path": "tests/refactoring-final-audit.test.js",
+        "source_responsibility": "test",
+        "target_path": null,
+        "target_responsibility": null,
+        "specifier": "node:fs/promises",
+        "dependency_type": "node_builtin",
+        "import_kind": "static_import"
+      },
+      {
+        "source_path": "tests/refactoring-final-audit.test.js",
+        "source_responsibility": "test",
+        "target_path": null,
+        "target_responsibility": null,
+        "specifier": "node:url",
+        "dependency_type": "node_builtin",
+        "import_kind": "static_import"
+      },
+      {
+        "source_path": "tests/refactoring-final-audit.test.js",
+        "source_responsibility": "test",
+        "target_path": "scripts/audit/architecture-inventory.js",
+        "target_responsibility": "cli",
+        "specifier": "../scripts/audit/architecture-inventory.js",
+        "dependency_type": "internal",
+        "import_kind": "static_import"
+      },
+      {
+        "source_path": "tests/refactoring-final-audit.test.js",
+        "source_responsibility": "test",
+        "target_path": "scripts/audit/adapter-coverage-audit.js",
+        "target_responsibility": "cli",
+        "specifier": "../scripts/audit/adapter-coverage-audit.js",
+        "dependency_type": "internal",
+        "import_kind": "static_import"
+      },
+      {
+        "source_path": "tests/refactoring-final-audit.test.js",
+        "source_responsibility": "test",
+        "target_path": "scripts/monitoring/monitoring-registry.js",
+        "target_responsibility": "domain",
+        "specifier": "../scripts/monitoring/monitoring-registry.js",
+        "dependency_type": "internal",
+        "import_kind": "static_import"
+      },
+      {
+        "source_path": "tests/repository-audit.test.js",
+        "source_responsibility": "test",
+        "target_path": null,
+        "target_responsibility": null,
+        "specifier": "node:test",
+        "dependency_type": "node_builtin",
+        "import_kind": "static_import"
+      },
+      {
+        "source_path": "tests/repository-audit.test.js",
+        "source_responsibility": "test",
+        "target_path": null,
+        "target_responsibility": null,
+        "specifier": "node:assert/strict",
+        "dependency_type": "node_builtin",
+        "import_kind": "static_import"
+      },
+      {
+        "source_path": "tests/repository-audit.test.js",
+        "source_responsibility": "test",
+        "target_path": "scripts/audit/repository-audit.js",
+        "target_responsibility": "domain",
+        "specifier": "../scripts/audit/repository-audit.js",
+        "dependency_type": "internal",
+        "import_kind": "static_import"
+      },
+      {
+        "source_path": "tests/repository-consistency.test.js",
+        "source_responsibility": "test",
+        "target_path": null,
+        "target_responsibility": null,
+        "specifier": "node:assert/strict",
+        "dependency_type": "node_builtin",
+        "import_kind": "static_import"
+      },
+      {
+        "source_path": "tests/repository-consistency.test.js",
+        "source_responsibility": "test",
+        "target_path": null,
+        "target_responsibility": null,
+        "specifier": "node:fs/promises",
+        "dependency_type": "node_builtin",
+        "import_kind": "static_import"
+      },
+      {
+        "source_path": "tests/repository-consistency.test.js",
+        "source_responsibility": "test",
+        "target_path": null,
+        "target_responsibility": null,
+        "specifier": "node:os",
+        "dependency_type": "node_builtin",
+        "import_kind": "static_import"
+      },
+      {
+        "source_path": "tests/repository-consistency.test.js",
+        "source_responsibility": "test",
+        "target_path": null,
+        "target_responsibility": null,
+        "specifier": "node:path",
+        "dependency_type": "node_builtin",
+        "import_kind": "static_import"
+      },
+      {
+        "source_path": "tests/repository-consistency.test.js",
+        "source_responsibility": "test",
+        "target_path": null,
+        "target_responsibility": null,
+        "specifier": "node:test",
+        "dependency_type": "node_builtin",
+        "import_kind": "static_import"
+      },
+      {
+        "source_path": "tests/repository-consistency.test.js",
+        "source_responsibility": "test",
+        "target_path": "scripts/validate/integrity-validator.js",
+        "target_responsibility": "domain",
+        "specifier": "../scripts/validate/integrity-validator.js",
+        "dependency_type": "internal",
+        "import_kind": "static_import"
+      },
+      {
+        "source_path": "tests/repository-consistency.test.js",
+        "source_responsibility": "test",
+        "target_path": "scripts/validate/repository-validator.js",
+        "target_responsibility": "domain",
+        "specifier": "../scripts/validate/repository-validator.js",
+        "dependency_type": "internal",
+        "import_kind": "static_import"
+      },
+      {
+        "source_path": "tests/repository-operations.test.js",
+        "source_responsibility": "test",
+        "target_path": null,
+        "target_responsibility": null,
+        "specifier": "node:test",
+        "dependency_type": "node_builtin",
+        "import_kind": "static_import"
+      },
+      {
+        "source_path": "tests/repository-operations.test.js",
+        "source_responsibility": "test",
+        "target_path": null,
+        "target_responsibility": null,
+        "specifier": "node:assert/strict",
+        "dependency_type": "node_builtin",
+        "import_kind": "static_import"
+      },
+      {
+        "source_path": "tests/repository-operations.test.js",
+        "source_responsibility": "test",
+        "target_path": null,
+        "target_responsibility": null,
+        "specifier": "node:fs/promises",
+        "dependency_type": "node_builtin",
+        "import_kind": "static_import"
+      },
+      {
+        "source_path": "tests/repository-operations.test.js",
+        "source_responsibility": "test",
+        "target_path": null,
+        "target_responsibility": null,
+        "specifier": "node:url",
+        "dependency_type": "node_builtin",
+        "import_kind": "static_import"
+      },
+      {
+        "source_path": "tests/repository-operations.test.js",
+        "source_responsibility": "test",
+        "target_path": "scripts/application/repository-operations.js",
+        "target_responsibility": "application",
+        "specifier": "../scripts/application/repository-operations.js",
+        "dependency_type": "internal",
+        "import_kind": "static_import"
+      },
+      {
+        "source_path": "tests/repository-validator.test.js",
+        "source_responsibility": "test",
+        "target_path": null,
+        "target_responsibility": null,
+        "specifier": "node:test",
+        "dependency_type": "node_builtin",
+        "import_kind": "static_import"
+      },
+      {
+        "source_path": "tests/repository-validator.test.js",
+        "source_responsibility": "test",
+        "target_path": null,
+        "target_responsibility": null,
+        "specifier": "node:assert/strict",
+        "dependency_type": "node_builtin",
+        "import_kind": "static_import"
+      },
+      {
+        "source_path": "tests/repository-validator.test.js",
+        "source_responsibility": "test",
+        "target_path": null,
+        "target_responsibility": null,
+        "specifier": "node:fs/promises",
+        "dependency_type": "node_builtin",
+        "import_kind": "static_import"
+      },
+      {
+        "source_path": "tests/repository-validator.test.js",
+        "source_responsibility": "test",
+        "target_path": null,
+        "target_responsibility": null,
+        "specifier": "node:url",
+        "dependency_type": "node_builtin",
+        "import_kind": "static_import"
+      },
+      {
+        "source_path": "tests/repository-validator.test.js",
+        "source_responsibility": "test",
+        "target_path": null,
+        "target_responsibility": null,
+        "specifier": "yaml",
+        "dependency_type": "external_package",
+        "import_kind": "static_import"
+      },
+      {
+        "source_path": "tests/repository-validator.test.js",
+        "source_responsibility": "test",
+        "target_path": "scripts/validate/repository-validator.js",
+        "target_responsibility": "domain",
+        "specifier": "../scripts/validate/repository-validator.js",
+        "dependency_type": "internal",
+        "import_kind": "static_import"
+      },
+      {
+        "source_path": "tests/repository-validator.test.js",
+        "source_responsibility": "test",
+        "target_path": "scripts/validate/schema-validator.js",
+        "target_responsibility": "adapter",
+        "specifier": "../scripts/validate/schema-validator.js",
+        "dependency_type": "internal",
+        "import_kind": "static_import"
+      },
+      {
+        "source_path": "tests/schema-contracts.test.js",
+        "source_responsibility": "test",
+        "target_path": null,
+        "target_responsibility": null,
+        "specifier": "node:test",
+        "dependency_type": "node_builtin",
+        "import_kind": "static_import"
+      },
+      {
+        "source_path": "tests/schema-contracts.test.js",
+        "source_responsibility": "test",
+        "target_path": null,
+        "target_responsibility": null,
+        "specifier": "node:assert/strict",
+        "dependency_type": "node_builtin",
+        "import_kind": "static_import"
+      },
+      {
+        "source_path": "tests/schema-contracts.test.js",
+        "source_responsibility": "test",
+        "target_path": null,
+        "target_responsibility": null,
+        "specifier": "node:fs/promises",
+        "dependency_type": "node_builtin",
+        "import_kind": "static_import"
+      },
+      {
+        "source_path": "tests/schema-contracts.test.js",
+        "source_responsibility": "test",
+        "target_path": null,
+        "target_responsibility": null,
+        "specifier": "node:path",
+        "dependency_type": "node_builtin",
+        "import_kind": "static_import"
+      },
+      {
+        "source_path": "tests/schema-contracts.test.js",
+        "source_responsibility": "test",
+        "target_path": null,
+        "target_responsibility": null,
+        "specifier": "node:url",
+        "dependency_type": "node_builtin",
+        "import_kind": "static_import"
+      },
+      {
+        "source_path": "tests/schema-contracts.test.js",
+        "source_responsibility": "test",
+        "target_path": "scripts/monitoring/monitoring-registry.js",
+        "target_responsibility": "domain",
+        "specifier": "../scripts/monitoring/monitoring-registry.js",
+        "dependency_type": "internal",
+        "import_kind": "static_import"
+      },
+      {
+        "source_path": "tests/schema-contracts.test.js",
+        "source_responsibility": "test",
+        "target_path": "scripts/validate/schema-validator.js",
+        "target_responsibility": "adapter",
+        "specifier": "../scripts/validate/schema-validator.js",
+        "dependency_type": "internal",
+        "import_kind": "static_import"
+      },
+      {
+        "source_path": "tests/schema-validator.test.js",
+        "source_responsibility": "test",
+        "target_path": null,
+        "target_responsibility": null,
+        "specifier": "node:test",
+        "dependency_type": "node_builtin",
+        "import_kind": "static_import"
+      },
+      {
+        "source_path": "tests/schema-validator.test.js",
+        "source_responsibility": "test",
+        "target_path": null,
+        "target_responsibility": null,
+        "specifier": "node:assert/strict",
+        "dependency_type": "node_builtin",
+        "import_kind": "static_import"
+      },
+      {
+        "source_path": "tests/schema-validator.test.js",
+        "source_responsibility": "test",
+        "target_path": null,
+        "target_responsibility": null,
+        "specifier": "node:url",
+        "dependency_type": "node_builtin",
+        "import_kind": "static_import"
+      },
+      {
+        "source_path": "tests/schema-validator.test.js",
+        "source_responsibility": "test",
+        "target_path": "scripts/validate/schema-validator.js",
+        "target_responsibility": "adapter",
+        "specifier": "../scripts/validate/schema-validator.js",
+        "dependency_type": "internal",
+        "import_kind": "static_import"
+      },
+      {
+        "source_path": "tests/social-insurance-adapters.test.js",
+        "source_responsibility": "test",
+        "target_path": null,
+        "target_responsibility": null,
+        "specifier": "node:test",
+        "dependency_type": "node_builtin",
+        "import_kind": "static_import"
+      },
+      {
+        "source_path": "tests/social-insurance-adapters.test.js",
+        "source_responsibility": "test",
+        "target_path": null,
+        "target_responsibility": null,
+        "specifier": "node:assert/strict",
+        "dependency_type": "node_builtin",
+        "import_kind": "static_import"
+      },
+      {
+        "source_path": "tests/social-insurance-adapters.test.js",
+        "source_responsibility": "test",
+        "target_path": null,
+        "target_responsibility": null,
+        "specifier": "node:fs/promises",
+        "dependency_type": "node_builtin",
+        "import_kind": "static_import"
+      },
+      {
+        "source_path": "tests/social-insurance-adapters.test.js",
+        "source_responsibility": "test",
+        "target_path": null,
+        "target_responsibility": null,
+        "specifier": "node:path",
+        "dependency_type": "node_builtin",
+        "import_kind": "static_import"
+      },
+      {
+        "source_path": "tests/social-insurance-adapters.test.js",
+        "source_responsibility": "test",
+        "target_path": null,
+        "target_responsibility": null,
+        "specifier": "node:url",
+        "dependency_type": "node_builtin",
+        "import_kind": "static_import"
+      },
+      {
+        "source_path": "tests/social-insurance-adapters.test.js",
+        "source_responsibility": "test",
+        "target_path": "scripts/validate/schema-validator.js",
+        "target_responsibility": "adapter",
+        "specifier": "../scripts/validate/schema-validator.js",
+        "dependency_type": "internal",
+        "import_kind": "static_import"
+      },
+      {
+        "source_path": "tests/social-insurance-adapters.test.js",
+        "source_responsibility": "test",
+        "target_path": "scripts/pipeline/source-pipeline.js",
+        "target_responsibility": "application",
+        "specifier": "../scripts/pipeline/source-pipeline.js",
+        "dependency_type": "internal",
+        "import_kind": "static_import"
+      },
+      {
+        "source_path": "tests/social-insurance-adapters.test.js",
+        "source_responsibility": "test",
+        "target_path": "scripts/monitoring/build-monitoring-execution-plan.js",
+        "target_responsibility": "cli",
+        "specifier": "../scripts/monitoring/build-monitoring-execution-plan.js",
+        "dependency_type": "internal",
+        "import_kind": "static_import"
+      },
+      {
+        "source_path": "tests/social-insurance-adapters.test.js",
+        "source_responsibility": "test",
+        "target_path": "scripts/monitoring/monitoring-registry.js",
+        "target_responsibility": "domain",
+        "specifier": "../scripts/monitoring/monitoring-registry.js",
+        "dependency_type": "internal",
+        "import_kind": "static_import"
+      },
+      {
+        "source_path": "tests/source-pipeline.test.js",
+        "source_responsibility": "test",
+        "target_path": null,
+        "target_responsibility": null,
+        "specifier": "node:test",
+        "dependency_type": "node_builtin",
+        "import_kind": "static_import"
+      },
+      {
+        "source_path": "tests/source-pipeline.test.js",
+        "source_responsibility": "test",
+        "target_path": null,
+        "target_responsibility": null,
+        "specifier": "node:assert/strict",
+        "dependency_type": "node_builtin",
+        "import_kind": "static_import"
+      },
+      {
+        "source_path": "tests/source-pipeline.test.js",
+        "source_responsibility": "test",
+        "target_path": null,
+        "target_responsibility": null,
+        "specifier": "node:fs/promises",
+        "dependency_type": "node_builtin",
+        "import_kind": "static_import"
+      },
+      {
+        "source_path": "tests/source-pipeline.test.js",
+        "source_responsibility": "test",
+        "target_path": null,
+        "target_responsibility": null,
+        "specifier": "node:path",
+        "dependency_type": "node_builtin",
+        "import_kind": "static_import"
+      },
+      {
+        "source_path": "tests/source-pipeline.test.js",
+        "source_responsibility": "test",
+        "target_path": null,
+        "target_responsibility": null,
+        "specifier": "node:url",
+        "dependency_type": "node_builtin",
+        "import_kind": "static_import"
+      },
+      {
+        "source_path": "tests/source-pipeline.test.js",
+        "source_responsibility": "test",
+        "target_path": "scripts/fetch/source-registry.js",
+        "target_responsibility": "adapter",
+        "specifier": "../scripts/fetch/source-registry.js",
+        "dependency_type": "internal",
+        "import_kind": "static_import"
+      },
+      {
+        "source_path": "tests/source-pipeline.test.js",
+        "source_responsibility": "test",
+        "target_path": "scripts/pipeline/source-pipeline.js",
+        "target_responsibility": "application",
+        "specifier": "../scripts/pipeline/source-pipeline.js",
+        "dependency_type": "internal",
+        "import_kind": "static_import"
+      },
+      {
+        "source_path": "tests/source-scan-audit.test.js",
+        "source_responsibility": "test",
+        "target_path": null,
+        "target_responsibility": null,
+        "specifier": "node:test",
+        "dependency_type": "node_builtin",
+        "import_kind": "static_import"
+      },
+      {
+        "source_path": "tests/source-scan-audit.test.js",
+        "source_responsibility": "test",
+        "target_path": null,
+        "target_responsibility": null,
+        "specifier": "node:assert/strict",
+        "dependency_type": "node_builtin",
+        "import_kind": "static_import"
+      },
+      {
+        "source_path": "tests/source-scan-audit.test.js",
+        "source_responsibility": "test",
+        "target_path": "scripts/audit/source-scan-audit.js",
+        "target_responsibility": "domain",
+        "specifier": "../scripts/audit/source-scan-audit.js",
+        "dependency_type": "internal",
+        "import_kind": "static_import"
+      },
+      {
+        "source_path": "tests/source-scan-audit.test.js",
+        "source_responsibility": "test",
+        "target_path": "scripts/audit/publish-audit-issues.js",
+        "target_responsibility": "cli",
+        "specifier": "../scripts/audit/publish-audit-issues.js",
+        "dependency_type": "internal",
+        "import_kind": "static_import"
+      },
+      {
+        "source_path": "tests/strategy-registry.test.js",
+        "source_responsibility": "test",
+        "target_path": null,
+        "target_responsibility": null,
+        "specifier": "node:test",
+        "dependency_type": "node_builtin",
+        "import_kind": "static_import"
+      },
+      {
+        "source_path": "tests/strategy-registry.test.js",
+        "source_responsibility": "test",
+        "target_path": null,
+        "target_responsibility": null,
+        "specifier": "node:assert/strict",
+        "dependency_type": "node_builtin",
+        "import_kind": "static_import"
+      },
+      {
+        "source_path": "tests/strategy-registry.test.js",
+        "source_responsibility": "test",
+        "target_path": null,
+        "target_responsibility": null,
+        "specifier": "node:fs/promises",
+        "dependency_type": "node_builtin",
+        "import_kind": "static_import"
+      },
+      {
+        "source_path": "tests/strategy-registry.test.js",
+        "source_responsibility": "test",
+        "target_path": null,
+        "target_responsibility": null,
+        "specifier": "node:url",
+        "dependency_type": "node_builtin",
+        "import_kind": "static_import"
+      },
+      {
+        "source_path": "tests/strategy-registry.test.js",
+        "source_responsibility": "test",
+        "target_path": "scripts/application/strategy-registry.js",
+        "target_responsibility": "application",
+        "specifier": "../scripts/application/strategy-registry.js",
+        "dependency_type": "internal",
+        "import_kind": "static_import"
+      },
+      {
+        "source_path": "tests/strategy-registry.test.js",
+        "source_responsibility": "test",
+        "target_path": "scripts/composition/monitoring-composition.js",
+        "target_responsibility": "composition_root",
+        "specifier": "../scripts/composition/monitoring-composition.js",
+        "dependency_type": "internal",
+        "import_kind": "static_import"
+      }
+    ],
     "adjacency": {
       "scripts/adapters/canonical-master.js": [],
       "scripts/adapters/filesystem-store.js": [],
@@ -680,21 +3527,24 @@
       ],
       "scripts/application/strategy-registry.js": [],
       "scripts/audit/adapter-coverage-audit.js": [
-        "scripts/validate/schema-validator.js",
+        "scripts/adapters/filesystem-store.js",
         "scripts/monitoring/build-monitoring-config.js",
         "scripts/monitoring/build-monitoring-execution-plan.js",
-        "scripts/adapters/filesystem-store.js"
+        "scripts/validate/schema-validator.js"
       ],
-      "scripts/audit/architecture-inventory.js": [],
+      "scripts/audit/architecture-inventory.js": [
+        "scripts/audit/dependency-rules.js"
+      ],
       "scripts/audit/audit-repository.js": [
-        "scripts/application/repository-operations.js",
         "scripts/adapters/filesystem-store.js",
+        "scripts/application/repository-operations.js",
         "scripts/validate/repository-validator.js"
       ],
       "scripts/audit/audit-source-scan.js": [
-        "scripts/application/repository-operations.js",
-        "scripts/adapters/filesystem-store.js"
+        "scripts/adapters/filesystem-store.js",
+        "scripts/application/repository-operations.js"
       ],
+      "scripts/audit/dependency-rules.js": [],
       "scripts/audit/publish-audit-issues.js": [],
       "scripts/audit/repository-audit.js": [
         "scripts/normalize/derive-status.js"
@@ -707,8 +3557,8 @@
         "scripts/automation/candidate-update.js"
       ],
       "scripts/composition/monitoring-composition.js": [
-        "scripts/application/strategy-registry.js",
         "scripts/application/source-monitoring.js",
+        "scripts/application/strategy-registry.js",
         "scripts/diff/canonical-diff.js",
         "scripts/fetch/http-fetcher.js",
         "scripts/fetch/source-registry.js",
@@ -733,22 +3583,22 @@
         "scripts/validate/schema-validator.js"
       ],
       "scripts/monitoring/build-monitoring-config.js": [
-        "scripts/validate/schema-validator.js",
-        "scripts/monitoring/monitoring-registry.js",
+        "scripts/adapters/canonical-master.js",
         "scripts/adapters/filesystem-store.js",
-        "scripts/adapters/canonical-master.js"
+        "scripts/monitoring/monitoring-registry.js",
+        "scripts/validate/schema-validator.js"
       ],
       "scripts/monitoring/build-monitoring-execution-plan.js": [
-        "scripts/validate/schema-validator.js",
+        "scripts/adapters/canonical-master.js",
         "scripts/monitoring/build-monitoring-config.js",
         "scripts/monitoring/monitoring-registry.js",
-        "scripts/adapters/canonical-master.js"
+        "scripts/validate/schema-validator.js"
       ],
       "scripts/monitoring/egov-change-detection.js": [],
       "scripts/monitoring/extract-egov-tax-semantics.js": [
-        "scripts/normalize/egov-tax-semantics.js",
         "scripts/monitoring/build-monitoring-config.js",
-        "scripts/monitoring/monitoring-registry.js"
+        "scripts/monitoring/monitoring-registry.js",
+        "scripts/normalize/egov-tax-semantics.js"
       ],
       "scripts/monitoring/monitoring-registry.js": [
         "scripts/validate/schema-validator.js"
@@ -758,8 +3608,8 @@
         "scripts/validate/schema-validator.js"
       ],
       "scripts/monitoring/write-semantic-baseline.js": [
-        "scripts/monitoring/semantic-baseline.js",
-        "scripts/adapters/filesystem-store.js"
+        "scripts/adapters/filesystem-store.js",
+        "scripts/monitoring/semantic-baseline.js"
       ],
       "scripts/normalize/declarative-document-facts.js": [],
       "scripts/normalize/derive-status.js": [],
@@ -772,22 +3622,22 @@
       ],
       "scripts/pipeline/monitoring-pipeline.js": [
         "scripts/audit/source-scan-audit.js",
-        "scripts/monitoring/semantic-baseline.js",
-        "scripts/validate/schema-validator.js",
+        "scripts/composition/monitoring-composition.js",
         "scripts/monitoring/build-monitoring-config.js",
         "scripts/monitoring/build-monitoring-execution-plan.js",
+        "scripts/monitoring/semantic-baseline.js",
         "scripts/pipeline/source-pipeline.js",
-        "scripts/composition/monitoring-composition.js"
+        "scripts/validate/schema-validator.js"
       ],
       "scripts/pipeline/run-monitoring.js": [
-        "scripts/pipeline/monitoring-pipeline.js",
+        "scripts/adapters/filesystem-store.js",
         "scripts/application/repository-operations.js",
-        "scripts/adapters/filesystem-store.js"
+        "scripts/pipeline/monitoring-pipeline.js"
       ],
       "scripts/pipeline/scan-source.js": [
-        "scripts/pipeline/source-pipeline.js",
+        "scripts/adapters/filesystem-store.js",
         "scripts/application/repository-operations.js",
-        "scripts/adapters/filesystem-store.js"
+        "scripts/pipeline/source-pipeline.js"
       ],
       "scripts/pipeline/source-pipeline.js": [
         "scripts/application/source-monitoring.js",
@@ -795,21 +3645,22 @@
       ],
       "scripts/validate/integrity-validator.js": [],
       "scripts/validate/repository-validator.js": [
-        "scripts/validate/schema-validator.js",
+        "scripts/monitoring/build-monitoring-config.js",
         "scripts/validate/integrity-validator.js",
-        "scripts/monitoring/build-monitoring-config.js"
+        "scripts/validate/schema-validator.js"
       ],
       "scripts/validate/schema-validator.js": [],
       "scripts/validate/validate-data.js": [
-        "scripts/application/repository-operations.js",
         "scripts/adapters/repository-validation.js",
+        "scripts/application/repository-operations.js",
         "scripts/validate/repository-validator.js"
       ],
       "tests/adapter-coverage-audit.test.js": [
         "scripts/audit/adapter-coverage-audit.js"
       ],
       "tests/architecture-inventory.test.js": [
-        "scripts/audit/architecture-inventory.js"
+        "scripts/audit/architecture-inventory.js",
+        "scripts/audit/dependency-rules.js"
       ],
       "tests/candidate-update.test.js": [
         "scripts/automation/candidate-update.js"
@@ -825,9 +3676,9 @@
         "scripts/validate/schema-validator.js"
       ],
       "tests/format-adapter-registry.test.js": [
-        "scripts/monitoring/monitoring-registry.js",
+        "scripts/composition/monitoring-composition.js",
         "scripts/monitoring/build-monitoring-execution-plan.js",
-        "scripts/composition/monitoring-composition.js"
+        "scripts/monitoring/monitoring-registry.js"
       ],
       "tests/http-fetcher.test.js": [
         "scripts/fetch/http-fetcher.js"
@@ -855,18 +3706,18 @@
         "scripts/normalize/declarative-document-facts.js"
       ],
       "tests/public-burden-adapters.test.js": [
-        "scripts/validate/schema-validator.js",
-        "scripts/pipeline/source-pipeline.js",
         "scripts/monitoring/build-monitoring-execution-plan.js",
-        "scripts/monitoring/monitoring-registry.js"
+        "scripts/monitoring/monitoring-registry.js",
+        "scripts/pipeline/source-pipeline.js",
+        "scripts/validate/schema-validator.js"
       ],
       "tests/public-burden-master.test.js": [
-        "scripts/validate/schema-validator.js",
-        "scripts/generate/public-burden-csv.js"
+        "scripts/generate/public-burden-csv.js",
+        "scripts/validate/schema-validator.js"
       ],
       "tests/refactoring-final-audit.test.js": [
-        "scripts/audit/architecture-inventory.js",
         "scripts/audit/adapter-coverage-audit.js",
+        "scripts/audit/architecture-inventory.js",
         "scripts/monitoring/monitoring-registry.js"
       ],
       "tests/repository-audit.test.js": [
@@ -888,22 +3739,21 @@
         "scripts/validate/schema-validator.js"
       ],
       "tests/schema-validator.test.js": [
-        "scripts/validate/schema-validator.js",
-        "tests/fixtures/invalid-burden.yaml"
+        "scripts/validate/schema-validator.js"
       ],
       "tests/social-insurance-adapters.test.js": [
-        "scripts/validate/schema-validator.js",
-        "scripts/pipeline/source-pipeline.js",
         "scripts/monitoring/build-monitoring-execution-plan.js",
-        "scripts/monitoring/monitoring-registry.js"
+        "scripts/monitoring/monitoring-registry.js",
+        "scripts/pipeline/source-pipeline.js",
+        "scripts/validate/schema-validator.js"
       ],
       "tests/source-pipeline.test.js": [
         "scripts/fetch/source-registry.js",
         "scripts/pipeline/source-pipeline.js"
       ],
       "tests/source-scan-audit.test.js": [
-        "scripts/audit/source-scan-audit.js",
-        "scripts/audit/publish-audit-issues.js"
+        "scripts/audit/publish-audit-issues.js",
+        "scripts/audit/source-scan-audit.js"
       ],
       "tests/strategy-registry.test.js": [
         "scripts/application/strategy-registry.js",

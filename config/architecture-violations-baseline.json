@@ -1,0 +1,248 @@
+{
+  "schema_version": 1,
+  "remediation_issue": 93,
+  "violations": [
+    {
+      "source_path": "scripts/adapters/repository-validation.js",
+      "source_responsibility": "adapter",
+      "target_path": "scripts/validate/schema-validator.js",
+      "target_responsibility": "adapter",
+      "specifier": "../validate/schema-validator.js",
+      "dependency_type": "internal",
+      "import_kind": "static_import",
+      "rule": "responsibility_direction_forbidden",
+      "remediation_issue": 93
+    },
+    {
+      "source_path": "scripts/audit/source-scan-audit.js",
+      "source_responsibility": "domain",
+      "target_path": null,
+      "target_responsibility": null,
+      "specifier": "node:crypto",
+      "dependency_type": "node_builtin",
+      "import_kind": "static_import",
+      "rule": "domain_node_builtin_forbidden",
+      "remediation_issue": 93
+    },
+    {
+      "source_path": "scripts/automation/candidate-update.js",
+      "source_responsibility": "application",
+      "target_path": "scripts/adapters/filesystem-store.js",
+      "target_responsibility": "adapter",
+      "specifier": "../adapters/filesystem-store.js",
+      "dependency_type": "internal",
+      "import_kind": "static_import",
+      "rule": "responsibility_direction_forbidden",
+      "remediation_issue": 93
+    },
+    {
+      "source_path": "scripts/diff/canonical-diff.js",
+      "source_responsibility": "domain",
+      "target_path": null,
+      "target_responsibility": null,
+      "specifier": "node:path",
+      "dependency_type": "node_builtin",
+      "import_kind": "static_import",
+      "rule": "domain_node_builtin_forbidden",
+      "remediation_issue": 93
+    },
+    {
+      "source_path": "scripts/diff/canonical-diff.js",
+      "source_responsibility": "domain",
+      "target_path": "scripts/validate/schema-validator.js",
+      "target_responsibility": "adapter",
+      "specifier": "../validate/schema-validator.js",
+      "dependency_type": "internal",
+      "import_kind": "static_import",
+      "rule": "responsibility_direction_forbidden",
+      "remediation_issue": 93
+    },
+    {
+      "source_path": "scripts/fetch/source-registry.js",
+      "source_responsibility": "adapter",
+      "target_path": "scripts/validate/schema-validator.js",
+      "target_responsibility": "adapter",
+      "specifier": "../validate/schema-validator.js",
+      "dependency_type": "internal",
+      "import_kind": "static_import",
+      "rule": "responsibility_direction_forbidden",
+      "remediation_issue": 93
+    },
+    {
+      "source_path": "scripts/monitoring/egov-change-detection.js",
+      "source_responsibility": "domain",
+      "target_path": null,
+      "target_responsibility": null,
+      "specifier": "node:crypto",
+      "dependency_type": "node_builtin",
+      "import_kind": "static_import",
+      "rule": "domain_node_builtin_forbidden",
+      "remediation_issue": 93
+    },
+    {
+      "source_path": "scripts/monitoring/monitoring-registry.js",
+      "source_responsibility": "domain",
+      "target_path": null,
+      "target_responsibility": null,
+      "specifier": "node:path",
+      "dependency_type": "node_builtin",
+      "import_kind": "static_import",
+      "rule": "domain_node_builtin_forbidden",
+      "remediation_issue": 93
+    },
+    {
+      "source_path": "scripts/monitoring/monitoring-registry.js",
+      "source_responsibility": "domain",
+      "target_path": "scripts/validate/schema-validator.js",
+      "target_responsibility": "adapter",
+      "specifier": "../validate/schema-validator.js",
+      "dependency_type": "internal",
+      "import_kind": "static_import",
+      "rule": "responsibility_direction_forbidden",
+      "remediation_issue": 93
+    },
+    {
+      "source_path": "scripts/monitoring/semantic-baseline.js",
+      "source_responsibility": "domain",
+      "target_path": null,
+      "target_responsibility": null,
+      "specifier": "node:fs/promises",
+      "dependency_type": "node_builtin",
+      "import_kind": "static_import",
+      "rule": "domain_node_builtin_forbidden",
+      "remediation_issue": 93
+    },
+    {
+      "source_path": "scripts/monitoring/semantic-baseline.js",
+      "source_responsibility": "domain",
+      "target_path": null,
+      "target_responsibility": null,
+      "specifier": "node:path",
+      "dependency_type": "node_builtin",
+      "import_kind": "static_import",
+      "rule": "domain_node_builtin_forbidden",
+      "remediation_issue": 93
+    },
+    {
+      "source_path": "scripts/monitoring/semantic-baseline.js",
+      "source_responsibility": "domain",
+      "target_path": "scripts/validate/schema-validator.js",
+      "target_responsibility": "adapter",
+      "specifier": "../validate/schema-validator.js",
+      "dependency_type": "internal",
+      "import_kind": "static_import",
+      "rule": "responsibility_direction_forbidden",
+      "remediation_issue": 93
+    },
+    {
+      "source_path": "scripts/normalize/pdf-regex-facts.js",
+      "source_responsibility": "domain",
+      "target_path": "scripts/formats/official-document.js",
+      "target_responsibility": "adapter",
+      "specifier": "../formats/official-document.js",
+      "dependency_type": "internal",
+      "import_kind": "static_import",
+      "rule": "responsibility_direction_forbidden",
+      "remediation_issue": 93
+    },
+    {
+      "source_path": "scripts/pipeline/monitoring-pipeline.js",
+      "source_responsibility": "application",
+      "target_path": "scripts/validate/schema-validator.js",
+      "target_responsibility": "adapter",
+      "specifier": "../validate/schema-validator.js",
+      "dependency_type": "internal",
+      "import_kind": "static_import",
+      "rule": "responsibility_direction_forbidden",
+      "remediation_issue": 93
+    },
+    {
+      "source_path": "scripts/pipeline/monitoring-pipeline.js",
+      "source_responsibility": "application",
+      "target_path": "scripts/monitoring/build-monitoring-config.js",
+      "target_responsibility": "cli",
+      "specifier": "../monitoring/build-monitoring-config.js",
+      "dependency_type": "internal",
+      "import_kind": "static_import",
+      "rule": "responsibility_direction_forbidden",
+      "remediation_issue": 93
+    },
+    {
+      "source_path": "scripts/pipeline/monitoring-pipeline.js",
+      "source_responsibility": "application",
+      "target_path": "scripts/monitoring/build-monitoring-execution-plan.js",
+      "target_responsibility": "cli",
+      "specifier": "../monitoring/build-monitoring-execution-plan.js",
+      "dependency_type": "internal",
+      "import_kind": "static_import",
+      "rule": "responsibility_direction_forbidden",
+      "remediation_issue": 93
+    },
+    {
+      "source_path": "scripts/pipeline/monitoring-pipeline.js",
+      "source_responsibility": "application",
+      "target_path": "scripts/composition/monitoring-composition.js",
+      "target_responsibility": "composition_root",
+      "specifier": "../composition/monitoring-composition.js",
+      "dependency_type": "internal",
+      "import_kind": "static_import",
+      "rule": "responsibility_direction_forbidden",
+      "remediation_issue": 93
+    },
+    {
+      "source_path": "scripts/pipeline/source-pipeline.js",
+      "source_responsibility": "application",
+      "target_path": "scripts/composition/monitoring-composition.js",
+      "target_responsibility": "composition_root",
+      "specifier": "../composition/monitoring-composition.js",
+      "dependency_type": "internal",
+      "import_kind": "static_import",
+      "rule": "responsibility_direction_forbidden",
+      "remediation_issue": 93
+    },
+    {
+      "source_path": "scripts/validate/repository-validator.js",
+      "source_responsibility": "domain",
+      "target_path": null,
+      "target_responsibility": null,
+      "specifier": "node:fs/promises",
+      "dependency_type": "node_builtin",
+      "import_kind": "static_import",
+      "rule": "domain_node_builtin_forbidden",
+      "remediation_issue": 93
+    },
+    {
+      "source_path": "scripts/validate/repository-validator.js",
+      "source_responsibility": "domain",
+      "target_path": null,
+      "target_responsibility": null,
+      "specifier": "node:path",
+      "dependency_type": "node_builtin",
+      "import_kind": "static_import",
+      "rule": "domain_node_builtin_forbidden",
+      "remediation_issue": 93
+    },
+    {
+      "source_path": "scripts/validate/repository-validator.js",
+      "source_responsibility": "domain",
+      "target_path": "scripts/validate/schema-validator.js",
+      "target_responsibility": "adapter",
+      "specifier": "./schema-validator.js",
+      "dependency_type": "internal",
+      "import_kind": "static_import",
+      "rule": "responsibility_direction_forbidden",
+      "remediation_issue": 93
+    },
+    {
+      "source_path": "scripts/validate/repository-validator.js",
+      "source_responsibility": "domain",
+      "target_path": "scripts/monitoring/build-monitoring-config.js",
+      "target_responsibility": "cli",
+      "specifier": "../monitoring/build-monitoring-config.js",
+      "dependency_type": "internal",
+      "import_kind": "static_import",
+      "rule": "responsibility_direction_forbidden",
+      "remediation_issue": 93
+    }
+  ]
+}

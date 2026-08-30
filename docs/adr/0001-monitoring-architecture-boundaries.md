@@ -10,7 +10,7 @@
 
 一方、このリポジトリは小規模なNode.js ES Modulesプロジェクトである。一般的なHexagonal Architectureのディレクトリをすべて作ると、今回問題となった小ファイルと階層をさらに増やす。
 
-変更前の実測では、112件のうち110件の`tax_id`が3層すべてに現れた。消費税と自動車税は初号実装の別経路にあり、この例外自体も正本境界が不明瞭であることを示した。現在の実測値と全ファイルの分類は[`reports/architecture-inventory.json`](../../reports/architecture-inventory.json)を正本とする。`npm run architecture:audit`で更新し、`npm run architecture:check`でドリフトを検査できる。
+変更前の実測では、112件のうち110件の`tax_id`が3層すべてに現れた。消費税と自動車税は初号実装の別経路にあり、この例外自体も正本境界が不明瞭であることを示した。現在の実測値と全ファイルの分類は[`reports/architecture-inventory.json`](../../reports/architecture-inventory.json)へ監査結果として出力する。`npm run architecture:audit`で更新し、`npm run architecture:check`でドリフトを検査できる。
 
 ## 決定
 
@@ -53,6 +53,14 @@ URLの正本は引き続き`config/sources.yaml`とする。制度ごとの監�
 6. 循環importを許可しない。
 
 これらは#74で既存`validate.yml`へ検査を追加し、workflow自体は増やさない。
+
+### パス非依存の責務検査と移行baseline
+
+#91以降、JavaScriptの責務は物理フォルダから推測せず、`config/architecture-responsibilities.json`でファイルごとに明示する。この台帳が責務の正本であり、生成される`reports/architecture-inventory.json`は手編集しない監査結果である。ファイル移動では台帳のpathだけを変更し、responsibilityの変更とは別にレビューする。責務区分を追加・統合・分割する場合は、このADRを同じPRで変更する。
+
+検査はstatic import、re-export、dynamic import、CommonJS `require()`を解析し、内部依存にsource/targetのpathとresponsibility、外部依存にspecifierと依存種別を記録する。domainからNode.js組込み・外部packageへの依存、責務間の禁止方向、CommonJS、循環importを検出する。CLIとcomposition rootは具体実装の組立てを許可する。
+
+#91時点の既存違反は`config/architecture-violations-baseline.json`へ一時的に固定し、全項目を解消先#93へ関連付ける。`npm run architecture:check`はbaseline外の新規違反、同一違反の増加、解消済み項目のbaseline残存を失敗させる。baselineは許可規則や恒久例外ではなく、レポートへ毎回表示する。#93で違反を全件解消してbaselineを削除し、その後は`npm run architecture:strict`で違反0件を要求する。
 
 ## 移行順
 
