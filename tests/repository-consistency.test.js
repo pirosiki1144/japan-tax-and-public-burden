@@ -12,7 +12,7 @@ test("every persisted data and config file has an explicit schema route", async 
     join(root, "config/distribution.yaml"),
     join(root, "config/monitoring.yaml"), join(root, "config/sources.yaml"),
     join(root, "config/architecture-responsibilities.json"),
-    join(root, "data/master/canonical.json"), join(root, "data/master/initial-import.json"),
+    join(root, "data/master/canonical.json"), join(root, "data/master/initial-import.json"), join(root, "data/master/public-burdens.csv"),
     join(root, "data/monitoring/review.json")
   ]);
   assert.deepEqual(await validatePersistedFileCoverage(root, validated), []);

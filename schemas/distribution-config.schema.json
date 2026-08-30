@@ -8,6 +8,6 @@
   "properties": {
     "schema_version": {"const": 1},
     "default_as_of": {"type": "string", "format": "date"},
-    "output_directory": {"const": "generated"}
+    "output_directory": {"const": "data/master"}
   }
 }

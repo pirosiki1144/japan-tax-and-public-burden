@@ -10,7 +10,7 @@ import { dependencyType, evaluateDependency, parseDependencies } from "../domain
 const ROOT = join(dirname(fileURLToPath(import.meta.url)), "../..");
 const DEFAULT_OUTPUT = "reports/architecture-inventory.json";
 const RESPONSIBILITY_PATH = "config/architecture-responsibilities.json";
-const DERIVED = new Set(["docs/monitoring-extraction-target-review.md", "generated/public-burdens.csv", DEFAULT_OUTPUT]);
+const DERIVED = new Set(["docs/monitoring-extraction-target-review.md", "data/master/public-burdens.csv", DEFAULT_OUTPUT]);
 const BUILTINS = new Set([...builtinModules, ...builtinModules.map((name) => `node:${name}`)]);
 
 function trackedFiles(root) {

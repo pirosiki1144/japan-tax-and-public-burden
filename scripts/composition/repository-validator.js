@@ -3,6 +3,7 @@ import { join, relative } from "node:path";
 import { createValidators, readYaml, validateDocument } from "../adapters/schema-validator.js";
 import { validateIntegrity } from "../domain/integrity-validator.js";
 import { buildRuntimeMonitoringPlan } from "../cli/build-monitoring-config.js";
+import { generatePublicBurdenCsv } from "../cli/public-burden-csv.js";
 
 const SCHEMA_NAMES = ["monitoring", "monitoring-runtime", "semantic-baseline", "burden", "source", "distribution-config", "public-burden-master", "initial-import", "monitoring-review", "architecture-responsibilities"];
 
@@ -65,6 +66,16 @@ export async function validateRepository(root) {
   await validateAndCollect(join(root, "data/master/canonical.json"), "public-burden-master", "masters", false);
   await validateAndCollect(join(root, "data/master/initial-import.json"), "initial-import", "initialImports", false);
   await validateAndCollect(join(root, "data/monitoring/review.json"), "monitoring-review", "monitoringReviews", false);
+  const distributionConfig = collections.distributionConfigs[0];
+  const distributionPath = distributionConfig ? join(root, distributionConfig.output_directory, "public-burdens.csv") : null;
+  if (distributionPath) {
+    try {
+      await generatePublicBurdenCsv(root, { input: join(root, "data/master/canonical.json"), output: distributionPath, asOf: distributionConfig.default_as_of, check: true });
+      validatedPaths.add(distributionPath);
+    } catch (error) {
+      errors.push(`${distributionPath}: ${error.message}`);
+    }
+  }
   const master = collections.masters?.[0];
   if (master) collections.burdens.push(...master.public_burdens.flatMap(({ legacy_record }) => legacy_record ? [legacy_record] : []));
   const review = collections.monitoringReviews?.[0];
