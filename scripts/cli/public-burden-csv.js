@@ -2,7 +2,7 @@ import { readFile } from "node:fs/promises";
 import { join } from "node:path";
 import { fileURLToPath } from "node:url";
 import { writeTextAtomic } from "../adapters/filesystem-store.js";
-import { createValidators, validateDocument } from "../adapters/schema-validator.js";
+import { createValidators, readYaml, validateDocument } from "../adapters/schema-validator.js";
 
 export const DISTRIBUTION_HEADERS = ["distribution_row_id", "as_of", "time_classification", "public_burden_id", "public_burden_name", "component_id", "version_id", "component_name", "subject_conditions", "calculation_basis_id", "calculation_basis", "liable_party_id", "liable_party", "payment_obligors", "value_kind", "numeric_value", "unit", "acquisition_type", "source_fact_id", "calculation_set_id", "application_start", "application_end", "law_evidence", "cabinet_order_evidence", "ministerial_ordinance_evidence", "enforcement_regulation_evidence", "ordinance_evidence", "local_government_rule_evidence", "notice_evidence", "other_evidence", "master_verified_at"];
 
@@ -124,10 +124,24 @@ export async function generatePublicBurdenCsv(root, { input, output, asOf, check
   return { rows: rows.length, output };
 }
 
+export async function resolveDistributionOptions(root, args = {}) {
+  const configPath = join(root, "config/distribution.yaml");
+  const config = await readYaml(configPath);
+  const { distribution } = await createValidators({ distribution: join(root, "schemas/distribution-config.schema.json") });
+  const errors = validateDocument(distribution, config, configPath);
+  if (errors.length) throw new Error(errors.join("\n"));
+  return {
+    input: join(root, args.input ?? "data/master/canonical.json"),
+    output: join(root, args.output ?? join(config.output_directory, "public-burdens.csv")),
+    asOf: args["as-of"] ?? config.default_as_of,
+    check: args.check === true
+  };
+}
+
 if (process.argv[1] && fileURLToPath(import.meta.url) === process.argv[1]) {
   const root = fileURLToPath(new URL("../..", import.meta.url));
   const args = Object.fromEntries(process.argv.slice(2).reduce((pairs, value, index, values) => { if (value.startsWith("--")) pairs.push([value.slice(2), values[index + 1] ?? true]); return pairs; }, []));
-  if (!args.input || !args.output || !args["as-of"]) throw new Error("--input, --output, and --as-of are required");
-  const result = await generatePublicBurdenCsv(root, { input: join(root, args.input), output: join(root, args.output), asOf: args["as-of"], check: args.check === true });
+  const options = await resolveDistributionOptions(root, args);
+  const result = await generatePublicBurdenCsv(root, options);
   console.log(JSON.stringify({ status: args.check ? "clean" : "written", ...result }));
 }
