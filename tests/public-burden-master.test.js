@@ -3,7 +3,7 @@ import { readFile } from "node:fs/promises";
 import { join } from "node:path";
 import test from "node:test";
 import { createValidators, validateDocument } from "../scripts/adapters/schema-validator.js";
-import { buildDistributionRows, serializeDistributionCsv, validateMasterIntegrity } from "../scripts/cli/public-burden-csv.js";
+import { buildDistributionRows, resolveDistributionOptions, serializeDistributionCsv, validateMasterIntegrity } from "../scripts/cli/public-burden-csv.js";
 
 const root = new URL("..", import.meta.url).pathname;
 const fixturePath = join(root, "tests/fixtures/public-burden-master/representative-cases.json");
@@ -53,6 +53,24 @@ test("distribution row IDs and CSV bytes are deterministic", async () => {
   const generated = serializeDistributionCsv(rows);
   assert.equal(generated, serializeDistributionCsv(buildDistributionRows(await fixture(), "2026-08-30")));
   assert.equal(generated, await readFile(expectedPath, "utf8"));
+});
+
+test("distribution config supplies defaults while explicit CLI values remain supported", async () => {
+  assert.deepEqual(await resolveDistributionOptions(root, { check: true }), {
+    input: join(root, "data/master/canonical.json"),
+    output: join(root, "data/master/public-burdens.csv"),
+    asOf: "2026-08-18",
+    check: true
+  });
+  assert.deepEqual(await resolveDistributionOptions(root, { input: "custom.json", output: ".cache/custom.csv", "as-of": "2019-10-01" }), {
+    input: join(root, "custom.json"),
+    output: join(root, ".cache/custom.csv"),
+    asOf: "2019-10-01",
+    check: false
+  });
+  const packageJson = JSON.parse(await readFile(join(root, "package.json"), "utf8"));
+  assert.equal(packageJson.scripts.generate, "node scripts/cli/public-burden-csv.js");
+  assert.equal(packageJson.scripts["generate:check"], "node scripts/cli/public-burden-csv.js --check && npm run master-contract:check");
 });
 
 test("calculated values fail when their inputs or output component trace is broken", async () => {

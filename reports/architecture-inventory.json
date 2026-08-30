@@ -1,13 +1,13 @@
 {
   "schema_version": 2,
   "scope": "tracked repository files",
-  "baseline_commit": "11a35dc55d2123be2e7a87211d6e39bff02f768f",
+  "baseline_commit": "96b02c07a76adfaba84700e991d7c543e909c10c",
   "responsibility_registry": {
     "path": "config/architecture-responsibilities.json",
     "errors": []
   },
   "totals": {
-    "tracked_files": 162,
+    "tracked_files": 163,
     "javascript_files": 73,
     "import_edges": 290
   },
@@ -17,7 +17,7 @@
     "cli": 14,
     "composition_root": 9,
     "derived_artifact": 3,
-    "documentation": 17,
+    "documentation": 18,
     "domain": 13,
     "fixture": 37,
     "repository_support": 8,
@@ -103,6 +103,10 @@
     },
     {
       "path": "docs/atomic-public-burden-master.md",
+      "responsibility": "documentation"
+    },
+    {
+      "path": "docs/config-role-audit.md",
       "responsibility": "documentation"
     },
     {
