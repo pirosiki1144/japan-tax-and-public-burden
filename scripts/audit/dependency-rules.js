@@ -41,22 +41,3 @@ export function evaluateDependency({ sourcePath, sourceResponsibility, targetPat
     rule
   };
 }
-
-export function violationKey(violation) {
-  return [violation.source_path, violation.source_responsibility, violation.target_path ?? violation.specifier, violation.target_responsibility ?? violation.dependency_type, violation.import_kind, violation.rule].join("|");
-}
-
-export function compareViolations(violations, baseline) {
-  const group = (items) => items.reduce((map, item) => {
-    const key = violationKey(item);
-    if (!map.has(key)) map.set(key, []);
-    map.get(key).push(item);
-    return map;
-  }, new Map());
-  const current = group(violations);
-  const expected = group(baseline);
-  return {
-    new_violations: [...current].flatMap(([key, items]) => items.slice(expected.get(key)?.length ?? 0)),
-    resolved_without_baseline_update: [...expected].flatMap(([key, items]) => items.slice(current.get(key)?.length ?? 0))
-  };
-}

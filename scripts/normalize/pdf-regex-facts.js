@@ -1,10 +1,9 @@
-import { adaptPdfDocument } from "../formats/official-document.js";
-
 function compile(pattern, label) {
   try { return new RegExp(pattern); } catch (error) { throw new Error(`Invalid extraction pattern for ${label}: ${error.message}`); }
 }
 
-export async function normalizePdfRegexFacts(source, pages, { parseDocument = adaptPdfDocument } = {}) {
+export async function normalizePdfRegexFacts(source, pages, { parseDocument } = {}) {
+  if (typeof parseDocument !== "function") throw new Error("PDF document parser is required");
   if (pages.length !== source.extraction.expected_pages) throw new Error(`Source structure changed: expected ${source.extraction.expected_pages} configured pages but found ${pages.length}`);
   const documents = await Promise.all(pages.map((page) => parseDocument(page)));
   const texts = documents.map(({ text }) => text.normalize("NFKC").replace(/\s+/g, ""));

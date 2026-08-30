@@ -4,7 +4,7 @@ import { createValidators, readYaml, validateDocument } from "./schema-validator
 import { validateIntegrity } from "./integrity-validator.js";
 import { buildRuntimeMonitoringPlan } from "../monitoring/build-monitoring-config.js";
 
-const SCHEMA_NAMES = ["monitoring", "monitoring-runtime", "semantic-baseline", "burden", "source", "distribution-config", "public-burden-master", "initial-import", "monitoring-review", "architecture-responsibilities", "architecture-violations-baseline"];
+const SCHEMA_NAMES = ["monitoring", "monitoring-runtime", "semantic-baseline", "burden", "source", "distribution-config", "public-burden-master", "initial-import", "monitoring-review", "architecture-responsibilities"];
 
 async function persistedFiles(root, directory) {
   const files = [];
@@ -62,7 +62,6 @@ export async function validateRepository(root) {
   await validateAndCollect(join(root, "config/distribution.yaml"), "distribution-config", "distributionConfigs", false);
   await validateAndCollect(join(root, "config/monitoring.yaml"), "monitoring", "monitoringRegistries", false);
   await validateAndCollect(join(root, "config/architecture-responsibilities.json"), "architecture-responsibilities", "architectureConfigs", false);
-  await validateAndCollect(join(root, "config/architecture-violations-baseline.json"), "architecture-violations-baseline", "architectureConfigs", false);
   await validateAndCollect(join(root, "data/master/canonical.json"), "public-burden-master", "masters", false);
   await validateAndCollect(join(root, "data/master/initial-import.json"), "initial-import", "initialImports", false);
   await validateAndCollect(join(root, "data/monitoring/review.json"), "monitoring-review", "monitoringReviews", false);

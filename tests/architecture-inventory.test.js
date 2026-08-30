@@ -1,8 +1,8 @@
 import test from "node:test";
 import assert from "node:assert/strict";
 import { fileURLToPath } from "node:url";
-import { buildArchitectureInventory, classifyNonJavaScript, validateResponsibilityRegistry, validateViolationBaseline } from "../scripts/audit/architecture-inventory.js";
-import { compareViolations, dependencyType, evaluateDependency, parseDependencies } from "../scripts/audit/dependency-rules.js";
+import { buildArchitectureInventory, classifyNonJavaScript, validateResponsibilityRegistry } from "../scripts/audit/architecture-inventory.js";
+import { dependencyType, evaluateDependency, parseDependencies } from "../scripts/audit/dependency-rules.js";
 
 const root = fileURLToPath(new URL("..", import.meta.url));
 
@@ -75,24 +75,10 @@ test("diagnostics include paths, responsibilities, dependency type, and import k
   assert.deepEqual(Object.keys(violation).sort(), ["dependency_type", "import_kind", "rule", "source_path", "source_responsibility", "specifier", "target_path", "target_responsibility"].sort());
 });
 
-test("the migration baseline exposes every current violation and rejects drift", async () => {
+test("strict architecture inspection has no violations or cycles", async () => {
   const report = await buildArchitectureInventory(root);
-  assert.equal(report.import_graph.violations.length, 22);
-  assert.equal(report.import_graph.violations.filter(({ rule }) => rule === "responsibility_direction_forbidden").length, 14);
-  const builtinViolations = report.import_graph.violations.filter(({ rule }) => rule === "domain_node_builtin_forbidden");
-  assert.equal(builtinViolations.length, 8);
-  assert.equal(new Set(builtinViolations.map(({ source_path }) => source_path)).size, 6);
-  assert.equal(report.violation_baseline.issue, 93);
-  assert.equal(report.violation_baseline.entries, 22);
-  assert.deepEqual(report.violation_baseline.errors, []);
-  assert.deepEqual(report.violation_baseline.new_violations, []);
-  assert.deepEqual(report.violation_baseline.resolved_without_baseline_update, []);
-  assert.ok(report.import_graph.violations.every((item) => item.source_path && item.source_responsibility && item.dependency_type && item.import_kind));
+  assert.deepEqual(report.import_graph.violations, []);
   assert.deepEqual(report.import_graph.cycles, []);
-  const comparison = compareViolations([...report.import_graph.violations, { ...report.import_graph.violations[0], source_path: "new.js" }], report.import_graph.violations);
-  assert.equal(comparison.new_violations.length, 1);
-  assert.equal(compareViolations([...report.import_graph.violations, report.import_graph.violations[0]], report.import_graph.violations).new_violations.length, 1);
-  assert.deepEqual(validateViolationBaseline({ schema_version: 1, remediation_issue: 93, violations: report.import_graph.violations.map((item) => ({ ...item, remediation_issue: 93 })) }), []);
 });
 
 test("non-JavaScript classification remains separate from the responsibility registry", () => {

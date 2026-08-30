@@ -60,7 +60,7 @@ URLの正本は引き続き`config/sources.yaml`とする。制度ごとの監�
 
 検査はstatic import、re-export、dynamic import、CommonJS `require()`を解析し、内部依存にsource/targetのpathとresponsibility、外部依存にspecifierと依存種別を記録する。domainからNode.js組込み・外部packageへの依存、責務間の禁止方向、CommonJS、循環importを検出する。CLIとcomposition rootは具体実装の組立てを許可する。
 
-#91時点の既存違反は`config/architecture-violations-baseline.json`へ一時的に固定し、全項目を解消先#93へ関連付ける。`npm run architecture:check`はbaseline外の新規違反、同一違反の増加、解消済み項目のbaseline残存を失敗させる。baselineは許可規則や恒久例外ではなく、レポートへ毎回表示する。#93で違反を全件解消してbaselineを削除し、その後は`npm run architecture:strict`で違反0件を要求する。
+#91時点の既存違反は一時baselineへ固定して#93へ引き渡した。#93で全件を解消してbaselineを削除し、`npm run architecture:check`と`npm run architecture:strict`はいずれも禁止依存と循環importが0件であることを要求する。具体的なSchema・filesystem・adapterを束ねる互換facadeはcomposition responsibilityとして明示し、domain処理へ具体実装を持ち込まない。
 
 ## 移行順
 

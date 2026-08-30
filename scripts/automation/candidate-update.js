@@ -2,7 +2,6 @@ import { readFile } from "node:fs/promises";
 import { extname, resolve, sep } from "node:path";
 import { isDeepStrictEqual } from "node:util";
 import { parseDocument } from "yaml";
-import { writeTextAtomic } from "../adapters/filesystem-store.js";
 
 function canonicalPath(root, relativePath) {
   const dataRoot = `${resolve(root, "data")}${sep}`;
@@ -69,7 +68,8 @@ function collectChanges(scan) {
   return changes;
 }
 
-export async function applyCandidateUpdates({ root, scan }) {
+export async function applyCandidateUpdates({ root, scan, writeText }) {
+  if (typeof writeText !== "function") throw new Error("Atomic text writer is required");
   const changes = collectChanges(scan);
   const documents = new Map();
   const seenTargets = new Map();
@@ -107,7 +107,7 @@ export async function applyCandidateUpdates({ root, scan }) {
 
   for (const [path, document] of documents) {
     const content = document.format === "json" ? `${JSON.stringify(document.value, null, 2)}\n` : document.yaml.toString();
-    await writeTextAtomic(path, content);
+    await writeText(path, content);
   }
   return { changes, applied };
 }
@@ -165,6 +165,7 @@ ${files.map((file) => `- \`${file}\``).join("\n")}
 `;
 }
 
-export async function writePullRequestBody(path, body) {
-  await writeTextAtomic(path, body);
+export async function writePullRequestBody(path, body, writeText) {
+  if (typeof writeText !== "function") throw new Error("Atomic text writer is required");
+  await writeText(path, body);
 }

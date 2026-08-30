@@ -1,10 +1,16 @@
 import test from "node:test";
 import assert from "node:assert/strict";
 import { auditSourceScan, issueCandidatesFromAudit } from "../scripts/audit/source-scan-audit.js";
+import { sha256 } from "../scripts/normalize/sha256.js";
 import { publishAuditIssues } from "../scripts/audit/publish-audit-issues.js";
 
 const fetchedAt = "2026-08-17T01:02:03.000Z";
 const fetches = [{ source_url: "https://example.go.jp/source", fetched_at: fetchedAt, sha256: "a".repeat(64) }];
+
+test("pure domain SHA-256 preserves the existing digest contract", () => {
+  assert.equal(sha256(""), "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855");
+  assert.equal(sha256("abc"), "ba7816bf8f01cfea414140de5dae2223b00361a396177a9cb410ff61f20015ad");
+});
 
 test("source failures become reproducible issue candidates without changing data", () => {
   const scan = {
