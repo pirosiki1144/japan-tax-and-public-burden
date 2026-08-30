@@ -1,5 +1,5 @@
 import assert from "node:assert/strict";
-import { mkdtemp, mkdir, writeFile } from "node:fs/promises";
+import { access, mkdtemp, mkdir, writeFile } from "node:fs/promises";
 import { tmpdir } from "node:os";
 import { join } from "node:path";
 import test from "node:test";
@@ -16,6 +16,13 @@ test("every persisted data and config file has an explicit schema route", async 
     join(root, "data/monitoring/review.json")
   ]);
   assert.deepEqual(await validatePersistedFileCoverage(root, validated), []);
+});
+
+test("the moved distribution replaces the generated directory and old CSV", async () => {
+  const root = new URL("..", import.meta.url).pathname;
+  await access(join(root, "data/master/public-burdens.csv"));
+  await assert.rejects(access(join(root, "generated")));
+  await assert.rejects(access(join(root, "generated/public-burdens.csv")));
 });
 
 test("an unregistered persisted file cannot bypass schema validation", async () => {
